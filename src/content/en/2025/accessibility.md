@@ -105,10 +105,6 @@ Other documents, including the <a hreflang="en" href="https://git.myndex.com/">A
 
 <a hreflang="en" href="https://accessibility.civicactions.com/guide/tools#color">Open source tools</a>, like the <a hreflang="en" href="https://contrast.report/">newly released Contrast Report</a>, make it easier than ever to find and fix color contrast issues. They even suggest modifications when colors fail to meet required ratios. For additional guidance, you can consult expert resources, such as <a hreflang="en" href="https://www.dennisdeacon.com/web/accessibility/testing-methods-use-of-color/">Dennis Deacon's article on color contrast testing</a>.
 
-This year, text contrast pass rate improved by roughly 1% compared to 2024. But only 31% of mobile sites currently meet minimum color contrast requirements. Since mobile experiences depend heavily on clear visibility, this gap is a real problem for users accessing the web on their phones.
-
-Browsers and operating systems increasingly support light, dark, and high-contrast modes. Users have more control now. Most sites still don't respond to these preferences though.
-
 {{ figure_markup(
   image="sites-with-sufficient-color-contrast.png",
   caption="Sites with sufficient color contrast.",
@@ -119,13 +115,15 @@ Browsers and operating systems increasingly support light, dark, and high-contra
   )
 }}
 
+This year, text contrast pass rate improved by roughly 1% compared to 2024. But only 31% of mobile sites currently meet minimum color contrast requirements. Since mobile experiences depend heavily on clear visibility, this gap is a real problem for users accessing the web on their phones.
+
+Browsers and operating systems increasingly support light, dark, and high-contrast modes. Users have more control now. Most sites still don't respond to these preferences though.
+
 ### Zooming and scaling
 
 Users must be able to resize content to suit their needs. Disabling zoom removes user control and is a direct violation of WCAG resizing requirements. This is more than a minor inconvenience. It may make a site completely unusable for people with low vision or those who rely on screen magnification for reading.
 
 In 2025, this restrictive pattern still appears, often because developers want pixel-perfect layouts on mobile devices. Unfortunately, that comes at the cost of usability and accessibility.
-
-The number of sites that disable zooming or scaling continues to drop. In 2025, only 19% of mobile sites and 21% of desktop sites restrict scaling, either by using `user-scalable=no` or setting a restrictive maximum scale. That's a 1–2% improvement over 2024, showing slow but steady progress.
 
 {{ figure_markup(
   image="pages-with-zooming-and-scaling-disabled.png",
@@ -137,7 +135,7 @@ The number of sites that disable zooming or scaling continues to drop. In 2025, 
   )
 }}
 
-Font size units directly affect how text can respond to user preferences. Relative units, such as `em` and `rem`, let text to scale predictably with browser settings. In 2025, the use of `em` on mobile sites increased by 2%, improving user experiences for those who adjust font sizes to increase readability. Otherwise, font size unit usage stays largely the same as last year.
+The number of sites that disable zooming or scaling continues to drop. In 2025, only 19% of mobile sites and 21% of desktop sites restrict scaling, either by using `user-scalable=no` or setting a restrictive maximum scale. That's a 1–2% improvement over 2024, showing slow but steady progress.
 
 {{ figure_markup(
   image="font-unit-usage.png",
@@ -148,6 +146,8 @@ Font size units directly affect how text can respond to user preferences. Relati
   sql_file="units_properties.sql"
   )
 }}
+
+Font size units directly affect how text can respond to user preferences. Relative units, such as `em` and `rem`, let text to scale predictably with browser settings. In 2025, the use of `em` on mobile sites increased by 2%, improving user experiences for those who adjust font sizes to increase readability. Otherwise, font size unit usage stays largely the same as last year.
 
 If you want to check whether your site is restricting zoom, examine its source code for the `<meta name="viewport">` tag. Avoid using values like `maximum-scale`, `minimum-scale`, `user-scalable=no`, or `user-scalable=0`, as these limit resizing. Instead, let users freely adjust content size. <a hreflang="en" href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html#:~:text=Content%20satisfies%20the%20Success%20Criterion%20if%20it%20can,more%20extreme%2C%20adaptive%20layouts%20may%20introduce%20usability%20problems.">WCAG requires that text can resize up to 200%</a> without loss of content or functionality.
 
@@ -167,12 +167,6 @@ For example, Chrome's automatic translation might misinterpret page content with
 
 Modern CSS includes [User Preference Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) that let websites adapt to a user's operating system or browser settings. Users get a more comfortable, personalized experience. Websites can respond to preferences for motion, contrast, and color schemes.
 
-The most familiar queries, `prefers-reduced-motion` and `prefers-color-scheme`, remain widely supported by browsers. In 2025, adoption of these queries by websites shows little change. However, the use of `forced-colors`, which supports high-contrast modes for users with low vision, increased by 5% to 19%. Meanwhile, use of the outdated `-ms-high-contrast` media query has declined by 3% down to 20%. This reflects a gradual shift towards modern CSS standards.
-
-Continuing to incorporate these preferences advances accessibility and user satisfaction by respecting individual needs and system settings.
-
-Broader implementation of personalization through CSS media queries hasn't seen significant growth despite these incremental gains. Encouraging further adoption helps ensure websites honor users’ preferences, including reducing motion for vestibular disorder sensitivities and adapting display colors or contrast for visual comfort.
-
 {{ figure_markup(
   image="user-preference-media-query.png",
   caption="User preference media queries.",
@@ -182,6 +176,12 @@ Broader implementation of personalization through CSS media queries hasn't seen 
   sql_file="media_query_features.sql"
   )
 }}
+
+The most familiar queries, `prefers-reduced-motion` and `prefers-color-scheme`, remain widely supported by browsers. In 2025, adoption of these queries by websites shows little change. However, the use of `forced-colors`, which supports high-contrast modes for users with low vision, increased by 5% to 19%. Meanwhile, use of the outdated `-ms-high-contrast` media query has declined by 3% down to 20%. This reflects a gradual shift towards modern CSS standards.
+
+Continuing to incorporate these preferences advances accessibility and user satisfaction by respecting individual needs and system settings.
+
+Broader implementation of personalization through CSS media queries hasn't seen significant growth despite these incremental gains. Encouraging further adoption helps ensure websites honor users’ preferences, including reducing motion for vestibular disorder sensitivities and adapting display colors or contrast for visual comfort.
 
 ## Navigation
 
@@ -218,8 +218,6 @@ Without a prominent focus indicator, keyboard users and those relying on assisti
 
 Design annotations need to specify keyboard interactions, as <a hreflang="en" href="https://tetralogical.com/blog/2025/09/23/annotating-designs-using-common-language/">Craig Abbott clearly laid out in the TetraLogical blog</a>. Shortly after this post, GitHub released their accessibility <a hreflang="en" href="https://github.com/github/annotation-toolkit">Annotation Toolkit</a>, addressing the same problem.
 
-In 2025, 67% of sites explicitly removed default focus outlines, up 14% from 2024. This concerning trend may impair accessibility if not replaced with effective styles. On the positive side, adoption of the `:focus-visible` pseudo-class has grown. This means developers are starting to create context-aware focus indicators that are visible only when necessary.
-
 {{ figure_markup(
   image="pages-overriding-browser-focus-styles.png",
   caption="Pages overriding browser focus styles.",
@@ -230,11 +228,11 @@ In 2025, 67% of sites explicitly removed default focus outlines, up 14% from 202
   )
 }}
 
+In 2025, 67% of sites explicitly removed default focus outlines, up 14% from 2024. This concerning trend may impair accessibility if not replaced with effective styles. On the positive side, adoption of the `:focus-visible` pseudo-class has grown. This means developers are starting to create context-aware focus indicators that are visible only when necessary.
+
 #### `tabindex`
 
 The `tabindex` attribute controls an element's participation in the keyboard focus order. It lets developers include, exclude, or reorder focusable elements. Correct use supports logical navigation and accessibility, and is a <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order.html">WCAG requirement</a>. Misuse, especially with positive values, can disrupt natural tab order and confuse users.
-
-In 2025, `tabindex` usage has increased slightly. Just over 50% of sites used it, around 3-4% higher than 2024. Positive `tabindex` use remains stable, generally low, reflecting continued awareness that positive tabindex values should be avoided.
 
 {{ figure_markup(
   image="tabindex-usage.png",
@@ -246,6 +244,8 @@ In 2025, `tabindex` usage has increased slightly. Just over 50% of sites used it
   )
 }}
 
+In 2025, `tabindex` usage has increased slightly. Just over 50% of sites used it, around 3-4% higher than 2024. Positive `tabindex` use remains stable, generally low, reflecting continued awareness that positive tabindex values should be avoided.
+
 ### Landmarks
 
 Landmarks structure a web page into distinct thematic regions, using native HTML elements such as `<header>`, `<nav>`, `<main>`, and `<footer>`. These elements create a clear, high-level page outline that help users of assistive technologies quickly understand the layout and jump directly to relevant sections.
@@ -253,10 +253,6 @@ Landmarks structure a web page into distinct thematic regions, using native HTML
 A common accessibility anti pattern persists when developers add redundant ARIA attributes. For example, adding `role="navigation"` to a `<nav>` element. The `<nav>` element inherently carries the navigation role, so this duplication adds clutter to the code without benefit and may confuse assistive technology. <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/html/H101">Best practice is to favor native HTML5 elements</a> first before adding ARIA landmark roles. That's ARIA’s primary guideline.
 
 Accessibility experts like Eric Bailey have highlighted <a hreflang="en" href="https://www.smashingmagazine.com/2025/06/what-i-wish-someone-told-me-aria/">the pitfalls of overusing ARIA</a> in contexts where native semantic HTML is enough. Heydon Pickering's <a hreflang="en" href="https://heydonworks.com/article/pride-shame-and-accessibility/">twelve principles of web accessibility</a> also emphasize the critical role semantic structure and landmarks play in accessible navigation.
-
-In 2025, the adoption of ARIA landmarks has increased slightly, led by the growing use of the native `<main>` element, now at 47%, up 3% from 2024. This progress reflects better compliance with semantic HTML and more robust page structure for users relying on assistive tools.
-
-Screen reader users often navigate via "rotors" or landmark menus to jump between these page regions. Skip links pointing to landmarks improve usability by allowing immediate access to core content. They circumvent repeated navigation blocks or banners. We discuss Skip links in a later section.
 
 <figure>
   <table>
@@ -314,6 +310,10 @@ Screen reader users often navigate via "rotors" or landmark menus to jump betwee
   sql_file="landmark_elements_and_roles.sql"
   )
 }}
+
+In 2025, the adoption of ARIA landmarks has increased slightly, led by the growing use of the native `<main>` element, now at 47%, up 3% from 2024. This progress reflects better compliance with semantic HTML and more robust page structure for users relying on assistive tools.
+
+Screen reader users often navigate via "rotors" or landmark menus to jump between these page regions. Skip links pointing to landmarks improve usability by allowing immediate access to core content. They circumvent repeated navigation blocks or banners. We discuss Skip links in a later section.
 
 Continued education on leveraging native HTML5 landmarks and minimizing redundant ARIA roles will further improve keyboard and assistive technology navigation experiences. The growth in semantic structure adoption supports accessibility goals and aligns web content with modern best practices.
 
@@ -373,14 +373,6 @@ Approximately 24% of desktop and mobile pages include skip links detectable by c
 
 A descriptive page `<title>` is a basic necessity. It provides context for users navigating between browser tabs and windows and is often the first piece of information announced by a screen reader, helping users get oriented. WCAG also mandates that <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/page-titled">every page should have a meaningful title</a>.
 
-The 2025 data shows a slight improvement in the presence and descriptiveness of document titles compared to previous years. Approximately 98% of sites now include a `<title>` element, a 1% increase from 2024.
-
-This is positive. But despite this high inclusion rate, many titles remain insufficiently descriptive. This impacts usability, especially for screen reader users who rely on clear titles for orientation.
-
-There was a 2% decrease in mobile sites having titles with four or more words, which may indicate shorter or less specific titles on mobile pages. Including both a brief description of the page content and the website's name remains best practice for enhancing navigation and context.
-
-Document titles remain a fundamental accessibility feature that benefits all users. They provide context when navigating browser tabs and windows. While near-universal in presence, improving title descriptiveness and consistency continues to be an important focus in 2025 and beyond.
-
 {{ figure_markup(
   image="title-element-statistics.png",
   caption="Title element statistics.",
@@ -391,6 +383,14 @@ Document titles remain a fundamental accessibility feature that benefits all use
   )
 }}
 
+The 2025 data shows a slight improvement in the presence and descriptiveness of document titles compared to previous years. Approximately 98% of sites now include a `<title>` element, a 1% increase from 2024.
+
+This is positive. But despite this high inclusion rate, many titles remain insufficiently descriptive. This impacts usability, especially for screen reader users who rely on clear titles for orientation.
+
+There was a 2% decrease in mobile sites having titles with four or more words, which may indicate shorter or less specific titles on mobile pages. Including both a brief description of the page content and the website's name remains best practice for enhancing navigation and context.
+
+Document titles remain a fundamental accessibility feature that benefits all users. They provide context when navigating browser tabs and windows. While near-universal in presence, improving title descriptiveness and consistency continues to be an important focus in 2025 and beyond.
+
 ### Tables
 
 HTML tables present data in a two-dimensional grid. Accessibility depends on structuring them with appropriate semantic elements. Using `<caption>` provides crucial context for screen reader users, while `<th>` elements define headers for rows and columns, helping users understand relationships within the data. <a hreflang="en" href="https://codepen.io/stevef/pen/ByoMebv">Steve Faulkner's tool</a>, released in 2025, can help developers quickly inspect the semantics of any HTML element.
@@ -398,8 +398,6 @@ HTML tables present data in a two-dimensional grid. Accessibility depends on str
 The use of `<caption>` remained steady in 2025 compared to 2024, with only a small percentage of sites including captions. This low adoption is similar to prior years: roughly 1.6% of desktop sites include captions, which is an important, though often overlooked, accessibility feature.
 
 Tables shouldn't be misused for layout purposes. CSS Flexbox and Grid handle layout. When tables are used purely for layout, the `role="presentation"` attribute removes their semantic meaning to avoid confusion with assistive technologies.
-
-In 2025, 4.9% of mobile tables use this technique, up from 4% in 2024 and 1% in 2022.
 
 <figure>
   <table>
@@ -439,7 +437,7 @@ In 2025, 4.9% of mobile tables use this technique, up from 4% in 2024 and 1% in 
   </figcaption>
 </figure>
 
-The emphasis remains on using semantic HTML elements correctly to make tables accessible.
+In 2025, 4.9% of mobile tables use this technique, up from 4% in 2024 and 1% in 2022. The emphasis remains on using semantic HTML elements correctly to make tables accessible.
 
 ## Forms
 
@@ -448,12 +446,6 @@ Forms are how users interact with the web, from logging in to making a purchase 
 ### `<label>` element
 
 The `<label>` element remains the standard, recommended way to provide accessible names for input fields. By programmatically associating descriptive text with a form control, typically through the `for` attribute pointing to the input's `id`, it ensures users of assistive technology clearly understand what information is required. Proper labels also improve usability by increasing the clickable area, since clicking the label sets focus to the input.
-
-In 2025, about 35% of mobile inputs receive their accessible names from `<label>`, up from 32% in 2024. This is a positive trend.
-
-We also saw a modest 2% reduction in inputs deriving accessible names only from placeholder text. Placeholder text is less reliable and not a substitute for labels. However, the proportion of inputs lacking accessible names altogether remained unchanged from last year, indicating ongoing accessibility gaps.
-
-The 2025 data shows incremental improvement in `label` usage. It also underscores the need to continue expanding proper labeling practices to achieve full accessibility compliance and usability.
 
 {{ figure_markup(
   image="where-inputs-get-their-accessible-names-from.png",
@@ -465,6 +457,12 @@ The 2025 data shows incremental improvement in `label` usage. It also underscore
   )
 }}
 
+In 2025, about 35% of mobile inputs receive their accessible names from `<label>`, up from 32% in 2024. This is a positive trend.
+
+We also saw a modest 2% reduction in inputs deriving accessible names only from placeholder text. Placeholder text is less reliable and not a substitute for labels. However, the proportion of inputs lacking accessible names altogether remained unchanged from last year, indicating ongoing accessibility gaps.
+
+The 2025 data shows incremental improvement in `label` usage. It also underscores the need to continue expanding proper labeling practices to achieve full accessibility compliance and usability.
+
 ### `placeholder` attribute
 
 The placeholder attribute provides a hint or example of the expected input format inside a form field. But it should never replace the `<label>` element as the accessible name for that input. Placeholder text disappears as soon as the user starts typing, making it unavailable for reference.
@@ -472,8 +470,6 @@ The placeholder attribute provides a hint or example of the expected input forma
 Placeholder text also usually has poor default contrast, often failing WCAG color contrast requirements. Screen reader support for placeholders varies widely as well.
 
 The recommended approach is to use visible, programmatically associated labels for inputs, with the placeholder serving only as a supplementary hint or example.
-
-In 2025, there was a 2% reduction in the use of placeholder text as the only accessible name for inputs. Despite this positive trend, the practice remains all too common. 53% of desktop and 55% of mobile inputs rely solely on placeholder text for accessible naming, which still poses significant accessibility barriers.
 
 {{ figure_markup(
   image="use-of-placeholders-on-inputs.png",
@@ -485,15 +481,13 @@ In 2025, there was a 2% reduction in the use of placeholder text as the only acc
   )
 }}
 
+In 2025, there was a 2% reduction in the use of placeholder text as the only accessible name for inputs. Despite this positive trend, the practice remains all too common. 53% of desktop and 55% of mobile inputs rely solely on placeholder text for accessible naming, which still poses significant accessibility barriers.
+
 ### Requiring information
 
 Communicating that a form field is mandatory is essential for usability and accessibility. While a visual indicator such as an asterisk (\*) is common, it alone is insufficient because it lacks semantic information.
 
 The HTML5 `required` attribute provides a native, machine-readable way to indicate that a user must fill in a field before submitting the form. This attribute works with many input types like text, email, password, date, checkbox, and radio. Browsers enforce validation and assistive technologies convey the required status to users.
-
-We are seeing a modest increase in the adoption of the required attribute, up 1% in 2025 to 66% for mobile. Use of `aria-required` has dropped 3% to 37% for mobile. This indicates a gradual shift towards more semantic usage of native HTML validation over ARIA, which is intended to supplement but not replace native semantics.
-
-Progress in 2025 reflects slow but steady movement toward better semantic indication of required inputs, improving form accessibility and user experience.
 
 {{ figure_markup(
   image="how-required-inputs-are-specified.png",
@@ -504,6 +498,10 @@ Progress in 2025 reflects slow but steady movement toward better semantic indica
   sql_file="form_required_controls.sql"
   )
 }}
+
+We are seeing a modest increase in the adoption of the required attribute, up 1% in 2025 to 66% for mobile. Use of `aria-required` has dropped 3% to 37% for mobile. This indicates a gradual shift towards more semantic usage of native HTML validation over ARIA, which is intended to supplement but not replace native semantics.
+
+Progress in 2025 reflects slow but steady movement toward better semantic indication of required inputs, improving form accessibility and user experience.
 
 ### Captchas
 
@@ -554,8 +552,6 @@ The `alt` attribute provides a textual description of an image. It's essential f
 
 JPG and PNG files continue to dominate web images, but there is encouraging growth in the use of WEBP and SVG formats. SVG files offer rich semantics that benefit complex and interactive images.
 
-However, we noticed one issue that continues to persist: approximately 8.5% of image alt texts end with common file extensions like `.jpg` or `.png`. This typically happens when automated authoring tools insert filenames as `alt` text. Unfortunately, this adds no value and doesn't help users relying on assistive technologies.
-
 {{ figure_markup(
   image="most-common-file-extensions-in-alt-text.png",
   caption="Most common file extensions in `alt` text.",
@@ -566,7 +562,7 @@ However, we noticed one issue that continues to persist: approximately 8.5% of i
   )
 }}
 
-There is a positive trend toward alt texts between 20 and 30 characters in length, which tend to balance descriptiveness and brevity. But about 50% of images still have either empty alt attributes or text shorter than 10 characters. Empty alt text is appropriate only for purely decorative images. Most images however convey important information deserving meaningful descriptions and therefore will benefit from a meaningful alt text.
+However, we noticed one issue that continues to persist: approximately 8.5% of image alt texts end with common file extensions like `.jpg` or `.png`. This typically happens when automated authoring tools insert filenames as `alt` text. Unfortunately, this adds no value and doesn't help users relying on assistive technologies.
 
 {{ figure_markup(
   image="alt-attribute-lengths.png",
@@ -577,6 +573,8 @@ There is a positive trend toward alt texts between 20 and 30 characters in lengt
   sql_file="common_alt_text_length"
   )
 }}
+
+There is a positive trend toward alt texts between 20 and 30 characters in length, which tend to balance descriptiveness and brevity. But about 50% of images still have either empty alt attributes or text shorter than 10 characters. Empty alt text is appropriate only for purely decorative images. Most images however convey important information deserving meaningful descriptions and therefore will benefit from a meaningful alt text.
 
 Best practices continue to emphasize providing concise yet descriptive alt text tailored to image context, avoiding filenames, and using semantic file formats like SVG when appropriate. Artificial Intelligence (AI) tools show promise too. <a hreflang="en" href="https://www.drupal.org/project/ai_image_alt_text">Drupal's integration of AI-assisted alt text suggestions</a> helps authors create better alt attributes by providing editable examples. Brian Teeman wrote an interesting critique of the <a hreflang="en" href="https://magazine.joomla.org/all-issues/june-2024/ai-generated-alt-text">AI generation of Alt Text</a>.
 
@@ -616,10 +614,6 @@ In 2025, ARIA continues to play a vital but occasionally problematic role in web
 
 ARIA roles communicate an element's purpose or type to assistive technologies. In 2025, they continue to play a significant role in making web content accessible. While native HTML elements like `<button>` come with built-in semantics, ARIA provides the ability to assign roles to custom components that lack native equivalents, such as tabbed interfaces or `dialog` components.
 
-We've seen an approximately 4% increase in the use of the ARIA `button` role, reaching 53% on desktop and 54% on mobile sites in 2025. We've seen similar increases in the use of roles like `presentation` and `dialog`, whereas the use of the `search` role usage remains stable.
-
-The increased use of the ARIA `button` role raises concerns. It often indicates that websites are applying roles like `button` to non-semantic elements such as `<div>` or `<span>`. Or they're redundantly assigning roles to native HTML elements like `<button>`.
-
 {{ figure_markup(
   image="top-ten-most-common-aria-roles.png",
   caption="Top ten most common ARIA roles.",
@@ -632,6 +626,10 @@ The increased use of the ARIA `button` role raises concerns. It often indicates 
   )
 }}
 
+We've seen an approximately 4% increase in the use of the ARIA `button` role, reaching 53% on desktop and 54% on mobile sites in 2025. We've seen similar increases in the use of roles like `presentation` and `dialog`, whereas the use of the `search` role usage remains stable.
+
+The increased use of the ARIA `button` role raises concerns. It often indicates that websites are applying roles like `button` to non-semantic elements such as `<div>` or `<span>`. Or they're redundantly assigning roles to native HTML elements like `<button>`.
+
 ### Using the presentation role
 
 Applying `role="presentation"` or `role="none"` instructs assistive technologies to treat the element as purely presentational. It removes its native semantics from the accessibility tree. While this can be useful for layout elements that convey no meaningful information, overuse or misuse can create significant accessibility barriers.
@@ -639,8 +637,6 @@ Applying `role="presentation"` or `role="none"` instructs assistive technologies
 For example, applying `role="presentation"` to a `<ul>` element causes the entire list semantics, including those of child `<li>` elements, to be ignored. Screen reader users lose crucial contextual and structural information, like how many items are in a list.
 
 While the `presentation` role can help remove misleading semantics when elements are used purely decoratively or for layout, it should be applied sparingly and with clear intent.
-
-In 2025, the use of `role="presentation"` increased by 2%, continuing a concerning trend.
 
 {{ figure_markup(
   caption="Percentage of desktop sites and mobile sites have at least one `presentation` role.",
@@ -651,13 +647,11 @@ In 2025, the use of `role="presentation"` increased by 2%, continuing a concerni
 )
 }}
 
+In 2025, the use of `role="presentation"` increased by 2%, continuing a concerning trend.
+
 ### Labeling elements with ARIA
 
 Browsers maintain an accessibility tree that exposes information about page elements, such as their accessible names, roles, states, and descriptions. Assistive technologies rely on this to convey context to users. An element's accessible name is crucial and is usually derived from visible text content. However, ARIA attributes like `aria-label` and `aria-labelledby` can be used to explicitly set or override accessible names when native text is insufficient or unavailable.
-
-In 2025, the use of almost all top ARIA attributes increased. Desktop usage of `aria-label` rose by 5% and `aria-labelledby` by 3%. Use of `aria-describedby` on desktop decreased by 1%.
-
-These changes suggest developers increasingly assign accessible names programmatically to more elements. This can be helpful but also problematic if not carefully implemented.
 
 {{ figure_markup(
   image="top-10-aria-attributes.png",
@@ -671,7 +665,9 @@ These changes suggest developers increasingly assign accessible names programmat
   )
 }}
 
-We are seeing a concerning trend with the continued increase of 4% to 5% in defining buttons with `aria-label` alone, without corresponding visible labels. This disconnect between what a user sees visually and what assistive technologies announce can create confusion and barriers. This is especially true for people with cognitive disabilities or who use voice input. Ideally, the accessible name and visible label should match to provide a consistent user experience.
+In 2025, the use of almost all top ARIA attributes increased. Desktop usage of `aria-label` rose by 5% and `aria-labelledby` by 3%. Use of `aria-describedby` on desktop decreased by 1%.
+
+These changes suggest developers increasingly assign accessible names programmatically to more elements. This can be helpful but also problematic if not carefully implemented.
 
 {{ figure_markup(
   image="button-accessible-name-source.png",
@@ -682,6 +678,8 @@ We are seeing a concerning trend with the continued increase of 4% to 5% in defi
   sql_file="button_name_sources.sql"
   )
 }}
+
+We are seeing a concerning trend with the continued increase of 4% to 5% in defining buttons with `aria-label` alone, without corresponding visible labels. This disconnect between what a user sees visually and what assistive technologies announce can create confusion and barriers. This is especially true for people with cognitive disabilities or who use voice input. Ideally, the accessible name and visible label should match to provide a consistent user experience.
 
 Nearly 66% of pages use the `aria-label` attribute, up from earlier years, making it the most frequently used ARIA attribute for accessible names. About a quarter of pages use `aria-labelledby`.
 
@@ -726,10 +724,6 @@ Usage of these common screen reader-only classes remained essentially unchanged 
 ### Dynamically-rendered content
 
 ARIA live regions are critical for making dynamically changing content accessible. They inform screen readers about updates to page content, such as form validation messages, status updates, or live feeds. These updates occur without a full page reload, and are therefore necessary for users to receive important information without disruption.
-
-In 2025, about 33% of sites use the `aria-live` attribute, up 4% from 2024. Usage of the `role` value `status`, essentially an `aria-live` value of `polite`, increased by approximately 5%. This signals more widespread adoption of polite notifications that inform users of non-urgent updates.
-
-Additional ARIA roles, such as `alert`, `timer`, `log`, and `marquee`, also have implicit `aria-live` attributes with predefined behaviors, enabling a broad spectrum of live region use cases.
 
 <figure>
   <table>
@@ -784,6 +778,10 @@ Additional ARIA roles, such as `alert`, `timer`, `log`, and `marquee`, also have
   </figcaption>
 </figure>
 
+In 2025, about 33% of sites use the `aria-live` attribute, up 4% from 2024. Usage of the `role` value `status`, essentially an `aria-live` value of `polite`, increased by approximately 5%. This signals more widespread adoption of polite notifications that inform users of non-urgent updates.
+
+Additional ARIA roles, such as `alert`, `timer`, `log`, and `marquee`, also have implicit `aria-live` attributes with predefined behaviors, enabling a broad spectrum of live region use cases.
+
 Increased use of ARIA live regions in 2025 reflects progress in communicating dynamic content updates effectively, supporting users who rely on assistive technologies to interact with modern, responsive web experiences.
 
 ## User personalization widgets and overlay remediation
@@ -794,8 +792,6 @@ These overlays often promise quick-fix compliance but fall short of addressing c
 
 Though overlays can help remove some surface-level barriers and provide additional personalization features, reliance on them often leads organizations to stop investing in proper accessibility. Overlays generally have more usability, security, and performance drawbacks than fixing underlying code issues.
 
-Data shows about 2% of desktop sites use such accessibility apps. Rates are even lower rates among the highest-traffic sites, at 0.2% among the top 1,000. This pattern shows that overlays are mostly adopted by lower-traffic sites and remain a controversial and imperfect solution.
-
 {{ figure_markup(
   image="pages-using-accessibility-apps-overlays.png",
   caption="Pages using accessibility apps (overlays).",
@@ -805,6 +801,8 @@ Data shows about 2% of desktop sites use such accessibility apps. Rates are even
   sql_file="a11y_technology_usage.sql"
   )
 }}
+
+Data shows about 2% of desktop sites use such accessibility apps. Rates are even lower rates among the highest-traffic sites, at 0.2% among the top 1,000. This pattern shows that overlays are mostly adopted by lower-traffic sites and remain a controversial and imperfect solution.
 
 Despite a marginal increase in their use in 2025, the distribution of these accessibility apps remains consistent with 2024, dominated by providers like <a hreflang="en" href="https://userway.org/">UserWay</a>, <a hreflang="en" href="https://accessibe.com/">AccessiBe</a>, <a hreflang="en" href="https://www.audioeye.com/">AudioEye</a>, and <a hreflang="en" href="https://www.equalweb.com/">EqualWeb</a>.
 
@@ -893,12 +891,6 @@ This section compares accessibility scores across various industry and community
 
 We can identify a website's country of origin either by the server's geographic location (GeoID) or by its Top-Level Domain (TLD). Both methods have limitations. Hosting costs, server location strategies, and domain ownership practices mean that a website's server may not reflect its target audience. Globally-used TLDs like `.ai` or `.io` aren't necessarily tied to their countries of origin.
 
-In 2025, the United States remains the most accessible country by GeoID, a position driven by decades of Section 508 compliance requirements for federal agencies and ongoing ADA Title III litigation. The `.edu` and `.gov` TLDs also lead accessibility metrics, reflecting mandatory compliance for U.S. government and educational institutions.
-
-We also note the EU Accessibility Act's limited impact in 2025. While the Act became fully effective on June 28, 2025, mandating that private and public sector digital services be accessible across the European Union, preliminary data shows no dramatic spike in website accessibility for European-based sites.
-
-This lag likely reflects implementation challenges, transitional periods for existing services, and the time required for organizations to redesign and audit their digital offerings.
-
 {{ figure_markup(
   image="most-accessible-by-geoid-of-server.png",
   caption="Most Accessible by GeoID of Server",
@@ -909,6 +901,12 @@ This lag likely reflects implementation challenges, transitional periods for exi
   height=500
   )
 }}
+
+In 2025, the United States remains the most accessible country by GeoID, a position driven by decades of Section 508 compliance requirements for federal agencies and ongoing ADA Title III litigation. The `.edu` and `.gov` TLDs also lead accessibility metrics, reflecting mandatory compliance for U.S. government and educational institutions.
+
+We also note the EU Accessibility Act's limited impact in 2025. While the Act became fully effective on June 28, 2025, mandating that private and public sector digital services be accessible across the European Union, preliminary data shows no dramatic spike in website accessibility for European-based sites.
+
+This lag likely reflects implementation challenges, transitional periods for existing services, and the time required for organizations to redesign and audit their digital offerings.
 
 Legal enforcement and the threat of litigation remain the strongest drivers of accessibility compliance, as evidenced by the United States' leading position. The full impact of newer European and global legislation may take years to manifest in web accessibility statistics, as organizations work through implementation timelines and transition periods.
 
@@ -1022,8 +1020,6 @@ The Americans with Disabilities Act (ADA), which <a hreflang="en" href="https://
 
 A website's choice of Content Management System (CMS) significantly influences its accessibility outcomes. Using <a hreflang="en" href="https://almanac.httparchive.org/en/2024/methodology#wappalyzer">Wappalyzer</a> data, the 2025 Web Almanac compared accessibility scores across traditional CMSs, platforms, and specialized website builders. This revealed both consistent patterns and notable outliers.
 
-Among traditional CMSs, <a hreflang="en" href="https://www.sitecore.com/">Sitecore</a> maintained 85% accessibility in 2025, though its instance count dropped below 10,000. <a hreflang="en" href="https://business.adobe.com/products/experience-manager/sites/aem-sites.html">Adobe Experience Manager (AEM)</a> and <a hreflang="en" href="https://www.contentful.com/">Contentful</a> continue to lead, likely because larger corporations adopting these enterprise solutions have more resources to address accessibility issues. <a hreflang="en" href="https://wordpress.com/">WordPress</a> showed no significant improvement from 2024, but rose to third place, reflecting its market dominance and the growing accessibility consciousness of its user base.
-
 {{ figure_markup(
   image="most-accessible-traditional-cms.png",
   caption="Most accessible traditional CMS.",
@@ -1034,11 +1030,11 @@ Among traditional CMSs, <a hreflang="en" href="https://www.sitecore.com/">Siteco
   )
 }}
 
+Among traditional CMSs, <a hreflang="en" href="https://www.sitecore.com/">Sitecore</a> maintained 85% accessibility in 2025, though its instance count dropped below 10,000. <a hreflang="en" href="https://business.adobe.com/products/experience-manager/sites/aem-sites.html">Adobe Experience Manager (AEM)</a> and <a hreflang="en" href="https://www.contentful.com/">Contentful</a> continue to lead, likely because larger corporations adopting these enterprise solutions have more resources to address accessibility issues. <a hreflang="en" href="https://wordpress.com/">WordPress</a> showed no significant improvement from 2024, but rose to third place, reflecting its market dominance and the growing accessibility consciousness of its user base.
+
 Remarkably, the top five traditional CMSs share consistent error patterns. Color contrast, link names, and heading order dominate as the most common issues. These errors primarily reflect content choices rather than platform limitations, since a CMS can't dictate link naming or color selections. However, AEM stands alone with `label-content-name-mismatch` in its top-five errors. WordPress is unique in having `meta-viewport` errors.
 
 In the top 10 CMS, only <a hreflang="en" href="https://www.dnnsoftware.com/">DNN</a> has `image-alt` in the top 3 errors. For most traditional CMSs, `image-alt` and `target-size` are consistently in the fourth or fifth place for Google Lighthouse errors.
-
-Website platforms like Wix, Squarespace, and Google Sites significantly outperform traditional CMSs in accessibility. This superior performance likely stems from their approach. These platforms often constrain user choices through templated designs and built-in accessibility defaults, reducing opportunities for poor accessibility decisions.
 
 {{ figure_markup(
   image="most-accessible-website-platform-cms.png",
@@ -1115,17 +1111,13 @@ Website platforms like Wix, Squarespace, and Google Sites significantly outperfo
   </figcaption>
 </figure>
 
+Website platforms like Wix, Squarespace, and Google Sites significantly outperform traditional CMSs in accessibility. This superior performance likely stems from their approach. These platforms often constrain user choices through templated designs and built-in accessibility defaults, reducing opportunities for poor accessibility decisions.
+
 The data proves that CMS choice meaningfully impacts accessibility outcomes, even when content creators must take final responsibility for some decisions. Platforms with stricter design constraints and embedded accessibility defaults perform better, while those offering maximum flexibility leave accessibility decisions to users.
 
 ### JavaScript frontend frameworks
 
 The choice of JavaScript framework also significantly influences a website's accessibility outcomes. Using classifications from the <a hreflang="en" href="https://stateofjs.com/en-US">State of JS report</a>, we examined how different UI frameworks and meta-frameworks correlate with accessibility performance. This revealed patterns, shifts, and emerging concerns.
-
-In 2025, <a hreflang="en" href="https://openui5.org/">OpenUI5</a> has risen in accessibility rankings, while frameworks that led in 2024 (<a hreflang="en" href="https://stimulus.hotwired.dev/">Stimulus</a>, <a hreflang="en" href="https://remix.run/">Remix</a>, and <a hreflang="en" href="https://qwik.dev/">Qwik</a>) have shifted positions. Remix appears in both UI and meta-framework categories, but has declined in rankings in 2025, allowing other frameworks to advance. This volatility may reflect sample size changes or real improvements in competing frameworks. The fact that all Remix functionality was integrated right into the next version of <a hreflang="en" href="https://reactrouter.com/">React Router</a>, making Remix redundant as a React framework, can also have an impact on rankings.
-
-Historically, Stimulus, Remix, and Qwik outperformed mainstream options like React, <a hreflang="en" href="https://svelte.dev/">Svelte</a>, or <a hreflang="en" href="http://Ember.js">Ember.js</a> by several percentage points, likely because they prioritize progressive enhancement and semantic HTML.
-
-Among meta-frameworks, Remix, <a hreflang="en" href="https://rwsdk.com/">RedwoodJS</a>, and <a hreflang="en" href="https://astro.build/">Astro</a> led in 2024, with Remix's decline allowing <a hreflang="en" href="https://www.gatsbyjs.com/">Gatsby</a> to rise to third place in 2025. The rise of server-first meta-frameworks (SvelteKit, Astro, Remix, Qwik, <a hreflang="en" href="https://fresh.deno.dev/">Fresh</a>, <a hreflang="en" href="https://analogjs.org/">Analog</a>) reflects a broader industry shift toward better performance and accessibility practices by reducing client-side JavaScript complexity.
 
 {{ figure_markup(
   image="most-accessible-javascript-frontend-ui-frameworks.png",
@@ -1136,6 +1128,12 @@ Among meta-frameworks, Remix, <a hreflang="en" href="https://rwsdk.com/">Redwood
   sql_file="lighthouse_score_by_frontend.sql"
   )
 }}
+
+In 2025, <a hreflang="en" href="https://openui5.org/">OpenUI5</a> has risen in accessibility rankings, while frameworks that led in 2024 (<a hreflang="en" href="https://stimulus.hotwired.dev/">Stimulus</a>, <a hreflang="en" href="https://remix.run/">Remix</a>, and <a hreflang="en" href="https://qwik.dev/">Qwik</a>) have shifted positions. Remix appears in both UI and meta-framework categories, but has declined in rankings in 2025, allowing other frameworks to advance. This volatility may reflect sample size changes or real improvements in competing frameworks. The fact that all Remix functionality was integrated right into the next version of <a hreflang="en" href="https://reactrouter.com/">React Router</a>, making Remix redundant as a React framework, can also have an impact on rankings.
+
+Historically, Stimulus, Remix, and Qwik outperformed mainstream options like React, <a hreflang="en" href="https://svelte.dev/">Svelte</a>, or <a hreflang="en" href="http://Ember.js">Ember.js</a> by several percentage points, likely because they prioritize progressive enhancement and semantic HTML.
+
+Among meta-frameworks, Remix, <a hreflang="en" href="https://rwsdk.com/">RedwoodJS</a>, and <a hreflang="en" href="https://astro.build/">Astro</a> led in 2024, with Remix's decline allowing <a hreflang="en" href="https://www.gatsbyjs.com/">Gatsby</a> to rise to third place in 2025. The rise of server-first meta-frameworks (SvelteKit, Astro, Remix, Qwik, <a hreflang="en" href="https://fresh.deno.dev/">Fresh</a>, <a hreflang="en" href="https://analogjs.org/">Analog</a>) reflects a broader industry shift toward better performance and accessibility practices by reducing client-side JavaScript complexity.
 
 The choice of library also has an impact on accessibility.
 
@@ -1156,6 +1154,8 @@ We also note that <a hreflang="en" href="https://github.blog/open-source/social-
   sql_file="lighthouse_score_by_frontend.sql"
   )
 }}
+
+RedwoodJS remains the most accessible, followed by Astro and Gatsby.
 
 ## Conclusion
 
