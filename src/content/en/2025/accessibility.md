@@ -75,9 +75,11 @@ This year, we've seen the biggest advances in the following axe-core tests:
   )
 }}
 
-This year, we're adding a new chapter on Artificial Intelligence (AI) to the Web Almanac. AI is changing how we build websites, how we write code, generate content, optimize performance, and interact with content. From chat bots embedded in every other site to AI-generated images flooding the web, this technology has moved from experimental to essential faster than almost anything we've tracked before.
+This year, we're adding a new chapter on [Artificial Intelligence (AI)](#the-impact-of-artificial-intelligence-ai) to the Web Almanac. AI is changing how we build websites, write code, generate content, optimize performance, and interact with interfaces. It already plays a growing role in accessibility work, from generating image descriptions and captions to assistants that help teams find and fix issues.
 
-But we're also seeing some concerning patterns. AI should support human expertise, not replace it.
+At the same time, AI introduces risks and unanswered questions. There's no reliable way yet to see when AI has created or assisted in creating a website. Language models are trained on code and content that often contain accessibility problems. Automated descriptions or patterns can easily miss context, user intent, or nuance. Broader concerns about data use, environmental impact, and encoded bias directly affect who benefits from AI on the web and who is harmed or excluded.
+
+The new AI chapter explores these tensions: how AI is already helping teams, where it falls short, and what standards, safeguards, and practices are needed. One principle runs through the analysis: AI should support human expertise and inclusive design, not replace them.
 
 Throughout this chapter, you will find actionable links and practical solutions to help you improve accessibility on your own sites.
 
@@ -552,9 +554,7 @@ The `alt` attribute provides a textual description of an image. It's essential f
 
 JPG and PNG files continue to dominate web images, but there is encouraging growth in the use of WEBP and SVG formats. SVG files offer rich semantics that benefit complex and interactive images.
 
-However, we noticed one issue that continues to persist.
-
-Approximately 8.5% of image alt texts end with common file extensions like `.jpg` or `.png`. This typically happens when automated authoring tools insert filenames as `alt` text. Unfortunately, this adds no value and doesn't help users relying on assistive technologies.
+However, we noticed one issue that continues to persist: approximately 8.5% of image alt texts end with common file extensions like `.jpg` or `.png`. This typically happens when automated authoring tools insert filenames as `alt` text. Unfortunately, this adds no value and doesn't help users relying on assistive technologies.
 
 {{ figure_markup(
   image="most-common-file-extensions-in-alt-text.png",
@@ -571,7 +571,7 @@ There is a positive trend toward alt texts between 20 and 30 characters in lengt
 {{ figure_markup(
   image="alt-attribute-lengths.png",
   caption="`alt` attribute lengths.",
-  description="A bar chart showing the distribution of `alt` attribute lengths for images on desktop pages in 2025. About 13% of images have no `alt` attribute and 30% use an empty `alt`. Of the remaining images with non-empty text, most are short: around 20% have 10 or fewer characters, 17% have 20 or fewer, 18% have 30 or fewer, and only about 1% have up to 100 characters. Virtually none exceed 100 characters.",
+  description="A grouped bar chart showing the distribution of `alt` attribute lengths for images on desktop and mobile. Around 13–14% of images have no `alt` attribute and 30% use an empty `alt` on both platforms. Of the remaining images with non-empty text, most are short: about 20% have 10 or fewer characters, 17% have 20 or fewer, and 18% (desktop) and 10% (mobile) have 30 or fewer, while only about 1% have 100 or more characters and virtually none exceed 100 characters.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=536884664&format=interactive",
   sheets_gid="785975896",
   sql_file="common_alt_text_length"
@@ -590,7 +590,7 @@ Many modern video platforms now commonly use [HTTP Live Streaming (HLS)](https:/
 
 Captions are essential for deaf and hard of hearing users. They also benefit viewers in noisy environments or those with difficulty understanding spoken language. Audio descriptions enable users with visual impairments to gain context about visual content.
 
-Compared to 2024, we've seen no significant growth in `<track>` usage for captions and subtitles, indicating that the industry still has substantial room for improvement. This is particularly true for media embedded through third-party services or `<iframe>` elements, which are less likely to offer accessible alternatives directly.
+Compared to 2024, we've seen no significant growth in `<track>` usage for captions and subtitles, going from 0.1% to 0.4% on desktop and 0.1% to 0.2% on mobile. This tells us that the industry still has substantial room for improvement.
 
 ## Assistive technology with ARIA
 
@@ -869,7 +869,7 @@ AI raises significant ethical concerns that go beyond accessibility.
 )
 }}
 
-One major issue is environmental impact. A <a hreflang="en" href="https://arxiv.org/ftp/arxiv/papers/2104/2104.10350.pdf">study on carbon emissions and large neural network training</a> estimated that training a single large language model such as GPT‑3 consumed more than 1,200 megawatt-hours of electricity and produced around 500–550 metric tons of CO₂-equivalent. This is comparable to the lifetime emissions of over 100 gasoline cars.
+One major issue is environmental impact. A <a hreflang="en" href="https://arxiv.org/ftp/arxiv/papers/2104/2104.10350.pdf">study on carbon emissions and large neural network training</a> estimated that training a single large language model such as GPT‑3 consumed more than 1,200 megawatt-hours of electricity and produced around 500–550 metric tons of CO₂-equivalent. This is comparable to the lifetime emissions of over 100 gasoline cars. For more information refer to the [Sustainability](./sustainability) chapter.
 
 Another core concern is how training data is collected and used. Several <a hreflang="en" href="https://natlawreview.com/article/two-major-lawsuits-aim-answer-multi-billion-dollar-question-can-ai-train-your">high-profile lawsuits</a> allege that AI vendors scraped and used copyrighted material without permission or compensation. This included millions of stock photos and books.
 
