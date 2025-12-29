@@ -13,8 +13,8 @@ christianliebel_bio: Christian Liebel, M.Sc., is an elected member of the <a hre
 Yash-Vekaria_bio: Yash Vekaria is a PhD candidate in Computer Science at <a hreflang="en" href="https://www.ucdavis.edu/">University of California, Davis</a>. He carries out web-based large-scale internet measurements to study and improve the dynamics of web. Specifically, his research is focused at studying and bringing transparency to online tracking practices and user privacy issues.
 JonathanPagel_bio: Jonathan Pagel studied e-commerce in his bachelor's degree and has since been interested in the field, particularly in the areas of speed optimization and accessibility for shops and websites. Currently, he is freelancing in this field and pursuing a Master's in AI and Society.
 featured_quote: In 2025, Generative AI transitioned from a cloud-only technology to a fundamental browser component.
-featured_stat_1: 147%
-featured_stat_label_1: Increase in WebGPU page loads
+featured_stat_1: 591%
+featured_stat_label_1: Increase in WebGPU adoption
 featured_stat_2: 340%
 featured_stat_label_2: Increase in WebLLM npm downloads
 featured_stat_3: 4.5%
@@ -68,18 +68,20 @@ There are <a hreflang="en" href="https://www.w3.org/2024/01/webevolve-series-eve
 
 The three key APIs that facilitate local AI inference are WebAssembly (CPU), WebGPU (GPU), and WebNN (CPU, GPU, and NPU).
 
-All statistics in this section refer to the percentage of Google Chrome page loads that utilize these APIs at least once, across all release channels and platforms. It is essential to note that the use of WebAssembly and WebGPU does not confirm AI activity; these are general-purpose APIs frequently utilized for tasks such as complex calculations, 3D visualizations, or gaming.
+In the following sections, statistics from Chrome Platform Status refer to the percentage of Google Chrome page loads that use an API at least once, across all release channels and platforms. It is essential to note that the use of WebAssembly and WebGPU does not confirm AI activity; these are general-purpose APIs frequently utilized for tasks such as complex calculations, 3D visualizations, or gaming.
 
 ##### WebAssembly
 
 [WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly) acts as the bytecode for the web. Code written in various programming languages, including C++ and Rust, can be compiled into WebAssembly. It enables developers to write optimized, high-performance code that is executed by the browser's scripting engine on the user's CPU.
 
-WebAssembly has broad browser support, being implemented in all relevant browser engines since 2017. In 2025, the usage of WebAssembly (i.e., the instantiation of a WebAssembly module relative to page loads) experienced 27% linear growth (see the following figure) from being active on 4.44% of page loads in January 2025, and 5.64% in December 2025 (<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2237">January 2024</a>: 3.37%).
+WebAssembly has broad browser support, being implemented in all relevant browser engines since 2017.
+
+According to Chrome Platform Status data, the usage of WebAssembly (i.e., the instantiation of a WebAssembly module relative to page loads) experienced 27% linear growth (see the following figure) from being active on 4.44% of page loads in January 2025, and 5.64% in December 2025 (<a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/2237">January 2024</a>: 3.37%).
 
 {{ figure_markup(
   image="genai-wasm-usage.png",
   caption="WebAssembly usage in 2025 according to Chrome Platform Status data.",
-  description="Bar chart showing the growth of WebAssembly usage in percent per page loads according to Chrome Platform Status data throughout 2025. Usage increased linearly from being active on 4.44% of page loads in January to 5.64% in December.",
+  description="Line chart showing the growth of WebAssembly usage in percent per page loads according to Chrome Platform Status data throughout 2025. Usage increased linearly from being active on 4.44% of page loads in January to 5.64% in December.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=148205691&format=interactive",
   sheets_gid="303424003"
   )
@@ -91,12 +93,12 @@ WebAssembly has broad browser support, being implemented in all relevant browser
 
 WebGPU has become the standard foundation for running AI workloads in the browser. With the release of Firefox 141 in November 2025, [WebGPU became available in all relevant browser engines](https://web.dev/blog/webgpu-supported-major-browsers) (Chromium, Gecko, and WebKit).
 
-In 2025, WebGPU experienced exponential growth in activations per page load, increasing by 147% (see the following figure). The July 2025 crawl of HTTP Archive data suggested that the API is used on 55,825 desktop sites and 68,043 mobile sites, a significant increase from 4,479 desktop and 4,742 mobile pages from the July 2024 crawl.
+The July 2025 crawl of HTTP Archive data shows that the API is used on 0.243% of all desktop sites and 0.238% of mobile sites. This represents a significant increase of 591% (up from 0.035%) on desktop and 709% (up from 0.029%) on mobile compared to the July 2024 crawl. <a hreflang="en" href="https://chromestatus.com/metrics/feature/timeline/popularity/3888">Chrome Platform Status data</a> suggests an exponential growth in activations per page load, increasing by 147% over the course of 2025.
 
 {{ figure_markup(
   image="genai-webgpu-usage.png",
-  caption="WebGPU usage in 2025 according to Chrome Platform Status data.",
-  description="Bar chart showing the growth of WebGPU usage in percent per page loads according to Chrome Platform Status data throughout 2025. Usage increased exponentially from being active on 0.77% of page loads in January to 1.9% in December.",
+  caption="WebGPU usage in 2025.",
+  description="Bar chart comparing the usage of WebGPU (percentage of pages) from the July 2024 crawl to the July 2025 crawl. On desktop, usage increased from 0.035% to 0.243%. On mobile, usage increased from 0.029% to 0.238%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=2117448035&format=interactive",
   sheets_gid="1071092495"
   )
