@@ -264,6 +264,8 @@ Disallow: /
 
 It is important to note that adherence to `robots.txt` is voluntary and does not, by itself, restrict access to bots.
 
+We note that `robots.txt` remains highly prevalent: approximately 94.1% of the \~12.9 million sites studied include a `robots.txt` file with at least one directive (see the following figure).
+
 {{ figure_markup(
   image="genai-robots-txt-adoption.png",
   caption="`robots.txt` adoption.",
@@ -274,7 +276,7 @@ It is important to note that adherence to `robots.txt` is voluntary and does not
   )
 }}
 
-We note that `robots.txt` remains highly prevalent: approximately 94.1% of the \~12.9 million sites studied include a `robots.txt` file with at least one directive (see the following figure).
+The following figure describes the top 25 directives observed across all websites by their rank groups. The wildcard directive `*` can be seen to be the most commonly used one, present in 97.4% of `robots.txt` files. This directive can be used to allow and/or disallow a part or all of the site's content to all bots. The second most common directive is `gptbot`. Its adoption increased from 2.6% in [2024](../2024/seo#ai-crawlers) to around 4.5% in 2025. The other popular AI bots are the ones by Anthropic (`claudebot`, `anthropic-ai`, `claude-web`), Google (`google-extended`), OpenAI (`chatgpt-user`), and Perplexity (`perplexitybot`), among other less popular ones.
 
 {{ figure_markup(
   image="genai-robots-txt-directives.png",
@@ -288,13 +290,13 @@ We note that `robots.txt` remains highly prevalent: approximately 94.1% of the \
   )
 }}
 
-The following figure describes the top 25 directives observed across all websites by their rank groups. The wildcard directive `*` can be seen to be the most commonly used one, present in 97.4% of `robots.txt` files. This directive can be used to allow and/or disallow a part or all of the site's content to all bots. The second most common directive is `gptbot`. Its adoption increased from 2.6% in [2024](../2024/seo#ai-crawlers) to around 4.5% in 2025. The other popular AI bots are the ones by Anthropic (`claudebot`, `anthropic-ai`, `claude-web`), Google (`google-extended`), OpenAI (`chatgpt-user`), and Perplexity (`perplexitybot`), among other less popular ones.
-
 The prevalence of AI bots is much higher on `robots.txt` of popular websites, almost all of them disallowing the bots. This is likely because popular websites can afford to block AI crawlers without significantly hurting their website traffic due to their popularity. Overall, we observed an increase in adoption of AI bots in `robots.txt` files.
 
 ### `llms.txt`
 
 The <a hreflang="en" href="https://llmstxt.org/"><code>llms.txt</code> file</a> is an emerging proposal that allows a website to provide information to help LLMs use a website at inference time. Like the `robots.txt`, it is also hosted at the root of a website's domain (for example, `https://example.com/llms.txt`). Distinctively, `robots.txt` instructs (AI) bots as to what they are allowed or disallowed to crawl during training phase or inference phase, while `llms.txt` provides a structured and machine-readable format of website's content that allows large language models to discover and navigate through a website's content in real-time while answering a user's query.
+
+As `llms.txt` is relatively new, we observed very limited current usage on the web. Across desktop pages, 2.13% exhibit valid `llms.txt` entries, while 97.87% show no evidence of LLM-specific policies. Mobile showed a similar pattern, with 2.10% of pages containing valid entries and 97.90% lacking them (see the following figure).
 
 {{ figure_markup(
   image="genai-llms-txt-adoption.png",
@@ -304,8 +306,6 @@ The <a hreflang="en" href="https://llmstxt.org/"><code>llms.txt</code> file</a> 
   sheets_gid="187293662"
   )
 }}
-
-As `llms.txt` is relatively new, we observed very limited current usage on the web. Across desktop pages, 2.13% exhibit valid `llms.txt` entries, while 97.87% show no evidence of LLM-specific policies. Mobile showed a similar pattern, with 2.10% of pages containing valid entries and 97.90% lacking them (see the following figure).
 
 The overwhelming majority of sites therefore do not yet articulate explicit AI-access preferences via `llms.txt`. Where present, `llms.txt` primarily indicates that early adopters may be experimenting with facilitating AI-driven discoverability of the website or offered services via agentic use-cases or Generative AI optimization.
 
