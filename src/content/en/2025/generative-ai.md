@@ -110,12 +110,12 @@ The <a hreflang="en" href="https://webnn.io/en">Web Neural Network API</a> (WebN
 
 WebNN serves as a hardware-agnostic abstraction layer, allowing the browser to route operations to the most efficient hardware available on the device. In contrast to WebAssembly (CPU-only) and WebGPU (GPU-only), WebNN can perform computations on the CPU, GPU, and NPU. It can achieve near-native execution speeds.
 
-WebNN is in active development and is currently implemented behind a flag <a hreflang="en" href="https://webnn.io/en/api-reference/browser-compatibility/api">in Chromium-based browsers</a> on ChromeOS, Linux, macOS, Windows, and Android. In November 2025, <a hreflang="en" href="https://github.com/mozilla/standards-positions/issues/1215#issuecomment-3520278819">Firefox joined as the second engine formally supporting the API</a>. Given that WebNN is still an experimental API, the usage count is currently very low, with high fluctuation and a maximum of 0.000029% of page loads in February 2025 (see the following figure).
+WebNN is in active development and is currently implemented behind a flag <a hreflang="en" href="https://webnn.io/en/api-reference/browser-compatibility/api">in Chromium-based browsers</a> on ChromeOS, Linux, macOS, Windows, and Android. In November 2025, <a hreflang="en" href="https://github.com/mozilla/standards-positions/issues/1215#issuecomment-3520278819">Firefox joined as the second engine formally supporting the API</a>. Given that WebNN is still an experimental API, the usage count is currently very low, with high fluctuation and a maximum of 0.000029% of page loads in February 2025 according to Chrome Platform Status data (see the following figure).
 
 {{ figure_markup(
   image="genai-webnn-usage.png",
   caption="WebNN usage in 2025 according to Chrome Platform Status data.",
-  description="Bar chart showing the WebNN usage in percent per page loads according to Chrome Platform Status data throughout 2025. Adoption is extremely low and fluctuates, peaking at only 0.000029% of page loads in February, but also reaching 0% of page loads in May and July.",
+  description="Line chart showing the WebNN usage in percent per page loads according to Chrome Platform Status data throughout 2025. Adoption is extremely low and fluctuates, peaking at only 0.000029% of page loads in February, but also reaching 0% of page loads in May and July.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=2004233407&format=interactive",
   sheets_gid="939568069"
   )
@@ -132,7 +132,7 @@ From January to November 2025, npm package downloads of ONNX Runtime increased b
 {{ figure_markup(
   image="genai-runtime-downloads.png",
   caption="npm package downloads of @tensorflow/tfjs and onnxruntime-web.",
-  description="Bar chart comparing the npm package download numbers of the AI runtimes ONNX Runtime and Tensorflow.js from January to November 2025. ONNX Runtime downloads grew rapidly from 773,018 downloads in January to 2,204,245 in November, while Tensorflow.js only grew from 509,599 to 869,680 downloads in the same period.",
+  description="Line chart comparing the npm package download numbers of the AI runtimes ONNX Runtime and Tensorflow.js from January to November 2025. ONNX Runtime downloads grew rapidly from 773,018 downloads in January to 2,204,245 in November, while Tensorflow.js only grew from 509,599 to 869,680 downloads in the same period.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=2128444354&format=interactive",
   sheets_gid="815003361"
   )
@@ -147,7 +147,7 @@ WebLLM has quickly become one of the most prominent solutions for in‑browser L
 {{ figure_markup(
   image="genai-webllm-downloads.png",
   caption="npm package downloads of @mlc-ai/web-llm.",
-  description="Bar chart showing npm downloads for the @mlc-ai/web-llm package from January to November 2025. Downloads increased by 340% from 23,425 package downloads in January to 103,084 downloads in November, with a significant spike occurring in August where downloads nearly doubled from 57,114 in July to 102,440 in August.",
+  description="Line chart showing npm downloads for the @mlc-ai/web-llm package from January to November 2025. Downloads increased by 340% from 23,425 package downloads in January to 103,084 downloads in November, with a significant spike occurring in August where downloads nearly doubled from 57,114 in July to 102,440 in August.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=672596885&format=interactive",
   sheets_gid="87936740"
   )
@@ -160,7 +160,7 @@ From January to November 2025, the npm package downloads almost tripled, also wi
 {{ figure_markup(
   image="genai-tfjs-downloads.png",
   caption="npm package downloads of @huggingface/transformers.",
-  description="Bar chart showing npm downloads for the @huggingface/transformers package from January to November 2025. Downloads nearly tripled from 240,389 in January to 719,103 in November. The trend highlights a significant spike in August, reaching a year-to-date peak of 758,393.",
+  description="Line chart showing npm downloads for the @huggingface/transformers package from January to November 2025. Downloads nearly tripled from 240,389 in January to 719,103 in November. The trend highlights a significant spike in August, reaching a year-to-date peak of 758,393.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=1045307255&format=interactive",
   sheets_gid="303133226"
   )
@@ -185,7 +185,7 @@ The <a hreflang="en" href="https://www.npmjs.com/package/@types/dom-chromium-ai"
 {{ figure_markup(
   image="genai-typings-downloads.png",
   caption="npm package downloads of @types/dom-chromium-ai.",
-  description="Bar chart showing npm downloads for the @types/dom-chromium-ai package from January to November 2025. Downloads started at 2,653 in January, peaked at 25,770 in August, and followed a gradual decline to 12,478 in November.",
+  description="Line chart showing npm downloads for the @types/dom-chromium-ai package from January to November 2025. Downloads started at 2,653 in January, peaked at 25,770 in August, and followed a gradual decline to 12,478 in November.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=83152267&format=interactive",
   sheets_gid="232169116"
   )
