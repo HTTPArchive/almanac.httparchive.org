@@ -863,7 +863,7 @@ Adrian Roselli acknowledges that recent advances in computer vision and LLMs hav
 AI raises significant ethical concerns that go beyond accessibility.
 
 {{ figure_markup(
-  caption="Comparable number of gasoline cars for carbon emissions.",
+  caption="Comparable number of gasoline cars for carbon emissions needed to train an LLM.",
   content="100",
   classes="big-number",
 )
