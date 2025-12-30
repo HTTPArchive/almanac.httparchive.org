@@ -1,48 +1,89 @@
 #standardSQL
+# Robots meta/header user agent directive usage
 
-# Robots txt size by size bins (size in KiB)
-# Note: Main story is robots.txt over 500 KiB which is Google's limit
-# This is reason that size bins were used instead of quantiles
+CREATE TEMPORARY FUNCTION parseRobotsMeta(robotsMeta JSON)
+RETURNS ARRAY<STRUCT<
+  bot STRING, report STRING,
+  noindex INT64, `index` INT64, follow INT64, `none` INT64, nofollow INT64,
+  noarchive INT64, nosnippet INT64, unavailable_after INT64,
+  max_snippet INT64, max_image_preview INT64, max_video_preview INT64,
+  notranslate INT64, noimageindex INT64, nocache INT64, indexifembedded INT64
+>> LANGUAGE js AS '''
+var results = [];
+if (!robotsMeta) return results;
 
+const reports = ['main_frame_robots_rendered', 'main_frame_robots_raw', 'main_frame_robots_headers', 'iframe_robots_raw', 'iframe_robots_headers'];
+for (var i = 0; i < reports.length; i++) {
+  var report = reports[i];
+  var reportData = robotsMeta && robotsMeta[report];
 
-# helper to get robots size in kibibytes (KiB)
-# Note: Assumes mostly ASCII 1byte = 1character.  Size is collected by
-# custom measurement as string length.
-CREATE TEMPORARY FUNCTION getRobotsSize(custom_metrics_json JSON)
-RETURNS FLOAT64 LANGUAGE js AS '''
-try {
-  // NOTE: custom_metrics_json is already a JS object (no JSON.parse needed)
-  var cm = custom_metrics_json;
-  var robots = cm && cm.robots_txt;
-  return robots && robots.size ? robots.size/1024 : 0;
-} catch (e) {
-  return 0;
+  if (reportData && typeof reportData === 'object') {
+    // Map ALL bots (remove the [0] that dropped everything but the first)
+    Object.entries(reportData).forEach(function(entry){
+      var bot = entry[0], botData = entry[1] || {};
+      var row = { report: report, bot: bot };
+
+      // normalize keys and coerce to 0/1
+      Object.entries(botData).forEach(function(kv){
+        var key = String(kv[0]).replace(/-/g, '_');
+        var v = Number(kv[1]) || 0;
+        row[key] = v > 0 ? 1 : 0;
+      });
+
+      results.push(row);
+    });
+  }
 }
+return results;
 ''';
 
-SELECT
-  client,
-  COUNT(DISTINCT(site)) AS sites,
-  SAFE_DIVIDE(COUNTIF(robots_size > 0 AND robots_size <= 100), COUNT(DISTINCT(site))) AS pct_0_100,
-  SAFE_DIVIDE(COUNTIF(robots_size > 100 AND robots_size <= 200), COUNT(DISTINCT(site))) AS pct_100_200,
-  SAFE_DIVIDE(COUNTIF(robots_size > 200 AND robots_size <= 300), COUNT(DISTINCT(site))) AS pct_200_300,
-  SAFE_DIVIDE(COUNTIF(robots_size > 300 AND robots_size <= 400), COUNT(DISTINCT(site))) AS pct_300_400,
-  SAFE_DIVIDE(COUNTIF(robots_size > 400 AND robots_size <= 500), COUNT(DISTINCT(site))) AS pct_400_500,
-  SAFE_DIVIDE(COUNTIF(robots_size > 500), COUNT(DISTINCT(site))) AS pct_gt500,
-  SAFE_DIVIDE(COUNTIF(robots_size = 0), COUNT(DISTINCT(site))) AS pct_missing,
-  COUNTIF(robots_size > 500) AS count_gt500,
-  COUNTIF(robots_size = 0) AS count_missing
-FROM (
+WITH Robots_Data AS (
   SELECT
-    client AS client,
-    page AS site,
-    getRobotsSize(TO_JSON(custom_metrics)) AS robots_size
+    client,
+    page,
+    CASE
+      WHEN is_root_page = FALSE THEN 'Secondarypage'
+      WHEN is_root_page = TRUE  THEN 'Homepage'
+      ELSE 'No Assigned Page'
+    END AS is_root_page,
+    custom_metrics.other.robots_meta AS robots_meta_json
   FROM
     `httparchive.crawl.pages`
   WHERE
-    DATE = '2025-07-01'
+    date = '2025-07-01'
 )
+
+SELECT
+  client,
+  is_root_page,
+  data.bot AS bot,
+  data.report AS report,
+  COUNT(0) AS count,
+  COUNT(DISTINCT page) AS sites,
+  SAFE_DIVIDE(SUM(data.noindex), COUNT(0)) AS noindex,
+  SAFE_DIVIDE(SUM(data.`index`), COUNT(0)) AS `index`,
+  SAFE_DIVIDE(SUM(data.follow), COUNT(0)) AS follow,
+  SAFE_DIVIDE(SUM(data.`none`), COUNT(0)) AS `none`,
+  SAFE_DIVIDE(SUM(data.nofollow), COUNT(0)) AS nofollow,
+  SAFE_DIVIDE(SUM(data.noarchive), COUNT(0)) AS noarchive,
+  SAFE_DIVIDE(SUM(data.nosnippet), COUNT(0)) AS nosnippet,
+  SAFE_DIVIDE(SUM(data.unavailable_after), COUNT(0)) AS unavailable_after,
+  SAFE_DIVIDE(SUM(data.max_snippet), COUNT(0)) AS max_snippet,
+  SAFE_DIVIDE(SUM(data.max_image_preview), COUNT(0)) AS max_image_preview,
+  SAFE_DIVIDE(SUM(data.max_video_preview), COUNT(0)) AS max_video_preview,
+  SAFE_DIVIDE(SUM(data.notranslate), COUNT(0)) AS notranslate,
+  SAFE_DIVIDE(SUM(data.noimageindex), COUNT(0)) AS noimageindex,
+  SAFE_DIVIDE(SUM(data.nocache), COUNT(0)) AS nocache,
+  SAFE_DIVIDE(SUM(data.indexifembedded), COUNT(0)) AS indexifembedded
+FROM
+  Robots_Data,
+  UNNEST(parseRobotsMeta(robots_meta_json)) AS data
 GROUP BY
-  client
+  client,
+  is_root_page,
+  bot,
+  report
+HAVING
+  count >= 20
 ORDER BY
-  client DESC
+  count DESC;
