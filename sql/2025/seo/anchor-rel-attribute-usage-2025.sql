@@ -39,7 +39,7 @@ WITH rel_stats_table AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    getRelStatsWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS wpt_bodies_info
+    getRelStatsWptBodies(custom_metrics.wpt_bodies) AS wpt_bodies_info
   FROM
     `httparchive.crawl.pages`
   WHERE
