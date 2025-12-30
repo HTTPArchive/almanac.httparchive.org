@@ -3,7 +3,7 @@
 # Note: This query only reports if an attribute was ever used on a page. It is not a per iframe report.
 
 # Returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION getIframeMarkupInfo(markup_json JSON)
+CREATE TEMPORARY FUNCTION getIframeMarkupInfo(markup JSON)
 RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -22,8 +22,6 @@ function getKey(dict) {
 }
 
 try {
-    var markup = markup_json;
-
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.iframes && markup.iframes.loading) {
