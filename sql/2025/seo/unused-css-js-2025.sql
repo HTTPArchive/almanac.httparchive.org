@@ -42,4 +42,3 @@ GROUP BY
   rank_grouping
 ORDER BY
   rank_grouping;
-ORDER BY rank_grouping;
