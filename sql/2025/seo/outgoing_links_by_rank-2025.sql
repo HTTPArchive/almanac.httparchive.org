@@ -30,7 +30,8 @@ metric_details AS (
     APPROX_QUANTILES(INT64(anchors.rendered.same_site), 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_site,
     APPROX_QUANTILES(INT64(anchors.rendered.same_property), 1000)[OFFSET(percentile * 10)] AS outgoing_links_same_property,
     APPROX_QUANTILES(INT64(anchors.rendered.other_property), 1000)[OFFSET(percentile * 10)] AS outgoing_links_other_property
-  FROM page_metrics,
+  FROM
+    page_metrics,
     UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
   GROUP BY
     client,
