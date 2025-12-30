@@ -53,7 +53,7 @@ SELECT
   COUNT(DISTINCT page) AS sites,
   SAFE_DIVIDE(COUNT(0), COUNT(DISTINCT page)) AS pct_links_same_site,
   AVG(anchors_info.links_window_location) AS avg_links_window_location,
-  AVG(anchors_info.links_window_open)     AS avg_links_window_open,
+  AVG(anchors_info.links_window_open) AS avg_links_window_open,
   AVG(anchors_info.links_href_javascript) AS avg_links_href_javascript,
   AVG(anchors_info.links_window_location
     + anchors_info.links_window_open
