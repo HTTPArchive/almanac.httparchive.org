@@ -88,8 +88,6 @@ RETURNS STRUCT<
 > LANGUAGE js AS '''
 var result = {};
 try {
-  var wpt_bodies = wpt_bodies_json;
-
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
   // checks if two string arrays contain the same strings
