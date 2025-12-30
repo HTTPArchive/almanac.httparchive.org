@@ -2,7 +2,7 @@
 # Anchor rel attribute usage
 # This query reports if a rel attribute value was ever used on a page, and calculates various statistics.
 
-CREATE TEMPORARY FUNCTION getRelStatsWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getRelStatsWptBodies(wpt_bodies JSON)
 RETURNS STRUCT<
   rel ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -19,7 +19,6 @@ function getKey(dict){
   return arr;
 }
 try {
-    var wpt_bodies = wpt_bodies_json;
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
     if (wpt_bodies.anchors && wpt_bodies.anchors.rendered && wpt_bodies.anchors.rendered.rel_attributes) {
       result.rel = getKey(wpt_bodies.anchors.rendered.rel_attributes);
