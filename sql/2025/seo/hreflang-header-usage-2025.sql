@@ -56,4 +56,3 @@ GROUP BY
 ORDER BY
   sites DESC,
   client DESC;
-  client DESC;
