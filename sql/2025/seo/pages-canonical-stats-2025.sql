@@ -57,10 +57,6 @@ var result = {has_wpt_bodies: true,
 
 
 try {
-
-  var custom_metrics = custom_metrics_json;
-  var wpt_bodies = custom_metrics.wpt_bodies;
-
   if (!wpt_bodies){
       result.has_wpt_bodies = false;
       return result;
