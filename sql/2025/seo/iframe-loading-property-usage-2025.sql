@@ -41,7 +41,7 @@ WITH iframe_loading_table AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getIframeMarkupInfo(TO_JSON(custom_metrics.markup)) AS iframe_markup_info
+    getIframeMarkupInfo(custom_metrics.markup) AS iframe_markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE
@@ -64,4 +64,5 @@ GROUP BY
   iframe_markup_info
 ORDER BY
   client,
-  is_root_page
+  is_root_page,
+  iframe_markup_info

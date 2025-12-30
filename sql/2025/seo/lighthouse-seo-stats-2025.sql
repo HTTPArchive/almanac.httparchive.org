@@ -60,4 +60,5 @@ GROUP BY
   audits.id
 ORDER BY
   client,
+  is_root_page,
   id;

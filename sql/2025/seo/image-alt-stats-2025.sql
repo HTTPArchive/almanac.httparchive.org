@@ -45,7 +45,7 @@ WITH processed_data AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    get_markup_info(TO_JSON(custom_metrics.markup)) AS markup_info
+    get_markup_info(custom_metrics.markup) AS markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE

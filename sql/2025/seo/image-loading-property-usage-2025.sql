@@ -33,7 +33,7 @@ WITH image_loading AS (
     root_page,
     is_root_page,
     page,
-    getLoadingPropertyMarkupInfo(TO_JSON(custom_metrics.markup)) AS loading_property_markup_info
+    getLoadingPropertyMarkupInfo(custom_metrics.markup) AS loading_property_markup_info
   FROM
     `httparchive.crawl.pages`
   WHERE
