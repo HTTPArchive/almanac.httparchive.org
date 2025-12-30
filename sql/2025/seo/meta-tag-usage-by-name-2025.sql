@@ -2,17 +2,15 @@
 # Meta tag usage by name
 
 # returns all the data we need from _almanac
-CREATE TEMPORARY FUNCTION getMetaTagAlmanacInfo(almanac_json JSON)
+CREATE TEMPORARY FUNCTION getMetaTagAlmanacInfo(meta_nodes JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var almanac = almanac_json;
+    if (Array.isArray(meta_nodes) || typeof meta_nodes != 'object') return [];
 
-    if (Array.isArray(almanac) || typeof almanac != 'object') return [];
-
-    if (almanac && almanac["meta-nodes"] && almanac["meta-nodes"].nodes) {
-      result = almanac["meta-nodes"].nodes
+    if (meta_nodes && meta_nodes.nodes) {
+      result = meta_nodes.nodes
         .map(am => am["name"].toLowerCase().trim()) // array of meta tag names
         .filter((v, i, a) => a.indexOf(v) === i); // remove duplicates
     }
@@ -24,7 +22,7 @@ return result;
 WITH page_almanac_info AS (
   SELECT
     client,
-    getMetaTagAlmanacInfo(TO_JSON(custom_metrics.other.almanac)) AS meta_tag_almanac_info
+    getMetaTagAlmanacInfo(custom_metrics.other.almanac.`meta-nodes`) AS meta_tag_almanac_info
   FROM
     `httparchive.crawl.pages`
   WHERE
