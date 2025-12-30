@@ -32,7 +32,7 @@ SELECT
   ie.client,
   CASE
     WHEN ie.is_root_page = FALSE THEN 'Secondarypage'
-    WHEN ie.is_root_page = TRUE  THEN 'Homepage'
+    WHEN ie.is_root_page = TRUE THEN 'Homepage'
     ELSE 'No Assigned Page'
   END AS is_root_page,
   ie.element,
