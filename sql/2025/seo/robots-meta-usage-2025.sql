@@ -76,8 +76,15 @@ SELECT
   SAFE_DIVIDE(SUM(data.noimageindex), COUNT(0)) AS noimageindex,
   SAFE_DIVIDE(SUM(data.nocache), COUNT(0)) AS nocache,
   SAFE_DIVIDE(SUM(data.indexifembedded), COUNT(0)) AS indexifembedded
-FROM Robots_Data,
-UNNEST(parseRobotsMeta(robots_meta_json)) AS data
-GROUP BY client, is_root_page, bot, report
-HAVING count >= 20
-ORDER BY count DESC;
+FROM
+  Robots_Data,
+  UNNEST(parseRobotsMeta(robots_meta_json)) AS data
+GROUP BY
+  client,
+  is_root_page,
+  bot,
+  report
+HAVING
+  count >= 20
+ORDER BY
+  count DESC;
