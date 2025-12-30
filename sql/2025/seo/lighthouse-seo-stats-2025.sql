@@ -52,8 +52,9 @@ SELECT
   MAX(audits.title) AS title,
   MAX(audits.description) AS description,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client) AS total
-FROM lighthouse_extraction,
-UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
+FROM
+  lighthouse_extraction,
+  UNNEST(getAudits(JSON_EXTRACT(report, '$.audits'))) AS audits
 GROUP BY
   client,
   is_root_page,
