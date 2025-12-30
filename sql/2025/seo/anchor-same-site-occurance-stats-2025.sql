@@ -58,8 +58,16 @@ SELECT
   AVG(anchors_info.links_window_location) AS avg_links_window_location,
   AVG(anchors_info.links_window_open) AS avg_links_window_open,
   AVG(anchors_info.links_href_javascript) AS avg_links_href_javascript,
-  AVG(anchors_info.links_window_location + anchors_info.links_window_open + anchors_info.links_href_javascript) AS avg_links_any,
-  MAX(anchors_info.links_window_location + anchors_info.links_window_open + anchors_info.links_href_javascript) AS max_links_any,
+  AVG(
+    anchors_info.links_window_location +
+    anchors_info.links_window_open +
+    anchors_info.links_href_javascript
+  ) AS avg_links_any,
+  MAX(
+    anchors_info.links_window_location +
+    anchors_info.links_window_open +
+    anchors_info.links_href_javascript
+  ) AS max_links_any,
   SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
   COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct -- Secondary page percentage within group
 FROM
