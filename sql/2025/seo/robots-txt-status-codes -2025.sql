@@ -2,14 +2,12 @@
 # Robots txt status codes
 
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt_json JSON)
+CREATE TEMPORARY FUNCTION getRobotsStatusInfo(robots_txt JSON)
 RETURNS STRUCT<
   status_code STRING
 > LANGUAGE js AS '''
 var result = {};
 try {
-    var robots_txt = robots_txt_json;
-
     if (Array.isArray(robots_txt) || typeof robots_txt != 'object') return result;
 
     if (robots_txt.status) {
