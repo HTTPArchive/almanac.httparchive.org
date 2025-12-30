@@ -39,8 +39,6 @@ function allPropsAreInt(props) {
 try {
   var result = {};
 
-  var wpt_bodies = wpt_bodies_json;
-
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') {
     result.valid_data = false;
     return result;
