@@ -2,7 +2,7 @@
 # Structured data formats
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION getStructuredDataWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getStructuredDataWptBodies(wpt_bodies JSON)
 RETURNS STRUCT<
   items_by_format ARRAY<STRING>
 > LANGUAGE js AS '''
