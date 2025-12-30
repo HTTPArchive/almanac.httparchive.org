@@ -51,7 +51,8 @@ page_counts AS (
     is_root_page,
     rank,
     COUNT(DISTINCT page) AS total_pages
-  FROM page_metrics
+  FROM
+    page_metrics
   GROUP BY
     client,
     is_root_page,
