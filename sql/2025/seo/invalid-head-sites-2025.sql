@@ -28,7 +28,7 @@ SELECT
   SUM(invalidCount) AS invalidCount,
   SAFE_DIVIDE(COUNTIF(invalidHead = 'true'), COUNT(DISTINCT page)) AS pct_invalidHeads,
   COUNT(DISTINCT page) AS sites,
-  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total,
+  SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS total
 FROM
   totals
 GROUP BY
