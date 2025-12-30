@@ -45,6 +45,7 @@ overall_total_counts AS (
   GROUP BY
     client
 )
+
 SELECT
   pc.plugin,
   pc.client,
