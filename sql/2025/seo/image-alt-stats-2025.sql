@@ -2,7 +2,7 @@
 # Image alt stats
 
 # Returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION get_markup_info(markup_json JSON)
+CREATE TEMPORARY FUNCTION get_markup_info(markup JSON)
 RETURNS STRUCT<
   images_img_total INT64,
   images_with_alt_present INT64,
@@ -16,8 +16,6 @@ var result = {
   images_with_alt_missing: 0
 };
 try {
-    var markup = markup_json;
-
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.images) {
