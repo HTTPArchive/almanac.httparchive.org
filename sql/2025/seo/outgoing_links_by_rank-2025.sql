@@ -71,7 +71,8 @@ SELECT
 FROM
   metric_details
 LEFT JOIN
-  page_counts USING (client, is_root_page, rank)
+  page_counts
+USING (client, is_root_page, rank)
 ORDER BY
   client,
   is_root_page,
