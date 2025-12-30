@@ -5,7 +5,7 @@
 
 
 # JS parsing of custom_metrics
-CREATE TEMPORARY FUNCTION getCanonicalMetrics(custom_metrics_json JSON)
+CREATE TEMPORARY FUNCTION getCanonicalMetrics(wpt_bodies JSON)
 RETURNS STRUCT<
   has_wpt_bodies BOOL,
   has_canonicals BOOL,
