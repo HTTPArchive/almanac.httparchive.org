@@ -46,7 +46,7 @@ WITH Robots_Data AS (
     page,
     CASE
       WHEN is_root_page = FALSE THEN 'Secondarypage'
-      WHEN is_root_page = TRUE  THEN 'Homepage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
     TO_JSON_STRING(custom_metrics.other.robots_meta) AS robots_meta_json
