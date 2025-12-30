@@ -9,7 +9,7 @@ WITH totals AS (
     client,
     CASE
       WHEN is_root_page = FALSE THEN 'Secondarypage'
-      WHEN is_root_page = TRUE  THEN 'Homepage'
+      WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
     page,
