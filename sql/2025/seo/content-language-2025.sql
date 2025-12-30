@@ -1,12 +1,11 @@
 #standardSQL
 # Content Language
 
-CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac_json JSON)
+CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''
 var result = [];
 try {
-    var almanac = almanac_json;
 
     if (Array.isArray(almanac) || typeof almanac != 'object') return ["NO PAYLOAD"];
 
