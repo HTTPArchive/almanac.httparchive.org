@@ -2,14 +2,12 @@
 # Structured data schema types
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION getStructuredSchemaWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getStructuredSchemaWptBodies(wpt_bodies JSON)
 RETURNS STRUCT<
   jsonld_and_microdata_types ARRAY<STRING>
 > LANGUAGE js AS '''
 var result = {};
 try {
-      var wpt_bodies = wpt_bodies_json;
-
   if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
   if (wpt_bodies.structured_data && wpt_bodies.structured_data.rendered) {

@@ -23,8 +23,6 @@ function getKey(dict){
 }
 
 try {
-    var wpt_bodies = wpt_bodies_json;
-
     if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
 
     if (wpt_bodies.structured_data && wpt_bodies.structured_data.rendered && wpt_bodies.structured_data.rendered.items_by_format) {
@@ -45,7 +43,7 @@ WITH structured_data AS (
       ELSE 'No Assigned Page'
     END AS is_root_page,
     page,
-    getStructuredDataWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS structured_data_wpt_bodies_info,
+    getStructuredDataWptBodies(custom_metrics.wpt_bodies) AS structured_data_wpt_bodies_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.crawl.pages`
