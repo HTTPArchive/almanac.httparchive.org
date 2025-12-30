@@ -5,9 +5,9 @@
 SELECT
   client,
   COUNT(DISTINCT page) AS total_pages,
-  COUNTIF(JSON_QUERY(TO_JSON_STRING(payload), '$._valid-head.invalidHead') = 'true') AS pages_with_invalid_head,
-  COUNTIF(ARRAY_LENGTH(JSON_EXTRACT_ARRAY(TO_JSON_STRING(payload), '$._valid-head.invalidElements')) > 0) AS pages_with_invalid_elements,
-  SAFE_DIVIDE(COUNTIF(JSON_QUERY(TO_JSON_STRING(payload), '$._valid-head.invalidHead') = 'true'), COUNT(DISTINCT page)) AS pct_invalid_head
+  COUNTIF(JSON_VALUE(custom_metrics.other.`valid-head`.invalidHead) = 'true') AS pages_with_invalid_head,
+  COUNTIF(ARRAY_LENGTH(JSON_QUERY_ARRAY(custom_metrics.other.`valid-head`.invalidElements)) > 0) AS pages_with_invalid_elements,
+  SAFE_DIVIDE(COUNTIF(JSON_VALUE(custom_metrics.other.`valid-head`.invalidHead) = 'true'), COUNT(DISTINCT page)) AS pct_invalid_head
 FROM
   `httparchive.crawl.pages`
 WHERE
@@ -16,4 +16,4 @@ WHERE
 GROUP BY
   client
 ORDER BY
-  client 
+  client
