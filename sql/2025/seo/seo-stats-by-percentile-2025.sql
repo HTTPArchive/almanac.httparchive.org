@@ -2,7 +2,7 @@
 # SEO stats by percentile
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION get_wpt_bodies_info(wpt_bodies JSON)
 RETURNS STRUCT<
   title_words INT64,
   title_characters INT64,
