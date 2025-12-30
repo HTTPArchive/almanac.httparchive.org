@@ -15,6 +15,7 @@ WITH labeled AS (
     date = '2025-07-01' AND
     is_root_page = TRUE
 )
+
 SELECT
   client,
   bucket,
