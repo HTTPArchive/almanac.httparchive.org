@@ -4,7 +4,7 @@ title: Generative AI
 description: Generative AI chapter of the 2025 Web Almanac covering the transition to local browser-based AI, the adoption of WebNN and Built-in AI, new discoverability standards like llms.txt, and the emergence of AI fingerprints on the web.
 hero_alt: Hero image illustrating an AI-assisted web development workflow. Source code and image assets, marked with stars to indicate AI generation, flow into a pipeline where a red character feeds tokens and a blue brain-like character oversees the process, resulting in a fully rendered web page displayed in a browser window.
 authors: [christianliebel, Yash-Vekaria, JonathanPagel]
-reviewers: [tomayac, umariqbal]
+reviewers: [tomayac, umariqbal, webmaxru]
 analysts: [JonathanPagel, christianliebel, tomayac]
 editors: [christianliebel]
 translators: []
