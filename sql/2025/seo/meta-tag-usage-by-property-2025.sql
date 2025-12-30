@@ -33,7 +33,7 @@ WITH page_almanac_info AS (
     getMetaTagPropertyInfo(custom_metrics.other.almanac.`meta-nodes`)
       AS meta_tag_property_almanac_info
   FROM
-    `httparchive.crawl.pages` 
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01'
 ),
