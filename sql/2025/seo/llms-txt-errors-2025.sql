@@ -13,6 +13,7 @@ WITH found AS (
     is_root_page = TRUE AND
     custom_metrics.other.llms_txt_validation IS NOT NULL
 )
+
 SELECT
   valid,
   error,
