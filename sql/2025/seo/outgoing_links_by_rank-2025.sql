@@ -17,7 +17,8 @@ WITH page_metrics AS (
     page,
     is_root_page,
     rank
-  HAVING rank IS NOT NULL
+  HAVING
+    rank IS NOT NULL
 ),
 
 metric_details AS (
