@@ -42,7 +42,10 @@ SELECT
 FROM
   invalid_elements ie
 JOIN
-  total_sites ts ON ie.client = ts.client AND ie.is_root_page = ts.is_root_page
+  total_sites ts
+ON
+  ie.client = ts.client AND
+  ie.is_root_page = ts.is_root_page
 GROUP BY
   ie.client,
   is_root_page,
