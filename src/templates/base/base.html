@@ -106,7 +106,9 @@
 
 {% endblock %}
 
-{% block call_for_contributors_link %}https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062{% endblock %}
+{# Add github link to discussion to enable the Call for Contributors link #}
+{# See: https://github.com/HTTPArchive/almanac.httparchive.org/pull/4173/files #}
+{% block call_for_contributors_link %}{% endblock %}
 
 {% block contributors %}{{ config.contributors.keys() | length }}{% endblock %}
 
@@ -247,7 +249,7 @@
     {% endif %}
 
     {% if ebook_size_in_mb and ebook_size_in_mb > 0 %}
-    <option value="https://cdn.httparchive.org/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
+    <option value="https://cdn.httparchive.org/v1/static/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click">
       {{ self.ebook_download_short() }}
     </option>
     {% endif %}
@@ -376,7 +378,7 @@
       <a href="{{ url_for('table_of_contents', year=year, lang=lang, _anchor='ebook') }}">{{ self.ebook_title() }}</a>
     </li>
     <li class="nav-dropdown-list-chapter ebook">
-      <a href="https://cdn.httparchive.org/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
+      <a href="https://cdn.httparchive.org/v1/static/almanac/ebooks/web_almanac_{{ year }}_{{ lang }}.pdf" data-event="ebook-click" data-label="toc-menu">{{ self.ebook_download_short() }}</a>
     </li>
     {% endif %}
   </ul>

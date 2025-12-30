@@ -8,7 +8,7 @@ TEMPLATES_DIR = ROOT_DIR + "/templates"
 STATIC_DIR = ROOT_DIR + "/static"
 
 SUPPORTED_YEARS = []
-DEFAULT_YEAR = "2024"
+DEFAULT_YEAR = "2025"
 
 DEFAULT_AVATAR_FOLDER_PATH = "/static/images/avatars/"
 AVATAR_SIZE = 200
@@ -23,12 +23,10 @@ contributors = {}
 
 
 def get_config(year):
-    global config_json
     return config_json[year] if year in config_json else None
 
 
 def get_timestamps_config():
-    global timestamps_json
     return timestamps_json
 
 
@@ -68,10 +66,6 @@ def get_live(json_config):
 
 
 def update_config():
-    global SUPPORTED_YEARS
-    global SUPPORTED_CHAPTERS
-    global SUPPORTED_LANGUAGES
-    global config_json
     global timestamps_json
     global contributors
 

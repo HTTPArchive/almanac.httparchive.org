@@ -254,4 +254,4 @@ def redirect_old_hero_images(folder, image):
 # Redirect requests for the pdfs to GitHub
 @app.route("/static/pdfs/<pdf>")
 def redirect_pdfs(pdf):
-    return redirect("https://cdn.httparchive.org/almanac/ebooks/%s" % (pdf)), 301
+    return redirect("https://cdn.httparchive.org/v1/static/almanac/ebooks/%s" % (pdf)), 301
