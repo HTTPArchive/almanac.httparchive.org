@@ -173,7 +173,9 @@ Modern CSS includes [User Preference Media Queries](https://developer.mozilla.or
   description="A bar chart comparing the share of pages that use various user preference media features on desktop and mobile. The most widely used feature is `prefers-reduced-motion`, appearing on about half of both desktop (49.99%) and mobile (50.55%) pages. `-ms-high-contrast` and `forced-colors` also show notable usage, at around 21% and 16% on desktop and 20% and 19% on mobile, respectively. Other features, such as `prefers-color-scheme` (about 13% on both platforms) and `prefers-contrast` (around 1%), are used much less, while several legacy or experimental features appear on virtually no pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1063383428&format=interactive",
   sheets_gid="1601070335",
-  sql_file="media_query_features.sql"
+  sql_file="media_query_features.sql",
+  width=600,
+  height=551
   )
 }}
 
@@ -729,10 +731,10 @@ ARIA live regions are critical for making dynamically changing content accessibl
   <table>
     <thead>
       <tr>
-        <th>role</th>
-        <th>desktop</th>
-        <th>mobile</th>
-        <th>Implicit aria-live value</th>
+        <th>Role</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+        <th>Implicit <code>aria-live</code> value</th>
       </tr>
     </thead>
     <tbody>
