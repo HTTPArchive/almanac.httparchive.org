@@ -1,5 +1,5 @@
 # Create a temporary function to extract the loading properties from the markup
-CREATE TEMPORARY FUNCTION getLoadingPropertyMarkupInfo(markup_json JSON)
+CREATE TEMPORARY FUNCTION getLoadingPropertyMarkupInfo(markup JSON)
 RETURNS STRUCT<
   loading ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -18,8 +18,6 @@ function getKey(dict){
 }
 
 try {
-    var markup = markup_json;
-
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.images && markup.images.img && markup.images.img.loading) {
