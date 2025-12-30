@@ -28,7 +28,7 @@ FROM
   (
     SELECT
       client,
-      getRobotsStatusInfo(TO_JSON(custom_metrics.robots_txt)) AS robots_txt_status_info
+      getRobotsStatusInfo(custom_metrics.robots_txt) AS robots_txt_status_info
     FROM
       `httparchive.crawl.pages`
     WHERE
