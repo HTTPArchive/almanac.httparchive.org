@@ -3,7 +3,7 @@
 
 
 # returns all the data we need from _markup
-CREATE TEMPORARY FUNCTION getMarkupStatsInfo(markup_json JSON)
+CREATE TEMPORARY FUNCTION getMarkupStatsInfo(markup JSON)
 RETURNS STRUCT<
   images_img_total INT64,
   images_alt_missing_total INT64,
@@ -24,8 +24,6 @@ var result = {
   has_html_amp_emoji_attribute: false
 };
 try {
-    var markup = markup_json;
-
     if (Array.isArray(markup) || typeof markup != 'object') return result;
 
     if (markup.images) {
