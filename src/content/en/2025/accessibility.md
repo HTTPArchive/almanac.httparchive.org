@@ -8,7 +8,7 @@ reviewers: [hidde, atierney, scottdavis99]
 analysts: [mgifford, tunetheweb]
 editors: [tricinel]
 translators: []
-tricinel_bio: Bogdan is the accessibility consultant who helps product owners ship accessible websites without blocking ongoing work. He brings over a deade of experience in education and healthcare, with deep expertise in inclusive design and web accessibility. He's been writing a <a hreflang="en" href="https://dailyaccessibility.com">daily newsletter</a> on accessibility since March 2024, driven by one core belief. "Make room for everyone."
+tricinel_bio: Bogdan is the accessibility consultant who helps product owners ship accessible websites without blocking ongoing work. He brings over a decade of experience in education and healthcare, with deep expertise in inclusive design and web accessibility. He's been writing a <a hreflang="en" href="https://dailyaccessibility.com">daily newsletter</a> on accessibility since March 2024, driven by one core belief. "Make room for everyone."
 mgifford_bio: Mike Gifford is CivicActions' Open Standards & Practices Lead. He is also a thought leader on open government, digital accessibility and sustainability. He has served as a Drupal Core Accessibility Maintainer and also a W3C Invited Expert. He is a recognized authoring tool accessibility expert and contributor to the W3C's Draft Web Sustainability Guidelines (WSG) 1.0.
 results: https://docs.google.com/spreadsheets/d/13sY_wmYODArxo-hH5cSuRAbvtLdGI3x5Xc9qUyqP8as/
 featured_quote: The web should work for everyone. Until that principle guides our decisions, accessibility gaps will persist.
