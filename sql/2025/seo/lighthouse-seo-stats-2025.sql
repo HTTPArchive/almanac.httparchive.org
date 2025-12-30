@@ -35,8 +35,10 @@ WITH lighthouse_extraction AS (
       WHEN is_root_page = TRUE  THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page
-  FROM `httparchive.crawl.pages`
-  WHERE date = '2025-07-01'
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
 )
 
 SELECT
