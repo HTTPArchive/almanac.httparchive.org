@@ -2,7 +2,7 @@
 # hreflang header usage
 
 # Returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION getHreflangWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getHreflangInfo(hreflang JSON)
 RETURNS STRUCT<
   hreflangs ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -11,12 +11,10 @@ var result = {
 };
 
 try {
-    var wpt_bodies = wpt_bodies_json;
+    if (Array.isArray(hreflang) || typeof hreflang != 'object') return result;
 
-    if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
-
-    if (wpt_bodies.hreflangs && wpt_bodies.hreflangs.http_header && wpt_bodies.hreflangs.http_header.values) {
-        result.hreflangs = wpt_bodies.hreflangs.http_header.values.map(v => v); // seems to fix a coercion issue!
+    if (hreflang && hreflang.http_header && hreflang.http_header.values) {
+        result.hreflangs = hreflang.http_header.values.map(v => v); // seems to fix a coercion issue!
     }
 
 } catch (e) {}
@@ -33,7 +31,7 @@ WITH hreflang_usage AS (
       WHEN is_root_page = TRUE THEN 'Homepage'
       ELSE 'No Assigned Page'
     END AS is_root_page,
-    getHreflangWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS hreflang_wpt_bodies_info
+    getHreflangInfo(custom_metrics.wpt_bodies.hreflangs) AS hreflang_info
   FROM
     `httparchive.crawl.pages`
   WHERE
@@ -50,11 +48,12 @@ SELECT
   COUNT(0) / SUM(COUNT(DISTINCT page)) OVER (PARTITION BY client, is_root_page) AS pct
 FROM
   hreflang_usage,
-  UNNEST(hreflang_wpt_bodies_info.hreflangs) AS hreflang
+  UNNEST(hreflang_info.hreflangs) AS hreflang
 GROUP BY
   hreflang,
   client,
   is_root_page
 ORDER BY
   sites DESC,
+  client DESC;
   client DESC;
