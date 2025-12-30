@@ -1,9 +1,6 @@
 #standardSQL
 
--- valid = TRUE means "present" or "exists" 
-#standardSQL
-
--- valid = TRUE means "present" or "exists" 
+-- valid = TRUE means "present" or "exists"
 WITH labeled AS (
   SELECT
     client,
