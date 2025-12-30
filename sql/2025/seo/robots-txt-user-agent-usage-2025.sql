@@ -3,7 +3,7 @@
 
 
 # returns all the data we need from _robots_txt
-CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt_json JSON)
+CREATE TEMPORARY FUNCTION getRobotsTxtUserAgents(robots_txt JSON)
 RETURNS STRUCT<
   user_agents ARRAY<STRING>
 > LANGUAGE js AS '''
@@ -11,7 +11,6 @@ var result = {
   user_agents: []
 };
 try {
-    var robots_txt = robots_txt_json;
     var uas = robots_txt.record_counts.by_useragent;
     result.user_agents  = typeof uas === 'object' ? Object.keys(uas).map(ua => ua.toLowerCase()) : [];
 } catch (e) {}
