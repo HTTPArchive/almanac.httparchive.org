@@ -157,7 +157,7 @@ SELECT
 FROM (
   SELECT
     client AS client,
-    getCanonicalMetrics(TO_JSON(custom_metrics)) AS canonical_metrics
+    getCanonicalMetrics(custom_metrics.wpt_bodies) AS canonical_metrics
   FROM
     `httparchive.crawl.pages`
   WHERE
