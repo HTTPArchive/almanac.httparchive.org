@@ -44,7 +44,7 @@ WITH same_links_info AS (
       ELSE 'No Assigned Page'
     END
       AS is_root_page,
-    getLinkDesciptionsWptBodies(TO_JSON(custom_metrics.wpt_bodies)) AS wpt_bodies_info
+    getLinkDesciptionsWptBodies(custom_metrics.wpt_bodies.anchors) AS anchors_info
   FROM
     `httparchive.crawl.pages`
   WHERE
