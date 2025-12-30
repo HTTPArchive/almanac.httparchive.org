@@ -4,7 +4,7 @@
 # Note: Canonical metrics moved to pages-canonical-stats.sql.  Should be removed from here in 2022.
 
 # returns all the data we need from _wpt_bodies
-CREATE TEMPORARY FUNCTION getSeoStatsWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getSeoStatsWptBodies(wpt_bodies JSON)
 RETURNS STRUCT<
 
   # tags
