@@ -59,7 +59,9 @@ FROM
 CROSS JOIN
   UNNEST(p.meta_tag_property_almanac_info) AS meta_tag_property
 JOIN
-  total_pages t ON p.client = t.client
+  total_pages t
+ON
+  p.client = t.client
 GROUP BY
   t.total,
   meta_tag_property,
