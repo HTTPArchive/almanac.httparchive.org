@@ -22,7 +22,7 @@ WITH robots AS (
   SELECT
     client,
     root_page,
-    getRobotsTxtUserAgents(TO_JSON(custom_metrics.robots_txt)) AS robots_txt_user_agent_info,
+    getRobotsTxtUserAgents(custom_metrics.robots_txt) AS robots_txt_user_agent_info,
     COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_sites
   FROM
     `httparchive.crawl.pages`
