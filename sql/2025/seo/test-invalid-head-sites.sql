@@ -11,8 +11,8 @@ SELECT
 FROM
   `httparchive.crawl.pages`
 WHERE
-  date = '2025-07-01'
-  AND is_root_page = TRUE
+  date = '2025-07-01' AND
+  is_root_page = TRUE
 GROUP BY
   client
 ORDER BY
