@@ -68,9 +68,10 @@ SELECT
   outgoing_links_same_site,
   outgoing_links_same_property,
   outgoing_links_other_property
-FROM metric_details
-LEFT JOIN page_counts
-USING (client, is_root_page, rank)
+FROM
+  metric_details
+LEFT JOIN
+  page_counts USING (client, is_root_page, rank)
 ORDER BY
   client,
   is_root_page,
