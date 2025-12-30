@@ -2,7 +2,7 @@
 # Anchor same site occurrence stats
 # This query aims to highlight sites with few same-site links, like SPAs.
 
-CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(wpt_bodies_json JSON)
+CREATE TEMPORARY FUNCTION getLinkDesciptionsWptBodies(anchors JSON)
 RETURNS STRUCT<
   links_same_site INT64,
   links_window_location INT64,
@@ -16,12 +16,10 @@ var result = {
   links_href_javascript: 0
 };
 try {
-  var wpt_bodies = wpt_bodies_json;
+  if (Array.isArray(anchors) || typeof anchors != 'object') return result;
 
-  if (Array.isArray(wpt_bodies) || typeof wpt_bodies != 'object') return result;
-
-  if (wpt_bodies.anchors && wpt_bodies.anchors.rendered) {
-      var anchors_rendered = wpt_bodies.anchors.rendered;
+  if (anchors && anchors.rendered) {
+      var anchors_rendered = anchors.rendered;
 
       result.links_same_site = anchors_rendered.same_site || 0;
       result.links_window_location = anchors_rendered.same_page.dynamic.onclick_attributes.window_location || 0;
