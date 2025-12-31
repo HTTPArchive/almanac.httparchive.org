@@ -37,7 +37,7 @@ featured_stat_label_3: Structured data adoption reached 50% of all pages
 doi: ""
 ---
 
-## Introduction  {#introduction}
+## Introduction
 
 Search Engine Optimization (SEO) continues to play a central role in how information is discovered and understood online. It encompasses the technical, structural, and content practices that determine whether a website can be effectively crawled, indexed, and surfaced in search results.
 
@@ -47,7 +47,7 @@ This 2025 SEO chapter of the Web Almanac draws its data and insights from the HT
 
 While many SEO metrics have stabilized across the web, the context surrounding them is changing rapidly. The rise of AI crawlers, emergence of `llms.txt` and a growing emphasis on machine readability suggest that optimization is no longer only about being *found* by bots, but about being *understood* by them. How will these changing contexts in online search influence optimization moving forward  and how do the latest data points already reflect AI's influence on SEO?
 
-## Crawlability & indexability {#crawlability-&-indexability}
+## Crawlability & indexability
 
 For web content to gain visibility in search results, it must first be crawled and indexed by search engine crawlers.  Crawlability determines whether bots can  find and access a page, while indexability defines whether that page is eligible to appear in search results. Together, these concepts form the foundational elements of search visibility. A page cannot rank or be served to users if it cannot first be found and understood by the bots. Similarly, content cannot be cited on AI platforms unless a site is indexable.
 
@@ -55,7 +55,7 @@ For web content to gain visibility in search results, it must first be crawled a
 
 At the same time, as [Cloudflare explains](https://www.cloudflare.com/learning/bots/what-is-robots-txt/), `robots.txt` functions more as a code of conduct than a command that will always be obeyed. While reputable bots respect these signals, others may ignore them entirely. This mix of cooperation and unpredictability defines the modern crawling environment and sets the stage for examining how sites actually manage crawler access.
 
-### **Robots.txt** {#robots.txt}
+### **Robots.txt**
 
 Serving as the web's de facto "visitors' center" for crawlers, the `robots.txt` file is where bots learn which parts of a site are open or restricted. Since the [IETF's standardization](https://www.ietf.org/about/) of the Robots Exclusion Protocol ([RFC 9309](https://datatracker.ietf.org/doc/html/rfc9309)) three years ago, its syntax, caching behavior, and error handling have been clearly defined, providing a stable framework for how crawlers interpret access rules.
 
@@ -63,7 +63,7 @@ Efforts to refine that framework are ongoing. In late 2024, the [IETF introduced
 
 For now, however, the `robots.txt` file remains the foundation of crawl management. Most websites now serve a valid file, with only a small minority omitting it entirely. Among those that do, site owners typically favor simple, universal directives rather than complex, bot-specific rules. The sections that follow examine how these preferences appear in the 2025 data.
 
-#### **Robots.txt status codes** {#robots.txt-status-codes}
+#### **Robots.txt status codes**
 
 In 2025, 84.88% (desktop) and 84.94% (mobile) of requests for `robots.txt` files returned valid 200 status codes, up from 83.5% (desktop) and 83.9% (mobile) in 2024\. The steady rise suggests ongoing trickle-down from the 2022 standardization and wider CMS defaults that serve valid `robots.txt` files. Importantly, however, a 200 response only confirms that a file exists. It does not guarantee that its directives are correct or beneficial to the site.
 
@@ -83,7 +83,7 @@ Timeouts are \~1.0% (0.97% desktop; 1.05% mobile), 403 responses are \~0.5%, and
   )
 }}
 
-#### **Robots.txt file size** {#robots.txt-file-size}
+#### **Robots.txt file size**
 
 Nearly all `robots.txt` files stay well under size limits ([Google enforces a 500 KB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#:~:text=Google%20enforces%20a%20robots.,the%20size%20of%20the%20robots.) parsing cutoff) and comply with standards such as not serving an empty file.
 
@@ -106,7 +106,7 @@ Robots.txt file size rarely poses a barrier to crawlability. The more pressing i
   )
 }}
 
-#### **Robots.txt user agent usage** {#robots.txt-user-agent-usage}
+#### **Robots.txt user agent usage**
 
 The catch-all user agent `*` is the most common approach to crawler directives  found in `robots.txt` files today. In 2025, it appeared in 77.04% of desktop and 77.14% of mobile files—up from 76.6% (desktop) and 76.9% (mobile) in 2024, and from the mid-70% range in 2022\. The steady rise indicates that most site owners prefer to implement broad, universal rules rather than maintaining complex bot-specific instructions.
 
@@ -124,11 +124,11 @@ Other named crawlers that appeared in notable volumes this year include:
 
 * Nutch: 5.03% desktop / 4.81% mobile
 
-##### **Bingbot rarely named in robots.txt**  {#bingbot-rarely-named-in-robots.txt}
+##### **Bingbot rarely named in robots.txt**
 
 Bingbot ranks 22nd among named user agents in `robots.txt` files and appears in less than 3% of `robots.txt` (2.67% desktop and 2.57% mobile). When a bot appears in `robots.txt` files, it means website managers care enough about that crawler to explicitly control its behavior, either allowing it, restricting it, or setting crawl rates. Low appearance rates suggest benign neglect. Despite Microsoft's massive [investment in AI](https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/) and its integration of [ChatGPT into Bing](https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/), the crawler itself hasn't become more prominent in `robots.txt` files. Even with its AI enhancements, Bing's web footprint and importance to site operators remain largely unchanged, a quiet contrast to the rapid rise of AI-focused crawlers like GPTbot named in `robots.txt` files (more on that below).
 
-##### **Slight growth in use of named user agents** {#slight-growth-in-use-of-named-user-agents}
+##### **Slight growth in use of named user agents**
 
 Overall, compared to 2024, a slightly larger share of `robots.txt` files in 2025 include directives for named crawlers rather than relying solely on the universal wildcard \*. For instance, MJ12Bot rose from 6.6% (mobile) last year to 7.3% (mobile) in 2025, Googlebot rose from 6.4% (mobile) to 6.7% (mobile), and Nutch from 4.3% (mobile) to 4.81% (mobile) this year.  These modest gains point to gradual refinement — more site owners are setting tailored crawl rules where it matters, without moving away from the simplicity of universal controls.
 
@@ -156,7 +156,7 @@ The continued dominance of `*` alongside rising mentions of specific bots in `ro
   )
 }}
 
-##### **AI crawlers named in robots.txt** {#ai-crawlers-named-in-robots.txt}
+##### **AI crawlers named in robots.txt**
 
 The rise of AI crawlers has transformed `robots.txt` from a traditional search optimization tool into a broader mechanism for managing content permissions. In 2025, directives targeting AI-related bots showed substantial growth from 2024 levels.
 
@@ -189,13 +189,13 @@ Robots.txt has become a dual-purpose control point, balancing visibility in sear
   )
 }}
 
-## llms.txt {#llms.txt}
+## llms.txt
 
 The `llms.txt` file has been proposed as a new standard ​​"to provide information to help LLMs use a website at inference time. (Per [llmstxt.org](http://llmstxt.org).)This text file contains a highly simplified version of the website's content in Markdown format, with a view toward making it easier for LLMs to ingest and subsequently use in generated responses.
 
 This standard, has, it must be noted, not been adopted widely and has become a point of controversy within the broader SEO industry. Google has often stated that they do not use `llms.txt`, and [no Google service currently does](https://www.seroundtable.com/google-ai-llms-txt-39607.html). Anthropic, however, has [taken a lead on `llms.txt`,](https://docs.claude.com/llms-full.txt), raising optimism that the format may evolve into a reliable mechanism for managing and optimizing content utilization during model inference.
 
-### llms.txt, adoption rate {#llms.txt,-adoption-rate}
+### llms.txt, adoption rate
 
 Regardless of whether using `llms.txt` proves to be a valid approach for SEO or AI optimization, the introduction of a new file format and proposed standard like this could influence how websites are built and optimized moving forward.
 
@@ -223,7 +223,7 @@ This was gleaned by the comments these CMS extensions leave (by default) in the 
 
 Over the last 9+ months (since January 2025), [interest in this emerging standard has grown](https://trends.google.com/trends/explore?q=llms.txt&hl=en-GB) and hinges on just one or two key AI companies' recognition. The 2026 numbers will be interesting to see, nonetheless.
 
-## Robots directives {#robots-directives}
+## Robots directives
 
 A robots directive provides page-level control over how a specific page is indexed and displayed in search results. While they have a similar function to robots.txt files, the two serve different purposes:
 
@@ -232,7 +232,7 @@ A robots directive provides page-level control over how a specific page is index
 
 For a directive to be applied, the crawler must be able to access the page. If a page is blocked by robots.txt, its directives may never be seen or obeyed.
 
-### Robots directives implementation {#robots-directives-implementation}
+### Robots directives implementation
 
 There are two main ways to implement robots directives:
 
@@ -261,7 +261,7 @@ The number of pages implementing meta robots increased from 45.5% (desktop) and 
 
 Some pages (0.4% on both desktop and mobile) have both Meta robots and X-Robot-Tag implemented at the same time. This figure of 0.4% is stable from last year but this is not a widely recommended practice, as it  increases the likelihood of generating  conflicting signals between the two methods of implementation.
 
-#### Robots directives rules {#robots-directives-rules}
+#### Robots directives rules
 
 The method of implementation is only part of the picture when it comes to robots directives; [the directive rules](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#directives) determine how the page or document should be handled.
 
@@ -319,7 +319,7 @@ The most-named crawlers within this attribute are consistent with 2024: Bingbot,
 
 MSNbot is a legacy crawler that has been replaced by Bingbot. Its continued presence in robots directives suggests a delay in updating or removing outdated crawler names. Additional evidence of this lag can be seen in the fact that newer robots rules—such as "max_image_preview", "max_snippet", and "max_video_preview"—are commonly applied to Googlebot and Bingbot, but not to MSNbot.
 
-### Indexifembedded tag {#indexifembedded-tag}
+### Indexifembedded tag
 
 A now well-established Meta robots rule, **indexifembedded** is a highly specific tag that enables us to specify when we want iframe content to be treated as being part of the page which it is embedded on. This needs to be paired with "noindex" in order to work, and is a rule which only Google currently supports.
 
@@ -335,7 +335,7 @@ A now well-established Meta robots rule, **indexifembedded** is a highly specifi
 
 Within iFrame content, the indexifembedded rule is found almost 90% of the time (88.89% on desktop, 87.67% on mobile). What is interesting is that after seeing raises in use from 2022 to 2024, 2025 saw a decline from 99.9% use.
 
-### Invalid \<head\> elements {#invalid-<head>-elements}
+### Invalid \<head\> elements
 
 Search engine crawlers follow HTML standards when parsing content. One issue they may encounter is when invalid HTML elements are found within the \<head\> of the page. This can cause the \<head\> to be treated as implicitly ending early, and all remaining \<head\> elements are then included within the \<body\> of the page.
 
@@ -384,7 +384,7 @@ For invalid \<img\> tags, 2024 saw a sharp increase from 2022, whereas 2025's re
 
 \<div\> tags have no noticeable change at 11.5% on desktop and 10.64% on mobile. \<a\> tags similarly have seen no significant change from last year at 5.16% (desktop) and 4.88% (mobile).
 
-## Canonicalization  {#canonicalization}
+## Canonicalization
 
 `Canonical` tags tell search engines which version of a page is the main one when there are duplicates or near-duplicates. Without them, crawlers may split ranking signals, waste crawl budget, and show the wrong URL in search results. With them, all authority and indexing preferences point to a single, definitive page.
 
@@ -404,7 +404,7 @@ We have  seen another increase in `canonical` tag usage, up from 65% on both mob
 
 A page is "canonicalized" when its canonical URL points to a page which is not itself. Canonicalized pages have also seen an increase this year, up from 6% (desktop) and 8% (mobile)  in 2024 to 7% (desktop) and 9% (mobile) in 2025\.
 
-### Canonical implementation {#canonical-implementation}
+### Canonical implementation
 
 `Canonical` tags, similar to Meta robots, can be implemented as part of the HTTP response or within the `head` of the page. The motivations behind each implementation method may be dependent on your platform and requirements, with associated pros and cons.
 
@@ -432,7 +432,7 @@ For JavaScript-driven pages, the `canonical` tag is often inserted or updated in
 
 In 2025's data, we see that the raw HTML canonical numbers at 64.4% (desktop) and 64.27% (mobile)are on par with 2024's data. The rendered canonicals, however, have seen an increase in 2025 to 66% (desktop) 66.1% (mobile), compared to 64% (desktop) and 65% (mobile) last year.
 
-### Canonical conflicts {#canonical-conflicts}
+### Canonical conflicts
 
 While rendering the `canonical` tag within the `head` can work, it introduces more room for error, so a static, server-side `canonical` tag is generally the safer option. Where the `canonical` tags mismatch, it undermines their usage and can cause unexpected results. Canonical mismatches saw a 0.1% drop from 2024's numbers, decreasing 0.8% (on desktop and mobile) to 0.7% this year.
 
@@ -450,13 +450,13 @@ While rendering the `canonical` tag within the `head` can work, it introduces mo
   )
 }}
 
-## Page experience {#page-experience}
+## Page experience
 
 Page experience captures how users actually feel when interacting with a web page beyond what the content says or how well it ranks. Originally introduced by Google as part of its ranking systems in 2020, these signals measure usability factors such as page speed, mobile responsiveness, visual stability, and security. While Google has since folded the standalone page experience system into its [core ranking framework](https://developers.google.com/search/blog/2020/11/timing-for-page-experience), the underlying metrics continue to guide both SEO and UX best practices.
 
 In 2025, the data reflects a web that's technically mature but still uneven in experience quality. HTTPS adoption is nearly universal, mobile-friendliness is now an expectation rather than a differentiator, and Core Web Vitals (CWV) have become the industry standard for quantifying real-world performance. Yet, even with these advances, friction points, ranging from slow rendering to inconsistent interactivity, still persist, reminding site owners that user experience is as much about consistency as compliance.
 
-### **HTTPS** {#https}
+### **HTTPS**
 
 HTTPS was introduced to secure data exchanges between users and websites, protecting information from interception or tampering. It later became a [formal ranking signal](https://developers.google.com/search/blog/2014/08/https-as-ranking-signal) in Google's algorithm.
 
@@ -475,11 +475,11 @@ Still, full universal encryption isn't trivial. [Google's transparency reports](
   )
 }}
 
-### Mobile-friendliness {#mobile-friendliness}
+### Mobile-friendliness
 
 Google completed its migration to mobile-first indexing in 2023, meaning the mobile version of websites now determines search rankings. The following data examines how widely sites have adopted mobile-friendly design practices in response.
 
-#### Viewport meta tag  {#viewport-meta-tag}
+#### Viewport meta tag
 
 The `viewport` meta tag defines how a page scales and displays across different screen sizes, making it a key element of responsive web design. Introduced with the rise of mobile browsing, it ensures that content adapts smoothly to various devices without forcing users to zoom or scroll horizontally.
 
@@ -496,7 +496,7 @@ Use of the `viewport` meta tag is almost universal, appearing on 93.1% of deskto
   )
 }}
 
-#### Vary header usage {#vary-header-usage}
+#### Vary header usage
 
 Once a standard tool for dynamic serving, the Vary: User-Agent header is now nearly extinct. In 2025, only about 1% of pages include it, with nearly all sites opting for unified rendering. This shift aligns with the widespread adoption of the `viewport` meta tag (over 95%) and Google's move to mobile-first indexing, which reduced the need to maintain separate mobile and desktop versions of a site. The web has largely consolidated around responsive, single-version design.
 
@@ -511,7 +511,7 @@ Once a standard tool for dynamic serving, the Vary: User-Agent header is now nea
   )
 }}
 
-### Legible font sizes {#legible-font-sizes}
+### Legible font sizes
 
 Legibility is one of the most fundamental aspects of mobile experience. Users should be able to read content comfortably without zooming or straining, and accessibility standards reinforce that. According to the Web Content Accessibility Guidelines ([WCAG](https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html#)), body text should be at least 16px (1rem), with the ability to scale up to 200% without breaking layout or functionality.
 
@@ -528,7 +528,7 @@ Legibility is one of the most fundamental aspects of mobile experience. Users sh
   )
 }}
 
-### Core Web Vitals {#core-web-vitals}
+### Core Web Vitals
 
 Core Web Vitals (CWV) measure how real users experience a page, focusing on loading (Largest Contentful Paint, LCP), interactivity (now measured by Interaction to Next Paint, INP), and visual stability (Cumulative Layout Shift, CLS).
 
@@ -561,7 +561,7 @@ The visible flattening from late 2023 onward likely reflects the transition towa
   )
 }}
 
-### Image \`loading\` property usage {#image-`loading`-property-usage}
+### Image \`loading\` property usage
 
 The `loading` attribute tells the browser when to fetch and render an image. it is a built-in performance hint that helps balance speed and resource use. Two main values shape how it behaves:
 
@@ -616,7 +616,7 @@ The dominance of missing image loading attributes suggests lazy loading adoption
   )
 }}
 
-### \`lazy\` loading vs. \`eager\` loading iframes {#`lazy`-loading-vs.-`eager`-loading-iframes}
+### \`lazy\` loading vs. \`eager\` loading iframes
 
 Simply adding `loading="lazy"` to an iframe delays loading until it is near the viewport, saving around 500KB for a [YouTube embed](https://web.dev/articles/iframe-lazy-loading) or [200KB for a Facebook widget](https://web.dev/learn/performance/lazy-load-images-and-iframe-elements). Yet, iframe loading attributes remain significantly underutilized in 2025, with 91.5% of desktop pages and 91.2% of mobile pages lacking any declared iframe loading properties—down only slightly from 92.8% (desktop) and 92.6% (mobile) in 2024\.
 
@@ -637,11 +637,11 @@ This also ties to developer prioritization: teams typically focus on optimizing 
   )
 }}
 
-## On-Page {#on-page}
+## On-Page
 
 Page structure still matters in the current AI-driven landscape. Titles, meta descriptions, and headings communicate meaning and intent, while media attributes reinforce clarity and accessibility. The 2025 data shows overall stability in how these elements are used, with only minor shifts reflecting incremental adjustments rather than major changes.
 
-### **Metadata** {#metadata}
+### **Metadata**
 
 Title tag adoption remains nearly universal, climbing slightly in 2025 to 98.62% of desktop pages and 98.54% of mobile pages, up from 2024's 98.0% desktop and 98.2% mobile rates. This steadiness reflects the element's enduring role in SEO strategy despite widespread title rewrites in search results. Publishers seem to still view title tags as foundational regardless of display control.
 
@@ -658,7 +658,7 @@ Meta descriptions, by contrast, have followed a different trajectory. After fall
   )
 }}
 
-### **\`\<title\>\` element length** {#`<title>`-element-length}
+### **\`\<title\>\` element length**
 
 Title tags are one of the clearest signals of a page's topic for both users and algorithms, but their effectiveness depends partly on length. Too short, and they miss context; too long, and they risk truncation in search results. The 2025 data shows that publishers continue to cluster around stable midpoints, with little change from 2024\.
 
@@ -692,7 +692,7 @@ The persistence of this pattern from 2024 into 2025 may also reflect Google's re
   )
 }}
 
-### Meta description length  {#meta-description-length}
+### Meta description length
 
 Distribution patterns have largely stabilized after the sharp growth between 2022 and 2024\. This year's data shows:
 
@@ -730,7 +730,7 @@ If this pattern holds, well-structured meta descriptions become more than tradit
   )
 }}
 
-### **Heading tags** {#heading-tags}
+### **Heading tags**
 
 Well-structured headings do more than format text; they map the logical flow of a page, guiding both readers and crawlers through its main ideas. The 2025 data shows stability across all major tags, with only marginal shifts from last year.
 
@@ -774,7 +774,7 @@ Still, progress has limits. \<h1\>s appear on 70% of pages, but only 66% are non
   )
 }}
 
-### **Images** {#images}
+### **Images**
 
 The 2025 data on image usage shows broad consistency with prior years, but also underscores how image use scales dramatically toward the upper end of sites.
 
@@ -806,7 +806,7 @@ By comparison, the 25th percentile sits at just 8 images, showing the wide varia
   )
 }}
 
-#### **Alt attributes** {#alt-attributes}
+#### **Alt attributes**
 
 The `alt` attribute is central to accessibility and also supports image indexing in search. This year sees steady improvement in adoption, with fewer missing attributes overall, but also a slight rise in blank values worth noting.
 
@@ -852,7 +852,7 @@ Although the increase in blanks is small and steady rather than dramatic, it sti
   )
 }}
 
-### **Video**  {#video}
+### **Video**
 
 Video adoption on the web continues to grow, but only gradually. In 2025, 6.40% of desktop pages and 5.68% of mobile pages included a video element, up slightly from 5.87% (desktop) and 5.13% (mobile) in 2024\. Desktop pages still feature video more often than mobile, repeating the same gap as last year.
 
@@ -871,13 +871,13 @@ The bigger challenge is optimization. While videos are appearing more often, onl
   )
 }}
 
-## Links {#links}
+## Links
 
 Links were once the dominant signal of importance. More links usually meant higher rankings but today they are balanced alongside content quality, relevance, and user experience.
 
 Our 2025 data shows that link practices have matured, with stable patterns in descriptive anchors, internal navigation, and external references, alongside selective use of attributes like rel to qualify relationships.
 
-### **Non-descriptive links** {#non-descriptive-links}
+### **Non-descriptive links**
 
 In 2025, most sites continue to provide descriptive anchor text rather than vague phrases like "Click here" or "Read more." This is reflected in Lighthouse test pass rates, which remain high across both home pages and inner pages.
 
@@ -899,7 +899,7 @@ Overall, descriptive link practices appear mature, with only marginal year-over-
   )
 }}
 
-### **Outgoing links** {#outgoing-links}
+### **Outgoing links**
 
 Outgoing links in 2025 see stable patterns for both internal and external linking. Internal links dominate; at the median, desktop pages contained 43 links to the same site and mobile pages 39, while at the 90th percentile those numbers jumped to 174 and 161\.
 
@@ -930,7 +930,7 @@ Internal links have grown steadily over the years, while external links remain c
   )
 }}
 
-### **Anchor rel attribute use** {#anchor-rel-attribute-use}
+### **Anchor rel attribute use**
 
 Although the `rel` attribute was originally intended to qualify links for search engines, its most common uses today are security-focused. In 2025, noopener appears on 40.9% of pages and noreferrer on 25%. Although neither affects positioning, both help increase site health and protect users by preventing tab hijacking and hiding referral data, which explains their widespread adoption.
 
@@ -949,13 +949,13 @@ Taken together, the data shows that usage patterns for rel attributes have large
   )
 }}
 
-## **Word count** {#word-count}
+## **Word count**
 
-### Rendered word count {#rendered-word-count}
+### Rendered word count
 
 Rendered word count refers to the number of visible words on a page after JavaScript has been executed.
 
-### Home pages' rendered word count  {#home-pages'-rendered-word-count}
+### Home pages' rendered word count
 
 The median mobile home page in 2025 contained 378 words, up slightly from 2024 where the median was 364 words. The median rendered word count on desktop home pages was also up slightly year over year, with 2025 showing 413 words (up from 400 words in 2024).
 Both mobile and desktop rendered word counts have seen a decline since 2022, which had a median rendered word count of 421 words on desktop and 366 words on mobile. The parity between desktop and mobile is marginally closer in 2025 compared to last year, with the gap between mobile and desktop home page word counts narrowing to just 35 words, down by 1 from 2024's report where the desktop-mobile parity was 36 words. This indicates some consistency year over year.
@@ -971,7 +971,7 @@ Both mobile and desktop rendered word counts have seen a decline since 2022, whi
   )
 }}
 
-### Inner pages' rendered word count {#inner-pages'-rendered-word-count}
+### Inner pages' rendered word count
 
 Inner pages tend to contain fewer words overall compared to home pages. The median mobile inner page in 2025 had 339 (desktop) words, while mobile had 323 words (This is up from 2024 when the median desktop word count was 333 and the mobile word count was 317.)
 
@@ -992,7 +992,7 @@ Raw word count
 
 The raw word count refers to the total number of words included in the original HTML delivered by the server, prior to any JavaScript execution or subsequent alterations to the DOM or CSSOM.
 
-### Home pages' raw word count {#home-pages'-raw-word-count}
+### Home pages' raw word count
 
 The median page's raw word count in 2025 is 340 words for desktop user agents and  316 words for mobile  – up a small amount from 2024 when the median page's raw word count was 330 words for desktop and 311 words for mobile.
 
@@ -1021,7 +1021,7 @@ Unlike the raw word count on home pages where mobile did not contain more words 
   )
 }}
 
-### Rendered vs. raw word counts {#rendered-vs.-raw-word-counts}
+### Rendered vs. raw word counts
 
 When the rendered and raw word counts are compared on the home page, the discrepancy is small, with the median showing a difference of 18% on desktop vs 16% on mobile. This has seen growth on mobile, which was just 13.6% in 2024\.
 
@@ -1029,7 +1029,7 @@ Across all percentiles, home pages served to desktop user agents have a higher p
 
 The highest difference across all percentiles between mobile and desktop is just 2%, with some lower percentiles like the 10th percentile showing equal word counts.
 
-### Home pages' rendered vs. raw word counts {#home-pages'-rendered-vs.-raw-word-counts}
+### Home pages' rendered vs. raw word counts
 
 {{ figure_markup(
   image="seo-stats-by-percentile-percentile-8.png",
@@ -1043,7 +1043,7 @@ The highest difference across all percentiles between mobile and desktop is just
 
 In 2025, we saw a significant hike in the 10th percentile with 37% on desktop and 34% on mobile, compared to 28% on desktop and 22% on mobile in 2024\.
 
-### Inner pages' rendered vs. raw word counts {#inner-pages'-rendered-vs.-raw-word-counts}
+### Inner pages' rendered vs. raw word counts
 
 The gap between rendered and raw word counts on inner pages sees the biggest gap in the 10th percentile, likely due to reliance on content existing in the HTML but hidden on mobile breakpoints, such as within accordions and tabbed layouts. This closes the gap in the 25th, 50th, and 75th percentile with just a 1% difference and 2% in the 90th percentile.
 
@@ -1059,13 +1059,13 @@ The pattern seems to be the more words, the less they rely on client-side render
   )
 }}
 
-## Structured Data {#structured-data}
+## Structured Data
 
 While not a direct ranking factor, structured data remains a powerful addition to websites to help search engines to understand the context of the page, while also powering rich results in search engine results pages (SERPs) .
 
 [Structured data](https://insightland.org/blog/structured-data-ai-search/#) is increasingly being used by large language models to understand what a page represents, not just what it says. Microsoft has confirmed that [Bing uses schema.org](http://schema.org) markup to help its models (including Bing Chat and Copilot) distinguish between expert articles, products, reviews, and FAQs. Google's [AI Overviews](https://www.semrush.com/blog/how-can-schema-markup-specifically-enhance-llm-visibility/) behavior suggests a similar reliance, and crawlers such as GPTBot are capable of parsing schema embedded directly in HTML.
 
-### Home pages' structured data {#home-pages'-structured-data}
+### Home pages' structured data
 
 
 {{ figure_markup(
@@ -1099,7 +1099,7 @@ JSON-LD remains by far the most popular format for home pages and accounts for 4
 
 Google typically [recommends using JSON-LD structured data](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data) as it is the easiest form to be implemented and maintained, although Google can still crawl and understand other formats like Microdata and RDFa. We have seen a slight drop in microdata usage, with both desktop and mobile reducing by 1% compared to 2024\.
 
-### Inner pages' structured data {#inner-pages'-structured-data}
+### Inner pages' structured data
 
 For inner pages, we see a slight difference, with microdata at 19% on mobile and desktop, and JSON-LD at 39% on desktop compared to 37% on mobile.
 
@@ -1107,7 +1107,7 @@ This may be because home pages usually receive the most SEO attention and are mo
 
 In contrast, inner pages like product or article pages often rely on dynamic or CMS-generated markup that can vary between desktop and mobile templates, leading to some slight discrepancies.
 
-### Most popular structured data types {#most-popular-structured-data-types}
+### Most popular structured data types
 
 {{ figure_markup(
   image="structured-data-schema-types.png",
@@ -1141,11 +1141,11 @@ Interestingly, WebSite structured data is still the third most popular structure
 
 You can find out more about schema usage  in our dedicated {\# TODO: Add internal link to structured data chapter \#} structured data chapter.
 
-## **AMP** {#amp}
+## **AMP**
 
 Accelerated Mobile Pages (AMP) were once promoted as a fast-track to performance and visibility, particularly in mobile search. But with Core Web Vitals now providing direct performance metrics for all pages, AMP's role has sharply diminished. The 2025 data shows adoption at consistently low levels across home and inner pages, with usage lingering below 1%. What remains reflects niche or legacy implementations rather than mainstream strategy.
 
-### **Home page AMP usage** {#home-page-amp-usage}
+### **Home page AMP usage**
 
 Adoption of AMP markup stayed extremely low in 2025, with inner pages showing only marginal use across all device types. rel=amphtml is the most common signal, appearing on 0.8% of desktop pages and 0.9% of mobile pages, while HTML AMP is seen on just 0.1% of mobile pages and virtually none on desktop. Other variants like AMP Emoji or AMP HTML \+ Emoji are nearly absent, registering at or below 0.2%.
 
@@ -1172,7 +1172,7 @@ Compared to 2024, the overall picture is one of stagnation. The slight uptick no
   )
 }}
 
-### **Home pages vs inner pages' AMP usage** {#home-pages-vs-inner-pages'-amp-usage}
+### **Home pages vs inner pages' AMP usage**
 
 In 2024, home pages were slightly more likely to feature AMP than inner pages. By 2025, the opposite is true. rel=amphtml appears on 1.7% of inner pages compared with 1.0% of home pages. The same holds for HTML AMP, where adoption is now evenly split (0.1% each).
 
@@ -1187,11 +1187,11 @@ In 2024, home pages were slightly more likely to feature AMP than inner pages. B
   )
 }}
 
-## Internationalization {#internationalization}
+## Internationalization
 
 Being a critical feature for international and multilingual websites, the hreflang attribute helps search engines serve the right language or regional version of a page to users, a critical feature for international sites. In 2025, hreflang appears on roughly 20% of pages. Adoption is most often prioritized on home pages, where international targeting has the greatest impact, while inner pages see less consistent coverage. Growth has been steady but uneven, concentrated in a small set of widely used languages.
 
-### **Hreflang implementation** {#hreflang-implementation}
+### **Hreflang implementation**
 
 Around one in five pages now include hreflang markup; 20.3% raw (desktop) and 19.7% raw (mobile), with rendered values slightly higher at 20.8% and 20.2% respectively. This essentially doubles last year's rates, where only about 9–10% of pages carried hreflang tags.
 
@@ -1210,7 +1210,7 @@ The close alignment between raw and rendered values (less than a 1% difference) 
   )
 }}
 
-### **Home page hreflang Usage** {#home-page-hreflang-usage}
+### **Home page hreflang Usage**
 
 Hreflang usage on home pages remains highly concentrated in a few values. English ("en") continues to dominate, appearing on 7.4% of desktop home pages and 7.3% of mobile, followed closely by x-default at 7.2% (desktop) and 6.9% (mobile).
 
@@ -1231,7 +1231,7 @@ Compared to 2024, when "en" appeared on 8% of both desktop and mobile home pages
   )
 }}
 
-### **Inner page hreflang usage** {#inner-page-hreflang-usage}
+### **Inner page hreflang usage**
 
 On inner pages, hreflang adoption mirrors the home page pattern but at slightly lower levels. English (en) leads at 7.6% (on desktop pages) and 6.9% (mobile), followed closely by x-default at 7.4% (desktop) and 6.8% (mobile). Secondary languages such as French (3.2% of inner mobile pages), German (3.1% mobile), and Spanish (3.0% mobile) again form the next tier, while all other language values remain under 2.5%.
 
@@ -1247,7 +1247,7 @@ Compared to 2024, when desktop use of x-default and en was closer to 8%, the 202
   )
 }}
 
-## Conclusion {#conclusion}
+## Conclusion
 
 As AI search reshapes how content is discovered, the web's fundamentals matter more than ever, and reassuringly, the data suggests those foundations are holding firm.
 
