@@ -2117,6 +2117,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "Jammer_Volts",
@@ -3114,6 +3117,9 @@
       "2024": [
         "authors",
         "editors"
+      ],
+      "2025": [
+        "editors"
       ]
     },
     "twitter": "MichaelLewittes",
@@ -3284,6 +3290,9 @@
     "name": "Montserrat Cano",
     "teams": {
       "2024": [
+        "editors"
+      ],
+      "2025": [
         "editors"
       ]
     },
@@ -4402,6 +4411,9 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "twitter": "SophieBrannon"
@@ -5060,5 +5072,57 @@
       ]
     },
     "twitter": "_cybai"
+  },
+  "adelporte": {
+    "avatar_url": "17356075",
+    "github": "adelporte",
+    "linkedin": "augustindelporte",
+    "name": "Augustin Delporte",
+    "teams": {
+      "2025": [
+        "analysts"
+      ]
+    },
+    "twitter": "",
+    "website": ""
+  },
+  "Amaka-maxi": {
+    "avatar_url": "211726608",
+    "github": "Amaka-maxi",
+    "name": "Amaka Chukwuma",
+    "linkedin": "amaka-chukwuma-jubilee",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    }
+  },
+  "chr156r33n": {
+    "avatar_url": "75560394",
+    "bluesky": "chris-green.net",
+    "github": "chr156r33n",
+    "linkedin": "chrisgreenseo",
+    "name": "Chris Green",
+    "teams": {
+      "2025": [
+        "authors",
+        "analysts"
+      ]
+    },
+    "twitter": "chrisgreenseo",
+    "website": "https://www.torquepartnership.com/"
+  },
+  "hello-sharon": {
+    "avatar_url": "211817205",
+    "github": "hello-sharon",
+    "linkedin": "sharonmcclintic",
+    "name": "Sharon McClintic",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    },
+    "twitter": "",
+    "website": "https://www.lumar.io/"
   }
 }
