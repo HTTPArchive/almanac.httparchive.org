@@ -17,4 +17,4 @@
 
 [~google-doc]: https://docs.google.com/document/d/1HpI_E35FU_vqsJlMEONnCyR5lAvzDwVkWBg3lIlwlvw
 [~google-sheets]: https://docs.google.com/spreadsheets/d/1q_hFsWlt6DZMmwnxrTmU3nCRjT2w38AomAlw8b_lthE/edit
-[~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/ecommerce.md
+[~chapter-markdown]: https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/src/content/en/2025/generative-ai.md

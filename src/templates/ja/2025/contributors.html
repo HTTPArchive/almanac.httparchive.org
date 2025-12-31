@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} 貢献者 | HTTP ArchiveによるWeb Almanac{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} アナリスト、著者、デザイナー、開発者、編集者、レビュアー、翻訳者として{ year }}年のWeb Almanacに貢献した人々。{% endblock %}
+
+{% block filter_by_team %}チームでフィルタリング： <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> の <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> 貢献者。{% endblock %}
+{% block filter_by %}フィルタリング{% endblock %}
+
+{% block join_the_team_title%}Web Almanacチームに参加しましょう{% endblock %}
+{% block join_the_team_text%}チームに参加しよう！{% endblock %}

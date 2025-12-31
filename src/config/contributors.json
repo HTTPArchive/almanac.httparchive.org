@@ -54,6 +54,16 @@
     "twitter": "DesignrKnight",
     "website": "http://designrknight.com/"
   },
+  "abhishektiwari": {
+    "avatar_url": "363839",
+    "github": "abhishektiwari",
+    "name": "Abhishek Tiwari ",
+    "teams": {
+      "2025": [
+        "committee"
+      ]
+    }
+  },
   "kleinab": {
     "avatar_url": "1319324",
     "github": "kleinab",
@@ -61,16 +71,6 @@
     "teams": {
       "2019": [
         "authors"
-      ]
-    }
-  },
-  "onurguler18": {
-    "avatar_url": "39603688",
-    "github": "onurguler18",
-    "name": "Onur Güler",
-    "teams": {
-      "2024": [
-        "analysts"
       ]
     }
   },
@@ -159,6 +159,18 @@
     },
     "twitter": "MrAhmadAwais",
     "website": "https://AhmadAwais.com"
+  },
+  "atierney": {
+    "avatar_url": "9468139",
+    "name": "Aidan Tierney",
+    "github": "AidanA11y",
+    "linkedin": "aidantierney",
+    "bluesky": "aidantierney.bsky.social",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
   },
   "akshay-ranganath": {
     "avatar_url": "54864775",
@@ -679,6 +691,11 @@
         "developers",
         "editors",
         "reviewers"
+      ],
+      "2025": [
+        "committee",
+        "developers",
+        "analysts"
       ]
     },
     "twitter": "tunetheweb",
@@ -766,6 +783,20 @@
       ]
     },
     "website": "https://iambharat.me"
+  },
+  "tricinel": {
+    "avatar_url": "216008",
+    "name": "Bogdan Lazar",
+    "github": "tricinel",
+    "bluesky": "bogdanlazar.com",
+    "linkedin": "tricinel",
+    "website": "https://bogdanlazar.com",
+    "teams": {
+      "2025": [
+        "authors",
+        "editors"
+      ]
+    }
   },
   "borisschapira": {
     "avatar_url": "284742",
@@ -865,6 +896,9 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "twitter": "burakGuneli"
@@ -1059,6 +1093,9 @@
         "authors",
         "committee",
         "reviewers"
+      ],
+      "2025": [
+        "committee"
       ]
     }
   },
@@ -1243,7 +1280,6 @@
     "bluesky": "tamethebots.com",
     "github": "dwsmart",
     "linkedin": "davewsmart",
-    "mastodon": "https://seocommunity.social/@dwsmart",
     "name": "Dave Smart",
     "teams": {
       "2020": [
@@ -1886,6 +1922,9 @@
     "name": "Hidde de Vries",
     "teams": {
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -3169,6 +3208,9 @@
     "teams": {
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "threads": "@mikaelaraujo",
@@ -3208,6 +3250,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "authors",
+        "analysts"
       ]
     },
     "website": "https://accessibility.civicactions.com/"
@@ -3522,6 +3568,10 @@
         "leads",
         "committee",
         "reviewers"
+      ],
+      "2025": [
+        "leads",
+        "committee"
       ]
     },
     "twitter": "nrllah",
@@ -3541,6 +3591,16 @@
     },
     "twitter": "oluoluoxenfree",
     "website": "https://olu.online/"
+  },
+  "onurguler18": {
+    "avatar_url": "39603688",
+    "github": "onurguler18",
+    "name": "Onur Güler",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
   },
   "pankajparkar": {
     "avatar_url": "5320044",
@@ -4159,6 +4219,10 @@
       "2024": [
         "developers",
         "committee"
+      ],
+      "2025": [
+        "developers",
+        "committee"
       ]
     },
     "twitter": "Saptak013",
@@ -4203,6 +4267,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "scottdavis99",
@@ -4231,6 +4298,7 @@
         "translators"
       ],
       "2025": [
+        "committee",
         "developers",
         "translators"
       ]
@@ -4611,6 +4679,9 @@
       "2024": [
         "authors",
         "committee"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "website": "https://internet-sicherheit.de/ueber-uns/team/alle-mitarbeiter/urban-tobias-2/"
@@ -4902,6 +4973,9 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "committee"
       ]
     },
     "twitter": "vekariayash",
