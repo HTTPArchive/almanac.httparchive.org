@@ -13,7 +13,6 @@ Amaka-maxi_bio: Amaka is an SEO and content strategist who has spent the last se
 chr156r33n_bio: Chris Green is a Technical Director at <a href="https://www.torquepartnership.com/">Torque Partnership</a> and a search veteran of 15+ years. He advises Fortune 500 companies on search strategy and the evolving relationship between brands, algorithms, and AI systems.
 SophieBrannon_bio: Sophie Brannon is the co-founder & director of StudioHawk US, based in Atlanta. With over a decade of SEO experience spanning agency, in-house, and consultancy roles, she has worked across a wide range of industries including eCommerce, finance, gaming, health, and SaaS. Sophie brings a strategic, data-driven approach to organic growth, helping brands scale sustainably through technical SEO, user experience testing, content and digital PR. She's passionate about making SEO accessible and mentoring the next generation of search marketers.
 featured_quote: As AI search reshapes how content is discovered, the web's fundamentals matter more than ever, and reassuringly, the data suggests those foundations are holding firm.
-
 featured_stat_1: 2.10%
 featured_stat_label_1: 2.10% of mobile sites employ llms.txt files
 featured_stat_2: 92%
