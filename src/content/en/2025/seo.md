@@ -3,10 +3,10 @@
 title: SEO
 description: SEO chapter of the 2025 Web Almanac covering crawlability, indexability, page experience, on-page SEO, links, AMP, internationalization, and more.
 hero_alt: Hero image of various web pages beneath a search field with Web Almanac characters shine a light on the pages and make various checks.
-authors: [Amaka Chukwuma, Chris Green, Sophie Brannon]
-reviewers: [Jamie Indigo]
-analysts: [Augustin Delporte, Chris Green]
-editors: [Michael Lewittes, Montserrat Cano, Sharon McClintic]
+authors: [Amaka-maxi, chr156r33n, SophieBrannon]
+reviewers: [fellowhuman1101]
+analysts: [augustin_delport, chr156r33n]
+editors: [MichaelLewittes, montsec, hello-sharon]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1MoWoxogYWH6fv5r485EttvVgJuw7dMzzcot66X3MWu4/edit
 
