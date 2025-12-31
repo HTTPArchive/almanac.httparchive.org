@@ -505,7 +505,7 @@ Legibility is one of the most fundamental aspects of mobile experience. Users sh
 
 {{ figure_markup(
   image="lighthouse-seo-stats-3.png",
-  caption="Legible font size used (mobile)"
+  caption="Legible font size used (mobile)",
   description="Bar chart showing legible font sizes (16px or larger) usage on mobile pages. Legible font sizes are used on 92.07% of home pages and 92.93% of inner pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=1856892869&format=interactive",
   sheets_gid="1895020036",
