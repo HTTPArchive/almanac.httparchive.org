@@ -682,8 +682,8 @@ If this pattern holds, well-structured meta descriptions become more than tradit
 
 
 {{ figure_markup(
-  image="meta-description-by-percentile.png",
-  caption="Meta description by percentile",
+  image="meta-description-words-by-percentile.png",
+  caption="Meta description words by percentile",
   description="Line chart showing meta description word count distribution across percentiles. At the 10th percentile, meta descriptions contain 4 words on both desktop and mobile. At the 25th percentile, meta descriptions contain 18 words on desktop and 19 on mobile. At the 50th percentile (median), meta descriptions contain 40 words on both desktop and mobile. At the 75th percentile, meta descriptions contain 51 words on both desktop and mobile. At the 90th percentile, meta descriptions contain 79 words on both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=2126645889&format=interactive",
   sheets_gid="1895020036",
@@ -693,8 +693,8 @@ If this pattern holds, well-structured meta descriptions become more than tradit
 
 
 {{ figure_markup(
-  image="meta-description-by-percentile.png",
-  caption="Meta description by percentile",
+  image="meta-description-chars-by-percentile.png",
+  caption="Meta description characters by percentile",
   description="Line chart showing meta description character count distribution across percentiles. At the 10th percentile, meta descriptions contain 69 characters on desktop and 70 on mobile. At the 25th percentile, meta descriptions contain 166 characters on desktop and 168 on mobile. At the 50th percentile (median), meta descriptions contain 274 characters on both desktop and mobile. At the 75th percentile, meta descriptions contain 329 characters on desktop and 330 on mobile. At the 90th percentile, meta descriptions contain 537 characters on desktop and 533 on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=1000016762&format=interactive",
   sheets_gid="1895020036",
@@ -1158,7 +1158,7 @@ In 2024, home pages were slightly more likely to feature AMP than inner pages. B
 
 Being a critical feature for international and multilingual websites, the hreflang attribute helps search engines serve the right language or regional version of a page to users, a critical feature for international sites. In 2025, hreflang appears on roughly 20% of pages. Adoption is most often prioritized on home pages, where international targeting has the greatest impact, while inner pages see less consistent coverage. Growth has been steady but uneven, concentrated in a small set of widely used languages.
 
-### Hreflang implementation
+### `hreflang` implementation
 
 Around one in five pages now include hreflang markup; 20.3% raw (desktop) and 19.7% raw (mobile), with rendered values slightly higher at 20.8% and 20.2% respectively. This essentially doubles last year's rates, where only about 9–10% of pages carried hreflang tags.
 
@@ -1168,8 +1168,8 @@ The close alignment between raw and rendered values (less than a 1% difference) 
 
 
 {{ figure_markup(
-  image="amp-markup-home-vs-inner.png",
-  caption="AMP Markup Home vs Inner",
+  image="hreflang-implementation.png",
+  caption="`hreflang` implementation",
   description="Bar chart showing hreflang implementation methods across websites. HTML hreflang tags are used on 0.2% of desktop sites and 0.1% of mobile sites. HTTP header hreflang is used on 20.3% of desktop sites and 19.7% of mobile sites. Sitemap hreflang is used on 20.8% of desktop sites and 20.2%of mobile sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=1192602854&format=interactive",
   sheets_gid="1895020036",
@@ -1190,7 +1190,7 @@ Compared to 2024, when "en" appeared on 8% of both desktop and mobile home pages
 
 {{ figure_markup(
   image="hreflang-link-usage-home-page.png",
-  caption="Hreflang link usage \- home page",
+  caption="Hreflang link usage - home page",
   description="Bar chart showing hreflang link usage on home pages by language code. English (en) appears on 7.8% of desktop and 7.4% of mobile. x-default appears on 7.2% of desktop and 6.9% of mobile. French (fr) appears on 3.1% of desktop and 3.2% of mobile. German (de) appears on 2.9% of desktop and 3.1% of mobile. Spanish (es) appears on 2.9% of desktop and 3% of mobile. Italian (it) appears on 2.1% of desktop and 2.4% of mobile. English US (en-us) appears on 2.2% of desktop and 1.9% of mobile. Russian (ru) appears on 1.7% of desktop and 2.1% of mobile. Portuguese (pt) appears on 1.3% of desktop and 1.6% of mobile. Dutch (nl) appears on 1.4% of desktop and 1.5% of mobile. Japanese (ja) appears on 1.2% of desktop and 1.5% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=247968429&format=interactive",
   sheets_gid="1895020036",
@@ -1205,8 +1205,8 @@ On inner pages, hreflang adoption mirrors the home page pattern but at slightly 
 Compared to 2024, when desktop use of x-default and en was closer to 8%, the 2025 figures suggest a small decline. The distribution again confirms that hreflang is generally prioritized on home pages rather than inner pages. The tight clustering of French, German, and Spanish (3.0-3.2% on inner mobile pages) reinforces that major European markets drive most multilingual web adoption beyond English.
 
 {{ figure_markup(
-  image="hreflang-link-usage-home-page.png",
-  caption="Hreflang link usage \- home page",
+  image="hreflang-link-usage-inner-page.png",
+  caption="Hreflang link usage - home page",
   description="Bar chart showing hreflang link usage on inner pages by language code. English (en) appears on 7.6% of desktop and 6.8% of mobile. x-default appears on 7.4% of desktop and 6.8% of mobile. French (fr) appears on 3.2% of desktop and 3.2% of mobile. German (de) appears on 3% of desktop and 3.1% of mobile. Spanish (es) appears on 2.9% of desktop and 3% of mobile. English US (en-us) appears on 2.3% of desktop and 1.9% of mobile. Russian (ru) appears on 1.7% of desktop and 2.1% of mobile. Portuguese (pt) appears on 1.3% of desktop and 1.7% of mobile. Dutch (nl) appears on 1.5% of desktop and 1.5% of mobile. Japanese (ja) appears on 1.3% of desktop and 1.6% of mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQUdZ1uaX5U0oLrHlWn8iYc1dhPthw59zy20QFdsYCgky7zaesRm8ctLSxQ9zjlapXCjo6Xd29w_xmB/pubchart?oid=268209538&format=interactive",
   sheets_gid="1895020036",
