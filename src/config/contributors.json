@@ -647,17 +647,6 @@
     "twitter": "LoukilAymen",
     "website": "http://www.aymen-loukil.com/en/"
   },
-  "abubakaraziz": {
-      "avatar_url": "10674679",
-      "github": "abubakaraziz",
-      "linkedin": "aziz313f"
-    "name": "Muhammad Abu Bakar Aziz",
-    "teams": {
-      "2025": [
-        "authors"
-      ]
-    }
-  },
   "tunetheweb": {
     "avatar_url": "10931297",
     "bluesky": "tunetheweb.com",
@@ -3391,6 +3380,17 @@
     "teams": {
       "2021": [
         "translators"
+      ]
+    }
+  },
+  "abubakaraziz": {
+    "avatar_url": "10674679",
+    "github": "abubakaraziz",
+    "linkedin": "aziz313f",
+    "name": "Muhammad Abu Bakar Aziz",
+    "teams": {
+      "2025": [
+        "authors"
       ]
     }
   },
