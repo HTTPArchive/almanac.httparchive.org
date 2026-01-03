@@ -20,9 +20,9 @@ requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01'
+    date = '2025-06-01' AND
     -- Pre-filter: only process URLs that contain consent-related parameters
-    AND REGEXP_CONTAINS(url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
+    REGEXP_CONTAINS(url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
 ),
 
 third_party AS (
@@ -66,7 +66,7 @@ parameter_extraction AS (
     third_party tp
   ON
     NET.HOST(r.url) = NET.HOST(tp.domain),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     p.rank <= rank_grouping
 ),
@@ -92,7 +92,7 @@ parameter_counts AS (
     category,
     rank_grouping,
     param,
-    COUNT(*) AS param_count,
+    COUNT(0) AS param_count,
     COUNT(DISTINCT CONCAT(client, canonicalDomain)) AS domain_count
   FROM
     flattened_parameters
@@ -109,7 +109,7 @@ totals AS (
   SELECT
     r.client,
     rank_grouping,
-    COUNT(*) AS total_all_requests
+    COUNT(0) AS total_all_requests
   FROM
     `httparchive.crawl.requests` r
   INNER JOIN
@@ -120,10 +120,10 @@ totals AS (
     third_party tp
   ON
     NET.HOST(r.url) = NET.HOST(tp.domain),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    r.date = '2025-06-01'
-    AND p.rank <= rank_grouping
+    r.date = '2025-06-01' AND
+    p.rank <= rank_grouping
   GROUP BY
     r.client,
     rank_grouping
@@ -135,7 +135,7 @@ categorized_params AS (
     client,
     rank_grouping,
     param,
-    CASE 
+    CASE
       WHEN param = 'us_privacy' THEN 'USP Standard'
       WHEN param IN ('ccpa', 'usp_consent', 'uspString', 'uspConsent', 'ccpa_consent', 'usp', 'usprivacy', 'ccpaconsent', 'usp_string') THEN 'USP Non-Standard'
       WHEN param IN ('gdpr', 'gdpr_consent', 'gdpr_pd') THEN 'TCF Standard'

@@ -57,7 +57,7 @@ totals AS (
     pages p
   ON
     r.client = p.client AND r.page = p.page,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     p.rank <= rank_grouping
   GROUP BY
@@ -83,7 +83,7 @@ third_party_requests AS (
     third_party tp
   ON
     NET.HOST(r.url) = NET.HOST(tp.domain),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     p.rank <= rank_grouping
 ),
@@ -97,10 +97,10 @@ consent_signals AS (
     canonicalDomain,
     category,
     rank_grouping,
-    
+
     -- Extract all consent parameters in one pass
     REGEXP_EXTRACT_ALL(url, r'[?&](us_privacy|ccpa|usp_consent|uspString|sst\.us_privacy|uspConsent|ccpa_consent|AV_CCPA|usp|usprivacy|_fw_us_privacy|D9v\.us_privacy|cnsnt|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=') AS found_params,
-    
+
     -- Boolean flags derived from the extracted parameters (computed once)
     REGEXP_CONTAINS(url, r'[?&]us_privacy=') AS has_usp_standard,
     REGEXP_CONTAINS(url, r'[?&](ccpa|usp_consent|uspString|sst\.us_privacy|uspConsent|ccpa_consent|AV_CCPA|usp|usprivacy|_fw_us_privacy|D9v\.us_privacy|cnsnt|ccpaconsent|usp_string)=') AS has_usp_nonstandard,
@@ -131,27 +131,27 @@ signal_aggregates AS (
     COUNTIF(has_usp_standard) AS usp_standard_requests,
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN page END) AS usp_standard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN canonicalDomain END) AS usp_standard_domains,
-    
+
     -- USP Non-Standard metrics  
     COUNTIF(has_usp_nonstandard) AS usp_nonstandard_requests,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN page END) AS usp_nonstandard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN canonicalDomain END) AS usp_nonstandard_domains,
-    
+
     -- TCF Standard metrics
     COUNTIF(has_tcf_standard) AS tcf_standard_requests,
     COUNT(DISTINCT CASE WHEN has_tcf_standard THEN page END) AS tcf_standard_pages,
     COUNT(DISTINCT CASE WHEN has_tcf_standard THEN canonicalDomain END) AS tcf_standard_domains,
-    
+
     -- GPP Standard metrics
     COUNTIF(has_gpp_standard) AS gpp_standard_requests,
     COUNT(DISTINCT CASE WHEN has_gpp_standard THEN page END) AS gpp_standard_pages,
     COUNT(DISTINCT CASE WHEN has_gpp_standard THEN canonicalDomain END) AS gpp_standard_domains,
-    
+
     -- Any consent signal metrics
     COUNTIF(has_any_consent_signal) AS any_consent_requests,
     COUNT(DISTINCT CASE WHEN has_any_consent_signal THEN page END) AS any_consent_pages,
     COUNT(DISTINCT CASE WHEN has_any_consent_signal THEN canonicalDomain END) AS any_consent_domains,
-    
+
     -- Totals for this filtered dataset
     COUNT(0) AS total_third_party_requests
   FROM

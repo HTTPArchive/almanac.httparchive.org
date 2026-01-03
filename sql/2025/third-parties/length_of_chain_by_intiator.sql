@@ -46,12 +46,12 @@ WITH data AS (
 )
 
 -- Add this to the final SELECT to see top initiators by chain length
-SELECT 
+SELECT
   client,
   first_initiator,
   AVG(ARRAY_LENGTH(all_initiators)) AS avg_chain_length,
   MAX(ARRAY_LENGTH(all_initiators)) AS max_chain_length,
-  COUNT(*) AS pages
+  COUNT(0) AS pages
 FROM (
   SELECT
     root_page,

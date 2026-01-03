@@ -13,7 +13,6 @@ WITH requests AS (
     date = '2025-06-01'
 ),
 
-
 third_party AS (
   SELECT
     domain,

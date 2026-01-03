@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION extractConsentSignals(url STRING)
 RETURNS STRUCT<
   has_usp_standard BOOL,
-  has_usp_nonstandard BOOL, 
+  has_usp_nonstandard BOOL,
   has_tcf_standard BOOL,
   has_gpp_standard BOOL,
   has_any_signal BOOL,
@@ -69,11 +69,11 @@ redirect_chains AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
-    AND JSON_EXTRACT(r.summary, '$.redirects') IS NOT NULL
-    AND JSON_EXTRACT(r.summary, '$.redirects') != '[]'
+    r.date = '2025-06-01' AND
+    JSON_EXTRACT(r.summary, '$.redirects') IS NOT NULL AND
+    JSON_EXTRACT(r.summary, '$.redirects') != '[]' AND
     -- AND p.rank <= 100000  -- Limit to top 100K sites
-    AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
+    NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
 ),
 
 -- Parse redirect chains and extract consent signals at each step
@@ -86,7 +86,7 @@ parsed_redirects AS (
     redirect_step.url AS step_url,
     redirect_step.redirectURL AS next_url,
     ROW_NUMBER() OVER (
-      PARTITION BY client, page, final_url 
+      PARTITION BY client, page, final_url
       ORDER BY COALESCE(redirect_step.startedDateTime, redirect_chains.startedDateTime)
     ) AS redirect_step_number,
     extractConsentSignals(redirect_step.url) AS step_signals,
@@ -117,9 +117,9 @@ redirect_chains_with_final AS (
     'redirect' AS step_type
   FROM
     parsed_redirects
-    
+
   UNION ALL
-  
+
   -- Final destination URL
   SELECT
     client,
@@ -145,18 +145,18 @@ step_survival_stats AS (
     client,
     redirect_step_number,
     step_type,
-    
+
     -- Signals present at this step
     COUNTIF(signals_at_step.has_usp_standard) AS usp_standard_at_step,
     COUNTIF(signals_at_step.has_usp_nonstandard) AS usp_nonstandard_at_step,
     COUNTIF(signals_at_step.has_tcf_standard) AS tcf_standard_at_step,
     COUNTIF(signals_at_step.has_gpp_standard) AS gpp_standard_at_step,
     COUNTIF(signals_at_step.has_any_signal) AS any_signal_at_step,
-    
+
     -- Average signal count per URL
     AVG(signals_at_step.signal_count) AS avg_signal_count_at_step,
-    
-    COUNT(*) AS total_urls_at_step,
+
+    COUNT(0) AS total_urls_at_step,
     COUNT(DISTINCT page) AS total_pages_at_step
   FROM
     redirect_chains_with_final
@@ -191,23 +191,23 @@ SELECT
   ss.step_type,
   ss.total_urls_at_step,
   ss.total_pages_at_step,
-  
+
   -- Signal counts and survival rates
   ss.usp_standard_at_step,
   SAFE_DIVIDE(ss.usp_standard_at_step, bs.usp_standard_baseline) AS usp_standard_survival_rate,
-  
+
   ss.usp_nonstandard_at_step,
   SAFE_DIVIDE(ss.usp_nonstandard_at_step, bs.usp_nonstandard_baseline) AS usp_nonstandard_survival_rate,
-  
+
   ss.tcf_standard_at_step,
   SAFE_DIVIDE(ss.tcf_standard_at_step, bs.tcf_standard_baseline) AS tcf_standard_survival_rate,
-  
+
   ss.gpp_standard_at_step,
   SAFE_DIVIDE(ss.gpp_standard_at_step, bs.gpp_standard_baseline) AS gpp_standard_survival_rate,
-  
+
   ss.any_signal_at_step,
   SAFE_DIVIDE(ss.any_signal_at_step, bs.any_signal_baseline) AS any_signal_survival_rate,
-  
+
   -- Average signal degradation
   ss.avg_signal_count_at_step,
   bs.avg_signal_count_baseline,

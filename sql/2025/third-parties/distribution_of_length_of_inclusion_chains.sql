@@ -48,10 +48,10 @@ WITH data AS (
   GROUP BY client, root_page, third_party, initiator_etld
 )
 
-SELECT 
+SELECT
   client,
   ARRAY_LENGTH(all_initiators) AS chain_length,
-  COUNT(*) AS pages_with_this_length
+  COUNT(0) AS pages_with_this_length
 FROM (
   SELECT
     root_page,
