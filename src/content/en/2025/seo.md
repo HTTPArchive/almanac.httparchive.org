@@ -38,13 +38,13 @@ For web content to gain visibility in search results, it must first be crawled a
 
 [Google's documentation](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt) clarifies that compliance with crawling rules depends not only on the presence of a `robots.txt` file but also on how correctly this file is structured. Search engines also apply practical limits and standardized caching behavior to ensure directives can be parsed efficiently and interpreted consistently.
 
-At the same time, as [Cloudflare explains](https://www.cloudflare.com/learning/bots/what-is-robots-txt/), `robots.txt` functions more as a code of conduct than a command that will always be obeyed. While reputable bots respect these signals, others may ignore them entirely. This mix of cooperation and unpredictability defines the modern crawling environment and sets the stage for examining how sites actually manage crawler access.
+At the same time, as <a hreflang="en" href="https://www.cloudflare.com/learning/bots/what-is-robots-txt/">Cloudflare explains</a>, `robots.txt` functions more as a code of conduct than a command that will always be obeyed. While reputable bots respect these signals, others may ignore them entirely. This mix of cooperation and unpredictability defines the modern crawling environment and sets the stage for examining how sites actually manage crawler access.
 
 ### `robots.txt`
 
-Serving as the web's de facto "visitors' center" for crawlers, the `robots.txt` file is where bots learn which parts of a site are open or restricted. Since the [IETF's standardization](https://www.ietf.org/about/) of the Robots Exclusion Protocol ([RFC 9309](https://datatracker.ietf.org/doc/html/rfc9309)) three years ago, its syntax, caching behavior, and error handling have been clearly defined—providing a stable framework for how crawlers interpret access rules.
+Serving as the web's de facto "visitors' center" for crawlers, the `robots.txt` file is where bots learn which parts of a site are open or restricted. Since the <a hreflang="en" href="https://www.ietf.org/about/">IETF's standardization</a> of the Robots Exclusion Protocol (<a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc9309">RFC 9309</a>) three years ago, its syntax, caching behavior, and error handling have been clearly defined—providing a stable framework for how crawlers interpret access rules.
 
-Efforts to refine that framework are ongoing. In late 2024, the [IETF introduced](https://garyillyes.github.io/ietf-rep-ext/draft-illyes-repext.html) a working draft known as REPext, which builds on RFC 9309 by exploring page-level crawl controls through response headers and HTML `meta` tags, an approach that could make future implementations more granular and flexible.
+Efforts to refine that framework are ongoing. In late 2024, the <a hreflang="en" href="https://garyillyes.github.io/ietf-rep-ext/draft-illyes-repext.html">IETF introduced</a> a working draft known as REPext, which builds on RFC 9309 by exploring page-level crawl controls through response headers and HTML `meta` tags, an approach that could make future implementations more granular and flexible.
 
 For now, however, the `robots.txt` file remains the foundation of crawl management. Most websites now serve a valid file, with only a small minority omitting it entirely. Among those that do, site owners typically favor simple, universal directives rather than complex, bot-specific rules. The sections that follow examine how these preferences appear in the 2025 data.
 
@@ -82,7 +82,7 @@ Timeouts are ~1.0%, 403 responses are ~0.5%, and 5xx are ~0.1%. Although uncommo
 
 Nearly all `robots.txt` files stay well under size limits ([Google enforces a 500 KB](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#:~:text=Google%20enforces%20a%20robots.,the%20size%20of%20the%20robots.) parsing cutoff) and comply with standards such as not serving an empty file.
 
-A small share of sites serve completely empty `robots.txt` files, now 1.8% on desktop and 1.7% on mobile, slightly up from 2024. While most [major crawlers treat an empty file as permissive](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#:~:text=For%20the%20first%2012%20hours,checking%20for%20a%20new%20version\).), the standard ([RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html)) doesn't define this behavior explicitly, leaving room for inconsistent handling by lesser-known bots. A safer approach is to either return a valid file or a 404 if no restrictions are intended.
+A small share of sites serve completely empty `robots.txt` files, now 1.8% on desktop and 1.7% on mobile, slightly up from 2024. While most [major crawlers treat an empty file as permissive](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt#:~:text=For%20the%20first%2012%20hours,checking%20for%20a%20new%20version\).), the standard (<a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9309.html">RFC 9309</a>) doesn't define this behavior explicitly, leaving room for inconsistent handling by lesser-known bots. A safer approach is to either return a valid file or a 404 if no restrictions are intended.
 
 In 2025, 98% of files were under 100 KB, only slightly down from 2024. The minor change year over year points to a stable and mature implementation pattern.
 
@@ -118,7 +118,7 @@ Other named crawlers that appeared in notable volumes this year include:
 
 ##### `bingbot` rarely named in `robots.txt`
 
-`bingbot` ranks 22nd among named user agents in `robots.txt` files and appears in less than 3% of `robots.txt`. When a bot appears in `robots.txt` files, it means website managers care enough about that crawler to explicitly control its behavior, either allowing it, restricting it, or setting crawl rates. Low appearance rates suggest benign neglect. Despite Microsoft's massive [investment in AI](https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/) and its integration of [ChatGPT into Bing](https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/), the crawler itself hasn't become more prominent in `robots.txt` files. Even with its AI enhancements, Bing's web footprint and importance to site operators remain largely unchanged, a quiet contrast to the rapid rise of AI-focused crawlers like `gptbot` named in `robots.txt` files (more on that below).
+`bingbot` ranks 22nd among named user agents in `robots.txt` files and appears in less than 3% of `robots.txt`. When a bot appears in `robots.txt` files, it means website managers care enough about that crawler to explicitly control its behavior, either allowing it, restricting it, or setting crawl rates. Low appearance rates suggest benign neglect. Despite Microsoft's massive <a hreflang="en" href="https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/">investment in AI</a> and its integration of <a hreflang="en" href="https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/">ChatGPT into Bing</a>, the crawler itself hasn't become more prominent in `robots.txt` files. Even with its AI enhancements, Bing's web footprint and importance to site operators remain largely unchanged, a quiet contrast to the rapid rise of AI-focused crawlers like `gptbot` named in `robots.txt` files (more on that below).
 
 ##### Slight growth in use of named user agents
 
@@ -169,9 +169,9 @@ This shift introduces new complexity for site owners. Instead of only asking, "S
 
 ## `llms.txt`
 
-The `llms.txt` file has been proposed as a new standard ​​"to provide information to help LLMs use a website at inference time (per [llmstxt.org](http://llmstxt.org)). This text file contains a highly simplified version of the website's content in Markdown format, with a view toward making it easier for LLMs to ingest and subsequently use in generated responses.
+The `llms.txt` file has been proposed as a new standard ​​"to provide information to help LLMs use a website at inference time (per <a hreflang="en" href="http://llmstxt.org">llmstxt.org</a>). This text file contains a highly simplified version of the website's content in Markdown format, with a view toward making it easier for LLMs to ingest and subsequently use in generated responses.
 
-This standard, has, it must be noted, not been adopted widely and has become a point of controversy within the broader SEO industry. Google has often stated that they do not use `llms.txt`, and [no Google service currently does](https://www.seroundtable.com/google-ai-llms-txt-39607.html). Anthropic, however, has [taken a lead on `llms.txt`,](https://docs.claude.com/llms-full.txt), raising optimism that the format may evolve into a reliable mechanism for managing and optimizing content utilization during model inference.
+This standard, has, it must be noted, not been adopted widely and has become a point of controversy within the broader SEO industry. Google has often stated that they do not use `llms.txt`, and <a hreflang="en" href="https://www.seroundtable.com/google-ai-llms-txt-39607.html">no Google service currently does</a>. Anthropic, however, has <a hreflang="en" href="https://docs.claude.com/llms-full.txt">taken a lead on `llms.txt`</a>, raising optimism that the format may evolve into a reliable mechanism for managing and optimizing content utilization during model inference.
 
 ### `llms.txt`, adoption rate
 
@@ -198,7 +198,7 @@ Digging into the content of these `llms.txt` files, we see some clues about the 
 
 This was gleaned by the comments these CMS extensions leave (by default) in the files they generated, but it shows that a significant number of website owners with an `llms.txt` file in place are having them generated by their CMS/add-on extensions. Therefore, we cannot be sure this is always a conscious act or endorsement of the `llms.txt` standard or an unintentional inclusion.
 
-Over the last 9+ months (since January 2025), [interest in this emerging standard has grown](https://trends.google.com/trends/explore?q=llms.txt&hl=en-GB) and hinges on just one or two key AI companies' recognition. The 2026 numbers will be interesting to see, nonetheless.
+Over the last 9+ months (since January 2025), [interest in this emerging standard has grown](https://trends.google.com/trends/explore?q=llms.txt) and hinges on just one or two key AI companies' recognition. The 2026 numbers will be interesting to see, nonetheless.
 
 ## Robots directives
 
@@ -261,7 +261,7 @@ For our study of directive rules, we relied on the rendered HTML.
 
 Their inclusion means that robots should index the page and follow the links from it. Their mobile usage at 60.5% and 59.3% for `follow` and `index`, respectively, implies these two tags are likely to be found together and are generally complementary.
 
-A possible cause for this high number of a technically unnecessary combination of `meta` robots rules is Yoast SEO, [which applies `index,follow` by default](https://developer.yoast.com/features/seo-tags/meta-robots/functional-specification/#:~:text=Unless%20otherwise%20defined%20by%20the%20user%20\(or%20via%20page/template/filtering%20logic\)%2C%20%7B%7Bvalues%7D%7D%20outputs%20index%2C%20follow.). Yoast has an approximate 16% adoption (desktop and mobile) when looking at home page use of SEO tools/plugins and, of [all identified SEO tools](https://www.wappalyzer.com/technologies/seo/), it is used nearly 70% of the time.
+A possible cause for this high number of a technically unnecessary combination of `meta` robots rules is Yoast SEO, <a hreflang="en" href="https://developer.yoast.com/features/seo-tags/meta-robots/functional-specification/#:~:text=Unless%20otherwise%20defined%20by%20the%20user%20\(or%20via%20page/template/filtering%20logic\)%2C%20%7B%7Bvalues%7D%7D%20outputs%20index%2C%20follow.">which applies `index,follow` by default</a>. Yoast has an approximate 16% adoption (desktop and mobile) when looking at home page use of SEO tools/plugins and, of <a hreflang="en" href="https://www.wappalyzer.com/technologies/seo/">all identified SEO tools</a>, it is used nearly 70% of the time.
 
 `nofollow` and `noindex`, the next two most-used `meta` robots rules, are used at a considerably lower frequency, showing up on 2.8% of desktop pages and 2.4% of mobile pages.
 
@@ -519,7 +519,7 @@ In 2025, performance across Core Web Vitals has largely stabilized after several
 
 Across both platforms, CLS remains a strongest metric, with around 75% of pages passing. However, LCP continues to lag near 55–60% on mobile, showing that loading speed remains the most persistent Core Web Vitals challenge for websites today. As [research shows](https://www.speedcurve.com/blog/psychology-site-speed/), this affects user satisfaction, and can also impact online conversions, particularly in an AI-driven landscape.
 
-The visible dip from March 2024 particularly on mobile reflects the transition toward Google's [March 2024 replacement of First Input Delay](https://searchengineland.com/google-replace-fid-inp-core-web-vitals-414546#:~:text=Interaction%20to%20Next%20Paint%20\(INP,nearly%20all\)%20interactions%20were%20below.&text=On%20the%20left%2C%20long%20tasks,rankings%2C%E2%80%9D%20according%20to%20Splitt.) (FID) with Interaction to Next Paint (INP). INP began surfacing in performance tools ahead of the rollout, introducing stricter thresholds that exposed responsiveness issues FID often overlooked. This gradual shift raised the bar for what's considered a "good" user experience and explains the shift when the change took effect.
+The visible dip from March 2024 particularly on mobile reflects the transition toward Google's <a hreflang="en" href="https://searchengineland.com/google-replace-fid-inp-core-web-vitals-414546#:~:text=Interaction%20to%20Next%20Paint%20\(INP,nearly%20all\)%20interactions%20were%20below.&text=On%20the%20left%2C%20long%20tasks,rankings%2C%E2%80%9D%20according%20to%20Splitt.">March 2024 replacement of First Input Delay (FID) with Interaction to Next Paint (INP)</a>. INP began surfacing in performance tools ahead of the rollout, introducing stricter thresholds that exposed responsiveness issues FID often overlooked. This gradual shift raised the bar for what's considered a "good" user experience and explains the shift when the change took effect.
 
 ### Image `loading` property usage
 
@@ -673,7 +673,7 @@ Distribution patterns have largely stabilized after the sharp growth between 202
 
 This distribution confirms that publishers have settled into a comfortable range: long enough to provide substance but generally capped below ~80 words or ~540 characters. Even with Google frequently rewriting snippets, maintaining well-structured descriptions gives site owners a measure of influence over how their content is presented elsewhere.
 
-In practice, snippet display is constrained by pixel width, (roughly [920–980px](https://ux.stackexchange.com/questions/125770/does-the-980px-screen-width-rule-still-stand) on desktop and 680px on mobile) so truncation varies by character width.
+In practice, snippet display is constrained by pixel width, (roughly <a hreflang="en" href="https://ux.stackexchange.com/questions/125770/does-the-980px-screen-width-rule-still-stand">920–980px</a> on desktop and 680px on mobile) so truncation varies by character width.
 
 If this pattern holds, well-structured meta descriptions become more than traditional SERP signals: they help determine whether a page is even surfaced for AI-driven summarization or citation.
 
@@ -994,7 +994,7 @@ The pattern seems to be the more words, the less they rely on client-side render
 
 While not a direct ranking factor, structured data remains a powerful addition to websites to help search engines to understand the context of the page, while also powering rich results in search engine results pages (SERPs) .
 
-[Structured data](https://insightland.org/blog/structured-data-ai-search/#) is increasingly being used by large language models to understand what a page represents, not just what it says. Microsoft has confirmed that [Bing uses schema.org](http://schema.org) markup to help its models (including Bing Chat and Copilot) distinguish between expert articles, products, reviews, and FAQs. Google's [AI Overviews](https://www.semrush.com/blog/how-can-schema-markup-specifically-enhance-llm-visibility/) behavior suggests a similar reliance, and crawlers such as GPTBot are capable of parsing schema embedded directly in HTML.
+<a hreflang="en" href="https://insightland.org/blog/structured-data-ai-search/">Structured data</a> is increasingly being used by large language models to understand what a page represents, not just what it says. Microsoft has confirmed that <a hreflang="en" href="http://schema.org">Bing uses schema.org</a> markup to help its models (including Bing Chat and Copilot) distinguish between expert articles, products, reviews, and FAQs. Google's <a hreflang="en" href="https://www.semrush.com/blog/how-can-schema-markup-specifically-enhance-llm-visibility/">AI Overviews</a> behavior suggests a similar reliance, and crawlers such as GPTBot are capable of parsing schema embedded directly in HTML.
 
 ### Home pages' structured data
 
