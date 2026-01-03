@@ -19,9 +19,9 @@ LANGUAGE js AS """
     };
 
     signals.has_any_signal = signals.has_usp_standard ||
-                           signals.has_usp_nonstandard ||
-                           signals.has_tcf_standard ||
-                           signals.has_gpp_standard;
+                            signals.has_usp_nonstandard ||
+                            signals.has_tcf_standard ||
+                            signals.has_gpp_standard;
 
     return signals;
   } catch (e) {
