@@ -693,9 +693,11 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee",
         "developers",
-        "analysts"
+        "editors",
+        "reviewers"
       ]
     },
     "twitter": "tunetheweb",
@@ -3378,6 +3380,27 @@
     "teams": {
       "2021": [
         "translators"
+      ]
+    }
+  },
+  "abubakaraziz": {
+    "avatar_url": "10674679",
+    "github": "abubakaraziz",
+    "linkedin": "aziz313f",
+    "name": "Muhammad Abu Bakar Aziz",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    }
+  },
+  "jazlan01": {
+    "github": "jazlan01",
+    "name": "Muhammad Jazlan",
+    "teams": {
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
