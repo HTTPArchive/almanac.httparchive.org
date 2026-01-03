@@ -647,8 +647,11 @@
     "twitter": "LoukilAymen",
     "website": "http://www.aymen-loukil.com/en/"
   },
-  "aziz": {
-    "name": "Aziz",
+  "abubakaraziz": {
+      "avatar_url": "10674679",
+      "github": "abubakaraziz",
+      "linkedin": "aziz313f"
+    "name": "Muhammad Abu Bakar Aziz",
     "teams": {
       "2025": [
         "authors"

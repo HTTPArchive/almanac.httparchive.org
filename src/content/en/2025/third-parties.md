@@ -3,7 +3,7 @@
 title: Third Parties
 description: Third Parties chapter of the 2025 Web Almanac covering data of what third parties are used on the web and an analysis of inclusion chains of third parties.
 hero_alt: Hero image of Web Almanac characters plugging various things into a web page.
-authors: [jazlan01, aziz]
+authors: [jazlan01, abubakaraziz]
 reviewers: [tunetheweb]
 analysts: [jazlan01]
 editors: [tunetheweb]
