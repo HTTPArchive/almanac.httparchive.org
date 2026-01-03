@@ -647,6 +647,14 @@
     "twitter": "LoukilAymen",
     "website": "http://www.aymen-loukil.com/en/"
   },
+  "aziz": {
+    "name": "Aziz",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    }
+  },
   "tunetheweb": {
     "avatar_url": "10931297",
     "bluesky": "tunetheweb.com",
@@ -3378,6 +3386,16 @@
     "teams": {
       "2021": [
         "translators"
+      ]
+    }
+  },
+  "jazlan01": {
+    "github": "jazlan01",
+    "name": "Muhammad Jazlan",
+    "teams": {
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
