@@ -701,9 +701,11 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee",
         "developers",
-        "analysts"
+        "editors",
+        "reviewers"
       ]
     },
     "twitter": "tunetheweb",
