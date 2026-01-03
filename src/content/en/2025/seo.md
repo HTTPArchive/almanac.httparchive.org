@@ -19,7 +19,6 @@ featured_stat_2: 92%
 featured_stat_label_2: HTTPS adoption reached ~92%. A stable but important step upward from ~89%.
 featured_stat_3: 50%
 featured_stat_label_3: of all pages contain structured data
-doi: ""
 ---
 
 ## Introduction
@@ -439,7 +438,7 @@ HTTPS was introduced to secure data exchanges between users and websites, protec
 
 In 2025, HTTPS usage reached 91.7% of desktop pages and 91.5% of mobile pages, up slightly from around 89% across devices in 2024. While growth has slowed, HTTPS has effectively become the default for most of the web. The small remaining gap represents older or low-maintenance sites that have yet to migrate. As a result, HTTPS now functions less as a differentiator and more as a baseline expectation for both users and search engines.
 
-Still, full universal encryption isn't trivial. [Google's transparency reports](https://transparencyreport.google.com/https/overview?hl=en) note persistent obstacles. Some countries and organisations block or degrade HTTPS traffic, and organizations with limited technical capacity may deprioritize it. Even Google's products face challenges, such as managing certificates for user-owned domains (e.g. in Blogger), as it can be complex when those domains don't natively support HTTPS. These constraints help explain why a small share of sites still lag behind.
+Still, full universal encryption isn't trivial. [Google's transparency reports](https://transparencyreport.google.com/https/overview) note persistent obstacles. Some countries and organisations block or degrade HTTPS traffic, and organizations with limited technical capacity may deprioritize it. Even Google's products face challenges, such as managing certificates for user-owned domains (e.g. in Blogger), as it can be complex when those domains don't natively support HTTPS. These constraints help explain why a small share of sites still lag behind.
 
 ### Mobile-friendliness
 
@@ -479,7 +478,7 @@ Once a standard tool for dynamic serving, the `Vary: User-Agent header` is now n
 
 Legibility is one of the most fundamental aspects of mobile experience. Users should be able to read content comfortably without zooming or straining, and accessibility standards reinforce that. According to the Web Content Accessibility Guidelines ([WCAG](https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html#)), body text should be at least 16px (1rem), with the ability to scale up to 200% without breaking layout or functionality.
 
-[Lighthouse's](https://developer.chrome.com/docs/lighthouse/seo/font-size) legible font size audit uses a similar benchmark, flagging pages where less than 60% of visible text exceeds `12px`. In 2025, 92% of mobile pages passed this test, mirroring 2024's performance and indicating that most sites now meet basic readability standards across both home pages and inner pages.
+Lighthouse's [legible font size audit](https://developer.chrome.com/docs/lighthouse/seo/font-size) uses a similar benchmark, flagging pages where less than 60% of visible text exceeds `12px`. In 2025, 92% of mobile pages passed this test, mirroring 2024's performance and indicating that most sites now meet basic readability standards across both home pages and inner pages.
 
 {{ figure_markup(
   image="legible-font-size-used-mobile.png",
