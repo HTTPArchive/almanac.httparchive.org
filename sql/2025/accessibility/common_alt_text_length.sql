@@ -52,8 +52,8 @@ FROM (
       date = '2025-07-01'
   )
   WHERE
-    alt_length IS NOT NULL
-    AND is_root_page IS TRUE
+    alt_length IS NOT NULL AND
+    is_root_page IS TRUE
 )
 GROUP BY
   client, is_root_page, alt_length

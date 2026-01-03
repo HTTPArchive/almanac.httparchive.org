@@ -68,8 +68,8 @@ FROM (
     -- `httparchive.sample_data.parsed_css_10k`,
     UNNEST(getSelectorParts(TO_JSON_STRING(css)).pseudo_class) AS pseudo_class
   WHERE
-    BYTE_LENGTH(TO_JSON_STRING(css)) < 0.1 * 1024 * 1024  -- ~100 KiB guard
-    AND date = DATE '2025-07-01' -- Comment out if this is used `httparchive.sample_data.parsed_css_10k`,
+    BYTE_LENGTH(TO_JSON_STRING(css)) < 0.1 * 1024 * 1024 AND  -- ~100 KiB guard
+    date = DATE '2025-07-01' -- Comment out if this is used `httparchive.sample_data.parsed_css_10k`,
   GROUP BY
     client, page
 )

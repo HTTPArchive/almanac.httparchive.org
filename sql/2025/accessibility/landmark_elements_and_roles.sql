@@ -24,9 +24,12 @@
 -- %/count of pages that contain common elements and roles (2025 schema; 2024 shape)
 
 WITH mappings AS (
-  SELECT 1 AS mapping_id, 'main'   AS element_type, 'main'        AS role_type UNION ALL
-  SELECT 2 AS mapping_id, 'header' AS element_type, 'banner'      AS role_type UNION ALL
-  SELECT 3 AS mapping_id, 'nav'    AS element_type, 'navigation'  AS role_type UNION ALL
+  SELECT 1 AS mapping_id, 'main' AS element_type, 'main' AS role_type
+  UNION ALL
+  SELECT 2 AS mapping_id, 'header' AS element_type, 'banner' AS role_type
+  UNION ALL
+  SELECT 3 AS mapping_id, 'nav' AS element_type, 'navigation' AS role_type
+  UNION ALL
   SELECT 4 AS mapping_id, 'footer' AS element_type, 'contentinfo' AS role_type
 ),
 
@@ -47,11 +50,11 @@ src AS (
       custom_metrics.other.element_count,           -- if nested under other
       JSON_QUERY(payload, '$.element_count')        -- legacy fallback
     ) AS element_count
-  FROM 
+  FROM
     `httparchive.crawl.pages`
     -- `httparchive.sample_data.pages_10k`
-  WHERE is_root_page
-    AND date = DATE '2025-07-01' -- Comment out if `httparchive.sample_data.pages_10k`,
+  WHERE is_root_page AND
+    date = DATE '2025-07-01' -- Comment out if `httparchive.sample_data.pages_10k`,
 ),
 
 elements AS (
@@ -60,7 +63,7 @@ elements AS (
     s.page,
     element_type
   FROM src AS s,
-  UNNEST(JSON_KEYS(s.element_count)) AS element_type
+    UNNEST(JSON_KEYS(s.element_count)) AS element_type
   JOIN mappings USING (element_type)
 ),
 
@@ -70,7 +73,7 @@ roles AS (
     s.page,
     role_type
   FROM src AS s,
-  UNNEST(JSON_KEYS(JSON_QUERY(s.almanac, '$.nodes_using_role.usage_and_count'))) AS role_type
+    UNNEST(JSON_KEYS(JSON_QUERY(s.almanac, '$.nodes_using_role.usage_and_count'))) AS role_type
   JOIN mappings USING (role_type)
 ),
 
@@ -82,11 +85,11 @@ base AS (
     m.element_type,
     m.role_type,
     COUNTIF(e.element_type IS NOT NULL) AS element_usage,
-    COUNTIF(r.role_type   IS NOT NULL) AS role_usage
+    COUNTIF(r.role_type IS NOT NULL) AS role_usage
   FROM src AS s
   INNER JOIN mappings AS m ON TRUE
   LEFT JOIN elements AS e USING (client, page, element_type)
-  LEFT JOIN roles    AS r USING (client, page, role_type)
+  LEFT JOIN roles AS r USING (client, page, role_type)
   GROUP BY s.client, s.page, m.mapping_id, m.element_type, m.role_type
 )
 
@@ -100,7 +103,7 @@ SELECT
   COUNTIF(role_usage > 0) AS role_usage,
   COUNTIF(element_usage > 0 OR role_usage > 0) AS both_usage,
   COUNTIF(element_usage > 0) / COUNT(DISTINCT page) AS element_pct,
-  COUNTIF(role_usage > 0)  / COUNT(DISTINCT page) AS role_pct,
+  COUNTIF(role_usage > 0) / COUNT(DISTINCT page) AS role_pct,
   COUNTIF(element_usage > 0 OR role_usage > 0) / COUNT(DISTINCT page) AS both_pct
 FROM base
 GROUP BY client, mapping_id, element_type, role_type

@@ -42,9 +42,9 @@ FROM (
     `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(custom_metrics.a11y.form_control_a11y_tree)) AS node
   WHERE
-    date = '2025-07-01'
-    AND is_root_page
-    AND (
+    date = '2025-07-01' AND
+    is_root_page AND
+    (
       JSON_VALUE(node, '$.type') = 'button' OR
       (JSON_VALUE(node, '$.type') = 'input' AND JSON_VALUE(node, '$.attributes.type') = 'submit')
     )

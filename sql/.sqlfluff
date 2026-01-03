@@ -28,7 +28,7 @@ exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,AM08,CP02,CP03,CV02,CV12,LT05,LT09
 # ST08 - Sometimes clearer to include brackets for complex COUNT(DISTINCT) cases
 # ST11 - Doesn't consider wildcards in SELECT. Issue: https://github.com/sqlfluff/sqlfluff/issues/6511
 
-large_file_skip_byte_limit = 40000
+large_file_skip_byte_limit = 1120000
 # CPU processes to use while linting.
 # If positive, just implies number of processes.
 # If negative or zero, implies number_of_cpus - specifed_number.

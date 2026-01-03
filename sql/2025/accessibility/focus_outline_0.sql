@@ -40,8 +40,8 @@ WITH rules AS (
     client,
     page,
     JSON_QUERY_ARRAY(css, '$.stylesheet.rules') AS rules
-  FROM 
-  `httparchive.crawl.parsed_css`
+  FROM
+    `httparchive.crawl.parsed_css`
   -- `httparchive.sample_data.parsed_css_10k`
   WHERE date = DATE '2025-07-01' -- Comment out with `httparchive.sample_data.parsed_css_10k`
 
@@ -52,13 +52,13 @@ WITH rules AS (
     client,
     page,
     JSON_QUERY_ARRAY(parent_rule, '$.rules') AS rules
-  FROM 
-  `httparchive.crawl.parsed_css`
+  FROM
+    `httparchive.crawl.parsed_css`
   -- `httparchive.sample_data.parsed_css_10k`
   CROSS JOIN UNNEST(JSON_QUERY_ARRAY(css, '$.stylesheet.rules')) AS parent_rule
-  WHERE 
-    JSON_TYPE(JSON_QUERY(parent_rule, '$.rules')) = 'array'
-    AND date = DATE '2025-07-01' -- Comment out with `httparchive.sample_data.parsed_css_10k`
+  WHERE
+    JSON_TYPE(JSON_QUERY(parent_rule, '$.rules')) = 'array' AND
+    date = DATE '2025-07-01' -- Comment out with `httparchive.sample_data.parsed_css_10k`
 
 ),
 
@@ -72,7 +72,7 @@ focus_data AS (
       EXISTS (
         SELECT 1
         FROM UNNEST(t.rules) AS r,
-             UNNEST(JSON_QUERY_ARRAY(r, '$.selectors')) AS sel
+          UNNEST(JSON_QUERY_ARRAY(r, '$.selectors')) AS sel
         WHERE JSON_VALUE(sel) LIKE '%:focus%'           -- CHANGED
       )
     ) AS sets_focus_style,
@@ -83,16 +83,16 @@ focus_data AS (
         SELECT 1
         FROM UNNEST(t.rules) AS r
         WHERE EXISTS (
-                SELECT 1
-                FROM UNNEST(JSON_QUERY_ARRAY(r, '$.selectors')) AS sel
-                WHERE JSON_VALUE(sel) LIKE '%:focus%'   -- CHANGED
-             )
-          AND EXISTS (
-                SELECT 1
-                FROM UNNEST(JSON_QUERY_ARRAY(r, '$.declarations')) AS d
-                WHERE LOWER(JSON_VALUE(d, '$.property')) = 'outline'
-                  AND TRIM(JSON_VALUE(d, '$.value')) = '0'
-             )
+            SELECT 1
+            FROM UNNEST(JSON_QUERY_ARRAY(r, '$.selectors')) AS sel
+            WHERE JSON_VALUE(sel) LIKE '%:focus%'   -- CHANGED
+          ) AND
+          EXISTS (
+            SELECT 1
+            FROM UNNEST(JSON_QUERY_ARRAY(r, '$.declarations')) AS d
+            WHERE LOWER(JSON_VALUE(d, '$.property')) = 'outline' AND
+              TRIM(JSON_VALUE(d, '$.value')) = '0'
+          )
       )
     ) AS sets_focus_outline_0
   FROM rules AS t
@@ -101,8 +101,8 @@ focus_data AS (
 
 total_pages_data AS (
   SELECT client, COUNT(0) AS total_pages
-  FROM 
-  `httparchive.crawl.pages`
+  FROM
+    `httparchive.crawl.pages`
   -- `httparchive.sample_data.pages_10k`
   WHERE date = DATE '2025-07-01' -- Comment out with `httparchive.sample_data.parsed_css_10k`
   GROUP BY client
@@ -115,12 +115,12 @@ SELECT
   tp.total_pages,
   COUNTIF(f.sets_focus_style) / tp.total_pages AS pct_pages_focus,
   COUNTIF(f.sets_focus_outline_0) / tp.total_pages AS pct_pages_focus_outline_0
-FROM 
+FROM
   focus_data AS f
-JOIN 
+JOIN
   total_pages_data AS tp
-  ON f.client = tp.client
-GROUP BY 
+ON f.client = tp.client
+GROUP BY
   f.client, tp.total_pages
-ORDER BY 
+ORDER BY
   pct_pages_focus DESC;

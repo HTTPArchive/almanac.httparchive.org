@@ -19,7 +19,7 @@ FROM (
   SELECT
     client,
     is_root_page,
-    date, 
+    date,
     CAST(JSON_VALUE(custom_metrics.a11y.total_anchors_with_role_button) AS INT64) AS total_anchors_with_role_button,
     IFNULL(CAST(JSON_VALUE(custom_metrics.element_count.a) AS INT64), 0) AS total_anchors
   FROM

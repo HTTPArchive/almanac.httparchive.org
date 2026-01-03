@@ -32,14 +32,15 @@ WITH src AS (
     page,
     -- pull just the object we want (usage_and_count) out of almanac
     JSON_QUERY(custom_metrics.other.almanac, '$.nodes_using_role.usage_and_count') AS usage_and_count
-  FROM 
+  FROM
     `httparchive.crawl.pages`
     -- `httparchive.sample_data.pages_10k`
   WHERE
-    is_root_page = TRUE
-    AND custom_metrics.other.almanac IS NOT NULL
-    AND date = DATE '2025-07-01' -- Comment out if using `httparchive.sample_data.pages_10k`
+    is_root_page = TRUE AND
+    custom_metrics.other.almanac IS NOT NULL AND
+    date = DATE '2025-07-01' -- Comment out if using `httparchive.sample_data.pages_10k`
 ),
+
 role_usage AS (
   SELECT
     client,
@@ -49,11 +50,13 @@ role_usage AS (
   FROM src
   CROSS JOIN UNNEST(JSON_KEYS(usage_and_count)) AS role
 ),
+
 totals AS (
   SELECT client, is_root_page, COUNT(DISTINCT page) AS total_sites
   FROM role_usage
   GROUP BY client, is_root_page
 )
+
 SELECT
   r.client,
   r.is_root_page,
@@ -61,12 +64,13 @@ SELECT
   r.role,
   COUNT(DISTINCT r.page) AS total_sites_using,
   SAFE_DIVIDE(COUNT(DISTINCT r.page), t.total_sites) AS pct_sites_using
-FROM 
+FROM
   role_usage r
-JOIN 
-  totals t USING (client, is_root_page)
+JOIN
+  totals t
+USING (client, is_root_page)
 GROUP BY r.client, r.is_root_page, t.total_sites, r.role
-HAVING 
+HAVING
   total_sites_using >= 100
-ORDER BY 
+ORDER BY
   pct_sites_using DESC;

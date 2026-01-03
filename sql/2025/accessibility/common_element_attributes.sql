@@ -43,9 +43,9 @@ WITH attribute_usage AS (
         JSON_QUERY(custom_metrics.other.almanac, '$.attributes_used_on_elements')
       )
     ) AS attribute
-  WHERE 
-    date = DATE '2025-07-01'
-    AND custom_metrics.other.almanac IS NOT NULL
+  WHERE
+    date = DATE '2025-07-01' AND
+    custom_metrics.other.almanac IS NOT NULL
 ),
 
 # Totals per {client, is_root_page}
@@ -68,7 +68,7 @@ SELECT
   SAFE_DIVIDE(COUNT(DISTINCT a.page), t.total_sites) AS pct_sites_using
 FROM attribute_usage a
 JOIN total_sites_per_group t
-  ON a.client = t.client AND a.is_root_page = t.is_root_page
+ON a.client = t.client AND a.is_root_page = t.is_root_page
 GROUP BY
   a.client, a.is_root_page, a.attribute, t.total_sites
 HAVING

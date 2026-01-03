@@ -113,7 +113,7 @@ FROM (
       )
     ) AS stats
   FROM
-  `httparchive.crawl.pages`
+    `httparchive.crawl.pages`
   --  `httparchive.sample_data.pages_10k`
   WHERE date = DATE '2025-07-01' -- Comment if `httparchive.sample_data.pages_10k`
 ) per_page

@@ -61,7 +61,7 @@ try {
 WITH
 src_base AS (
   SELECT client, is_root_page, custom_metrics, payload
-  FROM 
+  FROM
     `httparchive.crawl.pages`
     -- `httparchive.sample_data.pages_10k`
   WHERE date = DATE '2025-07-01' -- Comment out if used `httparchive.sample_data.pages_10k`
@@ -79,22 +79,24 @@ src AS (
   FROM src_base AS b
   WHERE b.custom_metrics IS NOT NULL
 ),
+
 per_input AS (
   SELECT
     client,
     is_root_page,
     src_txt AS input_name_source
   FROM src,
-  UNNEST(a11yInputNameSources(a11y_str)) AS src_txt
+    UNNEST(a11yInputNameSources(a11y_str)) AS src_txt
   WHERE a11y_str IS NOT NULL
 )
+
 SELECT
   client,
   is_root_page,
-  SUM(COUNT(*)) OVER (PARTITION BY client) AS total_inputs,
+  SUM(COUNT(0)) OVER (PARTITION BY client) AS total_inputs,
   input_name_source,
   COUNT(0) AS total_with_this_source,
-  SAFE_DIVIDE(COUNT(*), SUM(COUNT(*)) OVER (PARTITION BY client)) AS perc_of_all_inputs
+  SAFE_DIVIDE(COUNT(0), SUM(COUNT(0)) OVER (PARTITION BY client)) AS perc_of_all_inputs
 FROM per_input
 GROUP BY client, is_root_page, input_name_source
 ORDER BY client, is_root_page, total_with_this_source DESC;
