@@ -31,8 +31,8 @@ SELECT
     COUNT(DISTINCT IF(
       IS_GOOD(fast_lcp, avg_lcp, slow_lcp) AND
       (
-        (date >= DATE'2024-03-01' AND IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE) OR
-        (date < DATE'2024-03-01' AND IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE)
+        (date >= '2024-03-01' AND IS_GOOD(fast_inp, avg_inp, slow_inp) IS NOT FALSE) OR
+        (date < '2024-03-01' AND IS_GOOD(fast_fid, avg_fid, slow_fid) IS NOT FALSE)
       ) AND
       IS_GOOD(small_cls, medium_cls, large_cls), origin, NULL
     )),
