@@ -53,11 +53,11 @@ When third-party content is directly served from a first-party domain, it is cou
 
 Further, it is becoming increasingly common for third parties to be masqueraded as a first party. Two key techniques enable this:
 
-**CNAME cloaking** involves using a CNAME record to make a third party's content appear to come from the first-party domain. We consider CNAME-cloaked services as first parties in this analysis.
+- **CNAME cloaking** involves using a CNAME record to make a third party's content appear to come from the first-party domain. We consider CNAME-cloaked services as first parties in this analysis.
 
-**Server-side tracking** is an emerging trend where the site owner embeds the tracker as a first party and routes all requests through the first-party domain, making the tracker appear as a first party. For example, a website `www.example.com` may embed server-side Google Tag Manager with Google Analytics and cloak the subdomain sst.example.com to send requests to a Google Tag Manager Container. In this way, requests to third parties originate from the tag manager's server rather than the user's browser.
+- **Server-side tracking** is an emerging trend where the site owner embeds the tracker as a first party and routes all requests through the first-party domain, making the tracker appear as a first party. For example, a website `www.example.com` may embed server-side Google Tag Manager with Google Analytics and cloak the subdomain `sst.example.com` to send requests to a Google Tag Manager Container. In this way, requests to third parties originate from the tag manager's server rather than the user's browser.
 
-In our analysis, we treat such cases as first-party interactions because the third-party communication occurs server-to-server and is not directly observable in the client-side HTTP Archive data. As a result, our measurements represent a **lower bound** on the actual prevalence of third parties on the web
+In our analysis, we treat such cases as first-party interactions because the third-party communication occurs server-to-server and is not directly observable in the client-side HTTP Archive data. As a result, our measurements represent a lower bound on the actual prevalence of third parties on the web
 
 ## Categories
 
