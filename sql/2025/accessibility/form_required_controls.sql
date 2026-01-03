@@ -67,10 +67,10 @@ LANGUAGE js AS '''
     }
 
     return { total, asterisk, required_attribute, aria_required,
-             all_three, asterisk_required, asterisk_aria, required_with_aria };
+              all_three, asterisk_required, asterisk_aria, required_with_aria };
   } catch (e) {
     return { total:0, asterisk:0, required_attribute:0, aria_required:0,
-             all_three:0, asterisk_required:0, asterisk_aria:0, required_with_aria:0 };
+              all_three:0, asterisk_required:0, asterisk_aria:0, required_with_aria:0 };
   }
 ''';
 

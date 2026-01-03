@@ -39,7 +39,7 @@ FROM (
     JSON_VALUE(lighthouse, '$.audits.color-contrast.score') AS color_contrast_score
   FROM
     `httparchive.crawl.pages`
-    -- TABLESAMPLE SYSTEM (0.1 PERCENT) 
+    -- TABLESAMPLE SYSTEM (0.1 PERCENT)
   WHERE
     date = '2025-07-01'
 )

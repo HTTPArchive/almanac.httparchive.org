@@ -8,8 +8,8 @@
 --   • Categorize name sources as attributes (e.g., aria-label, title),
 --     related elements (e.g., <label>), or mark as missing.
 --
--- Note: the  JavaScript temporary function (UDF) was no longer needed as 
--- each accessible name source became its own row. 
+-- Note: the  JavaScript temporary function (UDF) was no longer needed as
+-- each accessible name source became its own row.
 --
 -- Output
 --   client                — "desktop" | "mobile"
