@@ -9,7 +9,7 @@ analysts: [jazlan01]
 editors: [tunetheweb]
 translators: []
 jazlan01_bio: Muhammad Jazlan is a Computer Science senior at <a hreflang="en" href="https://sbasse.lums.edu.pk/">Lahore University of Management Sciences</a>, School of Science and Engineering. He works as a research assistant in the domain of Networks, AI Safety and Next Generation Cellular Devices. His work experience also includes working as a research intern at <a hreflang="en" href="http://biolabs.lums.edu.pk/BIRL">Biomedical Informatics & Engineering Research Laboratory</a>.
-aziz_bio: TODO
+abubakaraziz_bio: Muhammad Abu Bakar Aziz is a PhD candidate in Computer Science at Northeastern University in Boston. His research focuses on web privacy. In particular, he empirically measures how third parties and online advertisers comply with privacy laws such as the CCPA and GDPR.
 results: https://docs.google.com/spreadsheets/d/1FPssodcLgX8iFWFXDrthWVkBCUTl5_IJon2cyaZVudU/edit
 featured_quote: TODO
 featured_stat_1: TODO
