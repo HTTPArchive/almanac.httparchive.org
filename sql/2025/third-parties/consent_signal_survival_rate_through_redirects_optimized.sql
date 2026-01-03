@@ -13,23 +13,23 @@ RETURNS STRUCT<
 LANGUAGE js AS """
   try {
     if (!url || typeof url !== 'string') return {
-      has_usp_standard: false, has_usp_nonstandard: false, 
+      has_usp_standard: false, has_usp_nonstandard: false,
       has_tcf_standard: false, has_gpp_standard: false,
       has_any_signal: false, signal_count: 0
     };
-    
+
     const signals = {
       has_usp_standard: /[?&]us_privacy=/.test(url),
       has_usp_nonstandard: /[?&](ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string)=/.test(url),
       has_tcf_standard: /[?&](gdpr|gdpr_consent|gdpr_pd)=/.test(url),
       has_gpp_standard: /[?&](gpp|gpp_sid)=/.test(url)
     };
-    
+
     signals.signal_count = [
-      signals.has_usp_standard, signals.has_usp_nonstandard, 
+      signals.has_usp_standard, signals.has_usp_nonstandard,
       signals.has_tcf_standard, signals.has_gpp_standard
     ].filter(Boolean).length;
-    
+
     signals.has_any_signal = signals.signal_count > 0;
     return signals;
   } catch (e) {

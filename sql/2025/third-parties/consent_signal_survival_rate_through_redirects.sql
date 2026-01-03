@@ -18,22 +18,22 @@ LANGUAGE js AS """
       has_tcf_standard: /[?&](gdpr|gdpr_consent|gdpr_pd)=/.test(url),
       has_gpp_standard: /[?&](gpp|gpp_sid)=/.test(url)
     };
-    
+
     signals.signal_count = [
       signals.has_usp_standard,
-      signals.has_usp_nonstandard, 
+      signals.has_usp_nonstandard,
       signals.has_tcf_standard,
       signals.has_gpp_standard
     ].filter(Boolean).length;
-    
+
     signals.has_any_signal = signals.signal_count > 0;
-    
+
     return signals;
   } catch (e) {
     return {
       has_usp_standard: false,
       has_usp_nonstandard: false,
-      has_tcf_standard: false, 
+      has_tcf_standard: false,
       has_gpp_standard: false,
       has_any_signal: false,
       signal_count: 0

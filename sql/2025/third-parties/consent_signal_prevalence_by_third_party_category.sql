@@ -127,7 +127,7 @@ category_signal_aggregates AS (
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN page END) AS usp_standard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN canonicalDomain END) AS usp_standard_domains,
 
-    -- USP Non-Standard metrics  
+    -- USP Non-Standard metrics
     COUNTIF(has_usp_nonstandard) AS usp_nonstandard_requests,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN page END) AS usp_nonstandard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN canonicalDomain END) AS usp_nonstandard_domains,
