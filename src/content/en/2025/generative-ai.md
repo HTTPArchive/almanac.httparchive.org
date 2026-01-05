@@ -23,7 +23,7 @@ featured_stat_label_3: Websites defining `robots.txt` rules for OpenAI's GPTBot
 
 ## Introduction
 
-On November 30, 2022, <a hreflang="en" href="https://openai.com/index/chatgpt/">OpenAI launched ChatGPT</a>, a service that catapulted _Generative Artificial Intelligence_ (Generative AI) from research labs <a hreflang="en" href="https://openai.com/index/how-people-are-using-chatgpt/#:~:text=Given%20the%20sample%20size%20and%20700%20million%20weekly%20active%20users%20of%20ChatGPT">into the daily lives of millions</a> (see figure below). This launch fundamentally changed user expectations regarding how applications and the web should function. Furthermore, the accompanying _Application Programming Interface_ (API) gave software developers a powerful tool to make their applications significantly smarter.
+On November 30, 2022, <a hreflang="en" href="https://openai.com/index/chatgpt/">OpenAI launched ChatGPT</a>, a service that catapulted _Generative Artificial Intelligence_ (Generative AI) from research labs <a hreflang="en" href="https://openai.com/index/how-people-are-using-chatgpt/#:~:text=Given%20the%20sample%20size%20and%20700%20million%20weekly%20active%20users%20of%20ChatGPT">into the daily lives of millions</a>. This launch fundamentally changed user expectations regarding how applications and the web should function. Furthermore, the accompanying _Application Programming Interface_ (API) gave software developers a powerful tool to make their applications significantly smarter.
 
 {{ figure_markup(
   content="700,000,000",
