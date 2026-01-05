@@ -63,7 +63,7 @@ However, cloud-based models also have their drawbacks:
 
 ### Local AI technologies
 
-The limitations of cloud-based systems can be addressed by migrating inference to the client via local AI technologies, [referred to as Web AI](https://developer.chrome.com/blog/io24-web-ai-wrapup#:~:text=Web%20AI%20is%20a%20set%20of%20technologies%20and%20techniques%20to%20use%20machine%20learning%20\(ML\)%20models%2C%20client%2Dside%20in%20a%20web%20browser%20running%20on%20a%20device%27s%20CPU%20or%20GPU.). Since models are downloaded to the user's system, their *weights* (internal model parameters) cannot be kept a secret. As a result, this approach is mostly used in combination with open-weight models, which are <a hreflang="en" href="https://www.vellum.ai/llm-leaderboard">typically less powerful</a> than their commercial, cloud-based, closed-weight counterparts. <a hreflang="en" href="https://epoch.ai/data-insights/open-weights-vs-closed-weights-models">According to Epoch AI</a>, open-weight models lag behind state-of-the-art by around three months on average.
+The limitations of cloud-based systems can be addressed by migrating inference to the client via local AI technologies, [referred to as Web AI](https://developer.chrome.com/blog/io24-web-ai-wrapup#:~:text=Web%20AI%20is%20a%20set%20of%20technologies%20and%20techniques%20to%20use%20machine%20learning%20\(ML\)%20models%2C%20client%2Dside%20in%20a%20web%20browser%20running%20on%20a%20device%27s%20CPU%20or%20GPU.). Since models are downloaded to the user's system, their _weights_ (internal model parameters) cannot be kept a secret. As a result, this approach is mostly used in combination with open-weight models, which are <a hreflang="en" href="https://www.vellum.ai/llm-leaderboard">typically less powerful</a> than their commercial, cloud-based, closed-weight counterparts. <a hreflang="en" href="https://epoch.ai/data-insights/open-weights-vs-closed-weights-models">According to Epoch AI</a>, open-weight models lag behind state-of-the-art by around three months on average.
 
 {{ figure_markup(
   content="3 months",
@@ -106,7 +106,7 @@ According to <a hreflang="en" href="https://chromestatus.com/metrics/feature/tim
 
 ##### WebGPU
 
-[WebGPU](https://developer.mozilla.org/docs/Web/API/WebGPU_API) is the modern successor to [WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API), designed to expose the capabilities of modern GPUs to the web. Unlike WebGL, which was strictly for graphics, WebGPU provides support for *compute shaders*, allowing for general-purpose computing on graphics cards. This allows developers to perform massive parallel calculations, as required by AI models, directly on the user's graphics card.
+[WebGPU](https://developer.mozilla.org/docs/Web/API/WebGPU_API) is the modern successor to [WebGL](https://developer.mozilla.org/docs/Web/API/WebGL_API), designed to expose the capabilities of modern GPUs to the web. Unlike WebGL, which was strictly for graphics, WebGPU provides support for _compute shaders_, allowing for general-purpose computing on graphics cards. This allows developers to perform massive parallel calculations, as required by AI models, directly on the user's graphics card.
 
 WebGPU has become the standard foundation for running AI workloads in the browser. With the release of Firefox 141 in November 2025, [WebGPU became available in all relevant browser engines](https://web.dev/blog/webgpu-supported-major-browsers) (Chromium, Gecko, and WebKit).
 
@@ -193,7 +193,7 @@ The initiative consists of multiple APIs:
 - Task-specific APIs:
   - **Writing Assistance APIs**: Summarizing, writing, and rewriting text.
   - **Proofreader API**: Finding and fixing mistakes in text.
-  - **Language Detector** and *Translator APIs*: Detecting the language of text content and translating it into another language.
+  - **Language Detector** and **Translator APIs**: Detecting the language of text content and translating it into another language.
 
 All APIs are specified within the WebML Community Group, meaning they are still incubating, and are not yet on the W3C Recommendation track. Some of the APIs are already generally available, while [others need a browser flag to be enabled](https://developer.chrome.com/docs/ai/built-in-apis) or are in [Origin Trial](https://developer.chrome.com/docs/web-platform/origin-trials), requiring a registered token for activation—unlike WebGPU, which is now stable and widely available for shipping production features.
 
