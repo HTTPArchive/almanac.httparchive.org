@@ -1,7 +1,7 @@
 #standardSQL
 # How many pages use <video>?
 # video_adoption.sql
-# â\x9d• Updated in 2024
+# â• Updated in 2024
 
 SELECT
   client,
