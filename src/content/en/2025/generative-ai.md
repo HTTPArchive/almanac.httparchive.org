@@ -248,8 +248,6 @@ The final category of the Built-in AI APIs consists of the [Translator and Langu
 
 [The APIs shipped in Chrome 138](https://developer.chrome.com/release-notes/138#web_apis) but are not currently available on mobile devices.
 
-They have achieved the widest adoption of the Built-in AI APIs. The July 2025 HTTP Archive crawl detected these APIs on approximately 0.28% of all desktop sites and 0.26% of all mobile sites (see the following figure).
-
 {{ figure_markup(
   image="genai-translator-language-detector-adoption.png",
   caption="Translator and Language Detector API adoption.",
@@ -259,6 +257,8 @@ They have achieved the widest adoption of the Built-in AI APIs. The July 2025 HT
   sql_file="../capabilities/fugu.sql"
   )
 }}
+
+They have achieved the widest adoption of the Built-in AI APIs. The July 2025 HTTP Archive crawl detected the Translator API on 0.277% of all desktop sites and 0.262% of all mobile sites, with the Language Detector API used on just 0.001% fewer sites.
 
 Many of the sample sites we checked utilized the review tool <a hreflang="en" href="http://Judge.me">Judge.me</a>, which serves as an add-on for Shopify stores. Judge.me <a hreflang="en" href="https://judge.me/help/en/articles/11379816-translating-reviews-in-the-review-widget">utilizes both the Language Detector and Translator APIs</a>, which may be the reason for the tight coupling of usage: The Language Detector API was present on nearly the same absolute number of sites, trailing the Translator API by only approximately 100 sites.
 
