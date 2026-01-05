@@ -359,7 +359,8 @@ Because Tailwind is the preferred framework for LLMs like Claude, Gemini, and th
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=1045089879&format=interactive",
   width="642",
   height="417",
-  sheets_gid="1065437374"
+  sheets_gid="1065437374",
+  sql_file="gradient.sql"
   )
 }}
 
@@ -373,6 +374,7 @@ However, due to the explosive overall growth of the Tailwind framework, these sp
   width="642",
   height="417",
   sheets_gid="1065437374",
+  sql_file="gradient.sql"
   )
 }}
 
