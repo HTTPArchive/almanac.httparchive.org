@@ -2160,6 +2160,9 @@
     "teams": {
       "2024": [
         "analysts"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "jannis_r",
@@ -5103,4 +5106,3 @@
     "twitter": "_cybai"
   }
 }
-
