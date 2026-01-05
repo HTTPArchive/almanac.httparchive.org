@@ -101,23 +101,25 @@ Files between 100–200 KB accounted for 0.3% `robots.txt`, and 200–300 KB for
   )
 }}
 
+_Note that for analysis we lowercased all the user-agent names identified in our crawl to ignore any differences between sites. While some crawlers may provide a preferred capitalization in their docs, they <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc9309#section-2.2.1:~:text=Crawlers%20MUST%20use%20case%2Dinsensitive%20matching%20to%20find%20the%20group%20that%20matches%20the%20product%20token%20and%20then%20obey%20the%20rules%20of%20the%20group">should, in theory, disregard case</a> when processing `robots.txt` files._
+
 The catch-all user agent `*` is the most common approach to crawler directives found in `robots.txt` files today. In 2025, it appeared in 77% of files—up slightly from 2024, and from the mid-70% range in 2022. The steady rise indicates that most site owners prefer to implement broad, universal rules rather than maintaining complex bot-specific instructions.
 
-Where specific user agents _are_ mentioned in `robots.txt` files, Google's advertising crawler (`adsbot-google`) and `AhrefsBots` take the lead again, as they did last year.
+Where specific user agents _are_ mentioned in `robots.txt` files, Google's advertising crawler (`adsbot-google`) and `ahrefsbots` take the lead again, as they did last year.
 
 Targeting of `adsbot-google` in `robots.txt` directives rose to 9.8% (desktop) and 9.5% (mobile) in 2025, compared with 9.1% (desktop) and 8.9% (mobile) in 2024.
 
-`AhrefsBot` also remained a leading named crawler, specified in 9.3% of desktop and 9.5% of mobile `robots.txt` files. Combined with `AhrefsSiteAudit` (4.6% desktop / 4.3% mobile), this reflects the ongoing importance of controlling access by SEO tools, which can generate significant crawl activity.
+`ahrefsbot` also remained a leading named crawler, specified in 9.3% of desktop and 9.5% of mobile `robots.txt` files. Combined with `ahrefssiteaudit` (4.6% desktop / 4.3% mobile), this reflects the ongoing importance of controlling access by SEO tools, which can generate significant crawl activity.
 
 Other named crawlers that appeared in notable volumes this year include:
 
-- `MJ12Bot` (Majestic): 7.3% desktop / 7.3% mobile
-- `Googlebot`: 6.2% desktop / 6.7% mobile
-- `Nutch`: 5.0% desktop / 4.8% mobile
+- `mj12bot` (Majestic): 7.3% desktop / 7.3% mobile
+- `googlebot`: 6.2% desktop / 6.7% mobile
+- `nutch`: 5.0% desktop / 4.8% mobile
 
 ##### `bingbot` rarely named in `robots.txt`
 
-`bingbot` ranks 22nd among named user agents in `robots.txt` files and appears in less than 3% of `robots.txt`. When a bot appears in `robots.txt` files, it means website managers care enough about that crawler to explicitly control its behavior, either allowing it, restricting it, or setting crawl rates. Low appearance rates suggest benign neglect. Despite Microsoft's massive <a hreflang="en" href="https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/">investment in AI</a> and its integration of <a hreflang="en" href="https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/">ChatGPT into Bing</a>, the crawler itself hasn't become more prominent in `robots.txt` files. Even with its AI enhancements, Bing's web footprint and importance to site operators remain largely unchanged, a quiet contrast to the rapid rise of AI-focused crawlers like `gptbot` named in `robots.txt` files (more on that below).
+`bingbot` ranks 22nd among named user agents in `robots.txt` files and appears in less than 3% of `robots.txt`. When a bot appears in `robots.txt` files, it means website managers care enough about that crawler to explicitly control its behavior, either allowing it, restricting it, or setting crawl rates. Low appearance rates suggest benign neglect. Despite Microsoft's massive <a hreflang="en" href="https://blogs.microsoft.com/on-the-issues/2025/01/03/the-golden-opportunity-for-american-ai/">investment in AI</a> and its integration of <a hreflang="en" href="https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/">ChatGPT into Bing</a>, the crawler itself hasn't become more prominent in `robots.txt` files. Even with its AI enhancements, Bing's web footprint and importance to site operators remain largely unchanged, a quiet contrast to the rapid rise of AI-focused crawlers like `gptbot` named in `robots.txt` files (more on that later).
 
 ##### Slight growth in use of named user agents
 
@@ -1183,7 +1185,7 @@ Compared to 2024, when desktop use of x-default and en was closer to 8%, the 202
 
 As AI search reshapes how content is discovered, the web's fundamentals matter more than ever, and reassuringly, the data suggests those foundations are holding firm.
 
-Crawlability and indexability are strong; most sites serve valid `robots.txt` files and `canonical` tags, and markup hygiene is improving year on year. `robots.txt` itself is evolving, moving from a gatekeeper of access to a statement of intent about content use, with AI crawlers like `gptbot` and `claudebot` now explicitly named in millions of files. `meta` robots adoption remains solid, and canonical signals are stable, giving search systems–human or machine–core foundations to work with.
+Crawlability and indexability are strong; most sites serve valid `robots.txt` files and `canonical` tags, and markup hygiene is improving year on year. `robots.txt` itself is evolving, moving from a gatekeeper of access to a statement of intent about content use, with AI crawlers like GPTBot and Claudebot now explicitly named in millions of files. `meta` robots adoption remains solid, and canonical signals are stable, giving search systems–human or machine–core foundations to work with.
 
 Beyond these access signals, the web's middle layers—page experience, performance, and on-page structure—show encouraging stability. HTTPS adoption now exceeds 91%, Core Web Vitals have plateaued at historically high levels, and on-page metadata such as titles, descriptions, and headings are increasingly optimized for both search and AI-driven indexing. Structured data adoption has reached 50%, with most implementations embedded directly in HTML. All to ensure a faster, cleaner interpretation by crawlers and models alike.
 
