@@ -174,8 +174,8 @@ WebLLM has quickly become one of the most prominent solutions for in‑browser L
 
 {{ figure_markup(
   image="genai-tfjs-downloads.png",
-  caption="npm package downloads of @huggingface/transformers.",
-  description="Line chart showing npm downloads for the @huggingface/transformers package from January to November 2025. Downloads nearly tripled from 240,389 in January to 719,103 in November. The trend highlights a significant spike in August, reaching a year-to-date peak of 758,393.",
+  caption="npm package downloads of `@huggingface/transformers.`",
+  description="Line chart showing npm downloads for the `@huggingface/transformers` package from January to November 2025. Downloads nearly tripled from 240,389 in January to 719,103 in November. The trend highlights a significant spike in August, reaching a year-to-date peak of 758,393.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTXSz19p32lprObXmLblQxEy5u0Sjd9QajNixDEOJutiaxi1aWk37ojoY5Z3D-GfgHg3Ggu23VZS2yI/pubchart?oid=1045307255&format=interactive",
   sheets_gid="303133226"
   )
