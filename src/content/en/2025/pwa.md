@@ -243,7 +243,7 @@ Most web apps (78%) opt for a `standalone` value for the display member. From th
 
 Top sizes include 192x192 and 512x512.
 
-###  Manifest `orientation` values
+### Manifest `orientation` values
 
 {{ figure_markup(
   image="pwa-manifest-orientation.png",
@@ -257,7 +257,7 @@ Top sizes include 192x192 and 512x512.
 
 Unsurprisingly, around 79.5% of PWAs do not set orientation. Responsive design and modern development make defining the app's orientation less necessary, but portrait takes second place with around 11.9%.
 
-##  Service worker and manifest usage
+## Service worker and manifest usage
 
 We've seen the latest data on what the most used service worker and manifest features are. In 2025, we can see that roughly one fifth of sites use service workers, and roughly one tenth use manifests.
 
