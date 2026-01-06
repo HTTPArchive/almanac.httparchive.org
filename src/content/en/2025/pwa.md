@@ -8,8 +8,9 @@ reviewers: [webmaxru, Schweinepriester, aarongustafson]
 analysts: []
 editors: [tunetheweb]
 translators: []
-results: https://docs.google.com/spreadsheets/d/1mEbm1NTrqy8B4l5zY3gPgbKWxyNdWOPfVmi1pDIyMus/edit
 diekus_bio: Diego Gonzalez is a computer engineer from Costa Rica working as the PM for PWA platform features for the Microsoft Edge browser.
+MichaelSolati_bio: TODO
+results: https://docs.google.com/spreadsheets/d/1mEbm1NTrqy8B4l5zY3gPgbKWxyNdWOPfVmi1pDIyMus/edit
 featured_quote: TODO
 featured_stat_1: TODO
 featured_stat_label_1: TODO
@@ -271,7 +272,7 @@ We've seen the latest data on what the most used service worker and manifest fea
   )
 }}
 
-Overall, there are considerable changes to the data from the 2022 HTTP Almanac. service worker usage has taken a huge leap from around 1.7% to 18.9%. That is around a 10 times increase in adoption. manifest usage is slightly higher but remains at a very similar spot as it was 3 years ago.
+Overall, there are considerable changes to the data from the 2022 Web Almanac. service worker usage has taken a huge leap from around 1.7% to 18.9%. That is around a 10 times increase in adoption. manifest usage is slightly higher but remains at a very similar spot as it was 3 years ago.
 
 ## PWAs and Fugu APIs
 
@@ -368,7 +369,7 @@ If you have noticed a slow down in pace of new features, you are correct. There 
 
 Whilst advanced capabilities continue to be used sparingly, likely due to slow implementor support, the oldest capabilities like Web Share are starting to show up as well, and even more niche UX features like 'window-controls-overlay' are starting to show up in the data. Slowly but surely these features are being commoditized.
 
-If we look back to the last Almanac that had a PWA chapter, these are the things we can notice:
+If we look back to the last Web Almanac that had a PWA chapter, these are the things we can notice:
 
 - 2 more browsers (Safari and Firefox) have support for web apps.
 - Service worker controlled pages have gone up around 20% for all PWA websites from 2022.
