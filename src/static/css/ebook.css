@@ -381,6 +381,7 @@ section.chapter {
   }
 
   section h1 {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     string-set: chapter-title content();
   }
 
@@ -389,6 +390,7 @@ section.chapter {
   }
 
   section.chapter div.subtitle {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     string-set: chapter-subtitle content() " : ";
   }
 
