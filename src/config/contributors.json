@@ -6,6 +6,9 @@
     "teams": {
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "AaronGustafson",
@@ -693,9 +696,10 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee",
         "developers",
-        "analysts"
+        "editors"
       ]
     },
     "twitter": "tunetheweb",
@@ -1383,6 +1387,9 @@
     "name": "Diego Gonzalez",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2025": [
         "authors"
       ]
     },
@@ -2572,6 +2579,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "schweinepriestr"
@@ -3101,6 +3111,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "webmaxru",
@@ -3164,6 +3177,9 @@
     "name": "Michael Solati",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2025": [
         "authors"
       ]
     },
