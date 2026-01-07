@@ -69,4 +69,4 @@ LEFT JOIN
     content_visibility_pages
 ON totals.client = content_visibility_pages.client
 ORDER BY
-    totals.client
+    totals.client;

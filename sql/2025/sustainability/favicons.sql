@@ -1,6 +1,6 @@
 #standardSQL
 # Temporary function to extract favicon image extensions from the JSON payload
-CREATE TEMPORARY FUNCTION getFaviconImage(almanac JSON)
+CREATE TEMPORARY FUNCTION GETFAVICONIMAGE(almanac JSON)
 RETURNS STRING LANGUAGE js AS '''
 var result = 'NO_DATA';
 try {
@@ -43,28 +43,29 @@ return result;
 
 # Main query to analyze favicon image extensions with sampling
 WITH favicons AS (
-  SELECT
-    client,
-    getFaviconImage(custom_metrics.other.almanac) AS image_type_extension,
-    COUNT(0) AS freq,
-    SUM(COUNT(0)) OVER (PARTITION BY client) AS total,
-    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS percentage_of_total
-  FROM
-    `httparchive.crawl.pages`
-  WHERE
-    date = '2025-07-01'
-  GROUP BY
-    client,
-    image_type_extension
+    SELECT
+        client,
+        GETFAVICONIMAGE(custom_metrics.other.almanac) AS image_type_extension,
+        COUNT(*) AS freq,
+        SUM(COUNT(*)) OVER (PARTITION BY client) AS total,
+        COUNT(
+            *
+        ) / SUM(COUNT(*)) OVER (PARTITION BY client) AS percentage_of_total
+    FROM
+        `httparchive.crawl.pages`
+    WHERE
+        date = '2025-07-01'
+    GROUP BY
+        client,
+        image_type_extension
 )
 
 SELECT
-  *,
-  percentage_of_total AS pct
+    *,
+    percentage_of_total AS pct
 FROM
-  favicons
+    favicons
 ORDER BY
-  pct DESC
+    pct DESC
 LIMIT
-  1000;
-  
+    1000;

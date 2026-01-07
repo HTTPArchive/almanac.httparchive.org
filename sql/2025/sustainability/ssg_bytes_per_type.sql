@@ -22,24 +22,30 @@ WITH ssg_data AS (
         -- Operational emissions calculations
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * operational_emissions_data_centers * grid_intensity AS op_emissions_dc,
+        ) * operational_emissions_data_centers *
+        grid_intensity AS op_emissions_dc,
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * operational_emissions_network * grid_intensity AS op_emissions_networks,
+        ) * operational_emissions_network *
+        grid_intensity AS op_emissions_networks,
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * operational_emissions_user_devices * grid_intensity AS op_emissions_devices,
+        ) * operational_emissions_user_devices *
+        grid_intensity AS op_emissions_devices,
 
         -- Embodied emissions calculations
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * embodied_emissions_data_centers * grid_intensity AS em_emissions_dc,
+        ) * embodied_emissions_data_centers *
+        grid_intensity AS em_emissions_dc,
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * embodied_emissions_network * grid_intensity AS em_emissions_networks,
+        ) * embodied_emissions_network *
+        grid_intensity AS em_emissions_networks,
         (
             INT64(summary.bytestotal) / 1024 / 1024 / 1024
-        ) * embodied_emissions_user_devices * grid_intensity AS em_emissions_devices,
+        ) * embodied_emissions_user_devices *
+        grid_intensity AS em_emissions_devices,
 
         -- Total emissions (operational + embodied)
         (

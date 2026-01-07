@@ -1,79 +1,127 @@
 #standardSQL
-# The distribution of page weight by resource type and client, with updated SWDM v4 methodology including both operational and embodied emissions
+# The distribution of page weight by resource type and client, with updated
+# SWDM v4 methodology including both operational and embodied emissions
 
 -- Energy consumption factors from SWDM v4 (in kWh/GB)
-DECLARE energy_per_GB_datacenter NUMERIC DEFAULT CAST(0.055 + 0.012 AS NUMERIC); -- Operational + Embodied
-DECLARE energy_per_GB_network NUMERIC DEFAULT CAST(0.059 + 0.013 AS NUMERIC); -- Operational + Embodied
-DECLARE energy_per_GB_device NUMERIC DEFAULT CAST(0.080 + 0.081 AS NUMERIC); -- Operational + Embodied
+-- Operational + Embodied
+DECLARE ENERGY_PER_GB_DATACENTER NUMERIC DEFAULT CAST(0.055 + 0.012 AS NUMERIC);
+-- Operational + Embodied
+DECLARE ENERGY_PER_GB_NETWORK NUMERIC DEFAULT CAST(0.059 + 0.013 AS NUMERIC);
+-- Operational + Embodied
+DECLARE ENERGY_PER_GB_DEVICE NUMERIC DEFAULT CAST(0.080 + 0.081 AS NUMERIC);
 
 -- Total energy consumption per GB, calculated by summing the above factors
-DECLARE kw_per_GB NUMERIC DEFAULT CAST(energy_per_GB_datacenter + energy_per_GB_network + energy_per_GB_device AS NUMERIC); -- Sum of all operational and embodied energies
-
--- Global average carbon intensity of electricity generation (gCO2/kWh)
-DECLARE global_grid_intensity NUMERIC DEFAULT 494;
-
--- Function to calculate emissions in gCO2
-CREATE TEMP FUNCTION calculate_emissions(
-  bytes FLOAT64,
-  kw_per_GB FLOAT64,
-  grid_intensity FLOAT64
-) RETURNS FLOAT64 AS (
-  (bytes / 1024 / 1024 / 1024) *  -- Convert bytes to GB
-  (kw_per_GB) *
-  grid_intensity
+-- Sum of all operational and embodied energies
+DECLARE KW_PER_GB NUMERIC DEFAULT CAST(
+    ENERGY_PER_GB_DATACENTER +
+    ENERGY_PER_GB_NETWORK +
+    ENERGY_PER_GB_DEVICE AS NUMERIC
 );
 
-WITH page_data AS (
-  SELECT
-    client,
-    CAST(JSON_VALUE(summary, '$.bytesTotal') AS INT64) AS bytesTotal,
-    CAST(JSON_VALUE(summary, '$.bytesHtml') AS INT64) AS bytesHtml,
-    CAST(JSON_VALUE(summary, '$.bytesJS') AS INT64) AS bytesJS,
-    CAST(COALESCE(JSON_VALUE(summary, '$.bytesCss'), JSON_VALUE(summary, '$.bytesStyle')) AS INT64) AS bytesCSS,
-    CAST(JSON_VALUE(summary, '$.bytesImg') AS INT64) AS bytesImg,
-    CAST(JSON_VALUE(summary, '$.bytesOther') AS INT64) AS bytesOther,
-    CAST(JSON_VALUE(summary, '$.bytesHtmlDoc') AS INT64) AS bytesHtmlDoc,
-    CAST(JSON_VALUE(summary, '$.bytesFont') AS INT64) AS bytesFont
-  FROM
-    `httparchive.crawl.pages`
-  WHERE
-    date = '2025-06-01' AND is_root_page
+-- Global average carbon intensity of electricity generation (gCO2/kWh)
+DECLARE GLOBAL_GRID_INTENSITY NUMERIC DEFAULT 494;
+
+-- Function to calculate emissions in gCO2
+CREATE TEMP FUNCTION CALCULATE_EMISSIONS(
+    bytes FLOAT64,
+    kw_per_GB FLOAT64,
+    grid_intensity FLOAT64
+) RETURNS FLOAT64 AS (
+    (BYTES / 1024 / 1024 / 1024) *  -- Convert bytes to GB
+    (KW_PER_GB) *
+    GRID_INTENSITY
+);
+
+WITH PAGE_DATA AS (
+    SELECT
+        CLIENT,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesTotal') AS INT64) AS BYTESTOTAL,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesHtml') AS INT64) AS BYTESHTML,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesJS') AS INT64) AS BYTESJS,
+        CAST(
+            COALESCE(
+                JSON_VALUE(SUMMARY, '$.bytesCss'),
+                JSON_VALUE(SUMMARY, '$.bytesStyle')
+            ) AS INT64
+        ) AS BYTESCSS,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesImg') AS INT64) AS BYTESIMG,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesOther') AS INT64) AS BYTESOTHER,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesHtmlDoc') AS INT64) AS BYTESHTMLDOC,
+        CAST(JSON_VALUE(SUMMARY, '$.bytesFont') AS INT64) AS BYTESFONT
+    FROM
+        `httparchive.crawl.pages`
+    WHERE
+        DATE = '2025-06-01' AND IS_ROOT_PAGE
 )
 
 SELECT
-  percentile,
-  client,
-  -- For each resource type, calculate the size in KB and the associated emissions
-  -- Total resources
-  APPROX_QUANTILES(bytesTotal / 1024, 1000)[OFFSET(percentile * 10)] AS total_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesTotal, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS total_emissions,
-  -- HTML resources
-  APPROX_QUANTILES(bytesHtml / 1024, 1000)[OFFSET(percentile * 10)] AS html_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesHtml, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS html_emissions,
-  -- JavaScript resources
-  APPROX_QUANTILES(bytesJS / 1024, 1000)[OFFSET(percentile * 10)] AS js_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesJS, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS js_emissions,
-  -- CSS resources
-  APPROX_QUANTILES(bytesCSS / 1024, 1000)[OFFSET(percentile * 10)] AS css_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesCSS, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS css_emissions,
-  -- Image resources
-  APPROX_QUANTILES(bytesImg / 1024, 1000)[OFFSET(percentile * 10)] AS img_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesImg, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS img_emissions,
-  -- Other resources
-  APPROX_QUANTILES(bytesOther / 1024, 1000)[OFFSET(percentile * 10)] AS other_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesOther, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS other_emissions,
-  -- HTML document
-  APPROX_QUANTILES(bytesHtmlDoc / 1024, 1000)[OFFSET(percentile * 10)] AS html_doc_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesHtmlDoc, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS html_doc_emissions,
-  -- Font resources
-  APPROX_QUANTILES(bytesFont / 1024, 1000)[OFFSET(percentile * 10)] AS font_kbytes,
-  APPROX_QUANTILES(calculate_emissions(bytesFont, kw_per_GB, global_grid_intensity), 1000)[OFFSET(percentile * 10)] AS font_emissions
+    PERCENTILE,
+    CLIENT,
+    -- For each resource type, calculate the size in KB and the associated
+    -- emissions
+    -- Total resources
+    APPROX_QUANTILES(
+        BYTESTOTAL / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS TOTAL_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESTOTAL, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS TOTAL_EMISSIONS,
+    -- HTML resources
+    APPROX_QUANTILES(
+        BYTESHTML / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS HTML_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESHTML, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS HTML_EMISSIONS,
+    -- JavaScript resources
+    APPROX_QUANTILES(
+        BYTESJS / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS JS_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESJS, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS JS_EMISSIONS,
+    -- CSS resources
+    APPROX_QUANTILES(
+        BYTESCSS / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS CSS_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESCSS, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS CSS_EMISSIONS,
+    -- Image resources
+    APPROX_QUANTILES(
+        BYTESIMG / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS IMG_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESIMG, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS IMG_EMISSIONS,
+    -- Other resources
+    APPROX_QUANTILES(
+        BYTESOTHER / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS OTHER_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESOTHER, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS OTHER_EMISSIONS,
+    -- HTML document
+    APPROX_QUANTILES(
+        BYTESHTMLDOC / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS HTML_DOC_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESHTMLDOC, KW_PER_GB, GLOBAL_GRID_INTENSITY),
+        1000
+    ) [OFFSET(PERCENTILE * 10)] AS HTML_DOC_EMISSIONS,
+    -- Font resources
+    APPROX_QUANTILES(
+        BYTESFONT / 1024, 1000
+    ) [OFFSET(PERCENTILE * 10)] AS FONT_KBYTES,
+    APPROX_QUANTILES(
+        CALCULATE_EMISSIONS(BYTESFONT, KW_PER_GB, GLOBAL_GRID_INTENSITY), 1000
+    ) [OFFSET(PERCENTILE * 10)] AS FONT_EMISSIONS
 FROM
-  page_data,
-  UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
+    PAGE_DATA,
+    UNNEST([10, 25, 50, 75, 90, 100]) AS PERCENTILE
 GROUP BY
-  percentile,
-  client
+    PERCENTILE,
+    CLIENT
 ORDER BY
-  client,
-  percentile
+    CLIENT,
+    PERCENTILE

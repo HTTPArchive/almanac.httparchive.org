@@ -1,5 +1,6 @@
 #standardSQL
-# The distribution of websites by client that use the prefers-color-scheme:dark media query.
+# The distribution of websites by client that use the prefers-color-scheme:dark
+# media query.
 
 WITH combined_data AS (
     SELECT
@@ -12,10 +13,11 @@ WITH combined_data AS (
                     SELECT 1
                     FROM
                         UNNEST(JSON_EXTRACT_ARRAY(css.stylesheet.rules)) AS rule
-                    WHERE STRING(rule.type) = 'media' AND
-                                 LOWER(
-                        STRING(rule.media)
-                    ) LIKE '%prefers-color-scheme:dark%'
+                    WHERE
+                        STRING(rule.type) = 'media' AND
+                        LOWER(
+                            STRING(rule.media)
+                        ) LIKE '%prefers-color-scheme:dark%'
                 )
                 THEN 1
                 ELSE 0
@@ -37,4 +39,5 @@ FROM
 GROUP BY
     client
 ORDER BY
-    percentage_of_pages DESC, client ASC;
+    percentage_of_pages DESC,
+    client ASC;
