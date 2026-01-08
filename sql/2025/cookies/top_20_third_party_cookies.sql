@@ -4,15 +4,17 @@
 SELECT
   name,
   domain,
-  COUNT(DISTINCT NET.HOST(page)) / (SELECT
-    (COUNT(DISTINCT NET.HOST(page)))
-  FROM
-    `httparchive.almanac.cookies`
-  WHERE
-    date = '2025-07-01'
-    AND client = 'desktop'
-    AND rank <= 1000000
-  AND firstPartyCookie = FALSE) AS percentWebsites
+  COUNT(DISTINCT NET.HOST(page)) / (
+    SELECT
+      (COUNT(DISTINCT NET.HOST(page)))
+    FROM
+      `httparchive.almanac.cookies`
+    WHERE
+      date = '2025-07-01' AND
+      client = 'desktop' AND
+      rank <= 1000000 AND
+      firstPartyCookie = FALSE
+  ) AS percentWebsites
 FROM `httparchive.almanac.cookies`
 WHERE
   date = '2025-07-01' AND
@@ -27,15 +29,17 @@ LIMIT 20;
 SELECT
   name,
   domain,
-  COUNT(DISTINCT NET.HOST(page)) / (SELECT
-    (COUNT(DISTINCT NET.HOST(page)))
-  FROM
-    `httparchive.almanac.cookies`
-  WHERE
-    date = '2025-07-01'
-    AND client = 'mobile'
-    AND rank <= 1000000
-  AND firstPartyCookie = FALSE) AS percentWebsites
+  COUNT(DISTINCT NET.HOST(page)) / (
+    SELECT
+      (COUNT(DISTINCT NET.HOST(page)))
+    FROM
+      `httparchive.almanac.cookies`
+    WHERE
+      date = '2025-07-01' AND
+      client = 'mobile' AND
+      rank <= 1000000 AND
+      firstPartyCookie = FALSE
+  ) AS percentWebsites
 FROM `httparchive.almanac.cookies`
 WHERE
   date = '2025-07-01' AND

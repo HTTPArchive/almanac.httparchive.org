@@ -28,7 +28,6 @@ ORDER BY
   rank_grouping;
 
 
-
 SELECT
   rank_grouping,
   ROUND(SUM(IF(firstPartyCookie = TRUE, 1, 0)) / COUNT(0) * 100, 2) AS firstParty,

@@ -11,8 +11,8 @@ WITH cookies_age AS (
     date = '2025-07-01' AND
     client = 'desktop' AND
     rank <= 1000000 AND --2024 results were mainly extracted for top 1M cookies, feel free to remove this and expand in future
-    firstPartyCookie IS NOT NULL AND CAST(expires AS FLOAT64) > 0
-    AND CAST(startedDateTime AS FLOAT64) > 0
+    firstPartyCookie IS NOT NULL AND CAST(expires AS FLOAT64) > 0 AND
+    CAST(startedDateTime AS FLOAT64) > 0
 )
 
 SELECT

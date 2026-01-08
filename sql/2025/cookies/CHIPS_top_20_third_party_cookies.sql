@@ -6,24 +6,25 @@
 SELECT
   name,
   COUNT(DISTINCT NET.HOST(page)) / (
-  SELECT
-    (COUNT(DISTINCT NET.HOST(page)))
-  FROM
-    `httparchive.almanac.cookies`
-  WHERE
-    date = '2025-07-01'
-    AND client = 'desktop'
-    AND rank <= 1000000
-    AND firstPartyCookie = FALSE
-    AND partitionKey IS NOT NULL) AS percentWebsites
+    SELECT
+      (COUNT(DISTINCT NET.HOST(page)))
+    FROM
+      `httparchive.almanac.cookies`
+    WHERE
+      date = '2025-07-01' AND
+      client = 'desktop' AND
+      rank <= 1000000 AND
+      firstPartyCookie = FALSE AND
+      partitionKey IS NOT NULL
+  ) AS percentWebsites
 FROM
   `httparchive.almanac.cookies`
 WHERE
-  date = '2025-07-01'
-  AND client = 'desktop'
-  AND rank <= 1000000
-  AND firstPartyCookie = FALSE
-  AND partitionKey IS NOT NULL
+  date = '2025-07-01' AND
+  client = 'desktop' AND
+  rank <= 1000000 AND
+  firstPartyCookie = FALSE AND
+  partitionKey IS NOT NULL
 GROUP BY
   name
 ORDER BY

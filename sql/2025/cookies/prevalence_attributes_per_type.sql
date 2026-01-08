@@ -24,7 +24,6 @@ WHERE
 GROUP BY
   firstPartyCookie
 
-
 SELECT
   firstPartyCookie,
   ROUND(SUM(IF(httpOnly = 'true', 1, 0)) / COUNT(0) * 100, 2) AS httpOnly,
@@ -47,5 +46,4 @@ WHERE
   firstPartyCookie IS NOT NULL -- just in case
 GROUP BY
   firstPartyCookie;
-
 
