@@ -32,7 +32,7 @@ SELECT
   ) AS pct_sites_using_gradient
 FROM
   `httparchive.crawl.pages`,
-  UNNEST ([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   is_root_page AND
   rank <= rank_grouping AND
