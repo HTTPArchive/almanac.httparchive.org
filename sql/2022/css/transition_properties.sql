@@ -110,7 +110,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getTransitionProperties(css)) AS property
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     # Limit the size of the CSS to avoid OOM crashes.
     LENGTH(css) < 0.1 * 1024 * 1024 AND
     property IS NOT NULL

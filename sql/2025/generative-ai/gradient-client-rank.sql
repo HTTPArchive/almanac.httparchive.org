@@ -40,7 +40,7 @@ WHERE
     DATE '2019-07-01',
     DATE '2020-08-01',
     DATE '2021-07-01',
-    DATE '2022-07-01', -- CSS metrics exception
+    DATE '2022-07-01', -- noqa: CV09
     DATE '2024-06-01',
     DATE '2025-07-01'
   )

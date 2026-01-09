@@ -52,7 +52,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontFeatureTags(css)) AS font_feature
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     font_feature

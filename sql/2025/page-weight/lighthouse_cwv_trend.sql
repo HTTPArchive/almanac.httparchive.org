@@ -12,7 +12,7 @@ WITH metrics_data AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date >= '2024-07-01' AND
+    date >= '2024-07-01' AND -- noqa: CV09
     date <= '2025-07-01'
 )
 

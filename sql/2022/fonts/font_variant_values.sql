@@ -54,7 +54,7 @@ JOIN
   totals
 USING (client)
 WHERE
-  date = '2022-07-01'
+  date = '2022-07-01' -- noqa: CV09
 GROUP BY
   client,
   prop

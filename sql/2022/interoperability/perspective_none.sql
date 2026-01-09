@@ -40,7 +40,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getTransformPerspectiveNone(css)) AS transform_perspective_none
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page

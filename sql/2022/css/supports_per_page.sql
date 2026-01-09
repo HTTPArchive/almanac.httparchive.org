@@ -49,7 +49,7 @@ WITH supports AS (
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page
