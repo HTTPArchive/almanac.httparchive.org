@@ -1200,6 +1200,11 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "authors",
+        "analysts",
+        "editors"
       ]
     },
     "twitter": "christianliebel",
@@ -2477,6 +2482,10 @@
         "analysts",
         "authors",
         "editors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     },
     "website": "https://jonathanpagel.com"
@@ -3137,6 +3146,9 @@
         "reviewers"
       ],
       "2022": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -4685,6 +4697,10 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "analysts",
+        "reviewers"
       ]
     },
     "twitter": "tomayac",
@@ -4836,6 +4852,9 @@
     "teams": {
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "umaarr6",
@@ -5033,6 +5052,7 @@
         "authors"
       ],
       "2025": [
+        "authors",
         "committee"
       ]
     },
