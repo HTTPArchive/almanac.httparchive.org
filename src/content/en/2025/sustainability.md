@@ -75,7 +75,8 @@ If you are passionate about the planet and the web, we need your help for the 20
 
 ## Recommended Resources
 
-- [W3C Web Sustainability Guidelines (WSG)](https://w3c.github.io/sustyweb/)
+- [W3C Web Sustainability Guidelines (WSG)](https://www.w3.org/TR/web-sustainability-guidelines/)
 - [MDN Introduction to Web Sustainability](https://developer.mozilla.org/en-US/blog/introduction-to-web-sustainability/)
+- [Web Sustainability Laws and Policies](https://w3c.github.io/sustainableweb-wsg/policies.html)
 - [Sustainable Web Design](https://sustainablewebdesign.org/)
 - [Climate Product Leaders Playbook](https://www.climateproductleaders.org/)
