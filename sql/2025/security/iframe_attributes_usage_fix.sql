@@ -9,7 +9,7 @@ WITH total_iframe_count AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01' OR date = '2023-07-01' OR date = '2024-07-01' OR date = '2025-07-01') AND
+    (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01' OR date = '2023-07-01' OR date = '2024-06-01' OR date = '2025-07-01') AND
     is_root_page
   GROUP BY client, date
 )
@@ -45,7 +45,7 @@ FROM (
     FROM
       `httparchive.crawl.pages`
     WHERE
-      (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01' OR date = '2023-07-01' OR date = '2024-07-01' OR date = '2025-07-01') AND
+      (date = '2020-08-01' OR date = '2021-07-01' OR date = '2022-06-01' OR date = '2023-07-01' OR date = '2024-06-01' OR date = '2025-07-01') AND
       is_root_page
   ) LEFT JOIN UNNEST(iframeAttrs) AS iframeAttr
 ) JOIN total_iframe_count USING (client, date)

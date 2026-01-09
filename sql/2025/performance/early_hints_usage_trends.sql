@@ -23,7 +23,7 @@ ON
   r.client = p.client AND
   r.date = p.date
 WHERE
-  r.date IN ('2023-07-01', '2024-07-01', '2025-07-01') AND
+  r.date IN ('2023-07-01', '2024-07-01', '2025-07-01') AND -- noqa: CV09
   r.is_main_document AND
   r.is_root_page AND
   p.is_root_page
