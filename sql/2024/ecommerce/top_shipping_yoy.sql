@@ -85,7 +85,7 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2022-08-01' AND
+    date = '2022-08-01' AND -- noqa: CV09
     is_root_page
   GROUP BY
     client
@@ -93,7 +93,7 @@ JOIN (
 USING (client)
 WHERE
   cats = 'Shipping carriers' AND
-  date = '2022-08-01' AND
+  date = '2022-08-01' AND -- noqa: CV09
   is_root_page
 GROUP BY
   client,
