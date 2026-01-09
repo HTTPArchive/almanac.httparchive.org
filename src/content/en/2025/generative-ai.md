@@ -6,7 +6,7 @@ hero_alt: Hero image illustrating an AI-assisted web development workflow. Sourc
 authors: [christianliebel, Yash-Vekaria, JonathanPagel]
 reviewers: [tomayac, umariqbal, webmaxru]
 analysts: [JonathanPagel, christianliebel, tomayac]
-editors: [christianliebel]
+editors: [tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1q_hFsWlt6DZMmwnxrTmU3nCRjT2w38AomAlw8b_lthE/edit
 christianliebel_bio: Christian Liebel, M.Sc., is an elected member of the <a hreflang="en" href="https://w3ctag.org/">W3C Technical Architecture Group</a> (TAG), a participant in the <a hreflang="en" href="https://webmachinelearning.github.io/">W3C Web Machine Learning</a> (WebML) Community and Working Groups, and a Google Developer Expert (GDE) for Web AI.

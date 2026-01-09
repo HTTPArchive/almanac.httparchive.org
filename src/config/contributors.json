@@ -714,7 +714,8 @@
       "2025": [
         "analysts",
         "committee",
-        "developers"
+        "developers",
+        "editors"
       ]
     },
     "twitter": "tunetheweb",
@@ -1202,9 +1203,8 @@
         "reviewers"
       ],
       "2025": [
-        "authors",
         "analysts",
-        "editors"
+        "authors"
       ]
     },
     "twitter": "christianliebel",
