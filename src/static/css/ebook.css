@@ -203,7 +203,7 @@ tbody tr:nth-child(even) {
 
 .content ul li.contributor {
   list-style: none;
-  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 pre {
@@ -372,7 +372,7 @@ section.chapter {
   }
 
   .content > section {
-    page-break-after: always;
+    break-after: always;
   }
 
   #toc a::after {
@@ -381,6 +381,7 @@ section.chapter {
   }
 
   section h1 {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     string-set: chapter-title content();
   }
 
@@ -389,6 +390,7 @@ section.chapter {
   }
 
   section.chapter div.subtitle {
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     string-set: chapter-subtitle content() " : ";
   }
 
@@ -413,7 +415,7 @@ section.chapter {
   figcaption {
     max-width: 100%;
     text-align: center;
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   figure .code-block {
@@ -440,7 +442,7 @@ section.chapter {
     display: table;
     border-spacing: 2px;
     border-color: grey;
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   h2 {
@@ -458,18 +460,18 @@ section.chapter {
   h4,
   h5 {
     font-weight: bold;
-    page-break-after: avoid;
-    page-break-inside: avoid;
+    break-after: avoid;
+    break-inside: avoid;
   }
 
   h1 + p,
   h2 + p,
   h3 + p {
-    page-break-before: avoid;
+    break-before: avoid;
   }
 
   .authors li {
-    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .authors .avatar {

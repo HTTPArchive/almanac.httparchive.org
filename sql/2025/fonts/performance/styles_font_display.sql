@@ -1,0 +1,69 @@
+-- Section: Performance
+-- Question: What is the usage of font-display in CSS?
+-- Normalization: Pages
+
+CREATE TEMPORARY FUNCTION PROPERTIES(css JSON)
+RETURNS ARRAY<STRING>
+LANGUAGE js
+OPTIONS (library = "gs://httparchive/lib/css-utils.js")
+AS '''
+try {
+  const values = ['auto', 'block', 'fallback', 'optional', 'swap'];
+  const result = [];
+  walkDeclarations(css, (declaration) => {
+    const value = declaration.value.toLowerCase();
+    result.push(values.find((other) => value.includes(other)) || 'other');
+  }, {
+    properties: 'font-display',
+    rules: (rule) => rule.type.toLowerCase() === 'font-face'
+  });
+  return result;
+} catch (e) {
+  return [];
+}
+''';
+
+WITH
+properties AS (
+  SELECT
+    client,
+    NULLIF(property, 'other') AS property,
+    COUNT(DISTINCT page) AS count
+  FROM
+    `httparchive.crawl.parsed_css`,
+    UNNEST(PROPERTIES(css)) AS property
+  WHERE
+    date = @date AND
+    is_root_page
+  GROUP BY
+    client,
+    property
+),
+
+pages AS (
+  SELECT
+    client,
+    COUNT(DISTINCT page) AS total
+  FROM
+    `httparchive.crawl.requests`
+  WHERE
+    date = @date AND
+    is_root_page
+  GROUP BY
+    client
+)
+
+SELECT
+  client,
+  property,
+  count,
+  total,
+  ROUND(count / total, @precision) AS proportion
+FROM
+  properties
+JOIN
+  pages
+USING (client)
+ORDER BY
+  client,
+  count DESC

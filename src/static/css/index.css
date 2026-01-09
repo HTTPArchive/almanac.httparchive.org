@@ -13,7 +13,6 @@ header.alt-bg {
 }
 
 #maincontent {
-  display: -ms-grid;
   display: grid;
   grid-template-areas:
     '. intro .'
@@ -54,17 +53,13 @@ p {
 .intro-container {
   color: #fff;
   grid-area: intro;
-  -ms-grid-row: 1;
-  -ms-grid-columns: 2fr 1fr;
-  display: -ms-grid;
   display: grid;
   grid-template-areas: 'intro image';
-  grid-gap: 2rem;
+  gap: 2rem;
   justify-content: space-between;
 }
 
 .intro {
-  -ms-grid-column: 1;
   grid-area: intro;
   width: 100%;
   max-width: 550px;
@@ -74,14 +69,12 @@ p {
 }
 
 .intro-year {
-  -ms-grid-row: 1;
   grid-area: year;
   display: none;
   font-family: 'Poppins', sans-serif;
 }
 
 .intro-image-wrapper {
-  -ms-grid-column: 2;
   grid-area: image;
   max-height: 485px;
   max-height: 30.3125rem;
@@ -126,7 +119,6 @@ p {
 
 /* Featured Chapter */
 .featured-chapter {
-  -ms-grid-row: 2;
   grid-area: chapter;
   padding: 120px 0;
   padding: 7.5rem 0;
@@ -183,7 +175,6 @@ p {
 .contributors-container {
   padding-left: 180px;
   padding-left: min(180px, 15vw);
-  -ms-grid-row: 3;
   grid-area: contributors;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDIiIGhlaWdodD0iMzMwIiB2aWV3Qm94PSIwIDAgMzAyIDMzMCI+CiAgPHBhdGggb3BhY2l0eT0iLjMiIGZpbGw9IiNmN2Y3NzkiIGQ9Ik0tMTcxMiAyNTdIMjI1djczaC0xOTM3eiIvPgogIDxwYXRoIG9wYWNpdHk9Ii45IiBmaWxsPSIjYThjYWJhIiBkPSJNLTE2NDAgMTM2SDI5N3Y3M2gtMTkzN3oiLz4KICA8cGF0aCBvcGFjaXR5PSIuOSIgZmlsbD0iI2Y3Zjc3OSIgZD0iTS0xNjc3IDE2NkgyNjB2NzNoLTE5Mzd6Ii8+CiAgPHBhdGggb3BhY2l0eT0iLjkiIGZpbGw9IiM0YTMyNDQiIGQ9Ik0tMTc3MiAzSDE2NXY3M2gtMTkzN3oiLz4KPC9zdmc+");
   background-position: -150px center;
@@ -238,7 +229,6 @@ p {
 
 /* Methodology */
 .methodology-container {
-  -ms-grid-row: 4;
   grid-area: methodology;
   padding: 0 min(60px, 5vw);
 }
@@ -308,7 +298,7 @@ p {
   max-width: 100%;
   height: auto;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgba(0, 0, 0, 0) calc(70% + 1px));
+  background: linear-gradient(180deg, rgb(0, 0, 0, 0) calc(70% - 1px), rgb(192, 192, 192) calc(50%), rgb(0, 0, 0, 0) calc(70% + 1px));
 }
 
 @media (max-width: 87.5em) and (min-width: 56.26em) {

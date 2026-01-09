@@ -71,7 +71,7 @@ FROM (
   LEFT JOIN
     UNNEST(getSelectorParts(css)) AS pseudo_class
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     pseudo_class IS NOT NULL
 )
 JOIN
