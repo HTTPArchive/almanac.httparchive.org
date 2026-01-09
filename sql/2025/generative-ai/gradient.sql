@@ -11,9 +11,7 @@ WITH raw_data AS (
     ) AS uses_css_vars,
 
     -- Tailwind: Check the array for the technology
-    EXISTS(
-      SELECT 1 FROM UNNEST(technologies) AS t WHERE t.technology = 'Tailwind CSS'
-    ) AS uses_tailwind,
+    'Tailwind CSS' IN UNNEST(technologies.technology) AS uses_tailwind,
 
     -- Content String for Regex
     LOWER(TO_JSON_STRING(custom_metrics.css_variables)) AS vars_str

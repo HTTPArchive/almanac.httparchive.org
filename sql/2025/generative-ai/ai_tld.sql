@@ -13,7 +13,7 @@ WITH base AS (
     is_root_page AND
     client IN ('desktop', 'mobile') AND
     date IN ('2022-06-01', '2025-07-01') AND
-    rank <= 10000000 AND
+    rank <= 10000000 AND -- later years go beyond 10,000,000 but let's keep to this limit for consistency
     ENDS_WITH(NET.HOST(page), '.ai')
 ),
 

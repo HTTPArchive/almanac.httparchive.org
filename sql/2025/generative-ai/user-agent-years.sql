@@ -1,13 +1,12 @@
 #standardSQL
 -- Percent of sites mentioning each user-agent in robots.txt, over fixed Almanac snapshots
 
-CREATE TEMP FUNCTION getByAgent(byua_json STRING, agent STRING)
-RETURNS STRING
+CREATE TEMP FUNCTION getByAgent(byua_json JSON, agent STRING)
+RETURNS JSON
 LANGUAGE js AS r"""
   try {
-    const obj = JSON.parse(byua_json || '{}');
-    const rec = obj[String(agent || '').toLowerCase()];
-    return rec ? JSON.stringify(rec) : null;
+    const rec = byua_json[String(agent || '').toLowerCase()];
+    return rec;
   } catch (e) { return null; }
 """;
 
@@ -18,10 +17,12 @@ WITH base AS (
     client,
     rank,
     root_page,
-    SAFE_CAST(JSON_VALUE(custom_metrics.robots_txt, '$.status') AS INT64) AS status,
-    JSON_QUERY(custom_metrics.robots_txt, '$.record_counts.by_useragent') AS byua
-  FROM `httparchive.crawl.pages`
-  WHERE date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01', '2024-06-01', '2025-07-01') AND
+    SAFE_CAST(JSON_VALUE(custom_metrics.robots_txt.status) AS INT64) AS status,
+    custom_metrics.robots_txt.record_counts.by_useragent AS byua
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date IN ('2019-07-01', '2020-08-01', '2021-07-01', '2022-06-01', '2024-06-01', '2025-07-01') AND
     client = 'mobile' AND
     is_root_page
 ),
@@ -38,8 +39,12 @@ ua_keys AS (
 -- Look up that agent’s counts on that site
 ua_presence AS (
   SELECT
-    k.date, k.client, k.rank, k.root_page, k.agent,
-    getByAgent(TO_JSON_STRING(b.byua), k.agent) AS agent_obj,
+    k.date,
+    k.client,
+    k.rank,
+    k.root_page,
+    k.agent,
+    getByAgent(b.byua, k.agent) AS agent_obj,
     b.status
   FROM ua_keys k
   JOIN base b USING (date, client, rank, root_page)
@@ -48,13 +53,19 @@ ua_presence AS (
 -- Sum rule counts and keep only sites where the agent actually appears
 ua_scored AS (
   SELECT
-    date, client, rank, root_page, agent, status,
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.allow') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.disallow') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.crawl_delay') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.noindex') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.other') AS INT64), 0) AS rules_sum
-  FROM ua_presence
+    date,
+    client,
+    rank,
+    root_page,
+    agent,
+    status,
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.allow) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.disallow) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.crawl_delay) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.noindex) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.other) AS INT64), 0) AS rules_sum
+  FROM
+    ua_presence
 ),
 
 -- Denominators per (date, rank)

@@ -2,14 +2,13 @@
 # Percent of sites with a given user-agent mentioned in robots.txt, by rank bucket
 # Returns percentages among (a) all sites and (b) only sites with robots.txt status=200.
 
-CREATE TEMP FUNCTION getByAgent(byua_json STRING, agent STRING)
-RETURNS STRING
+CREATE TEMP FUNCTION getByAgent(byua_json JSON, agent STRING)
+RETURNS JSON
 LANGUAGE js AS r"""
   try {
-    const obj = JSON.parse(byua_json || '{}');
     const key = String(agent || '').toLowerCase();
-    const rec = obj[key];
-    return rec ? JSON.stringify(rec) : null;
+    const rec = byua_json[key];
+    return rec;
   } catch (e) { return null; }
 """;
 
@@ -19,10 +18,12 @@ WITH base AS (
     client,
     rank,
     root_page,
-    SAFE_CAST(JSON_VALUE(custom_metrics.robots_txt, '$.status') AS INT64) AS status,
-    JSON_QUERY(custom_metrics.robots_txt, '$.record_counts.by_useragent') AS byua
-  FROM `httparchive.crawl.pages`
-  WHERE date = '2025-07-01' AND
+    SAFE_CAST(JSON_VALUE(custom_metrics.robots_txt.status) AS INT64) AS status,
+    custom_metrics.robots_txt.record_counts.by_useragent AS byua
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01' AND
     is_root_page
 ),
 
@@ -33,7 +34,8 @@ ua_keys AS (
     b.rank,
     b.root_page,
     LOWER(agent) AS agent
-  FROM base AS b,
+  FROM
+    base AS b,
     UNNEST(
       REGEXP_EXTRACT_ALL(TO_JSON_STRING(b.byua), r'"([^"]+)":\{')
     ) AS agent
@@ -47,9 +49,11 @@ ua_presence AS (
     k.root_page,
     k.agent,
     -- Look up this agent's counts without reparsing the whole robots again
-    getByAgent(TO_JSON_STRING(b.byua), k.agent) AS agent_obj
-  FROM ua_keys k
-  JOIN base b
+    getByAgent(b.byua, k.agent) AS agent_obj
+  FROM
+    ua_keys k
+  JOIN
+    base b
   USING (client, rank, root_page)
 ),
 
@@ -59,12 +63,13 @@ ua_presence_scored AS (
     rank,
     root_page,
     agent,
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.allow') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.disallow') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.crawl_delay') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.noindex') AS INT64), 0) +
-    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj, '$.other') AS INT64), 0) AS rules_sum
-  FROM ua_presence
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.allow) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.disallow) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.crawl_delay) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.noindex) AS INT64), 0) +
+    COALESCE(SAFE_CAST(JSON_VALUE(agent_obj.other) AS INT64), 0) AS rules_sum
+  FROM
+    ua_presence
 ),
 
 -- Totals per rank bucket

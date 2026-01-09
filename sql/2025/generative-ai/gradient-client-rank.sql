@@ -2,24 +2,14 @@
 -- Adoption of CSS gradients in custom_metrics.css_variables
 -- Grouped by: year, client, rank bucket
 
-WITH ranks AS (
-  SELECT 1000 AS rank_grouping
-  UNION ALL
-  SELECT 10000
-  UNION ALL
-  SELECT 100000
-  UNION ALL
-  SELECT 1000000
-  UNION ALL
-  SELECT 10000000
-  UNION ALL
-  SELECT 100000000
-)
+#standardSQL
+-- Adoption of CSS gradients in custom_metrics.css_variables
+-- Grouped by: year, client, rank bucket
 
 SELECT
   EXTRACT(YEAR FROM date) AS year,
   client,
-  r.rank_grouping,
+  rank_grouping,
   COUNT(DISTINCT page) AS total_sites,
   COUNT(DISTINCT IF(
     REGEXP_CONTAINS(
@@ -40,11 +30,12 @@ SELECT
     )),
     COUNT(DISTINCT page)
   ) AS pct_sites_using_gradient
-FROM `httparchive.crawl.pages`
-CROSS JOIN ranks r
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST ([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
 WHERE
   is_root_page AND
-  rank <= r.rank_grouping AND
+  rank <= rank_grouping AND
   date IN (
     DATE '2019-07-01',
     DATE '2020-08-01',
@@ -53,5 +44,11 @@ WHERE
     DATE '2024-06-01',
     DATE '2025-07-01'
   )
-GROUP BY year, client, r.rank_grouping
-ORDER BY year, client, r.rank_grouping;
+GROUP BY
+  year,
+  client,
+  rank_grouping
+ORDER BY
+  year,
+  client,
+  rank_grouping;

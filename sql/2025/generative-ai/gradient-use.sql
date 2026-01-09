@@ -17,7 +17,8 @@ SELECT
     )),
     COUNT(DISTINCT page)
   ) AS pct_with_gradient
-FROM `httparchive.crawl.pages`
+FROM
+  `httparchive.crawl.pages`
 WHERE
   is_root_page AND
   date IN (
@@ -28,5 +29,11 @@ WHERE
     DATE '2024-06-01',
     DATE '2025-07-01'
   )
-GROUP BY year, client, rank
-ORDER BY year, client, rank;
+GROUP BY
+  year,
+  client,
+  rank
+ORDER BY
+  year,
+  client,
+  rank;

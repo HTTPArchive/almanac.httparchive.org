@@ -24,13 +24,13 @@ classified AS (
     date,
     page,
     CASE
-      WHEN ENDS_WITH(host, 'vercel.app') THEN 'vercel'
-      WHEN ENDS_WITH(host, 'pages.dev') THEN 'cloudflare_pages'
-      WHEN ENDS_WITH(host, 'workers.dev') THEN 'cloudflare_workers'
-      WHEN ENDS_WITH(host, 'lovable.app') OR ENDS_WITH(host, 'lovable.dev') THEN 'lovable'
-      WHEN ENDS_WITH(host, 'bolt.new') OR ENDS_WITH(host, 'stackblitz.io') THEN 'bolt'
-      WHEN ENDS_WITH(host, 'v0.dev') THEN 'v0'
-      WHEN ENDS_WITH(host, 'replit.app') THEN 'replit'
+      WHEN ENDS_WITH(host, '.vercel.app') THEN 'vercel'
+      WHEN ENDS_WITH(host, '.pages.dev') THEN 'cloudflare_pages'
+      WHEN ENDS_WITH(host, '.workers.dev') THEN 'cloudflare_workers'
+      WHEN ENDS_WITH(host, '.lovable.app') OR ENDS_WITH(host, 'lovable.dev') THEN 'lovable'
+      WHEN ENDS_WITH(host, '.bolt.new') OR ENDS_WITH(host, 'stackblitz.io') THEN 'bolt'
+      WHEN ENDS_WITH(host, '.v0.dev') THEN 'v0'
+      WHEN ENDS_WITH(host, '.replit.app') THEN 'replit'
       ELSE NULL
     END AS platform
   FROM
