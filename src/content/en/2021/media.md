@@ -433,19 +433,59 @@ When browsers pick a resource to load out of a `srcset`, they first assign every
 
 On a 500-CSS-`px`-wide viewport, these resources will be assigned the following densities:
 
-| Resource | Density |
-|---|---|
-| `large.jpg` | `1000w` ÷ `500px` = 2x |
-| `medium.jpg` | `750w` ÷ `500px` = 1.5x |
-| `small.jpg` | `500w` ÷ `500px` = 1x |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Density</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>large.jpg</code></td>
+        <td><code>1000w</code> ÷ <code>500px</code> = 2x</td>
+      </tr>
+      <tr>
+        <td><code>medium.jpg</code></td>
+        <td><code>750w</code> ÷ <code>500px</code> = 1.5x</td>
+      </tr>
+      <tr>
+        <td><code>small.jpg</code></td>
+        <td><code>500w</code> ÷ <code>500px</code> = 1x</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="500px densities") }}</figcaption>
+</figure>
 
 However, on a 1000-CSS-`px`-wide viewport, these same resources, marked up with the same `srcset` and `sizes` values, will have different densities:
 
-| Resource | Density |
-|---|---|
-| `large.jpg` | `1000w` ÷ `1000px` = 1x |
-| `medium.jpg` | `750w` ÷ `1000px` = 0.75x |
-| `small.jpg` | `500w` ÷ `1000px` = 0.5x |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Density</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>large.jpg</code></td>
+        <td><code>1000w</code> ÷ <code>1000px</code> = 1x</td>
+      </tr>
+      <tr>
+        <td><code>medium.jpg</code></td>
+        <td><code>750w</code> ÷ <code>1000px</code> = 0.75x</td>
+      </tr>
+      <tr>
+        <td><code>small.jpg</code></td>
+        <td><code>500w</code> ÷ <code>1000px</code> = 0.5x</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="1000px densities") }}</figcaption>
+</figure>
 
 After these densities are calculated, browsers pick the resource with the density that's the best match for the current browsing context. It's safe to say that in this example, the `srcset` did not contain a wide-enough range of resources. Viewports measuring more than 1,000 CSS `px` across, with higher than `1x` densities, are not uncommon; if you're reading this on a laptop, you're probably browsing in such a context, right now. And in these contexts, the best browsers can do is pick `large.jpg`, whose 1x density will still appear blurry on the high-density display.
 

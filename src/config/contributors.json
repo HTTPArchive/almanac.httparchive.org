@@ -74,16 +74,6 @@
       ]
     }
   },
-  "onurguler18": {
-    "avatar_url": "39603688",
-    "github": "onurguler18",
-    "name": "Onur Güler",
-    "teams": {
-      "2024": [
-        "analysts"
-      ]
-    }
-  },
   "argyleink": {
     "avatar_url": "1134620",
     "github": "argyleink",
@@ -169,6 +159,18 @@
     },
     "twitter": "MrAhmadAwais",
     "website": "https://AhmadAwais.com"
+  },
+  "atierney": {
+    "avatar_url": "9468139",
+    "name": "Aidan Tierney",
+    "github": "AidanA11y",
+    "linkedin": "aidantierney",
+    "bluesky": "aidantierney.bsky.social",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
   },
   "akshay-ranganath": {
     "avatar_url": "54864775",
@@ -438,6 +440,17 @@
     },
     "twitter": "kripken"
   },
+  "Amaka-maxi": {
+    "avatar_url": "211726608",
+    "github": "Amaka-maxi",
+    "name": "Amaka Chulwuma",
+    "linkedin": "amaka-chukwuma-jubilee",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    }
+  },
   "cyberandy": {
     "avatar_url": "837037",
     "github": "cyberandy",
@@ -622,6 +635,14 @@
     },
     "twitter": "arturjanc"
   },
+  "augustin_delport": {
+    "name": "Augustin Delport",
+    "teams": {
+      "2025": [
+        "analysts"
+      ]
+    }
+  },
   "ashleyish": {
     "avatar_url": "35119235",
     "github": "ashleyish",
@@ -654,11 +675,11 @@
     "name": "Barry Pollard",
     "teams": {
       "2019": [
-        "brainstormers",
         "authors",
-        "reviewers",
+        "brainstormers",
+        "developers",
         "editors",
-        "developers"
+        "reviewers"
       ],
       "2020": [
         "analysts",
@@ -691,6 +712,7 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee",
         "developers"
       ]
@@ -780,6 +802,20 @@
       ]
     },
     "website": "https://iambharat.me"
+  },
+  "tricinel": {
+    "avatar_url": "216008",
+    "name": "Bogdan Lazar",
+    "github": "tricinel",
+    "bluesky": "bogdanlazar.com",
+    "linkedin": "tricinel",
+    "website": "https://bogdanlazar.com",
+    "teams": {
+      "2025": [
+        "authors",
+        "editors"
+      ]
+    }
   },
   "borisschapira": {
     "avatar_url": "284742",
@@ -1081,6 +1117,21 @@
         "committee"
       ]
     }
+  },
+  "chr156r33n": {
+    "avatar_url": "75560394",
+    "bluesky": "chris-green.net",
+    "github": "chr156r33n",
+    "linkedin": "chrisgreenseo",
+    "name": "Chris Green",
+    "teams": {
+      "2025": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "twitter": "chrisgreenseo",
+    "website": "https://www.torquepartnership.com/"
   },
   "svgeesus": {
     "avatar_url": "2506926",
@@ -1906,6 +1957,9 @@
     "teams": {
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "mastodon": "https://front-end.social/@hdv",
@@ -2136,6 +2190,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "Jammer_Volts",
@@ -3133,6 +3190,9 @@
       "2024": [
         "authors",
         "editors"
+      ],
+      "2025": [
+        "editors"
       ]
     },
     "twitter": "MichaelLewittes",
@@ -3230,6 +3290,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     },
     "website": "https://accessibility.civicactions.com/"
@@ -3306,6 +3370,9 @@
     "name": "Montserrat Cano",
     "teams": {
       "2024": [
+        "editors"
+      ],
+      "2025": [
         "editors"
       ]
     },
@@ -3567,6 +3634,16 @@
     },
     "twitter": "oluoluoxenfree",
     "website": "https://olu.online/"
+  },
+  "onurguler18": {
+    "avatar_url": "39603688",
+    "github": "onurguler18",
+    "name": "Onur Güler",
+    "teams": {
+      "2024": [
+        "analysts"
+      ]
+    }
   },
   "pankajparkar": {
     "avatar_url": "5320044",
@@ -4233,6 +4310,9 @@
       ],
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "scottdavis99",
@@ -4433,6 +4513,9 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "twitter": "SophieBrannon"
@@ -4496,6 +4579,18 @@
     },
     "twitter": "allema_s",
     "website": "https://sebastienallemand.fr/"
+  },
+  "hello-sharon": {
+    "avatar_url": "211817205",
+    "github": "hello-sharon",
+    "linkedin": "sharonmcclintic",
+    "name": "Sharon McClintic",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    },
+    "website": "https://www.lumar.io/"
   },
   "tjmonsi": {
     "avatar_url": "2645718",

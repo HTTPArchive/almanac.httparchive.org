@@ -74,15 +74,13 @@
           "part": "II",
           "chapter_number": "8",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
           "chapter_number": "9",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": true
+          "slug": "accessibility"
         },
         {
           "part": "II",

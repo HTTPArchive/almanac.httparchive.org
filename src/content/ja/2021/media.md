@@ -433,19 +433,59 @@ WebPとAVIFの採用が時間とともにどのように変化したか（およ
 
 500-CSS-`px` 幅のビューポートでは、これらのリソースは以下の密度で割り当てられます。
 
-| リソース | 密度 |
-|---|---|
-| `large.jpg` | `1000w` ÷ `500px` = 2x |
-| `medium.jpg` | `750w` ÷ `500px` = 1.5x |
-| `small.jpg` | `500w` ÷ `500px` = 1x |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>リソース</th>
+        <th>密度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>large.jpg</code></td>
+        <td><code>1000w</code> ÷ <code>500px</code> = 2x</td>
+      </tr>
+      <tr>
+        <td><code>medium.jpg</code></td>
+        <td><code>750w</code> ÷ <code>500px</code> = 1.5x</td>
+      </tr>
+      <tr>
+        <td><code>small.jpg</code></td>
+        <td><code>500w</code> ÷ <code>500px</code> = 1x</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="500px 密度") }}</figcaption>
+</figure>
 
 しかし、1000-CSS-`px`幅のビューポートでは、同じリソースが同じ `srcset` と `sizes` 値でマークアップされ、異なる密度を持つことになります。
 
-| リソース | 密度 |
-|---|---|
-| `large.jpg` | `1000w` ÷ `1000px` = 1x |
-| `medium.jpg` | `750w` ÷ `1000px` = 0.75x |
-| `small.jpg` | `500w` ÷ `1000px` = 0.5x |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>リソース</th>
+        <th>密度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>large.jpg</code></td>
+        <td><code>1000w</code> ÷ <code>1000px</code> = 1x</td>
+      </tr>
+      <tr>
+        <td><code>medium.jpg</code></td>
+        <td><code>750w</code> ÷ <code>1000px</code> = 0.75x</td>
+      </tr>
+      <tr>
+        <td><code>small.jpg</code></td>
+        <td><code>500w</code> ÷ <code>1000px</code> = 0.5x</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="1000px 密度") }}</figcaption>
+</figure>
 
 これらの密度が計算された後、ブラウザは現在の閲覧状況にもっともマッチする密度のリソースを選択します。この例では、`srcset`に十分な広さのリソースが含まれていなかったと言ってよいでしょう。CSSのビューポートは1,000pxを超えるものもあり、1xを超える密度も珍しくはない。ノートパソコンでこれを読んでいる人は、今まさに、そんな状況で閲覧していることでしょう。そして、このような状況でブラウザができる最善のことは、`large.jpg`を選ぶことです。その1倍の密度は、高密度のディスプレイではまだぼやけて見えるでしょう。
 
