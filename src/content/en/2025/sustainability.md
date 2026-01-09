@@ -8,7 +8,7 @@ reviewers: [lebreRafael, rosenewell]
 analysts: [burakguneli]
 editors: []
 translators: []
-results: https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY/edit?usp=sharing
+results: https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY/
 featured_quote: Sustainability moved from a niche to a regulated, standards-backed discipline in 2025—an essential part of how we build for the web.
 featured_stat_1: 0.36 gCO2e
 featured_stat_label_1: Median desktop emissions per page visit
@@ -25,7 +25,7 @@ The Web Almanac is a massive, volunteer-driven effort. This year, our team faced
 
 We chose the latter. We believe the sustainability community deserves accurate, actionable insights rather than a "weak report with lots of holes". While we are not publishing a full-length chapter this year, we are releasing the complete queried statistics publicly. We invite data scientists, researchers, and curious developers to explore the raw data and draw their own conclusions to supplement this summary.
 
-- [Explore the 2025 Sustainability Dataset](https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY/edit?usp=sharing)
+- [Explore the 2025 Sustainability Dataset](https://docs.google.com/spreadsheets/d/1oTOkbeVSuwhVQQEFTHtj5UF6bImIUc_Iey84qZ7m9pY/)
 
 ## 2025 Executive Summary: The State of the Field
 
