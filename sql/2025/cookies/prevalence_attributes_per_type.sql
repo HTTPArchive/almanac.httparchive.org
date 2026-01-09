@@ -46,4 +46,3 @@ WHERE
   firstPartyCookie IS NOT NULL -- just in case
 GROUP BY
   firstPartyCookie;
-
