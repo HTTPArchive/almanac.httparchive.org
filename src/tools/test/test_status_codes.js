@@ -4,7 +4,7 @@ const convert = require('xml-js');
 
 const { get_yearly_configs } = require('../generate/shared');
 
-const default_year = 2024;
+const default_year = 2025;
 const default_language = 'en';
 const base_url = "http://127.0.0.1:8080";
 

@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}{{ year }} योगदानकर्ता | HTTP Archive द्वारा Web Almanac{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} लोग जिन्होंने {{ year }} Web Almanac में विश्लेषक, लेखक, डिजाइनर, डेवलपर्स, संपादक, लीडर, समीक्षक और अनुवादक के रूप में योगदान दिया।{% endblock %}
+
+{% block filter_by_team %}टीम द्वारा फ़िल्टर करें: <span id="contributors-total">{{ config.contributors.items() | length }}</span><span id="contributors-total-text" class="hidden"> में से <span id="filtered-contributors">{{ self.contributors() }}</span></span> योगदानकर्ता।{% endblock %}
+{% block filter_by %}फ़िल्टर करें{% endblock %}
+
+{% block join_the_team_title%}Web Almanac टीम में शामिल हों{% endblock %}
+{% block join_the_team_text%}टीम में शामिल हों!{% endblock %}

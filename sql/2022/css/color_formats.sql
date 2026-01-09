@@ -204,7 +204,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorFormats(css)) AS format
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     format.value IS NOT NULL
 )
 JOIN

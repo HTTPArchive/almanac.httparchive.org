@@ -38,7 +38,7 @@ FROM (
   FROM
     `httparchive.all.pages`,
     UNNEST([10, 25, 50, 75, 90]) AS percentile
-  WHERE date = '2024-07-01'
+  WHERE date = '2024-06-01'
 )
 WHERE
   video_almanac_info.videos_total > 0
