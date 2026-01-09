@@ -3,8 +3,8 @@
 title: Sustainability
 description: Sustainability chapter of the 2025 Web Almanac covering environmental impacts of web pages, where they come from and how to reduce them.
 hero_alt: Hero image of Web Almanac characters installing solar panels on top of a web page.
-authors: [AlexDawsonUK, burakguneli, rosenewell]
-reviewers: [lebreRafael]
+authors: [AlexDawsonUK, burakguneli]
+reviewers: [lebreRafael, rosenewell]
 analysts: [burakguneli]
 editors: []
 translators: []
