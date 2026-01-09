@@ -32,7 +32,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFontMetricsOverride(css)) AS font_override
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     font_override

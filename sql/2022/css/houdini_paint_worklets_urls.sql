@@ -36,6 +36,6 @@ FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getPaintWorklets(css)) AS paint
 WHERE
-  date = '2022-07-01'
+  date = '2022-07-01' -- noqa: CV09
 ORDER BY
   freq DESC

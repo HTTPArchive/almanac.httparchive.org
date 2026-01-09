@@ -40,7 +40,7 @@ pages AS (
     UNNEST(PROPERTIES(css)) AS property,
     UNNEST(SPLIT(property, ',')) AS chunk
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-07-01' AND -- noqa: CV09
     is_root_page
   GROUP BY
     client,

@@ -14,7 +14,7 @@ requests AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-07-01' AND -- noqa: CV09
     type = 'font' AND
     IS_PARSED(payload) AND
     is_root_page

@@ -47,7 +47,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getAlign(css)) AS align
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page,

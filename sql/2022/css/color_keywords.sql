@@ -177,7 +177,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getColorKeywords(css)) AS keyword
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 )
 GROUP BY
   client,

@@ -50,7 +50,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getContaine(css)) AS contain
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 )
 JOIN (
   SELECT
