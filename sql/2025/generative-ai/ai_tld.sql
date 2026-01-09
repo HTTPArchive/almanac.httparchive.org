@@ -29,7 +29,8 @@ bucketed AS (
       WHEN rank <= 10000000 THEN 10000000
     END AS rank_bucket,
     host
-  FROM base
+  FROM
+    base
 )
 
 SELECT
@@ -40,6 +41,10 @@ SELECT
 FROM
   bucketed
 GROUP BY
-  date, client, rank_bucket
+  date,
+  client,
+  rank_bucket
 ORDER BY
-  date, client, rank_bucket;
+  date,
+  client,
+  rank_bucket;

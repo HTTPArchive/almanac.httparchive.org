@@ -32,7 +32,8 @@ ua_keys AS (
   SELECT
     b.date, b.client, b.rank, b.root_page,
     LOWER(agent) AS agent
-  FROM base AS b,
+  FROM
+    base AS b,
     UNNEST(REGEXP_EXTRACT_ALL(TO_JSON_STRING(b.byua), r'"([^"]+)":\{')) AS agent
 ),
 
@@ -46,8 +47,11 @@ ua_presence AS (
     k.agent,
     getByAgent(b.byua, k.agent) AS agent_obj,
     b.status
-  FROM ua_keys k
-  JOIN base b USING (date, client, rank, root_page)
+  FROM
+    ua_keys k
+  JOIN
+    base b
+  USING (date, client, rank, root_page)
 ),
 
 -- Sum rule counts and keep only sites where the agent actually appears
@@ -70,16 +74,33 @@ ua_scored AS (
 
 -- Denominators per (date, rank)
 totals_all AS (
-  SELECT date, client, rank, COUNT(DISTINCT root_page) AS total_sites
-  FROM base
-  GROUP BY date, client, rank
+  SELECT
+    date,
+    client,
+    rank,
+    COUNT(DISTINCT root_page) AS total_sites
+  FROM
+    base
+  GROUP BY
+    date,
+    client,
+    rank
 ),
 
 totals_200 AS (
-  SELECT date, client, rank, COUNT(DISTINCT root_page) AS total_sites_200
-  FROM base
-  WHERE status = 200
-  GROUP BY date, client, rank
+  SELECT
+    date,
+    client,
+    rank,
+    COUNT(DISTINCT root_page) AS total_sites_200
+  FROM
+    base
+  WHERE
+    status = 200
+  GROUP BY
+    date,
+    client,
+    rank
 ),
 
 -- Numerators per (date, rank, agent)
@@ -88,8 +109,13 @@ numerators AS (
     date, client, rank, agent,
     COUNT(DISTINCT IF(rules_sum > 0, root_page, NULL)) AS sites_with_agent,
     COUNT(DISTINCT IF(status = 200 AND rules_sum > 0, root_page, NULL)) AS sites_with_agent_among_200
-  FROM ua_scored
-  GROUP BY date, client, rank, agent
+  FROM
+    ua_scored
+  GROUP BY
+    date,
+    client,
+    rank,
+    agent
 )
 
 SELECT
@@ -103,8 +129,17 @@ SELECT
   n.sites_with_agent_among_200,
   SAFE_DIVIDE(n.sites_with_agent, t.total_sites) AS pct_of_all_sites,
   SAFE_DIVIDE(n.sites_with_agent_among_200, t2.total_sites_200) AS pct_of_sites_with_200
-FROM numerators n
-JOIN totals_all t USING (date, client, rank)
-JOIN totals_200 t2 USING (date, client, rank)
-WHERE n.sites_with_agent >= 100
-ORDER BY n.date, n.rank, pct_of_all_sites DESC;
+FROM
+  numerators n
+JOIN
+  totals_all t
+USING (date, client, rank)
+JOIN
+  totals_200 t2
+USING (date, client, rank)
+WHERE
+  n.sites_with_agent >= 100
+ORDER BY
+  n.date,
+  n.rank,
+  pct_of_all_sites DESC;

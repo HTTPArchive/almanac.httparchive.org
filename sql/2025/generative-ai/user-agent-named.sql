@@ -74,16 +74,29 @@ ua_presence_scored AS (
 
 -- Totals per rank bucket
 totals_all AS (
-  SELECT client, rank, COUNT(DISTINCT root_page) AS total_sites
-  FROM base
-  GROUP BY client, rank
+  SELECT
+    client,
+    rank,
+    COUNT(DISTINCT root_page) AS total_sites
+  FROM
+    base
+  GROUP BY
+    client,
+    rank
 ),
 
 totals_200 AS (
-  SELECT client, rank, COUNT(DISTINCT root_page) AS total_sites_200
-  FROM base
-  WHERE status = 200
-  GROUP BY client, rank
+  SELECT
+    client,
+    rank,
+    COUNT(DISTINCT root_page) AS total_sites_200
+  FROM
+    base
+  WHERE
+    status = 200
+  GROUP BY
+    client,
+    rank
 ),
 
 -- Numerators per agent
@@ -94,10 +107,17 @@ numerators AS (
     p.agent,
     COUNT(DISTINCT p.root_page) AS sites_with_agent,
     COUNT(DISTINCT IF(b.status = 200, p.root_page, NULL)) AS sites_with_agent_among_200
-  FROM ua_presence_scored p
-  JOIN base b USING (client, rank, root_page)
-  WHERE p.rules_sum > 0
-  GROUP BY p.client, p.rank, p.agent
+  FROM
+    ua_presence_scored p
+  JOIN
+    base b
+  USING (client, rank, root_page)
+  WHERE
+    p.rules_sum > 0
+  GROUP BY
+    p.client,
+    p.rank,
+    p.agent
 )
 
 SELECT
@@ -110,7 +130,15 @@ SELECT
   n.sites_with_agent_among_200,
   SAFE_DIVIDE(n.sites_with_agent, t.total_sites) AS pct_of_all_sites,
   SAFE_DIVIDE(n.sites_with_agent_among_200, t2.total_sites_200) AS pct_of_sites_with_200
-FROM numerators n
-JOIN totals_all t USING (client, rank)
-JOIN totals_200 t2 USING (client, rank)
-ORDER BY rank, client, pct_of_all_sites DESC;
+FROM
+  numerators n
+JOIN
+  totals_all t
+USING (client, rank)
+JOIN
+  totals_200 t2
+USING (client, rank)
+ORDER BY
+  rank,
+  client,
+  pct_of_all_sites DESC;
