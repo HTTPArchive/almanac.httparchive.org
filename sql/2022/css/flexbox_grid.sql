@@ -2,7 +2,7 @@
 # flexbox and grid adoption
 WITH totals AS (
   SELECT
-    CAST('2022-07-01' AS DATE) AS yyyymmdd,
+    CAST('2022-07-01' AS DATE) AS yyyymmdd, -- noqa: CV09
     _TABLE_SUFFIX AS client,
     COUNT(0) AS total
   FROM
@@ -51,7 +51,7 @@ JOIN
   totals
 USING (yyyymmdd, client)
 WHERE
-  yyyymmdd IN ('2022-07-01', '2021-07-01', '2020-08-01', '2019-07-01') AND
+  yyyymmdd IN ('2022-07-01', '2021-07-01', '2020-08-01', '2019-07-01') AND -- noqa: CV09
   feature IN ('CSSFlexibleBox', 'CSSGridLayout')
 GROUP BY
   year,

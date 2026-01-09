@@ -7,7 +7,7 @@ SELECT
 FROM
   `httparchive.crawl.pages`
 WHERE
-  date IN ('2023-07-01', '2024-07-01', '2025-07-01') AND
+  date IN ('2023-07-01', '2024-07-01', '2025-07-01') AND -- noqa: CV09
   is_root_page
 GROUP BY
   date,
