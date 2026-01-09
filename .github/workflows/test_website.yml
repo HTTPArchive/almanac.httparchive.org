@@ -21,12 +21,12 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Checkout branch
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         # Full git history is needed to get a proper list of changed files within `super-linter`
         fetch-depth: 0
     - name: Setup Node.js for use with actions
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
     - name: Set up Python 3.12
@@ -42,9 +42,9 @@ jobs:
     - name: Lint Generated HTML
       uses: super-linter/super-linter/slim@v8
       env:
-        DEFAULT_BRANCH: main
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LOG_LEVEL: DEBUG
         VALIDATE_HTML: true
         USE_FIND_ALGORITHM: true
     - name: Set the list of URLs for Lighthouse to check

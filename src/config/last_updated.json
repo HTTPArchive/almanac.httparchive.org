@@ -1,18 +1,18 @@
 {
   "/static/css/almanac.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2025-08-18T00:00:00.000Z",
-    "hash": "63f0f2a4ee2df47e2bd4cf285214c820"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "f1b659664e1ffbc5e1f3feca4080486d"
   },
   "/static/css/ebook.css": {
     "date_published": "2020-05-15T00:00:00.000Z",
-    "date_modified": "2025-03-03T00:00:00.000Z",
-    "hash": "7351d62c44d09d3589a2ab1a7274040a"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "78e145eceeaed2286f4781ceb792a97c"
   },
   "/static/css/index.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2025-08-18T00:00:00.000Z",
-    "hash": "defdeb965ae67023306166520ea82141"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "10da3c5123c1a99e20252d43085e83d5"
   },
   "/static/css/normalize.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
@@ -21,8 +21,8 @@
   },
   "/static/css/page.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
-    "date_modified": "2025-08-18T00:00:00.000Z",
-    "hash": "596f39486235c030f43c64ff23816c11"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "4d3c0bcf20a44129d368ec475bc7ff6a"
   },
   "/static/css/splash.css": {
     "date_published": "2020-11-13T00:00:00.000Z",
@@ -531,8 +531,8 @@
   },
   "en/2021/chapters/css.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "071014a3eefd81d6a726fb83bd20e477"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "d29483674aab0c7d78a084d40eb62150"
   },
   "en/2021/chapters/ecommerce.html": {
     "date_published": "2021-12-01T00:00:00.000Z",
@@ -786,8 +786,8 @@
   },
   "en/2024/chapters/cms.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2024-12-29T00:00:00.000Z",
-    "hash": "6d738613a7c504b0650f16d21558358a"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "f12505151c80c5c3112a8ed4ba769610"
   },
   "en/2024/chapters/cookies.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -886,8 +886,8 @@
   },
   "en/2024/methodology.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
-    "date_modified": "2025-02-04T00:00:00.000Z",
-    "hash": "86c295d19178ea291dec63b4321cc5c5"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "56fade0497ce6f2dae9c3d01a3941851"
   },
   "en/2024/table_of_contents.html": {
     "date_published": "2024-11-11T00:00:00.000Z",
@@ -1013,6 +1013,26 @@
     "date_published": "2025-05-28T00:00:00.000Z",
     "date_modified": "2025-05-28T00:00:00.000Z",
     "hash": "912714acf76c2875e96a689931c522bf"
+  },
+  "en/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "dfe8f36af08927f3cbbc81c2754eb4fd"
+  },
+  "en/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "962527a5e050d1363838bf0896ae9a09"
+  },
+  "en/2025/methodology.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "660201f6a43f87416048752e4fbdb314"
+  },
+  "en/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "21329bd976566f8d3771f03c27afff60"
   },
   "en/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
@@ -1157,6 +1177,21 @@
   "es/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "baad6eba36e927452cd759a8b8469880"
+  },
+  "es/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "04f87c20ae14bf590bcb2870685a2439"
+  },
+  "es/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "54b60f48903aa7500c4b6672437e7f01"
+  },
+  "es/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "baad6eba36e927452cd759a8b8469880"
   },
   "es/accessibility_statement.html": {
@@ -1324,6 +1359,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "cc9ec9e6965e6c73cbb0dd914145f01c"
   },
+  "fr/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "5590197cae2678636a2901d520d9eb7c"
+  },
+  "fr/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "b6f8721e7575925da45c8f0b3663c00f"
+  },
+  "fr/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "cc9ec9e6965e6c73cbb0dd914145f01c"
+  },
   "fr/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
@@ -1412,6 +1462,21 @@
   "hi/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "1aeef26560adaa60f7e5e818b0aa29f4"
+  },
+  "hi/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "c488652d8b573ff2876b2a37fc85dd5e"
+  },
+  "hi/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "a8d2dd44cd2414987fbc1ad43c15ad4b"
+  },
+  "hi/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "1aeef26560adaa60f7e5e818b0aa29f4"
   },
   "hi/accessibility_statement.html": {
@@ -1562,6 +1627,21 @@
   "it/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "647497a1b7c23b9bc7052f56b45bd1f4"
+  },
+  "it/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "8f3c17dc03ebd49c3fc21fe8f5abb70e"
+  },
+  "it/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "423188f2ef3d200df378c6b31c0fdb91"
+  },
+  "it/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "647497a1b7c23b9bc7052f56b45bd1f4"
   },
   "ja/2019/chapters/accessibility.html": {
@@ -1851,8 +1931,8 @@
   },
   "ja/2021/chapters/css.html": {
     "date_published": "2021-12-05T00:00:00.000Z",
-    "date_modified": "2024-11-16T00:00:00.000Z",
-    "hash": "d0de913f652f60208dc642e5f906284d"
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "5d68799a44287a80413570b477a13855"
   },
   "ja/2021/chapters/ecommerce.html": {
     "date_published": "2022-06-11T00:00:00.000Z",
@@ -2204,6 +2284,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "4294fa74602b009c401be6b253631fe6"
   },
+  "ja/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "8bef84aead23983316897bd6e01abb71"
+  },
+  "ja/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "7556e9fcced2f9a42358ec931edc64d7"
+  },
+  "ja/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "4294fa74602b009c401be6b253631fe6"
+  },
   "ja/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
@@ -2404,6 +2499,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "5d005ca7d5276d13c0b108af6a4dadf3"
   },
+  "nl/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "3d70b5d7a82480045f9106cf86ea7c83"
+  },
+  "nl/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "e3da06b6036be1698b52d074c67b4808"
+  },
+  "nl/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "5d005ca7d5276d13c0b108af6a4dadf3"
+  },
   "nl/accessibility_statement.html": {
     "date_published": "2021-01-27T00:00:00.000Z",
     "date_modified": "2021-12-01T00:00:00.000Z",
@@ -2554,6 +2664,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "1c7d30bbfe654efcc5e872e5b35b63b3"
   },
+  "pt/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "79a6e6b884fed88a511fbec51dce5882"
+  },
+  "pt/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "e69f9e7be4baab846b85e8247611056e"
+  },
+  "pt/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "1c7d30bbfe654efcc5e872e5b35b63b3"
+  },
   "ru/2019/contributors.html": {
     "date_published": "2020-11-21T00:00:00.000Z",
     "date_modified": "2021-02-05T00:00:00.000Z",
@@ -2664,6 +2789,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "c09c0e1485bd7aab3e32d0fe87c8ad1c"
   },
+  "ru/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "54774ca3f2d2bdcec6116d55b739b07c"
+  },
+  "ru/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "c5b1ddfb6bbb975c899df82f398346fb"
+  },
+  "ru/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "c09c0e1485bd7aab3e32d0fe87c8ad1c"
+  },
   "tr/2019/contributors.html": {
     "date_published": "2021-04-08T00:00:00.000Z",
     "date_modified": "2021-04-08T00:00:00.000Z",
@@ -2737,6 +2877,21 @@
   "tr/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "fd6012e4508a979f49b2f2af2c83919f"
+  },
+  "tr/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "b1eca949c5f5c8665644f05702d1f032"
+  },
+  "tr/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "108177d7b9d04bd7ef06de809c066d7d"
+  },
+  "tr/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "fd6012e4508a979f49b2f2af2c83919f"
   },
   "uk/2019/contributors.html": {
@@ -2822,6 +2977,21 @@
   "uk/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "d7e1c0839c7d4a7e58c57f1c50d46dff"
+  },
+  "uk/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "6dcf0707ea7239add867c7702fab7745"
+  },
+  "uk/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "a27bdca315a10204797d6e2d6abfd030"
+  },
+  "uk/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "d7e1c0839c7d4a7e58c57f1c50d46dff"
   },
   "zh-CN/2019/chapters/accessibility.html": {
@@ -2944,6 +3114,21 @@
     "date_modified": "2024-10-15T00:00:00.000Z",
     "hash": "0fccf7823d6cddc00facaf098a2059f3"
   },
+  "zh-CN/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "c7fc4f5ff5ca6a41dd51f97022ce7c39"
+  },
+  "zh-CN/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "906b5f9bbff0b1ddbeb90a0a4c5e64d8"
+  },
+  "zh-CN/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "0fccf7823d6cddc00facaf098a2059f3"
+  },
   "zh-CN/accessibility_statement.html": {
     "date_published": "2020-02-03T00:00:00.000Z",
     "date_modified": "2022-04-29T00:00:00.000Z",
@@ -3032,6 +3217,21 @@
   "zh-TW/2024/table_of_contents.html": {
     "date_published": "2024-10-15T00:00:00.000Z",
     "date_modified": "2024-10-15T00:00:00.000Z",
+    "hash": "0469204b0afef19b4e4a204540ab6a1a"
+  },
+  "zh-TW/2025/contributors.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "07fabf467c85da21df78162f674bd0f0"
+  },
+  "zh-TW/2025/index.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
+    "hash": "3c3cfeb500234e2dd6460e539bf4eb59"
+  },
+  "zh-TW/2025/table_of_contents.html": {
+    "date_published": "2025-12-09T00:00:00.000Z",
+    "date_modified": "2025-12-09T00:00:00.000Z",
     "hash": "0469204b0afef19b4e4a204540ab6a1a"
   }
 }

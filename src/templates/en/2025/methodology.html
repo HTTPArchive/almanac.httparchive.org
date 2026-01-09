@@ -1,0 +1,577 @@
+{% extends "base/methodology.html" %}
+
+{% block title %}Methodology | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Describes how the {{ year }} Web Almanac was put together: The Datasets and Tools used and how the project was run.{% endblock %}
+
+{% block twitter_image_alt %}{{ year }} Web Almanac methodology{% endblock %}
+
+{% block accessibilityResultsSheet %}https://docs.google.com/spreadsheets/d/13sY_wmYODArxo-hH5cSuRAbvtLdGI3x5Xc9qUyqP8as{% endblock %}
+
+{# SQL for the following stats:
+  DECLARE thedate DATE DEFAULT '{{ year }}-{{ self.almanacMonthDigit() }}-01';
+
+  # Run this to get number of sites analysed
+  SELECT "ALL" AS client, COUNT(DISTINCT root_page) AS num_sites FROM `httparchive.crawl.pages` where date = thedate
+  UNION ALL
+  SELECT  client, COUNT(DISTINCT root_page) FROM `httparchive.crawl.pages` where date = thedate group by client;
+#}
+
+{% block numWebsites %}16,213,084{% endblock %}
+{% block numMobileWebsites %}15,426,398{% endblock %}
+{% block numDesktopWebsites %}12,155,374{% endblock %}
+
+{% block edition %}sixth{% endblock %}
+{% block callForContributorsLink %}https://github.com/HTTPArchive/almanac.httparchive.org/discussions/4062{% endblock %}
+{% block kickOffMonth %}April {{ year }}{% endblock %}
+{% block preparingMonths %}May and June {{ year }}{% endblock %}
+
+{% block cruxReleaseDate %}July 11, {{ year }}{% endblock %}
+{% block cruxDataMonth %}June{% endblock %}
+
+{# Use this SQL to get the most commonly used User Agent (check it's over 50%):
+
+  SELECT
+    client,
+    req_headers.value,
+    COUNT(0) / SUM(COUNT(0)) OVER (PARTITION BY client) AS pct_crawl
+  FROM
+    `httparchive.crawl.requests`,
+  UNNEST (request_headers) AS req_headers
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page AND
+    is_main_document AND
+    LOWER(req_headers.name) = "user-agent"
+  GROUP BY
+    client,
+    req_headers.value
+  QUALIFY
+    COUNT(0) = MAX(COUNT(0)) OVER (PARTITION BY client);
+#}
+{% block desktopUserAgent %}Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 PTST/250604.160032{% endblock %}
+{% block mobileUserAgent %}Mozilla/5.0 (Linux; Android 8.1.0; Moto G (4)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 PTST/250604.160032{% endblock %}
+
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Desktop.json #}
+{% block desktopConnectionSpeed %}Cable (5/1 Mbps 25ms RTT){% endblock %}
+{% block desktopViewport %}1920 x 1080px{% endblock %}
+{% block desktopDpr %}1x{% endblock %}
+{% block desktopCPUSlowdown %}<em>N/A</em>{% endblock %}
+{# Get from https://github.com/HTTPArchive/crawl/blob/main/Mobile.json #}
+{% block mobileConnectionSpeed %}4G (9 Mbps 170ms RTT){% endblock %}
+{% block mobileViewport %}512 x 360px{% endblock %}
+{% block mobileDpr %}3x{% endblock %}
+{% block mobileCPUSlowdown %}8x{% endblock %}
+
+{# Use this SQL to get the most commonly used Lighthouse version (check it's over 50%):
+  SELECT
+    JSON_VALUE(lighthouse.lighthouseVersion) AS lighthouse_version,
+    COUNT(0) AS num_instances
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
+  GROUP BY
+    JSON_VALUE(lighthouse.lighthouseVersion)
+  ORDER BY
+    num_instances DESC
+#}
+{% block lighthouseVersion %}12.8.0{% endblock %}
+
+{# Use this https://github.com/HTTPArchive/wptagent/blob/main/internal/traffic_shaping.py#L102 #}
+{% block lighthouseDesktopCPUSlowDown %}<em>N/A</em>{% endblock %}
+{% block lighthouseDesktopDownloadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopUploadThroughout %}10.0 Mbps{% endblock %}
+{% block lighthouseDesktopRTT %}40 ms{% endblock %}
+{% block lighthouseMobileCPUSlowDown %}1x/4x{% endblock %}
+{% block lighthouseMobileDownloadThroughout %}1.6 Mbps{% endblock %}
+{% block lighthouseMobileUploadThroughout %}0.75 Mbps{% endblock %}
+{% block lighthouseMobileRTT %}150 ms{% endblock %}
+
+{# Search for `^  "` as regex in https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json #}
+{% block wappalyzerCategories %}108{% endblock %}
+{# Search for `^  "` as regex in https://github.com/HTTPArchive/wappalyzer/blob/main/src/src/technologies/*.json #}
+{% block wappalyzerTechnologies %}3,984{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#dataset">About the dataset</a>
+          <ul>
+            <li><a href="#websites">Websites</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+          </ul>
+        </li>
+        <li><a href="#tools">Tools</a>
+          <ul>
+            <li><a href="#webpagetest">WebPageTest</a></li>
+            <li><a href="#lighthouse">Lighthouse</a></li>
+            <li><a href="#wappalyzer">Wappalyzer</a></li>
+            <li><a href="#chrome-ux-report">Chrome UX Report</a></li>
+            <li><a href="#blink-features">Blink Features</a></li>
+            <li><a href="#third-party-web">Third Party Web</a></li>
+            <li><a href="#rework-css">Rework CSS</a>
+              <ul>
+                <li><a href="#rework-utils">Rework Utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#parsel">Parsel</a></li>
+          </ul>
+        </li>
+        <li><a href="#process">Analytical process</a>
+          <ul>
+            <li><a href="#planning">Planning</a></li>
+            <li><a href="#analysis">Analysis</a></li>
+            <li><a href="#interpretation">Interpretation</a></li>
+          </ul>
+        </li>
+        <li><a href="#looking-ahead">Looking ahead</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+    <section>
+      <!-- Show large image for large screens and high density screens and use webp when supported -->
+      <picture>
+          <source media="(min-width: 327px)" type="image/webp" srcset="/static/images/methodology-banner.webp">
+          <source media="(min-width: 327px)" type="image/jpeg" srcset="/static/images/methodology-banner.png">
+          <source type="image/webp" srcset="/static/images/methodology-banner.webp 2x">
+          <source type="image/jpeg" srcset="/static/images/methodology-banner.png 2x">
+          <source type="image/webp" srcset="/static/images/methodology-banner-sm.webp">
+          <source type="image/jpeg" srcset="/static/images/methodology-banner-sm.png">
+          <img src="/static/images/methodology-banner.png" class="content-banner" alt="" width="1200" height="984" fetchpriority="high">
+        </picture>
+        <h2 id="overview"><a href="#overview" class="anchor-link">Overview</a></h2>
+
+        <p>
+          The Web Almanac is a project organized by <a hreflang="en" href="https://httparchive.org">HTTP Archive</a>. HTTP Archive was started in 2010 by Steve Souders with the mission to track how the web is built. It evaluates the composition of millions of web pages on a monthly basis and makes its terabytes of metadata available for analysis on <a hreflang="en" href="https://httparchive.org/faq#how-do-i-use-bigquery-to-write-custom-queries-over-the-data">BigQuery</a>.
+        </p>
+
+        <p>
+          The Web Almanac&#8217;s mission is to become an annual repository of public knowledge about the state of the web. Our goal is to make the data warehouse of HTTP Archive even more accessible to the web community by having subject matter experts provide contextualized insights.
+        </p>
+
+        <p>
+          The {{ year }} edition of the Web Almanac is broken into four parts: content, experience, publishing, and distribution. Within each part, several chapters explore their overarching theme from different angles. For example, Part II explores different angles of the user experience in the Performance, Security, and Accessibility chapters, among others.
+        </p>
+    </section>
+
+    <section>
+        <h2 id="dataset"><a href="#dataset" class="anchor-link">About the dataset</a></h2>
+
+        <p>
+          The HTTP Archive dataset is continuously updating with new data monthly. For the {{ year }} edition of the Web Almanac, unless otherwise noted in the chapter, all metrics were sourced from the {{ self.dataset() }} crawl. These results are <a hreflang="en" href="https://har.fyi/guides/getting-started/">publicly queryable</a> on BigQuery in tables in the <code>`httparchive.crawl.*`</code> tables for <code>date = '{{ year }}-{{ self.almanacMonthDigit() }}-01'</code>.
+        </p>
+
+        <p>
+          All of the metrics presented in the Web Almanac are publicly reproducible using the dataset on BigQuery. You can browse the queries used by all chapters in our <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">GitHub repository</a>.
+        </p>
+
+        <aside class="note">
+          <strong>Please note that some of these queries are quite large and can be <a hreflang="en" href="https://cloud.google.com/bigquery/pricing">expensive</a> to run yourself. For help controlling your spending, refer to our guide on <a hreflang="en" href="https://har.fyi/guides/minimizing-costs/">Minimizing query costs</a>.</strong>
+        </aside>
+
+        <p>
+          For example, to understand the number of pages with accessible color contrast, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{{ year }}/accessibility/color_contrast.sql">color_contrast.sql</a>:
+        </p>
+
+        <div class="code-block floating-card">
+          {# To generate this markup temporarily add a ```sql code block to a chapter and generate that chapter and you&#8217;ll get the HTML #}
+          {# Note extra attributes on pre tag to allow keyboard scroll so add them back in #}
+          <pre role="region" aria-label="color-contrast.sql" tabindex="0"><code class="sql language-sql"><span class="keyword">SELECT</span>
+  client,
+  is_root_page,
+  <span class="function call">COUNTIF</span>(color_contrast_score <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>) <span class="keyword">AS</span> total_applicable,
+  <span class="function call">COUNTIF</span>(<span class="function call">CAST</span>(color_contrast_score <span class="keyword">AS</span> <span class="keyword">NUMERIC</span>) <span class="keyword operator">=</span> <span class="constant numeric">1</span>) <span class="keyword">AS</span> total_good_contrast,
+  <span class="function call">COUNTIF</span>(<span class="function call">CAST</span>(color_contrast_score <span class="keyword">AS</span> <span class="keyword">NUMERIC</span>) <span class="keyword operator">=</span> <span class="constant numeric">1</span>) / <span class="function call">COUNTIF</span>(color_contrast_score <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>) <span class="keyword">AS</span> perc_good_contrast
+<span class="keyword">FROM</span> (
+  <span class="keyword">SELECT</span>
+    client,
+    is_root_page,
+    <span class="keyword">date</span>,
+    <span class="function call">JSON_VALUE</span>(lighthouse.audits.<span class="string">`color-contrast`</span>.score) <span class="keyword">AS</span> color_contrast_score
+  <span class="keyword">FROM</span>
+    <span class="string">`httparchive.crawl.pages`</span>
+  <span class="keyword">WHERE</span>
+    <span class="keyword">date</span> <span class="keyword operator">=</span> <span class="string">'{{ year }}-{{ self.almanacMonthDigit() }}-01'</span>
+)
+<span class="keyword">GROUP</span> <span class="keyword">BY</span>
+  client,
+  is_root_page,
+  <span class="keyword">date</span>
+<span class="keyword">ORDER</span> <span class="keyword">BY</span>
+  client,
+  is_root_page;</code></pre>
+        </div>
+
+        <p>
+          Results for each metric are publicly viewable in chapter-specific spreadsheets, for example <a href="{{ self.accessibilityResultsSheet() }}">Accessibility results</a>. Links to the raw results and queries are available at the bottom of each chapter. Metric-specific results and queries are also linked directly from each figure.
+        </p>
+    </section>
+
+    <section>
+        <h3 id="websites"><a href="#websites" class="anchor-link">Websites</a></h3>
+        <p>
+          There are {{ self.numWebsites() }} websites in the dataset. Among those, {{ self.numMobileWebsites() }} are mobile websites and {{ self.numDesktopWebsites() }} are desktop websites. Most websites are included in both the mobile and desktop subsets.
+        </p>
+
+        <p>
+          HTTP Archive sources the URLs for its websites from the <a href="#chrome-ux-report">Chrome UX Report</a>. The Chrome UX Report is a public dataset from Google that aggregates user experiences across millions of websites actively visited by Chrome users. This gives us a list of websites that are up-to-date and a reflection of real-world web usage. The Chrome UX Report dataset includes a form factor dimension, which we use to get all of the websites accessed by desktop or mobile users.
+        </p>
+
+        <p>
+          The {{ self.dataset() }} HTTP Archive crawl used by the Web Almanac used the most recently available Chrome UX Report release for its list of websites. The {{ year }}{{ self.almanacMonthDigit() }} dataset was released on {{ self.cruxReleaseDate() }} and captures websites visited by Chrome users during the month of {{ self.cruxDataMonth() }}.
+        </p>
+
+        <p>
+          Due to resource limitations, the HTTP Archive previously could only test two pages from each website in the Chrome UX report. Be aware that this will introduce some bias into the results because a home page is not necessarily representative of the entire website. In recent years, we included <a hreflang="en" href="https://discuss.httparchive.org/t/improving-the-http-archive-pipeline-and-dataset-by-10x/2372"> secondary pages</a>, and many chapters use this new data. Some chapters, however, used just the home pages.
+        </p>
+
+        <p>
+          HTTP Archive is also considered a lab testing tool, meaning it tests websites from a datacenter and does not collect data from real-world user experiences. All pages are tested with an empty cache in a logged out state, which may not reflect how real users would access them.
+        </p>
+    </section>
+
+    <section>
+      <h3 id="metrics"><a href="#metrics" class="anchor-link">Metrics</a></h3>
+
+      <p>
+        HTTP Archive collects thousands of metrics about how the web is built. It includes basic metrics like the number of bytes per page, whether the page was loaded over HTTPS, and individual request and response headers. The majority of these metrics are provided by <a href="#webpagetest">WebPageTest</a>, which acts as the test runner for each website.
+      </p>
+
+      <p>
+        Other testing tools are used to provide more advanced metrics about the page. For example, <a href="#lighthouse">Lighthouse</a> is used to run audits against the page to analyze its quality in areas like accessibility and SEO. The <a href="#tools">Tools</a> section below goes into each of these tools in more detail.
+      </p>
+
+      <p>
+        To work around some of the inherent limitations of a lab dataset, the Web Almanac also makes use of the <a href="#chrome-ux-report">Chrome UX Report</a> for metrics on user experiences, especially in the area of web performance.
+      </p>
+
+      <p>
+        Some metrics are completely out of reach. For example, we don&#8217;t necessarily have the ability to detect the tools used to build a website. If a website is built using create-react-app, we could tell that it uses the React framework, but not necessarily that a particular build tool is used. Unless these tools leave detectible fingerprints in the website&#8217;s code, we&#8217;re unable to measure their usage.
+      </p>
+
+      <p>
+        Other metrics may not necessarily be impossible to measure but are challenging or unreliable. For example, aspects of web design are inherently visual and may be difficult to quantify, like whether a page has an intrusive modal dialog.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="tools"><a href="#tools" class="anchor-link">Tools</a></h2>
+
+      <p>
+        The Web Almanac is made possible with the help of the following open source tools.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="webpagetest"><a href="#webpagetest" class="anchor-link">WebPageTest</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://www.webpagetest.org/">WebPageTest</a> is a prominent web performance testing tool and the backbone of HTTP Archive. We use a <a hreflang="en" href="https://docs.webpagetest.org/private-instances/">private instance</a> of WebPageTest with private test agents, which are the actual browsers that test each web page. Desktop and mobile websites are tested under different configurations:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+              <th>Config</th>
+              <th>Desktop</th>
+              <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Device</td>
+            <td>Linux VM</td>
+            <td>Emulated Moto G4</td>
+          </tr>
+          <tr>
+            <td>User Agent</td>
+            <td>
+              {{ self.desktopUserAgent() }}
+            </td>
+            <td>
+              {{ self.mobileUserAgent() }}
+            </td>
+          </tr>
+
+          <tr>
+            <td>Location</td>
+            <td>
+              Google Cloud Locations, USA
+            </td>
+            <td>
+              Google Cloud Locations, USA
+            </td>
+          </tr>
+
+          <tr>
+            <td>Connection</td>
+            <td>{{ self.desktopConnectionSpeed() }}</td>
+            <td>{{ self.mobileConnectionSpeed() }}</td>
+          </tr>
+
+          <tr>
+            <td>CPU slowdown</td>
+            <td>{{ self.desktopCPUSlowdown() }}</td>
+            <td>{{ self.mobileCPUSlowdown() }}</td>
+          </tr>
+
+          <tr>
+            <td>Viewport</td>
+            <td>{{ self.desktopViewport() }}</td>
+            <td>{{ self.mobileViewport() }}</td>
+          </tr>
+
+          <tr>
+            <td>DPR</td>
+            <td>{{ self.desktopDpr() }}</td>
+            <td>{{ self.mobileDpr() }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        Desktop websites are run from within a desktop Chrome environment on a Linux VM. The network speed is equivalent to a cable connection.
+      </p>
+
+      <p>
+        Mobile websites are run from within a mobile Chrome environment on an emulated Moto G4 device with a network speed equivalent to a 4G connection.
+      </p>
+
+      <p>
+        Test agents run from various <a hreflang="en" href="https://cloud.google.com/compute/docs/regions-zones/#locations">Google Cloud Platform locations</a> based in the USA.
+      </p>
+
+      <p>
+        HTTP Archive&#8217;s private instance of WebPageTest is kept in sync with the latest public version and augmented with <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a>, which are snippets of JavaScript that are evaluated on each website at the end of the test.
+      </p>
+
+      <p>
+        The results of each test are made available as a <a href="https://en.wikipedia.org/wiki/HAR_(file_format)">HAR file</a>, a JSON-formatted archive file containing metadata about the web page, which we then store in BigQuery.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="lighthouse"><a href="#lighthouse" class="anchor-link">Lighthouse</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/overview">Lighthouse</a> is an automated website quality assurance tool built by Google. It audits web pages to make sure they don&#8217;t include user experience antipatterns like unoptimized images and inaccessible content.
+      </p>
+
+      <p>
+        HTTP Archive runs the latest version of Lighthouse for all pages. As of the {{ self.dataset() }} crawl, HTTP Archive used the <a hreflang="en" href="https://github.com/GoogleChrome/lighthouse/releases/tag/{{ self.lighthouseVersion() }}">{{ self.lighthouseVersion() }}</a> version of Lighthouse.
+      </p>
+
+      <p>
+        Lighthouse is run as its own distinct test from within <a href="#webpagetest">WebPageTest</a>, but it has its own configuration profile:
+      </p>
+      <div class="table-wrap"><div class="table-wrap-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Config</th>
+            <th>Desktop</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU slowdown</td>
+            <td>{{ self.lighthouseDesktopCPUSlowDown() }}</td>
+            <td>{{ self.lighthouseMobileCPUSlowDown() }}</td>
+          </tr>
+          <tr>
+            <td>Download throughput</td>
+            <td>{{ self.lighthouseDesktopDownloadThroughout() }}</td>
+            <td>{{ self.lighthouseMobileDownloadThroughout() }}</td>
+          </tr>
+          <tr>
+            <td>Upload throughput</td>
+            <td>{{ self.lighthouseDesktopUploadThroughout() }}</td>
+            <td>{{ self.lighthouseMobileUploadThroughout() }}</td>
+          </tr>
+          <tr>
+            <td>RTT</td>
+            <td>{{ self.lighthouseDesktopRTT() }}</td>
+            <td>{{ self.lighthouseMobileRTT() }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div></div>
+
+      <p>
+        For more information about Lighthouse and the audits available in HTTP Archive, refer to the <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/overview">Lighthouse developer documentation</a>.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="wappalyzer"><a href="#wappalyzer" class="anchor-link">Wappalyzer</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer">Wappalyzer</a> is a tool for detecting technologies used by web pages. There are <a hreflang="en" href="https://github.com/HTTPArchive/wappalyzer/blob/main/src/categories.json">{{ self.wappalyzerCategories() }} categories</a> of technologies tested, ranging from JavaScript frameworks, to CMS platforms, and even cryptocurrency miners. There are over {{ self.wappalyzerTechnologies() }} supported technologies.
+      </p>
+
+      <p>
+        HTTP Archive runs it's fork of the last open source version of Wappalyzer (v6.10.65), with some extra detections added since.
+      </p>
+
+      <p>
+        Wappalyzer powers many chapters that analyze the popularity of developer tools like WordPress, Bootstrap, and jQuery. For example, the <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cms') }}">CMS</a> chapter relies heavily on the respective <a hreflang="en" href="https://www.wappalyzer.com/categories/cms">CMS</a> category of technologies detected by Wappalyzer.
+      </p>
+
+      <p>
+        All detection tools, including Wappalyzer, have their limitations. The validity of their results will always depend on how accurate their detection mechanisms are. The Web Almanac will add a note in every chapter where Wappalyzer is used but its analysis may not be accurate due to a specific reason.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="chrome-ux-report"><a href="#chrome-ux-report" class="anchor-link">Chrome UX Report</a></h3>
+
+      <p>
+        The <a hreflang="en" href="https://developer.chrome.com/docs/crux">Chrome UX Report</a> is a public dataset of real-world Chrome user experiences. Experiences are grouped by websites&#8217; origin, for example <code>https://www.example.com</code>. The dataset includes distributions of UX metrics like paint, load, interaction, and layout stability. In addition to grouping by month, experiences may also be sliced by dimensions like country-level geography, form factor (desktop, phone, tablet), and effective connection type (4G, 3G, etc.).
+      </p>
+
+      <p>
+        The Chrome UX Report dataset includes relative <a href="https://developer.chrome.com/blog/crux-rank-magnitude">website ranking data</a>. These are referred to as <em>rank magnitudes</em> because, as opposed to fine-grained ranks like the #1 or #116 most popular websites, websites are grouped into rank buckets from the top 1k, top 10k, up to the top 10M. Each website is ranked according to the number of <a href="https://developer.chrome.com/docs/crux/methodology#eligibility">eligible</a> page views on all of its pages combined. This year's Web Almanac makes extensive use of this new data as a way to explore variations in the way the web is built by site popularity.
+      </p>
+
+      <p>
+        For Web Almanac metrics that reference real-world user experience data from the Chrome UX Report, the {{ self.dataset() }} dataset ({{ year }}{{ self.almanacMonthDigit() }}) is used.
+      </p>
+
+      <p>
+        You can learn more about the dataset in the <a hreflang="en" href="https://developer.chrome.com/docs/crux/guides/bigquery">Using the Chrome UX Report on BigQuery</a> guide on <a hreflang="en" href="https://developer.chrome.com">developer.chrome.com</a>.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="blink-features"><a href="#blink-features" class="anchor-link">Blink Features</a></h3>
+
+      <p>
+        <a href="https://chromium.googlesource.com/chromium/src/+/HEAD/docs/use_counter_wiki.md">Blink Features</a> are indicators flagged by Chrome whenever a particular web platform feature is detected to be used.
+      </p>
+
+      <p>
+        We use Blink Features to get a different perspective on feature adoption. This data is especially useful to distinguish between features that are implemented on a page and features that are actually used.
+      </p>
+
+      <p>
+        Blink Features are reported by <a href="#webpagetest">WebPageTest</a> as part of our regular testing.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="third-party-web"><a href="#third-party-web" class="anchor-link">Third Party Web</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://www.thirdpartyweb.today/">Third Party Web</a> is a research project by <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='patrickhulce') }}">Patrick Hulce</a>, author of the <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='third-parties') }}">2019 Third Parties</a> chapter, that uses HTTP Archive and Lighthouse data to identify and analyze the impact of third party resources on the web.
+      </p>
+
+      <p>
+        Domains are considered to be a third party provider if they appear on at least 50 unique pages. The project also groups providers by their respective services in categories like ads, analytics, and social.
+      </p>
+
+      <p>
+        Several chapters in the Web Almanac use the domains and categories from this dataset to understand the impact of third parties.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="rework-css"><a href="#rework-css" class="anchor-link">Rework CSS</a></h3>
+
+      <p>
+        <a hreflang="en" href="https://github.com/reworkcss/css">Rework CSS</a> is a JavaScript-based CSS parser. It takes entire stylesheets and produces a JSON-encoded object distinguishing each individual style rule, selector, directive, and value. See <a hreflang="en" href="https://discuss.httparchive.org/t/analyzing-stylesheets-with-a-js-based-parser/1683">this thread</a> for more information about how it was integrated with the HTTP Archive dataset on BigQuery.
+      </p>
+    </section>
+
+    <section>
+        <h4 id="parsel"><a href="#parsel" class="anchor-link">Parsel</a></h4>
+
+        <p>
+            <a hreflang="en" href="https://projects.verou.me/parsel/">Parsel</a> is a CSS selector parser and specificity calculator, originally written by <a href="{{ url_for('chapter', year=2019, lang=lang, chapter='css') }}">2020 CSS</a> chapter lead <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='LeaVerou') }}">Lea Verou</a> and open sourced as a separate library. It is used extensively in all CSS metrics that relate to selectors and specificity.
+        </p>
+    </section>
+
+    <section>
+      <h2 id="process"><a href="#process" class="anchor-link">Analytical process</a></h2>
+
+      <p>
+        The Web Almanac took about a year to plan and execute with the coordination of more than a hundred <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> from the web community. This section describes why we chose the chapters you see in the Web Almanac, how their metrics were queried, and how they were interpreted.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
+
+      <p>
+        The {{ year }} Web Almanac kicked off in {{ self.kickOffMonth() }} with a <a href="{{ self.callForContributorsLink() }}">call for contributors</a>. We initialized the project with the same chapters from previous years and the community suggested additional topics, one of which become a new chapter this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='generative-ai') }}">Generative AI</a>.
+      </p>
+
+      <p>
+        As we <a href="../2019/methodology#brainstorming">stated in the inaugural year&#8217;s Methodology</a>:
+      </p>
+
+      <blockquote>
+        One explicit goal for future editions of the Web Almanac is to encourage even more inclusion of underrepresented and heterogeneous voices as authors and peer reviewers.
+      </blockquote>
+
+      <p>
+        To that end, this year we&#8217;ve continued our <a href="https://github.com/HTTPArchive/almanac.httparchive.org/discussions/2165">author selection process with the following in mind</a>:
+      </p>
+
+      <ul>
+        <li>
+          New authors were specifically encouraged to make room for different perspectives.
+        </li>
+        <li>
+          The project leads reviewed all of the author nominations and made an effort to select authors who will bring new perspectives and amplify the voices of underrepresented groups in the community.
+        </li>
+      </ul>
+
+      <p>
+        We hope to iterate on this process in the future to ensure that the Web Almanac is a more diverse and inclusive project with contributors from all backgrounds.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="analysis"><a href="#analysis" class="anchor-link">Analysis</a></h3>
+
+      <p>
+        In {{ self.preparingMonths() }}, data analysts worked with authors and peer reviewers to come up with a list of metrics that would need to be queried for each chapter. In some cases, <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics">custom metrics</a> were created to fill gaps in our analytic capabilities.
+      </p>
+
+      <p>
+        Throughout {{ self.dataset() }}, the HTTP Archive data pipeline crawled several million websites, gathering the metadata to be used in the Web Almanac. These results were post-processed and saved to <a href="https://console.cloud.google.com/bigquery?p=httparchive&d=almanac&page=dataset">BigQuery</a>.
+      </p>
+
+      <p>
+        Being our {{ self.edition() }} year, we were able to update and reuse the queries written by previous analysts, though they required <a href="https://har.fyi/guides/migrating-to-crawl-dataset/">rewriting to a new, more efficient dataset</a> that the HTTP Archive moved to this year. Additionally, there were many new metrics that needed to be written from scratch. You can browse all of the queries by year and chapter in our open source <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/tree/main/sql/{{ year }}">query repository</a> on GitHub.
+      </p>
+    </section>
+
+    <section>
+      <h3 id="interpretation"><a href="#interpretation" class="anchor-link">Interpretation</a></h3>
+
+      <p>
+        Authors worked with analysts to correctly interpret the results and draw appropriate conclusions. As authors wrote their respective chapters, they drew from these statistics to support their framing of the state of the web. Peer reviewers worked with authors to ensure the technical correctness of their analysis.
+      </p>
+
+      <p>
+        To make the results more easily understandable to readers, web developers and analysts created data visualizations to embed in the chapter. Some visualizations are simplified to make the points more clearly. For example, rather than showing a full distribution, only a handful of percentiles are shown. Unless otherwise noted, all distributions are summarized using percentiles, especially medians (the 50th percentile), and not averages.
+      </p>
+
+      <p>
+        Finally, editors revised the chapters to fix simple grammatical errors and ensure consistency across the reading experience.
+      </p>
+    </section>
+
+    <section>
+      <h2 id="looking-ahead"><a href="#looking-ahead" class="anchor-link">Looking ahead</a></h2>
+
+      <p>
+        The {{ year }} edition of the Web Almanac is the {{ self.edition() }} in what is mostly an annual tradition (we took a break in 2023) in the web community of introspection and a commitment to positive change. Getting to this point has been a monumental effort thanks to many dedicated <a href="{{ url_for('contributors', year=year, lang=lang) }}">contributors</a> and we hope to leverage as much of this work as possible to make future editions even more streamlined.
+      </p>
+    </section>
+{% endblock main_content %}

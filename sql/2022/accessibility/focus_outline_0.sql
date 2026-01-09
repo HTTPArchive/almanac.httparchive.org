@@ -59,7 +59,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFocusStylesOutline0(css)) AS sets_outline_0
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page

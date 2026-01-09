@@ -36,7 +36,7 @@ ON
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
   # The CrUX 202008 dataset is not available until September 8.
-  date = '2020-07-01'
+  date = '2020-07-01' -- noqa: CV09
 GROUP BY
   client,
   cms

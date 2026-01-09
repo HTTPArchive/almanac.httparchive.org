@@ -11,10 +11,16 @@ csp = {
         "'unsafe-eval'",
     ],
     "font-src": ["'self'"],
-    "connect-src": ["'self'", "*.google-analytics.com", "www.googletagmanager.com"],
+    "connect-src": [
+        "'self'",
+        "*.google-analytics.com",
+        "www.googletagmanager.com",
+        "ep1.adtrafficquality.google",
+    ],
     "img-src": [
         "'self'",
         "*.google-analytics.com",
+        "www.google.com",
         "www.googletagmanager.com",
         "www.googleapis.com",
         "*.google.com",
@@ -22,7 +28,12 @@ csp = {
         "ssl.gstatic.com",
         "data:",
     ],
-    "frame-src": ["'self'", "cse.google.com", "www.googletagmanager.com"],
+    "frame-src": [
+        "'self'",
+        "cse.google.com",
+        "syndicatedsearch.goog",
+        "www.googletagmanager.com",
+    ],
     "object-src": ["'none'"],
     "base-uri": ["'none'"],
 }
