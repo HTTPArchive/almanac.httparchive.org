@@ -15,6 +15,7 @@ FROM (
     CASE
       WHEN a.value = 'gzip' THEN 'Gzip'
       WHEN a.value = 'br' THEN 'Brotli'
+      WHEN a.value = 'zstd' THEN 'Zstandard'
       WHEN a.value = '' THEN 'no text compression'
       ELSE 'other'
     END AS compression_type
