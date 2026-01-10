@@ -9,7 +9,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 ),
 
 requests AS (
@@ -20,7 +20,7 @@ requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
     -- Pre-filter: only process URLs that contain consent-related parameters
     AND REGEXP_CONTAINS(url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
 ),
@@ -122,7 +122,7 @@ totals AS (
     NET.HOST(r.url) = NET.HOST(tp.domain),
   UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND p.rank <= rank_grouping
   GROUP BY
     r.client,

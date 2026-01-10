@@ -9,7 +9,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
     AND rank <= 50000  -- Expand to top 50K sites
 ),
 
@@ -38,7 +38,7 @@ consent_requests AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
     AND (
       REGEXP_CONTAINS(r.url, r'[?&]us_privacy=') OR

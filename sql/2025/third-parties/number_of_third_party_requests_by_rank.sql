@@ -1,5 +1,6 @@
 #standardSQL
 # Number of third-party requests by rank
+
 WITH requests AS (
   SELECT
     client,
@@ -8,7 +9,7 @@ WITH requests AS (
   FROM
     `httparchive.all.requests` AS req
   WHERE
-    req.date = '2025-06-01' AND
+    req.date = '2025-07-01' AND
     req.is_root_page = true
 ),
 
@@ -20,7 +21,7 @@ pages AS (
   FROM
     `httparchive.all.pages` AS pg
   WHERE
-    pg.date = '2025-06-01' AND
+    pg.date = '2025-07-01' AND
     pg.is_root_page = true
 ),
 

@@ -9,7 +9,7 @@ WITH requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 ),
 
 totals AS (
@@ -20,7 +20,7 @@ totals AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
   GROUP BY
     client
 ),
@@ -44,7 +44,7 @@ third_party AS (
     canonicalDomain,
     category
   HAVING
-    page_usage >= 50
+    page_usage >= 5
 )
 
 SELECT

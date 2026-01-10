@@ -49,7 +49,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
     AND rank <= 100000  -- Expanded to top 100K sites
 ),
 
@@ -68,7 +68,7 @@ requests_with_redirects AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
     AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') IS NOT NULL
     AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') != ''

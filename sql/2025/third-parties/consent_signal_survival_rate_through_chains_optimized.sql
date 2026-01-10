@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION extractConsentSignals(url STRING)
 RETURNS STRUCT<
   has_usp_standard BOOL,
-  has_usp_nonstandard BOOL, 
+  has_usp_nonstandard BOOL,
   has_tcf_standard BOOL,
   has_gpp_standard BOOL,
   has_any_signal BOOL
@@ -17,18 +17,18 @@ LANGUAGE js AS """
       has_tcf_standard: /[?&](gdpr|gdpr_consent|gdpr_pd)=/.test(url),
       has_gpp_standard: /[?&](gpp|gpp_sid)=/.test(url)
     };
-    
-    signals.has_any_signal = signals.has_usp_standard || 
-                           signals.has_usp_nonstandard || 
-                           signals.has_tcf_standard || 
-                           signals.has_gpp_standard;
-    
+
+    signals.has_any_signal = signals.has_usp_standard ||
+                             signals.has_usp_nonstandard ||
+                             signals.has_tcf_standard ||
+                             signals.has_gpp_standard;
+
     return signals;
   } catch (e) {
     return {
       has_usp_standard: false,
       has_usp_nonstandard: false,
-      has_tcf_standard: false, 
+      has_tcf_standard: false,
       has_gpp_standard: false,
       has_any_signal: false
     };
@@ -43,7 +43,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
     AND rank <= 10000  -- Aggressive filtering: top 10K only
 ),
 
@@ -64,7 +64,7 @@ filtered_requests AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
     AND (
       -- Only process requests with consent signals OR that are part of chains
@@ -124,13 +124,13 @@ step_1_stats AS (
   SELECT
     client,
     1 AS step_number,
-    
+
     COUNTIF(consent_signals.has_usp_standard) AS usp_standard_count,
     COUNTIF(consent_signals.has_usp_nonstandard) AS usp_nonstandard_count,
     COUNTIF(consent_signals.has_tcf_standard) AS tcf_standard_count,
     COUNTIF(consent_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(consent_signals.has_any_signal) AS any_signal_count,
-    
+
     COUNT(*) AS total_requests,
     COUNT(DISTINCT root_page) AS total_pages
   FROM
@@ -143,13 +143,13 @@ step_2_stats AS (
   SELECT
     client,
     2 AS step_number,
-    
+
     COUNTIF(step2_signals.has_usp_standard) AS usp_standard_count,
     COUNTIF(step2_signals.has_usp_nonstandard) AS usp_nonstandard_count,
     COUNTIF(step2_signals.has_tcf_standard) AS tcf_standard_count,
     COUNTIF(step2_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(step2_signals.has_any_signal) AS any_signal_count,
-    
+
     COUNT(*) AS total_requests,
     COUNT(DISTINCT root_page) AS total_pages
   FROM
@@ -186,20 +186,20 @@ SELECT
   cs.step_number,
   cs.total_requests,
   cs.total_pages,
-  
+
   -- Signal counts and survival rates
   cs.usp_standard_count,
   SAFE_DIVIDE(cs.usp_standard_count, b.usp_standard_baseline) AS usp_standard_survival_rate,
-  
+
   cs.usp_nonstandard_count,
   SAFE_DIVIDE(cs.usp_nonstandard_count, b.usp_nonstandard_baseline) AS usp_nonstandard_survival_rate,
-  
+
   cs.tcf_standard_count,
   SAFE_DIVIDE(cs.tcf_standard_count, b.tcf_standard_baseline) AS tcf_standard_survival_rate,
-  
+
   cs.gpp_standard_count,
   SAFE_DIVIDE(cs.gpp_standard_count, b.gpp_standard_baseline) AS gpp_standard_survival_rate,
-  
+
   cs.any_signal_count,
   SAFE_DIVIDE(cs.any_signal_count, b.any_signal_baseline) AS any_signal_survival_rate
 

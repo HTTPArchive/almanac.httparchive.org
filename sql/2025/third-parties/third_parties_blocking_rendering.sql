@@ -33,7 +33,7 @@ WITH total_third_party_usage AS (
     `httparchive.almanac.third_parties`
   ON
     NET.HOST(requests.url) = NET.HOST(domain) AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     category != 'hosting'
   GROUP BY
     client,

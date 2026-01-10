@@ -9,7 +9,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 ),
 
 requests AS (
@@ -20,7 +20,7 @@ requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 ),
 
 third_party AS (

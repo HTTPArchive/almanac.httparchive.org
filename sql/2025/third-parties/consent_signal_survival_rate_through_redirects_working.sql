@@ -49,7 +49,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
     AND rank <= 100000  -- Expanded to top 100K sites
 ),
 
@@ -67,7 +67,7 @@ initial_consent_requests AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
     AND REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
 ),
@@ -90,7 +90,7 @@ requests_with_redirects AS (
     AND icr.page = r.page 
     AND icr.url = r.url
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') IS NOT NULL
     AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') != ''
 ),

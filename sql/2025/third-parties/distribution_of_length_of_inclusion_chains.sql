@@ -40,7 +40,7 @@ WITH data AS (
     FROM
       `httparchive.crawl.requests`
     WHERE
-      date = '2025-06-01' AND
+      date = '2025-07-01' AND
       NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url)
   )
   WHERE third_party != initiator_etld AND

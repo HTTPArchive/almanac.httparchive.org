@@ -49,7 +49,7 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01'
+    date = '2025-07-01'
 ),
 
 -- Get redirect chains from crawl.requests summary column
@@ -69,7 +69,7 @@ redirect_chains AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-06-01'
+    r.date = '2025-07-01'
     AND JSON_EXTRACT(r.summary, '$.redirects') IS NOT NULL
     AND JSON_EXTRACT(r.summary, '$.redirects') != '[]'
     -- AND p.rank <= 100000  -- Limit to top 100K sites
