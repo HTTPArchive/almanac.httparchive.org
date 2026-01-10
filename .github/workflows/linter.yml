@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
@@ -44,7 +44,6 @@ jobs:
           VALIDATE_MARKDOWN: true
           VALIDATE_PYTHON_PYLINT: true
           VALIDATE_PYTHON_FLAKE8: true
-          VALIDATE_SQLFLUFF: true
           VALIDATE_YAML: true
 
   dependabot:
@@ -73,7 +72,6 @@ jobs:
             steps.metadata.outputs.update-type == 'version-update:semver-minor'
           ) && (
             contains(steps.metadata.outputs.dependency-names, 'prettier') ||
-            contains(steps.metadata.outputs.dependency-names, 'sqlfluff') ||
             contains(steps.metadata.outputs.dependency-names, 'super-linter')
           )
         run: gh pr merge --admin --squash "$PR_URL"

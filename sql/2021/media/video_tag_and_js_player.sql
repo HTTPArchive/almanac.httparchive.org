@@ -43,7 +43,7 @@ FROM (
     FROM
       `httparchive.almanac.requests`
     WHERE
-      date = '2021-08-01' AND
+      date = '2021-08-01' AND -- noqa: CV09
       type = 'script'
     GROUP BY
       client,

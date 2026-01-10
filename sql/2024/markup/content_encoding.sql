@@ -8,7 +8,7 @@ RETURNS STRING AS (
       UNNEST(response_headers) AS header
     WHERE
       LOWER(header.name) = 'content-encoding'
-    LIMIT 1
+    LIMIT 1 -- noqa: AM09
   )
 );
 

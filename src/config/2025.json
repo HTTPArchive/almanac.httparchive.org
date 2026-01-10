@@ -60,9 +60,8 @@
           "part": "I",
           "chapter_number": "7",
           "title": "Generative AI",
-          "slug": "generartive-ai",
-          "hero_dir": "2025",
-          "todo": true
+          "slug": "generative-ai",
+          "hero_dir": "2025"
         }
       ]
     },
@@ -74,15 +73,13 @@
           "part": "II",
           "chapter_number": "8",
           "title": "SEO",
-          "slug": "seo",
-          "todo": true
+          "slug": "seo"
         },
         {
           "part": "II",
           "chapter_number": "9",
           "title": "Accessibility",
-          "slug": "accessibility",
-          "todo": true
+          "slug": "accessibility"
         },
         {
           "part": "II",
