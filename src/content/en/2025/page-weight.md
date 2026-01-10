@@ -408,7 +408,7 @@ Desktop pages at the 100th percentile used 189.9 MB of JavaScript and mobile use
  )
 }}
 
-Unlike images, JavaScript use was consistent between home pages and inner pages. At the 10th percentile, home pages used 87 KB and mobile used 108 KB of JS. Median home pages used 664 KB, while their inner page counterparts used 690 KB. At the 90th percentile, home and inner pages used 1,979	 and 1,933 KB respectively.
+Unlike images, JavaScript use was consistent between home pages and inner pages. At the 10th percentile, home pages used 87 KB and mobile used 108 KB of JS. Median home pages used 664 KB, while their inner page counterparts used 690 KB. At the 90th percentile, home and inner pages used 1,979 and 1,933 KB respectively.
 
 #### Unused JavaScript
 
@@ -454,7 +454,7 @@ Video bytes for the median page increased 28% year over year from 246 KB in 2024
  )
 }}
 
-More video bytes were shipped on home than inner pages for desktop.  The median homepage saw 288 KB while inner pages came in at 206 KB.  The gap between page types is largest in the 75th percentile where home pages come in at 1,934 KB, 232.6% larger than inner pages at 832 KB.
+More video bytes were shipped on home than inner pages for desktop. The median homepage saw 288 KB while inner pages came in at 206 KB. The gap between page types is largest in the 75th percentile where home pages come in at 1,934 KB, 232.6% larger than inner pages at 832 KB.
 
 {{ figure_markup(
  image="mobile-video-response-size-distribution-by-page-type.png",
@@ -465,3 +465,170 @@ More video bytes were shipped on home than inner pages for desktop.  The median 
  sql_file="response_type_distribution.sql"
  )
 }}
+
+The pattern of more video bytes on homepages continued for mobile devices as well. The median home page shipped double the bytes (512 KB) compared to inner pages at 256 KB. At the 90th percentile, mobile home pages loaded 6.1 MB of video.
+
+Several technical layers impact a video files size:
+
+* File Formats: The "wrapper" (e.g., MP4, WebM) that holds the video and audio streams. While the container itself is light, the choice of container often dictates which efficient codecs can be used.
+* Codecs (Compression/Decompression): The efficiency of the mathematical algorithm used to shrink the video. Legacy codecs like H.264 (AVC) are widely compatible but "heavy," whereas modern codecs like HEVC (H.265) and AV1 offer significantly better visual quality at a fraction of the byte count.
+* Chroma Subsampling: A method of reducing file size by implementing lower resolution for color information than for brightness (luma) information, taking advantage of the human eye's higher sensitivity to brightness.
+
+File formats are the most easily observed factor on video bytes. WebM files are designed specifically for the web. Common knowledge expects WebM files to be lighter than MP4s because they are built for the constraints of a browser.
+
+{{ figure_markup(
+ image="distribution-of-mobile-home-page-video-sizes-by-format.png",
+ caption="Distribution of mobile home page video sizes by format.",
+ description="Candlestick chart showing the distribution of mobile home page video by size. Each candlestick represents a video file format. The body indicates the range between 25th and 75th percentile, while the wicks represent the maximum and minimum throughput recorded. Quicktime body starts at 53.6 and ends at 4,627.2 KB. Mpeg body starts at 74.3 and ends at 3,256 KB. WebM body starts at 7.9 and ends at 58.6 KB. WebP Video body starts at 4.4 and ends at 48.2 KB.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=1471861495&format=interactive",
+ sheets_gid="1891741241",
+ sql_file="response_media_file_type_distribution.sql"
+ )
+}}
+
+For the median percentile of mobile homepage videos, Quicktime files have the highest median response size (976.0 KB), followed by mpeg (639.5 KB) and WebM (581.8 KB). webp Video has a significantly smaller median size of 21.3 KB. WebP Video files are consistently the smallest across all measured percentiles, with a maximum size of 5,743.5 KB and a 90th percentile of 155.6 KB.
+
+The largest home page desktop video files encountered were mpeg, coming at 326 MB for the 100th percentile.
+
+{{ figure_markup(
+ image="distribution-of-desktop-home-page-video-sizes-by-format.png",
+ caption="Distribution of desktop home page video sizes by format.",
+ description="Candlestick chart showing the distribution of desktop home page video by size. Each candlestick represents a video file format. The body indicates the range between 25th and 75th percentile, while the wicks represent the maximum and minimum throughput recorded. WebM body starts at 132.5 and ends at 2,751.4 KB. Quicktime body starts at 42.8 and ends at 2,574.6 KB. Mpeg body starts at 64.6 and ends at 6,124.8 KB. WebP Video body starts at 9.5 and ends at 93.6 KB.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=291934338&format=interactive",
+ sheets_gid="1891741241",
+ sql_file="response_media_file_type_distribution.sql"
+ )
+}}
+
+While the high-end sizes are similar, the median (50th percentile) sizes vary, with WebM having the largest median at 860.22, followed by Quicktime (399.97 KB) and mpeg (326.52 KB). This suggests that a 'typical' webm file is larger than its quicktime or mpeg counterparts, despite the largest files being about the same size.
+
+The median response size for webp Video is 32.58 KB, which is 10 to 26 times smaller than the median of the other formats. Even at the 90th percentile, webp Video's size of 228.33 is exceptionally small. This means 90% of webp Video files are smaller than the smallest 90% of the other three formats, where the 90th percentile is over 6,100.
+
+The median size for WebM (860.22) is more than double that of quicktime (399.97) and almost triple that of mpeg (326.52), suggesting that while all formats can handle very large files, the center of the WebM distribution is skewed toward larger sizes.
+
+The largest home page desktop video files encountered were Quicktime, coming at 431 MB for the 100th percentile.
+
+### CSS bytes
+
+Cascading style sheets or CSS have been used to stylise pages on the web for years, they are a relatively lightweight way to create the layout and control the visual elements of a page.
+
+CSS works alongside HTML giving control of font styles, colors, spacing and even visibility of elements providing a more granular level of control but also a separation from other page aspects making it more maintainable. CSS is more lightweight than images and can help improve site performance by replacing large assets with CSS effects and animations.
+
+{{ figure_markup(
+ image="distribution-of-css-response-sizes-by-device-type.png",
+ caption="Distribution of CSS response sizes by device type.",
+ description="Bar chart of the distribution of CSS resource sizes by device type, across home and inner pages. At the 10th percentile, it is 10 KB for desktop and 7 KB for mobile, at the 25th percentile it is 38 KB for desktop and 34 KB for mobile, at the 50th percentile, it is 83 KB for desktop URLs, 79 KB for mobile URLs, at the 75th percentile it's 161 KB for desktop, 156 for mobile, and the 90th percentile it's 274 KB for desktop and 268 KB for mobile.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=1522118585&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+CSS bytes for mobile have grown in all percentiles except the bottom 10 where we saw a contraction versus last year.
+
+However this growth is mostly modest when compared to other aspects of a page. At the 90th percentile the total file size is just slightly over ¼ of a mb, growing by just 8 KB against last year,
+
+At the 50th percentile it was a growth of 4 KB against last year which is roughly an additional 4000 characters added to CSS files pointing to continued heavy use.
+
+{{ figure_markup(
+ image="distribution-of-css-response-sizes-by-page-type.png",
+ caption="Distribution of CSS response sizes by page type.",
+ description="Bar chart of the distribution of CSS resource sizes by page type, across mobile and desktop devices. At the 10th percentile, it is 7 KB for home pages and 10 KB for inner pages, at the 25th percentile it is 33 KB for home pages and 39 KB for inner pages, at the 50th percentile, it is 79 KB for home pages and 82 KB for inner pages, at the 75th percentile it's 159 KB for home pages and 158 KB for inner pages, and the 90th percentile it's 274 KB for home pages and 268 KB for inner pages.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=1708847899&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+Inner pages follow this same trend of growth in all percentiles except the lowest 10th which again saw a 1 KB contraction.
+Inner pages feature a slightly higher usage of CSS in the 25th, 50th and 75th percentile.
+
+Notably when we get to the top end of the results, the 75th and 90th percentile, homepages actually have a greater CSS size. This could be due to inefficient use of CSS, i.e. loading the majority of files irrespective of use on the current page or potentially heavier reliance on CSS to provide visuals for all pages.
+
+### HTML bytes
+
+HTML bytes refers to the pure textual weight of all the markup on the page. Typically it will include the document definition and commonly used on page tags such as `<div>` or `<span>`. However it also contains inline elements such as the contents of script tags or styling added to other tags. This can rapidly lead to bloating of the HTML doc.
+
+{{ figure_markup(
+ image="distribution-of-html-response-sizes-by-device-type.png",
+ caption="Distribution of HTML response sizes by device type.",
+ description="Bar chart of the distribution of HTML response sizes by device type, across home and inner pages. At the 10th percentile, it is 6 KB for desktop and mobile. At the 25th percentile it is 14 KB for desktop and mobile. At the 50th percentile, it is 35 KB for desktop URLs and 33 KB for mobile URLs. At the 75th percentile, it's 78 KB for desktop and 76 for mobile. At the 90th percentile it's 152 KB for desktop and 151 KB for mobile.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=884629714&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+HTML size remained uniform between device types for the 10th and 25th percentiles. Starting at the 50th percentile, desktop HTML was slightly larger. Not until the 100th percentile is a meaningful difference when desktop reached 401.6 MB and mobile came in at 389.2 MB.
+
+{{ figure_markup(
+ image="distribution-of-html-response-sizes-by-page-type.png",
+ caption="Distribution of HTML response sizes by page type.",
+ description="Bar chart of the distribution of HTML response sizes by device type. At the 10th percentile, it is 5 KB for home pages and 7 KB for inner pages. At the 25th percentile it is 14 KB for home pages and inner pages. At the 50th percentile, it is 34 KB for home pages URLs and 33 KB for inner pages URLs. At the 75th percentile, it's 79 KB for home pages and 76 for inner pages. At the 90th percentile it's 155 KB for home pages and 148 KB for inner pages.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=971853412&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+There is little disparity between inner pages and the home page for HTML size, only really becoming apparent at the 75th and above percentile. At the 100th percentile, the disparity is significant. Inner page HTML reached an astounding 624.4 MB – 375% larger than home page HTML at 166.5 MB.
+
+{{ figure_markup(
+ image="distribution-of-home-page-html-response-sizes-by-device-type.png",
+ caption="Distribution of home page HTML response sizes by device type.",
+ description="Bar chart of the distribution of home page HTML response sizes by device type, across home and inner pages. At the 10th percentile, it is 5 KB for desktop and mobile. At the 25th percentile it is 14 KB for desktop and 13 KB mobile. At the 50th percentile, it is 35 KB for desktop URLs and 33 KB for mobile URLs. At the 75th percentile, it's 80 KB for desktop and 78 for mobile. At the 90th percentile it's 154 KB for desktop and 155 KB for mobile.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=1083482035&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+The size difference between mobile and desktop is extremely minor, this implies that most websites are serving the same page to both mobile and desktop users.
+
+This approach dramatically reduces the amount of maintenance for developers but does mean that overall page weight is likely to be higher as effectively two versions of the site are deployed into one page.
+
+{{ figure_markup(
+ image="distribution-of-inner-page-html-response-sizes-by-device-type.png",
+ caption="Distribution of inner page HTML response sizes by device type.",
+ description="Bar chart of the distribution of HTML response sizes by device type, across home and inner pages. At the 10th percentile, it is 6 KB for desktop and mobile. At the 25th percentile it is 14 KB for desktop and mobile. At the 50th percentile, it is 35 KB for desktop URLs and 33 KB for mobile URLs. At the 75th percentile, it's 78 KB for desktop and 76 for mobile. At the 90th percentile it's 152 KB for desktop and 151 KB for mobile.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=213306109&format=interactive",
+ sheets_gid="1861272244",
+ sql_file="bytes_per_type.sql"
+ )
+}}
+
+Inner pages behaved similar to their home page counter parties through the 90th percentile. At the 100th percentile, the largest inner page HTML response was the same for both device types: 624.4 MB. On a standard 10-25 Mbps connection, this would take 30 to 90 seconds to load.
+
+### Font bytes
+
+While images and videos are the most obvious contributors to page bloat, web fonts represent a subtle but significant portion of modern page weight. Often overlooked during the design phase, the transition from system-standard fonts to custom "web fonts" has introduced a new layer of latency. Every unique weight (bold, light, thin) and style (italic) of a typeface requires a separate file download, meaning a single font family can quickly balloon into several hundred kilobytes of additional data.
+
+The "weight" of these fonts is determined by three main factors:
+
+1. Character Support: A font that includes support for multiple languages (Latin, Cyrillic, Greek) contains thousands more "glyphs" (the shapes of the letters) than a basic English-only font.
+2. Styles and Weights: Each variation (e.g., Roboto Regular, Roboto Bold, Roboto Bold Italic) is typically a distinct file. Loading a full "family" can be heavier than a large optimized image.
+3. Format Efficiency: Older formats like TTF (TrueType) and OTF (OpenType) are uncompressed, whereas modern web-specific formats like WOFF2 use Brotli compression to reduce file sizes by up to 30% without losing quality.
+
+{{ figure_markup(
+ image="distribution-of-font-response-sizes-by-device-type.png",
+ caption="Distribution of font response sizes by device type.",
+ description="Bar chart of the distribution of font response sizes by device type, across home and inner pages. At the 10th percentile, it is 9 KB for desktop and 8 KB for mobile. At the 25th percentile it is 15 KB for desktop and 14 KB for mobile. At the 50th percentile, it is 23 KB for desktop URLs and mobile. At the 75th percentile, it's 47 KB for desktop and 45 KB for mobile. At the 90th percentile it's 79 KB for desktop and 80 KB for mobile.",
+ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=145051765&format=interactive",
+ sheets_gid="263221798",
+ sql_file="response_type_distribution.sql"
+ )
+}}
+
+The median page shipped 23 KB of fonts. Bytes shipped remained closely matched between devices through the 90th percentile. Home pages and inner pages shipped the exact same amount of bytes across percentiles with 23 KB representing the median.
+
+### Other file types
+
+Ultimately the web is a diverse ecosystem with many file types. Some lesser encountered file types include 15 KB of WASM, 12 KB of audio, on the median page and across device types, audio. JSON, XML, and txt file types saw 0 KB of use on the median page. It's noteworthy that at least one site is shipping 117.6 MB of JSON on mobile pages, landing it the title of largest infrequent file type.
+
+## Page weight in request volume
+
+While the total number of bytes measures the raw volume of data, the volume of requests measures the complexity of the conversation between the browser and the server. Studying page weight through both lenses is essential because a "light" page (in bytes) can still be "slow" if it requires too many individual requests to render. Bytes represent the bandwidth required to download a page. The volume of requests represents the latency overhead inherent in web architecture.
+
+### File type volume for the median page
+
+To understand what file types contribute the most to page weight, we looked at the file type requests by the median page (50th percentile). This approach establishes a baseline for measuring the overall impact of each file type.
