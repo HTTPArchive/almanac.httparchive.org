@@ -61,11 +61,11 @@ Every other service is essentially negligible at the web scale. Legacy services 
 
 Because most sites don't rely on just one source for web typography, it's useful to look at how they mix and match delivery. In practice the web has converged on a few predictable combinations --- self-hosting only, Google only, or a hybrid of the two.
 
-1.  **Google Fonts together with self-hosted fonts**: used by \~36% of desktop sites and \~32% of mobile sites. This hybrid approach is very common: for example, a site might self-host some brand or icon fonts while also pulling in a Google-hosted font for body text (or vice versa).
+1. **Google Fonts together with self-hosted fonts**: used by \~36% of desktop sites and \~32% of mobile sites. This hybrid approach is very common: for example, a site might self-host some brand or icon fonts while also pulling in a Google-hosted font for body text (or vice versa).
 
-2.  **Self-hosted fonts only**: used by \~32% of desktop sites and \~36% of mobile sites (approximately 34% of sites overall). This means all custom fonts on the page are served from the site's own domain. As noted, this share has grown from about 30% last year to about one-third of sites this year.
+2. **Self-hosted fonts only**: used by \~32% of desktop sites and \~36% of mobile sites (approximately 34% of sites overall). This means all custom fonts on the page are served from the site's own domain. As noted, this share has grown from about 30% last year to about one-third of sites this year.
 
-3.  **Google Fonts only**: used by \~13% of desktop sites and \~12% of mobile sites. These sites exclusively rely on Google's CDN for their font needs (often via the standard \<link\> to Google's stylesheet).
+3. **Google Fonts only**: used by \~13% of desktop sites and \~12% of mobile sites. These sites exclusively rely on Google's CDN for their font needs (often via the standard \<link\> to Google's stylesheet).
 
 {{ figure_markup(
   image="popular-font-combos-desktop.png",
