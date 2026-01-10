@@ -4,9 +4,9 @@ title: Fonts
 description: Fonts chapter of the 2025 Web Almanac covering performance, design, and development trends for typography across the web.
 hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [charlesberret]
-reviewers: [bramstein, josesole]
-analysts: [IvanUkhov]
-editors: [chrislilly]
+reviewers: [bramstein, jmsole]
+analysts: [ivanukhov]
+editors: [svgeesus]
 translators: []
 discuss:
 charlesberret_bio: Charles Berret is a journalist, developer, and media scholar who studies the history and philosophy of information technologies. He lives in New York City and works at Enigma finding stories in data.
