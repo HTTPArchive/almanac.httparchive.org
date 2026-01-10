@@ -4007,14 +4007,15 @@
   },
   "rickb1102": {
     "avatar_url": "45003175",
+    "bluesky": "barkseo.bsky.social",
     "github": "rickb1102",
+    "linkedin": "richardbarrettseo",
     "name": "Richard Barret",
     "teams": {
       "2025": [
         "authors"
       ]
-    },
-    "twitter": "rickb1102"
+    }
   },
   "rviscomi": {
     "avatar_url": "1120896",
