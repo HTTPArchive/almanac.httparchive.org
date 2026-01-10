@@ -11,13 +11,13 @@ translators: []
 jazlan01_bio: Muhammad Jazlan is a second year PhD student in Computer Science at University of California, Davis. His research focuses on the measurement, detection and mitigation of tracking on the web.
 abubakaraziz_bio: Muhammad Abu Bakar Aziz is a PhD candidate in Computer Science at Northeastern University in Boston. His research focuses on web privacy. In particular, he empirically measures how third parties and online advertisers comply with privacy laws such as the CCPA and GDPR.
 results: https://docs.google.com/spreadsheets/d/1FPssodcLgX8iFWFXDrthWVkBCUTl5_IJon2cyaZVudU/edit
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: The top 10 third-party domains are dominated by Google.
+featured_stat_1: 90%
+featured_stat_label_1: Pages with at least one third party
+featured_stat_2: 16
+featured_stat_label_2: The median number of third-party domains present on a page
+featured_stat_3: 18%
+featured_stat_label_3: Percentage of websites that use TCF Standard
 doi: TODO
 ---
 
@@ -179,7 +179,7 @@ We examine consent signal prevalence in three dimensions: across different websi
   description="Bar chart showing... TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=2066656520&format=interactive",
   sheets_gid="1614774531",
-  sql_file="TODO.sql"
+  sql_file="consent_signal_prevalence_by_third_party_category.sql"
   )
 }}
 
@@ -193,7 +193,7 @@ We find that TCF is the dominant consent standard, particularly among higher-ran
   description="Stacked bar chart showing.. TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=828032137&format=interactive",
   sheets_gid="1614774531",
-  sql_file="TODO.sql"
+  sql_file="consent_signal_prevalence_by_third_party_category.sql"
   )
 }}
 
@@ -207,7 +207,7 @@ We observe different consent standard preferences across third-party categories.
   description="Bar chart showing... TODO.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1262795614&format=interactive",
   sheets_gid="1788947788",
-  sql_file="TODO.sql"
+  sql_file="consent_signals_by_parameter_and_domain_optimized.sql"
   )
 }}
 
