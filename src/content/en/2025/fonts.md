@@ -5,7 +5,7 @@ description: Fonts chapter of the 2025 Web Almanac covering performance, design,
 hero_alt: Hero image of Web Almanac characters on an assembly line preparing various F letters in various styles and shapes.
 authors: [charlesberret]
 reviewers: [bramstein, jmsole]
-analysts: [ivanukhov]
+analysts: [charlesberret, ivanukhov]
 editors: [svgeesus]
 translators: []
 discuss:
