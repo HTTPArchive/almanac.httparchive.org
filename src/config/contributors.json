@@ -810,6 +810,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "mastodon": "https://typo.social/@bram",
@@ -1027,6 +1030,9 @@
       "2024": [
         "authors",
         "editors"
+      ],
+      "2025": [
+        "authors"
       ]
     }
   },
@@ -1099,6 +1105,9 @@
       ],
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "editors"
       ]
     },
     "twitter": "svgeesus",
@@ -2042,6 +2051,9 @@
       "2024": [
         "analysts",
         "reviewers"
+      ],
+      "2025": [
+        "analysts"
       ]
     }
   },
@@ -2484,6 +2496,9 @@
         "reviewers"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
