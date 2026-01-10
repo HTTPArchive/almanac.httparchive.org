@@ -5,6 +5,7 @@ CREATE TEMP FUNCTION extractConsentSignals(url STRING)
 RETURNS STRUCT<
   has_usp_standard BOOL,
   has_usp_nonstandard BOOL,
+  has_usp_nonstandard BOOL,
   has_tcf_standard BOOL,
   has_gpp_standard BOOL,
   has_any_signal BOOL
@@ -19,9 +20,9 @@ LANGUAGE js AS """
     };
 
     signals.has_any_signal = signals.has_usp_standard ||
-                             signals.has_usp_nonstandard ||
-                             signals.has_tcf_standard ||
-                             signals.has_gpp_standard;
+                            signals.has_usp_nonstandard ||
+                            signals.has_tcf_standard ||
+                            signals.has_gpp_standard;
 
     return signals;
   } catch (e) {
@@ -68,8 +69,8 @@ filtered_requests AS (
     AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
     AND (
       -- Only process requests with consent signals OR that are part of chains
-      REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
-      OR JSON_VALUE(r.payload, '$._initiator') IS NOT NULL
+      REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=') OR
+      JSON_VALUE(r.payload, '$._initiator') IS NOT NULL
     )
 ),
 
@@ -80,12 +81,12 @@ step_1_requests AS (
     root_page,
     third_party,
     consent_signals,
-    COUNT(*) as step1_count
+    COUNT(0) AS step1_count
   FROM
     filtered_requests
   WHERE
-    initiator_etld = root_page  -- Direct first-party to third-party requests
-    AND consent_signals.has_any_signal = true
+    initiator_etld = root_page AND  -- Direct first-party to third-party requests
+    consent_signals.has_any_signal = TRUE
   GROUP BY
     client,
     root_page,
@@ -101,15 +102,15 @@ step_2_requests AS (
     fr.third_party AS step2_party,
     s1.consent_signals AS step1_signals,
     fr.consent_signals AS step2_signals,
-    COUNT(*) as step2_count
+    COUNT(0) AS step2_count
   FROM
     filtered_requests fr
   INNER JOIN
     step_1_requests s1
   ON
-    fr.client = s1.client
-    AND fr.root_page = s1.root_page
-    AND fr.initiator_etld = s1.third_party  -- Third-party chain
+    fr.client = s1.client AND
+    fr.root_page = s1.root_page AND
+    fr.initiator_etld = s1.third_party  -- Third-party chain
   GROUP BY
     fr.client,
     s1.root_page,
@@ -131,7 +132,7 @@ step_1_stats AS (
     COUNTIF(consent_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(consent_signals.has_any_signal) AS any_signal_count,
 
-    COUNT(*) AS total_requests,
+    COUNT(0) AS total_requests,
     COUNT(DISTINCT root_page) AS total_pages
   FROM
     step_1_requests
@@ -150,7 +151,7 @@ step_2_stats AS (
     COUNTIF(step2_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(step2_signals.has_any_signal) AS any_signal_count,
 
-    COUNT(*) AS total_requests,
+    COUNT(0) AS total_requests,
     COUNT(DISTINCT root_page) AS total_pages
   FROM
     step_2_requests
@@ -187,18 +188,22 @@ SELECT
   cs.total_requests,
   cs.total_pages,
 
+
   -- Signal counts and survival rates
   cs.usp_standard_count,
   SAFE_DIVIDE(cs.usp_standard_count, b.usp_standard_baseline) AS usp_standard_survival_rate,
 
+
   cs.usp_nonstandard_count,
   SAFE_DIVIDE(cs.usp_nonstandard_count, b.usp_nonstandard_baseline) AS usp_nonstandard_survival_rate,
+
 
   cs.tcf_standard_count,
   SAFE_DIVIDE(cs.tcf_standard_count, b.tcf_standard_baseline) AS tcf_standard_survival_rate,
 
   cs.gpp_standard_count,
   SAFE_DIVIDE(cs.gpp_standard_count, b.gpp_standard_baseline) AS gpp_standard_survival_rate,
+
 
   cs.any_signal_count,
   SAFE_DIVIDE(cs.any_signal_count, b.any_signal_baseline) AS any_signal_survival_rate

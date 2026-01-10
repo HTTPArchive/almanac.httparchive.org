@@ -12,7 +12,6 @@ WITH requests AS (
     date = '2025-07-01'
 ),
 
-
 third_party AS (
   SELECT
     domain,
@@ -40,7 +39,7 @@ pages AS (
     rank
   FROM
     `httparchive.crawl.pages`
-  WHERE 
+  WHERE
     date = '2025-07-01'
 )
 

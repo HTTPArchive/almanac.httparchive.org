@@ -47,7 +47,7 @@ FROM (
   LEFT JOIN
     UNNEST(getMediaQueryValues(css)) AS value
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     value IS NOT NULL
 )
 JOIN (

@@ -51,7 +51,7 @@ category_totals AS (
     r.client,
     rank_grouping,
     tp.category,
-    COUNT(*) AS total_category_requests,
+    COUNT(0) AS total_category_requests,
     COUNT(DISTINCT r.page) AS total_category_pages,
     COUNT(DISTINCT tp.canonicalDomain) AS total_category_domains
   FROM
@@ -64,7 +64,7 @@ category_totals AS (
     third_party tp
   ON
     NET.HOST(r.url) = NET.HOST(tp.domain),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
     p.rank <= rank_grouping
   GROUP BY
@@ -82,13 +82,13 @@ consent_signals_by_category AS (
     tp.canonicalDomain,
     r.page,
     r.url,
-    
+
     -- Single-pass consent signal detection
     REGEXP_CONTAINS(r.url, r'[?&]us_privacy=') AS has_usp_standard,
     REGEXP_CONTAINS(r.url, r'[?&](ccpa|usp_consent|uspString|sst\.us_privacy|uspConsent|ccpa_consent|AV_CCPA|usp|usprivacy|_fw_us_privacy|D9v\.us_privacy|cnsnt|ccpaconsent|usp_string)=') AS has_usp_nonstandard,
     REGEXP_CONTAINS(r.url, r'[?&](gdpr|gdpr_consent|gdpr_pd)=') AS has_tcf_standard,
     REGEXP_CONTAINS(r.url, r'[?&](gpp|gpp_sid)=') AS has_gpp_standard
-    
+
   FROM
     requests r
   INNER JOIN
@@ -99,11 +99,11 @@ consent_signals_by_category AS (
     third_party tp
   ON
     NET.HOST(r.url) = NET.HOST(tp.domain),
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+    UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
   WHERE
-    p.rank <= rank_grouping
+    p.rank <= rank_grouping AND
     -- Pre-filter: only process URLs that might contain consent-related parameters
-    AND REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|sst\.us_privacy|uspConsent|ccpa_consent|AV_CCPA|usp|usprivacy|_fw_us_privacy|D9v\.us_privacy|cnsnt|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
+    REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|sst\.us_privacy|uspConsent|ccpa_consent|AV_CCPA|usp|usprivacy|_fw_us_privacy|D9v\.us_privacy|cnsnt|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
 ),
 
 -- Add computed flag for any consent signal
@@ -121,32 +121,32 @@ category_signal_aggregates AS (
     client,
     rank_grouping,
     category,
-    
+
     -- USP Standard metrics
     COUNTIF(has_usp_standard) AS usp_standard_requests,
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN page END) AS usp_standard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_standard THEN canonicalDomain END) AS usp_standard_domains,
-    
-    -- USP Non-Standard metrics  
+
+    -- USP Non-Standard metrics
     COUNTIF(has_usp_nonstandard) AS usp_nonstandard_requests,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN page END) AS usp_nonstandard_pages,
     COUNT(DISTINCT CASE WHEN has_usp_nonstandard THEN canonicalDomain END) AS usp_nonstandard_domains,
-    
+
     -- TCF Standard metrics
     COUNTIF(has_tcf_standard) AS tcf_standard_requests,
     COUNT(DISTINCT CASE WHEN has_tcf_standard THEN page END) AS tcf_standard_pages,
     COUNT(DISTINCT CASE WHEN has_tcf_standard THEN canonicalDomain END) AS tcf_standard_domains,
-    
+
     -- GPP Standard metrics
     COUNTIF(has_gpp_standard) AS gpp_standard_requests,
     COUNT(DISTINCT CASE WHEN has_gpp_standard THEN page END) AS gpp_standard_pages,
     COUNT(DISTINCT CASE WHEN has_gpp_standard THEN canonicalDomain END) AS gpp_standard_domains,
-    
+
     -- Any consent signal metrics
     COUNTIF(has_any_consent_signal) AS any_consent_requests,
     COUNT(DISTINCT CASE WHEN has_any_consent_signal THEN page END) AS any_consent_pages,
     COUNT(DISTINCT CASE WHEN has_any_consent_signal THEN canonicalDomain END) AS any_consent_domains,
-    
+
     -- Totals for this filtered dataset
     COUNT(0) AS total_filtered_requests
   FROM

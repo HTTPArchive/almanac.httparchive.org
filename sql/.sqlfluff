@@ -28,7 +28,7 @@ exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,AM08,CP02,CP03,CV02,CV12,LT05,LT09
 # ST08 - Sometimes clearer to include brackets for complex COUNT(DISTINCT) cases
 # ST11 - Doesn't consider wildcards in SELECT. Issue: https://github.com/sqlfluff/sqlfluff/issues/6511
 
-large_file_skip_byte_limit = 40000
+large_file_skip_byte_limit = 1120000
 # CPU processes to use while linting.
 # If positive, just implies number of processes.
 # If negative or zero, implies number_of_cpus - specifed_number.
@@ -52,14 +52,13 @@ extended_capitalisation_policy = upper
 
 [sqlfluff:rules:convention.blocked_words]
 # Regex of blocked SQL that should not be used.
-# Can be overridden with `-- noqa: CV09` for those chapters using secondary pages
+# Can be overridden with `-- noqa: CV09` for those chapters using other dates
 # TABLESAMPLE - sometimes used for testing. Shouldn't be used in production as not random.
 # sample_data - sometimes used for testing. Shouldn't be used in production.
-# Block 2022_05_12 (contains secondary pages)
-# Block 2022_06_09 (contains secondary pages)
-# Block 2022_07_01 (probably forgot to update month to June for 2022)
-# Block 2021_06_01 (probably forgot to update month to July for 2021)
-blocked_regex = (TABLESAMPLE|sample_data|2022_?05_?12|2022_?06_?09|2022_?07_?01|2021_?06_?01)
+# The Web Almanac has run in different months due to timing or delays. This
+# means it's easy to use the wrong month by copying a previous query and only
+# updating the year and not the month. Block those months to warn about this.
+blocked_regex = (TABLESAMPLE|sample_data|2025-?08-?01|2025-?06-?01|2024-?08-?01|2024-?07-?01|2022-?08-?01|2022-?07-?01|2021-?06-?01|2021-?08-?01|2020-?07-?01)
 
 [sqlfluff:rules:convention.count_rows]
 prefer_count_0 = True

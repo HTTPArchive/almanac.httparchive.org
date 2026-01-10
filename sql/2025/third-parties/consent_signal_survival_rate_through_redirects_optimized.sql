@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION extractConsentSignals(url STRING)
 RETURNS STRUCT<
   has_usp_standard BOOL,
-  has_usp_nonstandard BOOL, 
+  has_usp_nonstandard BOOL,
   has_tcf_standard BOOL,
   has_gpp_standard BOOL,
   has_any_signal BOOL,
@@ -13,23 +13,23 @@ RETURNS STRUCT<
 LANGUAGE js AS """
   try {
     if (!url || typeof url !== 'string') return {
-      has_usp_standard: false, has_usp_nonstandard: false, 
+      has_usp_standard: false, has_usp_nonstandard: false,
       has_tcf_standard: false, has_gpp_standard: false,
       has_any_signal: false, signal_count: 0
     };
-    
+
     const signals = {
       has_usp_standard: /[?&]us_privacy=/.test(url),
       has_usp_nonstandard: /[?&](ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string)=/.test(url),
       has_tcf_standard: /[?&](gdpr|gdpr_consent|gdpr_pd)=/.test(url),
       has_gpp_standard: /[?&](gpp|gpp_sid)=/.test(url)
     };
-    
+
     signals.signal_count = [
-      signals.has_usp_standard, signals.has_usp_nonstandard, 
+      signals.has_usp_standard, signals.has_usp_nonstandard,
       signals.has_tcf_standard, signals.has_gpp_standard
     ].filter(Boolean).length;
-    
+
     signals.has_any_signal = signals.signal_count > 0;
     return signals;
   } catch (e) {
@@ -68,14 +68,14 @@ requests_with_redirects AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-07-01'
-    AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
-    AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') IS NOT NULL
-    AND JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') != ''
-    AND (
+    r.date = '2025-07-01' AND
+    NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url) AND  -- Third-party only
+    JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') IS NOT NULL AND
+    JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl') != '' AND
+    (
       -- Pre-filter: only URLs with consent signals in final URL or redirect URL
-      REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
-      OR REGEXP_CONTAINS(JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl'), r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
+      REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=') OR
+      REGEXP_CONTAINS(JSON_EXTRACT_SCALAR(r.summary, '$.redirectUrl'), r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=')
     )
 ),
 
@@ -86,17 +86,17 @@ redirect_steps AS (
     page,
     final_url,
     final_domain,
-    
+
     -- Step 1: Original redirect URL (before redirect)
     redirect_url AS step1_url,
-    
+
     -- Step 2: Final URL (after redirect)
     final_url AS step2_url
   FROM
     requests_with_redirects
   WHERE
-    redirect_url IS NOT NULL
-    AND redirect_url != ''
+    redirect_url IS NOT NULL AND
+    redirect_url != ''
 ),
 
 -- Extract consent signals for each step
@@ -105,11 +105,11 @@ signals_by_step AS (
     client,
     page,
     final_domain,
-    
+
     -- Step 1 signals (original redirect URL)
     step1_url,
     extractConsentSignals(step1_url) AS step1_signals,
-    
+
     -- Step 2 signals (final URL after redirect)
     step2_url,
     extractConsentSignals(step2_url) AS step2_signals
@@ -126,44 +126,44 @@ step_aggregations AS (
     client,
     1 AS redirect_step,
     'original' AS step_type,
-    
+
     COUNTIF(step1_signals.has_usp_standard) AS usp_standard_count,
     COUNTIF(step1_signals.has_usp_nonstandard) AS usp_nonstandard_count,
     COUNTIF(step1_signals.has_tcf_standard) AS tcf_standard_count,
     COUNTIF(step1_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(step1_signals.has_any_signal) AS any_signal_count,
-    
+
     AVG(step1_signals.signal_count) AS avg_signal_count,
-    COUNT(*) AS total_urls,
+    COUNT(0) AS total_urls,
     COUNT(DISTINCT page) AS total_pages
   FROM
     signals_by_step
   WHERE
-    step1_signals.has_any_signal = true  -- Only analyze chains that start with signals
+    step1_signals.has_any_signal = TRUE  -- Only analyze chains that start with signals
   GROUP BY
     client
-    
+
   UNION ALL
-  
+
   -- Step 2 stats (final URL after redirect)
   SELECT
     client,
     2 AS redirect_step,
     'final' AS step_type,
-    
+
     COUNTIF(step2_signals.has_usp_standard) AS usp_standard_count,
     COUNTIF(step2_signals.has_usp_nonstandard) AS usp_nonstandard_count,
     COUNTIF(step2_signals.has_tcf_standard) AS tcf_standard_count,
     COUNTIF(step2_signals.has_gpp_standard) AS gpp_standard_count,
     COUNTIF(step2_signals.has_any_signal) AS any_signal_count,
-    
+
     AVG(step2_signals.signal_count) AS avg_signal_count,
-    COUNT(*) AS total_urls,
+    COUNT(0) AS total_urls,
     COUNT(DISTINCT page) AS total_pages
   FROM
     signals_by_step
   WHERE
-    step1_signals.has_any_signal = true  -- Same baseline
+    step1_signals.has_any_signal = TRUE  -- Same baseline
   GROUP BY
     client
 ),
@@ -191,23 +191,23 @@ SELECT
   sa.step_type,
   sa.total_urls,
   sa.total_pages,
-  
+
   -- Signal survival rates
   sa.usp_standard_count,
   SAFE_DIVIDE(sa.usp_standard_count, b.usp_standard_baseline) AS usp_standard_survival_rate,
-  
+
   sa.usp_nonstandard_count,
   SAFE_DIVIDE(sa.usp_nonstandard_count, b.usp_nonstandard_baseline) AS usp_nonstandard_survival_rate,
-  
+
   sa.tcf_standard_count,
   SAFE_DIVIDE(sa.tcf_standard_count, b.tcf_standard_baseline) AS tcf_standard_survival_rate,
-  
+
   sa.gpp_standard_count,
   SAFE_DIVIDE(sa.gpp_standard_count, b.gpp_standard_baseline) AS gpp_standard_survival_rate,
-  
+
   sa.any_signal_count,
   SAFE_DIVIDE(sa.any_signal_count, b.any_signal_baseline) AS any_signal_survival_rate,
-  
+
   -- Signal count preservation
   sa.avg_signal_count,
   b.avg_signal_count_baseline,
