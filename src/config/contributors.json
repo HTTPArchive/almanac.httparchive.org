@@ -1333,6 +1333,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "reviewers"
       ]
     },
     "website": "https://tamethebots.com"
@@ -2197,6 +2201,7 @@
         "authors"
       ],
       "2025": [
+        "authors",
         "reviewers"
       ]
     },
@@ -3999,6 +4004,18 @@
     },
     "twitter": "reneesoffice",
     "website": "https://reneesvirtualoffice.com"
+  },
+  "rickb1102": {
+    "avatar_url": "45003175",
+    "github": "rickb1102",
+    "name": "Richard Barret",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "twitter": "rickb1102",
+    "website": "https://www.rickbrown.se/"
   },
   "rviscomi": {
     "avatar_url": "1120896",
