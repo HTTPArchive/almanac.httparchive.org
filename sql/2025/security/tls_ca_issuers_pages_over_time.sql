@@ -17,7 +17,7 @@ FROM (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01' OR date = '2022-06-01' OR date = '2021-07-01' OR date = '2020-08-01') AND
+    (date = '2025-07-01' OR date = '2024-06-01' OR date = '2023-07-01' OR date = '2022-06-01' OR date = '2021-07-01' OR date = '2020-08-01') AND
     is_root_page AND
     is_main_document
   GROUP BY
