@@ -168,3 +168,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 }}
 
 Unload handler usage decreases consistently as site rank increases. Among higher-traffic websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages in the top 1,000 sites, declining steadily across lower-ranked sites to 11% on desktop and 10% on mobile when considering all pages. At every rank, desktop pages exhibit higher unload handler usage than mobile, indicating that unload handlers remain more prevalent on larger, more complex sites than across the long tail of the web.
+
+### Conclusion
+Overall, Visual stability across the web has advanced significantly compared to earlier years, particularly on mobile devices. Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. 
+
+However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
+
