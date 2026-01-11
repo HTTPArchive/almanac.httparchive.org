@@ -157,8 +157,14 @@ Pages may be excluded from BFCache due to known lifecycle behaviors, including t
 
 Browsers recommend avoiding unload in favor of alternatives such as pagehide and pageshow, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
 
-### TODO Image
+{{ figure_markup(
+  image="unload-handler-usage.png",
+  caption="Unload handler usage by website rank and device (2025)",
+  description=”The chart shows the percentage of pages using unload event handlers by website rank on desktop and mobile in 2025. Among the top 1,000 websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages, with usage declining steadily as rank increases. For all websites, unload handlers are present on 11% of desktop pages and 10% of mobile pages, with desktop usage higher than mobile at every rank.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=140804120&format=interactive",
+  sheets_gid="1870744021",
+  sql_file="TODO"
+  )
+}}
 
 Unload handler usage decreases consistently as site rank increases. Among higher-traffic websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages in the top 1,000 sites, declining steadily across lower-ranked sites to 11% on desktop and 10% on mobile when considering all pages. At every rank, desktop pages exhibit higher unload handler usage than mobile, indicating that unload handlers remain more prevalent on larger, more complex sites than across the long tail of the web.
-
-
