@@ -686,9 +686,9 @@ When viewing the data grouped by homepage versus inner page, increases in file r
 This is particularly interesting, as we see consistency in the number of requests when viewing the data by mobile vs. desktop, indicating that homepage requests are a key differentiator.
 
 {{ figure_markup(
-  image="distribution-of-request-volume-by-device-type.png",
-  caption="Distribution of request volume by device type.",
-  description="Bar chart of request volume distribution by device type. At the 10th percentile, desktop made 26 and mobile made 24 requests. At the 25th percentile, desktop made 47 and mobile made 43 requests. At the 50th percentile, desktop made 80 and mobile made 75 requests. At the 75th percentile, desktop made 127 and mobile made 122 requests. At the 90th percentile, desktop made 192 and mobile made 187 requests.",
+  image="distribution-of-home-page-request-volume-by-device-type.png",
+  caption="Distribution of home page request volume by device type.",
+  description="Bar chart of home page request volume distribution by device type. At the 10th percentile, desktop made 26 and mobile made 24 requests. At the 25th percentile, desktop made 47 and mobile made 43 requests. At the 50th percentile, desktop made 80 and mobile made 75 requests. At the 75th percentile, desktop made 127 and mobile made 122 requests. At the 90th percentile, desktop made 192 and mobile made 187 requests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=907352762&format=interactive",
   sheets_gid="673157393",
   sql_file="request_type_distribution.sql"
@@ -1294,7 +1294,7 @@ For CrUX data, interactivity is measured as Interaction to Next Paint (INP), in 
 A page is considered to have good TBT when the main thread is blocked for less than 200 milliseconds. Only the 10th percentile of mobile pages achieved this metric. Desktop pages achieved a TBT of under 200 ms through the 50th percentile. At the 90th percentile, the main thread of mobile devices was blocked for 7.1 seconds.
 
 {{ figure_markup(
-  image="crux-cls-by-device-type.png",
+  image="crux-inp-by-device-type.png",
   caption="Real user metrics for Interaction to Next Paint in milliseconds, measured using CrUX.",
   description="Bar chart showing the time until Interaction to Next Paint as measured by CrUX. At the 10th percentile, INP was 36 ms on desktop and 97 ms on mobile. At the 25th percentile, INP was 51 ms on desktop and 130 ms on mobile. At the 50th percentile, INP was 76 ms on desktop and 200 ms on mobile. At the 75th percentile, INP was 120 ms on desktop and 320 ms on mobile. At the 90th percentile, INP was 661 ms on desktop and 854 ms on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYHxN-EU2nT4dq_bQVWu7mIXxjqUzMGe0HsYEKeU2MiiBqYc1kn1HkO0axkSs1gDDBPB21SRG4dKq9/pubchart?oid=495504735&format=interactive",
