@@ -3,20 +3,26 @@
 
 WITH requests AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     url
   FROM
-    `httparchive.summary_requests.2025_06_01_*`
+    `httparchive.crawl.requests`
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page
 ),
 
 pages AS (
   SELECT
-    _TABLE_SUFFIX AS client,
-    pageid AS page,
+    client,
+    page,
     rank
   FROM
-    `httparchive.summary_pages.2025_06_01_*`
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page
 ),
 
 third_party AS (
@@ -68,10 +74,14 @@ SELECT
   client,
   category,
   rank_grouping,
+  CASE
+    WHEN rank_grouping = 100000000 THEN 'all'
+    ELSE FORMAT("%'d", rank_grouping)
+  END AS ranking,
   APPROX_QUANTILES(third_parties_per_page, 1000)[OFFSET(500)] AS p50_third_parties_per_page
 FROM
   base,
-  UNNEST([1000, 10000, 100000, 1000000, 10000000]) AS rank_grouping
+  UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
 WHERE
   rank <= rank_grouping
 GROUP BY
