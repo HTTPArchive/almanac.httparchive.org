@@ -68,20 +68,70 @@ TLS1.3 only allows the use of algorithms that support [forward secrecy](https://
 
 In order to use TLS, sites must request a certificate from a [certificate authority](https://www.ssl.com/faqs/what-is-a-certificate-authority/) (CA). Because the browser trusts a number of CAs, the site's certificate will be identified by the browser as a valid certificate. The certificate can then be used for secure communication between the browser and the site's server going forward.
 
-| *SUM of pct* | *client* |  |
-| ----: | :---: | ----- |
-| *issuer* | desktop | mobile |
-| R11 | 20.80% | 21.86% |
-| R10 | 20.75% | 21.73% |
-| WE1 | 16.35% | 17.24% |
-| E6 | 4.50% | 4.65% |
-| E5 | 4.31% | 4.42% |
-| Sectigo RSA Domain Validation Secure Server CA | 3.60% | 3.52% |
-| Go Daddy Secure Certificate Authority \- G2 | 1.77% | 1.60% |
-| WR1 | 1.16% | 1.40% |
-| Amazon RSA 2048 M02 | 1.37% | 1.33% |
-| Amazon RSA 2048 M03 | 1.30% | 1.25% |
-*The percentage of certificates issued per issuer (top10)*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Issuer</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>R11</td>
+        <td class="numeric">20.80%</td>
+        <td class="numeric">21.86%</td>
+      </tr>
+      <tr>
+        <td>R10</td>
+        <td class="numeric">20.75%</td>
+        <td class="numeric">21.73%</td>
+      </tr>
+      <tr>
+        <td>WE1</td>
+        <td class="numeric">16.35%</td>
+        <td class="numeric">17.24%</td>
+      </tr>
+      <tr>
+        <td>E6</td>
+        <td class="numeric">4.50%</td>
+        <td class="numeric">4.65%</td>
+      </tr>
+      <tr>
+        <td>E5</td>
+        <td class="numeric">4.31%</td>
+        <td class="numeric">4.42%</td>
+      </tr>
+      <tr>
+        <td>Sectigo RSA Domain Validation Secure Server CA</td>
+        <td class="numeric">3.60%</td>
+        <td class="numeric">3.52%</td>
+      </tr>
+      <tr>
+        <td>Go Daddy Secure Certificate Authority \- G2</td>
+        <td class="numeric">1.77%</td>
+        <td class="numeric">1.60%</td>
+      </tr>
+      <tr>
+        <td>WR1</td>
+        <td class="numeric">1.16%</td>
+        <td class="numeric">1.40%</td>
+      </tr>
+      <tr>
+        <td>Amazon RSA 2048 M02</td>
+        <td class="numeric">1.37%</td>
+        <td class="numeric">1.33%</td>
+      </tr>
+      <tr>
+        <td>Amazon RSA 2048 M03</td>
+        <td class="numeric">1.30%</td>
+        <td class="numeric">1.25%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The percentage of certificates issued per issuer (top 10)", sheets_gid="215876282", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
+</figure>
 
 Compared to last year, we can see that the then popular R3 intermediate certificate from [Let's Encrypt](https://letsencrypt.org/) has disappeared as an issuer. This was expected because it has since [expired (in September 2025\)](https://crt.sh/?id=3334561879) so even last year the replacement with other intermediates had already started. The [R10 and R11 intermediate certificates](https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html) are the new certificates that are taking over from R3. There are now two intermediate RSA certificates (R10 and R11) and two intermediate ECDSA certificates (E5 and E6) with the [explicit goal of trying to prevent intermediate key pinning](https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html#rotating-issuance). The only certificate in the top 5 issuers that is not from Let's Encrypt is WE1, which is part of [Google Trust Services](https://pki.goog/) (GTS). Also from GTS in the list is WR1. These certificates seem part of the new generation of intermediate certificates from GTS, expiring among others the GTS CA 1P5 issuer seen last year.
 
@@ -137,15 +187,50 @@ Once again, most websites use CSP for the `upgrade-insecure-requests` and `frame
 
 The `block-all-mixed-content` directive which has been replaced by `upgrade-insecure-requests` has continued to slightly decrease like it has been over the last few years. This is good news because the directive is [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content).
 
-| *csp\_header* | desktop | mobile |
-| :---- | ----- | ----- |
-| upgrade-insecure-requests | 21.45% | 22.79% |
-| block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests; | 19.92% | 18.06% |
-| require-trusted-types-for 'script';report-uri /checkin/\_/AndroidCheckinHttp/cspreport | 2.67% | 12.10% |
-| frame-ancestors 'self' | 7.55% | 6.38% |
-| upgrade-insecure-requests; | 4.92% | 4.30% |
-| frame-ancestors 'self'; | 2.53% | 2.29% |
-*Most prevalent CSP headers*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Policy</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>upgrade-insecure-requests</code></td>
+        <td class="numeric">21.45%</td>
+        <td class="numeric">22.79%</td>
+      </tr>
+      <tr>
+        <td><code>block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;</code></td>
+        <td class="numeric">19.92%</td>
+        <td class="numeric">18.06%</td>
+      </tr>
+      <tr>
+        <td><code>require-trusted-types-for 'script';report-uri /checkin/\_/AndroidCheckinHttp/cspreport</code></td>
+        <td class="numeric">2.67%</td>
+        <td class="numeric">12.10%</td>
+      </tr>
+      <tr>
+        <td><code>frame-ancestors 'self'</code></td>
+        <td class="numeric">7.55%</td>
+        <td class="numeric">6.38%</td>
+      </tr>
+      <tr>
+        <td><code>upgrade-insecure-requests;</code></td>
+        <td class="numeric">4.92%</td>
+        <td class="numeric">4.30%</td>
+      </tr>
+      <tr>
+        <td><code>frame-ancestors 'self';</code></td>
+        <td class="numeric">2.53%</td>
+        <td class="numeric">2.29%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most prevalent CSP headers", sheets_gid="1551197242", sql_file="csp_most_common_header.sql") }}</figcaption>
+</figure>
 
 The same header values we saw last year in the top three appear in this year's top four again. The third most common CSP header this year is a new one, however. This change occurs because this year, we sorted the most common headers by mobile usage instead of by desktop usage like last year. We can see a trusted types policy with a specific report uri endpoint relating to android appear at the third place. [Trusted types](https://w3c.github.io/trusted-types/dist/spec/) can be used to restrict the parameters passed into injection sinks (like `element.innerHTML`) such that they only allow properly typed values to be passed instead of plain strings. By restricting the values passed to injection sinks, many possible DOM XSS vulnerabilities can be prevented. The trusted types header we observe appears on more than 12% of the mobile pages. We don't have a direct explanation for the high usage of this specific CSP policy value. In fifth and sixth place we once again see the `upgrade-insecure-requests` and `frame-ancestors 'self'` directives, but this time with a trailing semicolon. A semicolon is used to separate directives but if there is only one directive defined [it can be discarded](https://w3c.github.io/webappsec-csp/#grammardef-serialized-policy), both header values are therefore valid CSP policies with the same effect.
 
@@ -174,35 +259,137 @@ Out of all observed headers, 75% are 86 bytes or less in length. This is slightl
 
 The most commonly loaded HTTPS origins included in CSP headers are those used for ads, fonts and other CDN resources.
 
-| *csp\_allowed\_host* | desktop | mobile |
-| :---- | ----- | ----- |
-| [https://www.googletagmanager.com](https://www.googletagmanager.com) | 0.74% | 0.62% |
-| [https://fonts.gstatic.com](https://fonts.gstatic.com) | 0.61% | 0.49% |
-| [https://fonts.googleapis.com](https://fonts.googleapis.com) | 0.60% | 0.48% |
-| [https://www.google.com](https://www.google.com) | 0.54% | 0.46% |
-| [https://www.google-analytics.com](https://www.google-analytics.com) | 0.47% | 0.38% |
-| [https://www.youtube.com](https://www.youtube.com) | 0.41% | 0.34% |
-| https://\*.google-analytics.com | 0.35% | 0.31% |
-| https://\*.google.com | 0.31% | 0.30% |
-| [https://connect.facebook.net](https://connect.facebook.net) | 0.33% | 0.29% |
-| [https://www.gstatic.com](https://www.gstatic.com) | 0.35% | 0.27% |
-*Most frequently allowed HTTP(S) hosts in CSP policies*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>https://www.googletagmanager.com](https://www.googletagmanager.com) </code></td>
+        <td class="numeric">0.74%</td>
+        <td class="numeric">0.62%</td>
+      </tr>
+      <tr>
+        <td><code>https://fonts.gstatic.com</code></td>
+        <td class="numeric">0.61%</td>
+        <td class="numeric">0.49%</td>
+      </tr>
+      <tr>
+        <td><code>https://fonts.googleapis.com</code></td>
+        <td class="numeric">0.60%</td>
+        <td class="numeric">0.48%</td>
+      </tr>
+      <tr>
+        <td><code>https://www.google.com</code></td>
+        <td class="numeric">0.54%</td>
+        <td class="numeric">0.46%</td>
+      </tr>
+      <tr>
+        <td><code>https://www.google-analytics.com</code></td>
+        <td class="numeric">0.47%</td>
+        <td class="numeric">0.38%</td>
+      </tr>
+      <tr>
+        <td><code>https://www.youtube.com</code></td>
+        <td class="numeric">0.41%</td>
+        <td class="numeric">0.34%</td>
+      </tr>
+      <tr>
+        <td><code>https://*.google-analytics.com</code></td>
+        <td class="numeric">0.35%</td>
+        <td class="numeric">0.31%</td>
+      </tr>
+      <tr>
+        <td><code>https://*.google.com</code></td>
+        <td class="numeric">0.31%</td>
+        <td class="numeric">0.30%</td>
+      </tr>
+      <tr>
+        <td><code>https://connect.facebook.net</code></td>
+        <td class="numeric">0.33%</td>
+        <td class="numeric">0.29%</td>
+      </tr>
+      <tr>
+        <td><code>https://www.gstatic.com</code></td>
+        <td class="numeric">0.35%</td>
+        <td class="numeric">0.27%</td>
+      </tr>
+    <tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most frequently allowed HTTP(S) hosts in CSP policies", sheets_gid="670924704", sql_file="csp_allowed_host_frequency.sql") }}</figcaption>
+</figure>
 
 For the secure websocket (WSS) origins, used to allow secure websocket connections, we see hotjar take the first position, doubling in occurrences. Other origins remain low in occurrence.
 
-| *csp\_allowed\_host* | desktop | mobile |
-| :---- | ----- | ----- |
-| wss://\*.hotjar.com | 0.18% | 0.15% |
-| wss://\*.intercom.io | 0.07% | 0.07% |
-| wss://booth.karakuri.ai | 0.08% | 0.06% |
-| wss://www.livejournal.com | 0.04% | 0.05% |
-| wss://\*.quora.com | 0.03% | 0.05% |
-| wss://tsock.us1.twilio.com/v3/wsconnect | 0.02% | 0.04% |
-| wss://api.smooch.io | 0.05% | 0.03% |
-| wss://\*.zopim.com | 0.05% | 0.03% |
-| wss://\*.pusher.com | 0.04% | 0.03% |
-| wss://cable.gumroad.com | 0.04% | 0.03% |
-*Most frequently allowed WSS hosts in CSP policies*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>wss://*.hotjar.com</code></td>
+        <td class="numeric">0.18%</td>
+        <td class="numeric">0.15%</td>
+      </tr>
+      <tr>
+        <td><code>wss://*.intercom.io</code></td>
+        <td class="numeric">0.07%</td>
+        <td class="numeric">0.07%</td>
+      </tr>
+      <tr>
+        <td><code>wss://booth.karakuri.ai</code></td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.06%</td>
+      </tr>
+      <tr>
+        <td><code>wss://www.livejournal.com</code></td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.05%</td>
+      </tr>
+      <tr>
+        <td><code>wss://*.quora.com</code></td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.05%</td>
+      </tr>
+      <tr>
+        <td><code>wss://tsock.us1.twilio.com/v3/wsconnect</code></td>
+        <td class="numeric">0.02%</td>
+        <td class="numeric">0.04%</td>
+      </tr>
+      <tr>
+        <td><code>wss://api.smooch.io</code></td>
+        <td class="numeric">0.05%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+      <tr>
+        <td><code>wss://*.zopim.com</code></td>
+        <td class="numeric">0.05%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+      <tr>
+        <td><code>wss://*.pusher.com</code></td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+      <tr>
+        <td><code>wss://cable.gumroad.com</code></td>
+        <td class="numeric">0.04%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most frequently allowed WSS hosts in CSP policies", sheets_gid="2069006969", sql_file="csp_allowed_host_frequency_wss.sql") }}</figcaption>
+</figure>
 
 Hotjar is used for website analytics, indicating a continuing interest in analytical information of websites. Intercom is used for customer services. We also see AI-first companies entering these statistics with karakuri, a Japanese AI company that is closing the top 3\.
 
@@ -222,17 +409,60 @@ SRI is used on 25.9% and 23.7% of desktop and mobile pages respectively. This is
 
 Compared with last year, we see a drop in median subresource coverage per page by 0.41%. It is likely that this drop is caused by the larger number of pages being crawled by the web almanac crawler this year.
 
-| *host* | mobile | desktop |
-| :---- | ----- | ----- |
-| [www.gstatic.com](http://www.gstatic.com) | 34.70% | 34.55% |
-| [static.cloudflareinsights.com](http://static.cloudflareinsights.com) | 8.89% | 8.37% |
-| [cdnjs.cloudflare.com](http://cdnjs.cloudflare.com) | 7.43% | 7.20% |
-| [cdn.userway.org](http://cdn.userway.org) | 6.10% | 6.60% |
-| [code.jquery.com](http://code.jquery.com) | 4.96% | 4.77% |
-| [cdn.shoplineapp.com](http://cdn.shoplineapp.com) | 4.62% | 5.22% |
-| [cdn.jsdelivr.net](http://cdn.jsdelivr.net) | 4.50% | 4.06% |
-| [d3e54v103j8qbb.cloudfront.net](http://d3e54v103j8qbb.cloudfront.net) | 2.03% | 2.30% |
-*Most common hosts from which SRI-protected scripts are included*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Host</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>www.gstatic.com</code></td>
+        <td class="numeric">34.70%</td>
+        <td class="numeric">34.55%</td>
+      </tr>
+      <tr>
+        <td><code>static.cloudflareinsights.com</code></td>
+        <td class="numeric">8.89%</td>
+        <td class="numeric">8.37%</td>
+      </tr>
+      <tr>
+        <td><code>cdnjs.cloudflare.com</code></td>
+        <td class="numeric">7.43%</td>
+        <td class="numeric">7.20%</td>
+      </tr>
+      <tr>
+        <td><code>cdn.userway.org</code></td>
+        <td class="numeric">6.10%</td>
+        <td class="numeric">6.60%</td>
+      </tr>
+      <tr>
+        <td><code>code.jquery.com</code></td>
+        <td class="numeric">4.96%</td>
+        <td class="numeric">4.77%</td>
+      </tr>
+      <tr>
+        <td><code>cdn.shoplineapp.com</code></td>
+        <td class="numeric">4.62%</td>
+        <td class="numeric">5.22%</td>
+      </tr>
+      <tr>
+        <td><code>cdn.jsdelivr.net</code></td>
+        <td class="numeric">4.50%</td>
+        <td class="numeric">4.06%</td>
+      </tr>
+      <tr>
+        <td><code>d3e54v103j8qbb.cloudfront.net</code></td>
+        <td class="numeric">2.03%</td>
+        <td class="numeric">2.30%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common hosts from which SRI-protected scripts are included", sheets_gid="347167013", sql_file="sri_popular_hosts.sql") }}</figcaption>
+</figure>
 
 The list of most common hosts from which SRI-protected scripts are loaded has remained largely stable over time, with some entries moving relative positions. The cloudflareinsights record for instance has increased in relative occurrence, but only by 2.40%. Like last year, most of these entries are CDNs, showing that most resources loaded and protected by SRI are loaded from CDNs. This makes sense because these scripts are often not under direct control of the developers. Often, CDNs will host a large number of scripts that can then be included by many developers. This is advantageous for developers because the load on their own servers will go down, but also for the client because it can cache scripts from the CDN instead of loading the same script once for every website that includes it. The risk of including a script that is hosted on a server not under your own control is higher than when you as developer have full control. If the developer of this external script decides to include malicious content or the server is compromised and the script is swapped with a malicious one, without SRI the developer's users will be loading and executing this malicious content. A good way to protect users against these unexpected changes and to know with certainty which script is allowed to run is to use SRI.
 
@@ -245,19 +475,70 @@ The [Permissions Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permi
 
 Compared to last year, the use of the `Permissions-Policy` saw a relative increase of almost 60%. Although this is a large relative increase, the absolute percentage of websites using `Permissions-Policy` remains rather small at 3.7% on mobile. The rise in adoption is a good sign for the policy.
 
-| *pp\_header* | desktop | mobile |
-| :---- | ----- | ----- |
-| interest-cohort=() | 11.02% | 11.56% |
-| accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=() | 5.01% | 10.00% |
-| geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=() | 4.63% | 4.44% |
-| accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=\*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=\*, picture-in-picture=\*, publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=\*, usb=(), xr-spatial-tracking=(), gamepad=(), serial=() | 3.65% | 3.45% |
-| geolocation=(self) | 2.06% | 2.64% |
-| accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=() | 2.77% | 2.38% |
-| accelerometer=(self), autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), usb=(self) | 2.39% | 2.25% |
-| browsing-topics=() | 1.82% | 2.14% |
-| geolocation=(), microphone=(), camera=() | 2.11% | 2.09% |
-| geolocation=self | 1.87% | 1.81% |
-*Most prevalent `Permissions-Policy` headers*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>interest-cohort=()</code></td>
+        <td class="numeric">11.02%</td>
+        <td class="numeric">11.56%</td>
+      </tr>
+      <tr>
+        <td><code>accelerometer=(), autoplay=(), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=()</code></td>
+        <td class="numeric">5.01%</td>
+        <td class="numeric">10.00%</td>
+      </tr>
+      <tr>
+        <td><code>geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()</code></td>
+        <td class="numeric">4.63%</td>
+        <td class="numeric">4.44%</td>
+      </tr>
+      <tr>
+        <td><code>accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=\*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=\*, picture-in-picture=\*, publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=\*, usb=(), xr-spatial-tracking=(), gamepad=(), serial=()</code></td>
+        <td class="numeric">3.65%</td>
+        <td class="numeric">3.45%</td>
+      </tr>
+      <tr>
+        <td><code>geolocation=(self)</code></td>
+        <td class="numeric">2.06%</td>
+        <td class="numeric">2.64%</td>
+      </tr>
+      <tr>
+        <td><code>accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()</code></td>
+        <td class="numeric">2.77%</td>
+        <td class="numeric">2.38%</td>
+      </tr>
+      <tr>
+        <td><code>accelerometer=(self), autoplay=(self), camera=(self), encrypted-media=(self), fullscreen=(self), geolocation=(self), gyroscope=(self), magnetometer=(self), microphone=(self), midi=(self), payment=(self), usb=(self)</code></td>
+        <td class="numeric">2.39%</td>
+        <td class="numeric">2.25%</td>
+      </tr>
+      <tr>
+        <td><code>browsing-topics=()</code></td>
+        <td class="numeric">1.82%</td>
+        <td class="numeric">2.14%</td>
+      </tr>
+      <tr>
+        <td><code>geolocation=(), microphone=(), camera=()</code></td>
+        <td class="numeric">2.11%</td>
+        <td class="numeric">2.09%</td>
+      </tr>
+      <tr>
+        <td><code>geolocation=self</code></td>
+        <td class="numeric">1.87%</td>
+        <td class="numeric">1.81%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most prevalent `Permission-Policy` headers", sheets_gid="180881517", sql_file="pp_header_prevalence.sql") }}</figcaption>
+</figure>
 
 When looking at the top 10 used `Permissions-Policy` values, we find that less developers now use the header to opt out of Google's [Federated Learning of Cohorts (FLoC)](https://privacysandbox.com/intl/en_us/proposals/floc/), with only 11.5% of `Permissions-Policy` headers contain the `interest-cohort=()` value. We also see that a value to opt out of many features at once became a popular value with 10% of `Permissions-Policy` headers containing this value on mobile. We did not observe a direct cause of this change.
 
@@ -271,19 +552,70 @@ As mentioned before, the Permissions Policy can also be defined in the `allow` a
 
 Out of the total 33.3 million iframes on mobile, we observed that 29.2% include an `allow` attribute. The relative decrease in use of the `allow` attribute can be attributed to the more than 10 million more iframe elements that were found in this year's crawl that included more pages than last year's.
 
-| *directive* | desktop | mobile |
-| :---- | ----- | ----- |
-| encrypted-media | 60.90% | 70.66% |
-| autoplay | 34.99% | 41.83% |
-| picture-in-picture | 26.10% | 36.63% |
-| gyroscope | 23.76% | 34.20% |
-| accelerometer | 23.76% | 34.20% |
-| clipboard-write | 20.39% | 26.24% |
-| join-ad-interest-group | 24.23% | 17.35% |
-| web-share | 12.07% | 15.67% |
-| attribution-reporting | 3.93% | 2.35% |
-| run-ad-auction | 3.84% | 2.26% |
-*Most prevalent `allow` attribute values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>encrypted-media</code></td>
+        <td class="numeric">60.90%</td>
+        <td class="numeric">70.66%</td>
+      </tr>
+      <tr>
+        <td><code>autoplay</code></td>
+        <td class="numeric">34.99%</td>
+        <td class="numeric">41.83%</td>
+      </tr>
+      <tr>
+        <td><code>picture-in-picture</code></td>
+        <td class="numeric">26.10%</td>
+        <td class="numeric">36.63%</td>
+      </tr>
+      <tr>
+        <td><code>gyroscope</code></td>
+        <td class="numeric">23.76%</td>
+        <td class="numeric">34.20%</td>
+      </tr>
+      <tr>
+        <td><code>accelerometer</code></td>
+        <td class="numeric">23.76%</td>
+        <td class="numeric">34.20%</td>
+      </tr>
+      <tr>
+        <td><code>clipboard-write</code></td>
+        <td class="numeric">20.39%</td>
+        <td class="numeric">26.24%</td>
+      </tr>
+      <tr>
+        <td><code>join-ad-interest-group</code></td>
+        <td class="numeric">24.23%</td>
+        <td class="numeric">17.35%</td>
+      </tr>
+      <tr>
+        <td><code>web-share</code></td>
+        <td class="numeric">12.07%</td>
+        <td class="numeric">15.67%</td>
+      </tr>
+      <tr>
+        <td><code>attribution-reporting</code></td>
+        <td class="numeric">3.93%</td>
+        <td class="numeric">2.35%</td>
+      </tr>
+      <tr>
+        <td><code>run-ad-auction</code></td>
+        <td class="numeric">3.84%</td>
+        <td class="numeric">2.26%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most prevalent `allow` attribute directives", sheets_gid="1876706326", sql_file="iframe_allow_directives.sql") }}</figcaption>
+</figure>
 
 Interestingly, the three top `allow` attribute values of last year (`join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`) have extremely low adoption compared to last year. It is possible that the large player that was hypothesized to have added these values to their iframe elements has since reverted that change. The other top 10 values of last year have seen a major increase in inclusion into the `allow` attribute value overall, with absolute changes up to plus 50%.
 
@@ -312,14 +644,45 @@ In general we see a rise in most of the existing security features such as TLS, 
 
 Document Policy has several advantages over related mechanisms such as Permissions Policy, CSP and sandboxing: It is more fine-grained than Permissions Policy and has a different inheritance model: child resources can overwrite certain parent-chosen policies if they are compatible. It is more general than CSP: It has directives related to the permissions of a resource once it has been loaded instead of only determining from which origins resources can be loaded and it is easier to extend than sandboxing because features that are not mentioned in sandboxing are blocked by default, which makes it very difficult to add new ones.
 
-| *document\_policy\_header* | desktop | mobile |
-| :---- | ----- | ----- |
-| include-js-call-stacks-in-crash-reports | 68.48% | 71.99% |
-| js-profiling | 12.66% | 15.24% |
-| js-profiling; include-js-call-stacks-in-crash-reports | 17.41% | 11.94% |
-| force-load-at-top | 1.25% | 0.65% |
-| no-font-display-late-swap | 0.06% | 0.05% |
-*Most common document policy header values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>include-js-call-stacks-in-crash-reports</code></td>
+        <td class="numeric">68.48%</td>
+        <td class="numeric">71.99%</td>
+      </tr>
+      <tr>
+        <td><code>js-profiling</code></td>
+        <td class="numeric">12.66%</td>
+        <td class="numeric">15.24%</td>
+      </tr>
+      <tr>
+        <td><code>js-profiling; include-js-call-stacks-in-crash-reports</code></td>
+        <td class="numeric">17.41%</td>
+        <td class="numeric">11.94%</td>
+      </tr>
+      <tr>
+        <td><code>force-load-at-top</code></td>
+        <td class="numeric">1.25%</td>
+        <td class="numeric">0.65%</td>
+      </tr>
+      <tr>
+        <td><code>no-font-display-late-swap</code></td>
+        <td class="numeric">0.06%</td>
+        <td class="numeric">0.05%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common document policy header values", sheets_gid="1931592953", sql_file="documentpolicy_most_common_header.sql") }}</figcaption>
+</figure>
 
 We can see that of the Document Policy headers in use, more than two thirds of them are used to include call stacks in crash reports. Combined with the `js-profiling` directive these two features make up the vast majority of current use-cases. Currently in total we find policy values containing 19 different directives, in general there may be more defined but as of now we are not aware of the total number of directives that are defined.
 
@@ -344,13 +707,40 @@ The strongest risers since the 2024 edition are `Strict-Transport-Security` (+4.
 
 The [`Origin-Agent-Cluster`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. the browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
 
-| *oac\_header* | desktop | mobile |
-| ----- | ----- | ----- |
-| ?1 | 74.11% | 90.32% |
-| ?0 | 25.79% | 9.60% |
-| 1 | 0.08% | 0.07% |
-| 0 | 0.01% | 0.01% |
-*Most common `Origin-Agent-Cluster` values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>?1</code></td>
+        <td class="numeric">74.11%</td>
+        <td class="numeric">90.32%</td>
+      </tr>
+      <tr>
+        <td><code>?0</code></td>
+        <td class="numeric">25.79%</td>
+        <td class="numeric">9.60%</td>
+      </tr>
+      <tr>
+        <td><code>1</code></td>
+        <td class="numeric">0.08%</td>
+        <td class="numeric">0.07%</td>
+      </tr>
+      <tr>
+        <td><code>0</code></td>
+        <td class="numeric">0.01%</td>
+        <td class="numeric">0.01%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common `Origin-Agent-Cluster` header values", sheets_gid="1123976436", sql_file="oac_header_prevalence.sql") }}</figcaption>
+</figure>
 
 A boolean is [defined in the html spec](https://httpwg.org/specs/rfc8941.html#boolean) as a string starting with a question mark. This means that values like '1' and '0' are invalid for this header. Luckily the use of these values is limited. The '?1' value is the only valid value for the `Origin-Agent-Cluster` and it's used to communicate that the developer wants to opt into the feature, all other values are ignored. On mobile, more than 90% of headers have the valid '?1' value. Unfortunately, 0.07% of header values are '1', a value that will be ignored while the developer likely wants to request the use of dedicated resources.
 
@@ -358,14 +748,45 @@ A boolean is [defined in the html spec](https://httpwg.org/specs/rfc8941.html#bo
 
 By using [`document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain), a developer was able to read the domain portion of the current document, as well as set a new domain (only superdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
 
-| *featurename* | desktop | mobile |
-| :---- | ----- | ----- |
-| DocumentSetDomain | 0.49% | 0.36% |
-| DocumentDomainSetWithNonDefaultPort | 0.16% | 0.14% |
-| DocumentDomainEnabledCrossOriginAccess | 0.0008% | 0.0004% |
-| DocumentDomainBlockedCrossOriginAccess | 0.0002% | 0.0001% |
-| DocumentOpenAliasedOriginDocumentDomain | 0.00008% | 0.00001% |
-*The use of `document.domain` based on specific blink features*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Blink Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>DocumentSetDomain</code></td>
+        <td class="numeric">0.49%</td>
+        <td class="numeric">0.36%</td>
+      </tr>
+      <tr>
+        <td><code>DocumentDomainSetWithNonDefaultPort</code></td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.14%</td>
+      </tr>
+      <tr>
+        <td><code>DocumentDomainEnabledCrossOriginAccess</code></td>
+        <td class="numeric">0.0008%</td>
+        <td class="numeric">0.0004%</td>
+      </tr>
+      <tr>
+        <td><code>DocumentDomainBlockedCrossOriginAccess</code></td>
+        <td class="numeric">0.0002%</td>
+        <td class="numeric">0.0001%</td>
+      </tr>
+      <tr>
+        <td><code>DocumentOpenAliasedOriginDocumentDomain</code></td>
+        <td class="numeric">0.00008%</td>
+        <td class="numeric">0.00001%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The use of `document.domain` based on specific blink features", sheets_gid="1240446071", sql_file="documentdomain_usage.sql") }}</figcaption>
+</figure>
 
 We see that less than 0.5% of websites on desktop and mobile are using the `document.domain` setter to change the origin of a page and even less sites do so with a non-default port. This is a positive trend but still represents a few tens of thousand website, which should update their code.
 
@@ -375,14 +796,45 @@ As previously mentioned, a Content Security Policy (CSP) can be effective agains
 
 Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin ('SAMEORIGIN').
 
-| *xfo\_header* | desktop | mobile |
-| :---- | ----- | ----- |
-| SAMEORIGIN | 72.48% | 72.13% |
-| DENY | 24.40% | 24.64% |
-| ALLOWALL | 0.68% | 0.72% |
-| SAMEORIGIN, SAMEORIGIN | 0.27% | 0.28% |
-| allow-from https://s.salla.sa | 0.16% | 0.28% |
-*Most prevalent `X-Frame-Options` header values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Header</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>SAMEORIGIN</code></td>
+        <td class="numeric">72.48%</td>
+        <td class="numeric">72.13%</td>
+      </tr>
+      <tr>
+        <td><code>DENY</code></td>
+        <td class="numeric">24.40%</td>
+        <td class="numeric">24.64%</td>
+      </tr>
+      <tr>
+        <td><code>ALLOWALL</code></td>
+        <td class="numeric">0.68%</td>
+        <td class="numeric">0.72%</td>
+      </tr>
+      <tr>
+        <td><code>SAMEORIGIN, SAMEORIGIN</code></td>
+        <td class="numeric">0.27%</td>
+        <td class="numeric">0.28%</td>
+      </tr>
+      <tr>
+        <td><code>allow-from https://s.salla.sa</code></td>
+        <td class="numeric">0.16%</td>
+        <td class="numeric">0.28%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most prevalent `X-Frame-Options` header values", sheets_gid="1545864706", sql_file="xfo_header_prevalence.sql") }}</figcaption>
+</figure>
 
 We find that there are barely any changes between the data this year and in 2024\. The `X-Frame-Options` header is primarily used to allow same-origin websites to embed the page (72.1%). Secondly, it is used to deny any page from embedding its own content (24.6%). Examples of other values we observe are shown in the third to fifth row of the table. The `ALLOW-FROM` value used to be valid but is now deprecated and ignored by browsers. Instead of using `ALLOW-FROM` in XFO, developers should switch to using the `frame-ancestors` directive in CSP. These out-of-spec values do not show up often, but may have been set by developers expecting protections to be active due to them setting the header.
 
@@ -399,12 +851,35 @@ Multiple new security headers, known as the cross-origin policies, were created 
 
 The [Cross-Origin-Embedder-Policy (COEP)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy) allows a developer to configure which cross-origin resources can be embedded on the current document. By default (when the header is absent) all cross-origin resources can be embedded on the page, which is the same behaviour as when the header is set with the `unsafe-none` value.
 
-| COEP Value | Desktop | Mobile |
-| :---- | ----- | ----- |
-| unsafe-none | 83.26% | 86.52% |
-| require-corp | 6.68% | 4.92% |
-| credentialless | 2.59% | 1.89% |
-*Prevalence of COEP headers containing a valid variant of the allowed values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>COEP value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>unsafe-none</code></td>
+        <td class="numeric">83.26%</td>
+        <td class="numeric">86.52%</td>
+      </tr>
+      <tr>
+        <td><code>require-corp</code></td>
+        <td class="numeric">6.68%</td>
+        <td class="numeric">4.92%</td>
+      </tr>
+      <tr>
+        <td><code>credentialless</code></td>
+        <td class="numeric">2.59%</td>
+        <td class="numeric">1.89%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of COEP headers containign a valid varient of the allowed values", sheets_gid="1595978010", sql_file="coep_header_prevalence.sql") }}</figcaption>
+</figure>
 
 Compared to last year, most developers still set the COEP header to explicitly allow all content to be embedded onto the current document using the `unsafe-none` value. While the percentage of use of this value is still over 86% on mobile, it has dropped by almost 2% since last year, which can indicate that developers are starting to change their use of the header. The other values `require-corp` and `credentialless` saw a minor increase of 0.2% and 0.3% respectively in adoption since last year. When using `require-corp`, the browser will enforce that only same-origin content or cross-origin content that is allowed to be embedded by CORP can be embedded onto the page. For `credentialless`, the browser will allow cross-origin requests in `no-cors` mode regardless of CORS policy of the content, but cookies will not be attached to the request.
 
@@ -412,12 +887,35 @@ Compared to last year, most developers still set the COEP header to explicitly a
 
 Related to COEP, the [Cross-Origin-Resource-Policy (CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy) does not enforce which content can be embedded in the current document, but rather from which documents the current content can be accessed. The only three possible values are `cross-origin`, `same-origin` and `same-site`. The `cross-origin` value allows any document to access the resource., while the `same-origin` and `same-site` restrict which documents can access the resource to the documents in the same origin or site respectively. Developers should be aware of the difference between the origin (scheme, host, port) and site (registerable domain). If the header is present, requests with a mode of `no-cors` will be blocked by the browser.
 
-| *corp\_header* | desktop | mobile |
-| :---- | ----- | ----- |
-| cross-origin | 81.36% | 80.52% |
-| same-origin | 14.40% | 15.63% |
-| same-site | 3.80% | 3.48% |
-*Prevalence of CORP header values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CORP value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cross-origin</code></td>
+        <td class="numeric">81.36%</td>
+        <td class="numeric">80.52%</td>
+      </tr>
+      <tr>
+        <td><code>same-origin</code></td>
+        <td class="numeric">14.40%</td>
+        <td class="numeric">15.63%</td>
+      </tr>
+      <tr>
+        <td><code>same-site</code></td>
+        <td class="numeric">3.80%</td>
+        <td class="numeric">3.48%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of CORP header values", sheets_gid="758863059", sql_file="corp_header_prevalence.sql") }}</figcaption>
+</figure>
 
 In most cases, the header is used to allow access to any cross-origin resource. We see a big change in this number this year, dropping more than 10% since last year and landing on 80.5% on mobile. On the other hand, the use of the `same-origin` value went up around 10%, showing that developers are moving to protect their resources against cross-origin access. The share of use for `same-site` remained approximately the same, showing a slight decrease of less than half a percent.
 
@@ -425,13 +923,40 @@ In most cases, the header is used to allow access to any cross-origin resource. 
 
 The final cross-origin policy header, [Cross-Origin-Opener-Policy (COOP)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) allows a developer to control how other pages can reference their page when opening it through for instance the `window.open` API. The default value of `unsafe-none` allows the COOP protection to be disabled, which is also what happens when the header is absent. If a developer uses `window.open` to open a page which uses `unsafe-none`, they can use the returned value to access certain properties of the opened page, which can lead to Cross-Site Leaks. When `same-origin` is present on both the opener and opened resource, the reference returned by `windows.open` can be used by the opener. The `same-origin-allow-popups` allows a document to open another document with `unsafe-none` while still keeping access to a working reference. Finally, the `noopener-allow-popups` makes sure the reference is never accessible except for when the opened document also has the same COOP value set.
 
-| COOP Value | Desktop | Mobile |
-| :---- | ----- | ----- |
-| same-origin | 58.22% | 61.64% |
-| unsafe-none | 28.47% | 26.82% |
-| same-origin-allow-popups | 11.36% | 9.95% |
-| noopener-allow-popups | 0.03% | 0.03% |
-*Prevalence of CORP headers containing a valid variant of the allowed values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>COOP value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>same-origin</code></td>
+        <td class="numeric">58.22%</td>
+        <td class="numeric">61.64%</td>
+      </tr>
+      <tr>
+        <td><code>unsafe-none</code></td>
+        <td class="numeric">28.47%</td>
+        <td class="numeric">26.82%</td>
+      </tr>
+      <tr>
+        <td><code>same-origin-allow-popups</code></td>
+        <td class="numeric">11.36%</td>
+        <td class="numeric">9.95%</td>
+      </tr>
+      <tr>
+        <td><code>noopener-allow-popups</code></td>
+        <td class="numeric">0.03%</td>
+        <td class="numeric">0.03%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of COOP headers containing a valid variant of the allowed values", sheets_gid="1357383563", sql_file="coop_header_prevalence.sql") }}</figcaption>
+</figure>
 
 The use of the strictest `same-origin` value for COOP has continued to rise from 47.5% to 61.6% on mobile. The `noopener-allow-popups` is a very new value and was not present yet last year. This year we see a small share of adopters using this value. The use of `unsafe-none` had declined by just over 10%. These changes represent a positive evolution in the use of COOP.
 
@@ -445,20 +970,70 @@ Using the [`Clear-Site-Data`](https://developer.mozilla.org/docs/Web/HTTP/Header
 
 It is difficult to estimate the adoption of `Clear-Site-Data` correctly as its use is usually most valuable when logging out users. The crawler does not log in onto websites and therefore can also not log out to check how many sites use the header after logout. For now, we see 2,024 mobile hosts using the `Clear-Site-Data` header, which is only 0.01% of the total number of hosts crawled.
 
-| *SUM of pct* | *client* |  |
-| :---- | ----- | ----- |
-| *csd\_header* | desktop | mobile |
-| cache | 30.82% | 29.25% |
-| \* | 17.74% | 20.61% |
-| cookies | 7.02% | 8.16% |
-| "cache" | 8.94% | 7.19% |
-| "storages" | 5.66% | 6.08% |
-| cache, cookies, storage | 2.12% | 3.23% |
-| "cache", "cookies", "storage", "executionContexts" | 2.32% | 2.51% |
-| "cookies" | 2.78% | 2.46% |
-| "storage" | 2.27% | 2.03% |
-| "cache", "storage", "executionContexts" | 1.36% | 1.54% |
-*Prevalence of `Clear-Site-Data` headers*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Clear site data value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cache</code></td>
+        <td class="numeric">30.82%</td>
+        <td class="numeric">29.25%</td>
+      </tr>
+      <tr>
+        <td><code>*</code></td>
+        <td class="numeric">17.74%</td>
+        <td class="numeric">20.61%</td>
+      </tr>
+      <tr>
+        <td><code>cookies</code></td>
+        <td class="numeric">7.02%</td>
+        <td class="numeric">8.16%</td>
+      </tr>
+      <tr>
+        <td><code>"cache"</code></td>
+        <td class="numeric">8.94%</td>
+        <td class="numeric">7.19%</td>
+      </tr>
+      <tr>
+        <td><code>"storages"</code></td>
+        <td class="numeric">5.66%</td>
+        <td class="numeric">6.08%</td>
+      </tr>
+      <tr>
+        <td><code>cache, cookies, storage</code></td>
+        <td class="numeric">2.12%</td>
+        <td class="numeric">3.23%</td>
+      </tr>
+      <tr>
+        <td><code>"cache", "cookies", "storage", "executionContexts"</code></td>
+        <td class="numeric">2.32%</td>
+        <td class="numeric">2.51%</td>
+      </tr>
+      <tr>
+        <td><code>"cookies"</code></td>
+        <td class="numeric">2.78%</td>
+        <td class="numeric">2.46%</td>
+      </tr>
+      <tr>
+        <td><code>"storage"</code></td>
+        <td class="numeric">2.27%</td>
+        <td class="numeric">2.03%</td>
+      </tr>
+      <tr>
+        <td><code>"cache", "storage", "executionContexts"</code></td>
+        <td class="numeric">1.36%</td>
+        <td class="numeric">1.54%</td>
+      </tr>
+    <tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of `Clear-Site-Data` headers", sheets_gid="301356995", sql_file="clear-site-data_value_prevalence.sql") }}</figcaption>
+</figure>
 
 Our data shows that most developers attempt to use the `Clear-Site-Data` header for clearing the cache. The most prevalent value is `cache`, followed by the wildcard character `*` and `cookies`. All values from the top three are invalid according to the specification. The value of this header must be a 'quoted string', which means `"cache"`, `"*"` and `"cookies"` are the equivalent valid values. This is concerning as the top three values combined already represent 58.01% of current header values on mobile. We see these numbers jump quite a lot year after year, which can likely be explained by the low adoption of the header, where a very small number of hosts can change the relative fraction by a large amount.
 
@@ -466,12 +1041,35 @@ Our data shows that most developers attempt to use the `Clear-Site-Data` header 
 
 Besides as a response header, some of the security mechanisms of the web can be configured directly within the html document through the use of the `<meta>` tag. Two examples of this are the `Content-Security-Policy` and the `Referrer-Policy`. The use of a meta tag for these mechanisms has remained largely stable from last year, at around 0.60% and around 2.50% for the CSP and Referrer-Policy respectively. A very small decrease in CSP and very small increase in Referrer-Policy could be observed, just like last year.
 
-| Meta Tag | desktop | mobile |
-| :---- | ----- | ----- |
-| includes Referrer-policy | 2.75% | 2.52% |
-| includes CSP | 0.64% | 0.59% |
-| includes not-allowed policy | 0.12% | 0.11% |
-*The percentage of hosts enabling different policies using a meta tag*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <td>Meta tag</td>
+        <td>Desktop</td>
+        <td>Mobile</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>includes Referrer-policy</code></td>
+        <td class="numeric">2.75%</td>
+        <td class="numeric">2.52%</td>
+      </tr>
+      <tr>
+        <td><code>includes CSP</code></td>
+        <td class="numeric">0.64%</td>
+        <td class="numeric">0.59%</td>
+      </tr>
+      <tr>
+        <td><code>includes not-allowed policy</code></td>
+        <td class="numeric">0.12%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag", sheets_gid="1717430289", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
+</figure>
 
 Other security mechanisms can not be configured through the use of the `<meta>` tag, however every year we see developers still attempt this. This year we even see a rise in policies that are not allowed to be configured using a meta tag from 0.07% to 0.11% on mobile. These values are ignored by the browser, thus potentially leaving users vulnerable if the correct header is not configured. Keeping up with our running example, this year we found 5,564 meta tags that included the `X-Frame-Options` policy. This is almost 600 pages more than last year, which is a worrying evolution.
 
@@ -479,21 +1077,75 @@ Other security mechanisms can not be configured through the use of the `<meta>` 
 
 The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) is a JavaScript API that provides an interface for performing basic cryptographic operations. Examples of such operations are the creation of random numbers, hashing, signing content, verifying signatures and of course encryption and decryption.
 
-| *SUM of pct\_urls* | *client* |  |
-| :---- | ----- | ----- |
-| *feature* | desktop | mobile |
-| CryptoGetRandomValues | 34.45% | 40.95% |
-| SubtleCryptoDigest | 2.65% | 2.98% |
-| CryptoAlgorithmSha256 | 2.36% | 2.48% |
-| SubtleCryptoImportKey | 1.29% | 1.68% |
-| CryptoAlgorithmEcdh | 0.97% | 1.39% |
-| CryptoAlgorithmSha512 | 0.17% | 0.32% |
-| CryptoAlgorithmSha1 | 0.21% | 0.26% |
-| CryptoAlgorithmAesCbc | 0.21% | 0.17% |
-| SubtleCryptoSign | 0.13% | 0.14% |
-| SubtleCryptoEncrypt | 0.13% | 0.12% |
-| CryptoAlgorithmHmac | 0.10% | 0.11% |
-*The usages of features of the Web Cryptography API*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>CryptoGetRandomValues</code></td>
+        <td class="numeric">34.45%</td>
+        <td class="numeric">40.95%</td>
+      </tr>
+      <tr>
+        <td><code>SubtleCryptoDigest</code></td>
+        <td class="numeric">2.65%</td>
+        <td class="numeric">2.98%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmSha256</code></td>
+        <td class="numeric">2.36%</td>
+        <td class="numeric">2.48%</td>
+      </tr>
+      <tr>
+        <td><code>SubtleCryptoImportKey</code></td>
+        <td class="numeric">1.29%</td>
+        <td class="numeric">1.68%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmEcdh</code></td>
+        <td class="numeric">0.97%</td>
+        <td class="numeric">1.39%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmSha512</code></td>
+        <td class="numeric">0.17%</td>
+        <td class="numeric">0.32%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmSha1</code></td>
+        <td class="numeric">0.21%</td>
+        <td class="numeric">0.26%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmAesCbc</code></td>
+        <td class="numeric">0.21%</td>
+        <td class="numeric">0.17%</td>
+      </tr>
+      <tr>
+        <td><code>SubtleCryptoSign</code></td>
+        <td class="numeric">0.13%</td>
+        <td class="numeric">0.14%</td>
+      </tr>
+      <tr>
+        <td><code>SubtleCryptoEncrypt</code></td>
+        <td class="numeric">0.13%</td>
+        <td class="numeric">0.12%</td>
+      </tr>
+      <tr>
+        <td><code>CryptoAlgorithmHmac</code></td>
+        <td class="numeric">0.10%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The usages of features of the Web Cryptography API", sheets_gid="433834892", sql_file="web_cryptography_api.sql") }}</figcaption>
+</figure>
 
 The `CryptoGetRandomValues` remains the most widely used feature of this API, however it is still declining in use, just like it was last year. Its use on mobile dropped by more than 12% this year, landing just under 41%. The other features continue to rise, with the second most popular feature `SubtleCryptoDigest` growing by 1.2% to just under 3%.
 
@@ -513,12 +1165,30 @@ We see that reCAPTCHA remains the largest bot protection service, but Cloudflare
 
 With the `SetHTMLUnsafe` and `ParseHTMLUnsafe` APIs, two relatively recent additions to browsers, developers can [use a declarative shadow DOM from JavaScript](https://developer.chrome.com/blog/new-in-chrome-124#dsd). When a developer attempts to use `innerHTML` to place a custom HTML component that includes a definition for a declarative shadow DOM onto the page (for example `<template shadowrootmode="open">...</template>`), this will not work as expected. By using `SetHTMLUnsafe` or `ParseHTMLUnsafe` the developer can ensure that the declarative shadow DOM is properly instantiated by the browser. As the name implies, the developer is responsible for making sure that only safe values are passed to these 'unsafe' APIs. In other cases, the developer runs the risk of allowing dangerous content to end up on the page, which can lead to XSS attacks.
 
-| *SUM of num\_urls* | *client* |  |
-| :---- | ----- | ----- |
-| *featurename* | desktop | mobile |
-| ParseHTMLUnsafe | 19869 | 17147 |
-| SetHTMLUnsafe | 443 | 449 |
-*The number of pages using HTML sanitization APIs*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ParseHTMLUnsafe</code></td>
+        <td class="numeric">19869</td>
+        <td class="numeric">17147</td>
+      </tr>
+      <tr>
+        <td><code>SetHTMLUnsafe</code></td>
+        <td class="numeric">443</td>
+        <td class="numeric">449</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="The number of pages using HTML sanitization APIs", sheets_gid="1789171380", sql_file="html_sanitization_usage.sql") }}</figcaption>
+</figure>
 
 Since last year, we see a big rise in the use of these APIs. On mobile, the number of pages using `SetHTMLUnsafe` rose from 2 to 449 pages and the number using `ParseHTMLUnsafe` rose from 6 to 17,147 this year. The latter still only accounts for 0.06% of the crawled pages, but it is an interesting change and we can expect the adoption to keep rising in the following year, although it is not expected that these APIs will gain widespread adoption anytime soon.
 
@@ -602,15 +1272,45 @@ While there are many security mechanisms available on the web and in browsers, i
 
 When configuring security policies, it is important that developers understand how they have to define the policy. Some policies can be defined through both a header and the HTML `<meta>` tag. However, many policies can not be defined through `<meta>`. Developers sometimes make the mistake of trying to configure these policies through the `<meta>` tag anyway. Unfortunately browsers will ignore these policies, resulting in inactive security policies.
 
-| *SUM of count\_policy* | *client* |  |
-| :---- | ----- | ----- |
-| *policy* | desktop | mobile |
-| X-Frame-Options | 4,584 | 5,564 |
-| X-Content-Type-Options | 2,440 | 2,854 |
-| Permissions-Policy | 1,983 | 2,236 |
-| X-XSS-Protection | 1,691 | 1,702 |
-| Referrer-Policy | 1,630 | 1,644 |
-*Top 5 security policies mistakenly configured through `<meta>`*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Policy</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>X-Frame-Options</code></td>
+        <td class="numeric">4,584</td>
+        <td class="numeric">5,564</td>
+      </tr>
+      <tr>
+        <td><code>X-Content-Type-Options</code></td>
+        <td class="numeric">2,440</td>
+        <td class="numeric">2,854</td>
+      </tr>
+      <tr>
+        <td><code>Permissions-Policy</code></td>
+        <td class="numeric">1,983</td>
+        <td class="numeric">2,236</td>
+      </tr>
+      <tr>
+        <td><code>X-XSS-Protection</code></td>
+        <td class="numeric">1,691</td>
+        <td class="numeric">1,702</td>
+      </tr>
+      <tr>
+        <td><code>Referrer-Policy</code></td>
+        <td class="numeric">1,630</td>
+        <td class="numeric">1,644</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top 5 security policies mistakenly configured through `<neta>`", sheets_gid="1717430289", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
+</figure>
 
 We find that around 0.11% of mobile sites attempt to set security headers that browsers explicitly do not support via `<meta>` tags. The most frequently attempted policies are `X-Frame-Options`, `X-Content-Type-Options` and `Permissions-Policy`. Compared to 2024, we see that the number of mobile sites setting these policies in `<meta>` rose in absolute numbers by more than 5,000 pages, showing that these misconfigurations are still actively being set by developers.
 
@@ -618,12 +1318,30 @@ We find that around 0.11% of mobile sites attempt to set security headers that b
 
 While CSP *can* be configured via `<meta>` tags and this behaviour has been observed on 0.59% of mobile pages, certain CSP directives are explicitly disallowed in meta implementations and will be ignored by browsers. These directives can only be set by using the `Content-Security-Policy` response header.
 
-|  | *client* |  |
-| :---- | ----- | ----- |
-| *Values* | desktop | mobile |
-| frame-ancestors | 2.37% | 2.11% |
-| sandbox | 0.004% | 0.003% |
-*Percentage of CSP policies defined in `<meta>` with disallowed directives*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Directive</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>frame-ancestors </code></td>
+        <td class="numeric">2.37%</td>
+        <td class="numeric">2.11%</td>
+      </tr>
+      <tr>
+        <td><code>sandbox </code></td>
+        <td class="numeric">0.004%</td>
+        <td class="numeric">0.003%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Percentage of CSP policies defined in `<meta>` with disallowed directives", sheets_gid="1969221363", sql_file="meta_csp_disallowed_directives.sql") }}</figcaption>
+</figure>
 
 We find that over 2% of mobile pages setting a CSP policy via a `<meta>` tag include the `frame-ancestors` directive and 0.003% include the `sandbox` directive. The latter boils down to only three pages out of the entire crawled dataset. Compared to last edition the misconfiguration of `frame-ancestors` shows up on 600 more pages, thereby rising by over 0.8%. This represents a slow but negative evolution for these types of misconfigurations.
 
@@ -631,15 +1349,45 @@ We find that over 2% of mobile pages setting a CSP policy via a `<meta>` tag inc
 
 Because the cross-origin policies COEP, CORP, and COOP have a similar naming and are related in purpose, they are sometimes confused by developers. Assigning the wrong values to these headers has the effect that the browser will apply the default policy for the header as if no header was supplied at all, thereby disabling additional defenses wanted by the developer.
 
-| *SUM of pct* | *client* |  |
-| :---- | ----- | ----- |
-| *coep\_header* | desktop | mobile |
-| same-origin | 4.43% | 4.02% |
-| cross-origin | 0.55% | 0.46% |
-| \* | 0.13% | 0.11% |
-| (unsafe-none|require-corp); report-to='default' | 0.09% | 0.11% |
-| : require-corp | 0.09% | 0.10% |
-*Prevalence of invalid COEP header values*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Invalid COEP value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>same-origin</code></td>
+        <td class="numeric">4.43%</td>
+        <td class="numeric">4.02%</td>
+      </tr>
+      <tr>
+        <td><code>cross-origin</code></td>
+        <td class="numeric">0.55%</td>
+        <td class="numeric">0.46%</td>
+      </tr>
+      <tr>
+        <td><code>*</code></td>
+        <td class="numeric">0.13%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><code>(unsafe-none|require-corp); report-to='default'</code></td>
+        <td class="numeric">0.09%</td>
+        <td class="numeric">0.11%</td>
+      </tr>
+      <tr>
+        <td><code>: require-corp</code></td>
+        <td class="numeric">0.09%</td>
+        <td class="numeric">0.10%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Prevalence of invalid COEP header values", sheets_gid="1595978010", sql_file="coep_header_prevalence.sql") }}</figcaption>
+</figure>
 
 In total, 5.6% of the observed COEP headers contain an invalid value on mobile. Over 4% of these headers contain the `same-origin` value that is only a valid value for the CORP or COOP headers. Another almost 0.5% contain `cross-origin`, a value destined for the CORP header. Unfortunately, these misconfigurations also saw a rise since last year, by almost 1% for the `same-origin` value in the COEP header.
 
@@ -667,19 +1415,70 @@ We track the use of headers that are commonly used to report this type of inform
 
 Just like the past years, the `Server` header remains the most widely used header by a large margin over `X-Powered-By`. These headers show up on 91.5% and 23.9% of hosts on the web. For each of the headers we see a slight decrease in the amount of hosts they show up on. We don't expect these values to see major changes over time, as many web technologies automatically set some of these headers and developers may not have a lot of interest in removing these headers as the gains in terms of security are small.
 
-| *resp\_value* | desktop | mobile |
-| :---- | ----- | ----- |
-| PHP/7.4.33 | 9.54% | 9.98% |
-| PHP/7.3.33 | 3.61% | 4.29% |
-| PHP/5.3.3 | 2.10% | 2.20% |
-| PHP/5.6.40 | 2.07% | 2.12% |
-| PHP/8.0.30 | 1.55% | 1.70% |
-| PHP/7.2.34 | 1.34% | 1.41% |
-| PHP/8.2.28 | 1.15% | 1.31% |
-| PHP/8.3.13 | 1.08% | 1.11% |
-| PHP/8.1.32 | 1.05% | 1.09% |
-| PHP/8.1.27 | 0.92% | 1.06% |
-*Most prevalent `X-Powered-By` header values with specific framework version*
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Header value</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>PHP/7.4.33</code></td>
+        <td class="numeric">9.54%</td>
+        <td class="numeric">9.98%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/7.3.33</code></td>
+        <td class="numeric">3.61%</td>
+        <td class="numeric">4.29%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/5.3.3</code></td>
+        <td class="numeric">2.10%</td>
+        <td class="numeric">2.20%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/5.6.40</code></td>
+        <td class="numeric">2.07%</td>
+        <td class="numeric">2.12%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/8.0.30</code></td>
+        <td class="numeric">1.55%</td>
+        <td class="numeric">1.70%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/7.2.34</code></td>
+        <td class="numeric">1.34%</td>
+        <td class="numeric">1.41%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/8.2.28</code></td>
+        <td class="numeric">1.15%</td>
+        <td class="numeric">1.31%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/8.3.13</code></td>
+        <td class="numeric">1.08%</td>
+        <td class="numeric">1.11%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/8.1.32</code></td>
+        <td class="numeric">1.05%</td>
+        <td class="numeric">1.09%</td>
+      </tr>
+      <tr>
+        <td><code>PHP/8.1.27</code></td>
+        <td class="numeric">0.92%</td>
+        <td class="numeric">1.06%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most prevalent `X-Powered-By` header values with specific framework version", sheets_gid="1997993812", sql_file="server_header_value_prevalence.sql") }}</figcaption>
+</figure>
 
 If we look at the most common values within the `Server` and `X-Powered-By` values, we see that PHP has the tendency to expose the exact version running on the server particularly in the `X-Powered-By` header. For both desktop and mobile, we find that over 27% of the `X-Powered-By` headers contain version information. It is likely that the header is automatically returned by the platforms that we observe in our data. Interestingly, we see a slight decrease in the old PHP versions 7.x and lower and a slight increase in the new PHP versions 8.x, which is an indication that at least some developers are updating their servers.
 
