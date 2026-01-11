@@ -243,7 +243,7 @@ CSP can be used to block specific resources from being loaded, which can help re
   sql_file="security_headers_prevalence.sql",
 ) }}
 
-The adoption of CSP continued increasing [from 18.5% last year](2024/security#content-security-policy) to 21.9% this year, an increase of close to 20%. As predicted in the last edition of the Web Almanac, the adoption has now risen above 20%, indicating the adoption is still steadily rising.
+The adoption of CSP continued increasing [from 18.5% last year](../2024/security#content-security-policy) to 21.9% this year, an increase of close to 20%. As predicted in the last edition of the Web Almanac, the adoption has now risen above 20%, indicating the adoption is still steadily rising.
 
 #### Directives
 
