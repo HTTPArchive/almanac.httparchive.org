@@ -18,7 +18,7 @@ base_data AS (
   SELECT
     client,
     root_page,
-    STRING(custom_metrics.privacy.iab_tcf_v2.data.publisherCC) AS publisherCC
+    UPPER(SAFE.STRING(custom_metrics.privacy.iab_tcf_v2.data.publisherCC)) AS publisherCC
   FROM `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND --rank = 1000 AND

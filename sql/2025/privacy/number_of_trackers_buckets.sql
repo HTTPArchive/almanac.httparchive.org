@@ -50,7 +50,9 @@ GROUP BY
   client,
   number_of_trackers,
   total_websites
+
 UNION ALL
+
 SELECT
   client,
   'any_tracker' AS type,
