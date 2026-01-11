@@ -1,66 +1,33 @@
--- Percent of pages that deploy at least one tracker from each tracker category
+-- noqa: disable=PRS
 
-WITH whotracksme AS (
+WITH base_totals AS (
   SELECT
-    domain,
-    category,
-    tracker
-  FROM httparchive.almanac.whotracksme
+    client,
+    COUNT(DISTINCT root_page) AS total_websites
+  FROM `httparchive.crawl.pages`
   WHERE date = '2025-07-01'
-),
-
-totals AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total_websites
-  FROM httparchive.crawl.requests
-  WHERE
-    date = '2025-07-01'
   GROUP BY client
-),
-
-tracker_categories AS (
-  SELECT
-    client,
-    category,
-    page
-  FROM httparchive.crawl.requests
-  JOIN whotracksme
-  ON (
-    NET.HOST(url) = domain OR
-    ENDS_WITH(NET.HOST(url), CONCAT('.', domain))
-  )
-  WHERE
-    date = '2025-07-01' AND
-    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url) -- third party
-),
-
-aggregated AS (
-  SELECT
-    client,
-    category,
-    COUNT(DISTINCT page) AS number_of_websites
-  FROM tracker_categories
-  GROUP BY
-    client,
-    category
-  UNION ALL
-  SELECT
-    client,
-    'any' AS category,
-    COUNT(DISTINCT page) AS number_of_websites
-  FROM tracker_categories
-  GROUP BY
-    client
 )
 
-SELECT
-  client,
-  category,
-  number_of_websites,
-  total_websites,
-  number_of_websites / total_websites AS pct_websites
-FROM aggregated
-JOIN totals
-USING (client)
-ORDER BY number_of_websites DESC
+FROM `httparchive.crawl.pages`,
+  UNNEST(technologies) AS tech,
+  UNNEST(tech.categories) AS category
+|> WHERE
+  date = '2025-07-01' AND
+  category IN (
+    'Analytics', 'Browser fingerprinting', 'Customer data platform',
+    'Geolocation',
+    'Advertising', 'Retargeting', 'Personalisation', 'Segmentation',
+    'Cookie compliance'
+  )
+|> AGGREGATE COUNT(DISTINCT root_page) AS number_of_websites GROUP BY client, category
+|> JOIN base_totals USING (client)
+|> EXTEND number_of_websites / total_websites AS pct_websites
+|> DROP total_websites
+|> PIVOT(
+  ANY_VALUE(number_of_websites) AS websites_count,
+  ANY_VALUE(pct_websites) AS pct
+  FOR client IN ('desktop', 'mobile')
+)
+|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> ORDER BY websites_count_desktop + websites_count_mobile DESC

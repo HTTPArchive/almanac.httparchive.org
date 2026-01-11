@@ -7,24 +7,20 @@ WITH base_totals AS (
   FROM `httparchive.crawl.pages`
   WHERE date = '2025-07-01'
   GROUP BY client
-),
-
-whotracksme AS (
-  SELECT
-    NET.HOST(domain) AS domain,
-    category || ' / ' || tracker AS tracker
-  FROM `httparchive.almanac.whotracksme`
-  WHERE date = '2025-07-01'
 )
 
-FROM `httparchive.crawl.requests`
-|> JOIN whotracksme
-  ON NET.HOST(url) = domain OR
-    ENDS_WITH(NET.HOST(url), '.' || domain)
+FROM `httparchive.crawl.pages`,
+  UNNEST(technologies) AS tech,
+  UNNEST(tech.categories) AS category
 |> WHERE
   date = '2025-07-01' AND
-  NOT ENDS_WITH('.' || NET.HOST(root_page), '.' || NET.HOST(url)) -- third party
-|> AGGREGATE COUNT(DISTINCT root_page) AS number_of_websites GROUP BY client, tracker
+  category IN (
+    'Analytics', 'Browser fingerprinting', 'Customer data platform',
+    'Geolocation',
+    'Advertising', 'Retargeting', 'Personalisation', 'Segmentation',
+    'Cookie compliance'
+  )
+|> AGGREGATE COUNT(DISTINCT root_page) AS number_of_websites GROUP BY client, tech.technology
 |> JOIN base_totals USING (client)
 |> EXTEND number_of_websites / total_websites AS pct_websites
 |> DROP total_websites
@@ -33,5 +29,5 @@ FROM `httparchive.crawl.requests`
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> RENAME pct_mobile AS mobile, pct_desktop AS desktop,
 |> ORDER BY websites_count_desktop + websites_count_mobile DESC

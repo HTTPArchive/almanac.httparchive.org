@@ -1,3 +1,4 @@
+-- noqa: disable=PRS
 -- Pages that participate in the privacy-relayed origin trials
 
 CREATE TEMP FUNCTION `PARSE_ORIGIN_TRIAL`(token STRING) RETURNS STRUCT<
@@ -27,28 +28,36 @@ DETERMINISTIC AS (
   )
 );
 
-WITH pages AS (
+WITH base_totals AS (
   SELECT
     client,
-    page,
+    COUNT(DISTINCT root_page) AS total_websites
+  FROM `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
+  GROUP BY client
+),
+
+pages AS (
+  SELECT
+    client,
+    root_page,
     custom_metrics.other.`origin-trials` AS ot_metrics,
     custom_metrics.other.almanac AS almanac_metrics
   FROM `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01' AND
-    is_root_page = TRUE
+    date = '2025-07-01'
 ),
 
 response_headers AS (
   SELECT
     client,
-    page,
-    PARSE_ORIGIN_TRIAL(response_header.value) AS ot  -- may not lowercase this value as it is a base64 string
+    root_page,
+    PARSE_ORIGIN_TRIAL(response_header.value) AS ot
   FROM `httparchive.crawl.requests`,
     UNNEST(response_headers) response_header
   WHERE
     date = '2025-07-01' AND
-    is_root_page = TRUE AND
     is_main_document = TRUE AND
     LOWER(response_header.name) = 'origin-trial'
 ),
@@ -56,8 +65,8 @@ response_headers AS (
 meta_tags AS (
   SELECT
     client,
-    page,
-    PARSE_ORIGIN_TRIAL(SAFE.STRING(meta_node.content)) AS ot  -- may not lowercase this value as it is a base64 string
+    root_page,
+    PARSE_ORIGIN_TRIAL(SAFE.STRING(meta_node.content)) AS ot
   FROM pages,
     UNNEST(JSON_QUERY_ARRAY(almanac_metrics.`meta-nodes`.nodes)) meta_node
   WHERE
@@ -67,24 +76,18 @@ meta_tags AS (
 ot_from_custom_metric AS (
   SELECT
     client,
-    page,
+    root_page,
     PARSE_ORIGIN_TRIAL(SAFE.STRING(metric.token)) AS ot
   FROM pages,
     UNNEST(JSON_QUERY_ARRAY(ot_metrics)) metric
-)
+),
 
-SELECT
-  client,
-  feature,
-  number_of_pages / total_pages AS pct_pages,
-  number_of_pages,
-  is_active
-FROM (
+aggregated AS (
   SELECT
     client,
     ot.feature,
-    ot.expiry >= CURRENT_TIMESTAMP() AS is_active,
-    COUNT(DISTINCT page) AS number_of_pages
+    --ot.expiry >= CURRENT_TIMESTAMP() AS is_active,
+    COUNT(DISTINCT root_page) AS number_of_websites
   FROM (
     SELECT * FROM response_headers
     UNION ALL
@@ -94,17 +97,18 @@ FROM (
   )
   GROUP BY
     client,
-    feature,
-    is_active
+    feature
+    --is_active
 )
-LEFT JOIN (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total_pages
-  FROM pages
-  GROUP BY
-    client
+
+FROM aggregated
+|> JOIN base_totals USING (client)
+|> EXTEND number_of_websites / total_websites AS pct_websites
+|> DROP total_websites
+|> PIVOT(
+  ANY_VALUE(number_of_websites) AS websites_count,
+  ANY_VALUE(pct_websites) AS pct
+  FOR client IN ('desktop', 'mobile')
 )
-USING (client)
-ORDER BY
-  number_of_pages DESC
+|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> ORDER BY websites_count_desktop + websites_count_mobile DESC
