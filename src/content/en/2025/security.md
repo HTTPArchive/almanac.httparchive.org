@@ -23,7 +23,7 @@ doi: ...
 
 ## Introduction
 
-While more and more parts of many people's lives have moved online, so does their private data, which makes web security ever more important. Many systems we use on a daily basis remain appealing to attackers trying to steal data or cause disruptions. This year has once more demonstrated the scale complexity of modern threats. The number of DDoS attacks have continued to increase in size and frequency, with the largest attack recorded [reaching 31.4 Tbps in November](https://blog.cloudflare.com/radar-2025-year-in-review/#hyper-volumetric-ddos-attack-sizes-grew-significantly-throughout-the-year). Supply chain vulnerability grew to unprecedented sizes, with the [Shai-Hulud 2.0 attack](https://www.hackerone.com/blog/shai-hulud-2-npm-worm-supply-chain-attack) reportedly compromising over 1,000 npm packages and infecting over 27,000 GitHub repositories. And a critical vulnerability in React known as [React2Shell](https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/) had developers working hard to quickly update their applications.
+While more and more parts of many people's lives have moved online, so does their private data, which makes web security ever more important. Many systems we use on a daily basis remain appealing to attackers trying to steal data or cause disruptions. This year has once more demonstrated the scale complexity of modern threats. The number of DDoS attacks have continued to increase in size and frequency, with the largest attack recorded <a hreflang="en" href="https://blog.cloudflare.com/radar-2025-year-in-review/#hyper-volumetric-ddos-attack-sizes-grew-significantly-throughout-the-year">reaching 31.4 Tbps in November</a>. Supply chain vulnerability grew to unprecedented sizes, with the <a hreflang="en" href="https://www.hackerone.com/blog/shai-hulud-2-npm-worm-supply-chain-attack">Shai-Hulud 2.0 attack</a> reportedly compromising over 1,000 npm packages and infecting over 27,000 GitHub repositories. And a critical vulnerability in React known as <a hreflang="en" href="https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/">React2Shell</a> had developers working hard to quickly update their applications.
 
 In this chapter, we analyze the mechanisms that aim to protect the web, and how in some cases they fail to protect the web due to a variety of reasons. We explore core elements of web security such as Transport Layer Security (TLS) and protections against third party content inclusions. We discuss how the adoption of these security measures evolves, how they help prevent attacks and how misconfigurations can prevent their proper functioning. We further analyze some well-known URIs relating to security.
 
@@ -31,7 +31,7 @@ Beyond measuring adoption, we also explore the drivers behind the adoption of se
 
 ## Transport security
 
-[HTTPS](https://developer.mozilla.org/docs/Glossary/https) uses Transport Layer Security ([TLS](https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/)) to secure the connection between client and server. Over the years, more and more websites started using HTTPS, thereby better securing their users. This year, the share of all requests sent over HTTPS rose again compared to last year, reaching over 98.8% for mobile connections.
+[HTTPS](https://developer.mozilla.org/docs/Glossary/https) uses Transport Layer Security (<a hreflang="en" href="https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/">TLS</a>) to secure the connection between client and server. Over the years, more and more websites started using HTTPS, thereby better securing their users. This year, the share of all requests sent over HTTPS rose again compared to last year, reaching over 98.8% for mobile connections.
 
 {{ figure_markup(
   content="98.8%",
@@ -55,11 +55,11 @@ The share of requests that are being sent using HTTPS rather than using plain HT
 
 Another positive evolution is visible in the number of homepages served over HTTPS. This number rises from 95.6% to 97.3% on mobile. Because many websites send a number of third-party requests to many (often secure) sites, this number tends to be lower than the share of requests sent over HTTPS, but luckily also keeps rising year after year.
 
-It is good to see that the positive trends in these metrics continues and that the share of sites using HTTPS keeps closing in to 100%. Part of these high numbers can be explained by the decision of browser vendors ([chrome](https://blog.chromium.org/2021/07/increasing-https-adoption.html#:~:text=Beginning%20in%20M94%2C%20Chrome%20will%20offer%20HTTPS%2DFirst%20Mode), [firefox](https://support.mozilla.org/en-US/kb/https-first) and [safari](https://webkit.org/blog/16301/webkit-features-in-safari-18-2/#security-and-privacy)) to try to communicate over HTTPS first before falling back to plain HTTP and often showing a security warning to users, thereby encouraging site owners to adopt TLS.
+It is good to see that the positive trends in these metrics continues and that the share of sites using HTTPS keeps closing in to 100%. Part of these high numbers can be explained by the decision of browser vendors (<a hreflang="en" href="https://blog.chromium.org/2021/07/increasing-https-adoption.html#:~:text=Beginning%20in%20M94%2C%20Chrome%20will%20offer%20HTTPS%2DFirst%20Mode">chrome</a>, <a hreflang="en" href="https://support.mozilla.org/en-US/kb/https-first">firefox</a> and <a hreflang="en" href="https://webkit.org/blog/16301/webkit-features-in-safari-18-2/#security-and-privacy">safari</a>) to try to communicate over HTTPS first before falling back to plain HTTP and often showing a security warning to users, thereby encouraging site owners to adopt TLS.
 
 ### Protocol versions
 
-For a few years now, [TLS1.3](https://www.rfc-editor.org/rfc/rfc8446) has been the recommended protocol version to have the highest security. The latest version has deprecated some [algorithms that were found to contain flaws](https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/#:~:text=A%20number%20of%20outdated%20cryptography%20features%20resulted%20in%20vulnerabilities%20or%20enabled%20specific%20kinds%20of%20cyber%20attacks) in TLS1.2 and provides some stronger security guarantees like forward secrecy. QUIC uses TLS internally as well, thereby providing [similar security guarantees as TLS1.3 does](https://community.cloudflare.com/t/how-is-quic-a-direct-comparison-to-tls-1-3-and-tls-1-2/543349/6#:~:text=TLS%201.2%2C%20TLS%201.3%2C%20and%20QUIC%20share%20similar%20security%20characteristics%20but%20they%20are%20different).
+For a few years now, <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8446">TLS1.3</a> has been the recommended protocol version to have the highest security. The latest version has deprecated some <a hreflang="en" href="https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/#:~:text=A%20number%20of%20outdated%20cryptography%20features%20resulted%20in%20vulnerabilities%20or%20enabled%20specific%20kinds%20of%20cyber%20attacks">algorithms that were found to contain flaws</a> in TLS1.2 and provides some stronger security guarantees like forward secrecy. QUIC uses TLS internally as well, thereby providing <a hreflang="en" href="https://community.cloudflare.com/t/how-is-quic-a-direct-comparison-to-tls-1-3-and-tls-1-2/543349/6#:~:text=TLS%201.2%2C%20TLS%201.3%2C%20and%20QUIC%20share%20similar%20security%20characteristics%20but%20they%20are%20different">similar security guarantees as TLS1.3 does</a>.
 
 {{ figure_markup(
   image="tls-versions.png",
@@ -75,7 +75,7 @@ Like in the 2024 edition of the Web Almanac, we find that both QUIC and TLS1.3 s
 
 ### Cipher suites
 
-To start communicating over an encrypted channel, both parties need to use the same cryptographic algorithm (or [cipher suite](https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel)) to understand each other. In order to do so, they agree upon a cipher suite to use before communication. We can see that most requests happen over a connection using a Galois Counter Mode ([GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)) cipher, which is often preferred because of its resilience against [padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities) and because it provides Authenticated Encryption with Associated Data ([AEAD](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2628d946bda9f3d3b087e5c4846e76ae0fb07b6b)), which is [required in TLS1.3](https://www.rfc-editor.org/rfc/rfc8446#:~:text=Those%20that%0A%20%20%20%20%20%20remain%20are%20all%20Authenticated%20Encryption%20with%20Associated%20Data%0A%20%20%20%20%20%20\(AEAD\)%20algorithms). In addition, we see that the use of 128-bit keys has grown by 4% since last year, instead of the more secure 256-variant. Although the [128-bit cipher suites are considered secure by NIST](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar3.ipd.pdf), 256-bit variants provide even more security guarantees. The dataset of this year's Almanac includes more requests than last year's, so it is possible that this change can be attributed to the growing dataset. The cipher suites in use are not very diverse, in fact there are only five cipher suites that were found to be used in the dataset. This can be the case because TLS1.3 [only allows GCM or modern block ciphers](https://datatracker.ietf.org/doc/html/rfc8446#page-133) to be used.
+To start communicating over an encrypted channel, both parties need to use the same cryptographic algorithm (or <a hreflang="en" href="https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel">cipher suite</a>) to understand each other. In order to do so, they agree upon a cipher suite to use before communication. We can see that most requests happen over a connection using a Galois Counter Mode ([GCM](https://www.wikipedia.org/wiki/Galois/Counter_Mode)) cipher, which is often preferred because of its resilience against <a hreflang="en" href="https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities">padding attacks</a> and because it provides Authenticated Encryption with Associated Data (<a hreflang="en" href="https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2628d946bda9f3d3b087e5c4846e76ae0fb07b6b">AEAD</a>), which is <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8446#:~:text=Those%20that%0A%20%20%20%20%20%20remain%20are%20all%20Authenticated%20Encryption%20with%20Associated%20Data%0A%20%20%20%20%20%20\(AEAD\">required in TLS1.3</a>%20algorithms). In addition, we see that the use of 128-bit keys has grown by 4% since last year, instead of the more secure 256-variant. Although the <a hreflang="en" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar3.ipd.pdf">128-bit cipher suites are considered secure by NIST</a>, 256-bit variants provide even more security guarantees. The dataset of this year's Almanac includes more requests than last year's, so it is possible that this change can be attributed to the growing dataset. The cipher suites in use are not very diverse, in fact there are only five cipher suites that were found to be used in the dataset. This can be the case because TLS1.3 <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8446#page-133">only allows GCM or modern block ciphers</a> to be used.
 
 {{ figure_markup(
   image="cipher-suites.png",
@@ -87,7 +87,7 @@ To start communicating over an encrypted channel, both parties need to use the s
   )
 }}
 
-TLS1.3 only allows the use of algorithms that support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy). Because of the high adoption of TLS1.3, we expect a large share of requests to fulfill the forward secrecy requirement. Contrary to our expectations, we see a relatively low number of requests that are sent over connections that are forward secret. There is a 20% decrease in forward secret requests since the 2024 Web Almanac. Currently, it seems our metric only includes the forward secret ciphers in TLS1.2 and TLS1.3, but does not include TLS in QUIC which can explain the decline we observer.
+TLS1.3 only allows the use of algorithms that support [forward secrecy](https://www.wikipedia.org/wiki/Forward_secrecy). Because of the high adoption of TLS1.3, we expect a large share of requests to fulfill the forward secrecy requirement. Contrary to our expectations, we see a relatively low number of requests that are sent over connections that are forward secret. There is a 20% decrease in forward secret requests since the 2024 Web Almanac. Currently, it seems our metric only includes the forward secret ciphers in TLS1.2 and TLS1.3, but does not include TLS in QUIC which can explain the decline we observer.
 
 {{ figure_markup(
   image="forward-secrecy.png",
@@ -101,7 +101,7 @@ TLS1.3 only allows the use of algorithms that support [forward secrecy](https://
 
 ### Certificate Authorities
 
-In order to use TLS, sites must request a certificate from a [certificate authority](https://www.ssl.com/faqs/what-is-a-certificate-authority/) (CA). Because the browser trusts a number of CAs, the site's certificate will be identified by the browser as a valid certificate. The certificate can then be used for secure communication between the browser and the site's server going forward.
+In order to use TLS, sites must request a certificate from a <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">certificate authority</a> (CA). Because the browser trusts a number of CAs, the site's certificate will be identified by the browser as a valid certificate. The certificate can then be used for secure communication between the browser and the site's server going forward.
 
 <figure>
   <table>
@@ -168,7 +168,7 @@ In order to use TLS, sites must request a certificate from a [certificate author
   <figcaption>{{ figure_link(caption="The percentage of certificates issued per issuer (top 10)", sheets_gid="215876282", sql_file="tls_ca_issuers_pages.sql") }}</figcaption>
 </figure>
 
-Compared to last year, we can see that the then popular R3 intermediate certificate from [Let's Encrypt](https://letsencrypt.org/) has disappeared as an issuer. This was expected because it has since [expired (in September 2025\)](https://crt.sh/?id=3334561879) so even last year the replacement with other intermediates had already started. The [R10 and R11 intermediate certificates](https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html) are the new certificates that are taking over from R3. There are now two intermediate RSA certificates (R10 and R11) and two intermediate ECDSA certificates (E5 and E6) with the [explicit goal of trying to prevent intermediate key pinning](https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html#rotating-issuance). The only certificate in the top 5 issuers that is not from Let's Encrypt is WE1, which is part of [Google Trust Services](https://pki.goog/) (GTS). Also from GTS in the list is WR1. These certificates seem part of the new generation of intermediate certificates from GTS, expiring among others the GTS CA 1P5 issuer seen last year.
+Compared to last year, we can see that the then popular R3 intermediate certificate from <a hreflang="en" href="https://letsencrypt.org/">Let's Encrypt</a> has disappeared as an issuer. This was expected because it has since <a hreflang="en" href="https://crt.sh/?id=3334561879">expired (in September 2025\)</a> so even last year the replacement with other intermediates had already started. The <a hreflang="en" href="https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html">R10 and R11 intermediate certificates</a> are the new certificates that are taking over from R3. There are now two intermediate RSA certificates (R10 and R11) and two intermediate ECDSA certificates (E5 and E6) with the <a hreflang="en" href="https://letsencrypt.org/2024/03/19/new-intermediate-certificates.html#rotating-issuance">explicit goal of trying to prevent intermediate key pinning</a>. The only certificate in the top 5 issuers that is not from Let's Encrypt is WE1, which is part of <a hreflang="en" href="https://pki.goog/">Google Trust Services</a> (GTS). Also from GTS in the list is WR1. These certificates seem part of the new generation of intermediate certificates from GTS, expiring among others the GTS CA 1P5 issuer seen last year.
 
 The total share of sites using a certificate of Let's Encrypt has gone down slightly to 52.6% from 56% in the last edition. One of the contributing factors as can be seen in the data is the larger share of certificates issued by the WE1 certificate from GTS, although the total share by GTS-issued certificates (WE1 and others) has not been calculated.
 
@@ -204,7 +204,7 @@ We see a continuing increase in the number of pages using a HSTS header, with a 
   )
 }}
 
-The share of responses with a valid `max-age` has increased slightly to 96%. The `includeSubdomains` and `preload` directives saw an increase of about 4% each, possibly indicating that certain sites started setting both directives together. The [unofficial](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) `preload` directive requires the `includeSubdirectories` to be set and the `max-age` to have a value of at least 1 year. Using the preload, a site can make sure that a browser will always visit the domain and its subdomains, even when connecting for the first time (which is not necessarily the case when using HSTS without preload).
+The share of responses with a valid `max-age` has increased slightly to 96%. The `includeSubdomains` and `preload` directives saw an increase of about 4% each, possibly indicating that certain sites started setting both directives together. The [unofficial](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) `preload` directive requires the `includeSubdirectories` to be set and the `max-age` to have a value of at least 1 year. Using the preload, a site can make sure that a browser will always visit the domain and its subdomains, even when connecting for the first time (which is not necessarily the case when using HSTS without preload).
 
 {{ figure_markup(
   image="hsts-max-age.png",
@@ -224,11 +224,11 @@ Cookies are a vital part of the web. They allow websites to save information for
 
 ## Content inclusion
 
-Content inclusion is a core component of the web. Being able to include other pages, CSS or JavaScript from a Content Distribution Network ([CDN](https://cdn-2025-dot-webalmanac.uk.r.appspot.com/en/2025/cdn)) or images from shared sources is one of the building blocks on which the web was built. It does however introduce certain risks: whenever sites include content from third parties, it places trust in those third party resources. Of course, there is no guarantee that said resource is not malicious or compromised by a malicious actor which can lead to a number of serious attacks such as for instance supply chain attacks. To reduce this risk, it is important to use security policies to control content inclusion.
+Content inclusion is a core component of the web. Being able to include other pages, CSS or JavaScript from a Content Distribution Network ([CDN](./cdn)) or images from shared sources is one of the building blocks on which the web was built. It does however introduce certain risks: whenever sites include content from third parties, it places trust in those third party resources. Of course, there is no guarantee that said resource is not malicious or compromised by a malicious actor which can lead to a number of serious attacks such as for instance supply chain attacks. To reduce this risk, it is important to use security policies to control content inclusion.
 
 ### Content Security Policy
 
-The [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) allows websites to have a fine-grained control over the content that will be loaded on its page. By setting the `Content-Security-Policy` response header or defining it in a `<meta>` html tag, websites can communicate the policy in use to the browser, which will enforce it. The policy has many defined directives that allow a website to define from which sources content can be loaded or not.
+The [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) allows websites to have a fine-grained control over the content that will be loaded on its page. By setting the `Content-Security-Policy` response header or defining it in a `<meta>` html tag, websites can communicate the policy in use to the browser, which will enforce it. The policy has many defined directives that allow a website to define from which sources content can be loaded or not.
 
 CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential XSS attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can be loaded as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
 
@@ -256,7 +256,7 @@ Once again, most websites use CSP for the `upgrade-insecure-requests` and `frame
   )
 }}
 
-The `block-all-mixed-content` directive which has been replaced by `upgrade-insecure-requests` has continued to slightly decrease like it has been over the last few years. This is good news because the directive is [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content).
+The `block-all-mixed-content` directive which has been replaced by `upgrade-insecure-requests` has continued to slightly decrease like it has been over the last few years. This is good news because the directive is [deprecated](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content).
 
 <figure>
   <table>
@@ -303,7 +303,7 @@ The `block-all-mixed-content` directive which has been replaced by `upgrade-inse
   <figcaption>{{ figure_link(caption="Most prevalent CSP headers", sheets_gid="1551197242", sql_file="csp_most_common_header.sql") }}</figcaption>
 </figure>
 
-The same header values we saw last year in the top three appear in this year's top four again. The third most common CSP header this year is a new one, however. This change occurs because this year, we sorted the most common headers by mobile usage instead of by desktop usage like last year. We can see a trusted types policy with a specific report uri endpoint relating to android appear at the third place. [Trusted types](https://w3c.github.io/trusted-types/dist/spec/) can be used to restrict the parameters passed into injection sinks (like `element.innerHTML`) such that they only allow properly typed values to be passed instead of plain strings. By restricting the values passed to injection sinks, many possible DOM XSS vulnerabilities can be prevented. The trusted types header we observe appears on more than 12% of the mobile pages. We don't have a direct explanation for the high usage of this specific CSP policy value. In fifth and sixth place we once again see the `upgrade-insecure-requests` and `frame-ancestors 'self'` directives, but this time with a trailing semicolon. A semicolon is used to separate directives but if there is only one directive defined [it can be discarded](https://w3c.github.io/webappsec-csp/#grammardef-serialized-policy), both header values are therefore valid CSP policies with the same effect.
+The same header values we saw last year in the top three appear in this year's top four again. The third most common CSP header this year is a new one, however. This change occurs because this year, we sorted the most common headers by mobile usage instead of by desktop usage like last year. We can see a trusted types policy with a specific report uri endpoint relating to android appear at the third place. <a hreflang="en" href="https://w3c.github.io/trusted-types/dist/spec/">Trusted types</a> can be used to restrict the parameters passed into injection sinks (like `element.innerHTML`) such that they only allow properly typed values to be passed instead of plain strings. By restricting the values passed to injection sinks, many possible DOM XSS vulnerabilities can be prevented. The trusted types header we observe appears on more than 12% of the mobile pages. We don't have a direct explanation for the high usage of this specific CSP policy value. In fifth and sixth place we once again see the `upgrade-insecure-requests` and `frame-ancestors 'self'` directives, but this time with a trailing semicolon. A semicolon is used to separate directives but if there is only one directive defined <a hreflang="en" href="https://w3c.github.io/webappsec-csp/#grammardef-serialized-policy">it can be discarded</a>, both header values are therefore valid CSP policies with the same effect.
 
 #### Keywords for `script-src`
 
@@ -319,7 +319,7 @@ One of the most important directives included in the CSP is `script-src`. Throug
   )
 }}
 
-We find that the `unsafe-inline` and `unsafe-eval` keywords are used very often. These keywords significantly reduce the security impact of CSP's `script-src` as they allow any inline script to be executed or allow the use of the `eval`-function in JavaScript respectively. Compared to last year we barely see any changes to the usage of `script-src` keywords. An important note to make is that the presence of `unsafe-inline` does not necessarily mean that inline scripts can be executed. In some cases and following the [CSP spec](https://w3c.github.io/webappsec-csp/) `unsafe-inline` will be ignored. This is for instance the case when a nonce and `strict-dynamic` keywords are added to the CSP policy.
+We find that the `unsafe-inline` and `unsafe-eval` keywords are used very often. These keywords significantly reduce the security impact of CSP's `script-src` as they allow any inline script to be executed or allow the use of the `eval`-function in JavaScript respectively. Compared to last year we barely see any changes to the usage of `script-src` keywords. An important note to make is that the presence of `unsafe-inline` does not necessarily mean that inline scripts can be executed. In some cases and following the <a hreflang="en" href="https://w3c.github.io/webappsec-csp/">CSP spec</a> `unsafe-inline` will be ignored. This is for instance the case when a nonce and `strict-dynamic` keywords are added to the CSP policy.
 
 {{ figure_markup(
   image="csp-script-src-keywords-per-header.png",
@@ -331,7 +331,7 @@ We find that the `unsafe-inline` and `unsafe-eval` keywords are used very often.
   )
 }}
 
-We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, [the most restrictive policy will be used by the browser](https://content-security-policy.com/examples/multiple-csp-headers/). We see a very similar distribution compared to the values per request, indicating that either most pages only use one CSP header or only use `script-src` in one of the CSP headers that they set, meaning there are no conflicting `script-src` directives on most pages.
+We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, <a hreflang="en" href="https://content-security-policy.com/examples/multiple-csp-headers/">the most restrictive policy will be used by the browser</a>. We see a very similar distribution compared to the values per request, indicating that either most pages only use one CSP header or only use `script-src` in one of the CSP headers that they set, meaning there are no conflicting `script-src` directives on most pages.
 
 #### Allowed hosts
 
@@ -487,7 +487,7 @@ Hotjar is used for website analytics, indicating a continuing interest in analyt
 
 ### Subresource Integrity
 
-In order to protect themselves from loading tampered resources, developers can make use of [Subresource Integrity (SRI)](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity). While CSP allows for developers to restrict the sources from which resources are loaded, SRI makes sure those resources contain the content that is expected by the developer. The opposite can be the case when for instance a CDN is compromised and an attacker succeeds in changing a valid script into a malicious one.
+In order to protect themselves from loading tampered resources, developers can make use of [Subresource Integrity (SRI)](https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity). While CSP allows for developers to restrict the sources from which resources are loaded, SRI makes sure those resources contain the content that is expected by the developer. The opposite can be the case when for instance a CDN is compromised and an attacker succeeds in changing a valid script into a malicious one.
 
 By using the `integrity` attribute in `<script>` and `<link>` tags, developers can communicate to the browser the expected hash of the resource. When loading the specified resource, the browser will then check whether the hash of the resource contents corresponds to the provided hash and if not, refuse to load/execute the resource, thereby protecting the website from potentially compromised content.
 
@@ -572,7 +572,7 @@ The list of most common hosts from which SRI-protected scripts are loaded has re
 
 ### Permissions Policy
 
-The [Permissions Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy) (formerly Feature Policy) is a policy that allows websites to allow or disallow the use of specific features in the browser, such as the camera, microphone, sensors like the accelerometer or geolocation data. Through the `Permissions-Policy` response header, developers can allow or disallow specific feature use by the main page and its embedded content. A specific policy for one embedded resource can be set through the `allow` attribute of the `<iframe>` element.
+The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy) (formerly Feature Policy) is a policy that allows websites to allow or disallow the use of specific features in the browser, such as the camera, microphone, sensors like the accelerometer or geolocation data. Through the `Permissions-Policy` response header, developers can allow or disallow specific feature use by the main page and its embedded content. A specific policy for one embedded resource can be set through the `allow` attribute of the `<iframe>` element.
 
 {{ figure_markup(
   content="+50%",
@@ -649,7 +649,7 @@ Compared to last year, the use of the `Permissions-Policy` saw a relative increa
   <figcaption>{{ figure_link(caption="Most prevalent `Permission-Policy` headers", sheets_gid="180881517", sql_file="pp_header_prevalence.sql") }}</figcaption>
 </figure>
 
-When looking at the top 10 used `Permissions-Policy` values, we find that less developers now use the header to opt out of Google's [Federated Learning of Cohorts (FLoC)](https://privacysandbox.com/intl/en_us/proposals/floc/), with only 11.5% of `Permissions-Policy` headers contain the `interest-cohort=()` value. We also see that a value to opt out of many features at once became a popular value with 10% of `Permissions-Policy` headers containing this value on mobile. We did not observe a direct cause of this change.
+When looking at the top 10 used `Permissions-Policy` values, we find that less developers now use the header to opt out of Google's <a hreflang="en" href="https://privacysandbox.com/intl/en_us/proposals/floc/">Federated Learning of Cohorts (FLoC)</a>, with only 11.5% of `Permissions-Policy` headers contain the `interest-cohort=()` value. We also see that a value to opt out of many features at once became a popular value with 10% of `Permissions-Policy` headers containing this value on mobile. We did not observe a direct cause of this change.
 
 All other observed values in the top 10 are aimed at restricting the permissions of the web page and embedded content. The Permissions Policy is open by default, which means that in order to restrict the use of a feature, it has to explicitly be mentioned in the header. Like last year, 0.27% of `Permissions-Policy` headers on desktop set the `*` wildcard value, thereby explicitly granting all permissions to the page and embedded content that does not define a stricter policy in the `allow` attribute. On mobile, we do not find the wildcard value at all.
 
@@ -730,7 +730,7 @@ Interestingly, the three top `allow` attribute values of last year (`join-ad-int
 
 ### Iframe sandbox
 
-By employing the [`sandbox`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#sandbox) attribute on `<iframe>` elements, developers can protect their users against several attacks in which a resource embedded in an `<iframe>` is either compromised or malicious. In the `sandbox` attribute's value, developers can specify which restrictions should be put into place for the content loaded and displayed in the `<iframe>`. For example, the following `<iframe>` would allow the embedded webpage to run scripts:
+By employing the [`sandbox`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe#sandbox) attribute on `<iframe>` elements, developers can protect their users against several attacks in which a resource embedded in an `<iframe>` is either compromised or malicious. In the `sandbox` attribute's value, developers can specify which restrictions should be put into place for the content loaded and displayed in the `<iframe>`. For example, the following `<iframe>` would allow the embedded webpage to run scripts:
 
 ```html
 <iframe src="https://example.com/" sandbox="allow-scripts"></iframe>
@@ -756,7 +756,7 @@ In general we see a rise in most of the existing security features such as TLS, 
 
 ### Document Policy
 
-[Document Policy](https://wicg.github.io/document-policy/) is a draft community group report last updated in 2022\. It was originally created as a response to proposed additions to Permissions Policy that did not fit the Permissions Policy model or added too much complexity.
+<a hreflang="en" href="https://wicg.github.io/document-policy/">Document Policy</a> is a draft community group report last updated in 2022\. It was originally created as a response to proposed additions to Permissions Policy that did not fit the Permissions Policy model or added too much complexity.
 
 Document Policy has several advantages over related mechanisms such as Permissions Policy, CSP and sandboxing: It is more fine-grained than Permissions Policy and has a different inheritance model: child resources can overwrite certain parent-chosen policies if they are compatible. It is more general than CSP: It has directives related to the permissions of a resource once it has been loaded instead of only determining from which origins resources can be loaded and it is easier to extend than sandboxing because features that are not mentioned in sandboxing are blocked by default, which makes it very difficult to add new ones.
 
@@ -828,7 +828,7 @@ The strongest risers since the 2024 edition are `Strict-Transport-Security` (+4.
 
 #### Origin-Agent-Cluster
 
-The [`Origin-Agent-Cluster`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. the browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
+The [`Origin-Agent-Cluster`](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. the browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
 
 <figure>
   <table>
@@ -865,11 +865,11 @@ The [`Origin-Agent-Cluster`](https://developer.mozilla.org/en-US/docs/Web/HTTP/R
   <figcaption>{{ figure_link(caption="Most common `Origin-Agent-Cluster` header values", sheets_gid="1123976436", sql_file="oac_header_prevalence.sql") }}</figcaption>
 </figure>
 
-A boolean is [defined in the html spec](https://httpwg.org/specs/rfc8941.html#boolean) as a string starting with a question mark. This means that values like '1' and '0' are invalid for this header. Luckily the use of these values is limited. The '?1' value is the only valid value for the `Origin-Agent-Cluster` and it's used to communicate that the developer wants to opt into the feature, all other values are ignored. On mobile, more than 90% of headers have the valid '?1' value. Unfortunately, 0.07% of header values are '1', a value that will be ignored while the developer likely wants to request the use of dedicated resources.
+A boolean is <a hreflang="en" href="https://httpwg.org/specs/rfc8941.html#boolean">defined in the html spec</a> as a string starting with a question mark. This means that values like '1' and '0' are invalid for this header. Luckily the use of these values is limited. The '?1' value is the only valid value for the `Origin-Agent-Cluster` and it's used to communicate that the developer wants to opt into the feature, all other values are ignored. On mobile, more than 90% of headers have the valid '?1' value. Unfortunately, 0.07% of header values are '1', a value that will be ignored while the developer likely wants to request the use of dedicated resources.
 
 #### use of `document.domain`
 
-By using [`document.domain`](https://developer.mozilla.org/en-US/docs/Web/API/Document/domain), a developer was able to read the domain portion of the current document, as well as set a new domain (only superdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
+By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain), a developer was able to read the domain portion of the current document, as well as set a new domain (only superdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
 
 <figure>
   <table>
@@ -915,7 +915,7 @@ We see that less than 0.5% of websites on desktop and mobile are using the `docu
 
 ### Preventing clickjacking with CSP and X-Frame-Options
 
-As previously mentioned, a Content Security Policy (CSP) can be effective against [Clickjacking](https://owasp.org/www-community/attacks/Clickjacking) attacks through the use of the `frame-ancestors` directive. Some of the top CSP header values include a `frame-ancestors` directive with a `'none'` or `'self'` value, thereby blocking embedding of the page overall or restricting the embeddings to pages of the same origin.
+As previously mentioned, a Content Security Policy (CSP) can be effective against <a hreflang="en" href="https://owasp.org/www-community/attacks/Clickjacking">Clickjacking</a> attacks through the use of the `frame-ancestors` directive. Some of the top CSP header values include a `frame-ancestors` directive with a `'none'` or `'self'` value, thereby blocking embedding of the page overall or restricting the embeddings to pages of the same origin.
 
 Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin ('SAMEORIGIN').
 
@@ -963,7 +963,7 @@ We find that there are barely any changes between the data this year and in 2024
 
 ### Preventing attacks using Cross-Origin policies
 
-Because of the emergence of microarchitectural side-channel attacks like [Spectre and Meltdown](https://spectreattack.com/) and [Cross-Site Leaks (XS-Leaks)](https://xsleaks.dev/), our security perspective relating to use and embeddings of cross-origin resources has changed. In response to these upcoming threats, new mechanisms to control the rendering of resources on other websites and thereby protect against these new threats were created.
+Because of the emergence of microarchitectural side-channel attacks like <a hreflang="en" href="https://spectreattack.com/">Spectre and Meltdown</a> and <a hreflang="en" href="https://xsleaks.dev/">Cross-Site Leaks (XS-Leaks)</a>, our security perspective relating to use and embeddings of cross-origin resources has changed. In response to these upcoming threats, new mechanisms to control the rendering of resources on other websites and thereby protect against these new threats were created.
 
 Multiple new security headers, known as the cross-origin policies, were created as a response to these challenges: Cross-Origin-Resource-Policy (CORP), Cross-Origin-Embedder-Policy (COEP) and Cross-Origin-Opener-Policy (COOP). These headers provide mechanisms that protect against side-channel attacks by allowing developers to control how their resources are embedded across different origins. We observe that the adoption of all of these headers keeps growing year after year, with both CORP and COOP reaching over 2% adoption this year.
 
@@ -1092,7 +1092,7 @@ The use of the strictest `same-origin` value for COOP has continued to rise from
 
 #### Cross-Origin Isolation
 
-In order to access certain sensitive APIs like `SharedArrayBuffer` or `Performance.now` a site has to be [cross-origin isolated](https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated). In order to be cross-origin isolated, the developer has to set a COEP of `same-origin` and CORP of either `require-corp` or `credentialless`. The browser will then allow access to these APIs again. This strengthens the protection against XS Leaks. These days, developers can opt into cross-origin isolation using the [document isolation policy](https://wicg.github.io/document-isolation-policy/) as well.
+In order to access certain sensitive APIs like `SharedArrayBuffer` or `Performance.now` a site has to be [cross-origin isolated](https://developer.mozilla.org/docs/Web/API/Window/crossOriginIsolated). In order to be cross-origin isolated, the developer has to set a COEP of `same-origin` and CORP of either `require-corp` or `credentialless`. The browser will then allow access to these APIs again. This strengthens the protection against XS Leaks. These days, developers can opt into cross-origin isolation using the <a hreflang="en" href="https://wicg.github.io/document-isolation-policy/">document isolation policy</a> as well.
 
 ### Preventing attacks using Clear-Site-Data
 
@@ -1205,7 +1205,7 @@ Other security mechanisms can not be configured through the use of the `<meta>` 
 
 ### Web Cryptography API
 
-The [Web Cryptography API](https://www.w3.org/TR/WebCryptoAPI/) is a JavaScript API that provides an interface for performing basic cryptographic operations. Examples of such operations are the creation of random numbers, hashing, signing content, verifying signatures and of course encryption and decryption.
+The <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography API</a> is a JavaScript API that provides an interface for performing basic cryptographic operations. Examples of such operations are the creation of random numbers, hashing, signing content, verifying signatures and of course encryption and decryption.
 
 <figure>
   <table>
@@ -1610,7 +1610,7 @@ In addition to these misconfigurations, we also observed several values with syn
 
 ### Timing-Allow-Origin Wildcards
 
-The [`Timing-Allow-Origin` (TAO)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin) response header allows a server to specify a list of origins that can access values of attributes obtained through features of the [Resource Timing API](https://developer.mozilla.org/en-US/docs/Web/API/Performance_API/Resource_timing). Any origin listed in this header can thus access detailed timestamps relating to the connection to the server, such as the time at the start of the TCP connection, start of the request, and start of the response. Granting origins this access should be done with care, as this opens up the possibility for the listed origins to execute timing attacks or other cross-site attacks against the website.
+The [`Timing-Allow-Origin` (TAO)](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Timing-Allow-Origin) response header allows a server to specify a list of origins that can access values of attributes obtained through features of the [Resource Timing API](https://developer.mozilla.org/docs/Web/API/Performance_API/Resource_timing). Any origin listed in this header can thus access detailed timestamps relating to the connection to the server, such as the time at the start of the TCP connection, start of the request, and start of the response. Granting origins this access should be done with care, as this opens up the possibility for the listed origins to execute timing attacks or other cross-site attacks against the website.
 
 In a case when CORS is configured, many of these types of timing values (including those listed above) are returned as 0 to prevent cross-origin leaks. By listing an origin in the `Timing-Allow-Origin` header, these values retain their original value and are no longer zeroed out.
 
@@ -1711,7 +1711,7 @@ If we look at the most common values within the `Server` and `X-Powered-By` valu
 
 ### Missing suppression of `Server-Timing` header
 
-The Server-Timing header is a response header defined in a [W3C Editor's Draft](https://w3c.github.io/server-timing/) which can be used to communicate server performance metrics. Developers can send metrics containing zero or more properties. One of the specified properties is the `dur` property, which can be used to communicate millisecond-accurate timings that contain the duration of specific actions on the server.
+The Server-Timing header is a response header defined in a <a hreflang="en" href="https://w3c.github.io/server-timing/">W3C Editor's Draft</a> which can be used to communicate server performance metrics. Developers can send metrics containing zero or more properties. One of the specified properties is the `dur` property, which can be used to communicate millisecond-accurate timings that contain the duration of specific actions on the server.
 
 {{ figure_markup(
   image="server-timing-header-usage.png",
@@ -1740,11 +1740,11 @@ Because the information included in the `server-timing` header can be sensitive,
 
 ## Well-known URIs
 
-Well-known URIs provide a standardized mechanism for designating specific locations for site-wide metadata and services. Defined by [RFC 8615](https://www.rfc-editor.org/rfc/pdfrfc/rfc8615.txt.pdf), a well-known URI is identified by a path component that begins with the prefix `/.well-known/`. This allows clients to discover specific resources without needing prior knowledge about a site's URL scheme.
+Well-known URIs provide a standardized mechanism for designating specific locations for site-wide metadata and services. Defined by <a hreflang="en" href="https://www.rfc-editor.org/rfc/pdfrfc/rfc8615.txt.pdf">RFC 8615</a>, a well-known URI is identified by a path component that begins with the prefix `/.well-known/`. This allows clients to discover specific resources without needing prior knowledge about a site's URL scheme.
 
 ### security.txt
 
-The well-known [`security.txt`](https://www.rfc-editor.org/rfc/rfc8615.txt) file is a standardized file format that websites use to communicate vulnerability reporting information. White hat hackers and penetration testers can use this file to find contact details, PGP keys, policies, and other information for responsible disclosure.
+The well-known <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8615.txt">`security.txt`</a> file is a standardized file format that websites use to communicate vulnerability reporting information. White hat hackers and penetration testers can use this file to find contact details, PGP keys, policies, and other information for responsible disclosure.
 
 {{ figure_markup(
   image="security-text-property-usage.png",
@@ -1760,11 +1760,11 @@ Adoption has increased to 1.82% of desktop and 1.72% of mobile websites, both up
 
 Among sites implementing security.txt, contact information remains nearly universal at 95% (desktop) and 94% (mobile), up from 92% and 89% in 2024, respectively. Interestingly, 75% now define an expiry date, a significant jump from 51% for desktop and 48% for mobile websites in 2024\. Preferred language is specified by 70-72% of implementations, while policy (which defines vulnerability reporting procedures) appears in only 37% desktop and 34% mobile files, down from 39% in 2024\. However, the absolute number of security.txt files defining a policy has risen by two thirds.
 
-This analysis shows that at least 25% of security.txt files are not fully valid, because including an expiry date along with contact information is required, as stipulated in [RFC 9116](https://www.rfc-editor.org/rfc/rfc9116.txt).
+This analysis shows that at least 25% of security.txt files are not fully valid, because including an expiry date along with contact information is required, as stipulated in <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc9116.txt">RFC 9116</a>.
 
 ### change-password
 
-The [change-password well-know URI](https://w3c.github.io/webappsec-change-password-url/) is a W3C specification draft from 2021, which has not been updated since. The purpose of the URI is for users and external resources to quickly find the correct location at which they can change their passwords for the specific site.
+The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/">change-password well-know URI</a> is a W3C specification draft from 2021, which has not been updated since. The purpose of the URI is for users and external resources to quickly find the correct location at which they can change their passwords for the specific site.
 
 {{ figure_markup(
   image="change-password-usage.png",
@@ -1780,7 +1780,7 @@ We see a very minor rise to 0.30% in desktop sites (up from .027%) and no change
 
 ### Detecting status code reliability
 
-The [specification](https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html) draft to check on the reliability of a website's HTTP response status code also remains unchanged since 2021\. The purpose of this specific well-known endpoint is that it should never exist and thus the response status code should never be an [ok status](https://fetch.spec.whatwg.org/#ok-status). If a redirect occurs after which the site responds with an ok status, this would be considered as incorrect behavior.
+The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html">specification</a> draft to check on the reliability of a website's HTTP response status code also remains unchanged since 2021\. The purpose of this specific well-known endpoint is that it should never exist and thus the response status code should never be an <a hreflang="en" href="https://fetch.spec.whatwg.org/#ok-status">ok status</a>. If a redirect occurs after which the site responds with an ok status, this would be considered as incorrect behavior.
 
 {{ figure_markup(
   image="well-known-responses.png",
