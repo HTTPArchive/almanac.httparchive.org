@@ -87,4 +87,47 @@ Secondary pages show a significant advantage over home pages in achieving good C
 While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects such as layout shift, loading performance, and interactivity is necessary to fully understand the user experience, which is what we will cover next.
 
 
+## Visual Stability
+
+Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users. 
+
+In 2025, CLS adoption and stability continue to trend positively on both desktop and mobile devices. This section focuses on recent years particularly 2023 through 2025 highlighting progress, device differences, and shifts over the last year.
+
+### Cumulative Layout Shift (CLS)
+
+Cumulative Layout Shift (CLS) measures unexpected layout movement during page load and interaction, with higher scores indicating more disruptive visual shifts. CLS scores are categorized into three thresholds: Good (≤ 0.1), Needs Improvement (> 0.1 and ≤ 0.25), and Poor (> 0.25), providing a standardized way to evaluate and compare visual stability across websites.
+
+## TODO Image
+
+In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative Layout Shift (CLS) score. Desktop pages show a higher share of Needs Improvement CLS (17%) compared to mobile (10%), while the proportion of pages with Poor CLS is similar across devices at around 9-10%. This shows that most pages are close to meeting the CLS threshold, with fewer pages experiencing severe layout instability. 
+
+Compared to 2024, the share of desktop pages with Poor CLS decreased by 1%, with a similar increase in pages classified as Needs Improvement.
+
+## TODO Image
+
+Looking at the past years, the percentage of websites meeting the Good CLS threshold has increased each year for both desktop and mobile. Desktop CLS improved gradually from 62% in 2021 to 72% in 2025, while mobile saw stronger gains, reaching 81% over the same period.
+
+## TODO Image
+
+Pages beyond the homepage show slightly better visual stability than homepages across both desktop and mobile devices. In 2025, 73% of desktop secondary pages achieve Good CLS compared to 71% of desktop homepages, while on mobile 81% of secondary pages meet the Good CLS threshold versus 79% of mobile homepages. This suggests that homepages, which often contain more dynamic content such as hero media, banners, and promotional elements, remain more prone to layout shifts than secondary pages.
+
+
+## TODO Image
+
+Over time, Good CLS increases steadily on both device types, with mobile consistently outperforming desktop. Despite minor month-to-month fluctuations, both curves trend upward, without much sharp inflection points, suggesting sustained improvements rather than abrupt shifts.
+
+### Back/forward cache (bfcache)
+
+[The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser’s back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page’s state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
+
+However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads. While BFCache behavior is handled by the browser, developers <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">can assess eligibility</a> using tools such as Chrome DevTools.
+
+Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache). 
+
+Browsers recommend avoiding unload in favor of alternatives such as pagehide and pageshow, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
+
+### TODO Image
+
+Unload handler usage decreases consistently as site rank increases. Among higher-traffic websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages in the top 1,000 sites, declining steadily across lower-ranked sites to 11% on desktop and 10% on mobile when considering all pages. At every rank, desktop pages exhibit higher unload handler usage than mobile, indicating that unload handlers remain more prevalent on larger, more complex sites than across the long tail of the web.
+
 
