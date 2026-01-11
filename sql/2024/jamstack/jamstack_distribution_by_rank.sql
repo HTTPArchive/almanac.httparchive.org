@@ -9,7 +9,7 @@ CREATE TEMPORARY FUNCTION GET_MAX_AGE(response_headers ARRAY<STRUCT<name STRING,
           UNNEST(response_headers) AS header
         WHERE
           LOWER(header.name) = 'cache-control'
-        LIMIT 1
+        LIMIT 1  -- noqa: AM09
       ),
       r'max-age=(\d+)'
     ) AS INT64

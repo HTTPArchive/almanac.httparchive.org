@@ -85,7 +85,7 @@
         </aside>
 
         <p>
-          For example, to understand the median number of bytes of JavaScript per desktop and mobile page, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/2024/javascript/bytes_2024.sql">bytes_2024.sql</a>:
+          For example, to understand the number of pages with accessible color contrast, see <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/sql/{{ year }}/accessibility/color_contrast.sql">color_contrast.sql</a>:
         </p>
 
         <div class="code-block floating-card">
@@ -315,17 +315,17 @@
           </tr>
           <tr>
             <td>Download throughput</td>
-            <td>1.6 Mbps</td>
+            <td>10.0 Mbps</td>
             <td>1.6 Mbps</td>
           </tr>
           <tr>
             <td>Upload throughput</td>
-            <td>0.768 Mbps</td>
-            <td>0.768 Mbps</td>
+            <td>10.0 Mbps</td>
+            <td>0.75 Mbps</td>
           </tr>
           <tr>
             <td>RTT</td>
-            <td>150 ms</td>
+            <td>40 ms</td>
             <td>150 ms</td>
           </tr>
         </tbody>
@@ -437,7 +437,7 @@
       <h3 id="planning"><a href="#planning" class="anchor-link">Planning</a></h3>
 
       <p>
-        The {{ year }} Web Almanac kicked off in March {{ year }} with a <a href="https://x.com/nrllah/status/1764588403792781823">call for contributors</a>. We initialized the project with the same chapters from previous years and the community suggested additional topics that became one new chapters this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cookies') }}">Cookies</a>.
+        The {{ year }} Web Almanac kicked off in March {{ year }} with a <a href="https://x.com/nrllah/status/1764588403792781823">call for contributors</a>. We initialized the project with the same chapters from previous years and the community suggested additional topics, one of which became a new chapter this year: <a href="{{ url_for('chapter', year=year, lang=lang, chapter='cookies') }}">Cookies</a>.
       </p>
 
       <p>

@@ -32,7 +32,7 @@ FROM (
     COUNTIF(animatesVariableFonts(css)) AS animates_variable_fonts
   FROM
     `httparchive.almanac.parsed_css`
-  WHERE date = '2022-07-01'
+  WHERE date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page

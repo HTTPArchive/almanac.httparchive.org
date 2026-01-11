@@ -11,7 +11,7 @@ FROM (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     type = 'css'
   GROUP BY
     client
@@ -23,7 +23,7 @@ JOIN (
   FROM
     `httparchive.almanac.parsed_css`
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     url != 'inline'
   GROUP BY
     client

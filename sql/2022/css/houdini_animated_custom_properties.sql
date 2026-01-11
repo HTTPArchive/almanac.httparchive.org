@@ -37,6 +37,6 @@ FROM
   `httparchive.almanac.parsed_css`,
   UNNEST(getAnimatedCustomProperties(css)) AS custom_property
 WHERE
-  date = '2022-07-01'
+  date = '2022-07-01' -- noqa: CV09
 ORDER BY
   pct DESC

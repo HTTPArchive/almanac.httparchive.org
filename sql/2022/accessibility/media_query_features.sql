@@ -50,7 +50,7 @@ FROM (
   LEFT JOIN
     UNNEST(getMediaQueryFeatures(css)) AS feature
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     feature IS NOT NULL
 )
 JOIN (

@@ -10,7 +10,7 @@ FROM
   UNNEST(JSON_VALUE_ARRAY(DataClasses)) AS data_class
 WHERE
   date = '2022-06-01' AND
-  BreachDate BETWEEN '2021-08-01' AND '2022-06-30'
+  BreachDate BETWEEN '2021-08-01' AND '2022-06-30' -- noqa: CV09
 GROUP BY
   data_class
 ORDER BY

@@ -40,7 +40,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getTransformStylePreserve3d(css)) AS transform_style_preserve_3d
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
   GROUP BY
     client,
     page

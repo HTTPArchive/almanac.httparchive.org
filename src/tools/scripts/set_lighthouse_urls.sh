@@ -50,7 +50,7 @@ http://127.0.0.1:8080/en/2022/?nowebmentions
 http://127.0.0.1:8080/en/2022/javascript?nowebmentions
 http://127.0.0.1:8080/en/2024/?nowebmentions
 http://127.0.0.1:8080/en/2024/accessibility?nowebmentions
-END
+http://127.0.0.1:8080/en/2025/?nowebmentions
 END
 )
 

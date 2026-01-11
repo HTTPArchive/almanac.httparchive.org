@@ -58,7 +58,7 @@ families AS (
     `httparchive.all.parsed_css`,
     UNNEST(FAMILIES(css)) AS family
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-07-01' AND -- noqa: CV09
     is_root_page
   GROUP BY
     client,
@@ -72,7 +72,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date = '2024-07-01' AND
+    date = '2024-07-01' AND -- noqa: CV09
     is_root_page
   GROUP BY
     client
