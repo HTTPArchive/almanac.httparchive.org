@@ -41,13 +41,13 @@ First, we establish some definitions and terminology that are used throughout ou
 
 In this chapter, like previous years,  we use the term site to depict the registerable part of a given domain which is often referred to as *extended Top Level Domain plus one* (eTLD+1). For example, given the URL `https://www.bar.com/` the eTLD+1 is `bar.com` and for the URL `https://foo.co.uk` the eTLD+1 is `foo.co.uk`. By page (or web page), we mean a unique URL or, more specifically, the document (for example HTML or JavaScript) located at the particular URL.
 
-### What is a Third Party?
+### What is a third party?
 
 We stick to the definition of a third party used in previous editions of the Web Almanac to allow for comparison with earlier versions.
 
-A third party is an entity different from the site owner (also known as the first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site (i.e., the third party) rather than the one originally visited by the user. Assume that the user visits example.com (the first party) and example.com includes silly cat images from `awesome-cats.edu` (for example using an `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
+A _third party_ is an entity different from the site owner (also known as the first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site rather than the one originally visited by the user. Assume that the user visits `example.com` (the first party) and `example.com` includes silly cat images from `awesome-cats.edu` (for example using an `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
 
-For our analysis, only third parties originating from a domain whose resources can be found on at least 5 unique pages in the HTTP Archive dataset were included.
+For our analysis, only third parties originating from a domain whose resources can be found on at least five unique pages in the HTTP Archive dataset were included.
 
 When third-party content is directly served from a first party domain, it is counted as first party content. For example, self-hosted analytics scripts, CSS, or fonts are counted as first party content. Similarly, first-party content served from a third-party domain is counted as third-party content. Some third parties serve content from different subdomains. However, regardless of the number of subdomains, they are counted as a single third party.
 
@@ -93,7 +93,7 @@ We use the [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/
   )
 }}
 
-Compared to the previous year, we observe a slight decrease in the percentage of pages that use one or more third parties across websites. However, despite this decrease, the percentage of pages with one or more third parties remains greater or equal to 90%.
+Compared to [the previous year](../2024/third-parties#prevalence), we observe a slight decrease in the percentage of pages that use one or more third parties across websites. However, despite this decrease, the percentage of pages with one or more third parties remains greater or equal to 90%.
 
 {{ figure_markup(
   image="num-3p-by-rank.png",
@@ -107,7 +107,7 @@ Compared to the previous year, we observe a slight decrease in the percentage of
 
 Compared to the previous year, we observe a significant decrease in the median number of third-party domains across all website ranks, with a particularly large decrease among low-ranked websites.
 
-This decline may be due to several factors. First, third parties are increasingly obscured through CNAME cloaking and server-side tracking, which can reduce their visibility in client-side measurements. Second, HTTP Archive crawlers do not interact with web pages or scroll down the page, which may prevent some third parties from loading properly due to lazy loading. As a result, fewer third-party requests may be observed.
+This decline may be due to several factors. First, third parties are increasingly obscured through `CNAME` cloaking and server-side tracking, which can reduce their visibility in client-side measurements. Second, HTTP Archive crawlers do not interact with web pages or scroll down the page, which may prevent some third parties from loading properly due to lazy loading. As a result, fewer third-party requests may be observed.
 
 We also observe that desktop pages generally include more third parties than mobile pages.
 
@@ -123,7 +123,7 @@ We also observe that desktop pages generally include more third parties than mob
 
 Low-ranked websites load more third-party requests. The top 1,000 have a median of 129 requests on desktop and 106 on mobile, compared to 83 on desktop and 79 on mobile across all sites.
 
-Year-over-year, third-party requests have increased across all ranks. The top 1,000 sites show an increase of 15 requests on desktop and 15 on mobile compared to 2024, while the broader dataset increased by 5 requests on desktop and 5 on mobile. This upward trend occurs despite the decrease in the number of unique third-party domains we observed earlier, suggesting that individual third parties are sending more requests per page.
+Year-over-year, third-party requests have increased across all ranks. The top 1,000 sites show an increase of 15 requests on desktop and 15 on mobile [compared to 2024](../2024/third-parties#fig-3), while the broader dataset increased by five requests on desktop and five on mobile. This upward trend occurs despite the decrease in the number of unique third-party domains we observed earlier, suggesting that individual third parties are sending more requests per page.
 
 {{ figure_markup(
   image="3p-req-categories-by-rank.png",
@@ -135,7 +135,7 @@ Year-over-year, third-party requests have increased across all ranks. The top 1,
   )
 }}
 
-The top categories include ad, analytics and cdn categories.
+The top categories include `ad`, `analytics` and `cdn` categories.
 
 {{ figure_markup(
   image="3p-req-types-by-rank.png",
@@ -147,7 +147,7 @@ The top categories include ad, analytics and cdn categories.
   )
 }}
 
-The three most common third-party request types are script, image, and other.
+The three most common third-party request types are `script`, `image`, and `other`.
 
 {{ figure_markup(
   image="top-3p-by-num-pages.png",
@@ -165,8 +165,7 @@ The top 10 third-party domains are dominated by Google-owned services, including
 
 ## Consent propagation among third parties
 
-In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB’s three consent standards: the Transparency and Consent Framework (TCF), the CCPA Framework, and the Global Privacy Platform (GPP).
-
+In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB’s three consent standards: the <a hrefland="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework (TCF)</a>, the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Framework</a>, and the <a hrefland="en" href="https://iabtechlab.com/gpp/">Global Privacy Protocol (GPP)</a>.
 
 These frameworks define how consent information is encoded and shared between websites and third parties. We begin by identifying which consent standards are most prevalent among the third parties observed in our dataset. To determine which framework a third party uses, we rely on the presence of specific parameters in the request URLs. Details of the different standards are below:
 
@@ -177,7 +176,6 @@ These frameworks define how consent information is encoded and shared between we
 - **USP Standard and non-USP Standard**: We identify use of the USP Standard by checking whether a request transmits a `us_privacy` parameter, as defined by the IAB CCPA Framework. We also identify use of the non-standard USP Standard by detecting consent strings transmitted via non-standard parameters identified in the <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">prior work</a>.
 
 We analyze consent signal prevalence across website ranks, third-party categories, and the most frequently observed consent-receiving third parties.
-
 
 ### Prevalence of consent signals across different ranks
 
@@ -205,7 +203,7 @@ We find that TCF Standard is the dominant consent standard, particularly among l
   )
 }}
 
-We observe different consent standard preferences across different third-party categories. For example, Social services show the highest TCF adoption, while advertising vendors employ a more balanced mix of GPP, USP Standard, and smaller TCF shares. Furthermore, Analytics vendors predominantly adopt GPP. 
+We observe different consent standard preferences across different third-party categories. For example, Social services show the highest TCF adoption, while advertising vendors employ a more balanced mix of GPP, USP Standard, and smaller TCF shares. Furthermore, Analytics vendors predominantly adopt GPP.
 
 ### Top third parties receiving consent
 
@@ -223,7 +221,7 @@ Among top-ranked websites, `pubmatic.com` receives the highest volume of consent
 
 ## Inclusion
 
-Recall from our earlier example that example.com (a first party) can include an image from awesome-cats.edu (a third party via an `<img>` tag). This inclusion of an image would be considered direct inclusion. However, if the image was loaded by a third-party script on the site via the XMLHttpRequest, then the inclusion of the image would be considered indirect inclusion. The indirectly included third parties can further include additional third parties. For example, a third-party script that is directly included on the site may further include another third-party script. In this chapter, we do basic analysis of the depths of inclusion chains of the third parties.
+Recall from our earlier example that `example.com` (a first party) can include an image from `awesome-cats.edu` (a third party via an `<img>` tag). This inclusion of an image would be considered direct inclusion. However, if the image was loaded by a third-party script on the site via the `XMLHttpRequest`, then the inclusion of the image would be considered indirect inclusion. The indirectly included third parties can further include additional third parties. For example, a third-party script that is directly included on the site may further include another third-party script. In this chapter, we do basic analysis of the depths of inclusion chains of the third parties.
 
 {{ figure_markup(
   image="median-depth-tp-inclusion-chains.png",
@@ -243,4 +241,4 @@ Our findings show the ubiquitous and increasingly concentrated nature of third p
 
 In terms of consent standards, TCF is the dominant consent standard across all website ranks. Among individual third parties, `pubmatic.com`, `adservice.google.com` and other ad tech domains receive the highest volume of consent signals.
 
-Finally, the increasing use of obfuscation techniques such as CNAME cloaking and server-side tracking reduces visibility of third parties in client-side measurements, suggesting our findings represent a lower bound on actual prevalence. 
+Finally, the increasing use of obfuscation techniques such as CNAME cloaking and server-side tracking reduces visibility of third parties in client-side measurements, suggesting our findings represent a lower bound on actual prevalence.
