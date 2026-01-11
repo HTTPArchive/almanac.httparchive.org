@@ -47,11 +47,11 @@ Not all bytes are created equally. In this chapter we will explore page weight b
 
 Page weight is a direct proxy for performance and accessibility. A "heavy" page creates several negative ripple effects:
 
-1. The Performance Gap: Larger payloads can require more CPU cycles and use more device memory to parse and render, often leading to sluggish experiences on low-end devices, regardless of connection speed.
-2. The Economic Toll: In many parts of the world, data is a metered commodity. A 5 MB page isn't just a slow experience; it is an exclusive one. If a user cannot afford the data to load your page, your site is, by definition, inaccessible to them.
-3. The Accessibility Barrier: If a page is "heavy," it doesn't just load slowly—it becomes physically and cognitively harder to use. Excessive page weight creates significant inequities, heavily penalizing users who rely on less powerful devices or expensive, slow connections with limited data caps. Refer to the [Accessibility](./accessibility) chapter to learn more about how page weight is a silent but significant barrier to entry for millions of users with disabilities.
-4. The Environmental Impact: Every megabyte transferred requires energy—from data centers to cooling systems to the device in the user's hand. As the web grows, so does its carbon footprint. You can find out more about how page weight impacts carbon emissions in the [Sustainability](./sustainability) chapter.
-5. Speed & SEO: Heavier pages take longer to load, especially on slower connections. Google uses page speed (via Core Web Vitals) in their core algorithm, meaning bloated pages can rank lower in search results.
+1. **The Performance Gap:** Larger payloads can require more CPU cycles and use more device memory to parse and render, often leading to sluggish experiences on low-end devices, regardless of connection speed.
+2. **The Economic Toll:** In many parts of the world, data is a metered commodity. A 5 MB page isn't just a slow experience; it is an exclusive one. If a user cannot afford the data to load your page, your site is, by definition, inaccessible to them.
+3. **The Accessibility Barrier:** If a page is "heavy," it doesn't just load slowly—it becomes physically and cognitively harder to use. Excessive page weight creates significant inequities, heavily penalizing users who rely on less powerful devices or expensive, slow connections with limited data caps. Refer to the [Accessibility](./accessibility) chapter to learn more about how page weight is a silent but significant barrier to entry for millions of users with disabilities.
+4. **The Environmental Impact:** Every megabyte transferred requires energy—from data centers to cooling systems to the device in the user's hand. As the web grows, so does its carbon footprint. You can find out more about how page weight impacts carbon emissions in the [Sustainability](./sustainability) chapter.
+5. **Speed & SEO:** Heavier pages take longer to load, especially on slower connections. Google uses page speed (via Core Web Vitals) in their core algorithm, meaning bloated pages can rank lower in search results.
 
 The weight effects can be divided into three main categories: storage, transmission, and rendering.
 
@@ -59,25 +59,25 @@ The weight effects can be divided into three main categories: storage, transmiss
 
 Storage refers to how assets (images, scripts, HTML) sit on a web server or CDN. At this stage, page weight is about file size on disk.
 
-* Compression at Rest: Developers often store files in highly compressed formats (like WebP for images or Brotli-compressed text). A 1 MB file can be stored as 300 KB.
-* The Database Bottleneck: For dynamic sites, the "weight" starts with database queries. If a server has to retrieve 2 MB of raw data from a database to generate one page, the initial response time (TTFB) increases before a single byte is even sent.
-* The Cost: Inefficient storage doesn't just affect speed; it increases hosting costs and the carbon footprint of the data center.
+* **Compression at Rest:** Developers often store files in highly compressed formats (like WebP for images or Brotli-compressed text). A 1 MB file can be stored as 300 KB.
+* **The Database Bottleneck:** For dynamic sites, the "weight" starts with database queries. If a server has to retrieve 2 MB of raw data from a database to generate one page, the initial response time (TTFB) increases before a single byte is even sent.
+* **The Cost:** Inefficient storage doesn't just affect speed; it increases hosting costs and the carbon footprint of the data center.
 
 ### Transmission
 
 Transmission is the process of moving those stored files across the internet. This is where network constraints turn page weight into a performance barrier.
 
-* Transfer Size vs. Actual Size: Thanks to "on-the-fly" compression (like Gzip), the number of bytes sent over the wire is often much smaller than the original file size.
-* Latency and Round Trips: It’s not just about how much data is sent, but how many files. Each separate file requires a "round trip" to the server. A page with 50 small images (totaling 1 MB) can actually feel slower than a page with one large 2 MB image because of the transmission overhead of 50 separate requests.
-* The Bottleneck: On mobile 4G/5G, signal interference can cause "packet loss." The heavier the page, the more likely a packet will drop, forcing the browser to ask for it again and causing a visible hang.
+* **Transfer Size vs. Actual Size:** Thanks to "on-the-fly" compression (like Gzip), the number of bytes sent over the wire is often much smaller than the original file size.
+* **Latency and Round Trips:** It’s not just about how much data is sent, but how many files. Each separate file requires a "round trip" to the server. A page with 50 small images (totaling 1 MB) can actually feel slower than a page with one large 2 MB image because of the transmission overhead of 50 separate requests.
+* **The Bottleneck:** On mobile 4G/5G, signal interference can cause "packet loss." The heavier the page, the more likely a packet will drop, forcing the browser to ask for it again and causing a visible hang.
 
 ### Rendering
 
 Rendering is what happens once the data arrives. This is the most misunderstood part of page weight: Once a file is downloaded, it must be "unpacked" and processed by the device.
 
-* Memory Inflation: An image might only take up 200 KB during transmission, but once the browser "renders" it, it must be decoded into raw pixels in the device's RAM. That 200 KB file can easily take up 5 MB of memory.
-* The JavaScript Tax: This is the "heaviest" part of rendering. 100 KB of an image is just pixels, but 100 KB of JavaScript is work. The CPU must parse, compile, and execute that code. On a low-end smartphone, this "weight" can freeze the screen for several seconds.
-* DOM Complexity: Every HTML tag adds a "node" to the browser's memory. A page with 5,000 nodes (a "heavy" DOM) will make scrolling feel laggy, regardless of how fast the internet connection is.
+* **Memory Inflation:** An image might only take up 200 KB during transmission, but once the browser "renders" it, it must be decoded into raw pixels in the device's RAM. That 200 KB file can easily take up 5 MB of memory.
+* **The JavaScript Tax:** This is the "heaviest" part of rendering. 100 KB of an image is just pixels, but 100 KB of JavaScript is work. The CPU must parse, compile, and execute that code. On a low-end smartphone, this "weight" can freeze the screen for several seconds.
+* **DOM Complexity:** Every HTML tag adds a "node" to the browser's memory. A page with 5,000 nodes (a "heavy" DOM) will make scrolling feel laggy, regardless of how fast the internet connection is.
 
 Websites may be changing their rendering strategies, sometimes prompted by rethinking how websites are accessed and consumed by the growing AI chatbots and other large language model tools. Not all of these changes are aimed at AI crawler accessibility. Some testing has been done to identify the technical requirements for AI crawler accessibility, as these may vary between crawlers. We do know that all key information should be present in the initial raw HTML, since <a hreflang="en" href="https://vercel.com/blog/the-rise-of-the-ai-crawler">AI crawlers do not render JavaScript</a>.
 
@@ -276,9 +276,9 @@ Videos, by their very nature, tend to be the largest of files. They also have th
 
 Image bytes refer to the binary data required to render visual elements such as photographs, icons, and illustrations. Unlike text-based files (like HTML), which are highly efficient and easily compressed, image data is inherently dense. The "weight" of these bytes is determined by three primary factors:
 
-1. Resolution: The total pixel count of the asset.
-2. Encoding: The mathematical method used to store the data (e.g., JPEG, PNG, or modern formats like WebP and AVIF).
-3. Compression: The degree to which redundant data is removed to shrink the file size, often at the cost of visual fidelity.
+1. **Resolution:** The total pixel count of the asset.
+2. **Encoding:** The mathematical method used to store the data (e.g., JPEG, PNG, or modern formats like WebP and AVIF).
+3. **Compression:** The degree to which redundant data is removed to shrink the file size, often at the cost of visual fidelity.
 
 The accumulation of image bytes creates a "heavy" page, which directly correlates with increased latency and slower Largest Contentful Paint (LCP) scores. For users on mobile devices or limited-bandwidth connections, high image byte counts can lead to prohibitive load times and increased data costs.
 
