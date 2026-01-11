@@ -60,7 +60,8 @@
     "name": "Abhishek Tiwari ",
     "teams": {
       "2025": [
-        "committee"
+        "committee",
+        "editors"
       ]
     }
   },
@@ -862,6 +863,9 @@
         "authors"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -1761,6 +1765,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "authors",
+        "reviewers"
       ]
     },
     "twitter": "GJFR_",
@@ -2221,6 +2229,9 @@
     "teams": {
       "2024": [
         "analysts"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "jannis_r",
@@ -4936,6 +4947,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "website": "https://vikvanderlinden.be/",
@@ -5212,5 +5226,41 @@
       ]
     },
     "twitter": "_cybai"
+  },
+  "securient": {
+    "github": "securient",
+    "name": "securient",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
+  },
+  "anirudhduggal": {
+    "github": "anirudhduggal",
+    "name": "anirudhduggal",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
+  },
+  "martinakraus": {
+    "github": "martinakraus",
+    "name": "martinakraus",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
+  },
+  "vsdaan": {
+    "github": "vsdaan",
+    "name": "vsdaan",
+    "teams": {
+      "2025": [
+        "analysts"
+      ]
+    }
   }
 }

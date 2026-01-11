@@ -4,8 +4,8 @@ title: Security
 description: Security chapter of the 2025 Web Almanac covering Transport Layer Security, content inclusion (CSP, SRI, Permissions Policy), web defense mechanisms (tackling XSS, XS-Leaks), drivers of security mechanism adoptions and security misconfigurations.
 hero_alt: Hero image of Web Almanac characters padlocking a web page, while other Web Almanac characters subdue a masked thief who has a set of bolt cutters.
 authors: [vikvanderlinden, GJFR]
-reviewers: [GJFR, JannisBush, clarkio]
-analysts: []
+reviewers: [anirudhduggal, martinakraus, GJFR, clarkio, JannisBush, securient]
+analysts: [vsdaan]
 editors: [abhishektiwari]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1TLYRfNRbFu4fWwWvG4zhcRXkQ8-aZTxszgsEWjYATpA/edit
