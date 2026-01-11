@@ -3,7 +3,7 @@
 title: Page Weight
 description: Page Weight chapter of the 2025 Web Almanac covering why page weight matters, bandwidth, complex pages, page weight over time, page requests, and file formats.
 hero_alt: Hero image of Web Almanac characters using a set of scales to weigh a web page against variuos boxes labelled with various different kilobytes.
-authors: [rickb1102, fellowhuman1101]
+authors: [rickb110, fellowhuman1101]
 reviewers: [dwsmart]
 analysts: [dwsmart]
 editors: [montsec]
