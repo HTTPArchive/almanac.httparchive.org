@@ -97,20 +97,43 @@ In 2025, CLS adoption and stability continue to trend positively on both desktop
 
 Cumulative Layout Shift (CLS) measures unexpected layout movement during page load and interaction, with higher scores indicating more disruptive visual shifts. CLS scores are categorized into three thresholds: Good (≤ 0.1), Needs Improvement (> 0.1 and ≤ 0.25), and Poor (> 0.25), providing a standardized way to evaluate and compare visual stability across websites.
 
-## TODO Image
+{{ figure_markup(
+  image="good-cls-by-device-2025.png",
+  caption="CLS performance by device for 2025",
+  description="The chart shows the distribution of Cumulative Layout Shift (CLS) performance by device in 2025, categorized as Good, Needs Improvement, and Poor. On desktop, 72% of pages achieve a Good CLS score, 17% fall into Needs Improvement, and 10% are classified as Poor. Mobile pages perform better overall, with 81% achieving Good CLS, 10% in Needs Improvement, and 9% in the Poor category.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=79158134&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="TODO"
+  )
+}}
 
 In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative Layout Shift (CLS) score. Desktop pages show a higher share of Needs Improvement CLS (17%) compared to mobile (10%), while the proportion of pages with Poor CLS is similar across devices at around 9-10%. This shows that most pages are close to meeting the CLS threshold, with fewer pages experiencing severe layout instability. 
 
 Compared to 2024, the share of desktop pages with Poor CLS decreased by 1%, with a similar increase in pages classified as Needs Improvement.
 
-## TODO Image
+{{ figure_markup(
+  image="good-cls-by-device.png",
+  caption="CLS performance by device",
+  description="The chart shows the percentage of websites with good Cumulative Layout Shift (CLS) scores on desktop and mobile from 2021 to 2025. On desktop, the share of sites with good CLS increases from 62% in 2021 to 72% in 2025. On mobile, good CLS increases from 62% in 2021 to 81% in 2025. In each year from 2022 onward, mobile has a higher percentage of sites with good CLS than desktop.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1623776585&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="TODO"
+  )
+}}
 
 Looking at the past years, the percentage of websites meeting the Good CLS threshold has increased each year for both desktop and mobile. Desktop CLS improved gradually from 62% in 2021 to 72% in 2025, while mobile saw stronger gains, reaching 81% over the same period.
 
-## TODO Image
+{{ figure_markup(
+  image="good-cls-home-secondary-page.png",
+  caption="The percent of websites having good CWV, segmented by page type.",
+  description="The chart shows the percentage of pages with good Cumulative Layout Shift (CLS) scores for home pages and secondary pages on desktop and mobile in 2025. For home pages, 71% of desktop pages and 79% of mobile pages achieve good CLS. For secondary pages, the share increases to 73% on desktop and 81% on mobile, with mobile outperforming desktop for both page types.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=24521456&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="TODO"
+  )
+}}
 
 Pages beyond the homepage show slightly better visual stability than homepages across both desktop and mobile devices. In 2025, 73% of desktop secondary pages achieve Good CLS compared to 71% of desktop homepages, while on mobile 81% of secondary pages meet the Good CLS threshold versus 79% of mobile homepages. This suggests that homepages, which often contain more dynamic content such as hero media, banners, and promotional elements, remain more prone to layout shifts than secondary pages.
-
 
 ## TODO Image
 
