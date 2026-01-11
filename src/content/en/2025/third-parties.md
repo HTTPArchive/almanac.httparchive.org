@@ -31,7 +31,7 @@ In this chapter, we conduct an empirical analysis of third-party usage patterns 
 - **Resource types:** The forms third parties take (images, JavaScript, fonts, etc.)
 - **Functional categories:** Ad networks, analytics, CDNs, video providers, tag managers, and others
 - **Integration methods:** How third parties are loaded directly or indirectly on pages
-- **Consent infrastructure:** Which third parties handle consent signals and how those exchanges occur in practice
+- **Consent infrastructure:** Which third parties transfer consent signals and how those transmissions happen in practice
 
 ## Definitions
 
@@ -43,21 +43,21 @@ In this chapter, like previous years,  we use the term site to depict the regist
 
 ### What is a Third Party?
 
-We stick to the definition of a third party used in previous editions of the Web Almanac to allow for comparison between this and the previous editions.
+We stick to the definition of a third party used in previous editions of the Web Almanac to allow for comparison with earlier versions.
 
-A third party is an entity different from the site owner (aka first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site (i.e., the third party) rather than the one originally visited by the user. Assume that the user visits example.com (the first party) and example.com includes silly cat images from `awesome-cats.edu` (for example using an `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
+A third party is an entity different from the site owner (also known as the first party). It involves the aspects of the site not directly implemented and served by the site owner. More precisely, third-party content is loaded from a different site (i.e., the third party) rather than the one originally visited by the user. Assume that the user visits example.com (the first party) and example.com includes silly cat images from `awesome-cats.edu` (for example using an `<img>` tag). In that scenario, `awesome-cats.edu` is the third party, as it was not originally visited by the user. However, if the user directly visits `awesome-cats.edu`, `awesome-cats.edu` is the first party.
 
-For our analysis, only third parties originating from a domain whose resources can be found on at least 5 unique pages in the HTTP Archive dataset were included to match the definition.
+For our analysis, only third parties originating from a domain whose resources can be found on at least 5 unique pages in the HTTP Archive dataset were included.
 
-When third-party content is directly served from a first-party domain, it is counted as first-party content. For example, self-hosted analytics scripts, CSS, or fonts are counted as first-party content. Similarly, first-party content served from a third-party domain is counted as third-party content. Some third parties serve content from different subdomains. However, regardless of the number of subdomains, they are counted as a single third party.
+When third-party content is directly served from a first party domain, it is counted as first party content. For example, self-hosted analytics scripts, CSS, or fonts are counted as first party content. Similarly, first-party content served from a third-party domain is counted as third-party content. Some third parties serve content from different subdomains. However, regardless of the number of subdomains, they are counted as a single third party.
 
 Further, it is becoming increasingly common for third parties to be masqueraded as a first party. Two key techniques enable this:
 
-- **CNAME cloaking** involves using a CNAME record to make a third party's content appear to come from the first-party domain. We consider CNAME-cloaked services as first parties in this analysis.
+- **CNAME cloaking** involves using a CNAME record to make a third party's content appear to come from the first party domain. We consider CNAME-cloaked services as first parties in this analysis.
 
-- **Server-side tracking** is an emerging trend where the site owner embeds the tracker as a first party and routes all requests through the first-party domain, making the tracker appear as a first party. For example, a website `www.example.com` may embed server-side Google Tag Manager with Google Analytics and cloak the subdomain `sst.example.com` to send requests to a Google Tag Manager Container. In this way, requests to third parties originate from the tag manager's server rather than the user's browser.
+- **Server-side tracking** is an emerging trend where the site owner embeds the tracker as a first party and routes all requests through the first party domain, making the tracker appear as a first party. For example, a website `www.example.com` may embed server-side Google Tag Manager with Google Analytics and cloak the subdomain `sst.example.com` to send requests to a Google Tag Manager container. In this way, requests to third parties originate from the tag manager's server rather than the user's browser.
 
-In our analysis, we treat such cases as first-party interactions because the third-party communication occurs server-to-server and is not directly observable in the client-side HTTP Archive data. As a result, our measurements represent a lower bound on the actual prevalence of third parties on the web
+In our analysis, we treat such cases as first party interactions because the third party communication occurs server-to-server and is not directly observable in the client-side HTTP Archive data. As a result, our measurements represent a lower bound on the actual prevalence of third parties on the web.
 
 ## Categories
 
@@ -79,7 +79,7 @@ As previously indicated, third parties can be used for various use cases—for e
 
 ### `Content-Type`
 
-We use the [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type) HTTP header to categorize third-party resources into different types, such as scripts, HTML content, JSON data, plain text, and images. This allows us to analyze the composition of third-party resources served across websites
+We use the [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type) HTTP header to categorize third-party resources into different types, such as scripts, HTML content, JSON data, plain text, and images. This allows us to analyze the composition of third-party resources served across websites.
 
 ## Prevalence
 
@@ -93,7 +93,7 @@ We use the [`Content-Type`](https://developer.mozilla.org/docs/Web/HTTP/Headers/
   )
 }}
 
-Compared to the previous year, we observe a slight decrease in the percentage of pages that use one or more third parties across websites. However, despite this decrease, the percentage of pages with one or more third parties remain greater or equal to 90%.
+Compared to the previous year, we observe a slight decrease in the percentage of pages that use one or more third parties across websites. However, despite this decrease, the percentage of pages with one or more third parties remains greater or equal to 90%.
 
 {{ figure_markup(
   image="num-3p-by-rank.png",
@@ -105,9 +105,9 @@ Compared to the previous year, we observe a slight decrease in the percentage of
   )
 }}
 
-Compared to the previous year, we observe a decrease in the median number of third-party domains across all website ranks.
+Compared to the previous year, we observe a significant decrease in the median number of third-party domains across all website ranks, with a particularly large decrease among low-ranked websites.
 
-This decline may be due to several factors. First, third parties are increasingly obscured through CNAME cloaking and server-side tracking, which can reduce their visibility in client-side measurements. Second, our crawlers do not interact with cookie banners during the crawl, which may not generate consent signals. As a result, third parties may not run on a page, resulting in fewer observable third-party requests.
+This decline may be due to several factors. First, third parties are increasingly obscured through CNAME cloaking and server-side tracking, which can reduce their visibility in client-side measurements. Second, HTTP Archive crawlers do not interact with web pages or scroll down the page, which may prevent some third parties from loading properly due to lazy loading. As a result, fewer third-party requests may be observed.
 
 We also observe that desktop pages generally include more third parties than mobile pages.
 
@@ -121,13 +121,13 @@ We also observe that desktop pages generally include more third parties than mob
   )
 }}
 
-Higher-ranked websites load more third-party requests. The top 1,000 have a median of 129 requests on desktop and 106 on mobile, compared to 83 on desktop and 79 on mobile across all sites.
+Low-ranked websites load more third-party requests. The top 1,000 have a median of 129 requests on desktop and 106 on mobile, compared to 83 on desktop and 79 on mobile across all sites.
 
 Year-over-year, third-party requests have increased across all ranks. The top 1,000 sites show an increase of 15 requests on desktop and 15 on mobile compared to 2024, while the broader dataset increased by 5 requests on desktop and 5 on mobile. This upward trend occurs despite the decrease in the number of unique third-party domains we observed earlier, suggesting that individual third parties are sending more requests per page.
 
 {{ figure_markup(
   image="3p-req-categories-by-rank.png",
-  caption="Distribution of the third party request categories by rank.",
+  caption="Distribution of the third-party request categories by rank.",
   description="Bar chart showing distribution of third party categories by rank groups. Top categories are consent provider, video, and customer success.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1133634663&format=interactive",
   sheets_gid="445864775",
@@ -135,11 +135,11 @@ Year-over-year, third-party requests have increased across all ranks. The top 1,
   )
 }}
 
-The top categories include ad, analytics  consent-provider and other categories.
+The top categories include ad, analytics and cdn categories.
 
 {{ figure_markup(
   image="3p-req-types-by-rank.png",
-  caption="Distribution of the third party request types by rank.",
+  caption="Distribution of the third-party request types by rank.",
   description="Pie chart showing percentage distribution of third party requests by content type. The top 3 content types are `script` (24.8%), `image` (19.9%), and other (13.9%)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1309978891&format=interactive",
   sheets_gid="418010554",
@@ -147,7 +147,7 @@ The top categories include ad, analytics  consent-provider and other categories.
   )
 }}
 
-The top 3 types include script, image, and other.
+The three most common third-party request types are script, image, and other.
 
 {{ figure_markup(
   image="top-3p-by-num-pages.png",
@@ -165,53 +165,61 @@ The top 10 third-party domains are dominated by Google-owned services, including
 
 ## Consent propagation among third parties
 
-In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB’s consent standards, including the Transparency and Consent Framework (TCF), the CCPA Compliance Framework, and the Global Privacy Platform (GPP).
+In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB’s three consent standards: the Transparency and Consent Framework (TCF), the CCPA Framework, and the Global Privacy Platform (GPP).
 
-These frameworks define how consent information should be encoded and shared. For example, the IAB CCPA framework specifies that consent strings should be transmitted using the `us_privacy` parameter in network requests. We begin by identifying which consent standards are most prevalent among third parties observed in our dataset.
 
-We examine consent signal prevalence in three dimensions: across different website ranks, among different third-party categories, and among the third parties receiving the highest volume of consent signals
+These frameworks define how consent information is encoded and shared between websites and third parties. We begin by identifying which consent standards are most prevalent among the third parties observed in our dataset. To determine which framework a third party uses, we rely on the presence of specific parameters in the request URLs. Details of the different standards are below:
+
+- **TCF Standard**: We identify use of the TCF framework by checking whether a third-party request includes the `gdpr` or `gdpr_consent` parameters, as specified by the IAB TCF.
+
+- **GPP Standard**: We identify use of the GPP framework by checking for the presence of the `gpp` and `gpp_sid` parameters.
+
+- **USP Standard and non-USP Standard**: We identify use of the USP Standard by checking whether a request transmits a `us_privacy` parameter, as defined by the IAB CCPA Framework. We also identify use of the non-standard USP Standard by detecting consent strings transmitted via non-standard parameters identified in the <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">prior work</a>.
+
+We analyze consent signal prevalence across website ranks, third-party categories, and the most frequently observed consent-receiving third parties.
+
 
 ### Prevalence of consent signals across different ranks
 
 {{ figure_markup(
   image="consent-signal-prevalence-by-rank.png",
   caption="Consent signal prevalence by rank.",
-  description="Bar chart showing... TODO.",
+  description="Bar chart showing the prevalence of different consent standards in third-party requests across website ranks.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=2066656520&format=interactive",
   sheets_gid="1614774531",
   sql_file="consent_signal_prevalence_by_third_party_category.sql"
   )
 }}
 
-We find that TCF is the dominant consent standard, particularly among higher-ranked sites where it reaches 36% compared to 18% across all sites. This aligns with GDPR's stricter opt-in requirements for European users. The USP Standard is the second most prevalent, ranging from 9-17% across ranks, reflecting CCPA and state-level US privacy laws. GPP adoption remains minimal at 3-6%, despite being designed to unify consent frameworks across different jurisdictions and regulatory regimes.
+We find that TCF Standard is the dominant consent standard, particularly among low-ranked sites where it reaches 36% compared to 18% across all sites. This higher adoption aligns with stronger opt-in consent requirements under GDPR. The USP Standard is the second most prevalent, with adoption ranging from 9–17% across ranks. This reflects use of the IAB CCPA consent framework introduced in response to the CCPA. GPP adoption remains minimal at 3–6%, despite its goal to unify consent frameworks across jurisdictions.
 
 ### Consent standard distribution across different categories
 
 {{ figure_markup(
   image="consent-signal-prevalence-by-category.png",
   caption="Consent signal prevalence by category.",
-  description="Stacked bar chart showing.. TODO.",
+  description="Bar chart showing consent standard prevalence across different third-party categories.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=828032137&format=interactive",
   sheets_gid="1614774531",
   sql_file="consent_signal_prevalence_by_third_party_category.sql"
   )
 }}
 
-We observe different consent standard preferences across third-party categories. Social services show the highest TCF adoption, while advertising vendors employ a more balanced mix of GPP, USP Standard, and smaller TCF shares. Analytics vendors predominantly adopt GPP. Marketing services show balanced adoption of GPP and USP Standard, with minimal TCF. Content and utility services rely primarily on GPP and USP Standard rather than TCF. Tag managers and video services diverge significantly from other categories, showing minimal adoption of TCF, GPP, and USP Standard in favor of USP Non-Standard signals—with video vendors relying on non-standard mechanisms almost exclusively.
+We observe different consent standard preferences across different third-party categories. For example, Social services show the highest TCF adoption, while advertising vendors employ a more balanced mix of GPP, USP Standard, and smaller TCF shares. Furthermore, Analytics vendors predominantly adopt GPP. 
 
 ### Top third parties receiving consent
 
 {{ figure_markup(
   image="consent-signal-prevalence-by-domain.png",
   caption="Consent signal prevalence by domain.",
-  description="Bar chart showing... TODO.",
+  description="Bar chart showing the third parties that receive the highest volume of consent signals.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1262795614&format=interactive",
   sheets_gid="1788947788",
   sql_file="consent_signals_by_parameter_and_domain_optimized.sql"
   )
 }}
 
-Among top-ranked websites, `pubmatic.com` receives the highest volume of consent signals, with `adservice.google.com` in second place. The majority of domains receiving the most consent signals are advertising and ad tech vendors—ad exchanges, DSPs, and ad servers.
+Among top-ranked websites, `pubmatic.com` receives the highest volume of consent signals, with `adservice.google.com` in second place. The majority of domains receiving the most consent signals are advertising and ad tech vendors—ad exchanges, DSPs, and ad servers. This makes intuitive sense, as in many jurisdictions third party advertising and analytics providers must obtain user consent before using user data for ads and other purposes.
 
 ## Inclusion
 
@@ -227,7 +235,7 @@ Recall from our earlier example that example.com (a first party) can include an 
   )
 }}
 
-The median depth of the inclusion chain is 3 which means the majority of the third party include at least another third party on a web page. The maximum depth of the inclusion chain is 2,285.
+The median depth of the inclusion chain is 3 which means the majority of the third parties include at least another third party on a web page. The maximum depth of the inclusion chain is 2,285.
 
 ## Conclusion
 
@@ -235,4 +243,4 @@ Our findings show the ubiquitous and increasingly concentrated nature of third p
 
 In terms of consent standards, TCF is the dominant consent standard across all website ranks. Among individual third parties, `pubmatic.com`, `adservice.google.com` and other ad tech domains receive the highest volume of consent signals.
 
-Finally, the increasing use of obfuscation techniques such as CNAME cloaking and server-side tracking reduces visibility of third parties in client-side measurements, suggesting our findings represent a lower bound on actual prevalence. The privacy, security, and performance implications of third-party use remain important considerations for web developers.
+Finally, the increasing use of obfuscation techniques such as CNAME cloaking and server-side tracking reduces visibility of third parties in client-side measurements, suggesting our findings represent a lower bound on actual prevalence. 
