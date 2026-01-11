@@ -31,3 +31,36 @@ These metrics are complemented by traditional indicators such as <a hreflang="en
 
 The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences.
 
+## Core Web Vitals Summary
+
+Core Web Vitals are Google’s key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page’s main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page’s lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
+
+### [TODO] Image
+
+Mobile performance has significantly improved due to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications. Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This significant rise in mobile performance is largely attributable to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications.
+
+Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%.
+
+### [TODO] Image
+
+Performance metrics for top mobile websites show a clear distinction: 
+- 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
+
+However, CWV scores drop significantly for less popular sites:
+- The next 10,000 websites score 42%.
+- The subsequent 1 million websites score 37%.
+
+This data suggests that top-tier websites are prioritizing performance improvements, while mid-tier websites are still lagging.
+
+In contrast, Desktop performance metrics are more uniformly distributed. This disparity highlights a significant gap in the focus on mobile web app performance compared to desktop, which is likely due to an increasing concentration on native applications.
+
+### [TODO] Image
+
+Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile.This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads. 
+
+<a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of Web Vitals data for within the page navigation.
+
+While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects such as layout shift, loading performance, and interactivity is necessary to fully understand the user experience, which is what we will cover next.
+
+
+
