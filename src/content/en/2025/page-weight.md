@@ -43,7 +43,7 @@ A modern webpage is an assembly of several different types of resources. Each co
 
 Not all bytes are created equally. In this chapter we will explore page weight by bytes and by request volume of file types.
 
-### Why Weight Matters
+### Why weight matters
 
 Page weight is a direct proxy for performance and accessibility. A "heavy" page creates several negative ripple effects:
 
@@ -272,7 +272,7 @@ For median inner pages, QuickTime files remained the largest file type in bytes.
 
 Videos, by their very nature, tend to be the largest of files. They also have the largest range in size– from 7k B at the 10th percentile up to 1GB at the 100th. That range is only surpassed by image file types which saw 0 KB on the 10th percentile on 1.2GB at the 100th. XML files saw the smallest range with the 10th to 50th percentiles having 0 KB of the file type and the most extreme desktop pages having 52.1 MB at the 100th.
 
-### Image Bytes
+### Image bytes
 
 Image bytes refer to the binary data required to render visual elements such as photographs, icons, and illustrations. Unlike text-based files (like HTML), which are highly efficient and easily compressed, image data is inherently dense. The "weight" of these bytes is determined by three primary factors:
 
@@ -697,7 +697,7 @@ This is particularly interesting, as we see consistency in the number of request
 
 Viewing homepage requests by device type allows deep analysis. Each device requires slightly more requests than when home and inner pages data is blended. The median desktop homepage makes 80 requests while its mobile counterpart makes 75. Behavior remains consistent across devices, with minor variance in percentiles.
 
-### Image Request Volume
+### Image request volume
 
 Some say the internet was created for cat pictures. While that may be an exaggeration from devoted animal lovers, it highlights the fact that visual content dominates the web.
 
@@ -729,7 +729,7 @@ When comparing homepages to inner pages, the difference remains consistent: the 
 
 Although there"s a slight decrease in image requests, a trend also reflected at the 75th and 90th percentiles, the minimal changes suggest no major shift in how site owners or publishers approach imagery. Instead, it appears to be business as usual in web image usage.
 
-### CSS Request Volume
+### CSS request volume
 
 Cascading Style Sheets (<a hreflang="en" href="https://web.dev/css">CSS</a>) act as the presentation layer of the web. It's a style language that allows developers to define the layout of a document written in a markup language that is visually presented. In the scope of the web almanac, then exclusively html. Occasionally, SVGs might also account for some.
 
@@ -765,7 +765,7 @@ The median page made 8 CSS requests. Inner pages made more requests than home pa
 
 There is very little variation in the number of files requested on home pages compared to inner pages. Whilst we can't tell from this analysis if it's the same files being served, it does point to the fact that developers are shipping one set of CSS resources across the whole site, which could be a missed opportunity to reduce the weight of CSS on individual pages by splitting these, and only sending the CSS needed for the actual page.
 
-### JavaScript Request Volume
+### JavaScript request volume
 
 While images and videos are static weight, JavaScript is active weight. Its impact is unique because it consumes resources twice: once when it is downloaded (network) and again when it is executed (CPU). When JavaScript is split into a high volume of requests—often due to modular coding practices or third-party plugins—it introduces a "Double Tax" on performance.
 
@@ -806,7 +806,7 @@ The median desktop page made 23 requests for JS on desktop and 22 on mobile. Des
 
 Inner pages consistently called slightly more JavaScript files than home pages. The median home page requested 22 JS files while its small screened counterpart called 23.
 
-### Fonts Request Volume
+### Fonts request volume
 
 Font files allow the website to specify styling for the text parts of the website, typically they consist of all letters from A-Z both upper and lowercase. This allows the browsers to transform text into other styles than just the system installed fonts.
 
@@ -836,7 +836,7 @@ Home pages and inner pages are identical in average requests with the one except
 
 Broadly it would be expected that different fonts are not used on individual pages but rather as a style across the site. There are exceptions to this, such as for promotional material, but the average indicates that most of the time imported fonts are used across the whole site.
 
-### Other Request Volume
+### Other request volume
 
 The request volume of "utility" files—including HTML fragments, JSON data, and third-party assets—creates a significant, cumulative "latency tax." In modern web architecture, particularly with the rise of microservices and modular design, a single page load can trigger dozens of requests for small, disparate files. Even if these files are lightweight in terms of bytes, the sheer quantity of requests can overwhelm the browser"s network stack and delay the rendering of the page.
 
