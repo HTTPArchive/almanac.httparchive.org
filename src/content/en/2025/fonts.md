@@ -33,9 +33,9 @@ To capture the rest of the story, we also have to look beyond where fonts are ho
 
 The most used web fonts also continue to narrow around a recognizable canon. A handful of Google-originated sans-serifs (Roboto, Open Sans, Montserrat, Poppins, Lato), plus ubiquitous icon kits (Font Awesome, Swiper's icons, legacy Bootstrap glyphs), account for a huge share of CSS declarations—and the same families increasingly show up in variable form, which is why variable-font usage has climbed to roughly 4 in 10 sites. At the same time, open licensing (especially OFL) and large, multi-script projects are pushing the web to be more global: Cyrillic and Greek coverage keep growing, Japanese and Korean web fonts are commonly delivered via Google's CDN, and only the very largest Chinese fonts still lag because of size. So the executive summary for 2025 is this: web fonts are universal, delivery is tilting toward self-hosting, performance practices are normalized, a small set of families dominates real-world CSS, variable fonts are going mainstream, and ongoing open-source work is what's making possible this vast expansion of global typography. We explore these patterns and describe the current state of web typography in detail below.
 
-## Hosting and Services
+## Hosting and services
 
-This year's HTTP Almanac crawl confirms that self-hosting is the most widespread means of delivering web fonts. About 72% of websites (both desktop and mobile) serve at least one font file from their own origin, either by self-hosting exclusively or by using a mix of self-hosted and externally hosted fonts. That figure is just over one percentage point higher than last year, and about 4-5 points higher than in 2022, indicating a steady increase. In other words, the rise in self-hosting that became apparent in 2022 is still continuing.
+This year's Web Almanac crawl confirms that self-hosting is the most widespread means of delivering web fonts. About 72% of websites (both desktop and mobile) serve at least one font file from their own origin, either by self-hosting exclusively or by using a mix of self-hosted and externally hosted fonts. That figure is just over one percentage point higher than last year, and about 4-5 points higher than in 2022, indicating a steady increase. In other words, the rise in self-hosting that became apparent in 2022 is still continuing.
 
 Within that 72%, we can break down two significant groups:
 
@@ -45,7 +45,7 @@ Within that 72%, we can break down two significant groups:
 
 Combining those groups, about 72% of sites self-host in some capacity. The remaining \~28% of sites rely exclusively on third-party services for fonts (with Google Fonts being by far the most likely choice in that category).
 
-### Web Font Services
+### Web font services
 
 Even with the growth of self-hosting, hosted font CDNs still appear on roughly half of all websites, primarily because of Google's massive footprint. This year's crawl found Google Fonts on about 54% of desktop sites and 47% of mobile sites. (This counts any site that uses Google's API to fetch fonts, whether Google is the only source or used alongside others.) Google's reach on desktop dropped about 3 percentage points from 57% in 2024, and is down about 6 points from 2022, reflecting the shift toward self-hosting. On mobile, Google's share dipped only slightly (about 0.3 points since last year, and about 4 points since 2022). The overall pattern is the same as noted in 2024: Google Fonts is still the default choice for many, but its dominance is slowly diminishing as more sites self-host.
 
@@ -55,7 +55,7 @@ Font Awesome, a popular icon-font CDN, has seen a slow decline. In 2022 it was u
 
 Every other service is essentially negligible at the web scale. Legacy services like Monotype's Fonts.com, Extensis, Cloud.Typography, and Type Network each account for well under 1% of sites. Many of these have declined to the point of near-invisibility in our crawl data. In practical terms, if a website is using a hosted font service in 2025, it's almost certainly Google Fonts. There's a small chance it's Adobe Fonts or Font Awesome, and very little chance that it's something else.
 
-### Font Hosting Combinations
+### Font hosting combinations
 
 Because most sites don't rely on just one source for web typography, it's useful to look at how they mix and match delivery. In practice the web has converged on a few predictable combinations—self-hosting only, Google only, or a hybrid of the two.
 
@@ -93,7 +93,7 @@ Together, these three configurations account for roughly four out of five websit
 
 Beyond these commonplace service combinations, year-over-year the balance is tilting toward self-hosting. In 2024, about 30% of sites were exclusively self-hosted, but now it's roughly 34%. Correspondingly, the "mixed" approach (self-hosting + a service) has shrunk a bit (from \~38% to \~36% of sites on desktop, for example). In other words, fewer sites are hedging by doing both—more have decided to host everything themselves. This is likely due to performance and privacy motivations. As last year's chapter noted, modern browser changes like cache partitioning have removed some of the old performance advantage of using Google's CDN.
 
-### Font File Hosting
+### Font file hosting
 
 Another way to look at font hosting is to ask: which specific font files are being requested the most, and are they coming from self-hosting or from services? This gives insight into the most popular font families on the web and how they're being delivered.
 
@@ -109,7 +109,7 @@ Adobe Fonts, being a different kind of service (one that requires a kit and serv
 
 Typographic performance on the web in 2025 is about shipping web fonts in the smallest, cleanest way possible. This section looks at the two performance levers that matter most: the formats (where the web has basically consolidated on WOFF2, with WOFF hanging on as fallback) and the actual transfer sizes those formats produce (where the median is perfectly reasonable but the long tail can really lag). If you wish to read these results as a web font hygiene checklist: be sure to use WOFF2, check your MIME types, subset large fonts as appropriate, and pay special attention if you self-host, because that's where most of the inefficiencies still reside.
 
-### File Formats and Optimization
+### File formats and optimization
 
 When it comes to font file formats on the web, the modern WOFF2 format continues to lead the way. WOFF2 (Web Open Font Format 2) offers superior compression, resulting in smaller file sizes for faster transfer, and it's been supported by all major browsers for years now. In 2025, WOFF2 accounts for about 65% of font file requests on both desktop and mobile pages. This is an overwhelming majority of modern font formats, and represents the continued consolidation around WOFF2 as the web's standard font format. In other words, about two-thirds of all web fonts in this year's data are in WOFF2 format. This consolidation around WOFF2 is a positive trend for performance, as the better compression leads to faster font loads and less bandwidth usage.
 
@@ -147,9 +147,9 @@ Right behind WOFF2 is the older WOFF 1.0 format, which remains a significant fal
 
 Beyond WOFF and WOFF2, only minor formats remain, mostly as edge cases. As we note below, the arrival of Incremental Font Transfer technology next year may be an especially valuable improvement for large fonts and begin to cut into WOFF2's share. Still, a notable percentage of fonts are still served as raw TrueType (.ttf) files. In 2025 about 6.7% of font requests are TTF, often due to CDNs or self-hosting setups that serve the original font file without repackaging it as WOFF. Similarly, around 6.6% of font requests are delivered with the generic application/octet-stream MIME type. Note that "octet-stream" isn't a distinct font format—it usually indicates a misconfiguration where the server isn't specifying the proper font MIME (e.g., a WOFF2 file might be served with Content-Type: application/octet-stream instead of the correct font/woff2). In 2025, this misconfigured MIME issue unfortunately persists—roughly 6-7% of font files are still being sent with an incorrect MIME type. This is largely attributable to a few major hosts (in last year's analysis, cdnjs and Wix's CDN were notable culprits) that have configuration issues. It's a small but noteworthy slice, as using the correct MIME type (like font/woff2 or font/woff) ensures better content handling and debugging.
 
-Crucially, if we combine the modern formats, WOFF2 + WOFF together account for over four-fifths of the web font ecosystem. Other formats like OpenType/CFF (.otf) or SVG fonts have effectively vanished from the public web (despite being very much alive on the desktop), and EOT (the old IE-specific format) is practically extinct. Back in 2020, the HTTP Almanac already noted that SVG and EOT were nearly gone, and that trend has only continued. It's now rare to encounter a non-WOFF font file in a typical site crawl. The overwhelming advice remains: use WOFF2 for your web fonts, and drop the older formats unless you have a very specific need. This year's crawl data strongly validates this advice as we see virtually everyone converging on WOFF2, with WOFF as a trailing fallback, while everything else is negligible.
+Crucially, if we combine the modern formats, WOFF2 + WOFF together account for over four-fifths of the web font ecosystem. Other formats like OpenType/CFF (.otf) or SVG fonts have effectively vanished from the public web (despite being very much alive on the desktop), and EOT (the old IE-specific format) is practically extinct. Back in 2020, the Web Almanac already noted that SVG and EOT were nearly gone, and that trend has only continued. It's now rare to encounter a non-WOFF font file in a typical site crawl. The overwhelming advice remains: use WOFF2 for your web fonts, and drop the older formats unless you have a very specific need. This year's crawl data strongly validates this advice as we see virtually everyone converging on WOFF2, with WOFF as a trailing fallback, while everything else is negligible.
 
-### File Sizes and Performance
+### File sizes and performance
 
 From a performance standpoint, using modern formats is important because font files themselves have been getting larger on average. Last year's analysis found that the median web font file size increased considerably from prior years, implying that sites are using more complex fonts (e.g., fonts with more glyphs to support multiple languages, or variable fonts that bundle many styles). Our 2025 data shows that this trend toward larger font files has continued, making optimization even more critical.
 
@@ -167,11 +167,11 @@ The takeaway is that most websites serve moderately sized font files, but we hav
 
 While it's encouraging that the prevalence of WOFF2 will help mitigate the performance impact of larger font files, we also found that sites which self-host fonts have more room to optimize on average. For example, in 2024 only about 58% of self-hosted font requests were WOFF2 (versus about 78-81% overall). Self-hosted setups had a larger share of WOFF (around 18-19%) and even some raw TTF (about 6%). This implies that some developers self-hosting their fonts might be using older files or not compressing to WOFF2, whereas big providers like Google will always serve WOFF2 if the browser supports it. The 2025 data shows improvement—more self-hosters are moving to WOFF2—but there's still a gap. It's a reminder that if you self-host, you need to be diligent: ensure you have WOFF2 versions of your fonts and configure your server to serve them with the correct `Content-Type`. A significant portion of self-hosted font files in 2024 were served with misconfigured MIME types (5-6% as mentioned), which is something that developers can fix with a simple server tweak. The good news is that WOFF2's dominance is growing across the board, just a bit more slowly in the self-hosted sphere than on Google's platform. In essence, self-hosted sites are catching up, but they still lag slightly in terms of using the optimal format.
 
-## CSS Techniques and Font Loading
+## CSS techniques and font loading
 
 CSS techniques and font loading are where typography actually becomes real: pages don't just choose a font, they tell the browser how soon to connect to the font origin, which files to fetch first, and what to show while those files are in transit. In this section we look at those mechanisms—resource hints (`preconnect`, `preload`, and the fading `dns-prefetch`), the now-standard `font-display` patterns that split clearly between text and icon fonts, and the underlying outline formats.
 
-### Resource Hints
+### Resource hints
 
 Because web fonts can cause visual abnormalities through render-blocking or delayed text rendering, many sites use resource hints to optimize how fonts are loaded. The data shows a steady adoption of these hints, with some shifting as best practices evolve.
 
@@ -205,7 +205,7 @@ Finally, `prefetch` remains a niche tool. It's used on only about 0.6% of pages 
 
 In summary, `preconnect` and `preload` are the dominant font-loading hints in use for 2025, with `preconnect` appearing on roughly one-fifth of pages and `preload` on about one-eighth. This matches the decline of `dns-prefetch` as it gets replaced by `preconnect`, whereas `prefetch` is rare but slowly growing. This reflects the industry's move toward stronger, more explicit loading signals: developers increasingly favor immediate actions (`preconnect`, `preload`) over speculative ones (`dns-prefetch`, `prefetch`).
 
-### Font Display
+### Font display
 
 The CSS `font-display` descriptor has effectively become standard practice in web font usage. Whereas a few years ago it was a "nice optimization" to consider, in 2025 most pages that use web fonts now also specify a font-display policy to control how text renders while fonts load. The data shows a strong preference for fast text rendering, with a clear split between text fonts and icon fonts.
 
@@ -229,7 +229,7 @@ Looking at individual font families and their font-display behavior reinforces t
 
 The modern best practice is clearly reflected in the numbers: about half the web uses `swap` to ensure quick text rendering, and the quarter that uses `block` is mostly doing so for non-text glyphs. The remaining quarter either has not specified a `font-display` (thus using browser default) or is trying specialized strategies (`fallback`/`optional`). Compared to 2024, these proportions are essentially unchanged: last year, `swap` was used around 50% and `block` about 25% of the time. This stability means the guidance from 2024 still holds: if you see `font-display: block` in a site, it's likely an icon font. For almost all textual web content, developers today prefer `swap` for better UX.
 
-### Font Outline Formats
+### Font outline formats
 
 Another technical aspect of typography is the outline format (TrueType vs PostScript outlines) inside the font file. Most web fonts are either in TrueType (glyf table) format or CFF (Compact Font Format) outlines, regardless of the container. The data from 2022-2025 shows the web has overwhelmingly standardized on TrueType outlines.
 
@@ -237,7 +237,7 @@ This year, about 92-93% of fonts loaded on the web were using TrueType outlines 
 
 Everything else is a tiny fraction. CFF2 (the newer variant used for variable fonts with PostScript outlines) is almost nonexistent in the wild, showing up in 0.01-0.02% of fonts. SVG glyphs (fonts with SVG tables, often color fonts) are also in the very low fractions of decimals. Essentially, outside the specialized case of color/emoji fonts, web developers don't need to worry much about these—they'll virtually always be dealing with TrueType-based fonts, with a minority of CFF outlines still around, especially from older packages.
 
-### Hyphenation and Justification
+### Hyphenation and justification
 
 Proper text layout involves breaking lines in the right places for readability. Browsers by default use a greedy line-breaking algorithm which can lead to uneven spacing or "rivers" of whitespace in justified text. Instead, we can use hyphenation (to break words) and the newer CSS properties for improved line breaking (`text-wrap: balance` or `pretty`). Let's see how these are being used.
 
@@ -265,11 +265,11 @@ Lastly, properties like `hyphenate-character` (to specify a custom hyphen glyph)
 
 So, hyphenation is slowly growing but still used by only about 1 in 10 sites, and new line-wrapping options are emerging—a few percent of sites are already using balanced line wraps for nicer titles. We expect these numbers to rise as responsive design and multi-line layout techniques push developers to seek better control.
 
-## Families and Foundries
+## Families and foundries
 
 This section looks at the supply side of web typography. First we trace which fonts and foundries actually get declared in CSS, then we look at the role of system and generic stacks, and finally we follow the metadata back to foundries, designers, and licenses to see what's most prevalent for users across the web.
 
-### Popular Font Families
+### Popular font families
 
 Which font families are web designers actually using? By examining the CSS of pages, we can see which font-family names are most frequently declared. The results for 2025 show a mix of ubiquitous icon fonts, widely-used web fonts, and system font fallbacks.
 
@@ -299,7 +299,7 @@ Right behind are the usual text workhorses from Google Fonts and similar librari
 
 The main takeaway is that icon fonts and a few versatile sans-serifs dominate the CSS landscape. Font Awesome's prominence in CSS (even if not all sites using it render an icon to the end user) shows how frameworks can drive adoption. Among text fonts, Google's open-source offerings (Roboto, Open Sans, Montserrat, Poppins, Lato, etc.) continue to lead by a large margin—no surprise, as they're freely available, widely known, and cover many languages. We also see evidence that new open-source fonts (like Inter) can still break into the mainstream when they fulfill a need (in Inter's case, optimized for screens and very complete in features).
 
-### Generic and System Fonts
+### Generic and system fonts
 
 Despite the prevalence of custom web fonts, system fonts and generic family names remain a bedrock of web design, especially for performance and native look-and-feel. Many sites specify system font stacks or fallbacks for body text or UI elements. The data from 2025 highlights how common these are:
 
@@ -309,7 +309,7 @@ What's more interesting is the rise of platform-specific generics like `system-u
 
 In summary, system fonts have typically been the unsung heroes on many websites. Developers often use a hybrid approach, system fonts (or at least a safe generic fallback like `sans-serif`) for most UI text, and then load a few custom fonts for branding or headers. The generic `sans-serif`, `serif`, and `monospace` are ubiquitous as fallbacks, and the `system-ui` family and related ones are now more prominent in many CSS frameworks.
 
-### Font Foundries
+### Font foundries
 
 If we look at the `@font-face` metadata to see which foundries or vendors are credited with creating the fonts, we find that the majority is served by a small number of foundries—plus a large chunk of uncredited fonts—with a long tail of others in the low percentiles.
 
@@ -325,7 +325,7 @@ Among identifiable foundries beyond Google and Font Awesome, a few stand out: "p
 
 In short, attributions for fonts on the web now fall to Google, Font Awesome, a few dozen publishers of popular fonts, plus a big anonymous middle. About 30% or so of fonts have unclear or no foundry info. The rest is split among a "who's who" of active web font foundries: Indian Type Foundry (which has released many popular fonts via Google), independent designers grouped under foundry tags like "pyrs", and a smattering of commercial foundries like Adobe, Monotype, etc. This distribution underscores the influence of Google Fonts as a purveyor of open-source fonts and the widespread use of Font Awesome, while also reminding us that a large portion of web fonts come from the broader open-source community or custom kits where attribution isn't strong.
 
-### Font Designers
+### Font designers
 
 Many font files include the name of the type designer(s) in the metadata. By tallying those, we can see whose work is most prevalent on the web (keeping in mind that many fonts don't list a designer at all in the metadata).
 
@@ -339,7 +339,7 @@ These numbers reflect the web's most popular fonts: Montserrat carries Ulanovsky
 
 The key point is that designer attribution on the web is very sparse and highly skewed. One icon font author overshadows the stats due to a utility tool's popularity. The rest of the visible designer attributions reads like a mix of famous 20th-century type designers (Frutiger, etc.), creators of the most popular open-source fonts (Andersson for Inter, Ulanovsky for Montserrat), and large foundry teams (Linotype, Monotype, etc.). It's a testament to how fonts are distributed on the web: often the platform (Google, etc.) or foundry is front and center, and individual creators aren't always named unless they're attached to a big project that retains their name.
 
-### Font Licenses
+### Font licenses
 
 Font files often include a license URL or identifier in their metadata, which we can use to gauge what licenses are common on the web. The caveat here is that about half of fonts don't clearly specify a license in a parseable way. With that in mind, the data suggests that open source licenses completely dominate web fonts.
 
@@ -353,7 +353,7 @@ The Font Awesome license (a proprietary/open license hybrid) is present on about
 
 Beyond these, it's a long tail of specific foundry and vendor licenses: we see markers for Commercial Type, Typotheque, Hoefler&Co (Typography.com), Dalton Maag, and Naver (for some Noto Sans CJK distributions) on less than 1% of pages each. These indicate specific use of commercial font libraries on certain sites, but for the most part, the web runs on open font licenses.
 
-### Global Language Support
+### Global language support
 
 The web is increasingly global, and so the web's typography must support the world's many writing systems. While Latin script is still the most commonly supported writing system in web fonts, other scripts are steadily rising thanks to the efforts in recent years to create and distribute fonts for them.
 
@@ -371,11 +371,11 @@ One caveat is Chinese (particularly Simplified Chinese): it still remains rare t
 
 In summary, the web font landscape is gradually becoming more multilingual. Latin is still on roughly half of fonts (and nearly all sites need Latin, even if just for numbers or basic symbols). But the share of fonts supporting other scripts is expanding year by year. It's a positive sign of increased localization and the fruits of efforts like Google's Noto project and others that have provided fonts for under-served languages. For a developer, this means that if you need, say, a Devanagari or Arabic font for your site, there's a decent chance an open web font exists and is being used by your peers. It also means that font file sizes and performance require attention from experimental developments like IFT, as multi-script fonts can be huge.
 
-## Advanced Formats and Features
+## Advanced formats and features
 
 As web fonts have expanded to cover more scripts and larger character sets, the next question is what we can actually do with these fonts. In this final section, we look beyond basic coverage to the advanced machinery inside modern font files—OpenType features, variable fonts, and color fonts—and how often developers are using those capabilities across the web.
 
-### OpenType Features
+### OpenType features
 
 OpenType features enable advanced visual styles like ligatures, alternate characters, old-style figures, and other details that signalled the hallmark of typographic craft in the print era. We can observe the adoption of these features through two approaches: whether fonts contain OpenType features, and whether sites are using those features via CSS.
 
@@ -427,7 +427,7 @@ The trend here is that developers are gradually adopting OpenType controls, but 
 
 For day-to-day guidance: it's good news that if a font has features like ligatures, they're likely already working by default in browsers. And if you need special features (say, tabular numbers), a small but growing number of sites demonstrate how to use them via CSS. We expect that as more designers become aware of the fine typography controls available, these numbers will continue to rise.
 
-### Variable Fonts
+### Variable fonts
 
 Variable fonts (which allow multiple styles such as weights and widths in one file) have moved from experimental to fairly mainstream in the past few years. The 2025 data shows continued growth in adoption.
 
@@ -463,7 +463,7 @@ So in practice, variable fonts on the web are mostly being used for weight adjus
 
 And then, variable font animation (using CSS transitions or keyframes on font variation properties) is extremely niche. Only about 0.3% of all pages in 2025 include an animation or transition involving variable font axes (either via the low-level `font-variation-settings` or via `font-weight` or other shorthands on a variable font). Even among just the pages that use variable fonts, that's under 1% (around 0.7-0.8%) that do any kind of animation with them. The cases where it does happen are usually decorative, like a hero title expanding or contracting, or an icon button with a hover effect that changes weight. It's not common presumably because it can cause layout shifts or just because not many have ventured into that design space yet.
 
-### Color Fonts
+### Color fonts
 
 Color fonts (a new technology offering fonts with multicolored glyphs, often for emoji or icons) have been an intriguing technology, but their adoption on the web remains extremely limited. The 2025 data shows a slight increase from an almost nonexistent base, but they're still far from mainstream.
 
@@ -491,22 +491,22 @@ The state of web fonts in 2025 depicts a mature, nearly ubiquitous technology th
 
 Several key trends observed in previous years have solidified:
 
-- **Self-Hosting vs. Services:** Web font delivery is shifting slowly from services toward self-hosting. Google Fonts still delivers fonts for over half of all websites, but its share is gently declining as more developers choose to host fonts themselves for performance or privacy. About one-third of sites now self-host all their fonts, up from about one-fifth a few years ago. Another large share of sites use a hybrid of Google's CDN plus self-hosting. This suggests a balance where developers are not entirely reliant on third-party infrastructure and can optimize caching and loading to their needs.
+- **Self-hosting versus services:** Web font delivery is shifting slowly from services toward self-hosting. Google Fonts still delivers fonts for over half of all websites, but its share is gently declining as more developers choose to host fonts themselves for performance or privacy. About one-third of sites now self-host all their fonts, up from about one-fifth a few years ago. Another large share of sites use a hybrid of Google's CDN plus self-hosting. This suggests a balance where developers are not entirely reliant on third-party infrastructure and can optimize caching and loading to their needs.
 
-- **Format Consolidation:** The web has standardized on WOFF2 as the primary font format. About 65% of font files are WOFF2, and combined with WOFF, that's about 81%. Old formats like raw TTF, EOT, or SVG fonts are almost completely phased out. This consolidation is great for performance (WOFF2 has superior compression) and simplifies what developers need to support. The data shows that most sites have followed in this direction, though a few self-hosted environments still lag in offering WOFF2 or sending correct MIME types.
+- **Format consolidation:** The web has standardized on WOFF2 as the primary font format. About 65% of font files are WOFF2, and combined with WOFF, that's about 81%. Old formats like raw TTF, EOT, or SVG fonts are almost completely phased out. This consolidation is great for performance (WOFF2 has superior compression) and simplifies what developers need to support. The data shows that most sites have followed in this direction, though a few self-hosted environments still lag in offering WOFF2 or sending correct MIME types.
 
-- **Font Sizes and Performance:** The typical web font is in the 30-40 KB range (compressed) and sites often use multiple fonts, so fonts still carry a slight weight cost. The median size went up a bit recently, reflecting richer fonts (e.g., variable fonts or ones with more glyphs). A significant portion of fonts are larger than 100 KB, especially for Asian scripts or when not subsetted. This underlines the importance of subsetting and careful loading strategies. The fact that most of these fonts are now WOFF2 helps mitigate the cost, but developers should still be mindful: a heavy use of many large font files can hurt load speeds. The 2025 crawl data suggests most sites are moderate in their font usage, but a small percentage go overboard and skew the "tail" of the distribution dramatically.
+- **Font sizes and performance:** The typical web font is in the 30-40 KB range (compressed) and sites often use multiple fonts, so fonts still carry a slight weight cost. The median size went up a bit recently, reflecting richer fonts (e.g., variable fonts or ones with more glyphs). A significant portion of fonts are larger than 100 KB, especially for Asian scripts or when not subsetted. This underlines the importance of subsetting and careful loading strategies. The fact that most of these fonts are now WOFF2 helps mitigate the cost, but developers should still be mindful: a heavy use of many large font files can hurt load speeds. The 2025 crawl data suggests most sites are moderate in their font usage, but a small percentage go overboard and skew the "tail" of the distribution dramatically.
 
-- **Global Scripts:** Web typography has become more globally focused, with greater support for languages beyond the Latin script. We see a meaningful presence of Cyrillic, Greek, Arabic, Hebrew, Devanagari, CJK, and others in web font usage every year. This is largely thanks to collaborative projects and open-source efforts producing high-quality fonts for these scripts. It's a major shift from the early 2010s, when web fonts were almost exclusively developed for the Latin alphabet. Now, developers can reasonably expect to find web fonts for a variety of writing systems. The data especially highlights Japanese and Korean adoption of web fonts, which continues to grow due to font families like Noto. Chinese remains a more difficult problem due to file size, but perhaps techniques like Incremental Font Transfer (IFT)—which is a way to load only needed portions of fonts on the fly—might change that in the future (this is on the horizon and could be a breakthrough for huge fonts, though still experimental).
+- **Global scripts:** Web typography has become more globally focused, with greater support for languages beyond the Latin script. We see a meaningful presence of Cyrillic, Greek, Arabic, Hebrew, Devanagari, CJK, and others in web font usage every year. This is largely thanks to collaborative projects and open-source efforts producing high-quality fonts for these scripts. It's a major shift from the early 2010s, when web fonts were almost exclusively developed for the Latin alphabet. Now, developers can reasonably expect to find web fonts for a variety of writing systems. The data especially highlights Japanese and Korean adoption of web fonts, which continues to grow due to font families like Noto. Chinese remains a more difficult problem due to file size, but perhaps techniques like Incremental Font Transfer (IFT)—which is a way to load only needed portions of fonts on the fly—might change that in the future (this is on the horizon and could be a breakthrough for huge fonts, though still experimental).
 
-- **Variable Fonts:** Once a cutting-edge concept, variable fonts are now mainstream. Around 40% of websites use them, often transparently via Google Fonts serving a variable file instead of multiple static files. They haven't revolutionized design yet in terms of fancy animations or continuous variability in content, but they have delivered practical benefits: simplifying font requests and sometimes reducing total bytes when multiple styles are needed. Many popular fonts are now variable by default (Roboto, etc.), and developers use them mostly like they've used multiple weights before—albeit with the bonus of more fine-grained control if desired.
+- **Variable fonts:** Once a cutting-edge concept, variable fonts are now mainstream. Around 40% of websites use them, often transparently via Google Fonts serving a variable file instead of multiple static files. They haven't revolutionized design yet in terms of fancy animations or continuous variability in content, but they have delivered practical benefits: simplifying font requests and sometimes reducing total bytes when multiple styles are needed. Many popular fonts are now variable by default (Roboto, etc.), and developers use them mostly like they've used multiple weights before—albeit with the bonus of more fine-grained control if desired.
 
-- **Color Fonts:** Despite growing support for color fonts (COLR/CPAL, SVG glyphs), they are still rare on the web. Aside from the use of emoji, few sites have taken advantage of multicolor glyphs. It remains an area to watch, but as of 2025, color fonts have yet to find a foothold in general web use.
+- **Color fonts:** Despite growing support for color fonts (COLR/CPAL, SVG glyphs), they are still rare on the web. Aside from the use of emoji, few sites have taken advantage of multicolor glyphs. It remains an area to watch, but as of 2025, color fonts have yet to find a foothold in general web use.
 
-- **CSS for Rendering:** More sites are using the available CSS to optimize font loading and rendering. `font-display` is now specified on the majority of sites using fonts, reflecting a conscious choice about FOIT/FOUT. The dominant use of `swap` shows a shared priority for quick text appearance, with only icon fonts intentionally delaying for integrity. Resource hints like `preconnect` and `preload` are not universal, but a healthy minority employ these techniques, indicating performance-aware development practices on the rise. And while still niche, the adoption of properties like `text-wrap: balance` and `hyphens: auto` shows that even finer typographic tweaks are gradually gaining traction for improving text layout. In essence, web developers are more actively managing how fonts load and how text flows, rather than leaving everything to default. This is a sign of the ecosystem maturing, where front-end developers are treating typography with the same seriousness as other performance and UX aspects.
+- **CSS for fendering:** More sites are using the available CSS to optimize font loading and rendering. `font-display` is now specified on the majority of sites using fonts, reflecting a conscious choice about FOIT/FOUT. The dominant use of `swap` shows a shared priority for quick text appearance, with only icon fonts intentionally delaying for integrity. Resource hints like `preconnect` and `preload` are not universal, but a healthy minority employ these techniques, indicating performance-aware development practices on the rise. And while still niche, the adoption of properties like `text-wrap: balance` and `hyphens: auto` shows that even finer typographic tweaks are gradually gaining traction for improving text layout. In essence, web developers are more actively managing how fonts load and how text flows, rather than leaving everything to default. This is a sign of the ecosystem maturing, where front-end developers are treating typography with the same seriousness as other performance and UX aspects.
 
 Overall, web fonts in 2025 tell a story of convergence and refinement. We see convergence on formats (WOFF2 everywhere), on delivery patterns (self-hosting on the rise, though services still important), on widely used families (a handful of web fonts are practically core now), and on best practices (`font-display: swap`, preloading critical fonts, etc.). Refinements include better global language support, open-type feature usage, and new CSS capabilities to smooth out the rough edges of text display. So, the web font landscape is largely stable, but not stagnant. No single change grabs the headline, but collectively these developments make the web more polished and accessible.
 
-What might be the next major development in fonts? As noted, Incremental Font Transfer (IFT) is a very promising new technology. It would allow browsers to download just the needed glyphs of a font for a specific set of text, rather than frontloading the entire file. If standardized and adopted, IFT could be revolutionary for huge fonts like CJK, emoji, or icon sets—effectively solving the "font size" problem. This technology is still in development, but next year's Almanac may have data available to report on the adoption and impact of IFT.
+What might be the next major development in fonts? As noted, Incremental Font Transfer (IFT) is a very promising new technology. It would allow browsers to download just the needed glyphs of a font for a specific set of text, rather than frontloading the entire file. If standardized and adopted, IFT could be revolutionary for huge fonts like CJK, emoji, or icon sets—effectively solving the "font size" problem. This technology is still in development, but next year's Web Almanac may have data available to report on the adoption and impact of IFT.
 
 And so, the 2025 chapter closes on a confident note: fonts are a fundamental building block of the web, used smartly by most developers, and the path ahead is about making them faster, more inclusive, more expressive, and easier to work with for everyone.
