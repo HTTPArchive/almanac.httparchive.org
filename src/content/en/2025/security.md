@@ -1218,14 +1218,43 @@ We see a more varied picture when looking at more complex security mechanisms. W
 
 A website's security can vary depending on the technology in use. Because frameworks include security features by default and it is in the best interest of large vendors to keep their users secured, using these underlying technologies may boost a website's security.
 
-| Technology | Security features |
-| :---- | :---- |
-| LiveJournal | Content-Security-Policy (99.99%), Permissions-Policy (99.99%), Referrer-Policy (99.99%) |
-| Weblium | X-Content-Type-Options (97.31%), X-XSS-Protection (97.31%) |
-| GoDaddy Website Builder | Strict-Transport-Security (95.97%), Content-Security-Policy (95.97%) |
-| Sitevision CMS | X-Frame-Options (81.54%) |
-| Microsoft Sharepoint | X-Content-Type-Options (57.44%) |
-| Liferay | X-Content-Type-Options (52.65%) |
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Technology</th>
+        <th>Security features</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LiveJournal</td>
+        <td><code>Content-Security-Policy</code> (99.99%), <code>Permissions-Policy</code> (99.99%), <code>Referrer-Policy</code> (99.99%)</td>
+      </tr>
+      <tr>
+        <td>Weblium</td>
+        <td><code>X-Content-Type-Options</code> (97.31%), <code>X-XSS-Protection</code> (97.31%)</td>
+      </tr>
+      <tr>
+        <td>GoDaddy Website Builder</td>
+        <td><code>Strict-Transport-Security</code> (95.97%), <code>Content-Security-Policy</code> (95.97%)</td>
+      </tr>
+      <tr>
+        <td>Sitevision CMS</td>
+        <td><code>X-Frame-Options</code> (81.54%)</td>
+      </tr>
+      <tr>
+        <td>Microsoft Sharepoint</td>
+        <td><code>X-Content-Type-Options</code> (57.44%)</td>
+      </tr>
+      <tr>
+        <td>Liferay</td>
+        <td><code>X-Content-Type-Options</code> (52.65%)</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Security features in use by selected CMS systems.", sheets_gid="1417258040", sql_file="feature_adoption_by_technology.sql") }}</figcaption>
+</figure>
 *Security features in use by selected CMS systems*
 
 We see that a number of blogging websites and website builders have some important security mechanisms configured almost throughout all of their systems, with HSTS, CSP and `X-Content-Type-Options` being some of the most popular ones.
