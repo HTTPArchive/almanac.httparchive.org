@@ -31,13 +31,25 @@ Beyond measuring adoption, we also explore the drivers behind the adoption of se
 
 [HTTPS](https://developer.mozilla.org/docs/Glossary/https) uses Transport Layer Security ([TLS](https://www.cloudflare.com/en-gb/learning/ssl/transport-layer-security-tls/)) to secure the connection between client and server. Over the years, more and more websites started using HTTPS, thereby better securing their users. This year, the share of all requests sent over HTTPS rose again compared to last year, reaching over 98.8% for mobile connections.
 
-98.8%  
-*The percentage of requests using HTTPS (mobile)*
+{{ figure_markup(
+  content="98.8%",
+  caption="The percentage of requests that use HTTPS (mobile)",
+  classes="big-number",
+  sheets_gid="530740578",
+  sql_file="https_request_over_time.sql",
+) }}
 
 The share of requests that are being sent using HTTPS rather than using plain HTTP rises by 0.74% on mobile compared to the 2024 edition of Web Almanac.
 
-![][image1]  
-*The percentage of homepages using HTTPS*
+{{ figure_markup(
+  image="https-usage.png",
+  caption="The percentage of homepages usign HTTPS",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2075189160&format=interactive",
+  sheets_gid="479242437",
+  sql_file="home_page_https_usage.sql"
+  )
+}}
 
 Another positive evolution is visible in the number of homepages served over HTTPS. This number rises from 95.6% to 97.3% on mobile. Because many websites send a number of third-party requests to many (often secure) sites, this number tends to be lower than the share of requests sent over HTTPS, but luckily also keeps rising year after year.
 
@@ -47,8 +59,15 @@ It is good to see that the positive trends in these metrics continues and that t
 
 For a few years now, [TLS1.3](https://www.rfc-editor.org/rfc/rfc8446) has been the recommended protocol version to have the highest security. The latest version has deprecated some [algorithms that were found to contain flaws](https://www.cloudflare.com/en-in/learning/ssl/why-use-tls-1.3/#:~:text=A%20number%20of%20outdated%20cryptography%20features%20resulted%20in%20vulnerabilities%20or%20enabled%20specific%20kinds%20of%20cyber%20attacks) in TLS1.2 and provides some stronger security guarantees like forward secrecy. QUIC uses TLS internally as well, thereby providing [similar security guarantees as TLS1.3 does](https://community.cloudflare.com/t/how-is-quic-a-direct-comparison-to-tls-1-3-and-tls-1-2/543349/6#:~:text=TLS%201.2%2C%20TLS%201.3%2C%20and%20QUIC%20share%20similar%20security%20characteristics%20but%20they%20are%20different).
 
-![][image2]  
-*The distribution of TLS versions in use*
+{{ figure_markup(
+  image="tls-versions.png",
+  caption="The distribution of TLS versions in use",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1659150103&format=interactive",
+  sheets_gid="902024133",
+  sql_file="tls_versions_pages.sql"
+  )
+}}
 
 Like in the 2024 edition of the Web Almanac, we find that both QUIC and TLS1.3 see an increase in use. Again we can assume that some sites using TLS1.2 have moved to TLS1.3 and some sites that were using TLS1.2 or TLS1.3 have moved to QUIC. TLS1.2 decreased by another 4.5% this year. We can see that the adoption of QUIC has slowed down a bit this year, with the share of sites using QUIC only rising by 0.8%. In the future, it can be expected that TLS1.2 will slowly phase out over (a long) time and QUIC will continue rising.
 
@@ -56,13 +75,27 @@ Like in the 2024 edition of the Web Almanac, we find that both QUIC and TLS1.3 s
 
 To start communicating over an encrypted channel, both parties need to use the same cryptographic algorithm (or [cipher suite](https://learn.microsoft.com/en-au/windows/win32/secauthn/cipher-suites-in-schannel)) to understand each other. In order to do so, they agree upon a cipher suite to use before communication. We can see that most requests happen over a connection using a Galois Counter Mode ([GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)) cipher, which is often preferred because of its resilience against [padding attacks](https://blog.qualys.com/product-tech/2019/04/22/zombie-poodle-and-goldendoodle-vulnerabilities) and because it provides Authenticated Encryption with Associated Data ([AEAD](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2628d946bda9f3d3b087e5c4846e76ae0fb07b6b)), which is [required in TLS1.3](https://www.rfc-editor.org/rfc/rfc8446#:~:text=Those%20that%0A%20%20%20%20%20%20remain%20are%20all%20Authenticated%20Encryption%20with%20Associated%20Data%0A%20%20%20%20%20%20\(AEAD\)%20algorithms). In addition, we see that the use of 128-bit keys has grown by 4% since last year, instead of the more secure 256-variant. Although the [128-bit cipher suites are considered secure by NIST](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-131Ar3.ipd.pdf), 256-bit variants provide even more security guarantees. The dataset of this year's Almanac includes more requests than last year's, so it is possible that this change can be attributed to the growing dataset. The cipher suites in use are not very diverse, in fact there are only five cipher suites that were found to be used in the dataset. This can be the case because TLS1.3 [only allows GCM or modern block ciphers](https://datatracker.ietf.org/doc/html/rfc8446#page-133) to be used.
 
-![][image3]  
-*The distribution of cipher suites in use*
+{{ figure_markup(
+  image="cipher-suites.png",
+  caption="The distribution of cipher suites in use",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=220138440&format=interactive",
+  sheets_gid="209958900",
+  sql_file="tls_cipher_suite.sql"
+  )
+}}
 
 TLS1.3 only allows the use of algorithms that support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy). Because of the high adoption of TLS1.3, we expect a large share of requests to fulfill the forward secrecy requirement. Contrary to our expectations, we see a relatively low number of requests that are sent over connections that are forward secret. There is a 20% decrease in forward secret requests since the 2024 Web Almanac. Currently, it seems our metric only includes the forward secret ciphers in TLS1.2 and TLS1.3, but does not include TLS in QUIC which can explain the decline we observer.
 
-![][image4]  
-*The percentage of requests supporting forward secrecy*
+{{ figure_markup(
+  image="forward-secrecy.png",
+  caption="The percentage of requests supporting forward secrecy",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1624420318&format=interactive",
+  sheets_gid="596349024",
+  sql_file="tls_forward_secrecy.sql"
+  )
+}}
 
 ### Certificate Authorities
 
@@ -137,31 +170,55 @@ Compared to last year, we can see that the then popular R3 intermediate certific
 
 The total share of sites using a certificate of Let's Encrypt has gone down slightly to 52.6% from 56% in the last edition. One of the contributing factors as can be seen in the data is the larger share of certificates issued by the WE1 certificate from GTS, although the total share by GTS-issued certificates (WE1 and others) has not been calculated.
 
-52.6%  
-*Percentage of mobile certificates that are issued by Let's Encrypt*
+{{ figure_markup(
+  content="52.6%",
+  caption="Percentage of mobile pages that are issued by Let's Encrypt",
+  classes="big-number",
+  sheets_gid="215876282",
+  sql_file="tls_ca_issuers_pages.sql",
+) }}
 
 ### HTTP Strict Transport Security
 
 [HTTP Strict Transport Security](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security) is a response header through which servers can instruct browsers to only visit pages on this domain over HTTPS, instead of trying HTTP first and following the redirect to HTTPS.
 
-36.0%  
-*The percentage of pages using the HSTS header on mobile*
+{{ figure_markup(
+  content="36%",
+  caption="The percentage of pages using the HSTS header on mobile",
+  classes="big-number",
+  sheets_gid="1439302553",
+  sql_file="hsts_attributes.sql",
+) }}
 
 We see a continuing increase in the number of pages using a HSTS header, with a rise of 6% compared to last edition, up to 36% of all pages visited on mobile. Servers can include a number of directives in the header to communicate additional preferences to the browser. The `max-age` directive that tells the browser for how long to continue only using HTTPS is required, the others are optional.
 
-![][image5]  
-*The usage of specified HSTS directives*
+{{ figure_markup(
+  image="hsts-directives.png",
+  caption="The usage of specified HSTS directives",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1721543402&format=interactive",
+  sheets_gid="1439302553",
+  sql_file="hsts_attributes.sql"
+  )
+}}
 
 The share of responses with a valid `max-age` has increased slightly to 96%. The `includeSubdomains` and `preload` directives saw an increase of about 4% each, possibly indicating that certain sites started setting both directives together. The [unofficial](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) `preload` directive requires the `includeSubdirectories` to be set and the `max-age` to have a value of at least 1 year. Using the preload, a site can make sure that a browser will always visit the domain and its subdomains, even when connecting for the first time (which is not necessarily the case when using HSTS without preload).
 
-![][image6]  
-*The distribution of HSTS max-age values by percentile*
+{{ figure_markup(
+  image="hsts-max-age.png",
+  caption="The distribution of HSTS `max-age` values by percentile",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1532336378&format=interactive",
+  sheets_gid="1684013271",
+  sql_file="hsts_max_age_percentiles.sql"
+  )
+}}
 
 The distribution of valid `max-age` values remains largely the same with the exception of the lower percentiles. At the 10th percentile, we see a large increase from 30 days to 91 days, indicating that less sites are setting very low `max-age` values. The median remains at one year or 365 days.
 
 ## Cookies
 
-Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that (among much more) are reported on in the [Cookies chapter](https://cookies-2025-dot-webalmanac.uk.r.appspot.com/en/2025/cookies). We specifically refer to the `Cookie attributes`, `Cookie prefixes` and `Persistence (expiration)` sections.
+Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that (among much more) are reported on in the [Cookies chapter](#cookies). We specifically refer to the `Cookie attributes`, `Cookie prefixes` and `Persistence (expiration)` sections.
 
 ## Content inclusion
 
@@ -173,8 +230,13 @@ The [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web
 
 CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential XSS attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can be loaded as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
 
-\+18.4%  
-*Relative increase in adoption of the Content-Security-Policy header from 2024*
+{{ figure_markup(
+  content="+18%",
+  caption="Relative increase in adoption of the `Content-Security-Policy` header from 2024",
+  classes="big-number",
+  sheets_gid="136009485",
+  sql_file="security_headers_prevalence.sql",
+) }}
 
 The adoption of CSP continued increasing from 18.5% last year to 21.9% this year, an increase of close to 20%. As predicted in the last edition of this Almanac, the adoption has now risen above 20%, indicating the adoption is still steadily rising.
 
@@ -182,8 +244,15 @@ The adoption of CSP continued increasing from 18.5% last year to 21.9% this year
 
 Once again, most websites use CSP for the `upgrade-insecure-requests` and `frame-ancestors` directives. The relative share of mobile sites using these directives has decreased slightly, which can be attributed to the higher number of CSP headers scanned, as the absolute number has risen by 400,000 and 800,000 CSP headers on desktop and mobile respectively.
 
-![][image8]  
-*Most common directives used in CSP*
+{{ figure_markup(
+  image="csp-directives.png",
+  caption="Most common directives used in CSP",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=579658502&format=interactive",
+  sheets_gid="1683734522",
+  sql_file="csp_directives_usage.sql"
+  )
+}}
 
 The `block-all-mixed-content` directive which has been replaced by `upgrade-insecure-requests` has continued to slightly decrease like it has been over the last few years. This is good news because the directive is [deprecated](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content).
 
@@ -238,13 +307,27 @@ The same header values we saw last year in the top three appear in this year's t
 
 One of the most important directives included in the CSP is `script-src`. Through the use of this directive, websites can control which scripts can run on their pages. This can hinder attackers because it can disallow them from running arbitrary scripts. `script-src` has multiple potential keywords.
 
-![][image9]  
-*Prevalence of `script-src` keywords per request*
+{{ figure_markup(
+  image="csp-script-src-keywords-per-request.png",
+  caption="Prevalence of CSP `script-src` keywords per request",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=629434819&format=interactive",
+  sheets_gid="218451283",
+  sql_file="csp_script_source_list_keywords_per_request.sql"
+  )
+}}
 
 We find that the `unsafe-inline` and `unsafe-eval` keywords are used very often. These keywords significantly reduce the security impact of CSP's `script-src` as they allow any inline script to be executed or allow the use of the `eval`-function in JavaScript respectively. Compared to last year we barely see any changes to the usage of `script-src` keywords. An important note to make is that the presence of `unsafe-inline` does not necessarily mean that inline scripts can be executed. In some cases and following the [CSP spec](https://w3c.github.io/webappsec-csp/) `unsafe-inline` will be ignored. This is for instance the case when a nonce and `strict-dynamic` keywords are added to the CSP policy.
 
-![][image10]  
-*Prevalence of `script-src` keywords per header*
+{{ figure_markup(
+  image="csp-script-src-keywords-per-header.png",
+  caption="Prevalence of CSP `script-src` keywords per header",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1711591110&format=interactive",
+  sheets_gid="466842166",
+  sql_file="csp_script_source_list_keywords_per_header.sql"
+  )
+}}
 
 We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, [the most restrictive policy will be used by the browser](https://content-security-policy.com/examples/multiple-csp-headers/). We see a very similar distribution compared to the values per request, indicating that either most pages only use one CSP header or only use `script-src` in one of the CSP headers that they set, meaning there are no conflicting `script-src` directives on most pages.
 
@@ -252,8 +335,15 @@ We also check the use of keywords per header instead of per page. In CSP, multip
 
 CSP is a complex security policy to thoroughly understand and correctly use. When looking at the length of the CSP headers in use, we can see a wide variety in policy sizes.
 
-![][image11]  
-*CSP header length*
+{{ figure_markup(
+  image="csp-header-length.png",
+  caption="CSP header length",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=43389239&format=interactive",
+  sheets_gid="1010084388",
+  sql_file="csp_number_of_allowed_hosts.sql"
+  )
+}}
 
 Out of all observed headers, 75% are 86 bytes or less in length. This is slightly more than last year where this was 75 bytes or less. We can see that there are more longer policies in use and in the 90th percentile, the desktop policies have gotten longer while the mobile policies have gotten slightly shorter, increasing the difference between the policy lengths.
 
@@ -399,13 +489,25 @@ In order to protect themselves from loading tampered resources, developers can m
 
 By using the `integrity` attribute in `<script>` and `<link>` tags, developers can communicate to the browser the expected hash of the resource. When loading the specified resource, the browser will then check whether the hash of the resource contents corresponds to the provided hash and if not, refuse to load/execute the resource, thereby protecting the website from potentially compromised content.
 
-23.7%  
-*Pages using SRI (mobile)*
+{{ figure_markup(
+  content="23.6%",
+  caption="Pages using SRI (mobile)",
+  classes="big-number",
+  sheets_gid="1788665240",
+  sql_file="sri_usage.sql",
+) }}
 
-SRI is used on 25.9% and 23.7% of desktop and mobile pages respectively. This is a rise by around 2.5% for both numbers, showing that a growing number of developers are using SRI to protect their pages.
+SRI is used on 25.9% and 23.6% of desktop and mobile pages respectively. This is a rise by around 2.5% for both numbers, showing that a growing number of developers are using SRI to protect their pages.
 
-![][image12]  
-*SRI coverage per page*
+{{ figure_markup(
+  image="sri-coverage.png",
+  caption="SRI coverage per page",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1391748685&format=interactive",
+  sheets_gid="165579346",
+  sql_file="sri_coverage_per_page.sql"
+  )
+}}
 
 Compared with last year, we see a drop in median subresource coverage per page by 0.41%. It is likely that this drop is caused by the larger number of pages being crawled by the web almanac crawler this year.
 
@@ -470,8 +572,13 @@ The list of most common hosts from which SRI-protected scripts are loaded has re
 
 The [Permissions Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Permissions_Policy) (formerly Feature Policy) is a policy that allows websites to allow or disallow the use of specific features in the browser, such as the camera, microphone, sensors like the accelerometer or geolocation data. Through the `Permissions-Policy` response header, developers can allow or disallow specific feature use by the main page and its embedded content. A specific policy for one embedded resource can be set through the `allow` attribute of the `<iframe>` element.
 
-\+50.2%  
-*Relative increase in adoption of `Permissions-Policy` header from 2024 (mobile)*
+{{ figure_markup(
+  content="+50%",
+  caption="Relative increase in adoption of the `Permissions-Policy` header from 2024 (mobile)",
+  classes="big-number",
+  sheets_gid="136009485",
+  sql_file="security_headers_prevalence.sql",
+) }}
 
 Compared to last year, the use of the `Permissions-Policy` saw a relative increase of almost 60%. Although this is a large relative increase, the absolute percentage of websites using `Permissions-Policy` remains rather small at 3.7% on mobile. The rise in adoption is a good sign for the policy.
 
@@ -501,7 +608,7 @@ Compared to last year, the use of the `Permissions-Policy` saw a relative increa
         <td class="numeric">4.44%</td>
       </tr>
       <tr>
-        <td><code>accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=\*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=\*, picture-in-picture=\*, publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=\*, usb=(), xr-spatial-tracking=(), gamepad=(), serial=()</code></td>
+        <td><code>accelerometer=(), autoplay=(), camera=(), cross-origin-isolated=(), display-capture=(self), encrypted-media=(), fullscreen=*, geolocation=(self), gyroscope=(), keyboard-map=(), magnetometer=(), microphone=(), midi=(), payment=*, picture-in-picture=*, publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=*, usb=(), xr-spatial-tracking=(), gamepad=(), serial=()</code></td>
         <td class="numeric">3.65%</td>
         <td class="numeric">3.45%</td>
       </tr>
@@ -629,8 +736,15 @@ By employing the [`sandbox`](https://developer.mozilla.org/en-US/docs/Web/HTML/R
 
 We see the use of the sandbox attribute rise compared to the 2024 edition: The percentage of iframes with a sandbox attribute rose from 20.0% to 22.7%, showing that more and more developers want to protect their users against potential misuse by embedded content.
 
-![][image13]  
-*Prevalence of sandbox directives on iframes*
+{{ figure_markup(
+  image="iframe-sandbox-directives.png",
+  caption="Prevalence of sandbox directives on iframes",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1050517232&format=interactive",
+  sheets_gid="679180424",
+  sql_file="iframe_sandbox_directives.sql"
+  )
+}}
 
 Like last year, we see that out of all iframes with the `sandbox` attribute, 98.5% (on mobile) use it to allow the embedded webpage to execute scripts by including the `allow-scripts` directive. Following in second place, used in 97.8% on mobile iframes, developers use the `allow-same-origin` to make the loaded resources part of the embedder's origin.
 
@@ -696,8 +810,15 @@ While there are many defenses for websites implemented by many browsers, it can 
 
 A multitude of protection mechanisms can be configured through HTTP response headers. Based on the values of these headers the browser will enforce these protections. Not all security mechanisms are relevant for every website, but the absence of all security headers can point to missing urgency towards security.
 
-![][image14]
-*Adoption of security headers for site requests in mobile pages*
+{{ figure_markup(
+  image="security-headers-mobile.png",
+  caption="Adoption of security headers for site requests in mobile pages over time",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=710761597&format=interactive",
+  sheets_gid="136009485",
+  sql_file="security_headers_prevalence.sql"
+  )
+}}
 
 Like last year there are only a few headers for which adoption decreased. The `Feature-Policy` header is deprecated in favor of the `Permissions-Policy`, therefore it's no surprise that the adoption is declining. The other two: `Clear-Site-Data` and `Document-Policy-Report-Only` have such low adoption (0.01% and 0.00001% respectively) that relative changes in adoption may seem large while absolute differences are actually small. This means that the overall adoption of security headers keeps increasing over time, which is a positive sign for web security overall.
 
@@ -844,8 +965,15 @@ Because of the emergence of microarchitectural side-channel attacks like [Spectr
 
 Multiple new security headers, known as the cross-origin policies, were created as a response to these challenges: Cross-Origin-Resource-Policy (CORP), Cross-Origin-Embedder-Policy (COEP) and Cross-Origin-Opener-Policy (COOP). These headers provide mechanisms that protect against side-channel attacks by allowing developers to control how their resources are embedded across different origins. We observe that the adoption of all of these headers keeps growing year after year, with both CORP and COOP reaching over 2% adoption this year.
 
-![][image15]
-*Usage of Cross-Origin headers in 2023, 2024 and 2025*
+{{ figure_markup(
+  image="cross-origin-headers-trend.png",
+  caption="Usage of Cross-Origin headers over time",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=157500281&format=interactive",
+  sheets_gid="136009485",
+  sql_file="security_headers_prevalence.sql"
+  )
+}}
 
 #### Cross Origin Embedder Policy
 
@@ -1153,11 +1281,25 @@ The `CryptoGetRandomValues` remains the most widely used feature of this API, ho
 
 Bots have been present on the web for a long time, and malicious bots are a large part of that. Because of these issues, many products have been created by different vendors to protect websites against bots. The use of these products continues to rise year after year, including this year, where we see a jump from 26.5% to 31.1% adoption on mobile, a rise of over 4.5%.
 
-![][image16]
-*The absolute distribution of bot protection services in use*
+{{ figure_markup(
+  image="bot-protection-absolute.png",
+  caption="The absolute distribution of bot protection services in use",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1081236768&format=interactive",
+  sheets_gid="1427912746",
+  sql_file="bot_detection.sql"
+  )
+}}
 
-![][image17]
-*The relative distribution of bot protection services in use*
+{{ figure_markup(
+  image="bot-protection-relative.png",
+  caption="The relative distribution of bot protection services in use",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1085355715&format=interactive",
+  sheets_gid="1427912746",
+  sql_file="bot_detection.sql"
+  )
+}}
 
 We see that reCAPTCHA remains the largest bot protection service, but Cloudflare Bot Management is growing more rapidly, thereby taking up a larger relative share of websites using bot protection services. In case these trends continue over the next year, we may see Cloudflare Bot Management closing the gap on reCAPTCHA.
 
@@ -1196,21 +1338,35 @@ Since last year, we see a big rise in the use of these APIs. On mobile, the numb
 
 There may be various reasons that web developers choose to adopt more security practices. Some of the most noteworthy are:
 
-* Geographical: depending on the region, there may be more security-oriented education or knowledge, or in some cases there can be local laws that mandate stricter security hygiene.
-* Technological: the technology stack in use can influence the adoption of security mechanisms. Depending on the technology in use, some security features will be enabled out of the box without the developer having to think about enabling them.
-* Popularity: very popular websites may have larger budgets for security, in part because they are more likely to be the target of certain cyberattacks. In addition, these sites are likely to attract more security professionals and in some cases bug bounty hunters to help them implement security features and strengthen their defenses.
+- Geographical: depending on the region, there may be more security-oriented education or knowledge, or in some cases there can be local laws that mandate stricter security hygiene.
+- Technological: the technology stack in use can influence the adoption of security mechanisms. Depending on the technology in use, some security features will be enabled out of the box without the developer having to think about enabling them.
+- Popularity: very popular websites may have larger budgets for security, in part because they are more likely to be the target of certain cyberattacks. In addition, these sites are likely to attract more security professionals and in some cases bug bounty hunters to help them implement security features and strengthen their defenses.
 
 ### Location of websites
 
 The location where a website is hosted or where its developers are based can have a big impact on the adoption of certain security features. Security education for developers plays a big role, as developers cannot implement features of which they don't know they exist or which they don't understand. In addition, local laws can sometimes require the adoption of certain security practices.
 
-![][image18]  
-*The adoption of HTTPS per country; top 10 and bottom 10 countries by adoption*
+{{ figure_markup(
+  image="https-by-country.png",
+  caption="The adoption of HTTPS per country; top and bottom 10 countries by adoption",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1706573742&format=interactive",
+  sheets_gid="1980003998",
+  sql_file="feature_adoption_by_country.sql"
+  )
+}}
 
 HTTPS adoption has been increasing year after year, a trend that luckily continues this year as well. We see even adoption in the top countries continued to increase by a few tenths of a percentage. The bottom countries saw slightly larger rises in HTTPS adoption, with Japan now being the only country with adoption under 95% and only five countries having less than 98% adoption of HTTPS, an extremely good result. In the following years, we can expect the bottom countries to slowly catch up with the rate of adoption of the top countries, although a full 100% adoption seems unlikely in the near future.
 
-![][image19]  
-*The adoption of CSP and XFO per country; top 5 and bottom 5 countries by CSP adoption*
+{{ figure_markup(
+  image="csp-xfo-by-country.png",
+  caption="The adoption of CSP and XFO per country; top 5 and bottom 5 countries by CSP adoption",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1911016277&format=interactive",
+  sheets_gid="1980003998",
+  sql_file="feature_adoption_by_country.sql"
+  )
+}}
 
 We see a more varied picture when looking at more complex security mechanisms. With a small rise in adoption for most leading countries, some of the bottom countries saw a decline in adoption of these policies. The leading countries still have CSP configured on just over a quarter of the websites. The gap between CSP and XFO remains large, although it has gone up slightly, reaching only up to 14% instead of 15% last year.
 
@@ -1263,8 +1419,15 @@ We see that a number of blogging websites and website builders have some importa
 
 Popular websites with a large user base often have a good reason to protect their users to the best of their abilities so they will not lose users and their trust. Protecting the often sensitive data they store while they likely are the target of more directed attacks requires significant investments in securing their website, but will likely also lead to a more generally security website as a trade-off.
 
-![][image20]
-*Security header adoption by website rank according to CrUX*
+{{ figure_markup(
+  image="security-headers-by-rank.png",
+  caption="Security header adoption by website rank according to CrUX",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2036748504&format=interactive",
+  sheets_gid="775322478",
+  sql_file="security_adoption_by_rank.sql"
+  )
+}}
 
 We find that the most popular security headers like `X-Frame-Options`, `Strict-Transport-Security`, `X-Content-Type-Options` and `Content-Security-Policy` always have a higher adoption among more popular websites on mobile. The most widely adopted header, `X-Frame-Options` is used on 67% of the top 1,000 sites yet only on 30% of all sites visited by the browser. We see the gap between the adoption in more popular sites and less popular sites remains practically identical since last year.
 
@@ -1272,8 +1435,15 @@ We find that the most popular security headers like `X-Frame-Options`, `Strict-T
 
 Depending on the industry, more importance may be attributed to keeping a website more secure. We attempt to estimate the efforts in securing websites per industry based on the average number of security headers set by websites. While the number of security headers does not necessarily indicate whether a website is better secured (after all, security mechanisms can be misconfigured), it provides a good estimate for the effort taken to implement security features.
 
-![][image21]
-*The average number of security headers by website category; top 5 and bottom 5 categories*
+{{ figure_markup(
+  image="avg-security-headers-per-site.png",
+  caption="The average number of security headers by website category; top 5 and bottom 5 categories",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1092427119&format=interactive",
+  sheets_gid="662895658",
+  sql_file="feature_adoption_by_category.sql"
+  )
+}}
 
 We see a big difference occurring in the average number of security headers since last year. Sites in the Internet & Telecom and Computers & Electronics categories use significantly more security headers. Especially on mobile clients the difference with following categories is clearly visible. While these two categories seem to be outliers in the good sense, the average number of security headers over other industries has remained largely the same, with here or there a very minor change of about 0.1 header per site on average.
 
@@ -1283,13 +1453,27 @@ The two leading industries in terms of security headers happen to be industries 
 
 Cryptocurrencies are more popular than they have ever been. Cryptomining has been a large business for a number of years and adversaries have been known to install cryptominers as a form of malware on victim websites. Over the past years, the use of cryptominers on the web has been steadily declining, just like it has been over the past year.
 
-![][image22]
-*The number of cryptominers in user over time; from May 2022 to Sep 2025*
+{{ figure_markup(
+  image="cryptominers-trend.png",
+  caption="The number of cryptominers in use over time; from May 2022 to Sep 2025",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2128543496&format=interactive",
+  sheets_gid="612990857",
+  sql_file="cryptominer_usage.sql"
+  )
+}}
 
 We see the number of pages with cryptominers decrease to only 37 pages on mobile, a 42% decline since last year. It is also a 83% decline since September 2022, only three years earlier.
 
-![][image23]
-*The cryptominer market shares*
+{{ figure_markup(
+  image="cryptominers-market-share.png",
+  caption="The cryptominer market shares",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1906348526&format=interactive",
+  sheets_gid="1210984012",
+  sql_file="cryptominer_share.sql"
+  )
+}}
 
 Although we find a very low absolute number of cryptominers on the web, we still take a look at the shares that different cryptominers represent. Compared to last year, we see the number of pages with Coinimp has dropped to match the nine pages that have JSEcoin. An interesting note to make is the difference between the number of cryptominers on desktop and mobile pages, with the number of pages on mobile being almost double the number on desktop.
 
@@ -1428,8 +1612,13 @@ The [`Timing-Allow-Origin` (TAO)](https://developer.mozilla.org/en-US/docs/Web/H
 
 In a case when CORS is configured, many of these types of timing values (including those listed above) are returned as 0 to prevent cross-origin leaks. By listing an origin in the `Timing-Allow-Origin` header, these values retain their original value and are no longer zeroed out.
 
-84.6%
-*The percentage of `Timing-Allow-Origin` headers that are set to the wildcard (`*`) value*
+{{ figure_markup(
+  content="84%",
+  caption="The percentage of `Timing-Allow-Origin` headers that are set to the wildcard (`*`) value",
+  classes="big-number",
+  sheets_gid="788822751",
+  sql_file="tao_header_prevalence.sql",
+) }}
 
 Besides returning a list of origins, developers can also set the `Timing-Allowed-Origin` header's value to the wildcard character `*` to indicate that any origin may access the timing information. We find that 84.6% of the TAO headers contain the wildcard `*` value, rising by 2% since last year. This indicates that many developers have no problem with universally exposing finegrained timing information to any origin.
 
@@ -1439,8 +1628,15 @@ When websites publish excessive information about their infrastructure, such as 
 
 We track the use of headers that are commonly used to report this type of information, namely: `Server`, `X-Server`, `X-Backend-Server`, `X-Powered-By`, and `X-Aspnet-Version`.
 
-![][image24]
-*Prevalence of headers used to convey information about the server*
+{{ figure_markup(
+  image="server-headers.png",
+  caption="Prevalence of headers used to convey information about the server",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=347972704&format=interactive",
+  sheets_gid="374546324",
+  sql_file="server_information_header_prevalence.sql"
+  )
+}}
 
 Just like the past years, the `Server` header remains the most widely used header by a large margin over `X-Powered-By`. These headers show up on 91.5% and 23.9% of hosts on the web. For each of the headers we see a slight decrease in the amount of hosts they show up on. We don't expect these values to see major changes over time, as many web technologies automatically set some of these headers and developers may not have a lot of interest in removing these headers as the gains in terms of security are small.
 
@@ -1515,13 +1711,26 @@ If we look at the most common values within the `Server` and `X-Powered-By` valu
 
 The Server-Timing header is a response header defined in a [W3C Editor's Draft](https://w3c.github.io/server-timing/) which can be used to communicate server performance metrics. Developers can send metrics containing zero or more properties. One of the specified properties is the `dur` property, which can be used to communicate millisecond-accurate timings that contain the duration of specific actions on the server.
 
-![][image25]
-*The usage of the `server-timing` header*
+{{ figure_markup(
+  image="server-timing-header-usage.png",
+  caption="The usage of the `Server-Timing` header",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1645983336&format=interactive",
+  sheets_gid="963438395",
+  sql_file="server_timing_usage_values.sql"
+  )
+}}
 
 The percentage of hosts returning a `server-timing` header has increased by over 15% to being in use by over a fifth of hosts that have been visited by the crawler. This is a very steep increase since last year.
 
-![][image26]
-*The relative usage of `dur` properties in `server-timing` headers*
+{{ figure_markup(
+  image="server-timing-header-dur-property.png",
+  caption="The relative usage of `dur` properties in `Server-Timing` headers",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2066582084&format=interactive",
+  sql_file="server_timing_usage_values.sql"
+  )
+}}
 
 Of the `server-timing` headers on the web, we find 42% of them have at least one `dur` property. This is a relative decrease compared to last year, but given the steep incline in header use over the year, the absolute number has risen. This also means that more headers do not include a `dur` property and use the header for other purposes, possibly through the use of the `desc` property that allows developers to set a description for certain metrics.
 
@@ -1535,8 +1744,15 @@ Well-known URIs provide a standardized mechanism for designating specific locati
 
 The well-known [`security.txt`](https://www.rfc-editor.org/rfc/rfc8615.txt) file is a standardized file format that websites use to communicate vulnerability reporting information. White hat hackers and penetration testers can use this file to find contact details, PGP keys, policies, and other information for responsible disclosure.
 
-![][image27]  
-*The usage of security.txt properties*
+{{ figure_markup(
+  image="security-text-property-usage.png",
+  caption="The usage of `security.txt` properties",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2020387408&format=interactive",
+  sheets_gid="1421232798",
+  sql_file="well-known_security.sql"
+  )
+}}
 
 Adoption has increased to 1.82% of desktop and 1.72% of mobile websites, both up from 1% in 2024, showing growing recognition of standardized security disclosure practices.
 
@@ -1548,8 +1764,15 @@ This analysis shows that at least 25% of security.txt files are not fully valid,
 
 The [change-password well-know URI](https://w3c.github.io/webappsec-change-password-url/) is a W3C specification draft from 2021, which has not been updated since. The purpose of the URI is for users and external resources to quickly find the correct location at which they can change their passwords for the specific site.
 
-![][image28]  
-*The usage of the change-password .well-known endpoint*
+{{ figure_markup(
+  image="change-password-usage.png",
+  caption="The usage of the change-password .well-known endpoint",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1701010385&format=interactive",
+  sheets_gid="2031721186",
+  sql_file="well-known_change-password.sql"
+  )
+}}
 
 We see a very minor rise to 0.30% in desktop sites (up from .027%) and no change for the mobile endpoints, which remain at 0.27%. This slow adoption is not unexpected, especially taking into account that not all websites require authentication mechanisms.
 
@@ -1557,8 +1780,15 @@ We see a very minor rise to 0.30% in desktop sites (up from .027%) and no change
 
 The [specification](https://w3c.github.io/webappsec-change-password-url/response-code-reliability.html) draft to check on the reliability of a website's HTTP response status code also remains unchanged since 2021\. The purpose of this specific well-known endpoint is that it should never exist and thus the response status code should never be an [ok status](https://fetch.spec.whatwg.org/#ok-status). If a redirect occurs after which the site responds with an ok status, this would be considered as incorrect behavior.
 
-![][image29]  
-*The distribution of statuses returned for the .well-known endpoint to assess status code reliability*
+{{ figure_markup(
+  image="well-known-responses.png",
+  caption="The distribution of statuses returned for the `.well-known` endpoint to assess status code reliability",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1650502790&format=interactive",
+  sheets_gid="182236208",
+  sql_file="well-known_resource-not-be-200.sql"
+  )
+}}
 
 We find similar results to 2022's and 2024's edition of the Almanac. However, the number of faulty ok status responses has grown slightly, from 84% in 2024 for both desktop and mobile pages to 83% and 84%, respectively. Web developers should continue to make their application use the correct status codes to respond to incoming requests in order to avoid that the status codes lose meaning.
 
@@ -1566,8 +1796,15 @@ We find similar results to 2022's and 2024's edition of the Almanac. However, th
 
 Finally, we check whether sensitive endpoints are disallowed to be visited by crawlers in the well-known robots.txt file. By checking the disallowed endpoints in this file, attackers may find pages to target. This year, 81% of desktop sites and 80% of mobiles sites hosted a robots.txt file, which is very similar to last year's edition of the Web Almanac.
 
-![][image30]  
-*The percentage of sites including specified endpoints in their robots.txt*
+{{ figure_markup(
+  image="robots-text-sensitive-endpoints.png",
+  caption="The percentage of sites including specified endpoints in their `robots.txt`",
+  description="",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1097990890&format=interactive",
+  sheets_gid="1854752678",
+  sql_file="robot-txt_sensitive_disallow.sql"
+  )
+}}
 
 Also the contents of those files remain very similar. The largest increase is recorded for the `auth` endpoint with 0.2% for desktop sites, while the largest decrease was recorded for the `login` endpoint with 0.2% for desktop sites.
 
