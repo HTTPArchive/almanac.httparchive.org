@@ -35,7 +35,15 @@ The **Web Almanac performance** chapter examines these signals at scale across d
 
 Core Web Vitals are Google’s key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page’s main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page’s lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
 
-### [TODO] Image
+{{ figure_markup(
+  image="good-core-web-vitals-devices-years.png",
+  caption="The percent of websites having good CWV, segmented by year and desktop vs mobile.",
+  description="Bar chart showing the percentage of websites with good Core Web Vitals (CWV) performance by device over time. In 2021, 32% of mobile websites and 41% of desktop websites achieved good CWV scores. This increased to 31% mobile and 44% desktop in 2022, then to 36% mobile and 48% desktop in 2023. By 2024, good CWV performance reached 44% on mobile and 55% on desktop, and further improved in 2025 to 48% for mobile websites and 56% for desktop websites.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=221638490&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="web_vitals_by_rank_and_device.sql"
+  )
+}}
 
 Mobile performance has significantly improved due to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications. Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This significant rise in mobile performance is largely attributable to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications.
 
