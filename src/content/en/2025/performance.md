@@ -128,14 +128,22 @@ Looking at the past years, the percentage of websites meeting the Good CLS thres
   caption="The percent of websites having good CWV, segmented by page type.",
   description="The chart shows the percentage of pages with good Cumulative Layout Shift (CLS) scores for home pages and secondary pages on desktop and mobile in 2025. For home pages, 71% of desktop pages and 79% of mobile pages achieve good CLS. For secondary pages, the share increases to 73% on desktop and 81% on mobile, with mobile outperforming desktop for both page types.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=24521456&format=interactive",
-  sheets_gid="1060077014",
+  sheets_gid="1721986308",
   sql_file="TODO"
   )
 }}
 
 Pages beyond the homepage show slightly better visual stability than homepages across both desktop and mobile devices. In 2025, 73% of desktop secondary pages achieve Good CLS compared to 71% of desktop homepages, while on mobile 81% of secondary pages meet the Good CLS threshold versus 79% of mobile homepages. This suggests that homepages, which often contain more dynamic content such as hero media, banners, and promotional elements, remain more prone to layout shifts than secondary pages.
 
-## TODO Image
+{{ figure_markup(
+  image="good-cls-by-month.png",
+  caption="Monthly trend of websites with good CLS by device from 2023 to 2025.",
+  description="The chart shows the monthly percentage of websites with good Cumulative Layout Shift (CLS) scores on desktop and mobile from January 2023 through early 2025. Desktop increases from approximately 65% at the start of 2023 to around 72% by 2025, while mobile rises from about 75% to roughly 79–80% over the same period. Mobile maintains a higher share of good CLS than desktop throughout the entire timeframe.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=142338615&format=interactive",
+  sheets_gid="1891926464",
+  sql_file="TODO"
+  )
+}}
 
 Over time, Good CLS increases steadily on both device types, with mobile consistently outperforming desktop. Despite minor month-to-month fluctuations, both curves trend upward, without much sharp inflection points, suggesting sustained improvements rather than abrupt shifts.
 
