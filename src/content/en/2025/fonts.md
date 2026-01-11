@@ -8,7 +8,6 @@ reviewers: [bramstein, jmsole]
 analysts: [charlesberret, ivanukhov]
 editors: [svgeesus]
 translators: []
-discuss:
 charlesberret_bio: Charles Berret is a journalist, developer, and media scholar who studies the history and philosophy of information technologies. He lives in New York City and works at Enigma finding stories in data.
 results: https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit
 featured_quote_1: If you wish to read these results as a web font hygiene checklist&colon; be sure to use WOFF2, check your MIME types, subset large fonts as appropriate, and pay special attention if you self-host, because that's where most of the inefficiencies still reside.
@@ -18,7 +17,6 @@ featured_stat_1: 72%
 featured_stat_label_1: websites self-hosting fonts in some capacity
 featured_stat_2: 40%
 featured_stat_label_2: websites using variable fonts
-doi:
 ---
 
 ## Introduction
@@ -71,9 +69,11 @@ Because most sites don't rely on just one source for web typography, it's useful
   image="popular-font-combos-desktop.png",
   caption="Popular font hosting combinations on desktop sites.",
   description="Horizontal bar chart comparing the most common combinations of font hosts on desktop from 2022 to 2025. In 2025, the most common setups are self-hosted plus Google, self-hosted only, and Google only, with smaller shares for combinations that include Font Awesome or Adobe.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1214457512#gid=1214457512",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=806182622&format=interactive",
   sheets_gid="1214457512",
-  sql_file="performance/fonts_services.sql"
+  sql_file="performance/fonts_services.sql",
+  width=600,
+  height=514
   )
 }}
 
@@ -81,9 +81,11 @@ Because most sites don't rely on just one source for web typography, it's useful
   image="popular-font-combos-mobile.png",
   caption="Popular font hosting combinations on mobile sites.",
   description="Horizontal bar chart comparing the most common combinations of font hosts on mobile from 2022 to 2025. In 2025, the most common setups are self-hosted plus Google (31.7% of sites), self-hosted only (36.4%), and Google only (11.9%), with smaller shares for combinations that include Font Awesome or Adobe.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1214457512#gid=1214457512",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=412656368&format=interactive",
   sheets_gid="1214457512",
-  sql_file="performance/fonts_services.sql"
+  sql_file="performance/fonts_services.sql",
+  width=600,
+  height=514
   )
 }}
 
@@ -115,7 +117,7 @@ When it comes to font file formats on the web, the modern WOFF2 format continues
   image="file-formats-desktop.png",
   caption="File formats for fonts on desktop sites.",
   description="Pie chart showing WOFF2 as the dominant font file format on desktop sites at 65.2%, followed by WOFF at 16.0%, TTF at 6.7%, application/octet-stream at 6.7%, and other formats at 5.5%.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1988023232#gid=1988023232",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1123686977&format=interactive",
   sheets_gid="1988023232",
   sql_file="performance/fonts_format_file.sql"
   )
@@ -125,7 +127,7 @@ When it comes to font file formats on the web, the modern WOFF2 format continues
   image="file-formats-mobile.png",
   caption="File formats for fonts on mobile sites.",
   description="Pie chart showing WOFF2 as the dominant font file format on mobile sites at 65.4%, followed by WOFF at 15.8%, TTF at 6.8%, application/octet-stream at 6.6%, and other formats at 5.5%.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1988023232#gid=1988023232",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1601895269&format=interactive",
   sheets_gid="1988023232",
   sql_file="performance/fonts_format_file.sql"
   )
@@ -135,7 +137,7 @@ When it comes to font file formats on the web, the modern WOFF2 format continues
   image="file-formats-collected.png",
   caption="File formats for fonts by device.",
   description="Stacked horizontal bar chart comparing font file formats on desktop and mobile. On both devices, around two-thirds of sites use WOFF2, followed by WOFF at roughly 16%, with TTF, application/octet-stream, and other formats each accounting for smaller single-digit shares.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1988023232#gid=1988023232",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1241259518&format=interactive",
   sheets_gid="1988023232",
   sql_file="performance/fonts_format_file.sql"
   )
@@ -177,7 +179,7 @@ Because web fonts can cause visual abnormalities through render-blocking or dela
   image="link-relationship-usage-bar-desktop.png",
   caption="Usage of link relationship values for fonts on desktop sites.",
   description="Clustered bar chart showing the percent of desktop sites using link resource hints for fonts over time. In 2025, 18.3% of sites use preconnect, 14.6% use dns-prefetch, 12.0% use preload, and 0.6% use prefetch, compared to lower or similar values in 2022–2024.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=45862637#gid=45862637",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=321299741&format=interactive",
   sheets_gid="45862637",
   sql_file="performance/pages_link_relationship.sql"
   )
@@ -187,7 +189,7 @@ Because web fonts can cause visual abnormalities through render-blocking or dela
   image="link-relationship-usage-bar-mobile.png",
   caption="Usage of link relationship values for fonts on mobile sites.",
   description="Clustered bar chart showing the percent of mobile sites using link resource hints for fonts over time. In 2025, 17.7% of sites use preconnect, 14.7% use dns-prefetch, 11.7% use preload, and 0.6% use prefetch, again compared to slightly lower or similar values from 2022–2024.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=45862637#gid=45862637",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=873953967&format=interactive",
   sheets_gid="45862637",
   sql_file="performance/pages_link_relationship.sql"
   )
@@ -211,7 +213,7 @@ The CSS ``font-display`` descriptor has effectively become standard practice in 
   image="font-display-usage.png",
   caption="Usage of font-display values.",
   description="Horizontal bar chart showing the share of sites using each font-display value. About 50.1% of mobile sites and 49.6% of desktop sites use swap. Roughly 24.9% use block, 8.5–9.1% use auto, 5.1% use fallback, and about 0.5% use optional.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=865309057#gid=865309057",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=2101549253&format=interactive",
   sheets_gid="865309057",
   sql_file="performance/styles_font_display.sql"
   )
@@ -277,7 +279,7 @@ The single most common font family seen in CSS is still Font Awesome (a leading 
   image="families-by-service-desktop.png",
   caption="Font families by service on desktop sites.",
   description="Stacked bar chart showing how the most popular font families are delivered on desktop. Font Awesome is served almost entirely from fontawesome.com, while families like Roboto, Poppins, Open Sans, Montserrat, Lato, Inter, Noto Sans JP, Noto Serif JP, and Source Sans are split between Google Fonts and self-hosting, with a small share of some families coming from Adobe.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1594814478#gid=1594814478",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1795432029&format=interactive",
   sheets_gid="1594814478",
   sql_file="performance/fonts_family_by_service.sql"
   )
@@ -287,7 +289,7 @@ The single most common font family seen in CSS is still Font Awesome (a leading 
   image="families-by-service-mobile.png",
   caption="Font families by service on mobile sites.",
   description="Stacked bar chart showing how the most popular font families are delivered on mobile. As on desktop, Font Awesome is dominated by fontawesome.com, while text families such as Roboto, Poppins, Open Sans, Montserrat, Lato, Inter, Noto Sans JP, Noto Serif JP, and Source Sans are primarily served from Google Fonts with a substantial self-hosted share and occasional Adobe usage.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=1594814478#gid=1594814478",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=407242574&format=interactive",
   sheets_gid="1594814478",
   sql_file="performance/fonts_family_by_service.sql"
   )
@@ -383,7 +385,7 @@ First, looking at the fonts themselves: OpenType layout features are now the nor
   image="font-feature-setting-usage.png",
   caption="Usage of CSS font-feature-settings by feature.",
   description="Horizontal bar chart showing how often specific OpenType features are enabled via font-feature-settings. The most commonly toggled features are kern (2.67% of sites) and liga (2.44%), followed by tnum at about 0.79%, palt at 0.74%, and smaller shares for lnum, pnum, clig, calt, ss01, and sups.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=427579836#gid=427579836",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1248453684&format=interactive",
   sheets_gid="427579836",
   sql_file="development/styles_font_feature_settings.sql"
   )
@@ -435,7 +437,7 @@ How popular are variable fonts? This year, 39.4% of desktop websites and 41.3% o
   image="variable-font-usage-bar.png",
   caption="Usage of variable fonts by device.",
   description="Grouped bar chart showing the share of desktop and mobile sites using at least one variable font from 2022 to 2025, rising to 39.4% on desktop and 41.3% on mobile in 2025.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=859651751#gid=859651751",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=584425108&format=interactive",
   sheets_gid="859651751",
   sql_file="development/fonts_variable.sql"
   )
@@ -445,7 +447,7 @@ How popular are variable fonts? This year, 39.4% of desktop websites and 41.3% o
   image="variable-font-usage-bar-2.png",
   caption="Year-over-year change in variable font usage.",
   description="Bar chart highlighting the year-over-year increase in the share of sites using variable fonts, with roughly a 6–7 percentage point gain between 2024 and 2025 on both desktop and mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit?gid=859651751#gid=859651751",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=331570977&format=interactive",
   sheets_gid="859651751",
   sql_file="development/fonts_variable.sql"
   )
