@@ -49,8 +49,8 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01'
-    AND rank <= 100000  -- Expanded to top 100K sites
+    date = '2025-07-01' AND
+    rank <= 100000  -- Expanded to top 100K sites
 ),
 
 -- Pre-filter requests with redirects and potential consent signals

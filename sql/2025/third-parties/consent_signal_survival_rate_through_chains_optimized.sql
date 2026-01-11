@@ -44,8 +44,8 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01'
-    AND rank <= 10000  -- Aggressive filtering: top 10K only
+    date = '2025-07-01' AND
+    rank <= 10000  -- Aggressive filtering: top 10K only
 ),
 
 -- Pre-filter to only requests with consent signals or initiator info
@@ -65,9 +65,9 @@ filtered_requests AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-07-01'
-    AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
-    AND (
+    r.date = '2025-07-01' AND
+    NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url) AND  -- Third-party only
+    (
       -- Only process requests with consent signals OR that are part of chains
       REGEXP_CONTAINS(r.url, r'[?&](us_privacy|ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string|gdpr|gdpr_consent|gdpr_pd|gpp|gpp_sid)=') OR
       JSON_VALUE(r.payload, '$._initiator') IS NOT NULL
@@ -188,22 +188,18 @@ SELECT
   cs.total_requests,
   cs.total_pages,
 
-
   -- Signal counts and survival rates
   cs.usp_standard_count,
   SAFE_DIVIDE(cs.usp_standard_count, b.usp_standard_baseline) AS usp_standard_survival_rate,
 
-
   cs.usp_nonstandard_count,
   SAFE_DIVIDE(cs.usp_nonstandard_count, b.usp_nonstandard_baseline) AS usp_nonstandard_survival_rate,
-
 
   cs.tcf_standard_count,
   SAFE_DIVIDE(cs.tcf_standard_count, b.tcf_standard_baseline) AS tcf_standard_survival_rate,
 
   cs.gpp_standard_count,
   SAFE_DIVIDE(cs.gpp_standard_count, b.gpp_standard_baseline) AS gpp_standard_survival_rate,
-
 
   cs.any_signal_count,
   SAFE_DIVIDE(cs.any_signal_count, b.any_signal_baseline) AS any_signal_survival_rate

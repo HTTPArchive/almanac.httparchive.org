@@ -9,8 +9,8 @@ WITH pages AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01'
-    AND rank <= 50000  -- Expand to top 50K sites
+    date = '2025-07-01' AND
+    rank <= 50000  -- Expand to top 50K sites
 ),
 
 -- Find requests with consent signals (no redirect filtering)
@@ -38,9 +38,9 @@ consent_requests AS (
   ON
     r.client = p.client AND r.page = p.page
   WHERE
-    r.date = '2025-07-01'
-    AND NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url)  -- Third-party only
-    AND (
+    r.date = '2025-07-01' AND
+    NET.REG_DOMAIN(r.page) != NET.REG_DOMAIN(r.url) AND  -- Third-party only
+    (
       REGEXP_CONTAINS(r.url, r'[?&]us_privacy=') OR
       REGEXP_CONTAINS(r.url, r'[?&](ccpa|usp_consent|uspString|uspConsent|ccpa_consent|usp|usprivacy|ccpaconsent|usp_string)=') OR
       REGEXP_CONTAINS(r.url, r'[?&](gdpr|gdpr_consent|gdpr_pd)=') OR

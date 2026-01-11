@@ -1,5 +1,5 @@
 #standardSQL
-# Optimized: Detailed breakdown of consent signals by individual parameters and top domains
+# Detailed breakdown of consent signals by individual parameters and top domains
 
 WITH pages AS (
   SELECT
