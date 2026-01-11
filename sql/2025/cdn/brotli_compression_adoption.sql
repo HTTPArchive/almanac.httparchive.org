@@ -37,15 +37,15 @@ WITH compression_analysis AS (
     -- Compression detection from Content-Encoding header
     (
       SELECT LOWER(h.value)
-FROM UNNEST(response_headers) AS h
-WHERE LOWER(h.name) = 'content-encoding'
-LIMIT 1
+      FROM UNNEST(response_headers) AS h
+      WHERE LOWER(h.name) = 'content-encoding'
+      LIMIT 1
     ) AS content_encoding,
 
     -- Vary header check (indicates dynamic compression support)
     EXISTS(
       SELECT 1 FROM UNNEST(response_headers) AS h
-WHERE LOWER(h.name) = 'vary' AND LOWER(h.value) LIKE '%accept-encoding%'
+      WHERE LOWER(h.name) = 'vary' AND LOWER(h.value) LIKE '%accept-encoding%'
     ) AS supports_dynamic_compression,
 
     -- Response size metrics
@@ -54,10 +54,10 @@ WHERE LOWER(h.name) = 'vary' AND LOWER(h.value) LIKE '%accept-encoding%'
 
     -- Transfer size (actual bytes transferred)
     SAFE_CAST(JSON_EXTRACT_SCALAR(payload, '$.response._transferSize') AS INT64) AS transfer_size
-FROM `httparchive.crawl.requests`
-WHERE date = '2025-07-01'
+  FROM `httparchive.crawl.requests`
+  WHERE date = '2025-07-01' AND
     -- Focus on compressible content types
-    AND REGEXP_CONTAINS(LOWER(url), r'\.(js|mjs|css|html|htm|json|svg|xml|txt)($|\?)')
+    REGEXP_CONTAINS(LOWER(url), r'\.(js|mjs|css|html|htm|json|svg|xml|txt)($|\?)')
 )
 
 SELECT
@@ -106,11 +106,13 @@ SELECT
   ROUND(SUM(CASE WHEN content_encoding = 'br' THEN response_body_size END) / (1024 * 1024 * 1024), 2) AS total_gb_brotli,
   ROUND(SUM(CASE WHEN content_encoding = 'gzip' THEN response_body_size END) / (1024 * 1024 * 1024), 2) AS total_gb_gzip
 FROM compression_analysis
-GROUP BY client,
+GROUP BY
+  client,
   cdn,
   content_type
 HAVING
   total_requests >= 100  -- Minimum threshold for statistical relevance
-ORDER BY client DESC,
+ORDER BY
+  client DESC,
   brotli_pct DESC,
   total_requests DESC

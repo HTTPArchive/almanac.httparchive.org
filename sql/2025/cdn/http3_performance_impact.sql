@@ -39,16 +39,16 @@ WITH protocol_performance AS (
 
     -- Priority information
     JSON_EXTRACT_SCALAR(payload, '$._priority') AS priority
-FROM `httparchive.crawl.requests`
-WHERE date = '2025-07-01'
-    AND client = 'mobile'
+  FROM `httparchive.crawl.requests`
+  WHERE date = '2025-07-01' AND
+    client = 'mobile'
 )
 
 SELECT
   cdn_provider,
   protocol,
   COUNT(DISTINCT page) AS total_pages,
-  COUNT(*) AS total_requests,
+  COUNT(0) AS total_requests,
 
   -- Performance metrics by protocol
   APPROX_QUANTILES(ttfb, 100)[OFFSET(25)] AS p25_ttfb,
@@ -81,7 +81,7 @@ SELECT
 
   -- Connection reuse (unique sockets vs requests)
   COUNT(DISTINCT socket_id) AS unique_connections,
-  SAFE_DIVIDE(COUNT(*), COUNT(DISTINCT socket_id)) AS avg_requests_per_connection,
+  SAFE_DIVIDE(COUNT(0), COUNT(DISTINCT socket_id)) AS avg_requests_per_connection,
 
   -- Resource type breakdown
   COUNTIF(resource_type = 'Document') AS document_requests,
@@ -89,10 +89,10 @@ SELECT
   COUNTIF(resource_type = 'Stylesheet') AS style_requests,
   COUNTIF(resource_type = 'Image') AS image_requests
 FROM protocol_performance
-WHERE protocol IN ('H3', 'HTTP/2', 'HTTP/1.x')
-  AND ttfb IS NOT NULL
-  AND ttfb > 0
-  AND ttfb < 10000  -- Filter outliers
+WHERE protocol IN ('H3', 'HTTP/2', 'HTTP/1.x') AND
+  ttfb IS NOT NULL AND
+  ttfb > 0 AND
+  ttfb < 10000  -- Filter outliers
 GROUP BY cdn_provider, protocol
 HAVING total_requests > 1000
 ORDER BY cdn_provider, protocol

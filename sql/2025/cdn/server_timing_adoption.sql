@@ -15,41 +15,41 @@ WITH server_timing_analysis AS (
     -- Check for Server-Timing header
     EXISTS(
       SELECT 1
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'server-timing'
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'server-timing'
     ) AS has_server_timing,
 
     -- Extract Server-Timing value for analysis
     (
       SELECT header.value
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'server-timing'
-LIMIT 1
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'server-timing'
+      LIMIT 1
     ) AS server_timing_value,
 
     -- Other performance headers
     EXISTS(
       SELECT 1
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'x-cache'
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'x-cache'
     ) AS has_x_cache,
 
     EXISTS(
       SELECT 1
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'x-cdn'
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'x-cdn'
     ) AS has_x_cdn,
 
     EXISTS(
       SELECT 1
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'cf-ray'  -- Cloudflare specific
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'cf-ray'  -- Cloudflare specific
     ) AS has_cf_ray,
 
     EXISTS(
       SELECT 1
-FROM UNNEST(response_headers) AS header
-WHERE LOWER(header.name) = 'x-amz-cf-id'  -- CloudFront specific
+      FROM UNNEST(response_headers) AS header
+      WHERE LOWER(header.name) = 'x-amz-cf-id'  -- CloudFront specific
     ) AS has_amz_cf_id,
 
     -- Performance metrics
@@ -60,24 +60,24 @@ WHERE LOWER(header.name) = 'x-amz-cf-id'  -- CloudFront specific
     -- Resource info
     JSON_EXTRACT_SCALAR(summary, '$.type') AS resource_type,
     JSON_EXTRACT_SCALAR(summary, '$.respSize') AS response_size
-FROM `httparchive.crawl.requests`
-WHERE date = '2025-07-01'
-    AND client = 'mobile'
+  FROM `httparchive.crawl.requests`
+  WHERE date = '2025-07-01' AND
+    client = 'mobile'
 )
 
 SELECT
   cdn_provider,
   COUNT(DISTINCT page) AS total_pages,
-  COUNT(*) AS total_requests,
+  COUNT(0) AS total_requests,
 
   -- Server-Timing adoption
   COUNTIF(has_server_timing) AS requests_with_server_timing,
-  SAFE_DIVIDE(COUNTIF(has_server_timing) * 100.0, COUNT(*)) AS pct_server_timing,
+  SAFE_DIVIDE(COUNTIF(has_server_timing) * 100.0, COUNT(0)) AS pct_server_timing,
 
   -- Other transparency headers
   COUNTIF(has_x_cache) AS requests_with_x_cache,
   COUNTIF(has_x_cdn) AS requests_with_x_cdn,
-  SAFE_DIVIDE(COUNTIF(has_x_cache) * 100.0, COUNT(*)) AS pct_x_cache,
+  SAFE_DIVIDE(COUNTIF(has_x_cache) * 100.0, COUNT(0)) AS pct_x_cache,
 
   -- CDN-specific headers
   COUNTIF(has_cf_ray) AS cloudflare_ray_headers,
