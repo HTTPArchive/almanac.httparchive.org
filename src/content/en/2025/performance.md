@@ -54,7 +54,7 @@ Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in
   caption="The percentage of websites having good CWV, segmented by rank and device type.",
   description="The chart shows the percentage of websites achieving good Core Web Vitals (CWV) scores by site rank, comparing desktop and mobile performance. Among the top 1,000 websites, 59% of desktop sites have good CWV, compared to 51% on mobile, with mobile performance declining further for the next tiers to 42% for the top 10,000 and 37% for the top 100,000 sites. Desktop performance remains relatively stable across ranks, staying between 55% and 57%, while mobile performance improves again for lower-ranked sites, reaching 49% for the top 10 million and 48% overall.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=293787205&format=interactive",
-  sheets_gid="1060077014",
+  sheets_gid="1721986308",
   sql_file="web_vitals_by_rank_and_device.sql"
   )
 }}
@@ -75,7 +75,7 @@ In contrast, Desktop performance metrics are more uniformly distributed. This di
   caption="The percent of websites having good CWV, segmented by page type.",
   description="The chart shows the percentage of pages with good Core Web Vitals (CWV) scores for home pages and secondary pages on desktop and mobile. On home pages, 47% of desktop pages and 45% of mobile pages achieve good CWV. On secondary pages, the share increases to 61% on desktop and 56% on mobile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=604736426&format=interactive",
-  sheets_gid="1060077014",
+  sheets_gid="1721986308",
   sql_file="TODO"
   )
 }}
