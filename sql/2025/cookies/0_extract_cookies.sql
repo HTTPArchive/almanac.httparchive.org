@@ -53,7 +53,7 @@ SELECT
   root_page,
   rank,
   CAST(toTimestamp(JSON_VALUE(payload.startedDateTime)) AS STRING) AS startedDateTime,
-  ENDS_WITH(NET.HOST(page), NET.REG_DOMAIN(JSON_VALUE(cookie.domain))) AS firstPartyCookie,
+  ENDS_WITH(NET.HOST(page), '.' || NET.REG_DOMAIN(JSON_VALUE(cookie.domain))) AS firstPartyCookie,
   JSON_VALUE(cookie.name) AS name,
   JSON_VALUE(cookie.domain) AS domain,
   JSON_VALUE(cookie.path) AS path,
