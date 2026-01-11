@@ -1,90 +1,78 @@
+-- noqa: disable=PRS
 -- Detection logic explained:
 -- https://github.com/privacycg/proposals/issues/6
 -- https://github.com/privacycg/nav-tracking-mitigations/blob/main/bounce-tracking-explainer.md
 
 WITH redirect_requests AS (
-  SELECT
+  FROM `httparchive.crawl.requests`
+  |> WHERE
+    date = '2025-07-01' AND
+    --rank = 1000 AND
+    SAFE.INT64(summary.status) BETWEEN 300 AND 399 AND
+    index <= 2
+  |> JOIN UNNEST(response_headers) AS header
+  |> WHERE LOWER(header.name) = 'location'
+  |> SELECT
     client,
     url,
     index,
-    response_headers,
+    NET.REG_DOMAIN(header.value) AS location_domain,
     page
-  FROM `httparchive.crawl.requests`
-  WHERE
-    date = '2025-07-01' AND
-    is_root_page = TRUE AND
-    type NOT IN ('css', 'image', 'font', 'video', 'audio') AND
-    ROUND(INT64(summary.status) / 100) = 3 AND
-    index <= 2
 ),
 
+-- Find the first navigation redirect
 navigation_redirect AS (
-  -- Find the first navigation redirect
-  SELECT
-    client,
-    url,
-    page,
-    response_header.value AS navigation_redirect_location
-  FROM redirect_requests,
-    UNNEST(response_headers) AS response_header
-  WHERE
+  FROM redirect_requests
+  |> WHERE
     index = 1 AND
-    LOWER(response_header.name) = 'location' AND
-    NET.REG_DOMAIN(response_header.value) != NET.REG_DOMAIN(page)
+    NET.REG_DOMAIN(page) = NET.REG_DOMAIN(url) AND
+    NET.REG_DOMAIN(url) != location_domain
+  |> SELECT
+    client,
+    page,
+    location_domain AS bounce_domain
 ),
 
+-- Find the second navigation redirect
 bounce_redirect AS (
-  -- Find the second navigation redirect
-  SELECT
+  FROM redirect_requests
+  |> WHERE
+    index = 2 AND
+    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url) AND
+    NET.REG_DOMAIN(url) != location_domain
+  |> SELECT
     client,
     url,
     page,
-    response_header.value AS bounce_redirect_location,
-    response_headers
-  FROM redirect_requests,
-    UNNEST(response_headers) AS response_header
-  WHERE
-    index = 2 AND
-    LOWER(response_header.name) = 'location'
+    location_domain AS bounce_redirect_location_domain
 ),
 
+-- Combine the first and second navigation redirects
 bounce_sequences AS (
-  -- Combine the first and second navigation redirects
-  SELECT
-    nav.client,
-    NET.REG_DOMAIN(navigation_redirect_location) AS bounce_hostname,
-    COUNT(DISTINCT nav.page) AS number_of_pages
-  --ARRAY_AGG(bounce.bounce_tracking_cookies) AS bounce_tracking_cookies
   FROM navigation_redirect AS nav
-  LEFT JOIN bounce_redirect AS bounce
+  |> JOIN bounce_redirect AS bounce
   ON
     nav.client = bounce.client AND
-    nav.page = bounce.page AND
-    nav.navigation_redirect_location = bounce.url
-  WHERE bounce_redirect_location IS NOT NULL
-  GROUP BY
-    nav.client,
-    bounce_hostname
+    nav.page = bounce.page
+  |> AGGREGATE COUNT(DISTINCT nav.page) AS pages_count
+  GROUP BY nav.client, bounce_domain
 ),
 
 pages_total AS (
-  SELECT
-    client,
-    COUNT(DISTINCT page) AS total_pages
   FROM `httparchive.crawl.pages`
-  WHERE date = '2025-07-01' AND
-    is_root_page
-  GROUP BY client
+  |> WHERE date = '2025-07-01' --AND rank = 1000
+  |> AGGREGATE COUNT(DISTINCT page) AS total_pages GROUP BY client
 )
 
--- Count the number of websites with bounce tracking per bounce hostname
-SELECT
-  client,
-  bounce_hostname,
-  number_of_pages,
-  number_of_pages / total_pages AS pct_pages
 FROM bounce_sequences
-JOIN pages_total
-USING (client)
-ORDER BY number_of_pages DESC
-LIMIT 100
+|> JOIN pages_total USING (client)
+|> EXTEND pages_count / total_pages AS pages_pct
+|> DROP total_pages
+|> PIVOT(
+  ANY_VALUE(pages_count) AS cnt,
+  ANY_VALUE(pages_pct) AS pages_pct
+  FOR client IN ('desktop', 'mobile')
+)
+|> RENAME cnt_mobile AS mobile, cnt_desktop AS desktop
+|> ORDER BY mobile + desktop DESC
+|> LIMIT 100

@@ -38,7 +38,7 @@ cnames AS (
     client,
     cnames.cname,
     page,
-    ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples
+    --ARRAY_AGG(DISTINCT page LIMIT 2) AS page_examples
   FROM `httparchive.crawl.pages`,
     UNNEST(CONVERT_CNAME_JSON(custom_metrics.privacy.request_hostnames_with_cname)) AS cnames
   WHERE date = '2025-07-01' AND
@@ -66,7 +66,7 @@ cname_stats AS (
     adguard_trackers.domain IS NOT NULL AS adguard_known_cname,
     whotracksme.category AS whotracksme_category,
     COUNT(DISTINCT page) AS number_of_pages,
-    ANY_VALUE(page_examples) AS page_examples
+    --ANY_VALUE(page_examples) AS page_examples
   FROM cnames
   LEFT JOIN adguard_trackers
   ON ENDS_WITH(cnames.cname, adguard_trackers.domain)
