@@ -147,7 +147,7 @@ The bar chart shows the median number of third-party providers per page by rank 
   )
 }}
 
-The chart shows that third-party requests are dominated by `script`, `image`, and the `other` category. Together, `script`, `image`, and `other` account for more than half of all third-party request content types. This pattern is consistent with the 2024 edition, which also identified `script`, `image`, and `other` as the top request types, indicating little change since last year.
+The chart shows that third-party requests are dominated by `script`, `image`, and the `other` category. Together, `script`, `image`, and `other` account for more than half of all third-party request content types. This pattern is consistent with [the 2024 edition](../2024/third-parties#fig-5), which also identified `script`, `image`, and `other` as the top request types, indicating little change since last year.
 
 {{ figure_markup(
   image="top-3p-by-num-pages.png",
