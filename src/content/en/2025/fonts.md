@@ -15,8 +15,8 @@ featured_stat_1: 72%
 featured_stat_label_1: websites self-hosting fonts in some capacity
 featured_stat_2: 40%
 featured_stat_label_2: websites using variable fonts
-featured_stat_2: TODO
-featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
 
 ## Introduction
