@@ -10,7 +10,7 @@ editors: [montsec]
 translators: []
 fellowhuman1101_bio: Jamie Indigo isn't a robot, but speaks bot. As director of technical SEO at <a hreflang="en" href="https://www.coxautoinc.com/">Cox Automotive</a>, they study how search engines crawl, render, and index the web. Jamie loves to tame wild JavaScript and optimize rendering strategies. When not working, they like horror movies, graphic novels, and terrorizing lawful good paladins in Dungeons & Dragons.
 results: https://docs.google.com/spreadsheets/d/1xGs0oBVuONgj7uI0jPx-07ww94hWMmo6LrI8vdOOL5w/edit
-rickb1102_bio: Richard Barrett is director of professional services and a technical search consultant at <a hreflang="en" href="https://www.lumar.io/">Lumar</a>. They like helping web owners solve awkward problems and love a good puzzle game or two, or three.
+rickb110_bio: Richard Barrett is director of professional services and a technical search consultant at <a hreflang="en" href="https://www.lumar.io/">Lumar</a>. They like helping web owners solve awkward problems and love a good puzzle game or two, or three.
 featured_quote: Ultimately there is massive opportunity for improvements here without impacting the user experience at all
 featured_stat_1: 202%
 featured_stat_label_1: Increase in mobile page weight over the last decade
