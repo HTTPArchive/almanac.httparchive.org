@@ -131,7 +131,7 @@ Year-over-year, third-party requests have increased across all ranks. The top 1,
   description="Bar chart showing distribution of third party categories by rank groups. Top categories are consent provider, video, and customer success.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1133634663&format=interactive",
   sheets_gid="445864775",
-  sql_file="number_of_third_parties_by_rank_and_category.sql"
+  sql_file="number_of_third_party_providers_by_rank_and_category.sql"
   )
 }}
 
