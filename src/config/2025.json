@@ -145,14 +145,6 @@
           "slug": "jamstack",
           "hero_dir": "2020",
           "todo": true
-        },
-        {
-          "part": "III",
-          "chapter_number": "18",
-          "title": "Sustainability",
-          "slug": "sustainability",
-          "hero_dir": "2022",
-          "todo": true
         }
       ]
     },
@@ -162,14 +154,14 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "19",
+          "chapter_number": "18",
           "title": "Page Weight",
           "slug": "page-weight",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "20",
+          "chapter_number": "19",
           "title": "Caching",
           "slug": "Caching",
           "hero_dir": "2024",
@@ -177,14 +169,14 @@
         },
         {
           "part": "IV",
-          "chapter_number": "21",
+          "chapter_number": "20",
           "title": "CDN",
           "slug": "cdn",
           "todo": true
         },
         {
           "part": "IV",
-          "chapter_number": "22",
+          "chapter_number": "21",
           "title": "Cookies",
           "slug": "cookies",
           "hero_dir": "2024",
@@ -192,7 +184,7 @@
         },
         {
           "part": "IV",
-          "chapter_number": "23",
+          "chapter_number": "22",
           "title": "DNS",
           "slug": "dns",
           "hero_dir": "2025",
