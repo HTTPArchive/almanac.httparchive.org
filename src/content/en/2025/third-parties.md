@@ -23,7 +23,7 @@ doi: TODO
 
 ## Introduction
 
-Third parties are ubiquitous on the web. Website developers rely on them to implement key features such as advertising, analytics, social media integration, payment processing, and content delivery. This modular approach enables efficient, rapid deployment of rich functionality. However, it introduces potential privacy, security, and performance concerns.
+Third parties are ubiquitous on the web. Website developers rely on them to implement key features such as advertising, analytics, social media integration, payment processing, and content delivery. This modular approach enables efficient and rapid deployment of rich functionality. However, it introduces potential privacy, security, and performance concerns. New this year, we analyze how user consent choices are propagated among third parties on the web, including the consent frameworks used and the third parties that receive these signals.
 
 In this chapter, we conduct an empirical analysis of third-party usage patterns on the web. We examine:
 
@@ -128,14 +128,14 @@ Year-over-year, third-party requests have increased across all ranks. The top 1,
 {{ figure_markup(
   image="3p-req-categories-by-rank.png",
   caption="Distribution of the third-party request categories by rank.",
-  description="Bar chart showing distribution of third party categories by rank groups. Top categories are consent provider, video, and customer success.",
+  description="Bar chart showing distribution of third-party categories by rank group. The top categories are ad, analytics, and cdn.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTrElluFB6gvlkt65HjzZMJ4PtgJ53tVnez46cBrhQNtNxUjDxvNPuS_xmlQBUmhSHZkOMAjd0bTJyr/pubchart?oid=1133634663&format=interactive",
   sheets_gid="445864775",
   sql_file="number_of_third_party_providers_by_rank_and_category.sql"
   )
 }}
 
-The top categories include `ad`, `analytics` and `cdn` categories.
+The bar chart shows the median number of third-party providers per page by rank and category. In the previous edition, this analysis focused on the number of third-party domains per page by rank and category, whereas this year we measure the number of unique third-party providers, which results in lower counts overall. This year, the top categories are `ad`, `analytics`, and `cdn`.
 
 {{ figure_markup(
   image="3p-req-types-by-rank.png",
@@ -147,7 +147,7 @@ The top categories include `ad`, `analytics` and `cdn` categories.
   )
 }}
 
-The three most common third-party request types are `script`, `image`, and `other`.
+The chart shows that third-party requests are dominated by `script`, `image`, and the `other` category. Together, `script`, `image`, and `other` account for more than half of all third-party request content types. This pattern is consistent with the 2024 edition, which also identified `script`, `image`, and `other` as the top request types, indicating little change since last year.
 
 {{ figure_markup(
   image="top-3p-by-num-pages.png",
