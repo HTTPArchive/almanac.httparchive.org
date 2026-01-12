@@ -45,8 +45,7 @@
           "part": "I",
           "chapter_number": "5",
           "title": "Third Parties",
-          "slug": "third-parties",
-          "todo": true
+          "slug": "third-parties"
         },
         {
           "part": "I",
@@ -162,8 +161,7 @@
           "chapter_number": "19",
           "title": "Cookies",
           "slug": "cookies",
-          "hero_dir": "2024",
-          "todo": true
+          "hero_dir": "2024"
         },
         {
           "part": "IV",
