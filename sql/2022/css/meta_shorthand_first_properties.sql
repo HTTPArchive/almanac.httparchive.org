@@ -474,7 +474,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getShorthandFirstProperties(css)) AS property
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 )
 JOIN
   totals

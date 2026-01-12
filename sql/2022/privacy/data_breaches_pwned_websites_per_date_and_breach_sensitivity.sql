@@ -11,7 +11,7 @@ FROM
   `httparchive.almanac.breaches`
 WHERE
   date = '2022-06-01' AND
-  BreachDate BETWEEN '2021-08-01' AND '2022-06-30'
+  BreachDate BETWEEN '2021-08-01' AND '2022-06-30' -- noqa: CV09
 GROUP BY
   breach_date,
   sensitivity
