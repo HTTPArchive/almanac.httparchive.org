@@ -4,16 +4,10 @@
 CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data JSON)
 RETURNS ARRAY<STRING> DETERMINISTIC
 LANGUAGE js AS '''
-  let parsed_data;
-  try {
-    parsed_data = JSON.parse(data);
-  } catch (e) {
+  if (data == null || data["/robots.txt"] == undefined || !data["/robots.txt"]["found"]) {
       return [];
   }
-  if (parsed_data == null || parsed_data["/robots.txt"] == undefined || !parsed_data["/robots.txt"]["found"]) {
-      return [];
-  }
-  const parsed_endpoints = parsed_data["/robots.txt"]["data"]["matched_disallows"];
+  const parsed_endpoints = data["/robots.txt"]["data"]["matched_disallows"];
   const endpoints_list = Object.keys(parsed_endpoints).map(key => parsed_endpoints[key]).flat();
   return Array.from(new Set(endpoints_list));
 ''';
