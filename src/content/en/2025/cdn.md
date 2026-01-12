@@ -417,7 +417,7 @@ We're interested to see how Early Hints affects performance as more sites start 
 
 In 2024, we saw CDNs leading the charge on adopting emerging technologies like HTTP/3, and that pattern has held steady into 2025. Looking at features like Brotli and ZStandard compression or TLS 1.3 encryption, CDNs make it easy for sites to implement these improvements through simple configuration changes instead of overhauling entire fleets of servers, load balancers, and networking equipment.
 
-This year we dove deeper into HTTP/3, and we took another look at Early Hints which we first covered in 2025. For 2026, we're planning to provide more detailed analysis of HTTP/3 adoption and explore how CDNs are influencing IPv6 deployment.
+This year we took a deeper look at HTTP/3 and revisited Early Hints, which we first examined in 2024. For the first time we broke out CDN performance and will dive deeper in 2026. We initially planned to include IPv6 analysis, but the data wasn't reliable enough to draw meaningful conclusions. We hope to address IPv6 adoption in the 2026 chapter once we have more robust measurements.
 
 The CDN landscape in 2025 demonstrates that these platforms have evolved far beyond simple content delivery to become comprehensive optimization and security platforms that are essential infrastructure for the modern web.
 
