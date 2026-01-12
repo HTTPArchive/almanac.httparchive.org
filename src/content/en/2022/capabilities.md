@@ -8,7 +8,7 @@ reviewers: [tomayac, christianliebel]
 analysts: [tunetheweb]
 editors: [tunetheweb]
 translators: []
-MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web...
+MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web.
 results: https://docs.google.com/spreadsheets/d/13S9FRj8OPRtoMPb94jFh6pPNz3lNS9yztIaorZYe288/
 featured_quote: The Capabilities Project allows applications to migrate to the web, removing some barriers associated with platform-specific applications.
 featured_stat_1: 38
