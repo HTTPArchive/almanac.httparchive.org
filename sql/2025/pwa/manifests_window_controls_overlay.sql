@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION hasWindowControlsOverlay(manifest JSON)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
-  var manifest = Object.values(JSON.parse(manifest))[0];
+  var manifest = Object.values(manifest)[0];
   var display_override = manifest.display_override;
   var check = display_override.includes("window-controls-overlay");
   return check;

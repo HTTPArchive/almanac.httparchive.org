@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION hasScreenshotsPlatformNarrow(manifest JSON)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
-  var manifest = Object.values(JSON.parse(manifest))[0];
+  var manifest = Object.values(manifest)[0];
   var screenshots = manifest.screenshots;
   var check = screenshots.some(obj => obj.platform == 'narrow');
   return check;

@@ -1,16 +1,16 @@
 #standardSQL
-# Top manifest categories
-CREATE TEMPORARY FUNCTION getCategories(manifest JSON)
+# Top manifest properties
+
+CREATE TEMP FUNCTION getManifestProps(manifest JSON)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
-  var $ = Object.values(manifest)[0];
-  var categories = $.categories;
-  if (typeof categories == 'string') {
-    return [categories];
+  var manifestJSON = Object.values(manifest)[0];
+  if (typeof manifestJSON === 'string') {
+    return null;
   }
-  return categories;
-} catch (e) {
-  return null;
+  return Object.keys(manifestJSON);
+} catch {
+  return null
 }
 ''';
 
@@ -29,11 +29,11 @@ WITH totals AS (
     client
 ),
 
-manifests_categories AS (
+manifests_properties AS (
   SELECT
     'All Sites' AS type,
     client,
-    category,
+    property,
     COUNT(DISTINCT page) AS freq,
     total,
     COUNT(DISTINCT page) / total AS pct,
@@ -42,7 +42,7 @@ manifests_categories AS (
     COUNTIF(JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true') / pwa_total AS pwa_pct
   FROM
     `httparchive.crawl.pages`,
-    UNNEST(getCategories(custom_metrics.other.pwa.manifests)) AS category
+    UNNEST(getManifestProps(custom_metrics.other.pwa.manifests)) AS property
   JOIN
     totals
   USING (client)
@@ -52,39 +52,46 @@ manifests_categories AS (
     TO_JSON_STRING(custom_metrics.other.pwa.manifests) NOT IN ('[]', '{}', 'null')
   GROUP BY
     client,
-    category,
+    property,
     total,
     pwa_total
   HAVING
-    category IS NOT NULL
+    property IS NOT NULL
   ORDER BY
     type DESC,
     freq / total DESC,
-    category,
+    property,
     client
 )
 
 SELECT
   'PWA Sites' AS type,
   client,
-  category,
+  property,
   pwa_freq AS freq,
   pwa_total AS total,
   pwa_pct AS pct
 FROM
-  manifests_categories
+  manifests_properties
+WHERE
+  property IS NOT NULL AND
+  freq > 100
 UNION ALL
 SELECT
   'All Sites' AS type,
   client,
-  category,
+  property,
   freq,
   total,
   pct
 FROM
-  manifests_categories
+  manifests_properties
+WHERE
+  property IS NOT NULL AND
+  freq > 100
 ORDER BY
   type DESC,
   pct DESC,
-  category,
+  property,
   client
+LIMIT 1000

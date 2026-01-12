@@ -30,7 +30,8 @@ JOIN (
 USING (origin),
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date IN ('2025-07-01') AND (
+  date IN ('2025-07-01') AND
+  (
     notification_permission_accept IS NOT NULL OR
     notification_permission_deny IS NOT NULL OR
     notification_permission_ignore IS NOT NULL OR

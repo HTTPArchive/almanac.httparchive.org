@@ -11,12 +11,14 @@ SELECT
   SUM(notification_permission_dismiss) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS dismiss
 FROM
   `chrome-ux-report.materialized.device_summary`
-WHERE (
-  notification_permission_accept IS NOT NULL OR
-  notification_permission_deny IS NOT NULL OR
-  notification_permission_ignore IS NOT NULL OR
-  notification_permission_dismiss IS NOT NULL
-) AND device IN ('desktop', 'phone')
+WHERE
+  device IN ('desktop', 'phone') AND
+  (
+    notification_permission_accept IS NOT NULL OR
+    notification_permission_deny IS NOT NULL OR
+    notification_permission_ignore IS NOT NULL OR
+    notification_permission_dismiss IS NOT NULL
+  )
 GROUP BY
   date,
   device

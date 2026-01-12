@@ -41,4 +41,5 @@ GROUP BY
   client,
   script
 ORDER BY
-  freq DESC;
+  freq DESC
+LIMIT 1000

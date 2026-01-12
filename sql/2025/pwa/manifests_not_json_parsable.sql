@@ -4,7 +4,7 @@
 CREATE TEMP FUNCTION canParseManifest(manifest JSON)
 RETURNS BOOLEAN LANGUAGE js AS '''
 try {
-  var manifestJSON = Object.values(JSON.parse(manifest))[0];
+  var manifestJSON = Object.values(manifest)[0];
   if (typeof manifestJSON === 'string' && manifestJSON.trim() != '') {
     return false;
   }

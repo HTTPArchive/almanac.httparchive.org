@@ -35,7 +35,9 @@ FROM
   `httparchive.crawl.pages`,
   UNNEST(getWorkboxMethods(TO_JSON_STRING(custom_metrics.other.pwa.workboxInfo))) AS workbox_method
 JOIN (
-  SELECT client, COUNT(0) AS total
+  SELECT
+    client,
+    COUNT(0) AS total
   FROM
     `httparchive.crawl.pages`
   WHERE
