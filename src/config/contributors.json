@@ -11,6 +11,19 @@
     "twitter": "AaronGustafson",
     "website": "https://www.aaron-gustafson.com"
   },
+  "aarontgrogg": {
+    "avatar_url": "366755",
+    "bluesky": "aarontgrogg.com",
+    "github": "aarontgrogg",
+    "linkedin": "aarontgrogg",
+    "name": "Aaron T. Grogg",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://aarontgrogg.com/"
+  },
   "AbbyTsai": {
     "avatar_url": "44442451",
     "github": "AbbyTsai",
@@ -1972,6 +1985,18 @@
     },
     "website": "https://hidde.blog/"
   },
+  "himanshujariyal": {
+    "avatar_url": "6078423",
+    "github": "himanshujariyal",
+    "linkedin": "himanshujariyal",
+    "name": "Himanshu Jariyal",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://medium.com/@him_jar"
+  },
   "housseindjirdeh": {
     "avatar_url": "12476932",
     "github": "housseindjirdeh",
@@ -2005,6 +2030,16 @@
     "teams": {
       "2020": [
         "translators"
+      ]
+    }
+  },
+  "hfhashmi": {
+    "avatar_url": "184349148",
+    "github": "hfhashmi",
+    "name": "Humaira",
+    "teams": {
+      "2025": [
+        "authors"
       ]
     }
   },
@@ -3883,6 +3918,9 @@
       "2022": [
         "analysts",
         "reviewers"
+      ],
+      "2025": [
+        "authors"
       ]
     }
   },
@@ -4506,6 +4544,9 @@
       ],
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "website": "https://sia.codes"
@@ -4666,6 +4707,18 @@
     },
     "twitter": "tameverts",
     "website": "https://speedcurve.com/"
+  },
+  "tannerhodges": {
+    "avatar_url": "1619485",
+    "bluesky": "tannerhodges.bsky.social",
+    "github": "tannerhodges",
+    "name": "Tanner Hodges",
+    "teams": {
+      "2025": [
+        "analysts"
+      ]
+    },
+    "website": "https://tannerhodges.com/"
   },
   "thibaudcolas": {
     "avatar_url": "877585",

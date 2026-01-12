@@ -8,18 +8,18 @@ reviewers: [siakaramalegos, tunetheweb]
 analysts: [tannerhodges]
 editors: []
 translators: []
+himanshujariyal_bio: TODO
+25prathamesh_bio: TODO
+hfhashmi_bio: TODO
+aarontgrogg_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
-himanshujariyal_bio: "TODO"
-25prathamesh_bio: "TODO"
-hfhashmi_bio: "TODO"
-featured_quote: ...
-featured_stat_1: ...
-featured_stat_label_1: ...
-featured_stat_2: ...
-featured_stat_label_2: ...
-featured_stat_3: ...
-featured_stat_label_3: ...
-doi: ...
+featured_quote: TODO
+featured_stat_1: TODO
+featured_stat_label_1: TODO
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
 
 ## Introduction
@@ -30,7 +30,7 @@ Measuring web performance includes a broad set of metrics that describe how page
 
 These considerations have influenced the development and adoption of user-centric performance metrics called **Core Web Vitals**, these include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, and capture key aspects of loading performance, interactivity, and visual stability. While Core Web Vitals were initially available primarily in Chromium-based browsers, support has expanded, with Safari and Firefox <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">now reporting</a> key Core Web Vitals, enabling more consistent cross-browser performance measurement.
 
-These metrics are complemented by traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, along with measures of resource loading behavior like Fonts, Images and JavaScript. Together, these signals provide important context for understanding where performance bottlenecks occur and how they influence overall page behavior. A comprehensive overview of modern web performance metrics and measurement techniques can be found at <a hreflang="en" href="https://web.dev/performance">web.dev</a>. 
+These metrics are complemented by traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, along with measures of resource loading behavior like Fonts, Images and JavaScript. Together, these signals provide important context for understanding where performance bottlenecks occur and how they influence overall page behavior. A comprehensive overview of modern web performance metrics and measurement techniques can be found at <a hreflang="en" href="https://web.dev/performance">web.dev</a>.
 
 The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences.
 
@@ -39,7 +39,7 @@ TODO: Add a short closing section describing the data sources, collection period
 
 ## Core Web Vitals Summary
 
-Core Web Vitals are Google’s key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page’s main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page’s lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
+Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page's lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
 
 {{ figure_markup(
   image="good-core-web-vitals-devices-years.png",
@@ -65,7 +65,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Performance metrics for top mobile websites show a clear distinction: 
+Performance metrics for top mobile websites show a clear distinction:
 - 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
 
 However, CWV scores drop significantly for less popular sites:
@@ -86,7 +86,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile.This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads. 
+Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile.This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads.
 
 <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of Web Vitals data for within the page navigation.
 
@@ -110,8 +110,8 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Based on real user data from [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), FCP performance has improved across both desktop and mobile devices since 2024\. Specifically, the proportion of desktop sites achieving a 'Good' FCP rose by 2%, while mobile sites saw a 4% increase.   
-   
+Based on real user data from [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), FCP performance has improved across both desktop and mobile devices since 2024\. Specifically, the proportion of desktop sites achieving a 'Good' FCP rose by 2%, while mobile sites saw a 4% increase.
+
 While the increase is not drastic, we can still attempt to understand what's driving these FCP improvements. We can view the metric as consisting of two distinct parts. The first is the **initial network and server response**, captured by [Time to First Byte (TTFB)](https://web.dev/articles/ttfb). This includes connection setup (such as the TCP/QUIC handshake), redirects, and server processing time, and is primarily influenced by network infrastructure and protocol efficiency. The second part is **client-side rendering**, which begins after the first byte is received. This is the time it takes for browsers to parse and render the first part of the webpage's content, and is influenced by browser engine, render-blocking resources, and user hardware quality.
 
 {{ figure_markup(
@@ -221,7 +221,7 @@ The main takeaways of the interactivity results are:
 
 ## Visual Stability
 
-Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users. 
+Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users.
 
 In 2025, CLS adoption and stability continue to trend positively on both desktop and mobile devices. This section focuses on recent years particularly 2023 through 2025 highlighting progress, device differences, and shifts over the last year.
 
@@ -239,7 +239,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative Layout Shift (CLS) score. Desktop pages show a higher share of Needs Improvement CLS (17%) compared to mobile (10%), while the proportion of pages with Poor CLS is similar across devices at around 9-10%. This shows that most pages are close to meeting the CLS threshold, with fewer pages experiencing severe layout instability. 
+In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative Layout Shift (CLS) score. Desktop pages show a higher share of Needs Improvement CLS (17%) compared to mobile (10%), while the proportion of pages with Poor CLS is similar across devices at around 9-10%. This shows that most pages are close to meeting the CLS threshold, with fewer pages experiencing severe layout instability.
 
 Compared to 2024, the share of desktop pages with Poor CLS decreased by 1%, with a similar increase in pages classified as Needs Improvement.
 
@@ -281,18 +281,18 @@ Over time, Good CLS increases steadily on both device types, with mobile consist
 
 ### Back/forward cache (bfcache)
 
-[The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser’s back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page’s state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
+[The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser's back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page's state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
 
 However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads. While BFCache behavior is handled by the browser, developers <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">can assess eligibility</a> using tools such as Chrome DevTools.
 
-Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache). 
+Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
 
 Browsers recommend avoiding unload in favor of alternatives such as pagehide and pageshow, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
 
 {{ figure_markup(
   image="unload-handler-usage.png",
   caption="Unload handler usage by website rank and device (2025)",
-  description=”The chart shows the percentage of pages using unload event handlers by website rank on desktop and mobile in 2025. Among the top 1,000 websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages, with usage declining steadily as rank increases. For all websites, unload handlers are present on 11% of desktop pages and 10% of mobile pages, with desktop usage higher than mobile at every rank.”,
+  description="The chart shows the percentage of pages using unload event handlers by website rank on desktop and mobile in 2025. Among the top 1,000 websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages, with usage declining steadily as rank increases. For all websites, unload handlers are present on 11% of desktop pages and 10% of mobile pages, with desktop usage higher than mobile at every rank.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=140804120&format=interactive",
   sheets_gid="1870744021",
   sql_file="TODO"
@@ -311,11 +311,11 @@ TODO (Himanshu)
 
 The main takeaways are:
 
-- Visual stability across the web has advanced significantly over the years, particularly on mobile devices. 
-- Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. 
+- Visual stability across the web has advanced significantly over the years, particularly on mobile devices.
+- Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices.
 - However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
-## Early Hints 
+## Early Hints
 TODO (Unassigned)
 
 ## Speculation Rules
