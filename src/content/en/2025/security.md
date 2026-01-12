@@ -340,7 +340,7 @@ Compared to [last year](../2024/security#keywords-for-script-src) we barely see 
   )
 }}
 
-We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, <a hreflang="en" href="https://content-security-policy.com/examples/multiple-csp-headers/">the most restrictive policy will be used by the browser</a>.
+We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, <a hreflang="en" href="https://content-security-policy.com/examples/multiple-csp-headers/">the policies will be combined to create the the most restrictive policy will be used by the browser</a>.
 
 We see a very similar distribution compared to the values per request, indicating that either most pages only use one CSP header or only use `script-src` in one of the CSP headers that they set, meaning there are no conflicting `script-src` directives on most pages.
 
