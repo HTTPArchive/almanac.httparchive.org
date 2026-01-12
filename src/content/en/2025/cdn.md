@@ -40,7 +40,7 @@ CDNs serve as intermediary infrastructure between end users and origin servers, 
 - **Traditional**: Browser queries DNS for origin server IP, often with slow resolution times
 - **CDN Processed**: CDN DNS infrastructure may use various routing strategies (anycast or unicast) to direct users to optimal edge servers. Some CDNs support modern DNS records like HTTPS or SVCB (Service Binding) records that can advertise protocol capabilities directly in DNS responses, though adoption varies across providers
 
-**Connection Establishment** 
+**Connection Establishment**
 - **Traditional**: Browser establishes new TCP connection to distant origin server with full handshake overhead
 - **CDN Processed**: Connection to nearby edge server over TCP (for HTTP/1.1 and HTTP/2) or UDP with QUIC (for HTTP/3). CDNs may support HTTP/3's 0-RTT connection resumption for returning visitors, though not all CDNs have implemented these newer connection optimization features
 

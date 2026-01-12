@@ -305,6 +305,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -984,6 +988,10 @@
     "name": "Caroline Scholles",
     "teams": {
       "2024": [
+        "reviewers",
+        "editors"
+      ],
+      "2025": [
         "reviewers",
         "editors"
       ]
@@ -2355,6 +2363,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -3387,6 +3399,18 @@
     "name": "Nektarios Paisios",
     "teams": {
       "2019": [
+        "authors"
+      ]
+    }
+  },
+  "nick-mccord": {
+    "avatar_url": "102171522",
+    "github": "nick-mccord",
+    "linkedin": "nicholasmccord",
+    "name": "Nick McCord",
+    "teams": {
+      "2025": [
+        "analysts",
         "authors"
       ]
     }
