@@ -214,8 +214,8 @@ For a directive to be applied, the crawler must be able to access the page. If a
 
 There are two main ways to implement robots directives:
 
-1. Using a [`<meta name=robots>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/robots) tag (placed within the `<head>` section of a webpage)
-2. Using an [`X-Robots-Tag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Robots-Tag) HTTP header
+1. Using a [`<meta name=robots>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/meta/name/robots) tag (placed within the `<head>` section of a webpage)
+2. Using an [`X-Robots-Tag`](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/X-Robots-Tag) HTTP header
 
 The method you choose depends on your specific use case, as well as the means and methods at your disposal.
 

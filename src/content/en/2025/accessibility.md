@@ -98,7 +98,7 @@ The difference between foreground and background colors determines whether peopl
 
 Color contrast is especially important for older users, people with temporary disabilities, like missing reading glasses, and anyone reading under bright sunlight or in challenging environments.
 
-WCAG requires contrast ratios of at least 4.5:1 for standard text and 3:1 for large text to achieve AA conformance. AAA conformance demands 7:1 for normal text. [WCAG contrast ratios](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast) are an important baseline, but these guidelines don't address every form of color blindness or individual variation in perception.
+WCAG requires contrast ratios of at least 4.5:1 for standard text and 3:1 for large text to achieve AA conformance. AAA conformance demands 7:1 for normal text. [WCAG contrast ratios](https://developer.mozilla.org/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast) are an important baseline, but these guidelines don't address every form of color blindness or individual variation in perception.
 
 Other documents, including the <a hreflang="en" href="https://git.myndex.com/">Accessible Perceptual Contrast Algorithm (APCA)</a>, aim to offer a more perceptually accurate measurement of contrast.
 
@@ -164,7 +164,7 @@ For example, Chrome's automatic translation might misinterpret page content with
 
 ## User preference
 
-Modern CSS includes [User Preference Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) that let websites adapt to a user's operating system or browser settings. Users get a more comfortable, personalized experience. Websites can respond to preferences for motion, contrast, and color schemes.
+Modern CSS includes [User Preference Media Queries](https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/prefers-color-scheme) that let websites adapt to a user's operating system or browser settings. Users get a more comfortable, personalized experience. Websites can respond to preferences for motion, contrast, and color schemes.
 
 {{ figure_markup(
   image="user-preference-media-query.png",
