@@ -417,6 +417,9 @@
     "teams": {
       "2021": [
         "authors"
+      ],
+      "2025": [
+        "analysts"
       ]
     },
     "twitter": "alonkochba"
@@ -1314,6 +1317,9 @@
         "reviewers"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -3745,7 +3751,7 @@
     "website": "https://olu.online/"
   },
   "onurglr": {
-    "avatar_url": "198731903",
+    "avatar_url": "39603688",
     "github": "onurglr",
     "name": "Onur Güler",
     "teams": {
@@ -4365,6 +4371,15 @@
       ]
     }
   },
+  "samuelfatola": {
+    "linkedin": "samuelfatola",
+    "name": "Samuel Fatola",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    }
+  },
   "sboukortt": {
     "avatar_url": "16757512",
     "github": "sboukortt",
@@ -4655,6 +4670,15 @@
       ]
     },
     "twitter": "SophieBrannon"
+  },
+  "sreemoyeebhattacharya": {
+    "linkedin": "sreemoyee-bhattacharya-17a4a61a6",
+    "name": "Sreemoyee Bhattacharya",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    }
   },
   "stefanjudis": {
     "avatar_url": "962099",
@@ -4984,6 +5008,18 @@
     },
     "twitter": "una",
     "website": "http://una.im"
+  },
+  "VaheSODP": {
+    "avatar_url": "74548327",
+    "github": "VaheSODP",
+    "linkedin": "ahearabian",
+    "name": "Vahe Arabian",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://www.stateofdigitalpublishing.com/"
   },
   "jasti": {
     "avatar_url": "2366341",
