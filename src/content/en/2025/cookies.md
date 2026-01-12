@@ -6,7 +6,7 @@ hero_alt: Hero image of Web Almanac characters carrying a large cookie, while cr
 authors: [yohhaan]
 reviewers: [JannisBush, martinakraus]
 analysts: [ChrisBeeti]
-editors: [tunetheweb]
+editors: [bsmth, tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc/edit
 yohhaan_bio: Yohan Beugin is a Ph.D. student in the Department of Computer Sciences at the University of Wisconsin–Madison where he is a member of the Security and Privacy Research Group and advised by Prof. Patrick McDaniel. He is interested in building more secure, privacy-preserving, and trustworthy systems. His current research so far has focused on tracking and privacy in online advertising as well as security of open-source software.
