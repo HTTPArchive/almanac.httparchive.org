@@ -407,11 +407,11 @@ Now, which OpenType features are common in fonts? Among the fonts that have Open
 
 - Mark positioning (`mark` and `mkmk`) -- about 17% have basic mark positioning, and 14% have mark-to-mark. These are critical for Arabic, Indic scripts, and any accent stacking, such as Vietnamese characters. The fact that mark positioning is found in about 1/6 of fonts suggests the impact of complex scripts since it's less common for Latin-only fonts to need a mark table. On the other hand, Google's efforts to increase Pan-African support within many Latin fonts may also be boosting the presence of mark tables.
 
-- Stylistic sets (`ss01`, `ss02`, etc.) and alternates -- these show up in the data at healthy but lower levels. \~12% of fonts have an ss01, and smaller percentages have ss02, ss03, etc., or a salt (stylistic alternate) feature. This corresponds to fonts that offer optional alternate designs for certain characters (like a different "a" or "g").
+- **Stylistic sets (`ss01`, `ss02`, etc.) and alternates**: These show up in the data at healthy but lower levels. \~12% of fonts have an ss01, and smaller percentages have ss02, ss03, etc., or a salt (stylistic alternate) feature. This corresponds to fonts that offer optional alternate designs for certain characters (like a different "a" or "g").
 
-- Caps and small caps -- features like smcp (small caps) or c2sc (caps to small caps) are present in some fonts (a few percent), reflecting more advanced typographic families.
+- **Caps and small caps**: Features like smcp (small caps) or c2sc (caps to small caps) are present in some fonts (a few percent), reflecting more advanced typographic families.
 
-- Script-specific features: For instance, rlig (required ligatures, used in Arabic) and various Indic features (like abvs, blws for above-base, below-base substitutions) each appear in around 1% or less of fonts. That matches roughly the share of fonts for those scripts, which we discussed above.
+- **Script-specific features**: For instance, rlig (required ligatures, used in Arabic) and various Indic features (like abvs, blws for above-base, below-base substitutions) each appear in around 1% or less of fonts. That matches roughly the share of fonts for those scripts, which we discussed above.
 
 Overall, this means web fonts are getting more sophisticated. Over half the fonts seen in this year's web crawl have at least one OpenType trick up their sleeve, and many have a dozen or more. Common things like ligatures and kerning are now expected, not just special perks.
 
