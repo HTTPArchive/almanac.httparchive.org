@@ -51,7 +51,7 @@ By 2025, CMS adoption reflects a web that’s both mature and increasingly speci
   )
 }}
 
-Overall adoption HTTP Archive measurements show that CMS-driven sites account for over 55% of observed websites in 2025, reinforcing CMSs as the default infrastructure for the web.
+Overall adoption HTTP Archive measurements show that CMS-driven sites account for over 54% of observed websites in 2025, reinforcing CMSs as the default infrastructure for the web.
 
 ### Adoption by geography
 
@@ -78,14 +78,14 @@ Website rank continues to shape CMS adoption patterns. High-traffic sites tend t
 {{ figure_markup(
   image="top-5-cms-by-rank.png",
   caption="Top 5 CMSs by rank.",
-  description="Bar chart of the leading Content Management Systems across different website traffic rankings on mobile. WordPress emerges as the dominant leader, showing a dramatic increase in adoption as site volume grows, peaking at 35.0% for all websites. In contrast, competitors like Shopify and Wix maintain much smaller footprints, with Shopify reaching its highest usage (5.0%) among the top 10 million sites, while Adobe Experience Manager is the only platform that trends downward as traffic volume increases.",
+  description="Bar chart of the leading Content Management Systems across different website traffic rankings on mobile. WordPress emerges as the dominant leader, showing a dramatic increase in adoption as site volume grows, peaking at 35.0% for all websites. In contrast, competitors like Shopify and Wix maintain much smaller footprints, with Shopify reaching its highest usage (5.0%) among the top 10 million sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=481895919&format=interactive",
   sheets_gid="156249791",
   sql_file="TODO.sql"
   )
 }}
 
-Among the top 10,000 websites, WordPress accounts for roughly 54% of CMS usage, while Drupal represents about 8–9%, far higher than its 1% overall market share. Platforms like Wix and Shopify are almost absent at this traffic level.
+Among the top 10,000 websites, WordPress accounts for roughly 58% of CMS usage, while Drupal represents about 6–7%, far higher than its 1% overall market share. Platforms like Wix and Shopify are almost absent at this traffic level.
 
 ### Most popular CMSs
 
