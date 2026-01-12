@@ -7,7 +7,7 @@ SELECT
 FROM
   `httparchive.almanac.requests`
 WHERE
-  date = '2022-07-01' AND
+  date = '2022-07-01' AND -- noqa: CV09
   type = 'font'
 GROUP BY
   client,

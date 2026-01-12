@@ -50,7 +50,7 @@ WITH intermediate_cookie AS (
     `httparchive.crawl.pages`,
     UNNEST(JSON_EXTRACT_ARRAY(custom_metrics.cookies)) AS cookie
   WHERE
-    date = '2024-06-01'
+    date = '2025-07-01'
 )
 
 SELECT

@@ -28,7 +28,7 @@ WITH clip_path_fns AS (
     `httparchive.almanac.parsed_css`,
     UNNEST(getClipPathFunctions(css)) AS fn
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 ),
 
 totals AS (

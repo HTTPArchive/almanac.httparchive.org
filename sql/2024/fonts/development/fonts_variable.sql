@@ -13,7 +13,7 @@ fonts AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
     type = 'font' AND
     is_root_page AND
     IS_VARIABLE(payload)
@@ -30,7 +30,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
     is_root_page
   GROUP BY
     date,

@@ -103,7 +103,7 @@ FROM (
   LEFT JOIN
     UNNEST(getCustomPropertyFunctions(css)) AS function
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     function IS NOT NULL
 )
 JOIN (

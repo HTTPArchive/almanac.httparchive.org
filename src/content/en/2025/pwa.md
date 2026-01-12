@@ -8,16 +8,16 @@ reviewers: [webmaxru, Schweinepriester, aarongustafson]
 analysts: [onurglr]
 editors: [tunetheweb]
 translators: []
-diekus_bio: Diego Gonzalez is a computer engineer from Costa Rica working as the PM for PWA platform features for the Microsoft Edge browser.
+diekus_bio: Diego Gonzalez is a Costa Rican engineer working on web platform features for the Microsoft Edge browser.
 MichaelSolati_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1mEbm1NTrqy8B4l5zY3gPgbKWxyNdWOPfVmi1pDIyMus/edit
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: _The PWA concept was coined 10 years ago_, and it is with great pride that we look at the state of this set of technologies, one decade after its ideation.
+featured_stat_1: 10x
+featured_stat_label_1: Approximate surge in percentage of Service Worker usage.
+featured_stat_2: 78
+featured_stat_label_2: Percentage of notifications ignored on desktop clients.
+featured_stat_3: 2
+featured_stat_label_3: Number of new engines that now support web apps.
 ---
 
 ## Introduction

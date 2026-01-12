@@ -11,7 +11,7 @@ scripts AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
     type = 'script' AND
     is_root_page AND
     REGEXP_CONTAINS(response_body, r'new FontFace\(')
@@ -28,7 +28,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-06-01', '2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
     is_root_page
   GROUP BY
     client,

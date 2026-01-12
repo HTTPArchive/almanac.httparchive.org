@@ -28,7 +28,7 @@ WITH filter_fns AS (
     `httparchive.almanac.parsed_css`,
     UNNEST(getFilterFunctions(css)) AS fn
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 ),
 
 totals AS (

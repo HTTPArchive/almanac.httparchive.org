@@ -13,7 +13,7 @@ pages AS (
   FROM
     `httparchive.all.requests`
   WHERE
-    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+    date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
     is_root_page
   GROUP BY
     date,
@@ -33,7 +33,7 @@ INNER JOIN
   pages
 USING (date, client)
 WHERE
-  date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND
+  date IN ('2022-07-01', '2023-07-01', '2024-07-01') AND -- noqa: CV09
   type = 'font' AND
   is_root_page
 GROUP BY

@@ -152,11 +152,11 @@ If you want to check whether your site is restricting zoom, examine its source c
 
 ### Language identification
 
-Declaring a page's primary language with the `lang` attribute is essential. It lets screen readers select the correct pronunciation rules and enables browsers to provide more accurate automatic translations. Beyond the primary language, it’s equally important to specify the language of sections that differ from the main language. This ensures that screen readers properly switch pronunciation for foreign words or phrases.
+Declaring a page's primary language with the `lang` attribute is essential. It lets screen readers select the correct pronunciation rules and enables browsers to provide more accurate automatic translations. Beyond the primary language, it's equally important to specify the language of sections that differ from the main language. This ensures that screen readers properly switch pronunciation for foreign words or phrases.
 
 Despite being a <a hreflang="en" href="https://www.w3.org/WAI/WCAG22/Understanding/language-of-page">straightforward Level A WCAG requirement</a>, language declaration remains an area where many sites fall short. In 2025, roughly 86% of sites include a valid `lang` attribute, largely unchanged from 2024. This suggests steady adoption but also highlights room for improvement.
 
-Correctly applying the `lang` attribute begins with including it on the `<html>` tag to specify the page's primary language. Pages often contain multiple languages. Use the `lang` attribute on individual elements or sections as needed. The <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">W3C’s documentation on specifying the language of parts</a> provides detailed guidance on this topic.
+Correctly applying the `lang` attribute begins with including it on the `<html>` tag to specify the page's primary language. Pages often contain multiple languages. Use the `lang` attribute on individual elements or sections as needed. The <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">W3C's documentation on specifying the language of parts</a> provides detailed guidance on this topic.
 
 Missing or incorrect language declarations can cause translation errors.
 
@@ -182,7 +182,7 @@ The most familiar queries, `prefers-reduced-motion` and `prefers-color-scheme`, 
 
 Continuing to incorporate these preferences advances accessibility and user satisfaction by respecting individual needs and system settings.
 
-Broader implementation of personalization through CSS media queries hasn't seen significant growth despite these incremental gains. Encouraging further adoption helps ensure websites honor users’ preferences, including reducing motion for vestibular disorder sensitivities and adapting display colors or contrast for visual comfort.
+Broader implementation of personalization through CSS media queries hasn't seen significant growth despite these incremental gains. Encouraging further adoption helps ensure websites honor users' preferences, including reducing motion for vestibular disorder sensitivities and adapting display colors or contrast for visual comfort.
 
 ## Navigation
 
@@ -194,7 +194,7 @@ Wide-screen TVs and voice interfaces like Siri and Amazon Alexa create unique na
 
 Focus indication is essential for users who rely primarily on keyboard navigation and assistive devices to move through web content. It provides a visible cue that highlights which element is currently focused, so users understand where they are on the page.
 
-Automated testing tools like Google Lighthouse can identify many basic requirements and flag obvious failures around focus indicators. But they're limited when it comes to complex interactions like keyboard traps, focus order, and whether focus moves logically to new content. Passing automated audits doesn’t guarantee a site’s keyboard accessibility or a good user experience for keyboard users.
+Automated testing tools like Google Lighthouse can identify many basic requirements and flag obvious failures around focus indicators. But they're limited when it comes to complex interactions like keyboard traps, focus order, and whether focus moves logically to new content. Passing automated audits doesn't guarantee a site's keyboard accessibility or a good user experience for keyboard users.
 
 Comprehensive manual testing is irreplaceable.
 
@@ -251,7 +251,7 @@ In 2025, `tabindex` usage has increased slightly. Just over 50% of sites used it
 
 Landmarks structure a web page into distinct thematic regions, using native HTML elements such as `<header>`, `<nav>`, `<main>`, and `<footer>`. These elements create a clear, high-level page outline that help users of assistive technologies quickly understand the layout and jump directly to relevant sections.
 
-A common accessibility anti pattern persists when developers add redundant ARIA attributes. For example, adding `role="navigation"` to a `<nav>` element. The `<nav>` element inherently carries the navigation role, so this duplication adds clutter to the code without benefit and may confuse assistive technology. <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/html/H101">Best practice is to favor native HTML5 elements</a> first before adding ARIA landmark roles. That's ARIA’s primary guideline.
+A common accessibility anti pattern persists when developers add redundant ARIA attributes. For example, adding `role="navigation"` to a `<nav>` element. The `<nav>` element inherently carries the navigation role, so this duplication adds clutter to the code without benefit and may confuse assistive technology. <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Techniques/html/H101">Best practice is to favor native HTML5 elements</a> first before adding ARIA landmark roles. That's ARIA's primary guideline.
 
 Accessibility experts like Eric Bailey have highlighted <a hreflang="en" href="https://www.smashingmagazine.com/2025/06/what-i-wish-someone-told-me-aria/">the pitfalls of overusing ARIA</a> in contexts where native semantic HTML is enough. Heydon Pickering's <a hreflang="en" href="https://heydonworks.com/article/pride-shame-and-accessibility/">twelve principles of web accessibility</a> also emphasize the critical role semantic structure and landmarks play in accessible navigation.
 
@@ -534,7 +534,7 @@ Continued efforts to replace or supplement visual CAPTCHAs with more accessible 
 
 Accessible media on the web requires providing alternative formats to ensure content is usable by everyone. Users with visual impairments benefit from audio descriptions that convey important visual information. Users who are deaf or hard of hearing rely on captions or sign language interpretation to access audio content.
 
-Audio descriptions and captions aren't enough. Transcripts are necessary for audio-only and video-only content, offering a complete textual alternative. For non-text content like images, provide appropriate alternative text. If they don’t add meaningful information, mark them as decorative.
+Audio descriptions and captions aren't enough. Transcripts are necessary for audio-only and video-only content, offering a complete textual alternative. For non-text content like images, provide appropriate alternative text. If they don't add meaningful information, mark them as decorative.
 
 The principles and requirements for accessible media remain consistent between 2024 and 2025, emphasizing the ongoing importance of providing inclusive multimedia experiences to users with disabilities.
 
@@ -1142,7 +1142,7 @@ React offers maximum flexibility and customization, but requires developers to i
 
 <a hreflang="en" href="https://angular.dev/">Angular</a> provides strong built-in accessibility features, structured conventions that promote semantic HTML, ARIA attribute support, and <a hreflang="en" href="https://material.angular.io/">Material Design</a> components with keyboard navigation and screen reader support out-of-the-box. Angular's opinionated structure tends to guide developers toward more standardized, accessible practices.
 
-<a hreflang="en" href="http://Vue.js">Vue.js</a> aims to strike a balance between React's flexibility and Angular’s structure. Vue’s progressive design, clear template syntax, and component architecture support accessibility, though it relies more on developer discipline and third-party plugins like <a hreflang="en" href="https://github.com/vue-a11y">vue-a11y</a>.
+<a hreflang="en" href="http://Vue.js">Vue.js</a> aims to strike a balance between React's flexibility and Angular's structure. Vue's progressive design, clear template syntax, and component architecture support accessibility, though it relies more on developer discipline and third-party plugins like <a hreflang="en" href="https://github.com/vue-a11y">vue-a11y</a>.
 
 We also note that <a hreflang="en" href="https://github.blog/open-source/social-impact/our-pledge-to-help-improve-the-accessibility-of-open-source-software-at-scale/">GitHub took the Global Accessibility Awareness Day (GAAD) pledge</a> to improve open source accessibility at scale. This commitment addresses a critical gap: 90% of companies use open source, 97% of codebases contain open source components, and an estimated 70–90% of code within commercial tools derives from open source.
 
