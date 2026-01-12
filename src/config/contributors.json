@@ -57,10 +57,11 @@
   "abhishektiwari": {
     "avatar_url": "363839",
     "github": "abhishektiwari",
-    "name": "Abhishek Tiwari ",
+    "name": "Abhishek Tiwari",
     "teams": {
       "2025": [
-        "committee"
+        "committee",
+        "editors"
       ]
     }
   },
@@ -472,6 +473,17 @@
     "twitter": "cyberandy",
     "website": "https://wordlift.io/blog/en/entity/andrea-volpini"
   },
+  "anirudhduggal": {
+    "avatar_url": "5520298",
+    "github": "anirudhduggal",
+    "linkedin": "anirudh-duggal",
+    "name": "Anirudh Duggal",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    }
+  },
   "dotjs": {
     "avatar_url": "2914966",
     "github": "dotjs",
@@ -866,6 +878,9 @@
         "authors"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -1277,6 +1292,17 @@
       ]
     },
     "twitter": "signorcolt"
+  },
+  "vsdaan": {
+    "avatar_url": "9497296",
+    "github": "vsdaan",
+    "name": "Daan V.",
+    "teams": {
+      "2025": [
+        "analysts"
+      ]
+    },
+    "website": "https://vsdaan.be"
   },
   "dknauss": {
     "avatar_url": "273554",
@@ -1786,6 +1812,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "authors",
+        "reviewers"
       ]
     },
     "twitter": "GJFR_",
@@ -3083,6 +3113,18 @@
     },
     "twitter": "g33konaut",
     "website": "http://geekonaut.de"
+  },
+  "martinakraus": {
+    "avatar_url": "6086902",
+    "github": "martinakraus",
+    "linkedin": "martina-kraus-398493108",
+    "name": "Martina Kraus",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    },
+    "twitter": "MartinaKraus11"
   },
   "mathiasbynens": {
     "avatar_url": "81942",
@@ -5013,6 +5055,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "twitter": "vikvanderlinden",
@@ -5029,6 +5074,18 @@
       ]
     },
     "website": "https://data-seo.com"
+  },
+  "securient": {
+    "avatar_url": "4383763",
+    "github": "securient",
+    "name": "Vinod Tiwari",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    },
+    "twitter": "@securient",
+    "website": "https://blog.securient.io"
   },
   "westonruter": {
     "avatar_url": "134745",
@@ -5291,18 +5348,5 @@
       ]
     },
     "twitter": "_cybai"
-  },
-  "martinakraus": {
-    "avatar_url": "6086902",
-    "github": "martinakraus",
-    "name": "Martina Kraus",
-    "teams": {
-      "2025": [
-        "reviewers"
-      ]
-    },
-    "twitter": "MartinaKraus11",
-    "linkedin": "martina-kraus-398493108",
-    "bluesky": "martinakraus11"
   }
 }
