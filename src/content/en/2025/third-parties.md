@@ -18,7 +18,6 @@ featured_stat_2: 16
 featured_stat_label_2: The median number of third-party domains present on a page
 featured_stat_3: 18%
 featured_stat_label_3: Percentage of websites that use TCF Standard
-doi: TODO
 ---
 
 ## Introduction
@@ -64,7 +63,7 @@ In our analysis, we treat such cases as first party interactions because the thi
 As previously indicated, third parties can be used for various use cases—for example, to include videos, to serve ads, or to include content from social media sites. Similar to the previous year, to categorize the observed third parties in our dataset, we rely on the <a hreflang="en" href="https://github.com/patrickhulce/third-party-web/#third-parties-by-category">Third-Party Web</a> repository from <a hreflang="en" href="https://x.com/patrickhulce">Patrick Hulce</a>. The repository breaks down third parties along the following categories:
 
 - **Ad:** These scripts are part of advertising networks, either serving or measuring.
-- **Analytics:** These scripts measure or track users and their actions. There’s a wide range of impact here, depending on what’s being tracked.
+- **Analytics:** These scripts measure or track users and their actions. There's a wide range of impact here, depending on what's being tracked.
 - **CDN:** These are a mixture of publicly hosted open source libraries (for example jQuery) served over different public CDNs and private CDN usage.
 - **Content:** These scripts are from content providers or publishing-specific affiliate tracking.
 - **Customer Success:** These scripts are from customer support/marketing providers that offer chat and contact solutions. These scripts are generally heavier in weight.
@@ -74,7 +73,7 @@ As previously indicated, third parties can be used for various use cases—for e
 - **Tag Manager:** These scripts tend to load many other scripts and initiate many tasks.
 - **Utility:** These scripts are developer utilities (API clients, site monitoring, fraud detection, etc.).
 - **Video:** These scripts enable video player and streaming functionality.
-- **Consent provider:** These scripts allow sites to manage the user consent (e.g. for the [General Data Protection Regulation](https://wikipedia.org/wiki/General_Data_Protection_Regulation) compliance). They are also known as the ’Cookie Consent’ popups and are usually loaded on the critical path.
+- **Consent provider:** These scripts allow sites to manage the user consent (e.g. for the [General Data Protection Regulation](https://wikipedia.org/wiki/General_Data_Protection_Regulation) compliance). They are also known as the _Cookie Consent_ popups and are usually loaded on the critical path.
 - **Other:** These are miscellaneous scripts delivered via a shared origin with no precise category or attribution.
 
 ### `Content-Type`
@@ -165,7 +164,7 @@ The top 10 third-party domains are dominated by Google-owned services, including
 
 ## Consent propagation among third parties
 
-In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB’s three consent standards: the <a hrefland="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework (TCF)</a>, the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Framework</a>, and the <a hrefland="en" href="https://iabtechlab.com/gpp/">Global Privacy Protocol (GPP)</a>.
+In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB's three consent standards: the <a hrefland="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework (TCF)</a>, the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Framework</a>, and the <a hrefland="en" href="https://iabtechlab.com/gpp/">Global Privacy Protocol (GPP)</a>.
 
 These frameworks define how consent information is encoded and shared between websites and third parties. We begin by identifying which consent standards are most prevalent among the third parties observed in our dataset. To determine which framework a third party uses, we rely on the presence of specific parameters in the request URLs. Details of the different standards are below:
 
