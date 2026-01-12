@@ -6,6 +6,9 @@
     "teams": {
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "AaronGustafson",
@@ -1474,6 +1477,9 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "twitter": "diekus",
@@ -2676,6 +2682,9 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "schweinepriestr"
@@ -3286,6 +3295,9 @@
     "name": "Michael Solati",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2025": [
         "authors"
       ]
     },
