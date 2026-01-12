@@ -2675,6 +2675,7 @@
   "Schweinepriester": {
     "avatar_url": "2644614",
     "github": "Schweinepriester",
+    "mastodon": "https://mastodon.social/@Schweinepriester",
     "name": "Kai Hollberg",
     "teams": {
       "2021": [
@@ -2686,8 +2687,7 @@
       "2025": [
         "reviewers"
       ]
-    },
-    "mastodon": "https://mastodon.social/@Schweinepriester"
+    }
   },
   "konfirmed": {
     "avatar_url": "9829274",
