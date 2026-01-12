@@ -28,7 +28,7 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = DATE '2025-06-01' AND is_root_page
+    date = '2025-07-01' AND is_root_page
   GROUP BY
     client
 )
@@ -37,7 +37,7 @@ USING (client),
     getFuguAPIsFromOther(TO_JSON_STRING(custom_metrics.other))
   ) AS fuguAPI
 WHERE
-  date = DATE '2025-06-01' AND is_root_page
+  date = '2025-07-01' AND is_root_page
 GROUP BY
   fuguAPI,
   client,

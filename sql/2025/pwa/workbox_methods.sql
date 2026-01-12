@@ -31,17 +31,29 @@ SELECT
   COUNT(DISTINCT page) AS freq,
   total,
   COUNT(DISTINCT page) / total AS pct
-FROM `httparchive.crawl.pages`,
-  UNNEST(getWorkboxMethods(TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.workboxInfo')))) AS workbox_method
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(getWorkboxMethods(TO_JSON_STRING(custom_metrics.other.pwa.workboxInfo))) AS workbox_method
 JOIN (
   SELECT client, COUNT(0) AS total
-  FROM `httparchive.crawl.pages`
-  WHERE date = DATE '2025-06-01' AND is_root_page AND
-    JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
-  GROUP BY client
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page AND
+    JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true'
+  GROUP BY
+    client
 ) totals USING (client)
-WHERE date = DATE '2025-06-01' AND is_root_page AND
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.workboxInfo')) NOT IN ('[]', '{}', 'null') AND
-  JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
-GROUP BY client, workbox_method, total
-ORDER BY pct DESC, client;
+WHERE
+  date = '2025-07-01' AND
+  is_root_page AND
+  TO_JSON_STRING(custom_metrics.other.pwa.workboxInfo) NOT IN ('[]', '{}', 'null') AND
+  JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true'
+GROUP BY
+  client,
+  workbox_method,
+  total
+ORDER BY
+  pct DESC,
+  client;

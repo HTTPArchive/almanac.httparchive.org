@@ -16,17 +16,19 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = DATE '2025-06-01' AND is_root_page AND
-    TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null') AND
-    JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
+    date = '2025-07-01' AND
+    is_root_page AND
+    TO_JSON_STRING(custom_metrics.other.pwa.manifests) NOT IN ('[]', '{}', 'null') AND
+    JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true'
   GROUP BY
     client
 )
 USING (client)
 WHERE
-  date = DATE '2025-06-01' AND is_root_page AND
-  JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true' AND
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null') AND
+  date = '2025-07-01' AND
+  is_root_page AND
+  JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true' AND
+  TO_JSON_STRING(custom_metrics.other.pwa.manifests) NOT IN ('[]', '{}', 'null') AND
   JSON_EXTRACT_SCALAR(JSON_QUERY(custom_metrics.well_known, '$'), "$['/.well-known/assetlinks.json'].found") = 'true'
 GROUP BY
   client,
@@ -47,13 +49,14 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = DATE '2025-06-01' AND is_root_page
+    date = '2025-07-01' AND is_root_page
   GROUP BY
     client
 )
 USING (client)
 WHERE
-  date = DATE '2025-06-01' AND is_root_page AND
+  date = '2025-07-01' AND
+  is_root_page AND
   JSON_EXTRACT_SCALAR(JSON_QUERY(custom_metrics.well_known, '$'), "$['/.well-known/assetlinks.json'].found") = 'true'
 GROUP BY
   client,

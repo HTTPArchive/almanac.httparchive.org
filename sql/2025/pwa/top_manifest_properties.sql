@@ -1,7 +1,7 @@
 #standardSQL
 # Top manifest properties
 
-CREATE TEMP FUNCTION getManifestProps(manifest STRING)
+CREATE TEMP FUNCTION getManifestProps(manifest JSON)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''
 try {
   var manifestJSON = Object.values(JSON.parse(manifest))[0];
@@ -18,13 +18,13 @@ WITH totals AS (
   SELECT
     client,
     COUNT(0) AS total,
-    COUNTIF(JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true') AS pwa_total
+    COUNTIF(JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true') AS pwa_total
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = DATE '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
-    TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null')
+    TO_JSON_STRING(custom_metrics.other.pwa.manifests) NOT IN ('[]', '{}', 'null')
   GROUP BY
     client
 ),
@@ -37,19 +37,19 @@ manifests_properties AS (
     COUNT(DISTINCT page) AS freq,
     total,
     COUNT(DISTINCT page) / total AS pct,
-    COUNTIF(JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true') AS pwa_freq,
+    COUNTIF(JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true') AS pwa_freq,
     pwa_total,
-    COUNTIF(JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true') / pwa_total AS pwa_pct
+    COUNTIF(JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true') / pwa_total AS pwa_pct
   FROM
     `httparchive.crawl.pages`,
-    UNNEST(getManifestProps(TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')))) AS property
+    UNNEST(getManifestProps(custom_metrics.other.pwa.manifests)) AS property
   JOIN
     totals
   USING (client)
   WHERE
-    date = DATE '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
-    TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null')
+    TO_JSON_STRING(custom_metrics.other.pwa.manifests) NOT IN ('[]', '{}', 'null')
   GROUP BY
     client,
     property,

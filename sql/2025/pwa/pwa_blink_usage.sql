@@ -11,7 +11,7 @@ SELECT DISTINCT
 FROM
   `httparchive.blink_features.usage`
 WHERE
-  date = DATE '2025-06-01' AND (
+  date = '2025-07-01' AND (
     feature LIKE '%ServiceWorker%' OR
     feature LIKE '%BackgroundSync%' OR
     feature LIKE '%GetInstalledRelatedApps%'

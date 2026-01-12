@@ -69,9 +69,10 @@ FROM (
     `httparchive.crawl.pages`,
     UNNEST(getSWLibraries(TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.importScriptsInfo')))) AS script
   WHERE
-    date = DATE '2025-06-01' AND is_root_page AND
+    date = '2025-07-01' AND
+    is_root_page AND
     TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.importScriptsInfo')) NOT IN ('[]', '{}', 'null') AND
-    JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
+    JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true'
   GROUP BY
     client,
     page
@@ -83,8 +84,9 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = DATE '2025-06-01' AND is_root_page AND
-    JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
+    date = '2025-07-01' AND
+    is_root_page AND
+    JSON_VALUE(custom_metrics.other.pwa.serviceWorkerHeuristic) = 'true'
   GROUP BY
     client
 )
