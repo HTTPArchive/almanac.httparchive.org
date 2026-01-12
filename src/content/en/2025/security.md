@@ -1763,7 +1763,7 @@ The percentage of hosts returning a `server-timing` header has increased by over
 {{ figure_markup(
   image="server-timing-header-dur-property.png",
   caption="The relative usage of `dur` properties in `Server-Timing` headers.",
-  description="Bar chart showing the prevalence of specific duration metrics within the "Server-Timing" header across desktop and mobile platforms. The data indicates that a significant portion of these headers—43% on desktop and 42% on mobile—include at least one `dur` property. Furthermore, a substantial percentage of hosts (29% desktop, 27% mobile) expose more than two separate duration metrics.",
+  description="Bar chart showing the prevalence of specific duration metrics within the `Server-Timing` header across desktop and mobile platforms. The data indicates that a significant portion of these headers—43% on desktop and 42% on mobile—include at least one `dur` property. Furthermore, a substantial percentage of hosts (29% desktop, 27% mobile) expose more than two separate duration metrics.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2066582084&format=interactive",
   sql_file="server_timing_usage_values.sql"
   )
