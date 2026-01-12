@@ -5,7 +5,7 @@ description: PWA chapter of the 2025 Web Almanac covering service workers (usage
 hero_alt: Hero image of Web Almanac characters converting a web page to a mobile web app.
 authors: [diekus, MichaelSolati]
 reviewers: [webmaxru, Schweinepriester, aarongustafson]
-analysts: []
+analysts: [onurglr]
 editors: [tunetheweb]
 translators: []
 diekus_bio: Diego Gonzalez is a computer engineer from Costa Rica working as the PM for PWA platform features for the Microsoft Edge browser.
@@ -54,7 +54,7 @@ To start strong, we will look at the service worker controlled pages by rank. Fr
   description="Bar chart showing the PWA websites controlled by SW by their ranking.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1868664844&format=interactive",
   sheets_gid="374256727",
-  sql_file="TODO"
+  sql_file="sw_adoption_over_time_ranking.sql"
   )
 }}
 
@@ -68,7 +68,7 @@ Following we have usage data for capabilities of service worker by events, metho
   description="Bar chart showing the popularity of SW events, with activate being around 96% and install around 63%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1621146621&format=interactive",
   sheets_gid="577288813",
-  sql_file="TODO"
+  sql_file="sw_events.sql"
   )
 }}
 
@@ -81,10 +81,10 @@ Usage of other advanced events, like `fetch`, `notificationclick` and `push` fal
 {{ figure_markup(
   image="pwa-sw-methods.png",
   caption="Most used service worker methods.",
-  description="Bar chart showing the popularity of SW methods, with skipWaiting being used aproximate 66%.",
+  description="Bar chart showing the popularity of SW methods, with `skipWaiting` being used on approximately 66% of PWA pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=628466183&format=interactive",
   sheets_gid="1005909719",
-  sql_file="TODO"
+  sql_file="sw_methods.sql"
   )
 }}
 
@@ -98,7 +98,7 @@ Looking at the most used service worker method, `skipWaiting()` has a notable us
   description="Bar chart showing the popularity of SW objects.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1490213107&format=interactive",
   sheets_gid="928442900",
-  sql_file="TODO"
+  sql_file="sw_objects.sql"
   )
 }}
 
@@ -114,7 +114,7 @@ As hinted before, the main methods from these correspond to `claim`, `open`/`del
   description="Bar chart showing the most registered SW properties, with pushManager.subscribe and pushManager.getSubscription on top with a 7% on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=304535758&format=interactive",
   sheets_gid="1703056951",
-  sql_file="TODO"
+  sql_file="sw_registration_properties.sql"
   )
 }}
 
@@ -126,7 +126,7 @@ The web application manifest is now, more than ever, the most important part of 
 
 From those parseable manifests, we will now look at individual present fields. This can give us an understanding of how developers are using the manifest file and if there have been changes since 2022.
 
-### manifest properties
+### Manifest properties
 
 Straight up, these are the most used PWA manifest properties: name, icons, short_name and display and background_color. The top 4 most used properties are the same ones from 2022, with subtle notable changes regarding their order.
 
@@ -136,7 +136,7 @@ Straight up, these are the most used PWA manifest properties: name, icons, short
   description="Bar chart showing the most used Web App manifest properties. Name Icons and short_name on the top.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1634923260&format=interactive",
   sheets_gid="2030078867",
-  sql_file="TODO"
+  sql_file="top_manifest_properties.sql"
   )
 }}
 
@@ -197,7 +197,7 @@ Let's examine how individual members rate in the totality of manifest files scan
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Manifest properties.", sheets_gid="2030078867", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Manifest properties.", sheets_gid="2030078867", sql_file="top_manifest_properties.sql") }}</figcaption>
 </figure>
 
 For the manifests that specify the `categories` member, the top categories are:
@@ -208,7 +208,7 @@ For the manifests that specify the `categories` member, the top categories are:
   description="Bar chart showing the top categories defined in the manifest field (shopping/business and education).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=991806108&format=interactive",
   sheets_gid="848602015",
-  sql_file="TODO"
+  sql_file="top_manifest_categories.sql"
   )
 }}
 
@@ -224,7 +224,7 @@ The display member is used to specify the preferred display mode for the web app
   description="Bar chart showing the most used display values in the manifest file (standalone).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=364018981&format=interactive",
   sheets_gid="1096790994",
-  sql_file="TODO"
+  sql_file="top_manifest_display_values.sql"
   )
 }}
 
@@ -238,7 +238,7 @@ Most web apps (78%) opt for a `standalone` value for the display member. From th
   description="Bar chart showing the most used icon size values in the manifest file (192px and 512px).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1792269416&format=interactive",
   sheets_gid="1340146193",
-  sql_file="TODO"
+  sql_file="top_manifest_icon_sizes.sql"
   )
 }}
 
@@ -252,7 +252,7 @@ Top sizes include 192x192 and 512x512.
   description="Bar chart showing the most used orientation values in the manifest file (none!).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=165636531&format=interactive",
   sheets_gid="701832198",
-  sql_file="TODO"
+  sql_file="top_manifest_orientations.sql"
   )
 }}
 
@@ -268,7 +268,7 @@ We've seen the latest data on what the most used service worker and manifest fea
   description="Bar chart showing service worker (18.9%) and manifest file (~9%) usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=588231319&format=interactive",
   sheets_gid="1678838470",
-  sql_file="TODO"
+  sql_file="manifests_and_service_workers.sql"
   )
 }}
 
@@ -340,7 +340,7 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
       </tr>
     </tbody>
   </table>
-  <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="TODO.sql") }}</figcaption>
+  <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="fugu.sql") }}</figcaption>
 </figure>
 
 There is a complete separate chapter dedicated to [capabilities](./capabilities.md) to dive deeper in the adoption that these sort of APIs have had in 2025.
@@ -355,7 +355,7 @@ Notifications make sense for apps as they allow the user to re-engage with the a
   description="Bar chart showing PWA notification acceptance rates. Most of them are ignored in both desktop and mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1327754740&format=interactive",
   sheets_gid="487663654",
-  sql_file="TODO"
+  sql_file="pwa_notification_acceptance_rates.sql"
   )
 }}
 
