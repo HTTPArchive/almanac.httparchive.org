@@ -92,7 +92,7 @@ Among the top 10,000 websites, WordPress accounts for roughly 58% of CMS usage, 
 {{ figure_markup(
   image="cms-adoption-share.png",
   caption="CMS adoption share.",
-  description="Pie chart highlighting the massive market dominance of WordPress, which accounts for 64.4% of all mobile CMS usage. Shopify holds the second-largest share at 7.2%, followed by Wix at 5.1%, while competitors like Squarespace and Joomla maintain much smaller footprints below 3%. The remaining portion of the chart is fragmented among dozens of niche providers, with systems like Webflow and Drupal each representing less than 2% of the total adoption.",
+  description="Pie chart highlighting the massive market dominance of WordPress, which accounts for 64.3% of all mobile CMS usage. Shopify holds the second-largest share at 7.3%, followed by Wix at 5.2%, while competitors like Squarespace and Joomla maintain much smaller footprints below 3%. The remaining portion of the chart is fragmented among dozens of niche providers, with systems like Webflow and Drupal each representing less than 2% of the total adoption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1716078713&format=interactive",
   sheets_gid="54237467",
   sql_file="TODO.sql"
@@ -101,7 +101,7 @@ Among the top 10,000 websites, WordPress accounts for roughly 58% of CMS usage, 
 
 WordPress remains the dominant CMS in 2025, powering roughly 64% of CMS-driven sites. Its growth, however, has slowed to under one percentage point year over year, which points more to market saturation than to a major competitive threat from any single rival.
 
-The data shows that this slowdown is not caused by one platform displacing WordPress. Instead, small gains are spread across several CMSs. Shopify has grown to around 6.7–6.8% CMS share, Wix to about 5.2%, and Squarespace to roughly 3.0–3.3%. No single platform's growth is large enough to offset WordPress's slowing expansion, suggesting a more fragmented ecosystem rather than a consolidating one.
+The data shows that this slowdown is not caused by one platform displacing WordPress. Instead, small gains are spread across several CMSs. Shopify has grown to around 7.3–7.8% CMS share, Wix to about 5%, and Squarespace to roughly 3%. No single platform's growth is large enough to offset WordPress's slowing expansion, suggesting a more fragmented ecosystem rather than a consolidating one.
 
 Overall, the data indicates a more diverse CMS landscape shaped by market maturity and greater choice. WordPress remains broadly adopted, but new growth is increasingly distributed across multiple platforms instead of accruing to a single default CMS.
 
@@ -110,14 +110,14 @@ Overall, the data indicates a more diverse CMS landscape shaped by market maturi
 {{ figure_markup(
   image="top-5-cms.png",
   caption="Top 5 CMS'.",
-  description="Bar chart tracking the year-over-year mobile adoption trends of the most popular platforms from 2022 to 2025. WordPress maintains a massive, consistent lead over its competitors, ending the period with a 35.0% adoption rate. While Wix and Squarespace have experienced steady growth, reaching 2.8% and 1.5% respectively, older open-source platforms like Joomla and Drupal have seen a gradual decline in market share.",
+  description="Bar chart tracking the year-over-year mobile adoption trends of the most popular platforms from 2022 to 2025. WordPress maintains a massive, consistent lead over its competitors, ending the period with a 35.6% adoption rate. While Wix and Squarespace have experienced steady growth, reaching 2.8% and 1.5% respectively, older open-source platforms like Joomla and Drupal have seen a gradual decline in market share.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1261903171&format=interactive",
   sheets_gid="54237467",
   sql_file="TODO.sql"
   )
 }}
 
-Year-over-year growth among CMS platforms in 2025 is modest and uneven. Shopify remains the fastest-growing major CMS, increasing its share by roughly 0.5–0.6 percentage points to about 6.7–6.8%, continuing a decade-long rise driven largely by e-commerce. Squarespace shows smaller but positive growth of roughly 0.2–0.3 points, reaching around 3.0–3.3%. Wix's growth slows sharply compared with prior years and is now effectively flat at about 5.2% after a period of rapid expansion. These gains are incremental and spread out, not indicative of a new wave of explosive growth.
+Year-over-year growth among CMS platforms in 2025 is modest and uneven. Shopify remains the fastest-growing major CMS, increasing its share by roughly 0.5–0.6 percentage points to about 6.7–6.8%, continuing a decade-long rise driven largely by ecommerce. Squarespace shows smaller but positive growth of roughly 0.2–0.3 points, reaching around 3.0–3.3%. Wix's growth slows sharply compared with prior years and is now effectively flat at about 5.2% after a period of rapid expansion. These gains are incremental and spread out, not indicative of a new wave of explosive growth.
 
 By contrast, WordPress's share declines slightly year over year—by less than one percentage point—from its 2024 peak, marking its first sustained slowdown after decades of expansion. Even so, WordPress still powers most CMS-driven sites and remains the clear leader across the web. Traditional open-source platforms like Joomla and Drupal continue long-term declines in overall share, though Drupal is still disproportionately represented among high-traffic sites. In short, the fastest-growing CMSs in 2025 are making gains in specific niches, while WordPress remains dominant in absolute terms and continues to anchor the broader ecosystem.
 
@@ -549,7 +549,7 @@ In a world of evolving search and discovery systems, structured data acts as a s
 
 The CMS landscape in 2025 reflects a mature, increasingly polarized web. HTTP Archive data shows that CMS platforms now power the vast majority of sites, while non-CMS sites keep shrinking as a share of the web. At the same time, adoption patterns, performance outcomes, and resource usage vary widely according to platform choice, hosting model, and implementation discipline.
 
-Market share data confirms that WordPress is still the dominant CMS, powering more than 60% of CMS-driven sites. Platforms like Shopify continue to grow quickly in specific niches, especially e-commerce, while many other hosted builders show signs of slowing down. Rank-based analysis reveals that these trends are uneven: open-source CMSs remain overrepresented among high-traffic sites, while SaaS builders dominate the long tail of smaller properties. This suggests that CMS selection is increasingly driven by organizational needs and constraints, not just general popularity.
+Market share data confirms that WordPress is still the dominant CMS, powering more than 60% of CMS-driven sites. Platforms like Shopify continue to grow quickly in specific niches, especially ecommerce, while many other hosted builders show signs of slowing down. Rank-based analysis reveals that these trends are uneven: open-source CMSs remain overrepresented among high-traffic sites, while SaaS builders dominate the long tail of smaller properties. This suggests that CMS selection is increasingly driven by organizational needs and constraints, not just general popularity.
 
 Performance data reinforces this split. Vertically integrated platforms tend to deliver more consistent Core Web Vitals, especially on mobile. Self-hosted CMSs show much wider variance, influenced by themes, plugins, and third-party integrations. Page weight and resource composition data further show that implementation decisions often matter more than platform defaults. Even within a single CMS, sites range from highly optimized to severely bloated, underscoring that performance is an ongoing practice, not a built-in guarantee.
 
