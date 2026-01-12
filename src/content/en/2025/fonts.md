@@ -43,7 +43,7 @@ Within that 72%, we can break down two significant groups:
 
 - **Mixed hosting (self-hosting + a service)**: Another 36.1% of desktop sites and 31.7% of mobile sites use a combination of self-hosted fonts and a font service on the same page. In most of these cases the service is Google Fonts, with perhaps an icon CDN or another source added in. This "hybrid" approach was slightly more common last year (around 38.5% of desktop and 32.7% of mobile pages in 2024), so it has dipped a bit as some sites fully switch over to self-hosting.
 
-Combining those groups, about 72% of sites self-host in some capacity. The remaining \~28% of sites rely exclusively on third-party services for fonts (with Google Fonts being by far the most likely choice in that category).
+Combining those groups, about 72% of sites self-host in some capacity. The remaining ~28% of sites rely exclusively on third-party services for fonts (with Google Fonts being by far the most likely choice in that category).
 
 ### Web font services
 
