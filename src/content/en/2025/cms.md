@@ -11,12 +11,12 @@ translators: []
 VaheSODP_bio: Vahe Arabian is a digital publishing entrepreneur, growth strategist, and the founder of <a hreflang="en" href="https://www.stateofdigitalpublishing.com/">State of Digital Publishing</a> and <a hreflang="en" href="https://www.sodpmedia.com/">SODP Media</a>. He works with publishers, startups, and media organizations to drive sustainable growth across SEO, audience development, monetization, and product strategy. Vahe is a frequent speaker and writer on digital media trends, AI in publishing, and the evolving future of online journalism.
 results: https://docs.google.com/spreadsheets/d/1b3VLQPtJJOB7MmEx_RgmWSCef1BK8mrqpQT44UiMQyE/edit
 featured_quote: This year, the industry-wide focus on performance and user experience has deepened, with CMS platforms showing steady improvements across Core Web Vitals and Lighthouse scores. Many CMSs have embraced optimization strategies that enhance loading speed, interactivity, and accessibility, reflecting a shared commitment to a user-first web.
-featured_stat_1: 36%
-featured_stat_label_1: Percent of mobile sites using WordPress.
-featured_stat_2: 49%
-featured_stat_label_2: Percent of mobile sites using a CMS.
-featured_stat_3: 72%
-featured_stat_label_3: Percent of CMS market share that is WordPress
+featured_stat_1: 35%
+featured_stat_label_1: Mobile sites using WordPress.
+featured_stat_2: 54%
+featured_stat_label_2: Mobile sites using a CMS.
+featured_stat_3: 64%
+featured_stat_label_3: CMS market share that is WordPress
 ---
 
 ## Introduction
@@ -47,7 +47,7 @@ By 2025, CMS adoption reflects a web that’s both mature and increasingly speci
   description="The percentage of web pages using a Content Management System across desktop and mobile platforms from 2021 to 2025. The data shows a consistent upward trend for both categories, with desktop adoption rising from 42% to 55% and mobile adoption increasing from 43% to 54%. While mobile adoption was slightly higher or equal to desktop in the earlier years, desktop usage saw a significant jump in 2025 to take a 1% lead over mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1626517714&format=interactive",
   sheets_gid="1841486394",
-  sql_file="TODO.sql"
+  sql_file="cms_adoption.sql"
   )
 }}
 
@@ -63,7 +63,7 @@ CMS adoption looks different from one region to another.
   description="Bar chart comparing the percentage of websites using a Content Management System (CMS) across ten different countries for both desktop and mobile platforms. Italy leads the group with the highest adoption rate, reaching 51% for mobile sites, followed closely by the United States and the United Kingdom, both at 49%. In contrast, Indonesia and Brazil show the lowest adoption rates at 25% and 32% respectively, while mobile adoption consistently outperforms desktop across nearly all featured nations.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1849936162&format=interactive",
   sheets_gid="897134076",
-  sql_file="TODO.sql",
+  sql_file="cms_adoption_by_geo.sql",
   width=600,
   height=528
   )
@@ -81,7 +81,7 @@ Website rank continues to shape CMS adoption patterns. High-traffic sites tend t
   description="Bar chart of the leading Content Management Systems across different website traffic rankings on mobile. WordPress emerges as the dominant leader, showing a dramatic increase in adoption as site volume grows, peaking at 35.0% for all websites. In contrast, competitors like Shopify and Wix maintain much smaller footprints, with Shopify reaching its highest usage (5.0%) among the top 10 million sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=481895919&format=interactive",
   sheets_gid="156249791",
-  sql_file="TODO.sql"
+  sql_file="top_cms_by_rank.sql"
   )
 }}
 
@@ -95,7 +95,7 @@ Among the top 10,000 websites, WordPress accounts for roughly 58% of CMS usage, 
   description="Pie chart highlighting the massive market dominance of WordPress, which accounts for 64.3% of all mobile CMS usage. Shopify holds the second-largest share at 7.3%, followed by Wix at 5.2%, while competitors like Squarespace and Joomla maintain much smaller footprints below 3%. The remaining portion of the chart is fragmented among dozens of niche providers, with systems like Webflow and Drupal each representing less than 2% of the total adoption.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1716078713&format=interactive",
   sheets_gid="54237467",
-  sql_file="TODO.sql"
+  sql_file="top_cms.sql"
   )
 }}
 
@@ -113,17 +113,17 @@ Overall, the data indicates a more diverse CMS landscape shaped by market maturi
   description="Bar chart tracking the year-over-year mobile adoption trends of the most popular platforms from 2022 to 2025. WordPress maintains a massive, consistent lead over its competitors, ending the period with a 35.6% adoption rate. While Wix and Squarespace have experienced steady growth, reaching 2.8% and 1.5% respectively, older open-source platforms like Joomla and Drupal have seen a gradual decline in market share.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1261903171&format=interactive",
   sheets_gid="54237467",
-  sql_file="TODO.sql"
+  sql_file="top_cms.sql"
   )
 }}
 
-Year-over-year growth among CMS platforms in 2025 is modest and uneven. Shopify remains the fastest-growing major CMS, increasing its share by roughly 0.5–0.6 percentage points to about 6.7–6.8%, continuing a decade-long rise driven largely by ecommerce. Squarespace shows smaller but positive growth of roughly 0.2–0.3 points, reaching around 3.0–3.3%. Wix's growth slows sharply compared with prior years and is now effectively flat at about 5.2% after a period of rapid expansion. These gains are incremental and spread out, not indicative of a new wave of explosive growth.
+Year-over-year growth among CMS platforms in 2025 is modest and uneven. Shopify is a new entry this year having previously just been classified as under the Ecommerce category but now is included under CMS as well. Squarespace shows small but positive growth of roughly 0.2–0.3 points, reaching around 3.0–3.3%. Wix's growth slows sharply compared with prior years and is now effectively flat at about 5.2% after a period of rapid expansion. These gains are incremental and spread out, not indicative of a new wave of explosive growth.
 
 By contrast, WordPress's share declines slightly year over year—by less than one percentage point—from its 2024 peak, marking its first sustained slowdown after decades of expansion. Even so, WordPress still powers most CMS-driven sites and remains the clear leader across the web. Traditional open-source platforms like Joomla and Drupal continue long-term declines in overall share, though Drupal is still disproportionately represented among high-traffic sites. In short, the fastest-growing CMSs in 2025 are making gains in specific niches, while WordPress remains dominant in absolute terms and continues to anchor the broader ecosystem.
 
 ## WordPress in 2025
 
-{# TODO: Add an intro #}
+Given its dominance in the CMS world, it's worthwhile discussing it a bit more.
 
 ### Market and ecosystem
 
@@ -155,17 +155,7 @@ Equally important is what WordPress core does not try to do. Despite widespread 
 
 In a CMS market that is becoming more polarized, these choices reinforce WordPress's position as durable web infrastructure. While other platforms differentiate themselves through tightly managed, vertically integrated experiences, WordPress continues to favor adaptability, longevity, and risk reduction at scale. Its technical trajectory in 2025 is less about chasing competitors feature-for-feature and more about remaining operable across the broadest and most diverse slice of the web.
 
-## CMS user experience
-
-The architectural and performance trade-offs described so far are shaped not just by platform design, but by how CMSs are actually used. The user experience of CMSs—especially for editors and administrators—remains a critical but often underexplored driver of real-world outcomes.
-
-Across platforms, editorial UX often emphasizes flexibility over structure, presenting users with many options but few guardrails. Effective CMS UX instead leans on structured components, sensible defaults, and role-based permissions to reduce cognitive load and support consistent publishing. As sites grow, additional needs—such as governance, approval workflows, taxonomy management, and localization—turn CMS UX from a design preference into an operational requirement.
-
-Although invisible to most visitors, CMS UX directly affects frontend quality. Poorly constrained editorial tools can result in inconsistent layouts, heavy pages, accessibility problems, and outdated content. In this way, backend UX indirectly shapes performance, discoverability, and accessibility for end users.
-
-One common response to these challenges has been the adoption of page builders, which aim to simplify layout and design through editor-friendly visual interfaces. Their impact echoes HTTP Archive findings that show wide performance variation for WordPress sites driven more by configuration and tooling choices than by core itself. \
-
-## Page builders
+### Page builders
 
 Page builders have become a dominant interface layer within the WordPress ecosystem. Estimates suggest that around 60% of WordPress sites use a page builder, reflecting demand for faster iteration, less reliance on developers, and greater editorial autonomy. Elementor has the largest observed footprint, followed by WPBakery and Divi, alongside broad use of the native Block Editor.
 
@@ -182,10 +172,10 @@ Historically, many page builders were associated with heavy markup and large CSS
 {{ figure_markup(
   image="top-5-page-builders.png",
   caption="Top 5 page builders.",
-  description="Bar chart comparing the adoption rates of leading page builders across desktop and mobile platforms. Elementor is the clear market leader, with a substantial 43% adoption on mobile and 42% on desktop, more than doubling the share of the WordPress Block Editor at 18%. Other popular builders like wpBakery (13%) and Divi (10%) follow, while adoption rates remain remarkably consistent between desktop and mobile devices for all listed platforms.DO.",
+  description="Bar chart comparing the adoption rates of leading page builders across desktop and mobile platforms. Elementor is the clear market leader, with a substantial 43% adoption on mobile and 42% on desktop, more than doubling the share of the WordPress Block Editor at 18%. Other popular builders like wpBakery (13%) and Divi (10%) follow, while adoption rates remain remarkably consistent between desktop and mobile devices for all listed platforms.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=216707306&format=interactive",
   sheets_gid="527845777",
-  sql_file="TODO.sql"
+  sql_file="wordpress_page_builders.sql"
   )
 }}
 
@@ -194,14 +184,24 @@ Usage patterns are also shifting. Between 2024 and 2025, Elementor remained the 
 {{ figure_markup(
   image="top-5-page-builder-bundles.png",
   caption="Top 5 page builder bundles.",
-  description="Bar chart showing the percentage of web pages utilizing specific combinations of page builders for both desktop and mobile platforms. The Elementor and WordPress Block Editor bundle is the clear market leader, powering 5.0% of mobile sites and 4.7% of desktop sites. Other popular combinations, such as Elementor with wpBakery, see significantly lower adoption at around 1.4%, while the most modern combination of the WordPress Block Editor and Site Editor is currently used by only 0.2% of pages.",
+  description="Bar chart showing the percentage of web pages utilizing specific combinations of page builders for both desktop and mobile platforms. The Elementor and WordPress Block Editor bundle is the clear market leader, powering 5.0% of mobile sites and 4.7% of desktop sites. Other popular combinations, such as Elementor with wpBakery, see significantly lower adoption at around 1.3%, while the most modern combination of the WordPress Block Editor and Site Editor is currently used by only 0.2% of pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=2140205874&format=interactive",
   sheets_gid="527845777",
-  sql_file="TODO.sql"
+  sql_file="wordpress_page_builders.sql"
   )
 }}
 
 Overall, the data suggests that page builders are still a core part of the WordPress ecosystem, but their performance impact now depends heavily on how closely they align with WordPress core. Builders that reduce markup overhead, avoid global asset loading, and integrate deeply with the Block Editor tend to limit performance costs more effectively. As expectations continue to rise, the technical differences between builders may matter more than their visual feature sets.
+
+## CMS user experience
+
+The architectural and performance trade-offs described so far are shaped not just by platform design, but by how CMSs are actually used. The user experience of CMSs—especially for editors and administrators—remains a critical but often underexplored driver of real-world outcomes.
+
+Across platforms, editorial UX often emphasizes flexibility over structure, presenting users with many options but few guardrails. Effective CMS UX instead leans on structured components, sensible defaults, and role-based permissions to reduce cognitive load and support consistent publishing. As sites grow, additional needs—such as governance, approval workflows, taxonomy management, and localization—turn CMS UX from a design preference into an operational requirement.
+
+Although invisible to most visitors, CMS UX directly affects frontend quality. Poorly constrained editorial tools can result in inconsistent layouts, heavy pages, accessibility problems, and outdated content. In this way, backend UX indirectly shapes performance, discoverability, and accessibility for end users.
+
+One common response to these challenges has been the adoption of page builders, which aim to simplify layout and design through editor-friendly visual interfaces. Their impact echoes HTTP Archive findings that show wide performance variation for WordPress sites driven more by configuration and tooling choices than by core itself.
 
 ## Core Web Vitals
 
@@ -214,10 +214,10 @@ This section looks at year-over-year Core Web Vitals performance across major CM
 {{ figure_markup(
   image="mobile-year-over-year-core-web-vitals-performance-per-cms.png",
   caption="Mobile year-over-year Core Web Vitals performance per CMS.",
-  description="Bar chart tracking the percentage of mobile websites achieving \"good\" scores across ten major platforms between 2024 and 2025. Duda is the top performer with 84% of its sites meeting the benchmarks, followed by TYPO3 CMS at 76% and Wix, which saw a significant jump from 55% to 71%. While most platforms showed steady improvement, Weebly was the only CMS to see a slight decline to 48%, and WordPress remains among the lowest-ranked with a pass rate of 44%.",
+  description="Bar chart tracking the percentage of mobile websites achieving \"good\" scores across ten major platforms between 2024 and 2025. Duda is the top performer with 85% of its sites meeting the benchmarks, followed by TYPO3 CMS at 79% and Wix, which saw a significant jump from 55% to 74%. While most platforms showed steady improvement, Weebly was the only CMS to see a slight decline to 47%, and WordPress remains among the lowest-ranked with a pass rate of 45%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1431389142&format=interactive",
   sheets_gid="12600581",
-  sql_file="TODO.sql",
+  sql_file="core_web_vitals_yoy.sql",
   width=600,
   height=559
   )
@@ -234,16 +234,16 @@ Largest Contentful Paint measures how quickly the main content of a page appears
 {{ figure_markup(
   image="mobile-year-over-year-cms-lcp-performance.png",
   caption="Mobile year-over-year CMS LCP performance.",
-  description="Bar chart, displaying the percentage of mobile websites per platform that achieved a \"good\" Largest Contentful Paint (LCP) score for 2024 and 2025. Duda leads with the highest performance, having 93% of its mobile sites meet the threshold, followed by TYPO3 CMS at 89% and Wix at 78%. While most platforms showed steady year-over-year progress—with Tilda and WordPress both reaching 53%—Weebly was the only CMS to experience a slight decline, falling to 54%.",
+  description="Bar chart, displaying the percentage of mobile websites per platform that achieved a \"good\" Largest Contentful Paint (LCP) score for 2024 and 2025. Duda leads with the highest performance, having 94% of its mobile sites meet the threshold, followed by TYPO3 CMS at 89% and Wix at 81%. While most platforms showed steady year-over-year progress—with Tilda reaching 56% and WordPress both reaching 53%—Weebly was the only CMS to experience a slight decline, falling to 52%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=625293536&format=interactive",
   sheets_gid="12600581",
-  sql_file="TODO.sql",
+  sql_file="core_web_vitals_yoy.sql",
   width=600,
   height=559
   )
 }}
 
-In 2025, 53.77% of sites achieved a "good" LCP score, reflecting ongoing progress but also significant remaining variability.
+In 2025, 54% of sites achieved a "good" LCP score, reflecting ongoing progress but also significant remaining variability.
 
 Most CMS platforms show year-over-year LCP improvements. Wix leads with roughly a 10% gain, followed by Squarespace (+7%) and Duda (+5%). WordPress, Joomla, and Drupal each improve by about 4%, while Weebly slips slightly (around -1%). These differences align with platform-level choices around asset loading, image optimization, and default configurations.
 
@@ -254,10 +254,10 @@ Cumulative Layout Shift captures how visually stable a page is while it loads, b
 {{ figure_markup(
   image="mobile-year-over-year-cms-cls-performance.png",
   caption="Mobile year-over-year CMS CLS performance.",
-  description="Bar chart comparing the percentage of mobile websites achieving a \"good\" Cumulative Layout Shift (CLS) score across ten platforms for 2024 and 2025. Wix shows the most significant improvement, rising from approximately 86% in 2024 to 95% in 2025, while Duda and Squarespace also maintain strong lead positions with scores of 92% and 88% respectively. Conversely, Weebly is the only platform showing a clear decline in layout stability, dropping to 58%, whereas WordPress and Joomla remain stable with scores around the 80% mark.",
+  description="Bar chart comparing the percentage of mobile websites achieving a \"good\" Cumulative Layout Shift (CLS) score across ten platforms for 2024 and 2025. Wix shows the most significant improvement, rising from approximately 86% in 2024 to 95% in 2025, while Duda and Squarespace also maintain strong lead positions with scores of 93% and 89% respectively. Conversely, Weebly is the only platform showing a clear decline in layout stability, dropping to 58%, whereas WordPress and Joomla remain stable with scores around the 84% mark.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1790391969&format=interactive",
   sheets_gid="12600581",
-  sql_file="TODO.sql",
+  sql_file="core_web_vitals_yoy.sql",
   width=600,
   height=559
   )
@@ -274,10 +274,10 @@ Interaction to Next Paint measures how responsive a page feels across all user i
 {{ figure_markup(
   image="mobile-year-over-year-cms-inp-performance.png",
   caption="Mobile year-over-year CMS INP performance.",
-  description="Bar chart displaying the percentage of mobile websites achieving a \"good\" Interaction to Next Paint (INP) score across ten different platforms for 2024 and 2025. Squarespace leads the group with an impressive 96% success rate, followed closely by TYPO3 CMS at 95% and Duda at 93%. While nearly all platforms showed year-over-year improvements—with Tilda making a notable jump from approximately 58% to 65%—1C-Bitrix and Weebly remain the lowest performers, with scores of 70% and 71% respectively.",
+  description="Bar chart displaying the percentage of mobile websites achieving a \"good\" Interaction to Next Paint (INP) score across ten different platforms for 2024 and 2025. Squarespace leads the group with an impressive 96% success rate, followed closely by TYPO3 CMS at 95% and Duda at 94%. While nearly all platforms showed year-over-year improvements—with Tilda making a notable jump from approximately 58% to 68%—1C-Bitrix and Weebly remain the lowest performers, both with scores of 71%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1672867090&format=interactive",
   sheets_gid="12600581",
-  sql_file="TODO.sql",
+  sql_file="core_web_vitals_yoy.sql",
   width=600,
   height=559
   )
@@ -296,18 +296,18 @@ Lighthouse offers a complementary, lab-based perspective on site quality across 
 {{ figure_markup(
   image="median-lighthouse-performance-score.png",
   caption="Median Lighthouse Performance score.",
-  description="Bar chart comparing the Performance scores of ten major Content Management Systems on both desktop and mobile platforms. Wix achieves the highest scores overall, with a 88 on desktop and 64 on mobile, while Squarespace shows the most significant performance gap between devices, dropping from a 62 on desktop to a low of 29 on mobile. Across all platforms, desktop performance significantly outweighs mobile, with modern builders like Duda and Webflow generally outperforming traditional systems like WordPress and Joomla.",
+  description="Bar chart showing the median performance results of various content management systems across desktop and mobile platforms. Wix achieves the highest median performance scores for both devices, reaching 87 on desktop and 64 on mobile, followed by Duda and Webflow with relatively high results. In contrast, platforms such as Squarespace, 1C-Bitrix, and PrestaShop exhibit the lowest performance on mobile, with scores ranging between 30 and 32.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1861912868&format=interactive",
   sheets_gid="1453203753",
-  sql_file="TODO.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
 }}
 
-Median Lighthouse performance scores improved between 2024 and 2025 on both desktop and mobile, with desktop consistently scoring higher. On desktop, Wix (88) and Duda (81) are out in front, followed by Webflow (74). WordPress records a median score of 63, with several platforms close by.
+Median Lighthouse performance scores improved between 2024 and 2025 on both desktop and mobile, with desktop consistently scoring higher. On desktop, Wix (87) and Duda (81) are out in front, followed by Webflow (73). WordPress records a median score of 63, with several platforms close by.
 
-On mobile, scores are lower across the board. Wix leads with 64, followed by Duda (59), Webflow (58), and Shopify (52). WordPress (40) and Joomla (39) sit behind this group, while PrestaShop and 1C-Bitrix post the lowest scores. Year over year, Wix shows the biggest jump on mobile (from 55 to 64), while most other platforms see only modest movement or remain stable. These lab scores are best read as context, not as a proxy for real-user experience.
+On mobile, scores are lower across the board. Wix leads with 64, followed by Webflow (58), Duda (57), and Shopify (52). WordPress (41) and Joomla (40) sit behind this group, while PrestaShop and 1C-Bitrix post the lowest scores. Year over year, Wix shows the biggest jump on mobile (from 55 to 64), while most other platforms see only modest movement or remain stable. These lab scores are best read as context, not as a proxy for real-user experience.
 
 ### SEO
 
@@ -317,7 +317,7 @@ On mobile, scores are lower across the board. Wix leads with 64, followed by Dud
   description="Bar chart displaying the SEO scores of ten major Content Management Systems on both desktop and mobile. Wix and Webflow are the top performers, both achieving perfect scores of 100 across both device types. Remarkably, every other CMS listed—including WordPress, Shopify, and Drupal—maintains an identical and high score of 92, showing no performance variation between desktop and mobile versions for any of the platforms featured.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=2147163809&format=interactive",
   sheets_gid="1453203753",
-  sql_file="TODO.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -330,16 +330,16 @@ In 2025, Lighthouse SEO scores remain high across CMS platforms, with most clust
 {{ figure_markup(
   image="median-lighthouse-accessibility-score.png",
   caption="Median Lighthouse Accessibility score.",
-  description="Bar chart showing the Accessibility scores of ten major Content Management Systems across desktop and mobile devices. Wix and Squarespace lead the group with outstanding scores of 95 and 94 respectively, demonstrating high consistency across both platforms. While most other systems like Webflow and Shopify maintain solid scores in the high 80s, 1C-Bitrix trails the group with the lowest score of 75.",
+  description="Bar chart showing the Accessibility scores of ten major Content Management Systems across desktop and mobile devices. Wix and Squarespace lead the group with outstanding scores of 95 and 94 respectively, demonstrating high consistency across both platforms. While most other systems like Webflow and Shopify maintain solid scores of 90 and 89 respectively, 1C-Bitrix trails the group with the lowest score of 76.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=2114036485&format=interactive",
   sheets_gid="1453203753",
-  sql_file="TODO.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
 }}
 
-Accessibility scores vary more than SEO but still show limited change year to year. In 2025, median scores range from 75 to 95, with Wix (95) and Squarespace (94) leading. WordPress and Joomla remain stable, while 1C-Bitrix trails at 75. Overall, improvements are gradual, indicating steady but not transformative progress.
+Accessibility scores vary more than SEO but still show limited change year to year. In 2025, median scores range from 76 to 95, with Wix (95) and Squarespace (94) leading. WordPress and Joomla remain stable, while 1C-Bitrix trails at 76. Overall, improvements are gradual, indicating steady but not transformative progress.
 
 ### Best Practices
 
@@ -349,7 +349,7 @@ Accessibility scores vary more than SEO but still show limited change year to ye
   description="Bar chart comparing the Best Practice scores across ten different CMS platforms for both desktop and mobile devices. Wix and Squarespace are the top performers, both achieving near-perfect scores of 96 on desktop, with Wix following closely at 93 on mobile. Most other platforms, including WordPress, Shopify, and Duda, maintain consistent scores in the high 70s to low 80s, while 1C-Bitrix trails the group with the lowest scores of 59 for desktop and 61 for mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=630122711&format=interactive",
   sheets_gid="1453203753",
-  sql_file="TODO.sql",
+  sql_file="lighthouse_category_scores_per_cms.sql",
   width=600,
   height=559
   )
@@ -361,19 +361,15 @@ Year-over-year, some platforms improve notably—particularly Wix (from 79 to 93
 
 ## Page weight and resource composition
 
-{# TODO: Add an intro #}
-
-### Page weight overview
-
 "Page weight" is the total size of all resources a browser needs to download to render a page. Over the past decade, page weight has steadily increased.
 
 {{ figure_markup(
   image="distribution-of-cms-page-weight.png",
   caption="Distribution of CMS page weight.",
-  description="Bar chart showing the total page weight in kilobytes for five popular mobile CMS platforms across various percentiles. Squarespace produces the heaviest sites with a median (50th percentile) weight of 3,028 KB, while Joomla and WordPress are the lightest at 2,088 KB and 2,177 KB respectively. Across all platforms, there is a substantial increase in weight at the 90th percentile, with some mobile pages exceeding 8,000 KB.",
+  description="Bar chart showing the total page weight in kilobytes for five popular mobile CMS platforms across various percentiles. Squarespace produces the heaviest sites with a median (50th percentile) weight of 3,974 KB, while Joomla and WordPress are the lightest at 2,900 KB and 2,894 KB respectively. Across all platforms, there is a substantial increase in weight at the 90th percentile, with some mobile pages exceeding 8,000 KB.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1506051680&format=interactive",
   sheets_gid="1551200507",
-  sql_file="TODO.sql"
+  sql_file="page_weight_distribution.sql"
   )
 }}
 
@@ -390,10 +386,10 @@ Total page weight varies widely between CMS platforms, influenced by default the
 {{ figure_markup(
   image="median-cms-page-weight.png",
   caption="Median CMS page weight.",
-  description="Bar chart comparing the median total bytes loaded for five major platforms on both desktop and mobile devices. Squarespace produces the heaviest websites by a significant margin, with a median weight of 3,028 KB on mobile and even higher on desktop. In contrast, Joomla and WordPress remain the lightest platforms in the group, with mobile median weights of 2,088 KB and 2,177 KB respectively. Across all featured systems, desktop pages consistently carry a higher byte load than their mobile counterparts.",
+  description="Bar chart comparing the median total bytes loaded for five major platforms on both desktop and mobile devices. Squarespace produces the heaviest websites by a significant margin, with a median weight of 3,974 KB on mobile and even higher on desktop. In contrast, Joomla and WordPress remain the lightest platforms in the group, with mobile median weights of 2,900 KB and 2,894 KB respectively. Across all featured systems, desktop pages consistently carry a higher byte load than their mobile counterparts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=439542488&format=interactive",
   sheets_gid="1256129490",
-  sql_file="TODO.sql"
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -408,10 +404,10 @@ Images remain the largest contributor to page weight on all CMS platforms. Even 
 {{ figure_markup(
   image="median-cms-size-of-images.png",
   caption="Median CMS size of images.",
-  description="Bar chart comparing the median image payload in kilobytes for five major platforms across desktop and mobile devices. Squarespace loads the largest volume of images, reaching a median of 1,036 KB on mobile and even higher on desktop, while Wix maintains the most efficient image footprint at just 120 KB on mobile. Across all featured systems, desktop pages consistently load more image data than mobile pages, with Joomla and WordPress also carrying significant median loads of 991 KB and 756 KB respectively on mobile devices.",
+  description="Bar chart showing the median total bytes of images loaded by five different Content Management Systems across desktop and mobile platforms. The data shows that Joomla and Squarespace have the highest median image weights, with Joomla leading at 1,612 KB on mobile, while Wix maintains the smallest footprint by a significant margin at only 194 KB on mobile. For every CMS listed, including WordPress and Shopify, the desktop version consistently loads a higher volume of image data than the mobile version.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1131984006&format=interactive",
   sheets_gid="1256129490",
-  sql_file="TODO.sql"
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -428,10 +424,10 @@ Page builders and component-based systems often increase JavaScript use by addin
 {{ figure_markup(
   image="median-cms-size-of-javascript.png",
   caption="Median CMS size of JavaScript.",
-  description="Bar chart highlighting the heavy scripts required by modern software-as-a-service (SaaS) platforms compared to traditional open-source systems. Wix and Shopify lead with the largest JavaScript footprints, both loading over 1,580 KB on mobile and desktop devices. In contrast, WordPress and Joomla maintain much leaner median payloads of 611 KB and 427 KB respectively. Across all five platforms, there is virtually no difference between desktop and mobile JavaScript sizes, indicating that most CMSs deliver nearly identical code bundles regardless of the user's device.",
+  description="Bar chart showing the median amount of JavaScript bytes loaded across five major Content Management Systems for both desktop and mobile devices. Wix and Shopify exhibit the highest JavaScript payloads, with median mobile sizes of 1,634 KB and 1,615 KB, respectively. In contrast, Joomla and WordPress maintain significantly smaller JavaScript footprints, loading medians of 453 KB and 638 KB on mobile devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=782647613&format=interactive",
   sheets_gid="1256129490",
-  sql_file="TODO.sql"
+  sql_file="resource_weights.sql"
   )
 }}
 
@@ -444,20 +440,20 @@ CSS and HTML make up a smaller share of total page weight than images and JavaSc
 {{ figure_markup(
   image="median-cms-size-of-html.png",
   caption="Median CMS size of HTML.",
-  description="Bar chart comparing the median amount of HTML bytes loaded for five major platforms on desktop and mobile. Wix loads the most HTML by a significant margin, with a median of 160 KB on mobile and 155 KB on desktop, more than doubling the footprint of Shopify (78 KB on mobile). Conversely, Joomla and Squarespace maintain the most efficient HTML sizes, loading only 18 KB and 26 KB on mobile respectively, while across almost all platforms, mobile HTML sizes remain slightly smaller than their desktop counterparts.",
+  description="Bar  chart showing the median amount of HTML bytes loaded across five major Content Management Systems for both desktop and mobile platforms. Wix stands out as having the largest HTML footprint by a significant margin, with a median load of 163 KB for desktop and 162 KB for mobile. In contrast, Joomla and Squarespace maintain the smallest median sizes, with Joomla loading only 22 KB on desktop and 20 KB on mobile. Across all systems shown, the median size of HTML remains relatively consistent between device types, though desktop loads are slightly heavier in every instance.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1793928495&format=interactive",
   sheets_gid="1256129490",
-  sql_file="TODO.sql"
+  sql_file="resource_weights.sql"
   )
 }}
 
 {{ figure_markup(
   image="median-cms-size-of-css.png",
   caption="Median CMS size of CSS.",
-  description="Bar chart comparing the median amount of CSS bytes loaded for five major platforms on both desktop and mobile devices. Squarespace loads the most CSS by far, with a median of 164 KB for both desktop and mobile, while WordPress follows with approximately 120 KB. In a striking contrast, Wix maintains a remarkably small CSS footprint of just 1 KB, significantly outperforming competitors like Shopify (75 KB) and Joomla (91 KB) in this specific efficiency metric.",
+  description="Bar chart, showing the median bytes of CSS loaded across five Content Management Systems for desktop and mobile devices. Squarespace and WordPress load the most CSS, with Squarespace reaching a median of 165 KB on mobile and WordPress following at 119 KB. In stark contrast, Wix appears to load almost no external CSS files, showing a median value of only 1 KB for both device types.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=1384155263&format=interactive",
   sheets_gid="1256129490",
-  sql_file="TODO.sql"
+  sql_file="resource_weights.sql"
   )
 }}
 
