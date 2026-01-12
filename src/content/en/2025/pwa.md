@@ -49,7 +49,7 @@ Service workers remain essential to allow advanced capabilities like background 
 {{ figure_markup(
   image="pwa-sw-control-ranking.png",
   caption="Service worker controlled pages by rank.",
-  description="Bar chart showing the PWA websites controlled by service workers by their ranking.",
+  description="Bar chart showing the correlation between a website's popularity and its use of service worker technology. The data shows that adoption is significantly higher among top-tier websites, with the highest implementation occurring in the top 10,000 rank at 29.4% for desktop and 27.5% for mobile. As the sample size broadens to include less popular sites, adoption rates drop steadily, reaching a low of 20.0% when looking at all websites combined. Overall, desktop platforms consistently maintain a slight lead in service worker usage across every ranking category compared to their mobile counterparts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1868664844&format=interactive",
   sheets_gid="374256727",
   sql_file="sw_adoption_over_time_ranking.sql"
@@ -67,7 +67,7 @@ Following we have usage data for capabilities of service worker by events, metho
 {{ figure_markup(
   image="pwa-sw-events.png",
   caption="Most used service worker events.",
-  description="Bar chart showing the popularity of service worker events, with activate being around 96% and install around 64%.",
+  description="Bar chart showing the most used service worker events. Lifecycle events dominate the data, with the `activate` event appearing on 96% of PWA sites and the `install` event used by 64%. Functional events see lower but notable adoption, with `fetch` at 12% for intercepting network requests and `push` and `notificationclick` both at 7%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1621146621&format=interactive",
   sheets_gid="577288813",
   sql_file="sw_events.sql"
@@ -83,7 +83,7 @@ Usage of other advanced events, like `fetch`, `notificationclick` and `push` fal
 {{ figure_markup(
   image="pwa-sw-methods.png",
   caption="Most used service worker methods.",
-  description="Bar chart showing the popularity of service worker methods, with `skipWaiting` being used on approximately 66% of PWA pages.",
+  description="Bar chart showing the popularity of service worker methods, with `skipWaiting` being used on approximately 68% of desktop PWA pages and 63% of mobile PWA pages.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=628466183&format=interactive",
   sheets_gid="1005909719",
   sql_file="sw_methods.sql"
@@ -97,7 +97,7 @@ Looking at the most used service worker method, `skipWaiting()` has a notable us
 {{ figure_markup(
   image="pwa-sw-objects.png",
   caption="Most used service worker objects.",
-  description="Bar chart showing the popularity of service worker objects.",
+  description="Bar chart showing the adoption rates of various service worker objects on desktop and mobile platforms. The data shows that `clients.claim` is the most widely used object, appearing on approximately 67 percent of desktop PWA pages and 63 percent of mobile PWA pages. Other common objects include `caches.open` and `caches.delete`, which are notably more prevalent on mobile devices than on desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1490213107&format=interactive",
   sheets_gid="928442900",
   sql_file="sw_objects.sql"
@@ -113,7 +113,7 @@ As hinted before, the main methods from these correspond to `claim`, `open`/`del
 {{ figure_markup(
   image="pwa-sw-reg-properties.png",
   caption="Most registered service worker properties.",
-  description="Bar chart showing the most registered service worker properties, with pushManager.subscribe and pushManager.getSubscription on top with a 7% on mobile.",
+  description="Bar chart showing the adoption of various service worker registration features among desktop and mobile Progressive Web Apps. The data shows that `pushManager.subscribe` and `pushManager.getSubscription` are the most utilized properties, each appearing on approximately 7% of PWA websites across both platforms. In contrast, advanced synchronization and performance properties like `sync.register` and `navigationPreload.enable` see much lower implementation, with usage rates hovering between 1% and 2%. Overall, the visualization demonstrates that push notification capabilities are significantly more common in the PWA ecosystem than background sync or navigation preloading features.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=304535758&format=interactive",
   sheets_gid="1703056951",
   sql_file="sw_registration_properties.sql"
@@ -135,7 +135,7 @@ The web application manifest is now, more than ever, the most important part of 
 )
 }}
 
-For the current year, 94.4% of desktop sites and 94.9% of mobile sites are parseable. There is [no change from the last data set](../en/2022/pwa#fig-9), and same as last time around, the fact that the manifest file was able to be parsed does not imply completeness or minimum availability of features. Many values in the manifest, as important as they may seem, have reasonable fallbacks in place.
+For the current year, 94.5% of desktop sites and 94.9% of mobile sites are parseable. There is [no change from the last data set](../en/2022/pwa#fig-9), and same as last time around, the fact that the manifest file was able to be parsed does not imply completeness or minimum availability of features. Many values in the manifest, as important as they may seem, have reasonable fallbacks in place.
 
 From those parseable manifests, we will now look at individual present fields. This can give us an understanding of how developers are using the manifest file and if there have been changes since 2022.
 
@@ -144,7 +144,7 @@ From those parseable manifests, we will now look at individual present fields. T
 {{ figure_markup(
   image="pwa-manifest-properties.png",
   caption="Most used manifest properties.",
-  description="Bar chart showing the most used Web App manifest properties. Name Icons and short_name on the top.",
+  description="Bar chart showing the most frequently used fields within web app manifest files for both desktop and mobile platforms. Core identity and visual properties dominate the findings, with `name` and `icons` appearing in over 90% of manifests, followed closely by `short_name`, `display`, and `theme_color` at roughly 80%. Mobile PWAs exhibit slightly higher adoption across every listed property compared to desktop, particularly for functional fields like `start_url` and `scope`. Overall, the data illustrates a high level of standardization for basic PWA identification, while more descriptive or restrictive properties like `description` and `orientation` remain significantly less common.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1634923260&format=interactive",
   sheets_gid="2030078867",
   sql_file="top_manifest_properties.sql"
@@ -186,7 +186,7 @@ Let's examine how individual members rate in the totality of manifest files scan
       </tr>
       <tr>
         <td>`background_color`</td>
-        <td class="numeric">79%</td>
+        <td class="numeric">80%</td>
         <td class="numeric">82%</td>
       </tr>
       <tr>
@@ -212,7 +212,7 @@ Let's examine how individual members rate in the totality of manifest files scan
       <tr>
         <td>`orientation`</td>
         <td class="numeric">17%</td>
-        <td class="numeric">20%</td>
+        <td class="numeric">21%</td>
       </tr>
     </tbody>
   </table>
@@ -224,7 +224,7 @@ For the manifests that specify the `categories` member, the top categories are:
 {{ figure_markup(
   image="pwa-manifest-categories.png",
   caption="Most used manifest category values.",
-  description="Bar chart showing the top categories defined in the manifest field (shopping/business and education).",
+  description="Bar chart showing the percentage of Progressive Web App manifests that specify a particular application category for desktop and mobile platforms. The data shows that `shopping` and `business` are the overwhelmingly dominant categories, each represented in approximately 2.4% to 2.5% of manifests across both client types. In contrast, all other listed categories—including `education`, `entertainment`, `games`, and `productivity`—see significantly lower adoption, with each appearing in less than 0.3% of manifests.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=991806108&format=interactive",
   sheets_gid="848602015",
   sql_file="top_manifest_categories.sql"
@@ -240,7 +240,7 @@ The display member is used to specify the preferred display mode for the web app
 {{ figure_markup(
   image="pwa-manifest-displays.png",
   caption="Most used display values in the manifest (standalone).",
-  description="Bar chart showing the most used display values in the manifest file (standalone).",
+  description="Bar chart showing the distribution of display modes defined in web app manifests for desktop and mobile platforms. The `standalone` value is the overwhelmingly dominant choice, utilized by 78% of mobile PWA manifests and a similarly high percentage on desktop to provide an app-like experience. Other standardized display values, such as `minimal-ui`, `fullscreen`, and `browser`, see very low adoption, with each accounting for 3% or less of the total. Additionally, a notable portion of manifests, roughly 15%, do not have a display value set.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=364018981&format=interactive",
   sheets_gid="1096790994",
   sql_file="top_manifest_display_values.sql"
@@ -254,7 +254,7 @@ Most web apps (78%) opt for a `standalone` value for the display member. From th
 {{ figure_markup(
   image="pwa-manifest-icons.png",
   caption="Most used icons size values in the manifest.",
-  description="Bar chart showing the most used icon size values in the manifest file (192px and 512px).",
+  description="Bar chart showing the most common icon dimensions specified in web app manifests for desktop and mobile platforms. The data shows that 192x192 and 512x512 are the overwhelmingly dominant sizes, appearing in approximately 85% and 75% of manifests respectively. All other listed sizes, such as 144x144 and 96x96, see significantly lower adoption, with each utilized by less than 25% of Progressive Web Apps.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1792269416&format=interactive",
   sheets_gid="1340146193",
   sql_file="top_manifest_icon_sizes.sql"
@@ -268,7 +268,7 @@ Top sizes include 192x192 and 512x512.
 {{ figure_markup(
   image="pwa-manifest-orientation.png",
   caption="Most used orientation values in the manifest.",
-  description="Bar chart showing the most used orientation values in the manifest file (none!).",
+  description="Bar chart showing the percentage of Progressive Web App manifests that specify a default screen orientation for desktop and mobile platforms. The data reveals that an overwhelming majority of manifests—roughly 80 percent—do not have an orientation property set. Among the minority that do define a preference, `portrait` is the most common selection at approximately 12 percent, with mobile applications showing a significantly higher tendency to lock this orientation compared to desktop versions. Other specific orientation values such as `any`, `natural`, and `portrait-primary` see very low adoption, each appearing in fewer than 5 percent of manifests, while `landscape` is the least utilized at just 0.1 percent.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=165636531&format=interactive",
   sheets_gid="701832198",
   sql_file="top_manifest_orientations.sql"
@@ -284,7 +284,7 @@ We've seen the latest data on what the most used service worker and manifest fea
 {{ figure_markup(
   image="pwa-manifest-sw-manifest-usage.png",
   caption="PWA service worker and manifest file usage.",
-  description="Bar chart showing service worker (19.2%) and manifest file (~9%) usage.",
+  description="Bar chart showing the adoption of key Progressive Web App technologies on desktop and mobile websites. The data reveals that service workers are significantly more common than web app manifests, with 18.9% of sites implementing the former and roughly 9% implementing the latter across both platforms. When looking at overall adoption, 24.5% of websites use at least one of these PWA features, but only a small fraction—3.3% on desktop and 3.5% on mobile—have implemented both simultaneously.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=588231319&format=interactive",
   sheets_gid="1678838470",
   sql_file="manifests_and_service_workers.sql"
@@ -311,53 +311,53 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
     <tbody>
       <tr>
         <td>Compression Streams</td>
-        <td>18.38%</td>
-        <td>20.86%</td>
+        <td>18.4%</td>
+        <td>20.9%</td>
       </tr>
       <tr>
         <td>Async Clipboard</td>
-        <td>17.85%</td>
-        <td>19.13%</td>
+        <td>17.9%</td>
+        <td>19.1%</td>
       </tr>
       <tr>
         <td>Device Memory</td>
-        <td>10.71%</td>
-        <td>10.59%</td>
+        <td>10.7%</td>
+        <td>10.6%</td>
       </tr>
       <tr>
         <td>Web Share</td>
-        <td>9.55%</td>
-        <td>9.77%</td>
+        <td>9.6%</td>
+        <td>9.8%</td>
       </tr>
       <tr>
         <td>Media Session</td>
-        <td>6.75%</td>
-        <td>7.75%</td>
+        <td>6.8%</td>
+        <td>7.8%</td>
       </tr>
       <tr>
         <td>Add to Home Screen</td>
-        <td>6.82%</td>
-        <td>7.30%</td>
+        <td>6.8%</td>
+        <td>7.3%</td>
       </tr>
       <tr>
         <td>Media Capabilities</td>
-        <td>6.33%</td>
-        <td>7.34%</td>
+        <td>6.3%</td>
+        <td>7.3%</td>
       </tr>
       <tr>
         <td>Cache Storage</td>
-        <td>8.97%</td>
+        <td>9.00%</td>
         <td>3.00%</td>
       </tr>
       <tr>
         <td>Service Worker</td>
-        <td>3.69%</td>
-        <td>3.32%</td>
+        <td>3.7%</td>
+        <td>3.3%</td>
       </tr>
       <tr>
         <td>Push</td>
-        <td>1.72%</td>
-        <td>1.61%</td>
+        <td>1.7%</td>
+        <td>1.6%</td>
       </tr>
     </tbody>
   </table>
@@ -373,7 +373,7 @@ Notifications make sense for apps as they allow the user to re-engage with the a
 {{ figure_markup(
   image="pwa-manifest-notification-rates.png",
   caption="PWA notification acceptance rates.",
-  description="Bar chart showing PWA notification acceptance rates. Most of them are ignored in both desktop and mobile.",
+  description="Stacked bar chart showing desktop users overwhelmingly ignoring notifications at a rate of 78 percent, while only 6 percent choose to accept them. Mobile users appear more engaged with the prompts, showing a significantly higher acceptance rate of 16 percent, though they are also far more likely to actively deny or dismiss the requests compared to their desktop counterparts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1327754740&format=interactive",
   sheets_gid="487663654",
   sql_file="pwa_notification_acceptance_rates.sql"

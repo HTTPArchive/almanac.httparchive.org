@@ -7,7 +7,7 @@ SELECT
   IF(device = 'phone', 'mobile', device) AS client,
   SUM(notification_permission_accept) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS accept,
   SUM(notification_permission_deny) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS deny,
-  SUM(notification_permission_ignore) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS _ignore,
+  SUM(notification_permission_ignore) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS `ignore`,
   SUM(notification_permission_dismiss) / SUM(notification_permission_accept + notification_permission_deny + notification_permission_ignore + notification_permission_dismiss) AS dismiss
 FROM
   `chrome-ux-report.materialized.device_summary`
