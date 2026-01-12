@@ -40,8 +40,6 @@ A _Content Delivery Network_ (CDN) is a geographically distributed network of se
 
 CDNs serve as intermediary infrastructure between end users and origin servers, intercepting web requests and optimizing the complete delivery process. To understand how CDNs can enhance web performance, consider the traditional web interaction when a user types a hostname into a browser, and how different CDNs may improve each step:
 
-### **Traditional Web Request Flow vs CDN Processed Flow**
-
 **1. DNS Resolution**
 - **Traditional**: Browser queries DNS for origin server IP, often with slow resolution times
 - **CDN Processed**: CDN DNS infrastructure may use various routing strategies (anycast or unicast) to direct users to optimal edge servers. Some CDNs support modern DNS records like HTTPS or SVCB (Service Binding) records that can advertise protocol capabilities directly in DNS responses, though adoption varies across providers
@@ -221,6 +219,30 @@ The above further reinforces the role CDNs play in driving the adoption of new p
 
 While HTTP/1.1 usage has been on a continued decline with CDNs over the past several years, in 2025 we observed a sharp descrease in CDN usage for HTTP/1.1 going from 16% usage for HTML requests in 2024 to just 2% in 2025. This descrease was even more pronounced for origin requests with 56% HTTP/1.1 requests in 2024 down to 21% in 2025.
 
+### HTTP/3 TTFB Performance
+Below shows the time to first byte (TTFB) median percentile distribution for latency of HTTP/3, HTTP/2, and HTTP/1.1 across major CDNs.
+
+{{ figure_markup(
+  image="cdn-http-ttfb-protocol-mobile.png",
+  caption="Distribution of Time to First Byte (TTFB) (mobile).",
+  description="This bar chart shows the median percentile for latency of HTTP/3, HTTP/2, and HTTP/1.1 across major CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=1012878998&format=interactive",
+  sheets_gid="1049435713",
+  sql_file="h3_adoption_by_cdn_vs_origin.sql"
+  )
+}}
+
+The TTFB performance for HTTP/3 compared to previous HTTP protocol versions varies by CDN provider, with Amazon Cloudfront and Fastly both showing improved TTFB latency. A reminder to the reader that these are not uniform tests across CDNs and website owners should perform their own controlled performance testing.
+
+### Alt-Svc Header
+
+The [Alt-Svc](https://datatracker.ietf.org/doc/html/rfc7838#section-3) (Alternative Services) header is an HTTP response header that tells browsers about alternative protocols or servers they can use to access the same resource. The most common use case is advertising HTTP/3 support. When a browser first connects to a server using HTTP/1.1 or HTTP/2, the server can include an Alt-Svc header like: `Alt-Svc: h3=":443"; ma=86400`
+
+This informs the browser that it can use HTTP/3 on port 443 to reach the same service, and that this information remains valid for 86400 seconds (24 hours). Once the browser receives this header, it can establish future connections using HTTP/3 directly rather than beginning with HTTP/2 and negotiating an upgrade.
+
+In 2025, over 99.99% of HTTP/3 requests from major CDNs injected the Alt-Svc header into requests.
+
+
 ## Compression
 
 Compression continues to be essential for web content delivery, representing one of the most accessible performance optimizations available for websites. Smaller file sizes mean faster page loads, lower bandwidth costs, and a better experience for users. Even as network speeds improve and connectivity options expand, compression remains important for optimizing performance across all types of internet connections.
@@ -243,3 +265,148 @@ From the 2025 dataset we observed several commonly used compression algorithms:
 
 CDNs are leading the adoption of Brotli and Zstandard compression. Compared to 2024, Zstandard saw a significant increase from 3% to 12% in 2025. However, similar to 2024 Gzip remains the majority compression algorithm used by origin servers.
 
+{{ figure_markup(
+  image="cdn-types-compression-mobile.png",
+  caption="Distribution of compressions across CDNs (mobile).",
+  description="Brotli usage is prevalent on Cloudflare and Google CDNs while Gzip remains the majority across Akamai, Amazon CloudFront, and Fastly. However, when compared to 2024 Brotli and Zstandard continues their broad trend towards more adoption with larger CDN providers.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=2098646827&format=interactive",
+  sheets_gid="1165034437",
+  sql_file="distribution_of_compression_types_by_cdn.sql"
+  )
+}}
+
+While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 compared 2024. In 2024, only Facebooks CDN had any statistically measurable usage of Zstandard, while in 2025 both Cloudflare (15%) and Google CDN (10%) showed significant adoption. Cloudflare's compression rules launched in 2024 provides automatic sane defaults for compression which could explain the observed data. The one outlier to the dataset was Amazon CloudFront which currently does not support Zstandard compression natively. However, the data observed showed CloudFront passing through already compressed data from origin using Zstandard. This demonstrates content owners desire to use Zstandard even though not all major CDN providers support it.
+
+## TLS usage
+
+### TLS 1.3 adoption
+
+TLSv1.3 improves the overall security of web traffic compared to earler versions that included weaker cryptographic algorithms that had known vulnerabilities, improving the security for all.
+
+Nearly all CDN traffic now uses TLS 1.3, with 99% of requests leveraging the latest protocol version. This benefits developers through faster connection establishment times, directly improving page load speeds. CDN providers continue to be early adopters of new web technologies, which means applications using CDNs get these performance and security enhancements with little to no additional effort.
+
+{{ figure_markup(
+  image="tls-version-mobile.png",
+  caption="Distribution of TLS version for HTML (mobile).",
+  description="Bar chart of TLS version usage in mobile requests served by CDN and origin. We find identical results where both mobile and desktop have 99% adoption of TLS 1.3 over CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=464425722&format=interactive",
+  sheets_gid="1943404486",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
+
+Though origin server adoption of TLS 1.3 is improving, CDNs still demonstrate a clear advantage in rolling out new capabilities compared to organizations managing their own software and hardware upgrades.s
+
+{{ figure_markup(
+  image="tls-version-mobile-3p.png",
+  caption="Distribution of TLS version for third-party requests (mobile).",
+  description="Bar chart of TLS version usage in third-party requests on mobile, served by CDN and origin. CDNs have served 96% of the third-party requests using TLS 1.3 and 4% of the requests in TLS 1.2. Origin on the other served 78% of the requests over TLS 1.3 and 22% of the requests on TLS 1.2.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=1192406076&format=interactive",
+  sheets_gid="1943404486",
+  sql_file="distribution_of_tls_versions_cdn_vs_origin.sql"
+  )
+}}
+
+Third-party content shows a similar pattern, with 96% of CDN requests using TLS 1.3 compared to 78% for origin servers. CDN adoption increased modestly from 93% in 2024 to 96% in 2025, while origin servers saw a larger jump from 68% to 78% over the same period.
+
+### TLS performance impact
+
+TLS negotiation times show clear performance differences between CDNs and origin servers, with additional variations between desktop and mobile connections.
+
+Desktop users experience substantially faster TLS negotiations with CDNs compared to origin servers at every performance level. The median negotiation time for CDNs is 57 milliseconds versus 177 milliseconds for origins, over three times faster. This performance gap persists across the distribution. At the 90th percentile, CDNs complete negotiations in 89 milliseconds while origins require 277 milliseconds.
+
+{{ figure_markup(
+  image="tls-negotiation-desktop.png",
+  caption="HTML TLS negotiation - CDN vs origin (desktop).",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=1982994974&format=interactive",
+  sheets_gid="1102115518",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
+
+Mobile devices show a similar pattern, with CDN performing better than Origin servers, but the overall negotiation times are higher compared to desktop. The median TLS negotiation time for mobile CDN is 183 milliseconds, while for Origin servers it's 302 milliseconds. At the 90th percentile, mobile CDN takes 216 milliseconds, whereas Origin servers require 416 milliseconds.
+
+{{ figure_markup(
+  image="tls-negotiation-mobile.png",
+  caption="HTML TLS negotiation - CDN vs origin (mobile).",
+  description="This bar chart provides insight into TLS connection time (in milliseconds) across 10th, 25th, 50th, 75th and 90th percentile for CDN and origin. As it can be seen from the chart the TLS negotiation time is generally faster for CDNs.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=1994649079&format=interactive",
+  sheets_gid="1102115518",
+  sql_file="distribution_of_tls_time_cdn_vs_origin.sql"
+  )
+}}
+
+Mobile devices generally show slower performance than desktop due to their more limited processing power and often less reliable network conditions. CDNs outperform origin servers largely because of their distributed architecture, which positions content geographically closer to users and optimizes connection paths for reduced latency.
+
+## Image formats and optimization
+
+Image formats continue to play a pivotal role in CDNs, directly influencing website performance, bandwidth costs, and overall user experience. Modern formats such as WebP, AVIF, and SVG remain the most efficient options, offering improved compression ratios and visual fidelity compared to legacy formats like JPEG and PNG. These efficiencies translate to faster page loads and lower data transfer, especially critical for mobile users and high-traffic sites.
+
+Most CDNs now automatically detect browser capabilities and serve the most optimized format available—e.g., AVIF for Chrome, WebP for Edge, and JPEG fallback for legacy browsers. Adaptive resizing, caching, and on-the-fly conversion have largely eliminated the need for maintaining static image variants across device types or resolutions.
+
+{{ figure_markup(
+  image="cdn-image-formats.png",
+  caption="Distribution of Image Formats.",
+  description="This pie chart shows the breakdown of image formats observed across mobile devices.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=985237215&format=interactive",
+  sheets_gid="1565771127",
+    sql_file="image_formats.sql"
+  )
+}}
+
+As of 2025, the data reflects a continued shift toward efficiency driven formats. While JPEG remains the most requested format, it declined by nearly 10% overall compared to 2022, with an even sharper 10.5% drop on mobile. Conversely, WebP (+5%), SVG (+2.5%), and AVIF (+3.1%) have all grown steadily since 2022, indicating industry-wide adoption of more compact, high-performance alternatives.
+
+The GIF format showed a modest 2.3% increase, particularly on mobile (+0.5% higher than desktop), likely driven by short-loop animations and UI elements common in app-driven web traffic. Meanwhile, PNG usage saw a minor decline (-0.8%), suggesting designers and developers continue to prioritize lighter formats for both vector and raster assets.
+
+Between 2024 and 2025, there was a slight regression in AVIF (-1.9%), SVG (-1.1%), and WebP (-1.8%), offset by small rebounds in GIF (+2.3%) and JPEG (+2.2%), a possible indicator of fallback scenarios or compatibility defaults on less optimized delivery stacks.
+
+The 2025 data underscores a clear trajectory: legacy formats like JPEG still dominate total requests but are gradually ceding share to newer, more efficient formats. WebP, SVG, and AVIF are becoming the new baseline for high performance content delivery, especially in mobile-first ecosystems where latency and bandwidth efficiency are critical.
+
+## Client Hints
+
+Client Hints were introduced as an alternative to the User-Agent string, letting web servers request specific information from browsers through HTTP headers. They fall into four main categories: device information, user agent preferences, user preference media features, and networking details. These hints are further split into high and low entropy types. High entropy hints can potentially be used for fingerprinting, so browsers usually require user permission or enforce other policies before sharing them. Low entropy hints are less useful for fingerprinting and may be sent by default based on browser or user settings.
+
+In 2025 we refined our approach to measuring client hints providing more accurate results compared to 2024. However, based on the chart below the trend broadly continues with a lack of client hint adoption.
+
+{{ figure_markup(
+  image="cdn-client-hints-mobile.png",
+  caption="Client Hints Comparison (mobile).",
+  description="This bar chart shows the usage of Client Hints in CDNs. Currently only 4% of the requests have Client Hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=185016365&format=interactive",
+  sheets_gid="1035445628",
+  sql_file="client_hints_cdn_vs_origin.sql"
+  )
+}}
+
+Client hints goes against the broad trend where CDNs lead adoption whereby CDN client hints usage showed the same result in 2024, but increased in 2025 to 5% for origin requests.
+
+## Early Hints
+
+Early Hints uses the [HTTP 103 status code](https://datatracker.ietf.org/doc/html/rfc8297#section-2) to let servers send initial headers to browsers while the main response is still being prepared. This is especially useful for preloading important resources like stylesheets, JavaScript files, and fonts before the full page is ready.
+
+{{ figure_markup(
+  image="cdn-early-hints-mobile.png",
+  caption="Early Hints Comparison (mobile).",
+  description="This bar chart shows the usage of Early Hints in CDNs. Currently only 0.012% of the requests have Early Hints",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=698100070&format=interactive",
+  sheets_gid="2050224779",
+  sql_file="early_hints_cdn_vs_origin.sql"
+  )
+}}
+
+Browser support for Early Hints is widespread, but we found almost minimal usage in the dataset with only 0.012% of CDN requests. This represents a marginal 0.002% increase from 2024 to 2025. Vercel was the only CDN to support over 1% adoption (2.84%) with Cloudflare and Fastly less than 1%.
+
+We're interested to see how Early Hints affects performance as more sites start using it. Hopefully by next year's almanac, we'll have more CDN providers implementing the feature and enough data to share detailed statistics on its impact.
+
+## Conclusion
+
+In 2024, we saw CDNs leading the charge on adopting emerging technologies like HTTP/3, and that pattern has held steady into 2025. Looking at features like Brotli and ZStandard compression or TLS 1.3 encryption, CDNs make it easy for sites to implement these improvements through simple configuration changes instead of overhauling entire fleets of servers, load balancers, and networking equipment.
+
+This year we dove deeper into HTTP/3, and we took another look at Early Hints which we first covered in 2025. For 2026, we're planning to provide more detailed analysis of HTTP/3 adoption and explore how CDNs are influencing IPv6 deployment.
+
+The CDN landscape in 2025 demonstrates that these platforms have evolved far beyond simple content delivery to become comprehensive optimization and security platforms that are essential infrastructure for the modern web.
+
+We recommend readers visit the [HTTP](./http) and [Security](./security) chapters of the 2025 Web Almanac where several topics in this chapter are expanded on and provide data through a different lens.
+
+Join us again in 2026 as we collect and analyze more data to see what new insights we can share with our readers.
