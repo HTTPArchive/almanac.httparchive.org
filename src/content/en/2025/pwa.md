@@ -56,9 +56,9 @@ Service workers remain essential to allow advanced capabilities like background 
   )
 }}
 
-To start strong, we will look at the service worker controlled pages by rank. From the top 1,000 pages, 28.8% (desktop) and 27.5% (mobile) are managed by a service worker. This is around a 20% increase compared to the data from 3 years ago.
+To start strong, we will look at the service worker controlled pages by rank. From the top 1,000 pages, 30.3% (desktop) and 28.9% (mobile) are managed by a service worker. This is around a 20% increase compared to the data from 3 years ago.
 
-Overall, across every rank grouping there was a strong increase, when looking at _all_ the percentage of PWA websites going from 1.4% (desktop and mobile) in 2022 to 20.1% (desktop) and 19.7% in mobile.
+Overall, across every rank grouping there was a strong increase, when looking at _all_ the percentage of PWA websites going from 1.4% (desktop and mobile) in 2022 to 20.5% (desktop) and 20.0% in mobile.
 
 Following we have usage data for capabilities of service worker by events, methods and objects.
 
@@ -67,7 +67,7 @@ Following we have usage data for capabilities of service worker by events, metho
 {{ figure_markup(
   image="pwa-sw-events.png",
   caption="Most used service worker events.",
-  description="Bar chart showing the popularity of service worker events, with activate being around 96% and install around 63%.",
+  description="Bar chart showing the popularity of service worker events, with activate being around 96% and install around 64%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=1621146621&format=interactive",
   sheets_gid="577288813",
   sql_file="sw_events.sql"
@@ -90,7 +90,7 @@ Usage of other advanced events, like `fetch`, `notificationclick` and `push` fal
   )
 }}
 
-Looking at the most used service worker method, `skipWaiting()` has a notable use, with 66% usage on desktop and 62% on mobile. The browser will activate the service worker and replace the old one immediately. This implies developers are keen to ensure users don't get stuck with stale assets. This is beneficial for applications that require frequent updates, like dashboards and messaging apps. It basically helps users get the latest version of the application right away.
+Looking at the most used service worker method, `skipWaiting()` has a notable use, with 68% usage on desktop and 63% on mobile. The browser will activate the service worker and replace the old one immediately. This implies developers are keen to ensure users don't get stuck with stale assets. This is beneficial for applications that require frequent updates, like dashboards and messaging apps. It basically helps users get the latest version of the application right away.
 
 ### Service worker objects
 
@@ -127,15 +127,15 @@ Diving deeper into service worker functionality, the data sheds some light into 
 The web application manifest is now, more than ever, the most important part of a web app. It defines a look and feel, enables advanced capabilities that are gated behind an installation and is becoming an integral part that identifies a web application as a whole. But in order to be effective, the manifest file needs to be well formed.
 
 {{ figure_markup(
-  caption="Percent of manifest files parsable on desktop.",
-  content="95%",
+  caption="Percent of mobile manifest files parsable on desktop.",
+  content="94.9%",
   classes="big-number",
   sheets_gid="1641154337",
   sql_file="manifests_not_json_parsable.sql"
 )
 }}
 
-For the current year, 94.4% of desktop sites and 95% of mobile sites are parseable. There is [no change from the last data set](../en/2022/pwa#fig-9), and same as last time around, the fact that the manifest file was able to be parsed does not imply completeness or minimum availability of features. Many values in the manifest, as important as they may seem, have reasonable fallbacks in place.
+For the current year, 94.4% of desktop sites and 94.9% of mobile sites are parseable. There is [no change from the last data set](../en/2022/pwa#fig-9), and same as last time around, the fact that the manifest file was able to be parsed does not imply completeness or minimum availability of features. Many values in the manifest, as important as they may seem, have reasonable fallbacks in place.
 
 From those parseable manifests, we will now look at individual present fields. This can give us an understanding of how developers are using the manifest file and if there have been changes since 2022.
 
@@ -275,7 +275,7 @@ Top sizes include 192x192 and 512x512.
   )
 }}
 
-Unsurprisingly, around 79.5% of PWAs do not set orientation. Responsive design and modern development make defining the app's orientation less necessary, but portrait takes second place with around 11.9%.
+Unsurprisingly, around 79.2% of PWAs do not set orientation. Responsive design and modern development make defining the app's orientation less necessary, but portrait takes second place with around 12.2%.
 
 ## Service worker and manifest usage
 
@@ -284,14 +284,14 @@ We've seen the latest data on what the most used service worker and manifest fea
 {{ figure_markup(
   image="pwa-manifest-sw-manifest-usage.png",
   caption="PWA service worker and manifest file usage.",
-  description="Bar chart showing service worker (18.9%) and manifest file (~9%) usage.",
+  description="Bar chart showing service worker (19.2%) and manifest file (~9%) usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSptnOeENss_fXr9rsRy03DDysKKEz2BbZH52DQGEg745UaZVtTHKoy5qHiY8MHb-VAaEUlZCCcXX81/pubchart?oid=588231319&format=interactive",
   sheets_gid="1678838470",
   sql_file="manifests_and_service_workers.sql"
   )
 }}
 
-Overall, there are considerable changes to the data from [the 2022 Web Almanac](../2022/pwa#fig-10). Service worker usage has taken a huge leap from around 1.7% to 18.9%. That is around a 10 times increase in adoption. Manifest usage is slightly higher but remains at a very similar spot as it was 3 years ago.
+Overall, there are considerable changes to the data from [the 2022 Web Almanac](../2022/pwa#fig-10). Service worker usage has taken a huge leap from around 1.7% to 19.2%. That is around a 10 times increase in adoption. Manifest usage is slightly higher but remains at a very similar spot as it was 3 years ago.
 
 Digging into this more, it looks like a lot of the growth is due to Google Tag Manager enabling service workers.
 
@@ -311,53 +311,53 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
     <tbody>
       <tr>
         <td>Compression Streams</td>
-        <td class="numeric">18.6%</td>
-        <td class="numeric">21.1%</td>
+        <td>18.38%</td>
+        <td>20.86%</td>
       </tr>
       <tr>
         <td>Async Clipboard</td>
-        <td class="numeric">17.9%</td>
-        <td class="numeric">19.2%</td>
+        <td>17.85%</td>
+        <td>19.13%</td>
       </tr>
       <tr>
         <td>Device Memory</td>
-        <td class="numeric">10.3%</td>
-        <td class="numeric">10.3%</td>
+        <td>10.71%</td>
+        <td>10.59%</td>
       </tr>
       <tr>
         <td>Web Share</td>
-        <td class="numeric">8.9%</td>
-        <td class="numeric">9.0%</td>
+        <td>9.55%</td>
+        <td>9.77%</td>
       </tr>
       <tr>
         <td>Media Session</td>
-        <td class="numeric">6.8%</td>
-        <td class="numeric">7.8%</td>
+        <td>6.75%</td>
+        <td>7.75%</td>
       </tr>
       <tr>
         <td>Add to Home Screen</td>
-        <td class="numeric">6.8%</td>
-        <td class="numeric">7.3%</td>
+        <td>6.82%</td>
+        <td>7.30%</td>
       </tr>
       <tr>
         <td>Media Capabilities</td>
-        <td class="numeric">6.4%</td>
-        <td class="numeric">7.4%</td>
+        <td>6.33%</td>
+        <td>7.34%</td>
       </tr>
       <tr>
         <td>Cache Storage</td>
-        <td class="numeric">9.0%</td>
-        <td class="numeric">3.0%</td>
+        <td>8.97%</td>
+        <td>3.00%</td>
       </tr>
       <tr>
-        <td>Service worker</td>
-        <td class="numeric">3.7%</td>
-        <td class="numeric">3.3%</td>
+        <td>Service Worker</td>
+        <td>3.69%</td>
+        <td>3.32%</td>
       </tr>
       <tr>
         <td>Push</td>
-        <td class="numeric">1.7%</td>
-        <td class="numeric">1.6%</td>
+        <td>1.72%</td>
+        <td>1.61%</td>
       </tr>
     </tbody>
   </table>
