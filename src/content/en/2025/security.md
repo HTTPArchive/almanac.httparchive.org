@@ -45,7 +45,7 @@ The share of requests that are being sent using HTTPS rather than using plain HT
 {{ figure_markup(
   image="https-usage.png",
   caption="The percentage of homepages using HTTPS.",
-  description="",
+  description="Bar chart displaying the adoption rate of secure connections across desktop and mobile devices. Security is near-universal, with 97.5% of desktop sites and 97.3% of mobile sites utilizing HTTPS to protect user data. This indicates a highly secure web landscape where non-encrypted HTTP connections have been relegated to a tiny fraction (less than 3%) of total traffic.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2075189160&format=interactive",
   sheets_gid="479242437",
   sql_file="home_page_https_usage.sql"
@@ -63,7 +63,7 @@ For a few years now, <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc84
 {{ figure_markup(
   image="tls-versions.png",
   caption="The distribution of TLS versions in use.",
-  description="",
+  description="Bar chart showing the market share of different encryption protocols used to secure web traffic on desktop and mobile devices. TLS 1.3 is the clear standard, powering roughly 76% of all web pages, followed by TLS 1.2, which accounts for approximately 13-15% of the share. Notably, the modern QUIC protocol (often associated with HTTP/3) represents a growing segment of secure traffic, maintaining a slightly higher presence on mobile (10.8%) compared to desktop (9.5%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1659150103&format=interactive",
   sheets_gid="902024133",
   sql_file="tls_versions_pages.sql"
@@ -79,7 +79,7 @@ To start communicating over an encrypted channel, both parties need to use the s
 {{ figure_markup(
   image="cipher-suites.png",
   caption="The distribution of cipher suites in use.",
-  description="",
+  description="Bar chart, showing the overwhelming dominance of the AES_128_GCM encryption standard, which secures 82.8% of all HTTPS requests on both desktop and mobile platforms. `AES_256_GCM` serves as the second most common suite, accounting for approximately 16.1% of traffic, while modern alternatives like `CHACHA20_POLY1305` and legacy modes like `AES_256_CBC` represent only a tiny fraction (less than 1%) of web connections.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=220138440&format=interactive",
   sheets_gid="209958900",
   sql_file="tls_cipher_suite.sql"
@@ -91,7 +91,7 @@ TLS1.3 only allows the use of algorithms that support [forward secrecy](https://
 {{ figure_markup(
   image="forward-secrecy.png",
   caption="The percentage of requests supporting forward secrecy.",
-  description="",
+  description="Bar chart, showing that approximately 75.8% of desktop and 75.1% of mobile HTTPS requests utilize forward secrecy.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1624420318&format=interactive",
   sheets_gid="596349024",
   sql_file="tls_forward_secrecy.sql"
@@ -200,7 +200,7 @@ Servers can include a number of directives in the header to communicate addition
 {{ figure_markup(
   image="hsts-directives.png",
   caption="The usage of specified HSTS directives.",
-  description="",
+  description="Bar chart, showing the configuration of security headers across desktop and mobile platforms. A near-universal 96% of these websites utilize a valid `max-age` directive to specify how long the browser should enforce secure connections, while only 4% use a zero max-age to disable the policy. Adoption remains significantly lower for advanced security features, with roughly 40% of sites protecting their subdomains and only about 22% utilizing the preload directive to ensure a secure connection from the very first visit.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1721543402&format=interactive",
   sheets_gid="1439302553",
   sql_file="hsts_attributes.sql"
@@ -212,7 +212,7 @@ The share of responses with a valid `max-age` has increased slightly to 96%. The
 {{ figure_markup(
   image="hsts-max-age.png",
   caption="The distribution of HSTS `max-age` values by percentile.",
-  description="",
+  description="Bar chart showing the distribution of duration settings for HTTP Strict Transport Security (HSTS) across desktop and mobile platforms. The median (50th percentile) value is 365 days for both device types, indicating that most administrators enforce secure connections for exactly one year. At the 90th percentile, this value doubles to 730 days, while the lower end of the spectrum shows a minimum standard of 91 days at the 10th percentile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1532336378&format=interactive",
   sheets_gid="1684013271",
   sql_file="hsts_max_age_percentiles.sql"
@@ -250,7 +250,7 @@ The adoption of CSP continued increasing [from 18.5% last year](../2024/security
 {{ figure_markup(
   image="csp-directives.png",
   caption="Most common directives used in CSP.",
-  description="",
+  description="Bar chart showing the adoption frequency of various Content Security Policy (CSP) directives on desktop and mobile web pages. The most prevalent directives are `upgrade-insecure-requests` and `frame-ancestors`, both appearing in approximately 50-55% of CSP headers to manage secure connections and prevent clickjacking. While desktop sites generally lead in traditional directive usage, mobile sites show significantly higher adoption for modern security features like `trusted-types` and `report-uri`.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=579658502&format=interactive",
   sheets_gid="1683734522",
   sql_file="csp_directives_usage.sql"
@@ -319,7 +319,7 @@ One of the most important directives included in the CSP is `script-src`. Throug
 {{ figure_markup(
   image="csp-script-src-keywords-per-request.png",
   caption="Prevalence of CSP `script-src` keywords per request.",
-  description="",
+  description="Bar chart showing the usage of `script-src` attributes. An overwhelming 92% of websites use the `unsafe-inline` attribute on both desktop and mobile, `unsafe-eval` is present in 77% of policies, with nonces used on approximately 20% of sites and `strict-dynamic` only on approximately 10%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=629434819&format=interactive",
   sheets_gid="218451283",
   sql_file="csp_script_source_list_keywords_per_request.sql"
@@ -333,7 +333,7 @@ Compared to [last year](../2024/security#keywords-for-script-src) we barely see 
 {{ figure_markup(
   image="csp-script-src-keywords-per-header.png",
   caption="Prevalence of CSP `script-src` keywords per header.",
-  description="",
+  description="Bar chart showing the usage of `script-src` attributes per header. An overwhelming 92% of headers use the `unsafe-inline` attribute on both desktop and mobile, `unsafe-eval` is present in 77% of policies, with nonces used on approximately 20% of sites and `strict-dynamic` only on approximately 10%",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1711591110&format=interactive",
   sheets_gid="466842166",
   sql_file="csp_script_source_list_keywords_per_header.sql"
@@ -351,7 +351,7 @@ CSP is a complex security policy to thoroughly understand and correctly use. Whe
 {{ figure_markup(
   image="csp-header-length.png",
   caption="CSP header length.",
-  description="",
+  description="Bar char showing the distribution of Content Security Policy header sizes in bytes across various percentiles for both desktop and mobile platforms. The data shows that header lengths remain relatively consistent and small between the 10th and 75th percentiles, ranging from 23 to 86 bytes, with desktop and mobile values being nearly identical. A significant spike occurs at the 90th percentile, where the desktop header length jumps to 583 bytes while the mobile length reaches 354 bytes.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=43389239&format=interactive",
   sheets_gid="1010084388",
   sql_file="csp_number_of_allowed_hosts.sql"
@@ -516,7 +516,7 @@ SRI is used on 25.9% and 23.6% of desktop and mobile pages respectively. This is
 {{ figure_markup(
   image="sri-coverage.png",
   caption="SRI coverage per page.",
-  description="",
+  description="Bar chartshowing the adoption of Subresource Integrity (SRI) across various percentiles of web pages for desktop and mobile devices. Adoption remains remarkably low across the board, with the median (50th percentile) site protecting only 2.82% of its scripts using this security feature. Even at the 90th percentile, only 12.50% of a page's scripts are covered by SRI.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1391748685&format=interactive",
   sheets_gid="165579346",
   sql_file="sri_coverage_per_page.sql"
@@ -757,7 +757,7 @@ We see the use of the sandbox attribute rise compared to the 2024 edition: The p
 {{ figure_markup(
   image="iframe-sandbox-directives.png",
   caption="Prevalence of sandbox directives on iframes.",
-  description="",
+  description="Bar chart showing the adoption of specific permissions within sandboxed iframes across desktop and mobile platforms. The directives `allow-scripts` and `allow-same-origin` are nearly universal, appearing in approximately 97-98% of sandboxed pages to ensure that embedded content maintains core functionality like JavaScript execution and access to its own storage. Moderately common features include `allow-popups` and `allow-popups-to-escape-sandbox`, which are utilized by about 70-75% of sites, while specialized navigation controls like `allow-top-navigation-by-user-activation` are the least adopted at under 30%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1050517232&format=interactive",
   sheets_gid="679180424",
   sql_file="iframe_sandbox_directives.sql"
@@ -831,7 +831,7 @@ A multitude of protection mechanisms can be configured through HTTP response hea
 {{ figure_markup(
   image="security-headers-mobile.png",
   caption="Adoption of security headers for site requests in mobile pages over time.",
-  description="",
+  description="Bar chart showing the growth in usage of various security headers on mobile websites from 2023 to 2025. The data reveals a consistent upward trend in adoption for the most common headers, with `X-Content-Type-Options` leading the group at nearly 50 percent adoption by 2025. Other prominent headers like `X-Frame-Options` and `Strict-Transport-Security` follow closely, showing steady increases to approximately 35 percent of sites. Meanwhile, more modern or niche headers such as `Cross-Origin-Opener-Policy` and `Permissions-Policy` remain in the early stages of adoption, staying well below the 10 percent threshold.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=710761597&format=interactive",
   sheets_gid="136009485",
   sql_file="security_headers_prevalence.sql"
@@ -988,7 +988,7 @@ Multiple new security headers, known as the cross-origin policies, were created 
 {{ figure_markup(
   image="cross-origin-headers-trend.png",
   caption="Usage of Cross-Origin headers over time.",
-  description="",
+  description="Bar chart showing the usage of three specific security headers between 2023 and 2025. It shows that `Cross-Origin-Resource-Policy` remains the most widely adopted of the three, growing from approximately 1.75% in 2023 to over 2.25% by 2025. `Cross-Origin-Opener-Policy` experienced the most significant relative growth, more than doubling its adoption from under 1.00% to roughly 2.00% over the three-year period. While `Cross-Origin-Embedder-Policy` remains the least common, it demonstrates a steady upward trend, reaching nearly 0.75% adoption by 2025.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=157500281&format=interactive",
   sheets_gid="136009485",
   sql_file="security_headers_prevalence.sql"
@@ -1318,7 +1318,7 @@ Bots have been present on the web for a long time, and malicious bots are a larg
 {{ figure_markup(
   image="bot-protection-absolute.png",
   caption="The absolute distribution of bot protection services in use.",
-  description="",
+  description="Bar chart showing the market share of various bot mitigation tools on desktop versus mobile platforms. The data shows that reCAPTCHA and Cloudflare Bot Management are the dominant services, collectively protecting approximately 30 percent of websites across both client types. Desktop sites exhibit slightly higher overall adoption of these services at over 34 percent, compared to just above 31 percent for mobile sites. Other services like Cloudflare Turnstile, hCaptcha, and DDoS-Guard represent much smaller fractions of the total market, each appearing on less than 2 percent of surveyed websites",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1081236768&format=interactive",
   sheets_gid="1427912746",
   sql_file="bot_detection.sql"
@@ -1328,7 +1328,7 @@ Bots have been present on the web for a long time, and malicious bots are a larg
 {{ figure_markup(
   image="bot-protection-relative.png",
   caption="The relative distribution of bot protection services in use.",
-  description="",
+  description="Bar chart showing the market share of various bot mitigation tools among the subset of websites that utilize such services. The data illustrates a highly concentrated market where reCAPTCHA and Cloudflare Bot Management collectively account for over 90 percent of the relative usage on both desktop and mobile platforms. Specifically, reCAPTCHA holds the largest share with 50.7 percent on desktop and 52.0 percent on mobile, while Cloudflare Bot Management follows with 40.6 percent and 38.6 percent respectively. Minor providers such as hCaptcha, DDoS-Guard, and Cloudflare Turnstile represent only very small fractions of the total, each comprising less than 2 percent of the relative usage.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1085355715&format=interactive",
   sheets_gid="1427912746",
   sql_file="bot_detection.sql"
@@ -1387,7 +1387,7 @@ The location where a website is hosted or where its developers are based can hav
 {{ figure_markup(
   image="https-by-country.png",
   caption="The adoption of HTTPS per country; top and bottom 10 countries by adoption.",
-  description="",
+  description="Bar chart showing the percentage of desktop websites using HTTPS across various nations. The data reveals exceptionally high adoption rates globally, with New Zealand leading the list at 99.70%, followed closely by Switzerland and Nigeria at 99.67%. Even the countries at the lower end of this specific ranking, such as Japan and the Republic of Korea, maintain high encryption standards with adoption rates of 94.17% and 95.34% respectively. Overall, the chart illustrates a nearly universal move toward secure web communication, with every listed country surpassing a 94% adoption threshold.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1706573742&format=interactive",
   sheets_gid="1980003998",
   sql_file="feature_adoption_by_country.sql"
@@ -1399,7 +1399,7 @@ HTTPS adoption has been increasing year after year, a trend that luckily continu
 {{ figure_markup(
   image="csp-xfo-by-country.png",
   caption="The adoption of CSP and XFO per country; top 5 and bottom 5 countries by CSP adoption.",
-  description="",
+  description="Bar chart showing the implementation rates of Content Security Policy and X-Frame-Options on desktop sites across various nations. New Zealand leads the featured countries with the highest adoption for both security measures, reaching 42.25% for XFO and 29.50% for CSP. In contrast, the Republic of Korea exhibits significantly lower levels, with only 14.69% of sites using XFO and 8.89% using CSP. Across all listed countries, the data consistently shows that X-Frame-Options maintains a higher adoption rate than Content Security Policy, suggesting that CSP remains the more complex or less frequently implemented security standard.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1911016277&format=interactive",
   sheets_gid="1980003998",
   sql_file="feature_adoption_by_country.sql"
@@ -1459,7 +1459,7 @@ Popular websites with a large user base often have a good reason to protect thei
 {{ figure_markup(
   image="security-headers-by-rank.png",
   caption="Security header adoption by website rank according to CrUX.",
-  description="",
+  description="Bar chart showing how the implementation of various security headers correlates with a website's popularity ranking on mobile. The data shows a clear trend where more popular websites, such as those in the top 1,000, have significantly higher adoption rates for headers like `X-Frame-Options` and `Strict-Transport-Security` compared to the broader web. For instance, `X-Frame-Options` adoption exceeds 60 percent for the top 1,000 sites but drops to approximately 30 percent when looking at all sites combined.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2036748504&format=interactive",
   sheets_gid="775322478",
   sql_file="security_adoption_by_rank.sql"
@@ -1475,7 +1475,7 @@ Depending on the industry, more importance may be attributed to keeping a websit
 {{ figure_markup(
   image="avg-security-headers-per-site.png",
   caption="The average number of security headers by website category; top 5 and bottom 5 categories.",
-  description="",
+  description="Bar chart showing the average number of security headers implemented across different website industries for both mobile and desktop platforms. The \"Internet & Telecom\" and \"Computers & Electronics\" sectors lead significantly, with mobile sites in these categories averaging 4.6 and 4.0 headers respectively. In contrast, many other industries like \"Law & Government\" and \"Travel & Transportation\" show much lower adoption rates, averaging only 1.3 headers per site. Across nearly all listed categories, mobile sites tend to have a higher average number of security headers compared to their desktop counterparts, highlighting a stronger focus on security for mobile users in these specific fields.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1092427119&format=interactive",
   sheets_gid="662895658",
   sql_file="feature_adoption_by_category.sql"
@@ -1493,7 +1493,7 @@ Cryptocurrencies are more popular than they have ever been. Cryptomining has bee
 {{ figure_markup(
   image="cryptominers-trend.png",
   caption="The number of cryptominers in use over time; from May 2022 to Sep 2025.",
-  description="",
+  description="Line chart showing the number of pages detected with cryptomining scripts from May 2022 to September 2025 for both desktop and mobile platforms. The data shows a significant overall decline in usage over the three-year period, with mobile pages consistently exhibiting higher levels of cryptominer activity than desktop pages. In early 2022, mobile instances peaked at nearly 250 pages, but by late 2025, both platforms had converged to significantly lower levels, with mobile staying under 50 pages and desktop under 25.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2128543496&format=interactive",
   sheets_gid="612990857",
   sql_file="cryptominer_usage.sql"
@@ -1505,7 +1505,7 @@ We see the number of pages with cryptominers decrease to only 37 pages on mobile
 {{ figure_markup(
   image="cryptominers-market-share.png",
   caption="The cryptominer market shares.",
-  description="",
+  description="Bar chart showiung the specific cryptomining scripts detected across desktop and mobile platforms. The data shows that JSEcoin and Coinimp are the most prevalent services, especially on mobile devices where each was found on 9 pages. On desktop, Coinimp leads with 5 detected pages, followed by JSEcoin with 3. Other minor contributors such as Minero.cc, CoinHive, and Crypto-Loot account for the remaining detections, with overall counts being higher on mobile compared to desktop.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1906348526&format=interactive",
   sheets_gid="1210984012",
   sql_file="cryptominer_share.sql"
@@ -1668,7 +1668,7 @@ We track the use of headers that are commonly used to report this type of inform
 {{ figure_markup(
   image="server-headers.png",
   caption="Prevalence of headers used to convey information about the server.",
-  description="",
+  description="Bar chart showing the adoption of various informational headers on mobile websites from 2023 to 2025. The `Server` header remains nearly universal, appearing on 91.52% of sites in 2025, while the `X-Powered-By` header is used by 23.99%. Other specialized headers like `X-Aspnet-Version`, `X-Server`, and `X-Backend-Server` show much lower usage, with all categories demonstrating a slight but consistent downward trend over the three-year period.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=347972704&format=interactive",
   sheets_gid="374546324",
   sql_file="server_information_header_prevalence.sql"
@@ -1751,7 +1751,7 @@ The `Server-Timing` HTTP header is a response header defined in a <a hreflang="e
 {{ figure_markup(
   image="server-timing-header-usage.png",
   caption="The usage of the `Server-Timing` header.",
-  description="",
+  description="Bar chart showing the prevalence of this performance-monitoring header across desktop and mobile platforms. The data shows that approximately 27 percent of desktop responses and 26 percent of mobile responses include the `Server-Timing` header. When measured by unique hosts rather than individual responses, the adoption rate is slightly lower, with 21 percent of desktop hosts and 22 percent of mobile hosts utilizing the feature.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1645983336&format=interactive",
   sheets_gid="963438395",
   sql_file="server_timing_usage_values.sql"
@@ -1763,7 +1763,7 @@ The percentage of hosts returning a `server-timing` header has increased by over
 {{ figure_markup(
   image="server-timing-header-dur-property.png",
   caption="The relative usage of `dur` properties in `Server-Timing` headers.",
-  description="",
+  description="Bar chart showing the prevalence of specific duration metrics within the "Server-Timing" header across desktop and mobile platforms. The data indicates that a significant portion of these headers—43% on desktop and 42% on mobile—include at least one `dur` property. Furthermore, a substantial percentage of hosts (29% desktop, 27% mobile) expose more than two separate duration metrics.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2066582084&format=interactive",
   sql_file="server_timing_usage_values.sql"
   )
@@ -1784,7 +1784,7 @@ The well-known <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8615.txt
 {{ figure_markup(
   image="security-text-property-usage.png",
   caption="The usage of `security.txt` properties.",
-  description="",
+  description="Bar chart showing the implementation of various fields within the `security.txt` file on desktop and mobile platforms. The data shows that the mandatory `contact` field is the most widely adopted property, appearing in 94% of files, while the other required field, `expires`, is present in approximately 75% of implementations. Other common optional fields include `preferred_language` at 72% and `hiring` at 37%, while more technical or administrative properties like `encryption` (9%), `signed` (2%), and `csaf` (0%) see significantly lower usage. Overall, adoption rates are nearly identical between desktop and mobile devices.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=2020387408&format=interactive",
   sheets_gid="1421232798",
   sql_file="well-known_security.sql"
@@ -1804,7 +1804,7 @@ The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/"
 {{ figure_markup(
   image="change-password-usage.png",
   caption="The usage of the change-password .well-known endpoint.",
-  description="",
+  description="Bar chart showing the percentage of websites that have implemented the standard `/.well-known/change-password` redirect on desktop and mobile platforms. The data reveals very low adoption rates for this feature, with only 0.30% of desktop sites and 0.27% of mobile sites currently utilizing the endpoint.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1701010385&format=interactive",
   sheets_gid="2031721186",
   sql_file="well-known_change-password.sql"
@@ -1820,7 +1820,7 @@ The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/r
 {{ figure_markup(
   image="well-known-responses.png",
   caption="The distribution of statuses returned for the `.well-known` endpoint to assess status code reliability.",
-  description="",
+  description="Stacked bar chart showing the success rate of requests to the standardized `.well-known` URI prefix used for consistent metadata discovery across web servers. The data shows that the overwhelming majority of these requests—83% on desktop and 82% on mobile—result in a \"not ok\" status, indicating that the intended resource could not be successfully retrieved or found. In contrast, successful 200 OK responses account for only about 10% of total requests, while status codes in the 201-299 range comprise an additional 8%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1650502790&format=interactive",
   sheets_gid="182236208",
   sql_file="well-known_resource-not-be-200.sql"
@@ -1836,7 +1836,7 @@ Finally, we check whether sensitive endpoints are disallowed to be visited by cr
 {{ figure_markup(
   image="robots-text-sensitive-endpoints.png",
   caption="The percentage of sites including specified endpoints in their `robots.txt`.",
-  description="",
+  description="Bar chart showing the percentage of occurrences where potentially sensitive directories are blocked from web crawlers on desktop and mobile platforms. The data indicates that `admin` is the most frequently disallowed sensitive term, appearing in 4.29% of desktop `robots.txt` files, followed by `account` at 2.96%. Other terms such as `login` (1.73%) and `auth` (0.57%) are also commonly restricted, while `signin` and `sso` represent less than 0.05% of occurrences.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQVbvwEPuhyK8NPPVMVbTlXLI6JfPUX-W4hcSoBU14ZB09qx4ZdSDIuMt2UGIMkWMQZHuQO28HO5Ps5/pubchart?oid=1097990890&format=interactive",
   sheets_gid="1854752678",
   sql_file="robot-txt_sensitive_disallow.sql"
