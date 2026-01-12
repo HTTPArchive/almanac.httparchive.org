@@ -118,7 +118,7 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2022-08-01' AND
+    date = '2022-06-01' AND
     is_root_page
   GROUP BY
     client
@@ -126,7 +126,7 @@ JOIN (
 USING (client)
 WHERE
   cats = 'CMS' AND
-  date = '2022-08-01' AND
+  date = '2022-06-01' AND
   is_root_page
 GROUP BY
   client,
