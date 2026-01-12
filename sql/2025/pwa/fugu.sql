@@ -47,5 +47,3 @@ HAVING
 ORDER BY
   pct DESC,
   client;
-
-

@@ -25,7 +25,7 @@ FROM
 WHERE
   date = DATE '2025-06-01' AND
   is_root_page AND
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]','{}','null') AND
+  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null') AND
   JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
 GROUP BY
   client,
@@ -46,7 +46,7 @@ FROM
 WHERE
   date = DATE '2025-06-01' AND
   is_root_page AND
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]','{}','null')
+  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null')
 GROUP BY
   client,
   display

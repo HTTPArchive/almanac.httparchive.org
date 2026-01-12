@@ -54,11 +54,11 @@ JOIN (
 )
 USING (client)
 WHERE date = DATE '2025-06-01' AND is_root_page AND (
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.windowEventListenersInfo')) != '[]' OR
-  TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.windowPropertiesInfo')) != '[]'
-) AND
-install_event != '' AND
-install_event != '[]'
+    TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.windowEventListenersInfo')) != '[]' OR
+    TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.windowPropertiesInfo')) != '[]'
+  ) AND
+  install_event != '' AND
+  install_event != '[]'
 GROUP BY
   client,
   total,

@@ -16,10 +16,10 @@ FROM (
   FROM
     `httparchive.crawl.pages` p
   WHERE
-    p.date = DATE '2025-05-01'
-    AND p.is_root_page
-    AND JSON_VALUE(p.custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
-    AND TO_JSON_STRING(JSON_QUERY(p.custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]','{}','null')
+    p.date = DATE '2025-05-01' AND
+    p.is_root_page AND
+    JSON_VALUE(p.custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true' AND
+    TO_JSON_STRING(JSON_QUERY(p.custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null')
 ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
@@ -43,8 +43,8 @@ FROM (
   FROM
     `httparchive.crawl.pages` p
   WHERE
-    p.date = DATE '2025-05-01'
-    AND p.is_root_page
+    p.date = DATE '2025-05-01' AND
+    p.is_root_page
 ),
   UNNEST([10, 25, 50, 75, 90]) AS percentile
 GROUP BY
@@ -56,4 +56,3 @@ ORDER BY
   date,
   type,
   percentile
-

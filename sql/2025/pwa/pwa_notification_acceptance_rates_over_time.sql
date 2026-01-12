@@ -23,5 +23,3 @@ GROUP BY
 ORDER BY
   date DESC,
   device;
-
-

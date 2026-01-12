@@ -11,7 +11,7 @@ FROM (
   SELECT
     client,
     IF(JSON_VALUE(custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true', 1, 0) AS ServiceWorker,
-    IF(TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]','{}','null'), 1, 0) AS manifests
+    IF(TO_JSON_STRING(JSON_QUERY(custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null'), 1, 0) AS manifests
   FROM
     `httparchive.crawl.pages`
   WHERE

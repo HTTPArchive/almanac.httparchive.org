@@ -43,5 +43,3 @@ ORDER BY
   date,
   client,
   percentile;
-
-

@@ -20,5 +20,3 @@ ORDER BY
   num_urls DESC,
   client,
   feature;
-
-

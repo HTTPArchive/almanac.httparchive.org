@@ -36,5 +36,3 @@ USING (date, client, rank_grouping)
 WHERE rank <= rank_grouping
 GROUP BY date, client, total, rank_grouping
 ORDER BY date DESC, rank_grouping, client;
-
-

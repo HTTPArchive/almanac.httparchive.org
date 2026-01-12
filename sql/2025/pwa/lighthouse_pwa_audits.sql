@@ -43,9 +43,9 @@ FROM `httparchive.crawl.pages` p,
       TO_JSON_STRING(JSON_QUERY(p.lighthouse, '$.audits'))
     )
   ) AS a
-WHERE p.date = DATE '2024-01-01' AND p.is_root_page
-  AND JSON_VALUE(p.custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true'
-  AND TO_JSON_STRING(JSON_QUERY(p.custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]','{}','null')
+WHERE p.date = DATE '2024-01-01' AND p.is_root_page AND
+  JSON_VALUE(p.custom_metrics.other, '$.pwa.serviceWorkerHeuristic') = 'true' AND
+  TO_JSON_STRING(JSON_QUERY(p.custom_metrics.other, '$.pwa.manifests')) NOT IN ('[]', '{}', 'null')
 GROUP BY client, a.id
 
 UNION ALL
@@ -72,4 +72,3 @@ FROM `httparchive.crawl.pages` p,
 WHERE p.date = DATE '2024-01-01' AND p.is_root_page
 GROUP BY client, a.id
 ORDER BY client, type DESC, median_weight DESC, id;
-
