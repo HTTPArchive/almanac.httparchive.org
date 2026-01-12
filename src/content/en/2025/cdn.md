@@ -24,15 +24,11 @@ doi: ...
 
 ## Introduction
 
-This chapter examines the rapidly evolving landscape of Content Delivery Networks (CDNs) in 2025, with particular focus on their role as HTTP protocol optimization. CDNs fundamentally exist to solve HTTP delivery challenges at scale, from reducing TCP connection overhead through HTTP/2 multiplexing to eliminating head-of-line blocking via HTTP/3's QUIC transport. As HTTP protocols have evolved from HTTP/1.1's connection limitations to HTTP/3's advanced features, CDNs have served as the primary deployment vehicle, implementing these protocols years before origin servers adopt them.
+This chapter examines the rapidly evolving landscape of Content Delivery Networks (CDNs) in 2025, with an increased focus on their role as HTTP protocol optimization. CDNs fundamentally exist to solve HTTP delivery challenges at scale, from reducing TCP connection overhead through HTTP/2 multiplexing to eliminating head-of-line blocking via HTTP/3's QUIC transport. As HTTP protocols have evolved from HTTP/1.1's connection limitations to HTTP/3's advanced features, CDNs have served as the primary deployment vehicle, implementing these protocols years before origin servers adopt them.
 
 Modern CDNs optimize delivery across the entire spectrum of web content. For highly cacheable resources (static assets, public API responses, shared content), CDNs provide traditional caching benefits enhanced by advanced compression and modern format delivery. For content with limited cacheability (user-specific data, frequently updated APIs, personalized experiences), CDNs still deliver performance improvements through connection optimization, intelligent routing, and edge processing, reducing latency even when content cannot be cached.
 
-Our 2025 analysis reveals how CDNs are not merely content distributors, but sophisticated HTTP protocol processors that optimize every aspect of the request-response cycle: connection establishment, protocol negotiation, header optimization, response compression, and connection reuse across the full spectrum of web content cacheability.
-
-Building upon our comprehensive analysis from 2024, our 2025 analysis reveals shifts in protocol adoption, optimization strategies, and the emergence of new performance paradigms that are reshaping how content is delivered globally. A key focus of this chapter is the maturation of HTTP/3 adoption, the rise of modern optimization techniques like Server-Timing transparency, and the sophisticated multi-layered approaches CDNs are taking to performance, security, and user experience.
-
-In 2025, we observe that CDNs have evolved beyond simple content delivery to become comprehensive optimization platforms that automatically implement best practices, enabling even smaller websites to benefit from enterprise-grade performance and security features.
+Building upon our comprehensive analysis from 2024, our 2025 analysis reveals shifts in protocol adoption and optimization strategies. A key focus of this chapter is the maturation of HTTP/3 adoption, the rise of modern optimization techniques like Server-Timing transparency, and the sophisticated multi-layered approaches CDNs are taking to performance, security, and user experience.
 
 ## What is a CDN?
 
@@ -219,6 +215,9 @@ The above further reinforces the role CDNs play in driving the adoption of new p
 
 While HTTP/1.1 usage has been on a continued decline with CDNs over the past several years, in 2025 we observed a sharp descrease in CDN usage for HTTP/1.1 going from 16% usage for HTML requests in 2024 to just 2% in 2025. This descrease was even more pronounced for origin requests with 56% HTTP/1.1 requests in 2024 down to 21% in 2025.
 
+## CDN Performance
+CDN performance extends beyond simply caching content closer to users. CDNs actively optimize the underlying protocols and connection mechanisms that determine how quickly browsers can establish connections and receive data while providing transparent metrics to understand bottlenecks in modern web applications.
+
 ### HTTP/3 TTFB Performance
 Below shows the time to first byte (TTFB) median percentile distribution for latency of HTTP/3, HTTP/2, and HTTP/1.1 across major CDNs.
 
@@ -232,7 +231,7 @@ Below shows the time to first byte (TTFB) median percentile distribution for lat
   )
 }}
 
-The TTFB performance for HTTP/3 compared to previous HTTP protocol versions varies by CDN provider, with Amazon Cloudfront and Fastly both showing improved TTFB latency. A reminder to the reader that these are not uniform tests across CDNs and website owners should perform their own controlled performance testing.
+The TTFB performance for HTTP/3 compared to previous HTTP protocol versions varies by CDN provider, with Amazon CloudFront and Fastly both showing improved TTFB latency. A reminder to the reader that these are not uniform tests across CDNs and website owners should perform their own controlled performance testing.
 
 ### Alt-Svc Header
 
@@ -242,6 +241,21 @@ This informs the browser that it can use HTTP/3 on port 443 to reach the same se
 
 In 2025, over 99.99% of HTTP/3 requests from major CDNs injected the Alt-Svc header into requests.
 
+### Server-Timing
+
+Defined in the W3C Server-Timing specification, the Server-Timing header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly through HTTP headers, transforming opaque server processing into observable and debuggable data. Specific to CDNs, Server-Tming headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
+
+{{ figure_markup(
+  image="cdn-http-server-timing-headers-mobile.png",
+  caption="Distribution percentage server timing headers (mobile).",
+  description="This bar chart shows percentage of requests with server-timing headers by major CDN providers.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=367855700&format=interactive",
+  sheets_gid="139841583",
+  sql_file="server_timing_adoption.sql"
+  )
+}}
+
+Adoption of the Server-Timing header varies across CDNs. Above you can see Pressable and Nexcess CDNs had 100% adoption across their requests due to default configurations. However, CDNs like Amazon CloudFront requires non-default configuration likely leading to less adoption.
 
 ## Compression
 
