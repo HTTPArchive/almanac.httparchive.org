@@ -46,11 +46,7 @@ expires_values AS (
     client,
     expires_value
   FROM
-<<<<<<< HEAD
     `httparchive.crawl.requests`,
-=======
-    `httparchive.all.requests`,
->>>>>>> main
     UNNEST(response_headers) AS rh,
     UNNEST(JSON_QUERY_ARRAY(getCookieAgeValues(rh.value, INT64(summary.startedDateTime)), '$.expires')) AS expires_value
   WHERE
