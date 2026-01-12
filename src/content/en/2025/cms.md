@@ -35,11 +35,11 @@ Broadly, there are two main types of CMSs. A classic monolithic CMS combines con
 
 A headless or composable CMS separates content management from the site or app that displays it. In practice, most CMSs share a common set of tasks: modeling content, editing it, managing media, extending functionality, and integrating with other systems. The differences in how they approach these tasks become clearer when we look at adoption and implementation patterns across the web.
 
-## CMS Adoption
+## CMS adoption
 
 {# TODO: Add an intro #}
 
-### Overall Adoption
+### Overall adoption
 
 {{ figure_markup(
   image="cms-adoption.png",
@@ -53,7 +53,7 @@ A headless or composable CMS separates content management from the site or app t
 
 Overall Adoption HTTP Archive measurements show that CMS-driven sites account for over 95% of observed websites in 2025, reinforcing CMSs as the default infrastructure for the web.
 
-### Adoption by Geography
+### Adoption by geography
 
 CMS adoption looks different from one region to another.
 
@@ -105,7 +105,7 @@ The data shows that this slowdown is not caused by one platform displacing WordP
 
 Overall, the data indicates a more diverse CMS landscape shaped by market maturity and greater choice. WordPress remains broadly adopted, but new growth is increasingly distributed across multiple platforms instead of accruing to a single default CMS.
 
-### Fastest Growing CMSs
+### Fastest growing CMSs
 
 {{ figure_markup(
   image="top-5-cms.png",
@@ -125,7 +125,7 @@ By contrast, WordPress's share declines slightly year over year—by less than o
 
 {# TODO: Add an intro #}
 
-### Market & Ecosystem
+### Market and ecosystem
 
 WordPress's importance in the CMS ecosystem is now less about raw growth and more about influence. Its sheer scale makes it the reference point for understanding architectural choices, performance patterns, and real-world implementation trade-offs. Because WordPress is used across almost every traffic tier and use case, its behavior in production has an outsized impact on overall web performance and CMS-driven outcomes.
 
@@ -165,7 +165,7 @@ Although invisible to most visitors, CMS UX directly affects frontend quality. P
 
 One common response to these challenges has been the adoption of page builders, which aim to simplify layout and design through editor-friendly visual interfaces. Their impact echoes HTTP Archive findings that show wide performance variation for WordPress sites driven more by configuration and tooling choices than by core itself. \
 
-## Page Builders
+## Page builders
 
 Page builders have become a dominant interface layer within the WordPress ecosystem. Estimates suggest that around 60% of WordPress sites use a page builder, reflecting demand for faster iteration, less reliance on developers, and greater editorial autonomy. Elementor has the largest observed footprint, followed by WPBakery and Divi, alongside broad use of the native Block Editor.
 
@@ -389,7 +389,7 @@ Total page weight varies widely between CMS platforms, influenced by default the
 
 {{ figure_markup(
   image="Median-cms-page-weight.png",
-  caption="TMedian CMS page weightODO.",
+  caption="Median CMS page weight.",
   description="Bar chart comparing the median total bytes loaded for five major platforms on both desktop and mobile devices. Squarespace produces the heaviest websites by a significant margin, with a median weight of 3,028 KB on mobile and even higher on desktop. In contrast, Joomla and WordPress remain the lightest platforms in the group, with mobile median weights of 2,088 KB and 2,177 KB respectively. Across all featured systems, desktop pages consistently carry a higher byte load than their mobile counterparts.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQl8kslfFxccGPgWkzCtjnDEtkWaZfqnxncddAaoIhMjAtkmY_1laqzaTbrq-9G-cCiQlzjqeXFk3P4/pubchart?oid=439542488&format=interactive",
   sheets_gid="1256129490",
@@ -471,9 +471,9 @@ Across CMSs, page weight acts as a compounding factor rather than a single point
 
 Overall, page weight reinforces a core idea of this chapter: CMS platforms shape performance indirectly, by influencing how resources are assembled and delivered. As pages grow more complex, managing what goes into them—and how it's delivered—becomes critical to maintaining reliable performance
 
-## Emerging Web APIs
+## Emerging web APIs
 
-As CMS platforms mature, browser capabilities play a bigger role in shaping performance and user experience. New Web APIs increasingly offer improvements that work across frameworks and CMSs, shifting some optimization work from servers to the browser itself. These APIs do not remove underlying costs, but they can reduce perceived latency and improve responsiveness when used thoughtfully.
+As CMS platforms mature, browser capabilities play a bigger role in shaping performance and user experience. New web APIs increasingly offer improvements that work across frameworks and CMSs, shifting some optimization work from servers to the browser itself. These APIs do not remove underlying costs, but they can reduce perceived latency and improve responsiveness when used thoughtfully.
 
 This section highlights browser-level capabilities that are starting to influence navigation speed, interaction responsiveness, and perceived performance across CMS-powered sites.
 
@@ -505,7 +505,7 @@ As pages become more complex, resource prioritization plays a bigger role in per
 
 Similarly, new scheduling APIs provide more control over when main-thread work happens, making it easier to defer less critical tasks in favor of user-visible interactions. On CMS-driven pages with many layers of functionality, these tools help reduce contention during key interaction moments.
 
-### Implications for CMS Platforms
+### Implications for CMS platforms
 
 Together, these APIs signal a broader shift in how web performance improves over time. Instead of relying exclusively on backend changes or CMS-specific optimizations, platforms can increasingly lean on browser intelligence that adapts to user behavior and device capabilities. These APIs do not erase the costs of large payloads or heavy execution.
 
