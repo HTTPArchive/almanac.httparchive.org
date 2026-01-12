@@ -1,7 +1,7 @@
 #standardSQL
 # Section: Content Inclusion - Subresource Integriy
 # Question: How many scripts on a page have the integrity attribute? (percentage)
-CREATE TEMP FUNCTION getNumScriptElements(sris ARRAY<STRING>) AS (
+CREATE TEMP FUNCTION getNumScriptElements(sris ARRAY<JSON>) AS (
   (SELECT COUNT(0) FROM UNNEST(sris) AS sri WHERE JSON_EXTRACT_SCALAR(sri, '$.tagname') = 'script')
 );
 
