@@ -846,6 +846,10 @@ The median page made 2 requests for HTML and 2 other file types. At the 90th per
 
 ## Adoption rates of byte-saving technologies
 
+The simplest way to reduce page weight is to not send the bytes in the first place. Being mindful of how you build web pages, and making optimizing resources a standard part of how you work, can have a big impact on the overall weight of your pages, before even considering specific technologies.
+
+Along this that, there are also specific technologies and techniques that can be employed to reduce the amount of data sent over the network. In this section we look at three of these: facades for third-party embeds, minification and compression.
+
 ### Facades for videos & other embeds
 
 Facades, also termed import on interaction, is a design pattern that replaces heavy items, such as video embeds, social media posts or chat widgets with a simple graphical representation that is only replaced by the full, interactive element when users interact.
