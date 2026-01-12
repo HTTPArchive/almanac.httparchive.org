@@ -913,7 +913,7 @@
     "avatar_url": "43580235",
     "bluesky": "bsmth.de",
     "github": "bsmth",
-    "mastodon": "bsmth@mastodon.social",
+    "mastodon": "https://mastodon.social/@bsmth",
     "name": "Brian Smith",
     "teams": {
       "2025": [
