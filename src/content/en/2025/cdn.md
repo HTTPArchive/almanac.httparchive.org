@@ -36,27 +36,27 @@ A _Content Delivery Network_ (CDN) is a geographically distributed network of se
 
 CDNs serve as intermediary infrastructure between end users and origin servers, intercepting web requests and optimizing the complete delivery process. To understand how CDNs can enhance web performance, consider the traditional web interaction when a user types a hostname into a browser, and how different CDNs may improve each step:
 
-**1. DNS Resolution**
+**DNS Resolution**
 - **Traditional**: Browser queries DNS for origin server IP, often with slow resolution times
 - **CDN Processed**: CDN DNS infrastructure may use various routing strategies (anycast or unicast) to direct users to optimal edge servers. Some CDNs support modern DNS records like HTTPS or SVCB (Service Binding) records that can advertise protocol capabilities directly in DNS responses, though adoption varies across providers
 
-**2. Connection Establishment** 
+**Connection Establishment** 
 - **Traditional**: Browser establishes new TCP connection to distant origin server with full handshake overhead
 - **CDN Processed**: Connection to nearby edge server over TCP (for HTTP/1.1 and HTTP/2) or UDP with QUIC (for HTTP/3). CDNs may support HTTP/3's 0-RTT connection resumption for returning visitors, though not all CDNs have implemented these newer connection optimization features
 
-**3. Protocol Negotiation**
+**Protocol Negotiation**
 - **Traditional**: Limited to origin server's protocol capabilities, often older HTTP versions
 - **CDN Processed**: Many CDNs can advertise modern protocol availability through Alt-Svc (Alternative Service) headers that inform browsers about alternative protocols. CDNs typically provide protocol translation benefits, accepting newer protocols from browsers while maintaining optimized connections to origins, regardless of origin server capabilities
 
-**4. Request Processing & Optimization**
+**Request Processing & Optimization**
 - **Traditional**: Basic request forwarding with minimal processing
 - **CDN Processed**: Depending on the CDN, may include header normalization, intelligent routing decisions, addition of performance headers like Server-Timing which provides server-side performance metrics, security headers, and request optimization based on content type and user geographic location
 
-**5. Response Processing**
+**Response Processing**
 - **Traditional**: Direct response from origin server, limited by origin's HTTP server capabilities
 - **CDN Processed**: CDNs may implement advanced caching strategies, cache validation, Content-Encoding optimization (such as Brotli or Gzip compression), conditional request support (like 304 Not Modified responses that save bandwidth), and response transformation, though specific features vary by provider
 
-**6. Connection Management**
+**Connection Management**
 - **Traditional**: Single connection per request or basic keep-alive to origin
 - **CDN Processed**: Many CDNs implement dual-sided connection optimization, maintaining persistent connections to clients while using intelligent connection pooling to origin servers, reducing overhead on both ends
 
@@ -255,7 +255,35 @@ Defined in the W3C Server-Timing specification, the Server-Timing header allows 
   )
 }}
 
-Adoption of the Server-Timing header varies across CDNs. Above you can see Pressable and Nexcess CDNs had 100% adoption across their requests due to default configurations. However, CDNs like Amazon CloudFront requires non-default configuration likely leading to less adoption.
+Adoption of the Server-Timing header varies across CDNs. Above you can see Pressable and Nexcess CDNs had 100% adoption across their requests due to default configurations. CDNs like Akamai, Amazon CloudFront, and Fastly requires non-default configuration likely leading to less adoption. However, enterprise concerns around security, privacy, and performance may drive this opt-in approach.
+
+## CDN Security Headers
+
+CDNs play a critical role in web security by implementing and enforcing security headers that protect users from common attacks. Security headers like HTTP Strict Transport Security (HSTS), X-Frame-Options (XFO), and Content Security Policy (CSP) help prevent everything from man-in-the-middle attacks to clickjacking and cross-site scripting. Because CDNs sit between users and origin servers, they can insert or modify these headers regardless of what the origin provides, making it easier for site operators to deploy security best practices.
+
+{{ figure_markup(
+  image="cdn-http-avg-sec-headers-mobile.png",
+  caption="Distribution of HTTP security header count (mobile).",
+  description="This bar chart shows the average number of security headers per request for major enterprise CDN providers.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=366378643&format=interactive",
+  sheets_gid="1319551791",
+  sql_file="security_headers_by_cdn.sql"
+  )
+}}
+
+Shown above you can see the average number of security headers per request from major enterprise CDN providers. Both Cloudflare and Amazon CloudFront have a lower average number of security headers and this trend continues as we go more granular into specific headers as scene below.
+
+{{ figure_markup(
+  image="cdn-http-sec-headers-mobile.png",
+  caption="Distribution of HTTP security headers (mobile).",
+  description="This bar chart shows the average number of security headers per request for major enterprise CDN providers.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1h8gr-lNGf8NUYbAeY1_PJ75J5WJXTJDIpZ36oZkxXze64PaDkknKT2ALLUe0iU4VkQQhXpJAiQI8/pubchart?oid=2063660063&format=interactive",
+  sheets_gid="1319551791",
+  sql_file="security_headers_by_cdn.sql"
+  )
+}}
+
+Fastly and Akamai have more sane defaults for security headers when basic features are enabled which drives higher rates of security headers. Amazon CloudFront and Cloudflare require more non-default configurations to inject and enforce security headers leading to a lower adoption.
 
 ## Compression
 
@@ -417,7 +445,7 @@ We're interested to see how Early Hints affects performance as more sites start 
 
 In 2024, we saw CDNs leading the charge on adopting emerging technologies like HTTP/3, and that pattern has held steady into 2025. Looking at features like Brotli and ZStandard compression or TLS 1.3 encryption, CDNs make it easy for sites to implement these improvements through simple configuration changes instead of overhauling entire fleets of servers, load balancers, and networking equipment.
 
-This year we took a deeper look at HTTP/3 and revisited Early Hints, which we first examined in 2024. For the first time we broke out CDN performance and will dive deeper in 2026. We initially planned to include IPv6 analysis, but the data wasn't reliable enough to draw meaningful conclusions. We hope to address IPv6 adoption in the 2026 chapter once we have more robust measurements.
+This year we took a deeper look at HTTP/3 and revisited Early Hints, which we first examined in 2024. For the first time we broke out CDN performance and security and will dive deeper in 2026, specifically on tradeoffs that exist between both topics. We initially planned to include IPv6 analysis, but the data wasn't reliable enough to draw meaningful conclusions. We hope to address IPv6 adoption in the 2026 chapter once we have more robust measurements.
 
 The CDN landscape in 2025 demonstrates that these platforms have evolved far beyond simple content delivery to become comprehensive optimization and security platforms that are essential infrastructure for the modern web.
 
