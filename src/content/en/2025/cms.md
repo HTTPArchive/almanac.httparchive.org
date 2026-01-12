@@ -4,19 +4,19 @@ title: CMS
 description: CMS chapter of the 2025 Web Almanac covering CMS adoption, user experience of websites running on CMS platforms, and CMS resource weights.
 hero_alt: Hero image of Web Almanac characters on a type writer writing a web page.
 authors: [VaheSODP]
-reviewers: []
-analysts: []
+reviewers: [dknauss]
+analysts: [onurglr, alonko]
 editors: [tunetheweb]
 translators: []
-VaheSODP_bio: TODO
+VaheSODP_bio: Vahe Arabian is a digital publishing entrepreneur, growth strategist, and the founder of <a hreflang="en" href="https://www.stateofdigitalpublishing.com/">State of Digital Publishing</a> and <a hreflang="en" href="https://www.sodpmedia.com/">SODP Media</a>. He works with publishers, startups, and media organizations to drive sustainable growth across SEO, audience development, monetization, and product strategy. Vahe is a frequent speaker and writer on digital media trends, AI in publishing, and the evolving future of online journalism.
 results: https://docs.google.com/spreadsheets/d/1b3VLQPtJJOB7MmEx_RgmWSCef1BK8mrqpQT44UiMQyE/edit
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: This year, the industry-wide focus on performance and user experience has deepened, with CMS platforms showing steady improvements across Core Web Vitals and Lighthouse scores. Many CMSs have embraced optimization strategies that enhance loading speed, interactivity, and accessibility, reflecting a shared commitment to a user-first web.
+featured_stat_1: 36%
+featured_stat_label_1: Percent of mobile sites using WordPress.
+featured_stat_2: 49%
+featured_stat_label_2: Percent of mobile sites using a CMS.
+featured_stat_3: 72%
+featured_stat_label_3: Percent of CMS market share that is WordPress
 ---
 
 ## Introduction
@@ -37,7 +37,7 @@ A headless or composable CMS separates content management from the site or app t
 
 ## CMS adoption
 
-{# TODO: Add an intro #}
+By 2025, CMS adoption reflects a web that’s both mature and increasingly specialized. Almost every site now runs on some kind of CMS, but how these platforms are used varies a lot by region, traffic level, and underlying technology. Instead of everyone standardizing on a single go-to system, the market is clearly fragmenting, with different platforms leading in different parts of the world, for different use cases, and at different scales.
 
 ### Overall adoption
 
