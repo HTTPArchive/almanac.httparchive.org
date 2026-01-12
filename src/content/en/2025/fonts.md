@@ -315,9 +315,9 @@ If we look at the `@font-face` metadata to see which foundries or vendors are cr
 
 By page coverage, the top "foundry" labels on the web are:
 
-- Google, which is listed as the foundry for about 34% of websites using web fonts. This makes Google (via Google Fonts) the largest single source of fonts by far. This is largely due to Google's funding of open-source designs by independent designers.
+- **Google**, which is listed as the foundry for about 34% of websites using web fonts. This makes Google (via Google Fonts) the largest single source of fonts by far. This is largely due to Google's funding of open-source designs by independent designers.
 
-- Font Awesome (AWSM), which is credited on roughly 29% of websites. This is the second largest share (trailing Google by \~5 percentage points) and entirely due to the ubiquity of the Font Awesome icon font. It's a bit unique since Font Awesome is an icon set (the foundry "Dave Gandy" could also be cited, but often the font metadata uses "Font Awesome" or "AWSM" as foundry).
+- **Font Awesome (AWSM)**, which is credited on roughly 29% of websites. This is the second largest share (trailing Google by ~5 percentage points) and entirely due to the ubiquity of the Font Awesome icon font. It's a bit unique since Font Awesome is an icon set (the foundry "Dave Gandy" could also be cited, but often the font metadata uses "Font Awesome" or "AWSM" as foundry).
 
 Together, Google and Font Awesome-affiliated fonts appear on about two-thirds of all pages, which is enormous. After those two, the next biggest category is actually unattributed or custom fonts. Around 19% of pages have fonts with no foundry specified ("UNSPEC") and another 12% list "none" or a generic value for foundry. In total, well over a quarter of fonts lack clear foundry info in their metadata. This chunk likely represents custom self-hosted fonts, smaller foundries, or fonts where the naming wasn't standardized.
 
