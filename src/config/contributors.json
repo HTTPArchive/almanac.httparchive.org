@@ -909,6 +909,19 @@
     "twitter": "remotesynth",
     "website": "https://remotesynthesis.com/"
   },
+  "bsmth": {
+    "avatar_url": "43580235",
+    "bluesky": "bsmth.de",
+    "github": "bsmth",
+    "mastodon": "https://mastodon.social/@bsmth",
+    "name": "Brian Smith",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    },
+    "website": "https://bsmth.de"
+  },
   "burakguneli": {
     "avatar_url": "7094425",
     "github": "burakguneli",
