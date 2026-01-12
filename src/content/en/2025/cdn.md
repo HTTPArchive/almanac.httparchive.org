@@ -68,7 +68,7 @@ Our 2025 analysis builds upon the methodology established in previous years whil
 
 Key limitations of our testing methodology remain:
 
-- **Simulated network conditions:** Tests use controlled network environmentss
+- **Simulated network conditions:** Tests use controlled network environments
 - **Single geographic perspective:** Analysis from limited datacenter locations
 - **Cache effectiveness:** Each CDN uses proprietary technology and many, for security reasons, do not expose cache performance or depth of cache.
 - **Localization and internationalization:** Just like geographic distribution, the effects of language and geographic specific domains are also opaque to these tests.
@@ -108,7 +108,7 @@ CDNs are often utilized for delivering static content such as fonts, image files
   )
 }}
 
-The above figure shows the evolution of different content types served from CDNs over the years. From 2024 to 2025, we see mixed trends across content types. HTML content continued its upward trajectory, increasing from 33% to 35%. Subdomain content remained stable at 52% in both years. However, third-party content experienced a notable decline from 75% in 2024 to 71% in 2025, representing a 4 percentage point decrease after years of consistent growth.
+The above figure shows the evolution of different content types served from CDNs over the years. From 2024 to 2025, we see mixed trends across content types. HTML content continued its upward trajectory, increasing from 33% to 35%. Subdomain content remained stable at 52% in both years. However, third-party content experienced a notable decline from 75% in 2024 to 71% in 2025, representing a four percentage point decrease after years of consistent growth.
 
 {{ figure_markup(
   image="cdn-usage-ranking-mobile.png",
@@ -127,7 +127,7 @@ As mentioned in previous editions, the increase in CDN usage of 33% in 2024 to 3
 ## CDN providers
 
 CDN providers can generally be classified into two segments:
-1. **Generic CDNs** – Providers that offer a wide range of content delivery services to suit various use cases, including Akamai, Cloudflare, CloudFront, and Fastly.
+1. **Generic CDNs** – Providers that offer a wide range of content delivery services to suit various use cases, including Akamai, Cloudflare, Amazon CloudFront, and Fastly.
 2. **Purpose-built CDNs** – Providers tailored to specific platforms or use cases, such as Netlify and WordPress.
 
 Generic CDNs address broad market needs with offerings that include:
@@ -175,9 +175,9 @@ Marginally changing from 2024, the leading vendors in this category are Cloudfla
 
 The above figure highlights third-party domain usage, with Google leading the list at 53% market share, followed by well-known CDN providers such as Cloudflare (17%), Amazon CloudFront (11%), Fastly (5%), and Akamai and Facebook (4%).
 
-While many CDNs offer purpose built features optimized specifically for content delivery, they increasingly exist as part of larger service ecosystems. These CDNs are often tightly integrated with cloud infrastructure, security solutions, and edge computing platforms, with these adjacent services delivered through or alongside the CDN itself.
+While many CDNs offer purpose-built features optimized specifically for content delivery, they increasingly exist as part of larger service ecosystems. These CDNs are often tightly integrated with cloud infrastructure, security solutions, and edge computing platforms, with these adjacent services delivered through or alongside the CDN itself.
 
-Different CDN providers take distinct approaches to optimization and specialization. Third party platforms like Google and Facebook build highly specialized CDNs engineered specifically for their needs, handling massive throughput for ad delivery and capturing analytics beacons at scale. In contrast, general purpose CDNs like Cloudflare and Amazon CloudFront optimize targeted feature sets while maintaining broader applicability. These platforms leverage their CDN capabilities as a foundation for managed services, enabling use cases such as globally distributed API gateways or real time JavaScript injection for client side device fingerprinting and security inspection.
+Different CDN providers take distinct approaches to optimization and specialization. Third party platforms like Google and Facebook build highly specialized CDNs engineered specifically for their needs, handling massive throughput for ad delivery and capturing analytics beacons at scale. In contrast, general purpose CDNs like Cloudflare and Amazon CloudFront optimize targeted feature sets while maintaining broader applicability. These platforms leverage their CDN capabilities as a foundation for managed services, enabling use cases such as globally distributed API gateways or real time JavaScript injection for client-side device fingerprinting and security inspection.
 
 ## HTTP/3 adoption
 
@@ -201,7 +201,7 @@ In previous years HTTP/3 adoption was difficult to break out due to the nature o
   )
 }}
 
-The above further reinforces the role CDNs play in driving the adoption of new protocols. CDNs saw 29% traffic from HTTP/3 while statistically 0% for origin. Compared to 2024, we observed a sharp descrease in CDN usage for HTTP/1.1 in 2025.
+The above further reinforces the role CDNs play in driving the adoption of new protocols. CDNs saw 29% traffic from HTTP/3 while statistically 0% for origin. Compared to 2024, we observed a sharp decrease in CDN usage for HTTP/1.1 in 2025.
 
 {{ figure_markup(
   image="cdn-http-versions-mobile-3p.png",
@@ -213,7 +213,7 @@ The above further reinforces the role CDNs play in driving the adoption of new p
   )
 }}
 
-While HTTP/1.1 usage has been on a continued decline with CDNs over the past several years, in 2025 we observed a sharp descrease in CDN usage for HTTP/1.1 going from 16% usage for HTML requests in 2024 to just 2% in 2025. This descrease was even more pronounced for origin requests with 56% HTTP/1.1 requests in 2024 down to 21% in 2025.
+While HTTP/1.1 usage has been on a continued decline with CDNs over the past several years, in 2025 we observed a sharp decrease in CDN usage for HTTP/1.1 going from 16% usage for HTML requests in 2024 to just 2% in 2025. This decrease was even more pronounced for origin requests with 56% HTTP/1.1 requests in 2024 down to 21% in 2025.
 
 ## CDN Performance
 CDN performance extends beyond simply caching content closer to users. CDNs actively optimize the underlying protocols and connection mechanisms that determine how quickly browsers can establish connections and receive data while providing transparent metrics to understand bottlenecks in modern web applications.
@@ -243,7 +243,7 @@ In 2025, over 99.99% of HTTP/3 requests from major CDNs injected the Alt-Svc hea
 
 ### Server-Timing
 
-Defined in the W3C Server-Timing specification, the Server-Timing header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly through HTTP headers, transforming opaque server processing into observable and debuggable data. Specific to CDNs, Server-Tming headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
+Defined in the W3C Server-Timing specification, the Server-Timing header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly through HTTP headers, transforming opaque server processing into observable and debuggable data. Specific to CDNs, Server-Timing headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
 
 {{ figure_markup(
   image="cdn-http-server-timing-headers-mobile.png",
@@ -323,7 +323,7 @@ While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 
 
 ### TLS 1.3 adoption
 
-TLSv1.3 improves the overall security of web traffic compared to earler versions that included weaker cryptographic algorithms that had known vulnerabilities, improving the security for all.
+TLSv1.3 improves the overall security of web traffic compared to earlier versions that included weaker cryptographic algorithms that had known vulnerabilities, improving the security for all.
 
 Nearly all CDN traffic now uses TLS 1.3, with 99% of requests leveraging the latest protocol version. This benefits developers through faster connection establishment times, directly improving page load speeds. CDN providers continue to be early adopters of new web technologies, which means applications using CDNs get these performance and security enhancements with little to no additional effort.
 
@@ -337,7 +337,7 @@ Nearly all CDN traffic now uses TLS 1.3, with 99% of requests leveraging the lat
   )
 }}
 
-Though origin server adoption of TLS 1.3 is improving, CDNs still demonstrate a clear advantage in rolling out new capabilities compared to organizations managing their own software and hardware upgrades.s
+Though origin server adoption of TLS 1.3 is improving, CDNs still demonstrate a clear advantage in rolling out new capabilities compared to organizations managing their own software and hardware upgrades.
 
 {{ figure_markup(
   image="tls-version-mobile-3p.png",
@@ -403,7 +403,7 @@ The GIF format showed a modest 2.3% increase, particularly on mobile (+0.5% high
 
 Between 2024 and 2025, there was a slight regression in AVIF (-1.9%), SVG (-1.1%), and WebP (-1.8%), offset by small rebounds in GIF (+2.3%) and JPEG (+2.2%), a possible indicator of fallback scenarios or compatibility defaults on less optimized delivery stacks.
 
-The 2025 data underscores a clear trajectory: legacy formats like JPEG still dominate total requests but are gradually ceding share to newer, more efficient formats. WebP, SVG, and AVIF are becoming the new baseline for high performance content delivery, especially in mobile-first ecosystems where latency and bandwidth efficiency are critical.
+The 2025 data underscore a clear trajectory: legacy formats like JPEG still dominate total requests but are gradually ceding share to newer, more efficient formats. WebP, SVG, and AVIF are becoming the new baseline for high performance content delivery, especially in mobile-first ecosystems where latency and bandwidth efficiency are critical.
 
 ## Client Hints
 
