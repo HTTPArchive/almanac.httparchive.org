@@ -4,9 +4,9 @@ title: Cookies
 description: Cookies chapter of the 2025 Web Almanac covering the prevalence and structure of cookies on the web.
 hero_alt: Hero image of Web Almanac characters carrying a large cookie, while crumbs are thrown off by another character. Another Web Almanac character is following the trail of cookies with a detective hat and a magnifying glass.
 authors: [yohhaan]
-reviewers: [JannisBush,martinakraus]
+reviewers: [JannisBush, martinakraus]
 analysts: [ChrisBeeti]
-editors: [tunetheweb]
+editors: [bsmth, tunetheweb]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1ZirsnaXgbOMzBmt0X2eMMu3rVJvWCtQgE7pNG7fKcvc/edit
 yohhaan_bio: Yohan Beugin is a Ph.D. student in the Department of Computer Sciences at the University of Wisconsin–Madison where he is a member of the Security and Privacy Research Group and advised by Prof. Patrick McDaniel. He is interested in building more secure, privacy-preserving, and trustworthy systems. His current research so far has focused on tracking and privacy in online advertising as well as security of open-source software.
@@ -21,7 +21,7 @@ featured_stat_label_3: Third-party cookies that are partitioned (CHIPS)
 
 ## Introduction
 
-[Cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies) allow websites to save data and maintain state information across HTTP requests, a stateless protocol. Web applications use cookies for several purposes, like authentication, fraud prevention and security, or remembering preferences and user choices. However, ever since their introduction in the mid-1990s, cookies have also played a dominant role in online tracking of web users.
+[Cookies](https://developer.mozilla.org/docs/Web/HTTP/Cookies) allow websites to save data and maintain state information across HTTP requests, a stateless protocol. Web applications use cookies for several purposes, like authentication, fraud prevention and security, or remembering preferences and user choices. However, since their introduction in the mid-1990s, cookies have also played a dominant role in online tracking of web users.
 
 Over the years, browser vendors such as Brave, Firefox, and Safari have imposed [restrictions, partitioned, and removed third-party cookies](https://developer.mozilla.org/docs/Web/Privacy/Guides/Third-party_cookies#how_do_browsers_handle_third-party_cookies). While Chrome initially appeared to follow in these same steps by announcing <a hreflang="en" href="https://blog.chromium.org/2020/01/building-more-private-web-path-towards.html">plans to block all third-party cookies</a>, several delays and postponements later, Google eventually decided to <a hreflang="en" href="https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/">keep third-party cookies unrestricted and let users decide to disable them in Chrome</a>.
 
@@ -148,7 +148,7 @@ We observe that the most popular websites set in proportion more third-party tha
 {{ figure_markup(
   image="cookies-attributes-overview-desktop.png",
   caption="An overview of cookie attributes for desktop clients.",
-  description="This figures gives an overview of how cookie attributes are used for desktop clients for both first- and third-party cookies. Only 1% of first-party cookies and 10% of third-party cookies use `Partioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 7% of third-party cookies. Finally, 12% of first-party cookies and 28% of third-party cookies use the `HttpOnly` attribute.",
+  description="This figures gives an overview of how cookie attributes are used for desktop clients for both first- and third-party cookies. Only 1% of first-party cookies and 10% of third-party cookies use `Partitioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 7% of third-party cookies. Finally, 12% of first-party cookies and 28% of third-party cookies use the `HttpOnly` attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=1053912620&format=interactive",
   sheets_gid="1982273020",
   sql_file="prevalence_attributes_per_type.sql"
@@ -158,7 +158,7 @@ We observe that the most popular websites set in proportion more third-party tha
 {{ figure_markup(
   image="cookies-attributes-overview-mobile.png",
   caption="An overview of cookie attributes for mobile clients.",
-  description="This figures gives an overview of how cookie attributes are used for mobile clients for both first- and third-party cookies. We observe the exact same results as for desktop clients. Only 1% of first-party cookies and 9% of third-party cookies use `Partioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 5% of third-party cookies. Finally, 12% of first-party cookies and 26% of third-party cookies use the `HttpOnly` attribute.",
+  description="This figures gives an overview of how cookie attributes are used for mobile clients for both first- and third-party cookies. We observe the exact same results as for desktop clients. Only 1% of first-party cookies and 9% of third-party cookies use `Partitioned`. 19% of first-party cookies set their `Session` attribute, while this is the case for only 5% of third-party cookies. Finally, 12% of first-party cookies and 26% of third-party cookies use the `HttpOnly` attribute.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSzdHAn-vwJ-Z05NYWZrImgKaX0q5D-jgWay8FD9lMDj2jr3cEjozE083JOSi6cZZX37vVD2TjEKw28/pubchart?oid=435743769&format=interactive",
   sheets_gid="1982273020",
   sql_file="prevalence_attributes_per_type.sql"
@@ -233,13 +233,13 @@ The [`SameSite`](https://developer.mozilla.org/docs/Web/HTTP/Cookies#controlling
 - `SameSite=Strict`: a cookie is only sent in response to a request from the same site as the cookie's origin.
 - `SameSite=Lax`: same as `SameSite=Strict` except that the browser also sends the cookie on navigation to the cookie's origin site. On Chrome, this is the default value of `SameSite` if no value is set.
 - `SameSite=None`: cookies are sent on same-site or cross-site requests.
-This means that in order to make third-party tracking with cookies possible, the tracking cookies must have their `SameSite` attribute set to `None`.
+  This means that in order to make third-party tracking with cookies possible, the tracking cookies must have their `SameSite` attribute set to `None`.
 
 To learn more about the `SameSite` attribute, see the following references:
+
 - [`SameSite` cookies explained](https://web.dev/articles/samesite-cookies-explained)
 - ["Same-site" and "same-origin"](https://web.dev/articles/same-site-same-origin)
 - [What are the parts of a URL?](https://web.dev/articles/url-parts)
-
 
 {{ figure_markup(
   image="same-site-desktop.png",
@@ -459,7 +459,7 @@ Google's coverage (`doubleclick.net`, `google.com`, and `youtube.com`) is reachi
   <figcaption>{{ figure_link(caption="Statistics for number of cookies set on the top one million mobile pages.", sheets_gid="1535389309", sql_file="nb_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
-Websites set a median of 9 cookies of any type overall, 7 or 6 first-party cookies, and 7 or 4 third-party cookies for desktop and mobile devices, respectively.
+Websites set a median of 9 cookies overall, with 7 first-party and 7 third-party cookies on desktop, and 6 first-party and 4 third-party cookies on mobile.
 
 The tables report several other statistics about the number of cookies observed per website and the figures below display their cumulative distribution functions (cdf). For example: on desktop a maximum of 178 first-party and 885 third-party cookies are set per website:
 
@@ -677,7 +677,6 @@ We can chart the cumulative distribution function (cdf) of the size of all the c
   <figcaption>{{ figure_link(caption="Statistics for age of cookies set on the top one million desktop pages.", sheets_gid="718820729", sql_file="age_expire_cookies_quantiles.sql") }}</figcaption>
 </figure>
 
-
 <figure>
   <table>
     <thead>
@@ -749,7 +748,7 @@ The observations from this chapter confirm [the conclusions from last year's ana
 - A majority (60%) of cookies encountered on the web are third-party cookies and popular websites have significantly more third-party cookies than less popular sites.
 - Most popular cookies can be linked to advertising, tracking, and analytics use cases.
 - Cookies tend to be long-lived with a median average lifetime of 12 months.
-Ephemeral session cookies only represent 19% of first- and 7% of third-party cookies.
+  Ephemeral session cookies only represent 19% of first- and 7% of third-party cookies.
 - Other restrictions on cookies capabilities are used very little to not at all: if 10% of third-party cookies are partitioned (which represents a slight uptake from last year's 6%), 100% of third-party cookies have `SameSite=None` allowing them to be sent in cross-site requests. Additionally, cookies prefixes adoption is almost non-existent.
 
 Finally, while several web browsers have [deprecated or limited third-party cookies](https://developer.mozilla.org/docs/Web/Privacy/Guides/Third-party_cookies#how_do_browsers_handle_third-party_cookies) due to privacy concerns, Google has decided to <a hreflang="en" href="https://privacysandbox.com/news/update-on-plans-for-privacy-sandbox-technologies/">still support them in Chrome</a>. Google is also phasing out most technologies from its Privacy Sandbox initiative, initially designed to _"create a thriving web ecosystem that is respectful of users and private by default"_. As a result, whether trackers use third-party cookies or develop other techniques (first-party syncing, fingerprinting, etc.) to track users online, cookies remain a fundamental component of the web that continue to pose privacy and security risks for users.
