@@ -84,7 +84,10 @@ Secondary pages show a significant advantage over home pages in achieving good C
 
 <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of Web Vitals data for within the page navigation.
 
-While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects such as layout shift, loading performance, and interactivity is necessary to fully understand the user experience, which is what we will cover next.
+While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects of loading performance, interactivity and visual stability is necessary to fully understand the user experience, which is what we will cover in the following sections.
+
+## Loading Speed
+In Progress (Humaira)
 
 ## Interactivity
 
@@ -254,3 +257,11 @@ Overall, Visual stability across the web has advanced significantly compared to 
 
 However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
+## Early Hints 
+TODO (Unassigned)
+
+## Speculation Rules
+TODO (Unassigned)
+
+## Conclusion
+TODO (Unassigned)
