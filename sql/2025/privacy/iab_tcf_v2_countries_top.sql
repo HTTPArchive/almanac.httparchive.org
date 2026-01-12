@@ -26,16 +26,14 @@ base_data AS (
 )
 
 FROM base_data
-|> AGGREGATE
-  COUNT(DISTINCT root_page) AS number_of_pages
-GROUP BY client, publisherCC
+|> AGGREGATE COUNT(DISTINCT root_page) AS number_of_websites GROUP BY client, publisherCC
 |> JOIN base_totals USING (client)
-|> EXTEND number_of_pages / total_websites AS pct_of_pages
+|> EXTEND number_of_websites / total_websites AS pct_of_websites
 |> DROP total_websites
 |> PIVOT(
-  ANY_VALUE(number_of_pages) AS pages_count,
-  ANY_VALUE(pct_of_pages) AS pct
+  ANY_VALUE(number_of_websites) AS websites_count,
+  ANY_VALUE(pct_of_websites) AS pct
   FOR client IN ('desktop', 'mobile')
 )
 |> RENAME pct_mobile AS mobile, pct_desktop AS desktop
-|> ORDER BY pages_count_mobile + pages_count_desktop DESC
+|> ORDER BY websites_count_desktop + websites_count_mobile DESC

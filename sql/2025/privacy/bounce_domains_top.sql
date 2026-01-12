@@ -17,7 +17,7 @@ WITH redirect_requests AS (
     url,
     index,
     NET.REG_DOMAIN(header.value) AS location_domain,
-    page
+    root_page
 ),
 
 -- Find the first navigation redirect
@@ -25,11 +25,11 @@ navigation_redirect AS (
   FROM redirect_requests
   |> WHERE
     index = 1 AND
-    NET.REG_DOMAIN(page) = NET.REG_DOMAIN(url) AND
+    NET.REG_DOMAIN(root_page) = NET.REG_DOMAIN(url) AND
     NET.REG_DOMAIN(url) != location_domain
   |> SELECT
     client,
-    page,
+    root_page,
     location_domain AS bounce_domain
 ),
 
@@ -38,12 +38,12 @@ bounce_redirect AS (
   FROM redirect_requests
   |> WHERE
     index = 2 AND
-    NET.REG_DOMAIN(page) != NET.REG_DOMAIN(url) AND
+    NET.REG_DOMAIN(root_page) != NET.REG_DOMAIN(url) AND
     NET.REG_DOMAIN(url) != location_domain
   |> SELECT
     client,
     url,
-    page,
+    root_page,
     location_domain AS bounce_redirect_location_domain
 ),
 
@@ -53,26 +53,26 @@ bounce_sequences AS (
   |> JOIN bounce_redirect AS bounce
   ON
     nav.client = bounce.client AND
-    nav.page = bounce.page
-  |> AGGREGATE COUNT(DISTINCT nav.page) AS pages_count
+    nav.root_page = bounce.root_page
+  |> AGGREGATE COUNT(DISTINCT nav.root_page) AS websites_count
   GROUP BY nav.client, bounce_domain
 ),
 
-pages_total AS (
+websites_total AS (
   FROM `httparchive.crawl.pages`
   |> WHERE date = '2025-07-01' --AND rank = 1000
-  |> AGGREGATE COUNT(DISTINCT page) AS total_pages GROUP BY client
+  |> AGGREGATE COUNT(DISTINCT root_page) AS total_websites GROUP BY client
 )
 
 FROM bounce_sequences
-|> JOIN pages_total USING (client)
-|> EXTEND pages_count / total_pages AS pages_pct
-|> DROP total_pages
+|> JOIN websites_total USING (client)
+|> EXTEND websites_count / total_websites AS websites_pct
+|> DROP total_websites
 |> PIVOT(
-  ANY_VALUE(pages_count) AS cnt,
-  ANY_VALUE(pages_pct) AS pages_pct
+  ANY_VALUE(websites_count) AS cnt,
+  ANY_VALUE(websites_pct) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME cnt_mobile AS mobile, cnt_desktop AS desktop
-|> ORDER BY mobile + desktop DESC
+|> RENAME pct_mobile AS mobile, pct_desktop AS desktop, cnt_mobile AS mobile_count, cnt_desktop AS desktop_count
+|> ORDER BY mobile_count + desktop_count DESC
 |> LIMIT 100
