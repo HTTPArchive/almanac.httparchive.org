@@ -37,7 +37,7 @@ LANGUAGE js AS '''
 WITH age_values AS (
   SELECT
     client,
-    getCookieAgeValues(response_headers.value, INT64(summary.startedDateTime)) AS values
+    getCookieAgeValues(response_headers.value, UNIX_SECONDS(TIMESTAMP(STRING(payload.startedDateTime)))) AS values
   FROM
     `httparchive.crawl.requests`,
     UNNEST(response_headers) AS response_headers
