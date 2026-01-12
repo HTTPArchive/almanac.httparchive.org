@@ -6,7 +6,7 @@ hero_alt: Hero image of Web Almanac characters on a type writer writing a web pa
 authors: [VaheSODP]
 reviewers: [dknauss]
 analysts: [onurglr, alonko]
-editors: [tunetheweb]
+editors: [samuelfatola, sreemoyeebhattacharya]
 translators: []
 VaheSODP_bio: Vahe Arabian is a digital publishing entrepreneur, growth strategist, and the founder of <a hreflang="en" href="https://www.stateofdigitalpublishing.com/">State of Digital Publishing</a> and <a hreflang="en" href="https://www.sodpmedia.com/">SODP Media</a>. He works with publishers, startups, and media organizations to drive sustainable growth across SEO, audience development, monetization, and product strategy. Vahe is a frequent speaker and writer on digital media trends, AI in publishing, and the evolving future of online journalism.
 results: https://docs.google.com/spreadsheets/d/1b3VLQPtJJOB7MmEx_RgmWSCef1BK8mrqpQT44UiMQyE/edit
