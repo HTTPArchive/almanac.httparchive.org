@@ -715,7 +715,8 @@
         "analysts",
         "committee",
         "developers",
-        "editors"
+        "editors",
+        "reviewers"
       ]
     },
     "twitter": "tunetheweb",
@@ -1115,6 +1116,7 @@
         "reviewers"
       ],
       "2025": [
+        "analysts",
         "committee"
       ]
     }
@@ -2221,6 +2223,9 @@
     "teams": {
       "2024": [
         "analysts"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "jannis_r",
@@ -3433,6 +3438,27 @@
     "teams": {
       "2021": [
         "translators"
+      ]
+    }
+  },
+  "abubakaraziz": {
+    "avatar_url": "10674679",
+    "github": "abubakaraziz",
+    "linkedin": "aziz313f",
+    "name": "Muhammad Abu Bakar Aziz",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    }
+  },
+  "jazlan01": {
+    "github": "jazlan01",
+    "name": "Muhammad Jazlan",
+    "teams": {
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -5083,6 +5109,9 @@
       "2024": [
         "authors",
         "analysts"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "website": "https://yohan.beugin.org"
@@ -5212,5 +5241,18 @@
       ]
     },
     "twitter": "_cybai"
+  },
+  "martinakraus": {
+    "avatar_url": "6086902",
+    "github": "martinakraus",
+    "name": "Martina Kraus",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    },
+    "twitter": "MartinaKraus11",
+    "linkedin": "martina-kraus-398493108",
+    "bluesky": "martinakraus11"
   }
 }
