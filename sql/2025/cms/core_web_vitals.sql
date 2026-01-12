@@ -55,14 +55,14 @@ JOIN (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 ON
   CONCAT(origin, '/') = url AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
-  date = '2025-06-01'
+  date = '2025-07-01'
 GROUP BY
   client,
   cms

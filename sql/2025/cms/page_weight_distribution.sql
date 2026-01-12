@@ -18,7 +18,7 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'CMS' AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 JOIN (
@@ -29,7 +29,7 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 USING (client, url),

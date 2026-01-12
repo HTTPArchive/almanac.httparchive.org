@@ -10,7 +10,7 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202506
+    yyyymm = 202507
   UNION ALL
   SELECT
     'ALL' AS geo,
@@ -20,7 +20,7 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm = 202506
+    yyyymm = 202507
 )
 
 SELECT
@@ -55,7 +55,7 @@ FROM (
       technologies.technology IS NOT NULL AND
       cats = 'CMS' AND
       technologies.technology != '' AND
-      date = '2025-06-01' AND
+      date = '2025-07-01' AND
       is_root_page
   ) USING (client, url)
   GROUP BY

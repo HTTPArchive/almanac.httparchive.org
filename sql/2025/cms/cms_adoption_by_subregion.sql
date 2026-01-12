@@ -1206,7 +1206,7 @@ WITH geo_summary AS (
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202506
+    yyyymm = 202507
 )
 
 SELECT
@@ -1236,7 +1236,7 @@ FROM (
       UNNEST(technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
-      date = '2025-06-01' AND
+      date = '2025-07-01' AND
       cats = 'CMS' AND
       is_root_page
   )

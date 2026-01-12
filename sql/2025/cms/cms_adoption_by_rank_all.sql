@@ -21,7 +21,7 @@ FROM (
     UNNEST(tech.categories) AS category,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]) AS rank_grouping
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     rank <= rank_grouping AND
     is_root_page AND
     category = 'CMS'
@@ -35,7 +35,7 @@ JOIN (
     `httparchive.crawl.pages`,
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7, 1e8]) AS rank_grouping
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     rank <= rank_grouping AND
     is_root_page
   GROUP BY
