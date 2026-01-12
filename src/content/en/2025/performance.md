@@ -98,7 +98,7 @@ For an origin to receive a "good" INP score, at least 75% of all sessions need a
   image="inp-performance-by-device-2025.png",
   caption="Distribution of INP performance by device.",
   description="Stacked bar chart showing INP performance by device, categorized as good (under 200 milliseconds), needs improvement (200–500 milliseconds), and poor (over 500 milliseconds). For desktop, 97% of websites have good INP, 2% need improvement, and less than 1% perform poorly. For phones, 77% of websites have good INP, 21% need improvement, and 3% perform poorly.",
-  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=73846591&format=interactive",
   sheets_gid="1060077014",
   sql_file="inp_by_device.sql"
 ) }}
@@ -111,7 +111,7 @@ Notably, the mobile-desktop performance gap has begun to narrow, shrinking from 
   image="mobile-inp-performance-by-rank-2025.png",
   caption="INP performance on mobile devices segmented by rank.",
   description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 milliseconds), needs improvement (200–500 milliseconds), and poor (over 500 milliseconds). For the top 1,000 websites, 63% have good INP, 32% need improvement, and 5% perform poorly. For the top 10,000 websites, 56% are in the good range, 38% need improvement, and 6% are poor. In the top 100,000, 56% are good, 38% need improvement, and 6% are poor. For the top 1,000,000 websites, 64% have good INP, 31% need improvement, and 5% are poor. As the rank increases to the top 10,000,000 websites, 76% are good, 21% need improvement, and 3% are poor. Finally, for all websites, 77% have good INP, 21% need improvement, and 3% are poor.",
-  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1626195308&format=interactive",
   sheets_gid="1354135914",
   sql_file="inp_by_rank.sql"
 ) }}
@@ -128,7 +128,7 @@ The substantial year-over-year improvements suggest that major websites are succ
   image="good-inp-for-home-pages-and-secondary-pages-2025.png",
   caption="Good INP performance for home pages and secondary pages.",
   description="Bar chart showing the percentage of pages with good INP for home pages and secondary pages on desktop and mobile. For home pages, 97% of desktop pages have good INP, while 80% of mobile pages achieve good INP. For secondary pages, 95% of desktop pages have good INP, compared to 69% of mobile pages.",
-  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1226158281&format=interactive",
   sheets_gid="1721986308",
   sql_file="inp_by_page_type.sql"
 ) }}
@@ -147,7 +147,7 @@ TBT is a lab metric and is often used as a proxy for field-based responsiveness 
   image="distribution-of-tbt-per-page-2025.png",
   caption="TBT per page by percentile.",
   description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, desktop TBT is 0 milliseconds, while mobile is 127 milliseconds. At the 25th percentile, desktop TBT is 3 milliseconds, while mobile is 679 milliseconds. At the 50th percentile, desktop has 92 milliseconds of TBT, and mobile rises significantly to 1,916 milliseconds. At the 75th percentile, desktop reaches 336 milliseconds, with mobile at 4,193 milliseconds. Finally, at the 90th percentile, desktop TBT is 802 milliseconds, and mobile climbs to 7,555 milliseconds.",
-  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=566862109&format=interactive",
   sheets_gid="309018170",
   sql_file="tbt_by_percentile.sql"
 ) }}
