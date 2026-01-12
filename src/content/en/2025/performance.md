@@ -86,6 +86,86 @@ Secondary pages show a significant advantage over home pages in achieving good C
 
 While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects such as layout shift, loading performance, and interactivity is necessary to fully understand the user experience, which is what we will cover next.
 
+## Interactivity
+
+### Interaction to Next Paint (INP)
+
+[Interaction to Next Paint (INP)](https://web.dev/articles/inp) is calculated by observing all the interactions made with a page during the session and reporting the worst latency (for most sites). An interaction's latency consists of the single longest duration of a group of event handlers that drive the interaction, from the time the user begins the interaction to the moment the browser is next able to paint a frame.
+
+For an origin to receive a "good" INP score, at least 75% of all sessions need an INP score of 200 milliseconds or less. The INP score is the slowest or near-slowest interaction time for all interactions on the page. See [Details on how INP is calculated](https://web.dev/articles/inp#good-score) for more information.
+
+{{ figure_markup(
+  image="inp-performance-by-device-2025.png",
+  caption="Distribution of INP performance by device.",
+  description="Stacked bar chart showing INP performance by device, categorized as good (under 200 milliseconds), needs improvement (200–500 milliseconds), and poor (over 500 milliseconds). For desktop, 97% of websites have good INP, 2% need improvement, and less than 1% perform poorly. For phones, 77% of websites have good INP, 21% need improvement, and 3% perform poorly.",
+  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  sheets_gid="1060077014",
+  sql_file="inp_by_device.sql"
+) }}
+
+In 2025, mobile INP performance showed encouraging improvement, with 77% of websites achieving good scores—up from 74% in 2024. This 3 percentage point gain represents meaningful progress, as millions of websites now deliver more responsive experiences to mobile users. Desktop performance remained exemplary at 97%, maintaining the high standard established in previous years.
+
+Notably, the mobile-desktop performance gap has begun to narrow, shrinking from 23 percentage points in 2024 to 20 percentage points in 2025. While a 20 percentage point gap remains substantial, this marks the first measurable step toward closing the divide. The trend demonstrates that mobile optimization efforts are gaining traction across the web.
+
+{{ figure_markup(
+  image="mobile-inp-performance-by-rank-2025.png",
+  caption="INP performance on mobile devices segmented by rank.",
+  description="Stacked bar chart showing mobile INP performance by website rank, categorized into good (under 200 milliseconds), needs improvement (200–500 milliseconds), and poor (over 500 milliseconds). For the top 1,000 websites, 63% have good INP, 32% need improvement, and 5% perform poorly. For the top 10,000 websites, 56% are in the good range, 38% need improvement, and 6% are poor. In the top 100,000, 56% are good, 38% need improvement, and 6% are poor. For the top 1,000,000 websites, 64% have good INP, 31% need improvement, and 5% are poor. As the rank increases to the top 10,000,000 websites, 76% are good, 21% need improvement, and 3% are poor. Finally, for all websites, 77% have good INP, 21% need improvement, and 3% are poor.",
+  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  sheets_gid="1354135914",
+  sql_file="inp_by_rank.sql"
+) }}
+
+The most popular websites showed remarkable INP improvement in 2025, with the top 1,000 sites jumping from 53% to 63% good scores—a 10 percentage point gain that outpaced all other categories. This signals that high-traffic websites are prioritizing interactivity optimization, likely driven by the direct impact on user engagement and business metrics.
+
+While popular sites still lag behind the overall average of 77%, the gap has narrowed significantly. The top 1,000 sites were 21 percentage points below average in 2024 but only 14 percentage points below in 2025—the fastest rate of improvement observed across any category.
+
+This pattern reflects the unique challenges faced by high-traffic websites: more complex functionality, richer interactive features, heavier third-party integrations, and diverse user interaction patterns. E-commerce platforms, social media sites, and news portals inherently require more JavaScript execution than simpler websites, making good INP scores harder to achieve.
+
+The substantial year-over-year improvements suggest that major websites are successfully tackling these challenges through code splitting, interaction optimization, and selective feature loading. As the most visited sites continue to enhance their performance, they set higher standards and provide valuable optimization patterns for the broader web ecosystem.
+
+{{ figure_markup(
+  image="good-inp-for-home-pages-and-secondary-pages-2025.png",
+  caption="Good INP performance for home pages and secondary pages.",
+  description="Bar chart showing the percentage of pages with good INP for home pages and secondary pages on desktop and mobile. For home pages, 97% of desktop pages have good INP, while 80% of mobile pages achieve good INP. For secondary pages, 95% of desktop pages have good INP, compared to 69% of mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  sheets_gid="1721986308",
+  sql_file="inp_by_page_type.sql"
+) }}
+
+In a notable shift from 2024, home pages now demonstrate significantly better INP performance than secondary pages on mobile devices. Mobile home pages achieved 80% good INP scores—a 7 percentage point improvement over 2024—while secondary pages declined to 69%, creating an 11 percentage point gap. This divergence represents a change from 2024, when home and secondary pages performed nearly identically (73% vs 72% on mobile). Desktop performance remained strong for both page types at 97% and 95% respectively.
+
+The improvement in home page INP likely reflects increased optimization focus on landing pages, where first impressions are critical. However, the decline in secondary page performance warrants attention, as these pages often contain more complex interactions like filters, carousels, and form validation, while also accumulating JavaScript from third-party widgets and analytics that activate deeper in the user journey.
+
+### Total Blocking Time (TBT)
+
+[Total Blocking Time (TBT)](https://web.dev/articles/tbt) measures the total amount of time after First Contentful Paint (FCP) where the main thread was blocked for long enough to prevent input responsiveness.
+
+TBT is a lab metric and is often used as a proxy for field-based responsiveness metrics like INP, which can only be collected using real user monitoring. [Lab-based TBT and field-based INP](https://colab.research.google.com/drive/12lJmAABgyVjaUbmWvrbzj9BkkTxw6ay2) are correlated, meaning TBT results generally reflect INP trends. A TBT below 200 milliseconds is considered good, but most mobile websites exceed this target significantly.
+
+{{ figure_markup(
+  image="distribution-of-tbt-per-page-2025.png",
+  caption="TBT per page by percentile.",
+  description="Bar chart showing the distribution of Total Blocking Time (TBT) per page in milliseconds (ms) by percentile. At the 10th percentile, desktop TBT is 0 milliseconds, while mobile is 127 milliseconds. At the 25th percentile, desktop TBT is 3 milliseconds, while mobile is 679 milliseconds. At the 50th percentile, desktop has 92 milliseconds of TBT, and mobile rises significantly to 1,916 milliseconds. At the 75th percentile, desktop reaches 336 milliseconds, with mobile at 4,193 milliseconds. Finally, at the 90th percentile, desktop TBT is 802 milliseconds, and mobile climbs to 7,555 milliseconds.",
+  chart_url="https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/",
+  sheets_gid="309018170",
+  sql_file="tbt_by_percentile.sql"
+) }}
+
+The median TBT on mobile increased to 1,916 milliseconds in 2025—up 58% from 1,209 milliseconds in 2024. Desktop TBT also rose from 67 milliseconds to 92 milliseconds. At the 90th percentile, mobile users now face over 7.5 seconds of blocking time before the page becomes fully interactive.
+
+This presents an apparent contradiction: while field-based INP scores improved, lab-based TBT worsened significantly. Several factors explain this divergence. Sites may have optimized critical interactions that impact INP while allowing background JavaScript to grow heavier. Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices. Modern code-splitting strategies defer non-critical JavaScript after initial interactions, reducing early blocking captured by INP while still contributing to total blocking time. Additionally, third-party scripts continue to proliferate, executing outside critical interaction paths.
+
+The widening gap between desktop (92ms median) and mobile (1,916ms median) reinforces the persistent performance inequality between device classes, suggesting that despite INP improvements, the fundamental challenge of main thread blocking has intensified.
+
+### Interactivity conclusion
+
+The main takeaways of the interactivity results are:
+
+* Mobile INP improved to 77% (up from 74%), narrowing the mobile-desktop gap to 20 percentage points
+* Top 1,000 websites achieved the strongest gains, improving from 53% to 63% good INP
+* Home pages now outperform secondary pages significantly (80% vs 69% on mobile)
+* TBT increased 58% despite INP improvements, indicating heavier overall JavaScript execution
 
 ## Visual Stability
 
