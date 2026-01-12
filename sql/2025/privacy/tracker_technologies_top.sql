@@ -29,5 +29,5 @@ FROM `httparchive.crawl.pages`,
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop,
+|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
 |> ORDER BY websites_count_desktop + websites_count_mobile DESC

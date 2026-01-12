@@ -1,23 +1,19 @@
 """
 Retrieves breach data from the Have I Been Pwned API and loads it into BigQuery.
-
 """
 
 import pandas as pd
 import requests  # pylint: disable=import-error
 from bq_writer import bigquery, write_to_bq
 
-# Fetch breach data from API
 response = requests.get("https://haveibeenpwned.com/api/v2/breaches", timeout=10)
 breaches = response.json()
 df = pd.DataFrame(breaches)
 
-# Convert date fields
 df["BreachDate"] = pd.to_datetime(df["BreachDate"], errors="coerce")
 df["AddedDate"] = pd.to_datetime(df["AddedDate"], errors="coerce")
 df["ModifiedDate"] = pd.to_datetime(df["ModifiedDate"], errors="coerce")
 
-# Define BigQuery schema
 schema = [
     bigquery.SchemaField("Name", "STRING"),
     bigquery.SchemaField("Title", "STRING"),
@@ -41,5 +37,4 @@ schema = [
     bigquery.SchemaField("DisclosureUrl", "STRING"),
 ]
 
-# Write to BigQuery
 write_to_bq(df, "httparchive.almanac.breaches", schema, write_disposition="WRITE_TRUNCATE")
