@@ -229,9 +229,7 @@ More extensible platforms improved less. WordPress and Drupal each gained around
 
 ### Largest Contentful Paint (LCP)
 
-Largest Contentful Paint measures how quickly the main content of a page appears and is one of the most important metrics for perceived load speed. In 2025, 53.77% of sites achieved a "good" LCP score, reflecting ongoing progress but also significant remaining variability.
-
-Most CMS platforms show year-over-year LCP improvements. Wix leads with roughly a 10% gain, followed by Squarespace (+7%) and Duda (+5%). WordPress, Joomla, and Drupal each improve by about 4%, while Weebly slips slightly (around -1%). These differences align with platform-level choices around asset loading, image optimization, and default configurations.
+Largest Contentful Paint measures how quickly the main content of a page appears and is one of the most important metrics for perceived load speed.
 
 {{ figure_markup(
   image="mobile-year-over-year-cms-lcp-performance.png",
@@ -245,11 +243,13 @@ Most CMS platforms show year-over-year LCP improvements. Wix leads with roughly 
   )
 }}
 
+In 2025, 53.77% of sites achieved a "good" LCP score, reflecting ongoing progress but also significant remaining variability.
+
+Most CMS platforms show year-over-year LCP improvements. Wix leads with roughly a 10% gain, followed by Squarespace (+7%) and Duda (+5%). WordPress, Joomla, and Drupal each improve by about 4%, while Weebly slips slightly (around -1%). These differences align with platform-level choices around asset loading, image optimization, and default configurations.
+
 ### Cumulative Layout Shift (CLS)
 
-Cumulative Layout Shift captures how visually stable a page is while it loads, by measuring unexpected layout movements. CLS remains one of the more uneven metrics across platforms, reflecting challenges in managing late-loading content, embeds, and dynamic layouts.
-
-Wix again shows the strongest year-over-year improvement (around +8%), followed by Duda (~+4%), then Joomla and 1C-Bitrix (each around +3%). Other platforms show little change, while Weebly experiences a notable decline (about -8%). Overall, CLS outcomes seem to depend heavily on implementation discipline, not just platform choice.
+Cumulative Layout Shift captures how visually stable a page is while it loads, by measuring unexpected layout movements.
 
 {{ figure_markup(
   image="mobile-year-over-year-cms-cls-performance.png",
@@ -263,11 +263,13 @@ Wix again shows the strongest year-over-year improvement (around +8%), followed 
   )
 }}
 
+CLS remains one of the more uneven metrics across platforms, reflecting challenges in managing late-loading content, embeds, and dynamic layouts.
+
+Wix again shows the strongest year-over-year improvement (around +8%), followed by Duda (~+4%), then Joomla and 1C-Bitrix (each around +3%). Other platforms show little change, while Weebly experiences a notable decline (about -8%). Overall, CLS outcomes seem to depend heavily on implementation discipline, not just platform choice.
+
 ### Interaction to Next Paint (INP)
 
-Interaction to Next Paint measures how responsive a page feels across all user interactions, not just at initial load. Compared with LCP and CLS, INP improvements are modest, underscoring how difficult it is to manage JavaScript, long tasks, and third-party scripts.
-
-In 2025, 1C-Bitrix leads in INP improvement (about +10%), followed by Squarespace and Duda (around +6%), Joomla and Tilda (about +5%), and Drupal (+3%). Weebly again sees a decline (-3%). Across the board, no CMS consistently delivers excellent INP at scale, suggesting that interaction latency remains a shared problem.
+Interaction to Next Paint measures how responsive a page feels across all user interactions, not just at initial load.
 
 {{ figure_markup(
   image="mobile-year-over-year-cms-inp-performance.png",
@@ -281,13 +283,15 @@ In 2025, 1C-Bitrix leads in INP improvement (about +10%), followed by Squarespac
   )
 }}
 
+Compared with LCP and CLS, INP improvements are modest, underscoring how difficult it is to manage JavaScript, long tasks, and third-party scripts.
+
+In 2025, 1C-Bitrix leads in INP improvement (about +10%), followed by Squarespace and Duda (around +6%), Joomla and Tilda (about +5%), and Drupal (+3%). Weebly again sees a decline (-3%). Across the board, no CMS consistently delivers excellent INP at scale, suggesting that interaction latency remains a shared problem.
+
 ## Lighthouse quality metrics
 
-Lighthouse offers a complementary, lab-based perspective on site quality across performance, accessibility, SEO, and best practices. While Lighthouse scores do not directly reflect real-user experience, they help compare typical implementations under consistent test conditions.
+Lighthouse offers a complementary, lab-based perspective on site quality across Performance, Accessibility, SEO, and Best Practices. While Lighthouse scores do not directly reflect real-user experience, they help compare typical implementations under consistent test conditions.
 
 ### Performance
-
-Median Lighthouse performance scores improved between 2024 and 2025 on both desktop and mobile, with desktop consistently scoring higher. On desktop, Wix (88) and Duda (81) are out in front, followed by Webflow (74). WordPress records a median score of 63, with several platforms close by.
 
 {{ figure_markup(
   image="median-lighthouse-performance-score.png",
@@ -301,11 +305,11 @@ Median Lighthouse performance scores improved between 2024 and 2025 on both desk
   )
 }}
 
+Median Lighthouse performance scores improved between 2024 and 2025 on both desktop and mobile, with desktop consistently scoring higher. On desktop, Wix (88) and Duda (81) are out in front, followed by Webflow (74). WordPress records a median score of 63, with several platforms close by.
+
 On mobile, scores are lower across the board. Wix leads with 64, followed by Duda (59), Webflow (58), and Shopify (52). WordPress (40) and Joomla (39) sit behind this group, while PrestaShop and 1C-Bitrix post the lowest scores. Year over year, Wix shows the biggest jump on mobile (from 55 to 64), while most other platforms see only modest movement or remain stable. These lab scores are best read as context, not as a proxy for real-user experience.
 
 ### SEO
-
-In 2025, Lighthouse SEO scores remain high across CMS platforms, with most clustered between 92 and 100 on both mobile and desktop. Webflow and Wix achieve perfect scores, while WordPress, Duda, and Joomla remain around 92. The small year-over-year changes suggest that basic SEO best practices are now widely baked into modern CMS platforms.
 
 {{ figure_markup(
   image="median-lighthouse-seo-score.png",
@@ -318,6 +322,8 @@ In 2025, Lighthouse SEO scores remain high across CMS platforms, with most clust
   height=559
   )
 }}
+
+In 2025, Lighthouse SEO scores remain high across CMS platforms, with most clustered between 92 and 100 on both mobile and desktop. Webflow and Wix achieve perfect scores, while WordPress, Duda, and Joomla remain around 92. The small year-over-year changes suggest that basic SEO best practices are now widely baked into modern CMS platforms.
 
 ### Accessibility
 
@@ -359,7 +365,7 @@ Year-over-year, some platforms improve notably—particularly Wix (from 79 to 93
 
 ### Page weight overview
 
-"Page weight" is the total size of all resources a browser needs to download to render a page. Over the past decade, page weight has steadily increased. In 2025, the average page is roughly 2.67 MB on desktop and 2.28 MB on mobile. Both figures exceed the commonly recommended range of 1–1.5 MB, reflecting continued bloat across the web.
+"Page weight" is the total size of all resources a browser needs to download to render a page. Over the past decade, page weight has steadily increased.
 
 {{ figure_markup(
   image="distribution-of-cms-page-weight.png",
@@ -370,6 +376,8 @@ Year-over-year, some platforms improve notably—particularly Wix (from 79 to 93
   sql_file="TODO.sql"
   )
 }}
+
+In 2025, the average page is roughly 2.67 MB on desktop and 2.28 MB on mobile. Both figures exceed the commonly recommended range of 1–1.5 MB, reflecting continued bloat across the web.
 
 Most of this growth comes from images and JavaScript, while HTML remains a relatively small part of total transfer size. Despite growing awareness of performance issues, page weight keeps rising. Pages that take longer than three seconds to load tend to have much higher bounce rates, and additional delays are strongly linked to lower conversion rates. For mobile users on slow or metered connections, heavy pages can be a real barrier to access.
 
@@ -417,8 +425,6 @@ JavaScript is the fastest-growing part of page weight and one of the most import
 
 Page builders and component-based systems often increase JavaScript use by adding client-side rendering and interaction layers. While newer approaches try to load fewer unnecessary scripts, JavaScript remains a major driver of interaction latency and responsiveness issues discussed earlier.
 
-As with overall page weight, JavaScript costs vary significantly within extensible CMS ecosystems. Implementation choices matter more than platform choice alone.
-
 {{ figure_markup(
   image="median-cms-size-of-javascript.png",
   caption="Median CMS size of JavaScript.",
@@ -428,6 +434,8 @@ As with overall page weight, JavaScript costs vary significantly within extensib
   sql_file="TODO.sql"
   )
 }}
+
+As with overall page weight, JavaScript costs vary significantly within extensible CMS ecosystems. Implementation choices matter more than platform choice alone.
 
 ### CSS and HTML
 
@@ -454,7 +462,6 @@ CSS and HTML make up a smaller share of total page weight than images and JavaSc
 }}
 
 Block-based and component-driven systems increasingly generate CSS dynamically. When caching and reuse are done well, this can reduce unused styles. When handled poorly, it adds complexity and overhead. These trade-offs reflect the broader architectural themes explored earlier in the chapter.
-
 
 ### Page weight, performance, and variance
 
