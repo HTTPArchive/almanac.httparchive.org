@@ -37,7 +37,7 @@ A headless or composable CMS separates content management from the site or app t
 
 ## CMS adoption
 
-By 2025, CMS adoption reflects a web that’s both mature and increasingly specialized. Almost every site now runs on some kind of CMS, but how these platforms are used varies a lot by region, traffic level, and underlying technology. Instead of everyone standardizing on a single go-to system, the market is clearly fragmenting, with different platforms leading in different parts of the world, for different use cases, and at different scales.
+By 2025, CMS adoption reflects a web that's both mature and increasingly specialized. Almost every site now runs on some kind of CMS, but how these platforms are used varies a lot by region, traffic level, and underlying technology. Instead of everyone standardizing on a single go-to system, the market is clearly fragmenting, with different platforms leading in different parts of the world, for different use cases, and at different scales.
 
 ### Overall adoption
 
