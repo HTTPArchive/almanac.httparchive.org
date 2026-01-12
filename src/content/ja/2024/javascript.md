@@ -7,7 +7,7 @@ hero_alt: Web Almanacのキャラクターが自転車をこいでウェブサ�
 authors: [haddiamjad, NishuGoel]
 reviewers: [tunetheweb]
 editors: [tunetheweb]
-analysts: [onurguler18, nrllh]
+analysts: [onurglr, nrllh]
 translators: [ksakae1216]
 results: https://docs.google.com/spreadsheets/d/16isMe5_rvmRmJHtK5Je66AhwO8SowGgq0EFqXyjEXw8/
 haddiamjad_bio: Amjadは、Virginia Techの4年目の博士課程の学生で、Virginia TechのDr. Muhammad Ali Gulzarの指導を受けています。<a hreflang="en" href="https://properdata.eng.uci.edu/researchers/">ProperData研究グループ</a>のメンバーであり、<a hreflang="en" href="https://nothingtohide.online/">NothingToHide?</a>ポッドキャストの共同ホストです。プログラム分析技術を使用してインターネットのセキュリティとプライバシーの問題を解決することに焦点を当てた研究を行っています。
