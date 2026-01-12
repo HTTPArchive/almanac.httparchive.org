@@ -9,9 +9,9 @@ analysts: [onurglr]
 editors: [tunetheweb]
 translators: []
 diekus_bio: Diego Gonzalez is a Costa Rican engineer working on web platform features for the Microsoft Edge browser.
-MichaelSolati_bio: TODO
+MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web.
 results: https://docs.google.com/spreadsheets/d/1mEbm1NTrqy8B4l5zY3gPgbKWxyNdWOPfVmi1pDIyMus/edit
-featured_quote: _The PWA concept was coined 10 years ago_, and it is with great pride that we look at the state of this set of technologies, one decade after its ideation.
+featured_quote: The PWA concept was coined 10 years ago, and it is with great pride that we look at the state of this set of technologies, one decade after its ideation.
 featured_stat_1: 10x
 featured_stat_label_1: Approximate surge in percentage of Service Worker usage.
 featured_stat_2: 78
