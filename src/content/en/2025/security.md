@@ -40,7 +40,7 @@ Beyond measuring adoption, we also explore the drivers behind the adoption of se
   sql_file="https_request_over_time.sql",
 ) }}
 
-The share of requests that are being sent using HTTPS rather than using plain HTTP rises by 0.74% on mobile compared to the 2024 edition of Web Almanac.
+The share of requests that are being sent using HTTPS rather than using plain HTTP creeps ever closer to 100%, rising by another 0.74% on mobile compared to [the 2024 edition of Web Almanac](../2024/security#fig-1).
 
 {{ figure_markup(
   image="https-usage.png",
