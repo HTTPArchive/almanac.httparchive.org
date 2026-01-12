@@ -293,6 +293,8 @@ We've seen the latest data on what the most used service worker and manifest fea
 
 Overall, there are considerable changes to the data from [the 2022 Web Almanac](../2022/pwa#fig-10). Service worker usage has taken a huge leap from around 1.7% to 18.9%. That is around a 10 times increase in adoption. Manifest usage is slightly higher but remains at a very similar spot as it was 3 years ago.
 
+Digging into this more, it looks like a lot of the growth is due to Google Tag Manager enabling service workers.
+
 ## PWAs and Fugu APIs
 
 These are the top 10 used advanced capabilities in PWAs for 2025.
