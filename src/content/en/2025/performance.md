@@ -3,12 +3,15 @@
 title: Performance
 description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
-authors: []
-reviewers: []
-analysts: []
+authors: [25prathamesh, himanshujariyal, hfhashmi, aarontgrogg]
+reviewers: [siakaramalegos, tunetheweb]
+analysts: [tannerhodges]
 editors: []
 translators: []
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
+himanshujariyal_bio: "TODO"
+25prathamesh_bio: "TODO"
+hfhashmi_bio: "TODO"
 featured_quote: ...
 featured_stat_1: ...
 featured_stat_label_1: ...
@@ -30,6 +33,9 @@ These considerations have influenced the development and adoption of user-centri
 These metrics are complemented by traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, along with measures of resource loading behavior like Fonts, Images and JavaScript. Together, these signals provide important context for understanding where performance bottlenecks occur and how they influence overall page behavior. A comprehensive overview of modern web performance metrics and measurement techniques can be found at <a hreflang="en" href="https://web.dev/performance">web.dev</a>. 
 
 The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences.
+
+### Data Source
+TODO: Add a short closing section describing the data sources, collection period, data volume, and browser coverage used in this chapter.
 
 ## Core Web Vitals Summary
 
@@ -86,7 +92,7 @@ Secondary pages show a significant advantage over home pages in achieving good C
 
 While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects of loading performance, interactivity and visual stability is necessary to fully understand the user experience, which is what we will cover in the following sections.
 
-## Loading Speed - In Progress (Humaira)
+## Loading Speed
 
 A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*.
 
@@ -130,6 +136,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 The TTFB data provides partial insight into these FCP gains between 2024 and 2025\. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations contributed reasonably (\~half) to overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general. Given that there are no significant improvements in number of pages passing the Lighthouse [render-blocking resources audit](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources)  this year compared to 2024, it would seem that a key factor improving FCP across both device types could be the much [improved rendering engine](https://thinksproutinfotech.com/news/how-google-chrome-received-the-highest-ever-speedometer-score/) in Chrome since 2024, which reduces rendering times regardless of individual website optimizations.
 
 ### More subsections upcoming
+TODO (Humaira)
 
 ## Interactivity
 
@@ -301,9 +308,12 @@ TODO (Himanshu)
 TODO (Himanshu)
 
 ### Conclusion
-Overall, Visual stability across the web has advanced significantly compared to earlier years, particularly on mobile devices. Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. 
 
-However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
+The main takeaways are:
+
+- Visual stability across the web has advanced significantly over the years, particularly on mobile devices. 
+- Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. 
+- However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
 ## Early Hints 
 TODO (Unassigned)
