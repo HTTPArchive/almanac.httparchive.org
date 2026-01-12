@@ -842,9 +842,11 @@ A multitude of protection mechanisms can be configured through HTTP response hea
 
 The strongest risers since the 2024 edition are `Strict-Transport-Security` (+4.02%), `Content-Security-Policy` (+3.39%) and `X-Content-Type-Options` (+2.30%).
 
-#### Origin-Agent-Cluster
+#### `Origin-Agent-Cluster`
 
 The [`Origin-Agent-Cluster`](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. the browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
+
+Usage remains low with only 0.47% of mobile sites, and 0.38% desktop sites using this, but let's dig into what they are using it for:
 
 <figure>
   <table>
