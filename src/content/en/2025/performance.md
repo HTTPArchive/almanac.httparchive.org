@@ -86,8 +86,50 @@ Secondary pages show a significant advantage over home pages in achieving good C
 
 While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects of loading performance, interactivity and visual stability is necessary to fully understand the user experience, which is what we will cover in the following sections.
 
-## Loading Speed
-In Progress (Humaira)
+## Loading Speed - In Progress (Humaira)
+
+A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*.
+
+### First Contentful Paint
+
+To understand the user's first impression of a webpage's speed, we look at [First Contentful Paint (FCP)](https://web.dev/articles/fcp?hl=en). This metric captures the exact time it takes for a page to begin displaying content, measured from the point the user first requested the page. Any page that has a FCP score under 1.8 seconds is considered  'Good', scores between 1.8 and 3.0 seconds indicate that the page 'Needs Improvement,' and a score over 3.0 seconds is considered 'Poor' performance.
+
+{{ figure_markup(
+  image="fcp-performance-by-year-and-device-2025.png",
+  caption=" Percentage of websites having good, needs improvement, and poor FCP, segmented by year and device type.",
+  description="Stacked bar chart showing TTFB (Time to First Byte) performance for 2024 and 2025, for both desktop and mobile device types. Each bar chart has 3 categories: good (under 0.8 seconds), needs improvement (0.8–1.8 seconds), and poor (over 1.8 seconds). In 2024, 68% of desktop websites had good TTFB, 22% needed improvement, and 10% performed poorly. In 2025, 70% of desktop websites have good TTFB, 21% need improvement, and 9% perform poorly. For mobile websites in 2024, 51% of websites had good TTFB, 31% needed improvement, and 18% performed poorly. In 2025, 55% of mobile websites have good TTFB, 29% need improvement, and 16% perform poorly.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1596764241&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="web_vitals_by_device.sql"
+  )
+}}
+
+Based on real user data from [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), FCP performance has improved across both desktop and mobile devices since 2024\. Specifically, the proportion of desktop sites achieving a 'Good' FCP rose by 2%, while mobile sites saw a 4% increase.   
+   
+While the increase is not drastic, we can still attempt to understand what's driving these FCP improvements. We can view the metric as consisting of two distinct parts. The first is the **initial network and server response**, captured by [Time to First Byte (TTFB)](https://web.dev/articles/ttfb). This includes connection setup (such as the TCP/QUIC handshake), redirects, and server processing time, and is primarily influenced by network infrastructure and protocol efficiency. The second part is **client-side rendering**, which begins after the first byte is received. This is the time it takes for browsers to parse and render the first part of the webpage's content, and is influenced by browser engine, render-blocking resources, and user hardware quality.
+
+{{ figure_markup(
+  image="ttfb-performance-by-year-and-device-2025.png",
+  caption="Percentage of websites having good, needs improvement, and poor TTFB, segmented by year and device type.",
+  description="Stacked bar chart showing TTFB (Time to First Byte) performance for 2024 and 2025, for both desktop and mobile device types. Each bar chart has 3 categories: good (under 0.8 seconds), needs improvement (0.8–1.8 seconds), and poor (over 1.8 seconds). In 2024, 54% of desktop websites had good TTFB, 33% needed improvement, and 13% performed poorly. In 2025, 55% of desktop websites have good TTFB, 33% need improvement, and 12% perform poorly. For mobile websites in 2024, 42% of websites had good TTFB, 40% needed improvement, and 19% performed poorly. In 2025, 44% of mobile websites have good TTFB, 40% need improvement, and 17% perform poorly.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=220208816&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="web_vitals_by_device.sql"
+  )}}
+
+{{ figure_markup(
+  image="pages-passing-render-blocking-audit-2025.png",
+  caption="Percentage of pages passing the render-blocking Lighthouse audit , segmented by device and year.",
+  description="Bar chart showing the percentage of pages passing the render-blocking resources audit for 2024 and 2025, comparing desktop and mobile device types. In 2024, 13% of desktop pages passed the audit and 14% of mobile pages passed. In 2025, 13% of desktop pages passed the audit and 15% of mobile pages passed. Mobile pages show a slight improvement from 2024 to 2025, while desktop pages remain unchanged.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=102924133&format=interactive",
+  sheets_gid="1432298892",
+  sql_file="render_blocking_resources.sql"
+  )
+}}
+
+The TTFB data provides partial insight into these FCP gains between 2024 and 2025\. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations contributed reasonably (\~half) to overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general. Given that there are no significant improvements in number of pages passing the Lighthouse [render-blocking resources audit](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources)  this year compared to 2024, it would seem that a key factor improving FCP across both device types could be the much [improved rendering engine](https://thinksproutinfotech.com/news/how-google-chrome-received-the-highest-ever-speedometer-score/) in Chrome since 2024, which reduces rendering times regardless of individual website optimizations.
+
+### More subsections upcoming
 
 ## Interactivity
 
