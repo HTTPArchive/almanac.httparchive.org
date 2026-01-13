@@ -286,9 +286,7 @@ While BFCache behavior is ultimately handled by the browser, developers can <a h
 
 Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
 
-Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. 
-
-Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
+Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
 
 {{ figure_markup(
   image="unload-handler-usage.png",
@@ -300,9 +298,22 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-It is interesting to see that unload handler usage decreases consistently as the site rank increases. 
+It is interesting to see that unload handler usage decreases consistently as the site rank increases. Among higher-traffic websites (top 1000 sites), unload handlers are present on 28% of desktop pages and 20% of mobile pages, and this share declines steadily across lower-ranked sites, reaching 11% on desktop and 10% on mobile. At every rank, desktop pages exhibit higher unload handler usage than mobile, suggesting that unload handlers remain more common on larger, more complex sites than across the long tail of the web. Possibly due to top sites relying more heavily on analytics, advertising, and legacy lifecycle patterns that register unload handlers.
 
-Among higher-traffic websites (top 1000 sites), unload handlers are present on 28% of desktop pages and 20% of mobile pages, and this share declines steadily across lower-ranked sites, reaching 11% on desktop and 10% on mobile. At every rank, desktop pages exhibit higher unload handler usage than mobile, suggesting that unload handlers remain more common on larger, more complex sites than across the long tail of the web. Possibly due to top sites relying more heavily on analytics, advertising, and legacy lifecycle patterns that register unload handlers.
+Another common reason for websites to fall in the bfcache ineligibility category is the use of the `Cache-Control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request. 
+
+{{ figure_markup(
+  caption="Percentage of sites using `Cache-Control: no-store`.",
+  content="23.4%",
+  classes="big-number",
+  sheets_gid="374304732",
+  sql_file="bfcache_cachecontrol_nostore.sql"
+)
+}}
+
+23.4% of the sites now use `Cache-Control: no-store`, up from 21% [in 2024](../2024/performance#backforward-cache-bfcache). This increase may reflect the growing prevalence of authenticated and personalized experiences, stricter security or compliance requirements, and evolving browser behavior that has reduced the performance impact of `Cache-Control: no-store`, particularly with respect to BFCache eligibility.
+
+Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome has changed this behavior in 2025</a> and now allows such pages into BFCache when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
 
 ### Images
 TODO (Himanshu)
