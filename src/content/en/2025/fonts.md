@@ -21,19 +21,46 @@ featured_stat_label_3: font requests served as WOFF2
 
 ## Introduction
 
-When the HTTP Archive first began gathering data on web typography in 2011, the use of custom web fonts was in the low single digits. Only about 3-5% of websites at the time delivered self-hosted fonts via `@font-face` or used services like Typekit, Fonts.com, or Google Web Fonts. Every other site in 2011 was limited to the small handful of "web-safe" system fonts (Arial, Courier, Times, etc.) that were available on every user's device. But web fonts quickly rose to become the norm when designers realized that custom typography could distinguish their visual identity from other, more generic sites. By 2015, web fonts were used by over half of websites. They reached around 75% adoption by 2020. Today, the question is less about whether a website uses web fonts, but rather which specific typefaces it displays and whether they use font features to display their full expressive potential.
+When the HTTP Archive first began gathering data on web typography in 2011, the use of custom web fonts was in the low single digits. Only about 3-5% of websites at the time delivered self-hosted fonts via `@font-face` or used services like Typekit, Fonts.com, or Google Web Fonts. Every other site in 2011 was limited to the small handful of "web-safe" system fonts (Arial, Courier, Times, etc.) that were available on every user's device.
 
-Web font usage continues to grow, although its growth has naturally slowed as the spread of web fonts reaches saturation on the web (for all but the largest CJK character sets). In 2025, web fonts were found on roughly 88% of websites, up slightly from about 87% in 2024. (The metric here is the share of pages that request web font files, which effectively represents the percentage of websites using web fonts.) This widespread usage highlights how far web typography has come since the days when developers were limited to core system fonts, though a notable minority (around 12% of sites) still stick to those older defaults.
+Web fonts quickly rose to become the norm when designers realized that custom typography could distinguish their visual identity from other, more generic sites. By 2015, web fonts were used by over half of websites. They reached around 75% adoption by 2020.
 
-To summarize a few year-over-year changes in font service usage: Google Fonts remains the leading provider, but its share has dipped slightly as self-hosting rises. This year's crawl found Google Fonts on about 54% of desktop sites and 47% of mobile sites (alone or alongside other sources), down from 57% on desktop in 2024. Adobe Fonts accounts for roughly 4-5% of sites, reflecting a modest increase due to its integration via Creative Cloud and the appeal of its premium type library. The icon-font service Font Awesome is now used by about 3-4% of sites, down slightly from 2024. Font Awesome remains popular for icons (of course), though it faces growing competition from alternative icon techniques like inline SVG. Other web font services collectively make up less than 1% of usage, continuing a downward trend.
+Today, the question is less about whether a website uses web fonts, but rather which specific typefaces it displays and whether they use font features to display their full expressive potential.
 
-At the same time, font delivery methods on the web have been shifting. An increasing number of sites are choosing to self-host their font files (serving fonts from their own servers) rather than relying exclusively on third-party CDNs. Many other sites use a mix of both approaches. Last year's data showed a clear rise in exclusive self-hosting alongside a decline in sites that combined self-hosting with external services, and this trend continues in 2025. In short, web fonts are nearly universal on the web, but more sites are taking font delivery into their own hands instead of depending on an external provider.
+At the same time, font delivery methods on the web have been shifting. An increasing number of sites are choosing to self-host their font files (serving fonts from their own servers) rather than relying exclusively on third-party CDNs. Many other sites use a mix of both approaches. Last year's data showed a clear rise in exclusive self-hosting alongside a decline in sites that combined self-hosting with external services, and we investigate if this trend continues in 2025.
 
-To capture the rest of the story, we also have to look beyond where fonts are hosted to understand how they're shipped and rendered. The 2025 data shows continued consolidation on WOFF2 (now about 65% of requests, and over 80% if you include WOFF 1.0), alongside steadily larger font payloads—especially for CJK, multi-script, and variable fonts. That's why performance techniques are so visible in this year's crawl: `font-display` is specified on about half of pages (with `swap` dominant for text and `block` mostly reserved for icon sets), and resource hints like `preconnect` and `preload` are holding steady or inching up as developers try to get fonts into the critical path sooner. In other words, the web isn't just using fonts, it's actively managing them for speed and layout stability.
+We also look at font providers (is Google Fonts dominance continuing) as well as how fonts are being loaded onto sites, as well as which fonts are used in, how non-Latin languages are supported, as well as some newer, more advanced topics.
 
-The most used web fonts also continue to narrow around a recognizable canon. A handful of Google-originated sans-serifs (Roboto, Open Sans, Montserrat, Poppins, Lato), plus ubiquitous icon kits (Font Awesome, Swiper's icons, legacy Bootstrap glyphs), account for a huge share of CSS declarations—and the same families increasingly show up in variable form, which is why variable-font usage has climbed to roughly 4 in 10 sites. At the same time, open licensing (especially OFL) and large, multi-script projects are pushing the web to be more global: Cyrillic and Greek coverage keep growing, Japanese and Korean web fonts are commonly delivered via Google's CDN, and only the very largest Chinese fonts still lag because of size. So the executive summary for 2025 is this: web fonts are universal, delivery is tilting toward self-hosting, performance practices are normalized, a small set of families dominates real-world CSS, variable fonts are going mainstream, and ongoing open-source work is what's making possible this vast expansion of global typography. We explore these patterns and describe the current state of web typography in detail below.
+In short, web fonts are nearly universal on the web, but more sites are taking font delivery into their own hands instead of depending on an external provider. We explore these patterns and describe the current state of web typography in detail below.
+
+## Webfont usage
+
+Web font usage continues to grow, although its growth has naturally slowed as the spread of web fonts reaches saturation on the web (for all but the largest CJK character sets).
+
+{{ figure_markup(
+  caption="Percent of mobile pages using web fonts.",
+  content="88%",
+  classes="big-number",
+  sheets_gid="1528673930",
+  sql_file="fonts.sql"
+)
+}}
+
+In 2025, web fonts were found on roughly 88% of websites, up slightly from about 87% in 2024. (The metric here is the share of pages that request web font files, which effectively represents the percentage of websites using web fonts.)
+
+This widespread usage highlights how far web typography has come since the days when developers were limited to core system fonts, though a notable minority (around 12% of sites) still stick to those older defaults.
 
 ## Hosting and services
+
+{{ figure_markup(
+  image="font-services.png",
+  caption="Font services.",
+  description="Bar chart showing the usafe of various font services across desktop and mobile platforms. Self-hosted fonts are the most dominant choice, being used by over 71% of pages, while Google Fonts follows as the most popular third-party provider at approximately 47%. Other services such as Adobe and Font Awesome have much smaller footprints, each appearing on less than 4% of pages. The data shows a high degree of consistency between desktop and mobile usage across all categories, with only a slight decrease in Google Font usage on mobile devices.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1112950187&format=interactive",
+  sheets_gid="916250046",
+  sql_file="performance/fonts_services.sql"
+  )
+}}
 
 This year's Web Almanac crawl confirms that self-hosting is the most widespread means of delivering web fonts. About 72% of websites (both desktop and mobile) serve at least one font file from their own origin, either by self-hosting exclusively or by using a mix of self-hosted and externally hosted fonts. That figure is just over one percentage point higher than last year, and about 4-5 points higher than in 2022, indicating a steady increase. In other words, the rise in self-hosting that became apparent in 2022 is still continuing.
 
@@ -59,12 +86,6 @@ Every other service is essentially negligible at the web scale. Legacy services 
 
 Because most sites don't rely on just one source for web typography, it's useful to look at how they mix and match delivery. In practice the web has converged on a few predictable combinations—self-hosting only, Google only, or a hybrid of the two.
 
-1. **Google Fonts together with self-hosted fonts**: used by ~36% of desktop sites and ~32% of mobile sites. This hybrid approach is very common: for example, a site might self-host some brand or icon fonts while also pulling in a Google-hosted font for body text (or vice versa).
-
-2. **Self-hosted fonts only**: used by ~32% of desktop sites and ~36% of mobile sites (approximately 34% of sites overall). This means all custom fonts on the page are served from the site's own domain. As noted, this share has grown from about 30% last year to about one-third of sites this year.
-
-3. **Google Fonts only**: used by ~13% of desktop sites and ~12% of mobile sites. These sites exclusively rely on Google's CDN for their font needs (often via the standard `<link>` to Google's stylesheet).
-
 {{ figure_markup(
   image="popular-font-combos-desktop.png",
   caption="Popular font hosting combinations on desktop sites.",
@@ -89,6 +110,12 @@ Because most sites don't rely on just one source for web typography, it's useful
   )
 }}
 
+1. **Google Fonts together with self-hosted fonts**: used by ~36% of desktop sites and ~32% of mobile sites. This hybrid approach is very common: for example, a site might self-host some brand or icon fonts while also pulling in a Google-hosted font for body text (or vice versa).
+
+2. **Self-hosted fonts only**: used by ~32% of desktop sites and ~36% of mobile sites (approximately 34% of sites overall). This means all custom fonts on the page are served from the site's own domain. As noted, this share has grown from about 30% last year to about one-third of sites this year.
+
+3. **Google Fonts only**: used by ~13% of desktop sites and ~12% of mobile sites. These sites exclusively rely on Google's CDN for their font needs (often via the standard `<link>` to Google's stylesheet).
+
 Together, these three configurations account for roughly four out of five websites. Every other combination (such as using Google + Adobe together, or Adobe + self-hosting, etc.) becomes rare very quickly in the crawl data. In fact, beyond the top few patterns, the share of any given combination falls below 1%, and by the time you get to the 8th or 10th most common configuration, their usage is almost imperceptible (around 0.05% of sites).
 
 Beyond these commonplace service combinations, year-over-year the balance is tilting toward self-hosting. In 2024, about 30% of sites were exclusively self-hosted, but now it's roughly 34%. Correspondingly, the "mixed" approach (self-hosting + a service) has shrunk a bit (from ~38% to ~36% of sites on desktop, for example). In other words, fewer sites are hedging by doing both—more have decided to host everything themselves. This is likely due to performance and privacy motivations. As last year's chapter noted, modern browser changes like cache partitioning have removed some of the old performance advantage of using Google's CDN.
@@ -96,6 +123,26 @@ Beyond these commonplace service combinations, year-over-year the balance is til
 ### Font file hosting
 
 Another way to look at font hosting is to ask: which specific font files are being requested the most, and are they coming from self-hosting or from services? This gives insight into the most popular font families on the web and how they're being delivered.
+
+{{ figure_markup(
+  image="fonts-family-by-service-desktop.png",
+  caption="Families by service (desktop).",
+  description="Stacked bar chart showing the usage of popular font families on desktop pages, categorized by their hosting service. Font Awesome is the most widely used family at over 10%, primarily through self-hosting, while Roboto and Noto Sans JP follow as the next most frequent choices. Google Fonts serves as the dominant provider for many of these families, including Noto Sans JP and Lato, whereas Adobe's presence is minimal across the top-ranked fonts. Overall, the data highlights that while specific families are popular, their implementation is split between third-party services and significant levels of self-hosting.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1910664448&format=interactive",
+  sheets_gid="1594814478",
+  sql_file="performance/fonts_family_by_service.sql"
+  )
+}}
+
+{{ figure_markup(
+  image="fonts-family-by-service-mobile.png",
+  caption="Families by service (mobile).",
+  description="Stacked bar chart showing the usage of popular font families on mobile pages based on their hosting service. Similar to the desktop data, Font Awesome remains highly prevalent, though it shows a slightly lower overall percentage on mobile while still relying heavily on self-hosting. Roboto emerges as a particularly strong performer on mobile, appearing on roughly 11% of pages, which is a noticeable increase compared to its desktop usage. Google Fonts continues to be the primary service provider for the majority of these families, including Noto Sans JP and Poppins, while Adobe's share remains minimal across all top fonts.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=440980617&format=interactive",
+  sheets_gid="1594814478",
+  sql_file="performance/fonts_family_by_service.sql"
+  )
+}}
 
 On the self-hosted side, traffic is heavily focused on icon font files and common library assets. A locally served copy of Font Awesome (the TTF/WOFF files of the icon set) accounts for about 8.5% of desktop font requests and 9.3% of mobile font requests in the 2025 crawl. That makes Font Awesome one of the most frequently fetched font resources on the web, even though it's an icon set rather than a text face. Notably, most of Font Awesome's usage is via self-hosting—only a much smaller fraction is fetched directly from the `fontawesome.com` CDN. Other popular utility fonts show a similar pattern: for example, IcoMoon (another icon font generator output) accounts for about 1.0% of desktop and 1.1% of mobile font requests, and ETmodules (often seen in WordPress themes) about 0.5% desktop and 0.7% mobile. These too are almost always self-hosted fonts residing on the site using them. In practice, this segment of "self-hosting" on the web is about bundling these common icon/font assets with your own site's files, not just self-hosting bespoke text fonts.
 
@@ -145,27 +192,49 @@ When it comes to font file formats on the web, the modern WOFF2 format continues
 
 Right behind WOFF2 is the older WOFF 1.0 format, which remains a significant fallback. In 2025, WOFF 1.0 comprises about 16% of font requests on both desktop and mobile. Combined with WOFF2's 65% share, the two WOFF formats together account for about 81% of all font requests. This reflects an ongoing consolidation around WOFF2 as the primary format, with WOFF 1.0 hanging on mainly for legacy and compatibility cases. More sites and font providers are phasing out WOFF in favor of WOFF2, since nearly all use cases are covered by WOFF2's broad browser support now. WOFF was a great improvement back in the early 2010s when it was introduced, but today it's largely a legacy fallback—used mainly for older browsers or by sites that haven't updated their font files in a long time.
 
-Beyond WOFF and WOFF2, only minor formats remain, mostly as edge cases. As we note below, the arrival of Incremental Font Transfer technology next year may be an especially valuable improvement for large fonts and begin to cut into WOFF2's share. Still, a notable percentage of fonts are still served as raw TrueType (.ttf) files. In 2025 about 6.7% of font requests are TTF, often due to CDNs or self-hosting setups that serve the original font file without repackaging it as WOFF. Similarly, around 6.6% of font requests are delivered with the generic application/octet-stream MIME type. Note that "octet-stream" isn't a distinct font format—it usually indicates a misconfiguration where the server isn't specifying the proper font MIME (e.g., a WOFF2 file might be served with Content-Type: application/octet-stream instead of the correct font/woff2). In 2025, this misconfigured MIME issue unfortunately persists—roughly 6-7% of font files are still being sent with an incorrect MIME type. This is largely attributable to a few major hosts (in last year's analysis, cdnjs and Wix's CDN were notable culprits) that have configuration issues. It's a small but noteworthy slice, as using the correct MIME type (like font/woff2 or font/woff) ensures better content handling and debugging.
+Beyond WOFF and WOFF2, only minor formats remain, mostly as edge cases. As we note below, the arrival of Incremental Font Transfer technology next year may be an especially valuable improvement for large fonts and begin to cut into WOFF2's share. Still, a notable percentage of fonts are still served as raw TrueType (`.ttf`) files. In 2025 about 6.7% of font requests are TTF, often due to CDNs or self-hosting setups that serve the original font file without repackaging it as WOFF. Similarly, around 6.6% of font requests are delivered with the generic `application/octet-stream` MIME type. Note that `octet-stream` isn't a distinct font format—it usually indicates a misconfiguration where the server isn't specifying the proper font MIME (e.g., a WOFF2 file might be served with `Content-Type: application/octet-stream` instead of the correct `font/woff2`). In 2025, this misconfigured MIME issue unfortunately persists—roughly 6-7% of font files are still being sent with an incorrect MIME type. This is largely attributable to a few major hosts (in last year's analysis, cdnjs and Wix's CDN were notable culprits) that have configuration issues. It's a small but noteworthy slice, as using the correct MIME type (like `font/woff2` or `font/woff`) ensures better content handling and debugging.
 
-Crucially, if we combine the modern formats, WOFF2 + WOFF together account for over four-fifths of the web font ecosystem. Other formats like OpenType/CFF (.otf) or SVG fonts have effectively vanished from the public web (despite being very much alive on the desktop), and EOT (the old IE-specific format) is practically extinct. Back in 2020, the Web Almanac already noted that SVG and EOT were nearly gone, and that trend has only continued. It's now rare to encounter a non-WOFF font file in a typical site crawl. The overwhelming advice remains: use WOFF2 for your web fonts, and drop the older formats unless you have a very specific need. This year's crawl data strongly validates this advice as we see virtually everyone converging on WOFF2, with WOFF as a trailing fallback, while everything else is negligible.
+Crucially, if we combine the modern formats, WOFF2 + WOFF together account for over four-fifths of the web font ecosystem. Other formats like OpenType/CFF (`.otf`) or SVG fonts have effectively vanished from the public web (despite being very much alive on the desktop), and EOT (the old IE-specific format) is practically extinct. Back in 2020, the Web Almanac already noted that SVG and EOT were nearly gone, and that trend has only continued. It's now rare to encounter a non-WOFF font file in a typical site crawl. The overwhelming advice remains: use WOFF2 for your web fonts, and drop the older formats unless you have a very specific need. This year's crawl data strongly validates this advice as we see virtually everyone converging on WOFF2, with WOFF as a trailing fallback, while everything else is negligible.
 
 ### File sizes and performance
 
 From a performance standpoint, using modern formats is important because font files themselves have been getting larger on average. Last year's analysis found that the median web font file size increased considerably from prior years, implying that sites are using more complex fonts (e.g., fonts with more glyphs to support multiple languages, or variable fonts that bundle many styles). Our 2025 data shows that this trend toward larger font files has continued, making optimization even more critical.
 
+{{ figure_markup(
+  image="font-sizes.png",
+  caption="Font file sizes.",
+  description="Column chart showing the distribution of font file sizes across different percentiles for both desktop and mobile pages. At the median (50th percentile), font files typically weigh around 35 to 36 kilobytes, showing almost no variation between device types. As the percentile increases, the file sizes grow significantly, reaching a 90th percentile peak of 116 kilobytes for desktop and 115 kilobytes for mobile. Overall, the chart illustrates that font payload remains remarkably consistent across platforms, reflecting the high adoption of shared responsive design practices.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1973537853&format=interactive",
+  sheets_gid="1579730576",
+  sql_file="performance/fonts_size.sql"
+  )
+}}
+
 Looking at the distribution of font transfer sizes on the web:
 
 - In 2024, the median font file size was around 36-39 KB (gzip-compressed), up from the low-30s KB a couple of years before. Now in 2025, the median remains in the mid-to-upper-30s KB range (mid-30s on desktop, slightly higher on mobile), indicating that typical font files haven't grown much further in the past year, they're holding at that larger size.
 
-- At the 75th percentile, 2024 font files were about 76-77 KB. In 2025, this is roughly similar (mid-to-high-70s KB). So three-quarters of web fonts are under 80 KB, which is still manageable especially with WOFF2 compression.
+- At the 75th percentile, 2024 font files were about 76-77 KB. In 2025, this is roughly similar (mid-70s KB). So three-quarters of web fonts are under 80 KB, which is still manageable especially with WOFF2 compression.
 
-- However, at the 90th percentile, 2024 saw font files around 112-116 KB. The 2025 crawl shows a similar 90th percentile in the 118-120 KB range. So, the top 10% of fonts are pretty large (well above 100 KB). These tend to be fonts for complex scripts (CJK fonts with thousands of glyphs), or full-featured variable fonts with many axes, or simply un-subsetted files.
+- However, at the 90th percentile, 2024 saw font files around 112-116 KB. The 2025 crawl shows a similar 90th percentile in the 115-116 KB range. So, the top 10% of fonts are pretty large (well above 100 KB). These tend to be fonts for complex scripts (CJK fonts with thousands of glyphs), or full-featured variable fonts with many axes, or simply un-subsetted files.
 
 - The tail end of the distribution is very heavy: at the 99th percentile, desktop font files in 2024 were around 776 KB (and 572 KB on mobile). In 2025, the largest 1% of fonts we see are still in the hundreds of kilobytes. These are likely massive CJK fonts, icon fonts with embedded graphics, or fonts accidentally served with debug tables. It's a reminder that while most fonts are reasonably sized, a few outliers can be extremely heavy.
 
 The takeaway is that most websites serve moderately sized font files, but we have a non-trivial number of very large font files out there. This makes it important to use efficient formats and techniques. WOFF2 helps a lot by squeezing down file sizes, but if a font is half a megabyte uncompressed, even WOFF2 can only do so much. Techniques like subsetting (i.e., including only the needed glyphs) are essential for those very large fonts, especially for CJK or icon fonts.
 
-While it's encouraging that the prevalence of WOFF2 will help mitigate the performance impact of larger font files, we also found that sites which self-host fonts have more room to optimize on average. For example, in 2024 only about 58% of self-hosted font requests were WOFF2 (versus about 78-81% overall). Self-hosted setups had a larger share of WOFF (around 18-19%) and even some raw TTF (about 6%). This implies that some developers self-hosting their fonts might be using older files or not compressing to WOFF2, whereas big providers like Google will always serve WOFF2 if the browser supports it. The 2025 data shows improvement—more self-hosters are moving to WOFF2—but there's still a gap. It's a reminder that if you self-host, you need to be diligent: ensure you have WOFF2 versions of your fonts and configure your server to serve them with the correct `Content-Type`. A significant portion of self-hosted font files in 2024 were served with misconfigured MIME types (5-6% as mentioned), which is something that developers can fix with a simple server tweak. The good news is that WOFF2's dominance is growing across the board, just a bit more slowly in the self-hosted sphere than on Google's platform. In essence, self-hosted sites are catching up, but they still lag slightly in terms of using the optimal format.
+While it's encouraging that the prevalence of WOFF2 will help mitigate the performance impact of larger font files, we also found that sites which self-host fonts have more room to optimize on average. For example, in 2024 only about 58% of self-hosted font requests were WOFF2 (versus about 78-81% overall). Self-hosted setups had a larger share of WOFF (around 18-19%) and even some raw TTF (about 6%). This implies that some developers self-hosting their fonts might be using older files or not compressing to WOFF2, whereas big providers like Google will always serve WOFF2 if the browser supports it.
+
+{{ figure_markup(
+  image="file-format-service-mobile.png",
+  caption="File formats by service (mobile).",
+  description="Stacked bar chart showing the file formats used by self-hosted and Google-hosted font services on mobile pages. Both services overwhelmingly favor woff2 which accounts for roughly 74% of self-hosted fonts served and 77% of Google fonts. The remaining portion is split between woff and ttf, with self-hosted fonts showing a slightly higher reliance on the older woff format (18%) compared to Google (10%) and self-hosting having less ttf (8%) than Google (13%).",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=823780855&format=interactive",
+  sheets_gid="2060621795",
+  sql_file="performance/fonts_size_by_service.sql"
+  )
+}}
+
+The 2025 data shows improvement—more self-hosters are moving to WOFF2—but there's still a gap. It's a reminder that if you self-host, you need to be diligent: ensure you have WOFF2 versions of your fonts and configure your server to serve them with the correct `Content-Type`. A significant portion of self-hosted font files in 2024 were served with misconfigured MIME types (5-6% as mentioned), which is something that developers can fix with a simple server tweak. The good news is that WOFF2's dominance is growing across the board, just a bit more slowly in the self-hosted sphere than on Google's platform. In essence, self-hosted sites are catching up, but they still lag slightly in terms of using the optimal format.
 
 ## CSS techniques and font loading
 
@@ -223,7 +292,7 @@ The most common choice is `font-display: swap`. It appears on about 49.6% of des
 
 Next, `font-display: block` is the second most common value, on about 24.7% of desktop pages and 24.9% of mobile pages—roughly half the prevalence of `swap`. By definition, `block` hides the glyphs briefly while the font loads, which could look risky if we assumed it was being used mainly for body text. But the data shows that about 70% of real-world `font-display: block` usage comes from icon font styles (Font Awesome, theme icon sets, etc.), where authors intentionally prefer a short delay to missing icons. In those cases, `block` is doing exactly what it's supposed to do: prevent broken UI rather than optimize for first text paint. So, virtually all the `block` usage is not from body text fonts, but from UI iconography that needs to either render fully or not at all. This pattern was a "surprise" finding in the 2024 chapter, and the 2025 data confirms it: the prevalence of `block` is not because many developers prefer invisible text for content, but because icon kits still ship with `block` as the default to prevent missing icons.
 
-Beyond `swap` and `block`, the other values are much less common. `Font-display: auto` (which defers to the browser's default behavior) is used on 9.1% of desktop and 8.5% of mobile pages. This share is shrinking as more people explicitly set a value. We also see `font-display: fallback` (which allows a very brief invisible period and then always swaps) on about 5.1% of pages. This value is sometimes favored by developers who want text to swap quickly but still give a small window for critical fonts to load. Finally, `font-display: optional` remains a rarity, with only about 0.4-0.5% of pages using it. The `optional` value is the most aggressive for performance (often it will not swap at all if the font isn't loaded immediately), and it's typically used only by performance-sensitive sites or highly specific typographic setups.
+Beyond `swap` and `block`, the other values are much less common. `font-display: auto` (which defers to the browser's default behavior) is used on 9.1% of desktop and 8.5% of mobile pages. This share is shrinking as more people explicitly set a value. We also see `font-display: fallback` (which allows a very brief invisible period and then always swaps) on about 5.1% of pages. This value is sometimes favored by developers who want text to swap quickly but still give a small window for critical fonts to load. Finally, `font-display: optional` remains a rarity, with only about 0.4-0.5% of pages using it. The `optional` value is the most aggressive for performance (often it will not swap at all if the font isn't loaded immediately), and it's typically used only by performance-sensitive sites or highly specific typographic setups.
 
 Looking at individual font families and their font-display behavior reinforces these conclusions. The most commonly loaded text fonts (e.g., Roboto, Open Sans, Montserrat, Poppins, Inter, Lato) are overwhelmingly served with `font-display: swap` in their `@font-face` rules. For example, Roboto with `swap` shows up on about 12% of pages, Open Sans with `swap` on about 8%, etc. Conversely, the fonts we see with `font-display: block` are predominantly icon kits. Font Awesome's CSS (which by default uses `block`) was observed on about 17% of pages, while other icon fonts like ETmodules, IcoMoon, and Bootstrap Icons also contribute with `block` usage in the low-single-digit percentages. A small segment of text-oriented sites use `font-display: fallback` (for instance, some sites using Inter or certain serif fonts deliberately set `fallback` to balance flash of unstyled vs. flash of faux-bold text). But hardly any sites use `block` for regular text fonts.
 
@@ -233,6 +302,16 @@ The modern best practice is clearly reflected in the numbers: about half the web
 
 Another technical aspect of typography is the outline format (TrueType vs PostScript outlines) inside the font file. Most web fonts are either in TrueType (glyf table) format or CFF (Compact Font Format) outlines, regardless of the container. The data from 2022-2025 shows the web has overwhelmingly standardized on TrueType outlines.
 
+{{ figure_markup(
+  image="fonts-format-outline.png",
+  caption="Outline formats.",
+  description="Horizontal stacked bar chart showing the usage of the two primary OpenType outline formats, glyf and CFF, across desktop and mobile clients with near-identical numbers ofr each. The data reveals a massive preference for the glyf (TrueType-based) format, which is used by approximately 93% of fonts on both platforms while CFF represent only a small fraction (roughly 7%) of the modern web font market.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1010334882&format=interactive",
+  sheets_gid="1481708450",
+  sql_file="development/fonts_format_outline.sql"
+  )
+}}
+
 This year, about 92-93% of fonts loaded on the web were using TrueType outlines (the traditional quadratic Bézier "glyf" table). This is up slightly from about 90% in 2022. In contrast, PostScript/CFF outlines (the cubic Bézier outlines often found in ".otf" fonts) have declined to around 7% of web fonts (down from ~9-10% a few years ago). Modern web font services and foundries often provide TTF/WOFF2 even for fonts originally designed as PostScript outlines, because TrueType can have performance or size advantages for certain use cases (especially when not hinting with bytecode).
 
 Everything else is a tiny fraction. CFF2 (the newer variant used for variable fonts with PostScript outlines) is almost nonexistent in the wild, showing up in 0.01-0.02% of fonts. SVG glyphs (fonts with SVG tables, often color fonts) are also in the very low fractions of decimals. Essentially, outside the specialized case of color/emoji fonts, web developers don't need to worry much about these—they'll virtually always be dealing with TrueType-based fonts, with a minority of CFF outlines still around, especially from older packages.
@@ -241,11 +320,33 @@ Everything else is a tiny fraction. CFF2 (the newer variant used for variable fo
 
 Proper text layout involves breaking lines in the right places for readability. Browsers by default use a greedy line-breaking algorithm which can lead to uneven spacing or "rivers" of whitespace in justified text. Instead, we can use hyphenation (to break words) and the newer CSS properties for improved line breaking (`text-wrap: balance` or `pretty`). Let's see how these are being used.
 
+{{ figure_markup(
+  image="styles-hyphens.png",
+  caption="Hyphenation settings.",
+  description="Bar chart showing the adoption of various CSS hyphenation settings across mobile and desktop websites. The `hyphens: auto` property is the most popular choice, implemented on roughly 10.6% of sites. Other explicit settings like `none` and `manual` see significantly lower usage, hovering around 4% and 3.8% respectively. Across all categories, the data shows nearly identical implementation rates for both mobile and desktop users.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=796253451&format=interactive",
+  sheets_gid="1760681831",
+  sql_file="development/styles_hyphens.sql"
+  )
+}}
+
 First, let's talk about hyphenation (CSS `hyphens` property). By default, browsers only hyphenate text if certain conditions are met (like `lang` is specified and the words are long, etc.), and some (like Chrome) might not hyphenate at all unless told. The `hyphens: auto` property allows automatic hyphenation when needed. In 2025, only about 10.5% of pages globally use `hyphens: auto` in their CSS. That's up a bit from previous years, but still quite low. This suggests that roughly one in ten sites explicitly enables hyphenation (usually to improve justified text or narrow column text).
 
 On the other hand, about 3.8-4.0% of pages have `hyphens: none` or `hyphens: manual` set (often by resets or frameworks). This is usually done to ensure no automatic hyphenation (for example, some designers prefer to avoid hyphens in titles or certain components, or older CSS resets set `hyphens: none` to avoid any unexpected breaks).
 
 Combining these, roughly 14-15% of pages mention the `hyphens` property at all. The vast majority (85%) do not touch it, effectively leaving it to the browser default (which for many languages means no hyphenation). So, hyphenation is far from universal, likely because it has to be used carefully (with correct language tagging and expectation of varying browser support), and not all content benefits from hyphenation (it's mostly a concern for justified text or narrow columns).
+
+{{ figure_markup(
+  image="styles-text-wrap.png",
+  caption="Text-wrap settings.",
+  description="Bar chart showing adoption of different CSS text-wrap settings across mobile and desktop environments. The `text-wrap: wrap` property shows the highest usage overall, specifically surging to nearly 7% on mobile devices compared to less than 2% on desktop. Other advanced typographic controls like `nowrap`, `balance`, and `pretty` each account for roughly 1.7% to 3.2% of sites, showing more consistent implementation between the two platforms.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1245470125&format=interactive",
+  sheets_gid="1136350258",
+  sql_file="development/styles_text_wrap.sql",
+  width=600,
+  height=499
+  )
+}}
 
 Text wrapping and line breaking (CSS `text-wrap` property): CSS Text Module Level 4 introduced `text-wrap: balance` and `text-wrap: pretty` to help browsers distribute text more evenly. These are fairly new (only recently supported in some browsers like Safari and Chromium-based ones). Their adoption, while small, is telling of an emerging best practice for multi-line headings and such.
 
@@ -303,6 +404,56 @@ The main takeaway is that icon fonts and a few versatile sans-serifs dominate th
 
 Despite the prevalence of custom web fonts, system fonts and generic family names remain a bedrock of web design, especially for performance and native look-and-feel. Many sites specify system font stacks or fallbacks for body text or UI elements. The data from 2025 highlights how common these are:
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Family</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>`sans-serif`</td>
+        <td>89%</td>
+        <td>89%</td>
+      </tr>
+      <tr>
+        <td>`monospace`</td>
+        <td>64%</td>
+        <td>63%</td>
+      </tr>
+      <tr>
+        <td>`serif`</td>
+        <td>47%</td>
+        <td>48%</td>
+      </tr>
+      <tr>
+        <td>`system-ui`</td>
+        <td>10%</td>
+        <td>9%</td>
+      </tr>
+      <tr>
+        <td>`ui-monospace`</td>
+        <td>4%</td>
+        <td>4%</td>
+      </tr>
+      <tr>
+        <td>`ui-sans-serif`</td>
+        <td>4%</td>
+        <td>4%</td>
+      </tr>
+      <tr>
+        <td>`cursive`</td>
+        <td>3%</td>
+        <td>3%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common system families", sheets_gid="474944610", sql_file="development/styles_family_system.sql") }}</figcaption>
+</figure>
+
 The generic `sans-serif` is by far the most common family name in CSS (as a fallback at the end of font-family lists). It's included on about 89% of desktop and mobile pages. Essentially, nearly every site has a line in its CSS that ends with `sans-serif` (or starts with it in a system font stack), to ensure there is always a default font. The generic `monospace` is also extremely common (seen on ~64% of pages) because developers often set monospaced fonts for code snippets or preformatted text. The generic `serif` appears on roughly 48% of pages, likely as a fallback for headings or when a serif design is desired.
 
 What's more interesting is the rise of platform-specific generics like `system-ui`. The `system-ui` value (which maps to the operating system's UI font, like San Francisco on macOS/iOS, Segoe UI on Windows, Roboto on Android, etc.) is now used on about 9.7% of pages (desktop) and 9.3% (mobile). This is a significant uptick—these values barely registered a few years ago. Adoption is largely driven by modern CSS frameworks and design systems that aim for a "native app" aesthetic or which defer to the user's default UI font for performance reasons. Similarly, the newer generic `ui-monospace` (the system's default monospaced font) is used on ~4% of pages, and `ui-sans-serif` on ~3.5%. These numbers indicate that a non-trivial subset of sites (around one in ten) are explicitly choosing system fonts for their text, often for speed and consistency with native apps. This matches trends with sites like GitHub and Medium using system fonts to avoid loading any web font for body text.
@@ -312,6 +463,16 @@ In summary, system fonts have typically been the unsung heroes on many websites.
 ### Font foundries
 
 If we look at the `@font-face` metadata to see which foundries or vendors are credited with creating the fonts, we find that the majority is served by a small number of foundries—plus a large chunk of uncredited fonts—with a long tail of others in the low percentiles.
+
+{{ figure_markup(
+  image="fonts-family-by-foundry.png",
+  caption="Font foundry usage.",
+  description="Horizontal bar chart showing the usage of various foundries across desktop and mobile websites. Google (`GOOG`) leads as the most prominent foundry, utilized by over 30% of sites, followed closely by Font Awesome (`AWSM`) at roughly 29%. Other notable contributors include `pyrs` and `ULA`, while Adobe (`ADBE`) represents a smaller portion of the market at approximately 5.6%. Consistent with other typographic data, there is very little variation between desktop and mobile usage, indicating that foundry choice is typically a site-wide design decision rather than one tailored to specific devices.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=1435477681&format=interactive",
+  sheets_gid="1609949186",
+  sql_file="design/fonts_family_by_foundry.sql"
+  )
+}}
 
 By page coverage, the top "foundry" labels on the web are:
 
@@ -329,6 +490,72 @@ In short, attributions for fonts on the web now fall to Google, Font Awesome, a 
 
 Many font files include the name of the type designer(s) in the metadata. By tallying those, we can see whose work is most prevalent on the web (keeping in mind that many fonts don't list a designer at all in the metadata).
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>Designer</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>78.3%</td>
+        <td>76.7%</td>
+      </tr>
+      <tr>
+        <td>Dave Gandy</td>
+        <td>13.6%</td>
+        <td>13.8%</td>
+      </tr>
+      <tr>
+        <td>Adrian Frutiger</td>
+        <td>1.5%</td>
+        <td>1.6%</td>
+      </tr>
+      <tr>
+        <td>Jan Kovarik</td>
+        <td>1.5%</td>
+        <td>1.4%</td>
+      </tr>
+      <tr>
+        <td>Rasmus Andersson</td>
+        <td>1.2%</td>
+        <td>1.2%</td>
+      </tr>
+      <tr>
+        <td>Linotype Design Studio</td>
+        <td>1.0%</td>
+        <td>1.2%</td>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td>1.1%</td>
+        <td>1.1%</td>
+      </tr>
+      <tr>
+        <td>Julieta Ulanovsky</td>
+        <td>1.0%</td>
+        <td>1.1%</td>
+      </tr>
+      <tr>
+        <td>Mark Simonson</td>
+        <td>0.9%</td>
+        <td>0.8%</td>
+      </tr>
+      <tr>
+        <td>Commercial Type, Inc.</td>
+        <td>0.4%</td>
+        <td>0.7%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most popular font designers", sheets_gid="1896671630", sql_file="fonts_designer.sql") }}</figcaption>
+</figure>
+
+
 The data shows that most web fonts do not specify a designer. Approximately 77-78% of pages use at least one font that has no designer listed in its metadata. This could be due to omission or because the font is attributed to a foundry or project rather than individuals. That huge blank category means we should take the "designer rankings" with a grain of salt—it's a partial view.
 
 That said, one name dominates the credited share. Dave Gandy is the creator of Font Awesome, and his name appears on about 13.7% of pages (basically every page that self-hosts Font Awesome and has the designer field populated). This makes him by far the most visible type designer on the web (in metadata terms) because of the prevalence of his icon font. It's an interesting quirk: it's not that web developers are consciously choosing "a Dave Gandy typeface" for aesthetic reasons, but rather that one highly successful toolkit has put his name on millions of sites.
@@ -343,19 +570,76 @@ The key point is that designer attribution on the web is very sparse and highly 
 
 Font files often include a license URL or identifier in their metadata, which we can use to gauge what licenses are common on the web. The caveat here is that about half of fonts don't clearly specify a license in a parseable way. With that in mind, the data suggests that open source licenses completely dominate web fonts.
 
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>License</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>OFL</td>
+        <td>64%</td>
+        <td>65%</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>49%</td>
+        <td>50%</td>
+      </tr>
+      <tr>
+        <td>Font Awesome</td>
+        <td>13%</td>
+        <td>13%</td>
+      </tr>
+      <tr>
+        <td>Apache</td>
+        <td>21%</td>
+        <td>8%</td>
+      </tr>
+      <tr>
+        <td>Adobe</td>
+        <td>5%</td>
+        <td>4%</td>
+      </tr>
+      <tr>
+        <td>Monotype</td>
+        <td>4%</td>
+        <td>4%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Most common font licences", sheets_gid="1457611753", sql_file="fonts_licence.sql") }}</figcaption>
+</figure>
+
 By far the most common license is the SIL Open Font License (OFL). Around 64% of websites in our sample use at least one font under the OFL. This isn't surprising, as the OFL is the license used by the majority of Google Fonts and other open-source font projects. It essentially allows free use, modification, and redistribution of the font as long as the name is changed upon modification. The prevalence of OFL fonts means that nearly two-thirds of sites are using open-source fonts.
 
 The next big "license" category is actually no license specified. On roughly 50% of pages, at least one font had a blank or unrecognized license field. This could mean the font is a custom one with no metadata, or a commercial font where the license isn't embedded (as often happens), or even some data entry as "unknown". It's a reminder that a lot of font use on the web isn't easily traceable by license in the file—but likely many in this bucket are proprietary fonts that just don't declare their license in the `@font-face` (since web designers might not always fill that out).
 
-Aside from those, the Apache License (another open-source license used by some older Google Fonts and other projects) appears on about 14% of sites. Interestingly, there's a desktop/mobile split: it's higher on desktop crawls (~21%) and lower on mobile (~8%), possibly due to certain fonts or frameworks being more common on desktop sites. But overall, Apache is the second most common explicitly listed license after OFL, reinforcing that open licenses are the norm.
-
 The Font Awesome license (a proprietary/open license hybrid) is present on about 13% of pages, aligning with Font Awesome's usage numbers. Adobe's font license (for fonts via Adobe Fonts) shows up on about 4-5% of pages, which also matches Adobe's usage share. Similarly, Monotype's typical EULA covers about 4% (though many Monotype fonts on the web might appear as "no license" if self-hosted).
+
+Aside from those, the Apache License (another open-source license used by some older Google Fonts and other projects) is the second most common explicitly listed license after OFL, reinforcing that open licenses are the norm. Interestingly, there's a desktop/mobile split: it's higher on desktop crawls (~21%) and lower on mobile (~8%), possibly due to certain fonts or frameworks being more common on desktop sites.
 
 Beyond these, it's a long tail of specific foundry and vendor licenses: we see markers for Commercial Type, Typotheque, Hoefler&Co (Typography.com), Dalton Maag, and Naver (for some Noto Sans CJK distributions) on less than 1% of pages each. These indicate specific use of commercial font libraries on certain sites, but for the most part, the web runs on open font licenses.
 
 ### Global language support
 
 The web is increasingly global, and so the web's typography must support the world's many writing systems. While Latin script is still the most commonly supported writing system in web fonts, other scripts are steadily rising thanks to the efforts in recent years to create and distribute fonts for them.
+
+{{ figure_markup(
+  image="fonts-script.png",
+  caption="Font script usage.",
+  description="Horizontal bar chart showing the percentage of sites using various font scripts across mobile and desktop platforms. PUA (Private Use Area) and Latin are the most frequently used scripts, each appearing on approximately 54% of sites. Other scripts such as Cyrillic (12.7%) and Greek (7.7%) have significantly lower adoption rates, while specialty scripts like Emoji, Hebrew, and various Asian scripts each appear on fewer than 3% of sites. The distribution remains nearly identical for both mobile and desktop users.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=263318376&format=interactive",
+  sheets_gid="178677016",
+  sql_file="design/fonts_script.sql",
+  width=600,
+  height=502
+  )
+}}
 
 In 2025, just over half of all web fonts include Latin characters (around 54% of fonts in our dataset). Since Latin is included in most multi-script fonts, this essentially means any font intended for European or American audiences is counted there. Alongside Latin, about 54% of fonts also include the Unicode Private Use Area (PUA), which is where icon fonts and custom symbols reside. The prevalence of PUA indicates (once again) how many fonts on the web are actually icon sets or have embedded icons (Font Awesome, theme icon fonts, etc., all map to PUA).
 
@@ -443,16 +727,6 @@ How popular are variable fonts? This year, 39.4% of desktop websites and 41.3% o
   )
 }}
 
-{{ figure_markup(
-  image="variable-font-usage-bar-2.png",
-  caption="Year-over-year change in variable font usage.",
-  description="Bar chart highlighting the year-over-year increase in the share of sites using variable fonts, with roughly a 6–7 percentage point gain between 2024 and 2025 on both desktop and mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=331570977&format=interactive",
-  sheets_gid="859651751",
-  sql_file="development/fonts_variable.sql"
-  )
-}}
-
 However, the usage distribution of specific variable fonts is very top-heavy. Just a few font families account for a very large share. The single most used variable font on the web remains Noto Sans JP (the Japanese sans-serif from Google's Noto family). In 2024, Noto Sans JP was found on about 27% of all sites using variable fonts, and in 2025 it now appears on roughly 25-26% of pages using variable fonts. That makes Noto Sans JP the top variable font by reach—a testament to how many sites rely on this font in East Asia and globally for CJK content. After that, the next three biggest variable fonts are Roboto, Open Sans, and Montserrat. Combined with Noto Sans JP, these four families account for almost 60% of all variable font requests on both desktop and mobile. Specifically, Roboto is used on about 15% of variable font sites, Open Sans on 11%, and Montserrat on 7-8%. These are all available through Google Fonts in variable form, which explains their prominence (as Google started serving these as variable fonts by default).
 
 Beyond the top four, we see a cluster of other notable variable fonts: Noto Sans KR (~5% of variable font sites, reflecting Korean usage), Noto Serif JP (~4%), Noto Sans TC (~2%), which are all part of the same Noto family for CJK scripts. Then popular Latin variable fonts like Inter (~3.3%), Raleway, Oswald, Playfair Display, Rubik, Roboto Slab, Google Sans, Nunito, each on 2-3% of sites that use variable fonts. This long tail shows that while many variable fonts exist, the ones being used at scale are mostly those that solve a big problem (like covering multiple scripts or multiple styles efficiently) and are easy to obtain (mostly open-source via Google).
@@ -467,6 +741,15 @@ And then, variable font animation (using CSS transitions or keyframes on font va
 
 Color fonts (a new technology offering fonts with multicolored glyphs, often for emoji or icons) have been an intriguing technology, but their adoption on the web remains extremely limited. The 2025 data shows a slight increase from an almost nonexistent base, but they're still far from mainstream.
 
+{{ figure_markup(
+  caption="Percent of mobile pages using color fonts.",
+  content="0.06%",
+  classes="big-number",
+  sheets_gid="692320356",
+  sql_file="development/fonts_color.sql"
+)
+}}
+
 Only about 0.05-0.06% of websites observed in our crawl were using a color font. That's on the order of 1 in 2,000 pages. This has grown from roughly 0.01% a few years ago—still a 5x increase, but tiny overall. In raw terms, we found color fonts on roughly 6,000-7,000 desktop pages and a similar number of mobile pages. So, while the usage has "multiplied," it still resides in the territory of rounding errors compared to other figures in this report.
 
 Why so low? A few reasons: Until recently, cross-browser support for the newer color font formats (COLR/CPAL v1) was incomplete. Authoring color fonts or finding use cases beyond emoji has been uncommon. And many potential uses (icons, symbols) have been served just as SVG or images instead.
@@ -480,6 +763,16 @@ Another notable phenomenon: Some color fonts include multiple formats for compat
 Color palettes within color fonts (where a font provides different preset color schemes) are not widely used. Over 95% of color fonts have either zero or one palette defined. That is, they have a fixed set of colors, or else rely on the default. Only a tiny fraction have multiple palettes (such as an emoji font that could switch skin tones or themes via the palette mechanism). And those color fonts that do have multiple palettes, often just have two or three at most. Most color fonts today are not aiming to offer thematic color switching—they just hard-code the colors needed. This is as it should be: the place for thematic switching is in CSS as font palette overrides, not in the font.
 
 The number of color layers is also small for most color fonts used today. Many icon fonts might use just 2 colors (e.g., foreground and background). Larger numbers of layers appear only in full emoji sets (which can have hundreds of layers to construct all emoji characters).
+
+{{ figure_markup(
+  image="fonts-color-emoji.png",
+  caption="Color fonts usage for emojis.",
+  description="Bar chart showing the the adoption of color fonts for emojis on websites from 2022 to 2025. While usage was extremely low in 2022 and 2023, it experienced a massive surge in 2024, peaking at 42% on desktop and 31% on mobile. 2025 shows a slight decline or stabilization, with usage at 37% for desktop and 32% for mobile. Throughout this period, desktop pages have consistently maintained a higher adoption rate of color emojis compared to mobile pages.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTBOtBD8471Enlf8SxNFXInuLjNud3ooh0Bg_i4BL6kusJYt8Iag0m2TT7FVbs_CAys2Ws-OIhLls07/pubchart?oid=731378263&format=interactive",
+  sheets_gid="1490615020",
+  sql_file="development/fonts_color_emoji.sql"
+  )
+}}
 
 So, we can see that by volume, about 32-37% of color font requests are for emoji (this percentage went up in 2024 and slightly down this year as other uses grew). That trend means the majority (~63-68%) of color font requests are now for non-emoji uses (like those decorative CJK fonts, or multi-color icons). However, by page count, emoji fonts (Noto Color Emoji in particular) are still the principal use of color fonts. While some large platforms or sites may include Noto Color Emoji as a fallback, contributing to many pages, other color fonts might be used on a few pages but fetched many times (like decorative fonts on a site with many page views).
 
