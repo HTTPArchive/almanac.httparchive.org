@@ -312,7 +312,7 @@ Another technical aspect of typography is the outline format (TrueType vs PostSc
   )
 }}
 
-This year, about 92-93% of fonts loaded on the web were using TrueType outlines (the traditional quadratic Bézier "glyf" table). This is up slightly from about 90% in 2022. In contrast, PostScript/CFF outlines (the cubic Bézier outlines often found in ".otf" fonts) have declined to around 7% of web fonts (down from ~9-10% a few years ago). Modern web font services and foundries often provide TTF/WOFF2 even for fonts originally designed as PostScript outlines, because TrueType can have performance or size advantages for certain use cases (especially when not hinting with bytecode).
+This year, about 92-93% of fonts loaded on the web were using TrueType outlines (the traditional quadratic Bézier "glyf" table). This is up slightly from about 90% in 2022. In contrast, PostScript/CFF outlines (the cubic Bézier outlines often found in `.otf` fonts) have declined to around 7% of web fonts (down from ~9-10% a few years ago). Modern web font services and foundries often provide TTF/WOFF2 even for fonts originally designed as PostScript outlines, because TrueType can have performance or size advantages for certain use cases (especially when not hinting with bytecode).
 
 Everything else is a tiny fraction. CFF2 (the newer variant used for variable fonts with PostScript outlines) is almost nonexistent in the wild, showing up in 0.01-0.02% of fonts. SVG glyphs (fonts with SVG tables, often color fonts) are also in the very low fractions of decimals. Essentially, outside the specialized case of color/emoji fonts, web developers don't need to worry much about these—they'll virtually always be dealing with TrueType-based fonts, with a minority of CFF outlines still around, especially from older packages.
 
@@ -416,38 +416,38 @@ Despite the prevalence of custom web fonts, system fonts and generic family name
     <tbody>
       <tr>
         <td>`sans-serif`</td>
-        <td>89%</td>
-        <td>89%</td>
+        <td class="numeric">89%</td>
+        <td class="numeric">89%</td>
       </tr>
       <tr>
         <td>`monospace`</td>
-        <td>64%</td>
-        <td>63%</td>
+        <td class="numeric">64%</td>
+        <td class="numeric">63%</td>
       </tr>
       <tr>
         <td>`serif`</td>
-        <td>47%</td>
-        <td>48%</td>
+        <td class="numeric">47%</td>
+        <td class="numeric">48%</td>
       </tr>
       <tr>
         <td>`system-ui`</td>
-        <td>10%</td>
-        <td>9%</td>
+        <td class="numeric">10%</td>
+        <td class="numeric">9%</td>
       </tr>
       <tr>
         <td>`ui-monospace`</td>
-        <td>4%</td>
-        <td>4%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td>`ui-sans-serif`</td>
-        <td>4%</td>
-        <td>4%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td>`cursive`</td>
-        <td>3%</td>
-        <td>3%</td>
+        <td class="numeric">3%</td>
+        <td class="numeric">3%</td>
       </tr>
     </tbody>
   </table>
@@ -502,53 +502,53 @@ Many font files include the name of the type designer(s) in the metadata. By tal
     <tbody>
       <tr>
         <td>&nbsp;</td>
-        <td>78.3%</td>
-        <td>76.7%</td>
+        <td class="numeric">78.3%</td>
+        <td class="numeric">76.7%</td>
       </tr>
       <tr>
         <td>Dave Gandy</td>
-        <td>13.6%</td>
-        <td>13.8%</td>
+        <td class="numeric">13.6%</td>
+        <td class="numeric">13.8%</td>
       </tr>
       <tr>
         <td>Adrian Frutiger</td>
-        <td>1.5%</td>
-        <td>1.6%</td>
+        <td class="numeric">1.5%</td>
+        <td class="numeric">1.6%</td>
       </tr>
       <tr>
         <td>Jan Kovarik</td>
-        <td>1.5%</td>
-        <td>1.4%</td>
+        <td class="numeric">1.5%</td>
+        <td class="numeric">1.4%</td>
       </tr>
       <tr>
         <td>Rasmus Andersson</td>
-        <td>1.2%</td>
-        <td>1.2%</td>
+        <td class="numeric">1.2%</td>
+        <td class="numeric">1.2%</td>
       </tr>
       <tr>
         <td>Linotype Design Studio</td>
-        <td>1.0%</td>
-        <td>1.2%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.2%</td>
       </tr>
       <tr>
         <td>Google</td>
-        <td>1.1%</td>
-        <td>1.1%</td>
+        <td class="numeric">1.1%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td>Julieta Ulanovsky</td>
-        <td>1.0%</td>
-        <td>1.1%</td>
+        <td class="numeric">1.0%</td>
+        <td class="numeric">1.1%</td>
       </tr>
       <tr>
         <td>Mark Simonson</td>
-        <td>0.9%</td>
-        <td>0.8%</td>
+        <td class="numeric">0.9%</td>
+        <td class="numeric">0.8%</td>
       </tr>
       <tr>
         <td>Commercial Type, Inc.</td>
-        <td>0.4%</td>
-        <td>0.7%</td>
+        <td class="numeric">0.4%</td>
+        <td class="numeric">0.7%</td>
       </tr>
     </tbody>
   </table>
@@ -582,33 +582,33 @@ Font files often include a license URL or identifier in their metadata, which we
     <tbody>
       <tr>
         <td>OFL</td>
-        <td>64%</td>
-        <td>65%</td>
+        <td class="numeric">64%</td>
+        <td class="numeric">65%</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>49%</td>
-        <td>50%</td>
+        <td class="numeric">49%</td>
+        <td class="numeric">50%</td>
       </tr>
       <tr>
         <td>Font Awesome</td>
-        <td>13%</td>
-        <td>13%</td>
+        <td class="numeric">13%</td>
+        <td class="numeric">13%</td>
       </tr>
       <tr>
         <td>Apache</td>
-        <td>21%</td>
-        <td>8%</td>
+        <td class="numeric">21%</td>
+        <td class="numeric">8%</td>
       </tr>
       <tr>
         <td>Adobe</td>
-        <td>5%</td>
-        <td>4%</td>
+        <td class="numeric">5%</td>
+        <td class="numeric">4%</td>
       </tr>
       <tr>
         <td>Monotype</td>
-        <td>4%</td>
-        <td>4%</td>
+        <td class="numeric">4%</td>
+        <td class="numeric">4%</td>
       </tr>
     </tbody>
   </table>
