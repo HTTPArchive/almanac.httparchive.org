@@ -47,7 +47,7 @@ Core Web Vitals are Google's key performance metrics that measure how fast, resp
   description="Bar chart showing the percentage of websites with good Core Web Vitals (CWV) performance by device over time. In 2021, 32% of mobile websites and 41% of desktop websites achieved good CWV scores. This increased to 31% mobile and 44% desktop in 2022, then to 36% mobile and 48% desktop in 2023. By 2024, good CWV performance reached 44% on mobile and 55% on desktop, and further improved in 2025 to 48% for mobile websites and 56% for desktop websites.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=221638490&format=interactive",
   sheets_gid="1060077014",
-  sql_file="TODO"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -82,7 +82,7 @@ In contrast, Desktop performance metrics are more uniformly distributed. This di
   description="The chart shows the percentage of pages with good Core Web Vitals (CWV) scores for home pages and secondary pages on desktop and mobile. On home pages, 47% of desktop pages and 45% of mobile pages achieve good CWV. On secondary pages, the share increases to 61% on desktop and 56% on mobile.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=604736426&format=interactive",
   sheets_gid="1721986308",
-  sql_file="TODO"
+  sql_file="web_vitals_by_device_secondary_pages.sql"
   )
 }}
 
@@ -233,7 +233,7 @@ Cumulative Layout Shift (CLS) measures unexpected layout movement during page lo
   description="The chart shows the distribution of Cumulative Layout Shift (CLS) performance by device in 2025, categorized as Good, Needs Improvement, and Poor. On desktop, 72% of pages achieve a Good CLS score, 17% fall into Needs Improvement, and 10% are classified as Poor. Mobile pages perform better overall, with 81% achieving Good CLS, 10% in Needs Improvement, and 9% in the Poor category.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=79158134&format=interactive",
   sheets_gid="1060077014",
-  sql_file="TODO"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -243,11 +243,11 @@ In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative 
 
 {{ figure_markup(
   image="good-cls-by-device.png",
-  caption="CLS performance by device",
+  caption="CLS performance by device from 2021 to 2025",
   description="The chart shows the percentage of websites with good Cumulative Layout Shift (CLS) scores on desktop and mobile from 2021 to 2025. On desktop, the share of sites with good CLS increases from 62% in 2021 to 72% in 2025. On mobile, good CLS increases from 62% in 2021 to 81% in 2025. In each year from 2022 onward, mobile has a higher percentage of sites with good CLS than desktop.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1623776585&format=interactive",
   sheets_gid="1060077014",
-  sql_file="TODO"
+  sql_file="web_vitals_by_device.sql"
   )
 }}
 
@@ -259,7 +259,7 @@ Looking at the past years, the percentage of websites meeting the Good CLS thres
   description="The chart shows the percentage of pages with good Cumulative Layout Shift (CLS) scores for home pages and secondary pages on desktop and mobile in 2025. For home pages, 71% of desktop pages and 79% of mobile pages achieve good CLS. For secondary pages, the share increases to 73% on desktop and 81% on mobile, with mobile outperforming desktop for both page types.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=24521456&format=interactive",
   sheets_gid="1721986308",
-  sql_file="TODO"
+  sql_file="web_vitals_by_device_secondary_pages.sql"
   )
 }}
 
@@ -271,7 +271,7 @@ Pages beyond the homepage show slightly better visual stability than homepages a
   description="The chart shows the monthly percentage of websites with good Cumulative Layout Shift (CLS) scores on desktop and mobile from January 2023 through early 2025. Desktop increases from approximately 65% at the start of 2023 to around 72% by 2025, while mobile rises from about 75% to roughly 79–80% over the same period. Mobile maintains a higher share of good CLS than desktop throughout the entire timeframe.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=142338615&format=interactive",
   sheets_gid="1891926464",
-  sql_file="TODO"
+  sql_file="monthly_cls_lcp.sql"
   )
 }}
 
@@ -296,7 +296,7 @@ Compared to 2024, unload handler usage declined across all ranks and both device
   description="The chart shows the percentage of pages using unload event handlers by website rank on desktop and mobile in 2025. Among the top 1,000 websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages, with usage declining steadily as rank increases. For all websites, unload handlers are present on 11% of desktop pages and 10% of mobile pages, with desktop usage higher than mobile at every rank.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=140804120&format=interactive",
   sheets_gid="1870744021",
-  sql_file="TODO"
+  sql_file="bfcache_unload.sql"
   )
 }}
 
