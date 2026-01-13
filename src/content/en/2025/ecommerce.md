@@ -1,8 +1,8 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Ecommerce
-description: This chapter explores trends in the ecommerce ecosystem, examining platform popularity, performance metrics, and regional differences. Covering Core Web Vitals, Lighthouse scores, and accessibility, it highlights how platforms like WooCommerce and Shopify dominate, while newer players gain traction in specific regions and niches.
-hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
+description: This chapter explores trends in the ecommerce ecosystem, covering platform adoption, Core Web Vitals, Lighthouse metrics, payments, and regional differences. It highlights how platforms like WooCommerce and Shopify lead while newer players grow in specific markets.
+hero_alt: Hero image of a Web Almanac character at a supermarket checkout loading items from a shopping basket onto the conveyor belt while another character pays with a credit card.
 authors: [AmandeepSingh]
 reviewers: [AmandeepSingh]
 analysts: [AmandeepSingh]
@@ -11,12 +11,12 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1tbbH4q4wzj4bpTj8ctRJ_8-NyS5KPBBcNInkemfxcR8
 AmandeepSingh_bio: Amandeep Singh has been developing for the web since 2009 and writes about front end development, UI/UX, Shopify, BigCommerce, WordPress, and programming at <a hreflang="en" href="https://byaman.com/">byaman.com</a>. He is a writer, mentor, and speaker.
 featured_quote: While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems.
-featured_stat_1: 21%
-featured_stat_label_1: Percent of ecommerce sites
-featured_stat_2: 37%
-featured_stat_label_2: Percent of ecommerce sites built with WooCommerce.
-featured_stat_3: 3.5%
-featured_stat_label_3: Percent of sites offering PayPal as payment method
+featured_stat_1: 19.8%
+featured_stat_label_1: Percent of desktop sites that are ecommerce
+featured_stat_2: 35.9%
+featured_stat_label_2: Percent of desktop ecommerce sites built with WooCommerce
+featured_stat_3: 3.9%
+featured_stat_label_3: Percent of desktop sites offering PayPal as a payment method
 doi: 10.5281/zenodo.14065664
 ---
 
