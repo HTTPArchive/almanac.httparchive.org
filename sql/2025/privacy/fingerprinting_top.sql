@@ -24,8 +24,8 @@ GROUP BY client, technology.technology
 |> DROP websites_total
 |> PIVOT(
   ANY_VALUE(websites_count) AS websites_count,
-  ANY_VALUE(websites_pct) AS pct
+  ANY_VALUE(websites_pct) AS websites_pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME websites_count_mobile AS mobile, websites_count_desktop AS desktop
-|> ORDER BY mobile + desktop DESC
+|> RENAME websites_pct_mobile AS mobile, websites_pct_desktop AS desktop
+|> ORDER BY websites_count_mobile + websites_count_desktop DESC
