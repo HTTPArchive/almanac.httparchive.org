@@ -194,6 +194,7 @@ WITH totals AS (
     `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
+    rank <= 1000000 AND
     is_root_page -- remove if wanna look at home pages AND inner pages. Old tables only had home pages.
   GROUP BY
     client
