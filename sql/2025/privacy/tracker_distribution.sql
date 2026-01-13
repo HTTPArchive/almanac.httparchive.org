@@ -26,14 +26,14 @@ tracker_counts AS (
     root_page,
     COUNT(DISTINCT tracker) AS number_of_trackers
   FROM `httparchive.crawl.requests`
-  JOIN whotracksme
+  LEFT JOIN whotracksme
   ON
     NET.HOST(url) = domain OR
     ENDS_WITH(NET.HOST(url), CONCAT('.', domain))
   WHERE
-    date = '2025-07-01' AND
-    --rank = 1000 AND
-    NOT ENDS_WITH('.' || NET.HOST(root_page), '.' || NET.HOST(url)) -- third-party
+    date = '2025-07-01'
+    --AND rank = 1000
+    AND url NOT IN ('https://android.clients.google.com/checkin', 'https://android.clients.google.com/c2dm/register3')
   GROUP BY
     client,
     root_page
