@@ -466,9 +466,7 @@
     "teams": {
       "2025": [
         "authors",
-        "reviewers",
-        "analysts",
-        "editors"
+        "analysts"
       ]
     },
     "twitter": "amanvirdi",
