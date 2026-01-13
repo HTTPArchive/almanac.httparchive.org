@@ -87,6 +87,7 @@ WITH totals AS (
     `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
+    rank <= 1000000 AND
     is_root_page
   GROUP BY
     client
@@ -112,6 +113,7 @@ FROM (
     UNNEST(getCustomPropertyLengths(custom_metrics.css_variables)) AS custom_properties
   WHERE
     date = '2025-07-01' AND
+    rank <= 1000000 AND
     is_root_page
 )
 JOIN
