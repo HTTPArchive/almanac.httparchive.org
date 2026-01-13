@@ -955,7 +955,7 @@ Payments are where ecommerce becomes real. They also represent a major dependenc
   caption="Payment provider distribution on ecommerce sites in 2025.",
   description="Bar chart showing the distribution of payment providers detected on ecommerce sites in 2025, led by PayPal, Apple Pay, Shop Pay, Visa, and Mastercard.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1053919780&format=interactive",
-  sheets_gid="1631427419",
+  sheets_gid="2028626432",
   sql_file="top_payment_providers.sql"
   )
 }}
@@ -1038,8 +1038,8 @@ The following tables show the most commonly detected payment providers in 2025.
   <figcaption>
     {{ figure_link(
       caption="Desktop (2025, top payment providers).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="2028626432",
+      sql_file="top_payment_providers.sql",
     ) }}
   </figcaption>
 </figure>
@@ -1057,61 +1057,61 @@ The following tables show the most commonly detected payment providers in 2025.
     <tbody>
       <tr>
         <td>PayPal</td>
-        <td class="numeric">18.8%</td>
+        <td class="numeric">21.0%</td>
         <td class="numeric">3.5%</td>
         <td class="numeric">548,276</td>
       </tr>
       <tr>
         <td>Apple Pay</td>
-        <td class="numeric">13.4%</td>
+        <td class="numeric">14.9%</td>
         <td class="numeric">2.5%</td>
         <td class="numeric">390,665</td>
       </tr>
       <tr>
         <td>Shop Pay</td>
-        <td class="numeric">11.9%</td>
+        <td class="numeric">13.3%</td>
         <td class="numeric">2.2%</td>
         <td class="numeric">348,267</td>
       </tr>
       <tr>
         <td>Visa</td>
-        <td class="numeric">10.6%</td>
+        <td class="numeric">11.8%</td>
         <td class="numeric">2.0%</td>
         <td class="numeric">309,054</td>
       </tr>
       <tr>
         <td>Mastercard</td>
-        <td class="numeric">10.6%</td>
+        <td class="numeric">11.8%</td>
         <td class="numeric">2.0%</td>
         <td class="numeric">308,874</td>
       </tr>
       <tr>
         <td>American Express</td>
-        <td class="numeric">9.4%</td>
+        <td class="numeric">10.5%</td>
         <td class="numeric">1.8%</td>
         <td class="numeric">273,942</td>
       </tr>
       <tr>
         <td>Google Pay</td>
-        <td class="numeric">8.6%</td>
+        <td class="numeric">9.6%</td>
         <td class="numeric">1.6%</td>
         <td class="numeric">250,089</td>
       </tr>
       <tr>
         <td>Stripe</td>
-        <td class="numeric">7.9%</td>
+        <td class="numeric">8.8%</td>
         <td class="numeric">1.5%</td>
         <td class="numeric">230,914</td>
       </tr>
       <tr>
         <td>Venmo</td>
-        <td class="numeric">2.3%</td>
+        <td class="numeric">2.6%</td>
         <td class="numeric">0.4%</td>
         <td class="numeric">68,549</td>
       </tr>
       <tr>
         <td>Klarna Checkout</td>
-        <td class="numeric">1.3%</td>
+        <td class="numeric">1.5%</td>
         <td class="numeric">0.2%</td>
         <td class="numeric">38,175</td>
       </tr>
@@ -1120,13 +1120,13 @@ The following tables show the most commonly detected payment providers in 2025.
   <figcaption>
     {{ figure_link(
       caption="Mobile (2025, top payment providers).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="2028626432",
+      sql_file="top_payment_providers.sql",
     ) }}
   </figcaption>
 </figure>
 
-The top 10 payment technologies cover roughly 94.4% of detections on desktop and 94.7% on mobile-another reminder that payments consolidate quickly.
+The top 10 payment technologies account for the bulk of payment detections on both devices-another reminder that payments consolidate quickly.
 
 ### What changed since 2022?
 
@@ -1145,7 +1145,7 @@ This does not mean PayPal is dying. It means the payment layer is becoming more 
   caption="Top payment provider by country in 2025.",
   description="Map showing the top payment provider by country in 2025. PayPal leads most mobile geographies, while Stripe leads more desktop geographies.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=970649597&format=interactive",
-  sheets_gid="970649597",
+  sheets_gid="732986771",
   sql_file="top_payment_provider_by_geo.sql"
   )
 }}
