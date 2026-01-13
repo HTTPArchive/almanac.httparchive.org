@@ -11,12 +11,12 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1tbbH4q4wzj4bpTj8ctRJ_8-NyS5KPBBcNInkemfxcR8
 AmandeepSingh_bio: Amandeep Singh has been developing for the web since 2009 and writes about front end development, UI/UX, Shopify, BigCommerce, WordPress, and programming at <a hreflang="en" href="https://byaman.com/">byaman.com</a>. He is a writer, mentor, and speaker.
 featured_quote: While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems.
-featured_stat_1: 19.8%
-featured_stat_label_1: Desktop sites that are ecommerce
-featured_stat_2: 35.9%
-featured_stat_label_2: Desktop ecommerce sites built with WooCommerce
-featured_stat_3: 3.9%
-featured_stat_label_3: Desktop sites offering PayPal as a payment method
+featured_stat_1: 19.1%
+featured_stat_label_1: Mobile sites that are ecommerce
+featured_stat_2: 44.2%
+featured_stat_label_2: Mobile ecommerce sites built with WooCommerce
+featured_stat_3: 3.5%
+featured_stat_label_3: Mobile sites offering PayPal as a payment method
 ---
 
 ## Introduction
@@ -65,7 +65,7 @@ Our methodology has limitations that affect accuracy.
   caption="Percent of mobile pages that are ecommerce sites.",
   content="19.1%",
   classes="big-number",
-  sheets_gid="1000255969",
+  sheets_gid="1752605080",
   sql_file="top_ecommerce.sql"
   )
 }}
@@ -119,9 +119,9 @@ The following table shows how the share of sites that are ecommerce increases as
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Top ecommerce platforms by rank.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Ecommerce adoption by rank (desktop vs mobile).",
+      sheets_gid="301153684",
+      sql_file="top_vendors_crux_rank.sql",
     ) }}
   </figcaption>
 </figure>
@@ -202,8 +202,8 @@ The following tables show the share of detected ecommerce sites within ecommerce
   <figcaption>
     {{ figure_link(
       caption="Desktop (top platforms, 2025).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="1752605080",
+      sql_file="top_ecommerce.sql",
     ) }}
   </figcaption>
 </figure>
@@ -221,61 +221,61 @@ The following tables show the share of detected ecommerce sites within ecommerce
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">37.1%</td>
+        <td class="numeric">44.2%</td>
         <td class="numeric">7.1%</td>
         <td class="numeric">1,099,863</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">20.6%</td>
+        <td class="numeric">24.6%</td>
         <td class="numeric">3.9%</td>
         <td class="numeric">612,387</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">8.9%</td>
+        <td class="numeric">10.6%</td>
         <td class="numeric">1.7%</td>
         <td class="numeric">262,643</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">8.1%</td>
+        <td class="numeric">9.6%</td>
         <td class="numeric">1.5%</td>
         <td class="numeric">239,580</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">3.1%</td>
+        <td class="numeric">3.7%</td>
         <td class="numeric">0.6%</td>
         <td class="numeric">92,484</td>
       </tr>
       <tr>
         <td class="numeric">1C-Bitrix</td>
-        <td class="numeric">2.8%</td>
+        <td class="numeric">3.3%</td>
         <td class="numeric">0.5%</td>
         <td class="numeric">82,394</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">1.8%</td>
+        <td class="numeric">2.1%</td>
         <td class="numeric">0.3%</td>
         <td class="numeric">53,179</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">1.2%</td>
+        <td class="numeric">1.4%</td>
         <td class="numeric">0.2%</td>
         <td class="numeric">35,493</td>
       </tr>
       <tr>
         <td>Tiendanube</td>
-        <td class="numeric">0.8%</td>
+        <td class="numeric">0.9%</td>
         <td class="numeric">0.2%</td>
         <td class="numeric">23,333</td>
       </tr>
       <tr>
         <td>Square Online</td>
-        <td class="numeric">0.7%</td>
+        <td class="numeric">0.8%</td>
         <td class="numeric">0.1%</td>
         <td class="numeric">20,942</td>
       </tr>
@@ -284,24 +284,24 @@ The following tables show the share of detected ecommerce sites within ecommerce
   <figcaption>
     {{ figure_link(
       caption="Mobile (top platforms, 2025).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="1752605080",
+      sql_file="top_ecommerce.sql",
     ) }}
   </figcaption>
 </figure>
 
-### Trends since 2022
+### Trends since 2024
 
 If you zoom out to the last few years, the story is less about disruption and more about slow consolidation:
 
-- WooCommerce remains the largest ecosystem, staying roughly flat (about 37.2% → 35.9% of ecommerce sites from 2022 to 2025).
-- Shopify continues to gain share (about 17.7% → 21.2%).
-- Wix eCommerce is the fastest climber in the top 5 (about 4.5% → 7.8%).
-- PrestaShop continues to trend down in share (about 4.6% → 3.2%).
+- WooCommerce remains the largest ecosystem, staying roughly flat (about 36% → 36% of ecommerce sites from 2024 to 2025).
+- Shopify continues to gain share (about 20% → 21%).
+- Wix eCommerce is the fastest climber in the top 5 (about 7% → 8%).
+- PrestaShop continues to trend down in share (about 4% → 3%).
 
 In other words: the default choices are getting more default, and smaller open‑source ecosystems are having to compete harder on developer experience, hosting simplicity, and performance out of the box.
 
-### Tops platforms by tier
+### Top platforms by tier
 
 Different tiers have different top platforms.
 
@@ -362,9 +362,9 @@ Different tiers have different top platforms.
   </table>
   <figcaption>
     {{ figure_link(
-      caption="TODO.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Desktop (top platforms by rank tier).",
+      sheets_gid="301153684",
+      sql_file="top_vendors_crux_rank.sql",
     ) }}
   </figcaption>
 </figure>
@@ -426,9 +426,9 @@ Different tiers have different top platforms.
   </table>
   <figcaption>
     {{ figure_link(
-      caption="TODO.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Mobile (top platforms by rank tier).",
+      sheets_gid="301153684",
+      sql_file="top_vendors_crux_rank.sql",
     ) }}
   </figcaption>
 </figure>
@@ -445,13 +445,13 @@ Platform dominance changes by region because of language, local payment rails, a
   caption="Top ecommerce platform by country in 2025.",
   description="Map showing the most popular ecommerce platform by country in 2025. WooCommerce leads in most regions, with Shopify and 1C-Bitrix leading in several markets, and regional leaders including Tiendanube, Shoptet, Cafe24, and Salla.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1194862163&format=interactive",
-  sheets_gid="1132201023",
+  sheets_gid="2084734046",
   sql_file="top_shopsystem_by_geo.sql"
   )
 }}
 
-- On desktop, WooCommerce is the most common platform in 43 of 63 geographies in our country‑level view on the most popular platform.
-- On mobile, WooCommerce leads even more often: 74 of 95.
+- On desktop, WooCommerce is the most common platform in 43 of 63 geographies in our country‑level view (excluding the ALL aggregate).
+- On mobile, WooCommerce leads even more often: 74 of 95 (excluding the ALL aggregate).
 
 There are also meaningful regional exceptions:
 
