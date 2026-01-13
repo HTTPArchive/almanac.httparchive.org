@@ -305,6 +305,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -2355,6 +2359,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -3387,6 +3395,18 @@
     "name": "Nektarios Paisios",
     "teams": {
       "2019": [
+        "authors"
+      ]
+    }
+  },
+  "nick-mccord": {
+    "avatar_url": "69532755",
+    "github": "nick-mccord",
+    "name": "Nick McCord",
+    "linkedin": "nicholasmccord",
+    "teams": {
+      "2025": [
+        "analysts",
         "authors"
       ]
     }
