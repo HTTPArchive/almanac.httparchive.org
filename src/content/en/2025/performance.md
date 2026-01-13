@@ -335,7 +335,56 @@ The main takeaways are:
 - However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
 ## Early Hints
-TODO (Unassigned)
+
+### Overview
+
+[Early Hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103) provide a "heads up" to the browser about assets that it will need for the page that the the browser has just requested.
+
+Early Hints are sent from the server to the browser while the requested page is still being prepared. In this way, browsers could start taking action to optimistically preconnect to other domains or preload an asset before the requested page has been returned to it.
+
+This allows Early Hints to have an absolute impact on the loading performance of the currently requested pages. Consider if, rather than having to wait for the HTML to return to the browser, and the parser to find the link (or even preload link) for the main CSS file and/or LCP asset, it could begin fetching those assets before the HTML was even returned to the browser.
+
+This could allow for an FCP that is nearly perfectly rendered, in a single paint.
+
+Early Hints can also contain crossorigin attributes and CSP header information, though [for security reasons](https://www.rfc-editor.org/rfc/rfc8297#section-3) it is recommended that they only be used over HTTP/2 or higher.
+
+### Usage
+
+In the chart below, which shows the percentage of pages that use early Hints, we see adoption has not exactly taken off: usage is quite low in all groups, barely breaking 6% on desktop in the top 1,000,000 sites; most other groups are well below 5%.
+
+{{ figure_markup(
+  image="early-hints-usage.png",
+  caption="Early Hints usage by website rank and device (2025)",
+  description=”The chart shows the percentage of pages using Early Hints by website rank on desktop and mobile in 2025. Usage is quite low in all groups, only breaking 6% of desktop pages in the top 1 million group. All other groups are mostly below 5%.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1274076138&format=interactive",
+  sheets_gid="1150834797",
+  sql_file="early_hints_usage_rank.sql"
+  )
+}}
+
+This is likely related to the complexities of setting up and configuring Early Hints: the assets for any given page must be related to the server before the page is complete and ready for sending; for most CMSs this would be a challenge.
+
+The mobile/desktop parity is also quite noticeable; never more than a 1% difference, and typically closer to 0.5%. Meaning, where Early Hints are implemented, they are likely done so similarly for all device types.
+
+Though as low as the usage for 2025 is, it is also noticeable that there has been an increase in usage over the past three years.
+
+{{ figure_markup(
+  image="early-hints-usage-by-year.png",
+  caption="Early Hints usage by year (2023, 2024, 2025) and device (mobile, desktop)",
+  description=”The chart shows the percentage of pages using Early Hints by year on desktop and mobile in 2023, 2024 and 2025. Usage is quite low in all groups for all years, but there is a consistent increase across the years, from just over 1% to roughly 4%.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=888096185&format=interactive",
+  sheets_gid="1512001974",
+  sql_file="TODO"
+  )
+}}
+
+### Support
+
+Unlike most web performance features, Early Hints relies not only on browsers, but also on servers for support. As of this publication, “Preconnect” was supported in all browsers, and “Preload” in all except Safari.
+
+With regards to servers, Early Hints are fully supported for H2O and NGINX, and for Apache if you are using mod_http2, and for Node as of 18.11.
+
+Also note that Early Hints are available via [Fastly since 2020](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code), [Cloudflare since 2021](https://blog.cloudflare.com/early-hints/), and [Akamai since 2024](https://techdocs.akamai.com/ion/changelog/jun-17-2024-new-early-hints-behavior).
 
 ## Speculation Rules
 TODO (Unassigned)
