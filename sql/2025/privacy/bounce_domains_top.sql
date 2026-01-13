@@ -74,5 +74,5 @@ FROM bounce_sequences
   FOR client IN ('desktop', 'mobile')
 )
 |> RENAME pct_mobile AS mobile, pct_desktop AS desktop, cnt_mobile AS mobile_count, cnt_desktop AS desktop_count
-|> ORDER BY mobile_count + desktop_count DESC
+|> ORDER BY COALESCE(mobile_count, 0) + COALESCE(desktop_count, 0) DESC
 |> LIMIT 100

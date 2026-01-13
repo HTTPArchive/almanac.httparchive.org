@@ -57,4 +57,4 @@ FROM referrer_policy_custom_metrics
   FOR client IN ('desktop', 'mobile')
 )
 |> RENAME pct_mobile AS mobile, pct_desktop AS desktop
-|> ORDER BY websites_count_desktop + websites_count_mobile DESC
+|> ORDER BY COALESCE(websites_count_desktop, 0) + COALESCE(websites_count_mobile, 0) DESC

@@ -26,17 +26,11 @@ accept_ch_meta AS (
   SELECT DISTINCT
     client,
     root_page
-  FROM (
-    SELECT
-      client,
-      root_page,
-      custom_metrics.other.almanac AS metrics
-    FROM `httparchive.crawl.pages`
-    WHERE date = '2025-07-01'
-      --AND rank = 1000
-  ),
-    UNNEST(JSON_QUERY_ARRAY(metrics.`meta-nodes`.nodes)) AS meta_node
-  WHERE LOWER(SAFE.STRING(meta_node.`http-equiv`)) = 'accept-ch'
+  FROM `httparchive.crawl.pages`,
+    UNNEST(JSON_QUERY_ARRAY(custom_metrics.other.almanac.`meta-nodes`.nodes)) AS meta_node
+  WHERE date = '2025-07-01'
+    --AND rank = 1000
+    AND LOWER(SAFE.STRING(meta_node.`http-equiv`)) = 'accept-ch'
 ),
 
 -- Combine both sources
@@ -58,4 +52,3 @@ GROUP BY all_accept_ch.client
   FOR client IN ('desktop', 'mobile')
 )
 |> RENAME pct_mobile AS mobile, pct_desktop AS desktop
-|> ORDER BY websites_count_mobile + websites_count_desktop DESC

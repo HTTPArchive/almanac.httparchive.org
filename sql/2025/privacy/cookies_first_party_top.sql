@@ -23,5 +23,5 @@ GROUP BY client, cookie_name
 |> RENAME
 pct_domains_mobile AS mobile,
 pct_domains_desktop AS desktop
-|> ORDER BY domain_count_mobile + domain_count_desktop DESC
+|> ORDER BY COALESCE(domain_count_mobile, 0) + COALESCE(domain_count_desktop, 0) DESC
 |> LIMIT 1000
