@@ -320,13 +320,57 @@ Another common reason for websites to fall in the bfcache ineligibility category
 
 Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome has changed this behavior in 2025</a> and now allows such pages into BFCache when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
 
-### Images
-TODO (Himanshu)
+### CLS Best Practices 
 
-### Animation
-TODO (Himanshu)
+#### Fixed Image Sizes
 
-### Conclusion
+Images are one of the most common causes of Cumulative Layout Shift (CLS) when the browser does not know how much space to reserve for them upfront. If an image loads without explicit dimensions, the browser initially lays out the page as if the image has zero height, and then shifts surrounding content once the image finishes loading.
+
+To prevent this, images should always have intrinsic dimensions defined either via `width` and `height` attributes or by using CSS `aspect-ratio` so the browser can allocate the correct amount of space before the image is fetched.
+
+{{ figure_markup(
+  caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
+  content="62.28%",
+  classes="big-number",
+  sheets_gid="1870744021",
+  sql_file="cls_unsized_images.sql"
+)}}
+
+In 2025, a significant share of pages still risk layout instability due to images without explicit dimensions. On mobile, 62.28% of pages fail to set dimensions on at least one image, an improvement from 66% in 2024, indicating gradual adoption of CLS friendly image practices.
+
+Desktop pages show a similar but slightly worse pattern, with 65.45% affected in 2025, down from 69% in 2024. While the downward trend is encouraging, the majority of pages still leave the browser guessing image sizes at layout time, making images one of the most persistent and preventable contributors to CLS.
+
+{{ figure_markup(
+  image="unsized-images-per-page.png",
+  caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
+  description="Bar chart showing the number of unsized images per page at different percentiles for desktop and mobile in 2025. At the 50th percentile, desktop pages have 2 unsized images on average, compared to one on mobile, increasing to nine on desktop and eight on mobile at the 75th percentile. At the 90th percentile, the count rises sharply to 25 unsized images on desktop and 22 on mobile, while lower percentiles show little to no unsized images.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=106540407&format=interactive",
+  sheets_gid="1218246619",
+  sql_file="cls_unsized_images.sql"
+  )
+}}
+
+The median number of unsized images per web page is two. At the 90th percentile, this number increases sharply to 26 on desktop and 23 on mobile. Unsized images increase the risk of layout shift. However, their actual impact on CLS depends on both the size of the image and how far content shifts when it loads, especially if the shift affects the viewport. CLS is calculated based on the impact fraction (how much of the viewport is affected) and the distance fraction (how far elements move), meaning larger images or shifts closer to the top of the page tend to contribute more heavily to CLS. The full calculation details are explained [here](https://web.dev/articles/cls#layout-shift-score-calculation).
+
+{{ figure_markup(
+  image="unsized-images-by-height.png",
+  caption="Distribution of the heights of unsized images.",
+  description="Bar chart showing the height of unsized images at different percentiles for desktop and mobile in 2025. At the 50th percentile, unsized images have a height of 111px on desktop and 98px on mobile, increasing to 246px and 200px respectively at the 75th percentile. At the 90th percentile, unsized image heights reach 413px on desktop and 300px on mobile",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=2046199622&format=interactive",
+  sheets_gid="116114708",
+  sql_file="cls_unsized_image_height.sql"
+  )
+}}
+
+From the chart above, unsized images are much taller at higher percentiles. At the median, unsized images are about 100px tall on both desktop and mobile, but by the 90th percentile they grow to around 413px on desktop and 300px on mobile. Taller unsized images increase CLS because they cause larger vertical layout shifts when they load, especially if they appear in the viewport. Since web pages scroll vertically, missing image height has a much bigger impact on CLS than missing width.
+
+#### Fonts
+TODO
+
+#### Animation
+TODO
+
+### Visual Stability Conclusion
 
 The main takeaways are:
 
