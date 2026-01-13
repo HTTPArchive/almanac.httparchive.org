@@ -26,9 +26,9 @@ featured_stat_label_3: TODO
 
 Web performance refers to how quickly and smoothly web pages load and respond to user interactions. Performance plays an important role in shaping engagement, retention, and overall trust, particularly as the web is accessed across a wide range of devices and network conditions. Pages that feel fast and responsive encourage exploration and continued use, while experiences that feel slow or unpredictable can interrupt flow and reduce confidence. Understanding the factors that influence performance is therefore essential to building web experiences that feel reliable and consistent to end users.
 
-Measuring web performance includes a broad set of metrics that describe how pages load, render, and respond to user input in real-world conditions. It is not always possible for the web to feel instantaneous due to device, network, and execution constraints. As a result, performance is not only about speed, but also about how an experience feels while work is in progress. Providing clear feedback while content loads, keeping layouts visually stable, and avoiding unexpected changes help users understand page behavior and feel in control as they interact with a site. Although these aspects can be difficult to measure directly, they play an important role in how users perceive and engage with a website.
+Measuring web performance includes a broad set of metrics that describe how pages load, render, and respond to user input in real-world conditions. It is not always possible for the web to feel instantaneous due to device, network, and execution constraints. As a result, performance is not only about speed, but also about how an experience feels while work is in progress. Providing clear feedback while content loads, keeping layouts visually stable, and avoiding unexpected changes helps users understand page behavior and feel in control as they interact with a site. Although these aspects can be difficult to measure directly, they play an important role in how users perceive and engage with a website.
 
-These considerations have influenced the development and adoption of user-centric performance metrics called **Core Web Vitals**, these include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, and capture key aspects of loading performance, interactivity, and visual stability. While Core Web Vitals were initially available primarily in Chromium-based browsers, support has expanded, with Safari and Firefox <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">now reporting</a> key Core Web Vitals, enabling more consistent cross-browser performance measurement.
+These considerations have influenced the development and adoption of user-centric performance metrics called **Core Web Vitals**. These include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, which capture key aspects of loading performance, interactivity, and visual stability. While Core Web Vitals were initially available primarily in Chromium-based browsers, support has expanded, with Safari and Firefox <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">now reporting</a> key Core Web Vitals, enabling more consistent cross-browser performance measurement.
 
 These metrics are complemented by traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, along with measures of resource loading behavior like Fonts, Images and JavaScript. Together, these signals provide important context for understanding where performance bottlenecks occur and how they influence overall page behavior. A comprehensive overview of modern web performance metrics and measurement techniques can be found at <a hreflang="en" href="https://web.dev/performance">web.dev</a>.
 
@@ -40,11 +40,11 @@ What's new this year?
 
 ### Data Sources and Methodology
 
-This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a very large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology).
+This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a very large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology). TODO: Fix this link, currently 404.
 
 ## Core Web Vitals Summary
 
-Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page's lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
+Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures unexpected layout changes that occur during a page's lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
 
 {{ figure_markup(
   image="good-core-web-vitals-devices-years.png",
@@ -55,8 +55,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   sql_file="web_vitals_by_device.sql"
   )
 }}
+TODO: Does it matter that the above image uses the term "Phone" in its legend, where most others use "Mobile"?
 
-Mobile performance has significantly improved due to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications. Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This significant rise in mobile performance is largely attributable to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications.
+Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This significant rise in mobile performance is largely attributable to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications.
 
 Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%.
 
@@ -80,6 +81,7 @@ However, CWV scores drop significantly for less popular sites:
 This data suggests that top-tier websites are prioritizing performance improvements, while mid-tier websites are still lagging.
 
 In contrast, Desktop performance metrics are more uniformly distributed. This disparity highlights a significant gap in the focus on mobile web app performance compared to desktop, which is likely due to an increasing concentration on native applications.
+TODO: Could this also have to do with some entities/developers still not focusing properly on mobile?
 
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",
@@ -91,9 +93,10 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile.This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads.
+Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile. This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads.
+TODO: Could also be that Home Pages get updated more frequently and introduce more varied components, whereas secondary pages might be more templatized, so perhaps more stable?
 
-<a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of Web Vitals data for within the page navigation.
+<a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of CWV data for within the page navigation.
 
 While the current CWV data indicates better overall performance for secondary pages, a deeper dive into specific aspects of loading performance, interactivity and visual stability is necessary to fully understand the user experience, which is what we will cover in the following sections.
 
@@ -159,6 +162,7 @@ For an origin to receive a "good" INP score, at least 75% of all sessions need a
   sheets_gid="1060077014",
   sql_file="inp_by_device.sql"
 ) }}
+TODO: Does it matter that the above image uses the term "Phone" in its legend, where most others use "Mobile"?
 
 In 2025, mobile INP performance showed encouraging improvement, with 77% of websites achieving good scores—up from 74% in 2024. This 3 percentage point gain represents meaningful progress, as millions of websites now deliver more responsive experiences to mobile users. Desktop performance remained exemplary at 97%, maintaining the high standard established in previous years.
 
