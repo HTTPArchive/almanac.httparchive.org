@@ -881,6 +881,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "website": "http://www.bramstein.com/"
@@ -1105,12 +1108,16 @@
   },
   "charlesberret": {
     "avatar_url": "3780812",
-    "github": "cberret",
+    "github": "charlesberret",
     "name": "Charles Berret",
     "teams": {
       "2024": [
         "authors",
         "editors"
+      ],
+      "2025": [
+        "authors",
+        "analysts"
       ]
     },
     "website": "https://charlesberret.net/"
@@ -1200,6 +1207,9 @@
       ],
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "editors"
       ]
     },
     "twitter": "svgeesus",
@@ -2197,6 +2207,9 @@
       "2024": [
         "analysts",
         "reviewers"
+      ],
+      "2025": [
+        "analysts"
       ]
     }
   },
@@ -2649,6 +2662,9 @@
         "reviewers"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
