@@ -316,7 +316,7 @@ CDNs are leading the adoption of Brotli and Zstandard compression. Compared to 2
   )
 }}
 
-While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 compared to 2024. In 2024, only Facebook's CDN had any statistically measurable usage of Zstandard, while in 2025 both Cloudflare (15%) and Google CDN (10%) showed measurable adoption. Cloudflare’s newer compression defaults and configuration options may help explain the observed data. The one outlier to the dataset was Amazon CloudFront, which currently does not support Zstandard compression natively. However, the data observed showed CloudFront passing through already compressed data from origin using Zstandard. This demonstrates content owner's desire to use Zstandard even though not all major CDN providers support it.
+While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 compared to 2024. In 2024, only Facebook's CDN had any statistically measurable usage of Zstandard, while in 2025 both Cloudflare (15%) and Google CDN (10%) showed measurable adoption. Cloudflare's newer compression defaults and configuration options may help explain the observed data. The one outlier to the dataset was Amazon CloudFront, which currently does not support Zstandard compression natively. However, the data observed showed CloudFront passing through already compressed data from origin using Zstandard. This demonstrates content owner's desire to use Zstandard even though not all major CDN providers support it.
 
 ## TLS usage
 
@@ -438,7 +438,7 @@ Early Hints uses the <a hreflang="en" href="https://datatracker.ietf.org/doc/htm
 
 Browser support for Early Hints is widespread, but we found minimal usage in the dataset with only 0.012% of CDN requests. This represents a marginal 0.002% increase from 2024 to 2025. Vercel was the only CDN to support over 1% adoption (2.84%) with Cloudflare and Fastly less than 1%.
 
-We're interested to see how Early Hints affects performance as more sites start using it. Hopefully by next year's almanac, we'll have more CDN providers implementing the feature and enough data to share detailed statistics on its impact.
+We're interested to see how Early Hints affects performance as more sites start using it. Hopefully by next year's Web Almanac, we'll have more CDN providers implementing the feature and enough data to share detailed statistics on its impact.
 
 ## Conclusion
 
