@@ -19,7 +19,6 @@ featured_stat_2: ...
 featured_stat_label_2: ...
 featured_stat_3: ...
 featured_stat_label_3: ...
-doi: ...
 ---
 
 ## Introduction
@@ -36,29 +35,29 @@ A _Content Delivery Network_ (CDN) is a geographically distributed network of se
 
 CDNs serve as intermediary infrastructure between end users and origin servers, intercepting web requests and optimizing the complete delivery process. To understand how CDNs can enhance web performance, consider the traditional web interaction when a user types a hostname into a browser, and how different CDNs may improve each step:
 
-**DNS Resolution**
-- **Traditional**: Browser queries DNS for origin server IP, often with slow resolution times
-- **CDN Processed**: CDN DNS infrastructure may use various routing strategies (anycast or unicast) to direct users to optimal edge servers. Some CDNs support modern DNS records like HTTPS or SVCB (Service Binding) records that can advertise protocol capabilities directly in DNS responses, though adoption varies across providers
+- **DNS Resolution**
+  - **Traditional**: Browser queries DNS for origin server IP, often with slow resolution times
+  - **CDN Processed**: CDN DNS infrastructure may use various routing strategies (anycast or unicast) to direct users to optimal edge servers. Some CDNs support modern DNS records like HTTPS or SVCB (Service Binding) records that can advertise protocol capabilities directly in DNS responses, though adoption varies across providers
 
-**Connection Establishment**
-- **Traditional**: Browser establishes new TCP connection to distant origin server with full handshake overhead
-- **CDN Processed**: Connection to nearby edge server over TCP (for HTTP/1.1 and HTTP/2) or UDP with QUIC (for HTTP/3). CDNs may support HTTP/3's 0-RTT connection resumption for returning visitors, though not all CDNs have implemented these newer connection optimization features
+- **Connection Establishment**
+  - **Traditional**: Browser establishes new TCP connection to distant origin server with full handshake overhead
+  - **CDN Processed**: Connection to nearby edge server over TCP (for HTTP/1.1 and HTTP/2) or UDP with QUIC (for HTTP/3). CDNs may support HTTP/3's 0-RTT connection resumption for returning visitors, though not all CDNs have implemented these newer connection optimization features
 
-**Protocol Negotiation**
-- **Traditional**: Limited to origin server's protocol capabilities, often older HTTP versions
-- **CDN Processed**: Many CDNs can advertise modern protocol availability through Alt-Svc (Alternative Service) headers that inform browsers about alternative protocols. CDNs typically provide protocol translation benefits, accepting newer protocols from browsers while maintaining connections to origins, regardless of origin server capabilities
+- **Protocol Negotiation**
+  - **Traditional**: Limited to origin server's protocol capabilities, often older HTTP versions
+  - **CDN Processed**: Many CDNs can advertise modern protocol availability through `Alt-Svc` (Alternative Service) HTTP headers that inform browsers about alternative protocols. CDNs typically provide protocol translation benefits, accepting newer protocols from browsers while maintaining connections to origins, regardless of origin server capabilities
 
-**Request Processing & Optimization**
-- **Traditional**: Basic request forwarding with minimal processing
-- **CDN Processed**: Depending on the CDN, may include header normalization, intelligent routing decisions, addition of performance headers like Server-Timing which provides server-side performance metrics, security headers, and request optimization based on content type and user geographic location
+- **Request Processing & Optimization**
+  - **Traditional**: Basic request forwarding with minimal processing
+  - **CDN Processed**: Depending on the CDN, may include header normalization, intelligent routing decisions, addition of performance headers like Server-Timing which provides server-side performance metrics, security headers, and request optimization based on content type and user geographic location
 
-**Response Processing**
-- **Traditional**: Direct response from origin server, limited by origin's HTTP server capabilities
-- **CDN Processed**: CDNs may implement advanced caching strategies, cache validation, Content-Encoding optimization (such as Brotli or Gzip compression), conditional request support (like 304 Not Modified responses that save bandwidth), and response transformation, though specific features vary by provider
+- **Response Processing**
+  - **Traditional**: Direct response from origin server, limited by origin's HTTP server capabilities
+  - **CDN Processed**: CDNs may implement advanced caching strategies, cache validation, Content-Encoding optimization (such as Brotli or Gzip compression), conditional request support (like 304 Not Modified responses that save bandwidth), and response transformation, though specific features vary by provider
 
-**Connection Management**
-- **Traditional**: Single connection per request or basic keep-alive to origin
-- **CDN Processed**: Many CDNs implement dual-sided connection optimization, maintaining persistent connections to clients while using intelligent connection pooling to origin servers, reducing overhead on both ends
+- **Connection Management**
+  - **Traditional**: Single connection per request or basic keep-alive to origin
+  - **CDN Processed**: Many CDNs implement dual-sided connection optimization, maintaining persistent connections to clients while using intelligent connection pooling to origin servers, reducing overhead on both ends
 
 CDNs serve as deployment platforms for emerging web standards, implementing new HTTP headers, compression algorithms, and security features at scale before they become widely adopted by origin servers. This positions CDNs as critical infrastructure for web technology evolution, though the specific features and optimizations available depend significantly on the CDN provider and their technology adoption timeline.
 
@@ -94,7 +93,7 @@ A web page is composed of the following key components:
   )
 }}
 
-The chart above shows the breakdown of requests for different types of content (HTML, Subdomain, and Third-party), showing the share of content served by CDN versus origin on mobile devices.
+The chart shows the breakdown of requests for different types of content (HTML, Subdomain, and Third-party), showing the share of content served by CDN versus origin on mobile devices.
 
 CDNs are often utilized for delivering static content such as fonts, image files, stylesheets, and JavaScript. This kind of content doesn't change frequently, making it a good candidate for caching on CDN proxy servers. We still see CDNs used more frequently for this type of resource, especially for third-party content, with 71% being served via CDN. Subdomain resources show moderate CDN adoption at 52%, while HTML content has the lowest CDN usage at 35%, as it's more commonly served directly from origin servers.
 
@@ -108,7 +107,7 @@ CDNs are often utilized for delivering static content such as fonts, image files
   )
 }}
 
-The above figure shows the evolution of different content types served from CDNs over the years. From 2024 to 2025, we see mixed trends across content types. HTML content continued its upward trajectory, increasing from 33% to 35%. Subdomain content remained stable at 52% in both years. However, third-party content experienced a notable decline from 75% in 2024 to 71% in 2025, representing a four percentage point decrease after years of consistent growth.
+From 2024 to 2025, we see mixed trends across content types. HTML content continued its upward trajectory, increasing from 33% to 35%. Subdomain content remained stable at 52% in both years. However, third-party content experienced a notable decline from 75% in 2024 to 71% in 2025, representing a four percentage point decrease after years of consistent growth.
 
 {{ figure_markup(
   image="cdn-usage-ranking-mobile.png",
@@ -127,8 +126,8 @@ As mentioned in previous editions, the increase in CDN usage of 33% in 2024 to 3
 ## CDN providers
 
 CDN providers can generally be classified into two segments:
-1. **Generic CDNs** – Providers that offer a wide range of content delivery services to suit various use cases, including Akamai, Cloudflare, Amazon CloudFront, and Fastly.
-2. **Purpose-built CDNs** – Providers tailored to specific platforms or use cases, such as Netlify and WordPress.
+1. **Generic CDNs**: Providers that offer a wide range of content delivery services to suit various use cases, including Akamai, Cloudflare, Amazon CloudFront, and Fastly.
+2. **Purpose-built CDNs**: Providers tailored to specific platforms or use cases, such as Netlify and WordPress.
 
 Generic CDNs address broad market needs with offerings that include:
 * Website delivery
@@ -149,7 +148,7 @@ These capabilities appeal to a wide range of industries, which is reflected in t
   )
 }}
 
-The above figure shows the top CDN providers for base HTML requests. The leading vendors in this category are Cloudflare, with a 58% share, followed by Google (21%), Amazon CloudFront (7%), Fastly (5%), and Akamai and Vercel, each with a 2% share.
+The leading vendors for serving base HTML requests are Cloudflare, with a 58% share, followed by Google (21%), Amazon CloudFront (7%), Fastly (5%), and Akamai and Vercel, each with a 2% share.
 
 {{ figure_markup(
   image="top-cdns-subdomain.png",
@@ -173,7 +172,7 @@ Marginally changing from 2024, the leading vendors in this category are Cloudfla
   )
 }}
 
-The above figure highlights third-party domain usage, with Google leading the list at 53% market share, followed by well-known CDN providers such as Cloudflare (17%), Amazon CloudFront (11%), Fastly (5%), and Akamai and Facebook (4%).
+Google leads the list third-party domain usage at 53% market share, followed by well-known CDN providers such as Cloudflare (17%), Amazon CloudFront (11%), Fastly (5%), and Akamai and Facebook (4%).
 
 While many CDNs offer purpose-built features optimized specifically for content delivery, they increasingly exist as part of larger service ecosystems. These CDNs are often tightly integrated with cloud infrastructure, security solutions, and edge computing platforms, with these adjacent services delivered through or alongside the CDN itself.
 
@@ -201,7 +200,7 @@ In previous years, HTTP/3 adoption was difficult to break out due to the nature 
   )
 }}
 
-The above further reinforces the role CDNs play in driving the adoption of new protocols. CDNs saw 29% traffic from HTTP/3 effectively 0% for origin traffic. Compared to 2024, we observed a sharp decrease in CDN usage for HTTP/1.1 in 2025.
+The data reinforces the role CDNs play in driving the adoption of new protocols. CDNs saw 29% traffic from HTTP/3 effectively 0% for origin traffic. Compared to 2024, we observed a sharp decrease in CDN usage for HTTP/1.1 in 2025.
 
 {{ figure_markup(
   image="cdn-http-versions-mobile-3p.png",
@@ -233,17 +232,17 @@ Below shows the time to first byte (TTFB) median percentile distribution for lat
 
 The TTFB performance for HTTP/3 compared to previous HTTP protocol versions varies by CDN provider, with Amazon CloudFront and Fastly both showing improved TTFB latency. Note that these are not uniform tests across CDNs and website owners should perform their own controlled performance testing.
 
-### Alt-Svc Header
+### Alt-Svc
 
-The [Alt-Svc](https://datatracker.ietf.org/doc/html/rfc7838#section-3) (Alternative Services) header is an HTTP response header that tells browsers about alternative protocols or servers they can use to access the same resource. The most common use case is advertising HTTP/3 support. When a browser first connects to a server using HTTP/1.1 or HTTP/2, the server can include an Alt-Svc header like: `Alt-Svc: h3=":443"; ma=86400`
+The <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc7838#section-3">Alt-Svc</a> (Alternative Services) HTTP response header tells browsers about alternative protocols or servers they can use to access the same resource. The most common use case is advertising HTTP/3 support. When a browser first connects to a server using HTTP/1.1 or HTTP/2, the server can include an Alt-Svc header like: `Alt-Svc: h3=":443"; ma=86400`
 
 This informs the browser that it can use HTTP/3 on port 443 to reach the same service, and that this information remains valid for 86400 seconds (24 hours). Once the browser receives this header, it can establish future connections using HTTP/3 directly rather than beginning with HTTP/2 and negotiating an upgrade.
 
-Among HTTP/3 responses from major CDNs, Alt-Svc was nearly universal (>99.99%), indicating that CDNs consistently advertise HTTP/3 capability to clients.
+Among HTTP/3 responses from major CDNs, `Alt-Svc` was nearly universal (>99.99%), indicating that CDNs consistently advertise HTTP/3 capability to clients.
 
 ### Server-Timing
 
-Defined in the W3C Server-Timing specification, the Server-Timing header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly through HTTP headers, transforming opaque server processing into observable and debuggable data. Specific to CDNs, Server-Timing headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
+Defined in the W3C Server-Timing specification, the `Server-Timing` HTTP header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly, transforming opaque server processing into observable and debuggable data. Specific to CDNs, `Server-Timing` headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
 
 {{ figure_markup(
   image="cdn-http-server-timing-headers-mobile.png",
@@ -255,7 +254,7 @@ Defined in the W3C Server-Timing specification, the Server-Timing header allows 
   )
 }}
 
-Adoption of the Server-Timing header varies across CDNs. Above you can see Pressable and Nexcess CDNs had 100% adoption across their requests due to default configurations. CDNs like Akamai, Amazon CloudFront, and Fastly require non-default configuration likely leading to less adoption. However, enterprise concerns around security, privacy, and performance may drive this opt-in approach.
+Adoption of the `Server-Timing` header varies across CDNs. We see Pressable and Nexcess CDNs had 100% adoption across their requests due to default configurations. CDNs like Akamai, Amazon CloudFront, and Fastly require non-default configuration likely leading to less adoption. However, enterprise concerns around security, privacy, and performance may drive this opt-in approach.
 
 ## CDN Security Headers
 
@@ -271,7 +270,7 @@ CDNs play a critical role in web security by implementing and enforcing security
   )
 }}
 
-Shown above you can see the average number of security headers per request from major enterprise CDN providers. Both Cloudflare and Amazon CloudFront have a lower average number of security headers and this trend continues as we go more granular into specific headers as seen below.Header count is not a direct proxy for security posture; it often reflects how much a CDN auto-injects vs requires explicit configuration.
+Both Cloudflare and Amazon CloudFront have a lower average number of security headers and this trend continues as we go more granular into specific headers as seen below. Header count is not a direct proxy for security posture; it often reflects how much a CDN auto-injects vs requires explicit configuration.
 
 {{ figure_markup(
   image="cdn-http-sec-headers-mobile.png",
@@ -291,9 +290,9 @@ Compression continues to be essential for web content delivery, representing one
 
 From the 2025 dataset we observed several commonly used compression algorithms:
 
-* Gzip
-* Brotli
-* Zstandard (Zstd)
+- Gzip
+- Brotli
+- Zstandard (Zstd)
 
 {{ figure_markup(
   image="cdn-compression-mobile.png",
@@ -367,7 +366,7 @@ Desktop users experience substantially faster TLS negotiations with CDNs compare
   )
 }}
 
-Mobile devices show a similar pattern, with CDN performing better than Origin servers, but the overall negotiation times are higher compared to desktop. The median TLS negotiation time for mobile CDN is 183 milliseconds, while for Origin servers it's 302 milliseconds. At the 90th percentile, mobile CDN takes 216 milliseconds, whereas Origin servers require 416 milliseconds.
+Mobile devices show a similar pattern, with CDN performing better than origin servers, but the overall negotiation times are higher compared to desktop. The median TLS negotiation time for mobile CDN is 183 milliseconds, while for origin servers it's 302 milliseconds. At the 90th percentile, mobile CDN takes 216 milliseconds, whereas origin servers require 416 milliseconds.
 
 {{ figure_markup(
   image="tls-negotiation-mobile.png",
@@ -385,7 +384,7 @@ Mobile devices generally show slower performance than desktop due to their more 
 
 Image formats continue to play a pivotal role in CDNs, directly influencing website performance, bandwidth costs, and overall user experience. Modern formats such as WebP, AVIF, and SVG remain the most efficient options, offering improved compression ratios and visual fidelity compared to legacy formats like JPEG and PNG. These efficiencies translate to faster page loads and lower data transfer, especially critical for mobile users and high-traffic sites.
 
-Most CDNs now automatically detect browser capabilities and serve the most optimized format available—e.g., AVIF for Chrome, WebP for Edge, and JPEG fallback for legacy browsers. Adaptive resizing, caching, and on-the-fly conversion have largely eliminated the need for maintaining static image variants across device types or resolutions.
+Most CDNs now automatically detect browser capabilities and serve the most optimized format available—for example, AVIF for Chrome, WebP for Edge, and JPEG fallback for legacy browsers. Adaptive resizing, caching, and on-the-fly conversion have largely eliminated the need for maintaining static image variants across device types or resolutions.
 
 {{ figure_markup(
   image="cdn-image-formats.png",
@@ -409,7 +408,7 @@ The 2025 data underscore a clear trajectory: legacy formats like JPEG still domi
 
 Client Hints were introduced as an alternative to the User-Agent string, letting web servers request specific information from browsers through HTTP headers. They fall into four main categories: device information, user agent preferences, user preference media features, and networking details. These hints are further split into high and low entropy types. High entropy hints can potentially be used for fingerprinting, so browsers usually require user permission or enforce other policies before sharing them. Low entropy hints are less useful for fingerprinting and may be sent by default based on browser or user settings.
 
-In 2025, we refined our approach to measuring client hints providing more accurate results compared to 2024. However, based on the chart below the trend broadly continues with a lack of client hint adoption.
+In 2025, we refined our approach to measuring Client Hints providing more accurate results compared to 2024. However, based on the chart below the trend broadly continues with a lack of Client Hint adoption.
 
 {{ figure_markup(
   image="cdn-client-hints-mobile.png",
@@ -425,7 +424,7 @@ Client Hints buck the usual pattern of CDNs leading adoption: CDN usage was flat
 
 ## Early Hints
 
-Early Hints uses the [HTTP 103 status code](https://datatracker.ietf.org/doc/html/rfc8297#section-2) to let servers send initial headers to browsers while the main response is still being prepared. This is especially useful for preloading important resources like stylesheets, JavaScript files, and fonts before the full page is ready.
+Early Hints uses the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8297#section-2">HTTP 103 status code</a> to let servers send initial headers to browsers while the main response is still being prepared. This is especially useful for preloading important resources like stylesheets, JavaScript files, and fonts before the full page is ready.
 
 {{ figure_markup(
   image="cdn-early-hints-mobile.png",
@@ -449,6 +448,6 @@ This year we took a deeper look at HTTP/3 and revisited Early Hints, which we fi
 
 The CDN landscape in 2025 demonstrates that these platforms have evolved far beyond simple content delivery to become comprehensive optimization and security platforms that are essential infrastructure for the modern web.
 
-We recommend readers visit the [HTTP](./http) and [Security](./security) chapters of the 2025 Web Almanac where several topics in this chapter are expanded on and provide data through a different lens.
+We recommend readers visit the [Security](./security) chapter of the 2025 Web Almanac where several topics in this chapter are expanded on and provide data through a different lens.
 
 Join us again in 2026 as we collect and analyze more data to see what new insights we can share with our readers.
