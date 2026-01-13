@@ -10,3 +10,6 @@ sqlfluff==3.5.0
 pandas==2.3.3
 google-cloud-bigquery==3.40.0
 requests==2.32.5
+
+# src/tools/scripts/*
+google-api-python-client==2.188.0
