@@ -6,6 +6,9 @@
     "teams": {
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "twitter": "AaronGustafson",
@@ -427,6 +430,9 @@
     "teams": {
       "2021": [
         "authors"
+      ],
+      "2025": [
+        "analysts"
       ]
     },
     "twitter": "alonkochba"
@@ -1325,6 +1331,9 @@
       ],
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "website": "https://newlocalmedia.com"
@@ -1480,6 +1489,9 @@
     "name": "Diego Gonzalez",
     "teams": {
       "2022": [
+        "authors"
+      ],
+      "2025": [
         "authors"
       ]
     },
@@ -2698,6 +2710,7 @@
   "Schweinepriester": {
     "avatar_url": "2644614",
     "github": "Schweinepriester",
+    "mastodon": "https://mastodon.social/@Schweinepriester",
     "name": "Kai Hollberg",
     "teams": {
       "2021": [
@@ -2705,9 +2718,11 @@
       ],
       "2022": [
         "reviewers"
+      ],
+      "2025": [
+        "reviewers"
       ]
-    },
-    "twitter": "schweinepriestr"
+    }
   },
   "konfirmed": {
     "avatar_url": "9829274",
@@ -3316,6 +3331,9 @@
     "teams": {
       "2022": [
         "authors"
+      ],
+      "2025": [
+        "authors"
       ]
     },
     "twitter": "MichaelSolati",
@@ -3767,12 +3785,15 @@
     "twitter": "oluoluoxenfree",
     "website": "https://olu.online/"
   },
-  "onurguler18": {
+  "onurglr": {
     "avatar_url": "39603688",
-    "github": "onurguler18",
+    "github": "onurglr",
     "name": "Onur Güler",
     "teams": {
       "2024": [
+        "analysts"
+      ],
+      "2025": [
         "analysts"
       ]
     }
@@ -4388,6 +4409,15 @@
       ]
     }
   },
+  "samuelfatola": {
+    "linkedin": "samuelfatola",
+    "name": "Samuel Fatola",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    }
+  },
   "sboukortt": {
     "avatar_url": "16757512",
     "github": "sboukortt",
@@ -4681,6 +4711,15 @@
       ]
     },
     "twitter": "SophieBrannon"
+  },
+  "sreemoyeebhattacharya": {
+    "linkedin": "sreemoyee-bhattacharya-17a4a61a6",
+    "name": "Sreemoyee Bhattacharya",
+    "teams": {
+      "2025": [
+        "editors"
+      ]
+    }
   },
   "stefanjudis": {
     "avatar_url": "962099",
@@ -5022,6 +5061,18 @@
     },
     "twitter": "una",
     "website": "http://una.im"
+  },
+  "VaheSODP": {
+    "avatar_url": "74548327",
+    "github": "VaheSODP",
+    "linkedin": "ahearabian",
+    "name": "Vahe Arabian",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://www.stateofdigitalpublishing.com/"
   },
   "jasti": {
     "avatar_url": "2366341",
