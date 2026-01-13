@@ -36,7 +36,7 @@ The **Web Almanac performance** chapter examines these signals at scale across d
 
 What's new this year?
 - Expanded coverage of emerging browser features, including new sections on Speculation Rules and Early Hints and their impact on perceived performance and navigation.
-- TODO: add more 
+- TODO: add more
 
 ### Data Sources and Methodology
 
@@ -286,7 +286,7 @@ From 2023 to 2025, the share of sites with Good CLS increases steadily across bo
 
 [The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser's back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page's state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
 
-However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads. 
+However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads.
 While BFCache behavior is ultimately handled by the browser, developers can <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">evaluate page eligibility</a> by using Chrome DevTools.
 
 Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
@@ -305,7 +305,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 It is interesting to see that unload handler usage decreases consistently as the site rank increases. Among higher-traffic websites (top 1000 sites), unload handlers are present on 28% of desktop pages and 20% of mobile pages, and this share declines steadily across lower-ranked sites, reaching 11% on desktop and 10% on mobile. At every rank, desktop pages exhibit higher unload handler usage than mobile, suggesting that unload handlers remain more common on larger, more complex sites than across the long tail of the web. Possibly due to top sites relying more heavily on analytics, advertising, and legacy lifecycle patterns that register unload handlers.
 
-Another common reason for websites to fall in the bfcache ineligibility category is the use of the `Cache-Control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request. 
+Another common reason for websites to fall in the bfcache ineligibility category is the use of the `Cache-Control: no-store` directive. This cache control header instructs the browser (and any intermediate caches) not to store a copy of the resource, ensuring that the content is fetched from the server on every request.
 
 {{ figure_markup(
   caption="Percentage of sites using `Cache-Control: no-store`.",
@@ -355,7 +355,7 @@ In the chart below, which shows the percentage of pages that use early Hints, we
 {{ figure_markup(
   image="early-hints-usage.png",
   caption="Early Hints usage by website rank and device (2025)",
-  description=”The chart shows the percentage of pages using Early Hints by website rank on desktop and mobile in 2025. Usage is quite low in all groups, only breaking 6% of desktop pages in the top 1 million group. All other groups are mostly below 5%.”,
+  description="The chart shows the percentage of pages using Early Hints by website rank on desktop and mobile in 2025. Usage is quite low in all groups, only breaking 6% of desktop pages in the top 1 million group. All other groups are mostly below 5%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1274076138&format=interactive",
   sheets_gid="1150834797",
   sql_file="early_hints_usage_rank.sql"
@@ -371,7 +371,7 @@ Though as low as the usage for 2025 is, it is also noticeable that there has bee
 {{ figure_markup(
   image="early-hints-usage-by-year.png",
   caption="Early Hints usage by year (2023, 2024, 2025) and device (mobile, desktop)",
-  description=”The chart shows the percentage of pages using Early Hints by year on desktop and mobile in 2023, 2024 and 2025. Usage is quite low in all groups for all years, but there is a consistent increase across the years, from just over 1% to roughly 4%.”,
+  description="The chart shows the percentage of pages using Early Hints by year on desktop and mobile in 2023, 2024 and 2025. Usage is quite low in all groups for all years, but there is a consistent increase across the years, from just over 1% to roughly 4%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=888096185&format=interactive",
   sheets_gid="1512001974",
   sql_file="TODO"
@@ -380,7 +380,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 ### Support
 
-Unlike most web performance features, Early Hints relies not only on browsers, but also on servers for support. As of this publication, “Preconnect” was supported in all browsers, and “Preload” in all except Safari.
+Unlike most web performance features, Early Hints relies not only on browsers, but also on servers for support. As of this publication, “Preconnect" was supported in all browsers, and “Preload" in all except Safari.
 
 With regards to servers, Early Hints are fully supported for H2O and NGINX, and for Apache if you are using mod_http2, and for Node as of 18.11.
 
