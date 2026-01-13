@@ -478,7 +478,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
   caption="Desktop Core Web Vitals pass rate by platform in 2025.",
   description="Bar chart showing the share of desktop ecommerce origins with good Core Web Vitals across leading platforms in 2025.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1640167201&format=interactive",
-  sheets_gid="871753253",
+  sheets_gid="755277706",
   sql_file="core_web_vitals_by_platform.sql"
   )
 }}
@@ -488,7 +488,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
   caption="Mobile Core Web Vitals pass rate by platform in 2025.",
   description="Bar chart showing the share of mobile ecommerce origins with good Core Web Vitals across leading platforms in 2025.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=433690173&format=interactive",
-  sheets_gid="871753253",
+  sheets_gid="755277706",
   sql_file="core_web_vitals_by_platform.sql"
   )
 }}
@@ -592,9 +592,9 @@ A site is considered "good" on CWV when it passes all three thresholds.
   </table>
   <figcaption>
     {{ figure_link(
-      caption="TODO.",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      caption="Desktop (2025, top platforms by origin count).",
+      sheets_gid="755277706",
+      sql_file="core_web_vitals_by_platform.sql",
     ) }}
   </figcaption>
 </figure>
@@ -614,91 +614,91 @@ A site is considered "good" on CWV when it passes all three thresholds.
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">401,579</td>
-        <td class="numeric">45.5%</td>
-        <td class="numeric">99.3%</td>
-        <td class="numeric">67.7%</td>
-        <td class="numeric">33.5%</td>
+        <td class="numeric">991,835</td>
+        <td class="numeric">39.2%</td>
+        <td class="numeric">87.2%</td>
+        <td class="numeric">83.1%</td>
+        <td class="numeric">33.9%</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">286,618</td>
-        <td class="numeric">92.5%</td>
-        <td class="numeric">99.3%</td>
-        <td class="numeric">82.2%</td>
-        <td class="numeric">75.9%</td>
-      </tr>
-      <tr>
-        <td>Squarespace Commerce</td>
-        <td class="numeric">82,393</td>
-        <td class="numeric">90.3%</td>
-        <td class="numeric">99.7%</td>
-        <td class="numeric">77.6%</td>
-        <td class="numeric">69.3%</td>
+        <td class="numeric">554,518</td>
+        <td class="numeric">85.8%</td>
+        <td class="numeric">89.3%</td>
+        <td class="numeric">91.1%</td>
+        <td class="numeric">74.4%</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">56,104</td>
-        <td class="numeric">76.0%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">90.4%</td>
-        <td class="numeric">68.8%</td>
+        <td class="numeric">225,691</td>
+        <td class="numeric">73.4%</td>
+        <td class="numeric">84.7%</td>
+        <td class="numeric">94.1%</td>
+        <td class="numeric">63.8%</td>
+      </tr>
+      <tr>
+        <td>Squarespace Commerce</td>
+        <td class="numeric">205,743</td>
+        <td class="numeric">75.2%</td>
+        <td class="numeric">95.9%</td>
+        <td class="numeric">88.2%</td>
+        <td class="numeric">68.0%</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">46,479</td>
-        <td class="numeric">74.5%</td>
-        <td class="numeric">98.6%</td>
-        <td class="numeric">71.1%</td>
-        <td class="numeric">53.7%</td>
-      </tr>
-      <tr>
-        <td>Magento</td>
-        <td class="numeric">37,153</td>
-        <td class="numeric">60.0%</td>
-        <td class="numeric">99.0%</td>
-        <td class="numeric">55.3%</td>
-        <td class="numeric">36.6%</td>
+        <td class="numeric">87,404</td>
+        <td class="numeric">64.6%</td>
+        <td class="numeric">88.6%</td>
+        <td class="numeric">73.1%</td>
+        <td class="numeric">44.2%</td>
       </tr>
       <tr>
         <td class="numeric">1C-Bitrix</td>
-        <td class="numeric">31,699</td>
-        <td class="numeric">85.9%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">79.9%</td>
-        <td class="numeric">68.2%</td>
+        <td class="numeric">75,601</td>
+        <td class="numeric">69.8%</td>
+        <td class="numeric">69.9%</td>
+        <td class="numeric">81.7%</td>
+        <td class="numeric">45.7%</td>
+      </tr>
+      <tr>
+        <td>Magento</td>
+        <td class="numeric">50,654</td>
+        <td class="numeric">51.4%</td>
+        <td class="numeric">86.3%</td>
+        <td class="numeric">53.7%</td>
+        <td class="numeric">28.9%</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">14,476</td>
+        <td class="numeric">32,544</td>
+        <td class="numeric">79.4%</td>
+        <td class="numeric">92.2%</td>
         <td class="numeric">86.6%</td>
-        <td class="numeric">99.1%</td>
-        <td class="numeric">80.0%</td>
-        <td class="numeric">70.3%</td>
+        <td class="numeric">66.2%</td>
       </tr>
       <tr>
-        <td>Cafe24</td>
-        <td class="numeric">13,557</td>
-        <td class="numeric">98.3%</td>
-        <td class="numeric">97.6%</td>
-        <td class="numeric">47.4%</td>
-        <td class="numeric">45.8%</td>
+        <td>Tiendanube</td>
+        <td class="numeric">21,235</td>
+        <td class="numeric">48.2%</td>
+        <td class="numeric">94.6%</td>
+        <td class="numeric">81.9%</td>
+        <td class="numeric">39.7%</td>
       </tr>
       <tr>
-        <td>BigCommerce</td>
-        <td class="numeric">12,133</td>
-        <td class="numeric">91.5%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">59.5%</td>
-        <td class="numeric">55.2%</td>
+        <td>Square Online</td>
+        <td class="numeric">17,910</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">38.6%</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.0%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
       caption="Mobile (2025, top platforms by origin count).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="755277706",
+      sql_file="core_web_vitals_by_platform.sql",
     ) }}
   </figcaption>
 </figure>
@@ -707,7 +707,7 @@ A few patterns show up repeatedly:
 
 - INP is generally strong on desktop across most major platforms, suggesting that modern JS stacks and browser improvements are helping responsiveness.
 - LCP is the biggest differentiator-platforms that ship fast themes and tightly controlled app ecosystems tend to score better.
-- WooCommerce has scale, but not automatic speed: its CWV pass rates lag behind SaaS-heavy ecosystems, which is consistent with its infinite customizatio" nature.
+- WooCommerce has scale, but not automatic speed: its CWV pass rates lag behind SaaS-heavy ecosystems, which is consistent with its infinite customization nature.
 
 ### Year-over-year movement
 
@@ -830,8 +830,8 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
   <figcaption>
     {{ figure_link(
       caption="Desktop (top platforms by test count).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="1765174321",
+      sql_file="median_lighthouse_score_ecommsites.sql",
     ) }}
   </figcaption>
 </figure>
@@ -934,8 +934,8 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
   <figcaption>
     {{ figure_link(
       caption="Mobile (top platforms by test count).",
-      sheets_gid="TODO",
-      sql_file="TODO.sql",
+      sheets_gid="1765174321",
+      sql_file="median_lighthouse_score_ecommsites.sql",
     ) }}
   </figcaption>
 </figure>
