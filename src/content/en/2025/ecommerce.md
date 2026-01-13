@@ -21,7 +21,7 @@ featured_stat_label_3: Desktop sites offering PayPal as a payment method
 
 ## Introduction
 
-Ecommerce is no longer a "special case" on the web-it *is* the web. In 2025, buying journeys start in search results, social feeds, and live streams; they continue in voice assistants, messaging apps, and "lean‑back" surfaces like smart TVs; and increasingly, they can be completed by AI agents acting on a shopper's behalf. An ecommerce website is still an online store that sells physical or digital products, but it now sits at the intersection of product pages, payments, performance, accessibility, and trust.
+Ecommerce is no longer a special case on the web-it _is_ the web. In 2025, buying journeys start in search results, social feeds, and live streams; they continue in voice assistants, messaging apps, and lean‑back surfaces like smart TVs; and increasingly, they can be completed by AI agents acting on a shopper's behalf. An ecommerce website is still an online store that sells physical or digital products, but it now sits at the intersection of product pages, payments, performance, accessibility, and trust.
 
 When building an online store, there are a few common platform models:
 
@@ -31,11 +31,11 @@ When building an online store, there are a few common platform models:
 4. **Headless / API-first** platforms (e.g., Commercetools, Medusa) provide the commerce backend as a service, while the merchant owns the frontend experience and hosting.
 5. **Agentic commerce (agent-ready commerce)** layers sit alongside (or on top of) the storefront: structured product data, inventory, policies, identity, and payment flows exposed through APIs and standards so assistants and AI agents can safely discover products and execute purchases-with clear user consent and guardrails.
 
-Platforms may fall into more than one category. For example, some vendors offer SaaS, PaaS, and self-hosted options, and many "headless" builds still rely on SaaS backends under the hood. The important variables are who controls hosting, who controls the runtime and upgrade path, and how much freedom you have to change the frontend and backend.
+Platforms may fall into more than one category. For example, some vendors offer SaaS, PaaS, and self-hosted options, and many headless builds still rely on SaaS backends under the hood. The important variables are who controls hosting, who controls the runtime and upgrade path, and how much freedom you have to change the frontend and backend.
 
 ## Platform detection
 
-We used an open‑source tool called Wappalyzer to detect technologies used by websites. It can detect ecommerce platforms, content management systems, JavaScript frameworks, analytics, and more.
+We used a tool called Wappalyzer to detect technologies used by websites. It can detect ecommerce platforms, content management systems, JavaScript frameworks, analytics, and more.
 
 For this analysis, we considered a site to be ecommerce if we detected either:
 
@@ -51,7 +51,7 @@ Our methodology has limitations that affect accuracy.
 - We can only recognize ecommerce sites when Wappalyzer detects an ecommerce platform or a strong ecommerce signal.
 - Detecting a payment processor alone (e.g., PayPal) is not sufficient to classify a site as ecommerce, because many non‑store sites also take payments.
 - If the store is hosted in a subdirectory (and we only analyze the homepage), it may be missed.
-- Headless implementations reduce platform detectability because the traditional "fingerprints" in HTML/JS often disappear.
+- Headless implementations reduce platform detectability because the traditional fingerprints in HTML/JS often disappear.
 
 ### Accuracy of metrics and commentary
 
@@ -76,9 +76,9 @@ That headline number is the first reminder that ecommerce is not just "a vertica
 
 ### Adoption by rank
 
-A useful proxy for "where the big stores live" is to segment by site popularity. In general, the most popular sites are more likely to be professionally engineered, heavily optimized, and backed by larger budgets.
+In general, the most popular sites are more likely to be professionally engineered, heavily optimized, and backed by larger budgets.
 
-The table below shows how the share of sites that are ecommerce increases as we include less‑popular sites.
+The following table shows how the share of sites that are ecommerce increases as we include less‑popular sites.
 
 <figure>
   <table>
@@ -135,7 +135,7 @@ The pattern is consistent:
 
 Across both desktop and mobile, the platform landscape remains top-heavy: a small set of systems account for the majority of detected stores, while a long tail of niche and regional platforms fills the rest.
 
-The tables below show the share of detected ecommerce sites within ecommerce (platform market share), and also how often each platform appears across all sites in the dataset.
+The following tables show the share of detected ecommerce sites within ecommerce (platform market share), and also how often each platform appears across all sites in the dataset.
 
 <figure>
   <table>
@@ -299,11 +299,11 @@ If you zoom out to the last few years, the story is less about disruption and mo
 - Wix eCommerce is the fastest climber in the top 5 (about 4.5% → 7.8%).
 - PrestaShop continues to trend down in share (about 4.6% → 3.2%).
 
-In other words: the "default choices" are getting more default, and smaller open‑source ecosystems are having to compete harder on developer experience, hosting simplicity, and performance out of the box.
+In other words: the default choices are getting more default, and smaller open‑source ecosystems are having to compete harder on developer experience, hosting simplicity, and performance out of the box.
 
 ### Tops platforms by tier
 
-The "top platform" depends on the tier.
+Different tiers have different top platforms.
 
 <figure>
   <table>
@@ -450,7 +450,7 @@ Platform dominance changes by region because of language, local payment rails, a
   )
 }}
 
-- On desktop, WooCommerce is the most common platform in 43 of 63 geographies in our country‑level "most popular platform" view.
+- On desktop, WooCommerce is the most common platform in 43 of 63 geographies in our country‑level view on the most popular platform.
 - On mobile, WooCommerce leads even more often: 74 of 95.
 
 There are also meaningful regional exceptions:
@@ -707,11 +707,11 @@ A few patterns show up repeatedly:
 
 - INP is generally strong on desktop across most major platforms, suggesting that modern JS stacks and browser improvements are helping responsiveness.
 - LCP is the biggest differentiator-platforms that ship fast themes and tightly controlled app ecosystems tend to score better.
-- WooCommerce has scale, but not automatic speed: its CWV pass rates lag behind SaaS-heavy ecosystems, which is consistent with its "infinite customization" nature.
+- WooCommerce has scale, but not automatic speed: its CWV pass rates lag behind SaaS-heavy ecosystems, which is consistent with its infinite customizatio" nature.
 
 ### Year-over-year movement
 
-Looking at the largest platforms from 2024 → 2025, most ecosystems improved their "good CWV" share, but the magnitude differs:
+Looking at the largest platforms from 2024 → 2025, most ecosystems improved their "good" Core Web Vitals share, but the magnitude differs:
 
 - Wix eCommerce sees the biggest jump (≈ 16.2% on mobile and 18.8% on desktop).
 - Shopify also improves materially (≈ 7.9% mobile; 5.8% desktop).
@@ -723,7 +723,7 @@ This is the tradeoff you should expect: platforms that centralize more of the st
 
 Lighthouse is the HTTP Archive's lab-based audit. Unlike Core Web Vitals (field data), it runs in a controlled environment (simulated device, throttled network/CPU) and produces scores for Performance, Accessibility, SEO, and Best Practices:
 
-- **Performance**: Lighthouse Performance is a lab score (0–100) summarizing load and responsiveness under a controlled test profile. It's most useful for *relative* comparisons across platforms.
+- **Performance**: Lighthouse Performance is a lab score (0–100) summarizing load and responsiveness under a controlled test profile. It's most useful for relative comparisons across platforms.
 - **Accessibility**: Lighthouse Accessibility is based on automated checks (it cannot catch everything), but it's a useful baseline signal for common issues like missing labels, low contrast, and incorrect semantics.
 - **SEO**: The Lighthouse SEO score reflects technical SEO fundamentals (e.g., title/meta, basic crawlability signals). High medians are common because these checks are straightforward to pass.
 - **Best Practices**: Best Practices is a grab bag of security and reliability checks (HTTPS, safe JS patterns, modern APIs). It often reflects platform defaults and theme quality.
@@ -942,7 +942,7 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
 
 A few high-level patterns:
 
-- SaaS storefronts tend to cluster higher on performance (especially on desktop), consistent with tighter control over themes and defaults.
+- SaaS storefronts tend to cluster higher on the Performance category (especially on desktop), consistent with tighter control over themes and defaults.
 - Accessibility medians are generally strong across top platforms, but medians can hide long-tail variance.
 - SEO and Best Practices scores are high for most platforms-where teams usually win or lose is performance and implementation discipline, not basic technical SEO.
 
@@ -960,7 +960,7 @@ Payments are where ecommerce becomes real. They also represent a major dependenc
   )
 }}
 
-The tables below show the most commonly detected payment providers in 2025.
+The following tables show the most commonly detected payment providers in 2025.
 
 <figure>
   <table>
@@ -1136,7 +1136,7 @@ The most noticeable trend is that PayPal's share of payment detections declines,
 - Stripe and Google Pay gain share over the same period.
 - Apple Pay and Shop Pay stay relatively stable at high levels.
 
-This does not mean PayPal is "dying." It means the payment layer is becoming more diversified-especially as native wallets, link-based checkout, and platform-native accelerators become standard.
+This does not mean PayPal is dying. It means the payment layer is becoming more diversified-especially as native wallets, link-based checkout, and platform-native accelerators become standard.
 
 ### Payment providers by geography
 
@@ -1165,4 +1165,4 @@ Ecommerce in 2025 remains both concentrated and diverse. A handful of platforms 
 
 Performance remains a differentiator, not a footnote. Field metrics (Core Web Vitals) and lab audits (Lighthouse) both show that tighter platform control can correlate with better median outcomes, but the gap is not destiny-self-hosted and heavily customized stacks can perform well when engineering discipline is strong. Payment technologies also consolidate quickly: a small set of providers dominates detections, while wallets and processor-first ecosystems keep gaining share.
 
-The next chapter of ecommerce is not just "which platform," but which channels: voice, live commerce, and agentic commerce are pushing stores to become faster, more accessible, and more machine-consumable. The winners will be the ones who treat catalog quality, performance, and trust as product features-because increasingly, the shopper may not be a human clicking around a page at all.
+The next chapter of ecommerce is not just which platform, but which channels: voice, live commerce, and agentic commerce are pushing stores to become faster, more accessible, and more machine-consumable. The winners will be the ones who treat catalog quality, performance, and trust as product features-because increasingly, the shopper may not be a human clicking around a page at all.
