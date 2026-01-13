@@ -3,8 +3,8 @@
 title: Performance
 description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
-authors: [25prathamesh, himanshujariyal, hfhashmi, aarontgrogg]
-reviewers: [siakaramalegos, tunetheweb]
+authors: [25prathamesh, himanshujariyal, hfhashmi]
+reviewers: [aarontgrogg, tunetheweb]
 analysts: [tannerhodges]
 editors: []
 translators: []
@@ -221,9 +221,7 @@ The main takeaways of the interactivity results are:
 
 ## Visual Stability
 
-Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users.
-
-In 2025, CLS adoption and stability continue to trend positively on both desktop and mobile devices. This section focuses on recent years particularly 2023 through 2025 highlighting progress, device differences, and shifts over the last year.
+Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users. In 2025, CLS adoption and stability continue to trend positively on both desktop and mobile devices. This section focuses on recent years particularly 2023 through 2025 highlighting progress, device differences, and shifts over the last year.
 
 ### Cumulative Layout Shift (CLS)
 
@@ -241,7 +239,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 In 2025, 72% of desktop pages and 81% of mobile pages achieve a Good Cumulative Layout Shift (CLS) score. Desktop pages show a higher share of Needs Improvement CLS (17%) compared to mobile (10%), while the proportion of pages with Poor CLS is similar across devices at around 9-10%. This shows that most pages are close to meeting the CLS threshold, with fewer pages experiencing severe layout instability.
 
-Compared to 2024, the share of desktop pages with Poor CLS decreased by 1%, with a similar increase in pages classified as Needs Improvement.
+[Compared to 2024](../2024/performance#cumulative-layout-shift-cls), the share of desktop pages with Poor CLS decreased by 1%, with a similar increase in pages classified as Needs Improvement.
 
 {{ figure_markup(
   image="good-cls-by-device.png",
@@ -253,7 +251,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Looking at the past years, the percentage of websites meeting the Good CLS threshold has increased each year for both desktop and mobile. Desktop CLS improved gradually from 62% in 2021 to 72% in 2025, while mobile saw stronger gains, reaching 81% over the same period.
+Looking at the past years, the percentage of websites meeting the Good CLS threshold has increased each year for both desktop and mobile. Desktop CLS improved gradually from 62% in 2021 to 72% in 2025, while mobile saw stronger gains, reaching 81% over the same period. However, the increase compared to last year is marginal, with the share of sites meeting the Good CLS threshold on desktop remaining unchanged and mobile improving by only 2%.
 
 {{ figure_markup(
   image="good-cls-home-secondary-page.png",
@@ -277,17 +275,20 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Over time, Good CLS increases steadily on both device types, with mobile consistently outperforming desktop. Despite minor month-to-month fluctuations, both curves trend upward, without much sharp inflection points, suggesting sustained improvements rather than abrupt shifts.
+From 2023 to 2025, the share of sites with Good CLS increases steadily across both device types, with mobile consistently outperforming desktop. While there are minor fluctuations over time, both trends show a gradual upward trajectory with no sharp inflection points, indicating sustained improvements rather than sudden changes.
 
 ### Back/forward cache (bfcache)
 
 [The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser's back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page's state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
 
-However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads. While BFCache behavior is handled by the browser, developers <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">can assess eligibility</a> using tools such as Chrome DevTools.
+However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads. 
+While BFCache behavior is ultimately handled by the browser, developers can <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">evaluate page eligibility</a> by using Chrome DevTools.
 
 Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
 
-Browsers recommend avoiding unload in favor of alternatives such as pagehide and pageshow, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
+Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. 
+
+Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the 2025 graph.
 
 {{ figure_markup(
   image="unload-handler-usage.png",
@@ -299,7 +300,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Unload handler usage decreases consistently as site rank increases. Among higher-traffic websites, unload handlers appear on 28% of desktop pages and 20% of mobile pages in the top 1,000 sites, declining steadily across lower-ranked sites to 11% on desktop and 10% on mobile when considering all pages. At every rank, desktop pages exhibit higher unload handler usage than mobile, indicating that unload handlers remain more prevalent on larger, more complex sites than across the long tail of the web.
+It is interesting to see that unload handler usage decreases consistently as the site rank increases. 
+
+Among higher-traffic websites (top 1000 sites), unload handlers are present on 28% of desktop pages and 20% of mobile pages, and this share declines steadily across lower-ranked sites, reaching 11% on desktop and 10% on mobile. At every rank, desktop pages exhibit higher unload handler usage than mobile, suggesting that unload handlers remain more common on larger, more complex sites than across the long tail of the web. Possibly due to top sites relying more heavily on analytics, advertising, and legacy lifecycle patterns that register unload handlers.
 
 ### Images
 TODO (Himanshu)
