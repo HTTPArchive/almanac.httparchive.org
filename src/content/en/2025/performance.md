@@ -34,8 +34,9 @@ These metrics are complemented by traditional indicators such as <a hreflang="en
 
 The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences.
 
-### Data Source
-TODO: Add a short closing section describing the data sources, collection period, data volume, and browser coverage used in this chapter.
+### Data Sources and Methodology
+
+This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a very large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology).
 
 ## Core Web Vitals Summary
 
