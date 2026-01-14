@@ -484,7 +484,7 @@ Also note that Early Hints are available via [Fastly since 2020](https://www.fas
 
 ### Overview
 
-(Speculation Rules)[https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API] are an experimental browser API (currently Chromium-only) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
+[Speculation Rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently Chromium-only) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
 
 While Speculation Rules do not help the current page’s performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
 
@@ -506,7 +506,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user’s exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
 
-Conversely, Speculation Rules now come baked into  (WordPress)[https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/], which powers a large share of the Internet, but perhaps not a large share of the top sites.
+Conversely, Speculation Rules now come baked into [WordPress](https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/), which powers a large share of the Internet, but perhaps not a large share of the top sites.
 
 Also notable is the parity between mobile and desktop usage; seldom more than a 1% difference. Meaning, where Speculation Rules are implemented, they are likely done so similarly for all device types.
 
