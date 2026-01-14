@@ -13,11 +13,11 @@ joeviggiano_bio: Joe Viggiano is a Principal Solutions Architect at Amazon Web S
 nick-mccord_bio: Nick McCord is a Solutions Architect at Amazon Web Services focusing on startups and edge services.
 AlexMoening_bio: Alex Moening is a Senior Edge Solutions Architect at Amazon Web Services.
 featured_quote: CDNs have become the vanguard of web protocol evolution, with leading providers achieving 69% HTTP/3 adoption compared to less than 5% for origin servers, demonstrating how edge infrastructure drives the adoption of next-generation web standards.
-featured_stat_1: 69.14%
-featured_stat_label_1: Cloudflare's HTTP/3 adoption rate, leading the industry
-featured_stat_2: 95.6%
+featured_stat_1: 49.9%
+featured_stat_label_1: Cloudflare's HTTP/3 adoption rate for documents, leading the industry
+featured_stat_2: 98.6%
 featured_stat_label_2: CDN requests using TLS 1.3 for enhanced security
-featured_stat_3: 97.49%
+featured_stat_3: 97.4%
 featured_stat_label_3: Automattic's Brotli compression adoption
 ---
 
@@ -65,7 +65,7 @@ CDNs serve as deployment platforms for emerging web standards, implementing new 
 
 Our 2025 analysis builds upon the methodology established in previous years while incorporating new metrics and deeper performance analysis. The statistics gathered focus on applicable technologies and optimization patterns rather than vendor-specific performance comparisons.
 
-**Important Note on Measurements**: All TLS negotiation times, DNS resolution times, and performance metrics in this analysis are measured from HTTP Archive's simulated browser connections using Chrome on controlled infrastructure. These measurements represent:
+**Important note on measurements**: All TLS negotiation times, DNS resolution times, and performance metrics in this analysis are measured from HTTP Archive's simulated browser connections using Chrome on controlled infrastructure. These measurements represent:
 - Consistent network conditions (controlled datacenter connectivity)
 - Chrome browser's TLS implementation
 - First-time connections without session resumption
@@ -198,7 +198,7 @@ HTTP/3 reduces connection establishment from HTTP/2's 3 RTTs (TCP handshake, TLS
 
 Modern CDNs are beginning to implement HTTPS DNS records, a type of Service Binding (SVCB) / HTTPS records that allows DNS responses to advertise HTTP/3 availability and connection parameters directly. When a browser queries DNS for a CDN enabled domain, HTTPS records can indicate HTTP/3 support on port 443 with specific QUIC parameters, enabling immediate HTTP/3 connections without the traditional HTTP/2 to HTTP/3 upgrade process. This DNS level optimization is particularly powerful for CDNs managing multiple domains and services, as it eliminates protocol upgrade negotiations and can reduce connection establishment time. However, HTTPS record implementation varies significantly across CDN providers, with some leading adoption while others have not yet implemented support.
 
-### Important Methodological Considerations
+### Important methodological considerations
 
 **Our HTTP/3 adoption measurements reflect the specific characteristics of HTTP Archive's methodology and should not be interpreted as representative of overall internet traffic:**
 
@@ -209,18 +209,9 @@ Modern CDNs are beginning to implement HTTPS DNS records, a type of Service Bind
 
 These measurements are valuable for understanding protocol adoption among leading web properties and CDN-served resources, but should not be extrapolated to represent general internet usage patterns.
 
-### HTTP/3 Adoption Among CDN Providers
+### HTTP/3 adoption among CDN providers
 
 In 2025, using consistent methodology from previous years, we observed significant HTTP/3 adoption among CDN-served resources. While these numbers reflect the specific subset of sites and resources in our dataset, they demonstrate clear patterns in CDN protocol deployment:
-
-**2025 HTTP/3 Adoption Data (Mobile, Non-Main-Document Resources):**
-- **Cloudflare**: 69.14% (271M of 392M requests)
-- **Google CDN**: 29.62% (200M of 678M requests)
-- **Facebook**: 28.15% (15.7M of 56M requests)
-- **Amazon CloudFront**: 13.88% (19.6M of 141M requests)
-- **Fastly**: 7.66% (4.7M of 61M requests)
-- **Akamai**: 5.73% (4M of 70M requests)
-- **Origin servers**: 7.3% for resources, <1% for main documents
 
 {{ figure_markup(
   image="cdn-http-versions-mobile.png",
@@ -245,6 +236,127 @@ Within our dataset, the data reinforces the role CDNs play in driving the adopti
 }}
 
 While HTTP/1.1 usage has been on a continued decline with CDNs over the past several years, in 2025 we observed a sharp decrease in CDN usage for HTTP/1.1 going from 16% usage for HTML requests in 2024 to just 2% in 2025. This decrease was even more pronounced for origin requests with 56% HTTP/1.1 requests in 2024 down to 21% in 2025.
+
+Looking at individual CDNs HTTP/3 support we see the following for documents (often the initial requests):
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+        <th>CDN</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cloudflare</td>
+        <td class="numeric">44.0%</td>
+        <td class="numeric">49.9%</td>
+      </tr>
+      <tr>
+        <td>CDN</td>
+        <td class="numeric">6.2%</td>
+        <td class="numeric">5.0%</td>
+      </tr>
+      <tr>
+        <td>Amazon CloudFront</td>
+        <td class="numeric">3.2%</td>
+        <td class="numeric">3.8%</td>
+      </tr>
+      <tr>
+        <td>Sucuri Firewall</td>
+        <td class="numeric">0.5%</td>
+        <td class="numeric">0.6%</td>
+      </tr>
+      <tr>
+        <td>Akamai</td>
+        <td class="numeric">0.2%</td>
+        <td class="numeric">0.2%</td>
+      </tr>
+      <tr>
+        <td>QUIC.cloud</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td class="numeric">0.1%</td>
+        <td class="numeric">0.1%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top rates of document requests server by HTTP/3.", sheets_gid="1928910266", sql_file="h3_adoption_by_cdn_provider.sql") }}</figcaption>
+</figure>
+
+Special call out to Cloudflare who are leading the industry here.
+
+While subresources requests have a much higher rate of adoption since they often are used for multiple requests where subsequent requests are more likely to be made over HTTP/3:
+
+<figure>
+  <table>
+    <thead>
+      <tr>
+      <th>CDN</th>
+      <th>Desktop</th>
+      <th>Mobile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Facebook</td>
+        <td class="numeric">99.4%</td>
+        <td class="numeric">99.9%</td>
+      </tr>
+      <tr>
+        <td>Nexcess CDN</td>
+        <td class="numeric">97.7%</td>
+        <td class="numeric">99.6%</td>
+      </tr>
+      <tr>
+        <td>Sucuri Firewall</td>
+        <td class="numeric">71.2%</td>
+        <td class="numeric">68.4%</td>
+      </tr>
+      <tr>
+        <td>Cloudflare</td>
+        <td class="numeric">68.6%</td>
+        <td class="numeric">69.5%</td>
+      </tr>
+      <tr>
+        <td>Reapleaf</td>
+        <td class="numeric">59.5%</td>
+        <td class="numeric">59.1%</td>
+      </tr>
+      <tr>
+        <td>Erstream</td>
+        <td class="numeric">31.5%</td>
+        <td class="numeric">77.4%</td>
+      </tr>
+      <tr>
+        <td>QUIC.cloud</td>
+        <td class="numeric">48.8%</td>
+        <td class="numeric">47.3%</td>
+      </tr>
+      <tr>
+        <td>Google</td>
+        <td class="numeric">39.6%</td>
+        <td class="numeric">42.2%</td>
+      </tr>
+      <tr>
+        <td>Pressable CDN</td>
+        <td class="numeric">40.1%</td>
+        <td class="numeric">40.8%</td>
+      </tr>
+      <tr>
+        <td>Automattic</td>
+        <td class="numeric">25.6%</td>
+        <td class="numeric">29.0%</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>{{ figure_link(caption="Top rates of document requests server by HTTP/3.", sheets_gid="1928910266", sql_file="h3_adoption_by_cdn_provider.sql") }}</figcaption>
+</figure>
 
 ## CDN Performance
 
@@ -298,12 +410,6 @@ The data demonstrates that CDNs using HTTP/2 nearly universally advertise HTTP/3
 ### Server-Timing
 
 Defined in the W3C Server-Timing specification, the `Server-Timing` HTTP header allows servers to communicate performance metrics about request processing back to the browser. This header communicates performance metrics directly, transforming opaque server processing into observable and debuggable data. Specific to CDNs, `Server-Timing` headers can be useful for providing transparency into CDN edge processing time, origin fetch duration, or cache status without requiring additional monitoring infrastructure.
-
-**2025 Server-Timing Adoption Data:**
-- **Cloudflare (H3)**: 98.79% (310M of 314M requests)
-- **Automattic (HTTP/2)**: 76.15% (11.8M of 15.5M requests)
-- **Cloudflare (HTTP/2)**: 34.59% (47M of 136M requests)
-- **Akamai (H3)**: 29.29% (884K of 3M requests)
 
 {{ figure_markup(
   image="cdn-http-server-timing-headers-mobile.png",
@@ -359,13 +465,6 @@ From the 2025 dataset we observed several commonly used compression algorithms:
 - **Brotli**: Modern algorithm offering 20-26% better compression than Gzip
 - **Zstandard (Zstd)**: Emerging standard with excellent compression ratios and speed
 
-**2025 Brotli Adoption Leaders (Desktop):**
-- **Automattic**: 97.49% Brotli (8.66M of 8.89M compressed requests)
-- **BunnyCDN**: 95.05% Brotli (5.19M of 5.47M compressed requests)
-- **Cloudflare**: 58.74% Brotli (111.7M of 190.2M compressed requests)
-- **Amazon CloudFront**: 35.42% Brotli (22.7M of 64M compressed requests)
-- **Akamai**: 23.39% Brotli (5.7M of 24.6M compressed requests)
-
 {{ figure_markup(
   image="cdn-compression-mobile.png",
   caption="Distribution of compression types (mobile).",
@@ -388,16 +487,19 @@ CDNs are leading the adoption of Brotli and Zstandard compression. Compared to 2
   )
 }}
 
-While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 compared to 2024. In 2024, only Facebook's CDN had any statistically measurable usage of Zstandard, while in 2025 both Cloudflare (15%) and Google CDN (10%) showed measurable adoption. Cloudflare's newer compression defaults and configuration options may help explain the observed data. The one outlier to the dataset was Amazon CloudFront, which currently does not support Zstandard compression natively. However, the data observed showed CloudFront passing through already compressed data from origin using Zstandard. This demonstrates content owner's desire to use Zstandard even though not all major CDN providers support it.
+Special credit to Automattic with 98% of their eligible resources being served using Brotli!
 
-**Future Compression Trends:**
-Looking ahead, the industry is exploring Dictionary Compression (Shared Brotli) which promises:
+While still in 3rd place in terms of adoption, Zstandard has made gains in 2025 compared to 2024. In 2024, only Facebook's CDN had any statistically measurable usage of Zstandard, while in 2025 both Cloudflare (15%) and Google CDN (10%) showed measurable adoption. Cloudflare's newer compression defaults and configuration options may help explain the observed data. The outliers to the dataset were Amazon CloudFront and Automattic, which currently do not support Zstandard compression natively. However, the data observed showed CloudFront passing through already compressed data from origin using Zstandard. This demonstrates content owner's desire to use Zstandard even though not all major CDN providers support it.
+
+### Future compression trends
+
+Looking ahead, the industry is exploring [Dictionary Compression (Shared Brotli)](https://developer.mozilla.org/docs/Web/HTTP/Guides/Compression_dictionary_transport) which promises:
 - 20-40% better compression for repeated content patterns
 - Shared dictionaries across related resources
 - Chrome Origin Trial launched in 2024
 - Expected CDN support rollout in 2025-2026
 
-This represents the next frontier in compression optimization, building on Brotli's success.
+This represents the next frontier in compression optimization, building on Brotli's success and is one to watch in future editions of the Web Almanac.
 
 ## TLS usage
 
@@ -408,12 +510,6 @@ Transport Layer Security (TLS) forms the foundation of secure web communications
 TLS 1.3 improves the overall security of web traffic compared to earlier versions that included weaker cryptographic algorithms that had known vulnerabilities. The protocol also reduces handshake latency through its optimized design.
 
 **Note on TLS 1.0 and 1.1 Absence**: Our measurements show zero usage of TLS 1.0 and 1.1 across all requests. This is expected because HTTP Archive uses modern Chrome browsers for measurement, which completely removed support for these deprecated protocols in July 2020 (Chrome 84). Servers that only support TLS 1.0 or 1.1 would result in connection failures rather than successful requests, thus not appearing in our data. While these legacy protocols may still exist in some enterprise environments or IoT devices, they are no longer viable for public web services accessed by modern browsers.
-
-**2025 TLS 1.3 Adoption Data:**
-- **CDN (Mobile)**: 95.6% (797M of 834M requests)
-- **CDN main documents**: 98.58% (6.86M of 6.96M requests)
-- **Origin (Mobile)**: 77.7% (898M of 1.15B requests)
-- **Origin main documents**: 79.79% (14.9M of 18.7M requests)
 
 Nearly all CDN traffic now uses TLS 1.3, with 99% of requests leveraging the latest protocol version. This benefits developers through faster connection establishment times, directly improving page load speeds. CDN providers continue to be early adopters of new web technologies, which means applications using CDNs get these performance and security enhancements with little to no additional effort.
 
@@ -501,14 +597,7 @@ The 2025 data underscore a clear trajectory: legacy formats like JPEG still domi
 
 Client Hints were introduced as an alternative to the User-Agent string, letting web servers request specific information from browsers through HTTP headers. They fall into four main categories: device information, user agent preferences, user preference media features, and networking details. These hints are further split into high and low entropy types. High entropy hints can potentially be used for fingerprinting, so browsers usually require user permission or enforce other policies before sharing them. Low entropy hints are less useful for fingerprinting and may be sent by default based on browser or user settings.
 
-In 2025, we continued measuring Client Hints using the same methodology established in 2024 - detecting the `Accept-CH` header in responses. The 2024 data showed less than 4% adoption, and our 2025 analysis reveals significant variations by CDN provider:
-
-**2025 Client Hints Adoption (Accept-CH Header):**
-- **Microsoft Azure**: 16.14% (2.4M of 15M requests) - highest adoption
-- **Google (HTTP/2)**: 4.23% (15.7M of 371M requests)
-- **ORIGIN (HTTP/2)**: 3.37% (28M of 831M requests)
-- **Cloudflare (H3)**: 0.28% (887K of 314M requests)
-- **Facebook (H3)**: 0.27% (111K of 41M requests)
+In 2025, we continued measuring Client Hints using the same methodology established in 2024 - detecting the `Accept-CH` header in responses.
 
 {{ figure_markup(
   image="cdn-client-hints-mobile.png",
@@ -525,12 +614,6 @@ Client Hints buck the usual pattern of CDNs leading adoption: CDN usage was flat
 ## Early Hints
 
 Early Hints uses the <a hreflang="en" href="https://datatracker.ietf.org/doc/html/rfc8297#section-2">HTTP 103 status code</a> to let servers send initial headers to browsers while the main response is still being prepared. This is especially useful for preloading important resources like stylesheets, JavaScript files, and fonts before the full page is ready. Despite its potential for improving performance, adoption remains minimal.
-
-**2025 Early Hints Adoption Data:**
-- **Overall adoption**: Near 0% (only 201 status 103 responses out of billions)
-- **CDNs total**: 1,894,404 Early Hints responses (mobile)
-- **Origin total**: 45,198 Early Hints responses (mobile)
-- **CDN advantage**: 42x more Early Hints responses than origin servers
 
 {{ figure_markup(
   image="cdn-early-hints-mobile.png",
