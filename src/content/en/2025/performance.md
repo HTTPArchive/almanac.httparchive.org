@@ -534,15 +534,13 @@ Despite gradual improvements, most pages continue to leave layout decisions to t
 
 ### Overview
 
-[Early Hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103) provide a "heads up" to the browser about assets that it will need for the page that the the browser has just requested.
+[Early Hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103) provide an early signal to the browser about the resources it will need to load for the requested page.
 
-Early Hints are sent from the server to the browser while the requested page is still being prepared. In this way, browsers could start taking action to optimistically preconnect to other domains or preload an asset before the requested page has been returned to it.
+Early Hints are sent from the server to the browser while the requested page is still being prepared. In this way, browsers can start taking action to optimistically preconnect to other domains or preload an asset before the requested page has been returned to it.
 
-This allows Early Hints to have an absolute impact on the loading performance of the currently requested pages. Consider if, rather than having to wait for the HTML to return to the browser, and the parser to find the link (or even preload link) for the main CSS file and/or LCP asset, it could begin fetching those assets before the HTML was even returned to the browser.
+This allows Early Hints to have an absolute impact on the loading performance of the currently requested pages. Consider if, rather than having to wait for the HTML to return to the browser, and the parser to find the link (or even preload link) for the main CSS file and/or LCP asset, it could begin fetching those assets before the HTML was even returned to the browser. This could allow for an FCP that is nearly perfectly rendered, in a single paint.
 
-This could allow for an FCP that is nearly perfectly rendered, in a single paint.
-
-Early Hints can also contain crossorigin attributes and CSP header information, though [for security reasons](https://www.rfc-editor.org/rfc/rfc8297#section-3) it is recommended that they only be used over HTTP/2 or higher.
+Since Early Hints can also contain crossorigin attribute and CSP header information, it is recommended that they only be used over HTTP/2 or higher for [for security reasons](https://www.rfc-editor.org/rfc/rfc8297#section-3).
 
 ### Usage
 
