@@ -223,7 +223,7 @@ The distribution of valid `max-age` values remains largely the same with the exc
 
 ## Cookies
 
-Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that are further reported on in the [Cookies chapter](./cookies). We specifically refer to the [Cookie attributes](./cookies#cookie-attributes), [Cookie prefixes](./cookies#cookie-prefixes) and [Persistence (expiration)](./cookies#persistence-expiration) sections in this chapter.
+Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that are further reported on in the [Cookies](./cookies) chapter. We specifically refer to the [Cookie attributes](./cookies#cookie-attributes), [Cookie prefixes](./cookies#cookie-prefixes) and [Persistence (expiration)](./cookies#persistence-expiration) sections in this chapter.
 
 ## Content inclusion
 
