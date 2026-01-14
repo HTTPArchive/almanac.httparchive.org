@@ -1,9 +1,10 @@
+# WASM usage by page ranking
 
 WITH totals AS (
   SELECT
     client,
     rank_grouping,
-    COUNT(DISTINCT root_page) As total_sites
+    COUNT(DISTINCT root_page) AS total_sites
   FROM
     `httparchive.crawl.requests`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
@@ -45,4 +46,3 @@ GROUP BY
 ORDER BY
   client,
   rank_grouping
-
