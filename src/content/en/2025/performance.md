@@ -478,10 +478,37 @@ Unlike most web performance features, Early Hints relies not only on browsers, b
 
 With regards to servers, Early Hints are fully supported for H2O and NGINX, and for Apache if you are using mod_http2, and for Node as of 18.11.
 
-Also note that Early Hints are available via [Fastly since 2020](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code), [Cloudflare since 2021](https://blog.cloudflare.com/early-hints/), and [Akamai since 2024](https://techdocs.akamai.com/ion/changelog/jun-17-2024-new-early-hints-behavior).
+Also note that Early Hints are available via [Fastly since 2020](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code), [Cloudflare since 2021](https://blog.cloudflare.com/early-hints/), and [Akamai since 2023](https://www.akamai.com/blog/performance/akamai-103-early-hints-prototype-the-results-are-in).
 
 ## Speculation Rules
-TODO (Unassigned)
+
+### Overview
+
+(Speculation Rules)[https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API] are an experimental browser API (currently Chromium-only) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
+
+While Speculation Rules do not help the current page’s performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
+
+The intent is for this API to replace <link rel="prefetch"> and <link rel="prerender"> with more advanced configuration options. Again, the Speculation Rules API is for full pages only; for individual assets, you would still need to use <link rel="prefetch">.
+
+### Usage
+
+In the chart below, which shows the percentage of home pages that contain Speculation Rules, we see something interesting: Speculation Rules usage on the top 1,000 sites is quite low, only 3% on desktop and 5% on mobile. And while usage climbs for each subsequent group, it only reaches 15%, mobile and desktop, for the top 1,000,000 sites. It is not until the final group, the top 10,000,000, that we see the percentage jump sharply up, to 24% desktop and 25% mobile:
+
+{{ figure_markup(
+  image="speculation-rules-usage.png",
+  caption="Speculation Rules usage by website rank and device (2025)",
+  description=”The chart shows the percentage of home pages that contain Speculation Rules by website rank on desktop and mobile in 2025. Among the top 1,000 websites, Speculation Rules appear on 3% of desktop pages and 5% of mobile pages, with usage increasing slowly as rank decreases. For all websites, Speculation Rules are present on 24% of desktop pages and 35% of mobile pages, with desktop and mobile usage nearly equal at every rank.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=826167809&format=interactive",
+  sheets_gid="1244034811",
+  sql_file="speculation_rules_rank.sql"
+  )
+}}
+
+This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user’s exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
+
+Conversely, Speculation Rules now come baked into  (WordPress)[https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/], which powers a large share of the Internet, but perhaps not a large share of the top sites.
+
+Also notable is the parity between mobile and desktop usage; seldom more than a 1% difference. Meaning, where Speculation Rules are implemented, they are likely done so similarly for all device types.
 
 ## Conclusion
 TODO (Unassigned)
