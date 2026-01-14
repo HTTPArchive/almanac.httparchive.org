@@ -5,22 +5,22 @@ WITH geo_summary AS (
   SELECT
     `chrome-ux-report`.experimental.GET_COUNTRY(country_code) AS geo,
     IF(device = 'desktop', 'desktop', 'mobile') AS client,
-    origin,
+    CONCAT(origin, '/') AS root_page,
     COUNT(DISTINCT origin) OVER (PARTITION BY country_code, IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.country_summary`
   WHERE
-    yyyymm = 202506
+    yyyymm = 202507
   UNION ALL
   SELECT
     'ALL' AS geo,
     IF(device = 'desktop', 'desktop', 'mobile') AS client,
-    origin,
+    CONCAT(origin, '/') AS root_page,
     COUNT(DISTINCT origin) OVER (PARTITION BY IF(device = 'desktop', 'desktop', 'mobile')) AS total
   FROM
     `chrome-ux-report.materialized.device_summary`
   WHERE
-    yyyymm = 202506
+    yyyymm = 202507
 )
 
 SELECT
@@ -30,40 +30,34 @@ FROM (
     client,
     geo,
     payment,
-    COUNT(0) AS pages,
+    COUNT(DISTINCT root_page) AS sites,
     ANY_VALUE(total) AS total,
-    COUNT(DISTINCT url) / ANY_VALUE(total) AS pct
-  FROM (
-    SELECT DISTINCT
-      geo,
-      client,
-      CONCAT(origin, '/') AS url,
-      total
-    FROM
-      geo_summary
-  ) JOIN (
+    COUNT(DISTINCT root_page) / ANY_VALUE(total) AS pct
+  FROM
+    geo_summary
+  JOIN (
     SELECT DISTINCT
       client,
       cats,
       technologies.technology AS payment,
-      page AS url
+      page,
+      root_page
     FROM
-      `httparchive.all.pages`,
+      `httparchive.crawl.pages`,
       UNNEST(technologies) AS technologies,
       UNNEST(technologies.categories) AS cats
     WHERE
       technologies.technology IS NOT NULL AND
       cats = 'Payment processors' AND
       technologies.technology != '' AND
-      date = '2025-07-01' AND
-      is_root_page
-  ) USING (client, url)
+      date = '2025-07-01'
+  ) USING (client, root_page)
   GROUP BY
     client,
     geo,
     payment
 )
 WHERE
-  pages > 1000
+  sites > 1000
 ORDER BY
-  pages DESC
+  sites DESC

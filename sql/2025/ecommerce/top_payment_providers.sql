@@ -9,7 +9,7 @@ SELECT
   total,
   COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
@@ -17,7 +17,7 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2025-07-01' AND
     is_root_page
@@ -42,7 +42,7 @@ SELECT
   total,
   COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
@@ -50,7 +50,7 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2024-06-01' AND
     is_root_page
@@ -75,7 +75,7 @@ SELECT
   total,
   COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
@@ -83,7 +83,7 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2023-06-01' AND
     is_root_page
@@ -108,7 +108,7 @@ SELECT
   total,
   COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
@@ -116,9 +116,9 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
-    date = '2022-08-01' AND -- noqa: CV09
+    date = '2022-06-01' AND
     is_root_page
   GROUP BY
     client
@@ -126,7 +126,7 @@ JOIN (
 USING (client)
 WHERE
   cats = 'Payment processors' AND
-  date = '2022-08-01' AND -- noqa: CV09
+  date = '2022-06-01' AND
   is_root_page
 GROUP BY
   client,
@@ -141,7 +141,7 @@ SELECT
   total,
   COUNT(DISTINCT page) / total AS pct
 FROM
-  `httparchive.all.pages`,
+  `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
   UNNEST(technologies.categories) AS cats
 JOIN (
@@ -149,7 +149,7 @@ JOIN (
     client,
     COUNT(0) AS total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
     date = '2021-07-01' AND
     is_root_page

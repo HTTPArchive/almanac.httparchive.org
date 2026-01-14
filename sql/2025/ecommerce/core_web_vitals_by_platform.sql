@@ -48,20 +48,23 @@ FROM
   `chrome-ux-report.materialized.device_summary`
 JOIN (
   SELECT
-    _TABLE_SUFFIX AS client,
-    url,
-    app AS ecomm
+    client,
+    page,
+    tech.technology AS ecomm
   FROM
-    `httparchive.technologies.2025_06_01_*`
+    `httparchive.crawl.pages`,
+    UNNEST(technologies) AS tech,
+    UNNEST(tech.categories) AS category
   WHERE
+    date = '2025-07-01' AND
     category = 'Ecommerce' AND
     (
-      app != 'Cart Functionality' AND
-      app != 'Google Analytics Enhanced eCommerce'
+      tech.technology != 'Cart Functionality' AND
+      tech.technology != 'Google Analytics Enhanced eCommerce'
     )
 )
 ON
-  CONCAT(origin, '/') = url AND
+  CONCAT(origin, '/') = page AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
   date = '2025-07-01'
