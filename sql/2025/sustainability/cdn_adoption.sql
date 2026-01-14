@@ -1,0 +1,33 @@
+#standardSQL
+# The distribution of CDN adoption on websites by client.
+
+SELECT
+  client,
+  total,
+  IF(cdn = '', 'No CDN', cdn) AS cdn,
+  COUNT(0) AS freq,
+  ROUND(100 * COUNT(0) / total, 2) AS pct
+FROM (
+  SELECT
+    client,
+    COUNT(0) AS total,
+    ARRAY_CONCAT_AGG(
+      SPLIT(JSON_VALUE(summary.cdn), ', ')
+    ) AS cdn_list
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01' AND
+    is_root_page = TRUE
+  GROUP BY
+    client
+),
+  UNNEST(cdn_list) AS cdn
+GROUP BY
+  client,
+  cdn,
+  total
+ORDER BY
+  pct DESC,
+  client ASC,
+  cdn ASC;
