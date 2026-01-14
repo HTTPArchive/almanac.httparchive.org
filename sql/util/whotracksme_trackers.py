@@ -18,7 +18,7 @@ tracker_db = requests.get(
 
 TRACKERS_QUERY = """
     SELECT
-        '2024-06-01' AS date,
+        '2025-07-01' AS date,
         categories.name as category,
         tracker,
         domain
