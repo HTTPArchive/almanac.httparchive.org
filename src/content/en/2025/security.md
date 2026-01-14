@@ -887,7 +887,7 @@ A boolean is <a hreflang="en" href="https://httpwg.org/specs/rfc8941.html#boolea
 
 #### Use of `document.domain`
 
-By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain), a developer is able to read the domain portion of the current document, as well as set a new domain (only subdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
+By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain), a developer is able to read the domain portion of the current document, as well as set a new domain (only superdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
 
 <figure>
   <table>
