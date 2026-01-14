@@ -1,13 +1,13 @@
 #standardSQL
-# Top Ecommerce platforms, compared to 2021
-# top_ecommerce.sql
+# Top Shipping carriers platforms, compared to 2021
+# top_shipping.sql
 SELECT
   client,
-  2025 AS year,
-  technologies.technology AS ecommerce,
-  COUNT(DISTINCT page) AS freq,
+  2024 AS year,
+  technologies.technology AS shipping,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -26,22 +26,21 @@ JOIN (
 )
 USING (client)
 WHERE
-  cats = 'Ecommerce' AND
+  cats = 'Shipping carriers' AND
   date = '2025-07-01' AND
-  is_root_page AND
-  technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+  is_root_page
 GROUP BY
   client,
   total,
-  ecommerce
+  shipping
 UNION ALL
 SELECT
   client,
-  2024 AS year,
-  technologies.technology AS ecommerce,
-  COUNT(DISTINCT page) AS freq,
+  2023 AS year,
+  technologies.technology AS shipping,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -60,22 +59,21 @@ JOIN (
 )
 USING (client)
 WHERE
-  cats = 'Ecommerce' AND
+  cats = 'Shipping carriers' AND
   date = '2024-06-01' AND
-  is_root_page AND
-  technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+  is_root_page
 GROUP BY
   client,
   total,
-  ecommerce
+  shipping
 UNION ALL
 SELECT
   client,
   2023 AS year,
-  technologies.technology AS ecommerce,
-  COUNT(DISTINCT page) AS freq,
+  technologies.technology AS shipping,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -87,29 +85,28 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2023-06-01' AND
+    date = '2023-07-01' AND
     is_root_page
   GROUP BY
     client
 )
 USING (client)
 WHERE
-  cats = 'Ecommerce' AND
-  date = '2023-06-01' AND
-  is_root_page AND
-  technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+  cats = 'Shipping carriers' AND
+  date = '2023-07-01' AND
+  is_root_page
 GROUP BY
   client,
   total,
-  ecommerce
+  shipping
 UNION ALL
 SELECT
   client,
   2022 AS year,
-  technologies.technology AS ecommerce,
-  COUNT(DISTINCT page) AS freq,
+  technologies.technology AS shipping,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -121,29 +118,28 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2022-08-01' AND -- noqa: CV09
+    date = '2022-06-01' AND
     is_root_page
   GROUP BY
     client
 )
 USING (client)
 WHERE
-  cats = 'Ecommerce' AND
-  date = '2022-08-01' AND -- noqa: CV09
-  is_root_page AND
-  technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+  cats = 'Shipping carriers' AND
+  date = '2022-06-01' AND
+  is_root_page
 GROUP BY
   client,
   total,
-  ecommerce
+  shipping
 UNION ALL
 SELECT
   client,
   2021 AS year,
-  technologies.technology AS ecommerce,
-  COUNT(DISTINCT page) AS freq,
+  technologies.technology AS shipping,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -162,14 +158,13 @@ JOIN (
 )
 USING (client)
 WHERE
-  cats = 'Ecommerce' AND
+  cats = 'Shipping carriers' AND
   date = '2021-07-01' AND
-  is_root_page AND
-  technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
+  is_root_page
 GROUP BY
   client,
   total,
-  ecommerce
+  shipping
 ORDER BY
   year DESC,
   pct DESC
