@@ -340,7 +340,7 @@ Compared to [last year](../2024/security#keywords-for-script-src) we barely see 
   )
 }}
 
-We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, <a hreflang="en" href="https://content-security-policy.com/examples/multiple-csp-headers/">the policies will be combined to create the the most restrictive policy will be used by the browser</a>.
+We also check the use of keywords per header instead of per page. In CSP, multiple CSP headers can be present in one response and may define different directives. If a directive is defined multiple times, <a hreflang="en" href="https://content-security-policy.com/examples/multiple-csp-headers/">the policies will be combined to create the the most restrictive policy to be used by the browser</a>.
 
 We see a very similar distribution compared to the values per request, indicating that either most pages only use one CSP header or only use `script-src` in one of the CSP headers that they set, meaning there are no conflicting `script-src` directives on most pages.
 
@@ -358,7 +358,7 @@ CSP is a complex security policy to thoroughly understand and correctly use. Whe
   )
 }}
 
-Out of all observed headers, 75% are 86 bytes or less in length. This is slightly more than last year where this was 75 bytes or less. We can see that there are more longer policies in use and in the 90th percentile, the desktop policies have gotten longer while the mobile policies have gotten slightly shorter, increasing the difference between the policy lengths.
+Out of all observed headers, 75% are 86 bytes or less in length. This is slightly more than last year where this was 75 bytes or less. We can see that there are more longer policies in use and in the 90th percentile. The desktop policies have gotten longer while the mobile policies have gotten slightly shorter, increasing the difference between the policy lengths.
 
 <figure>
   <table>
@@ -495,7 +495,7 @@ The most commonly loaded HTTPS origins included in CSP headers are those used fo
 
 For the secure websocket (`wss://`) origins, we see Hotjar take the first position, doubling in occurrences. Other origins remain low in occurrence.
 
-Hotjar is used for website analytics, indicating a continuing interest in analytical information of websites. Intercom is used for customer services. We also see AI-first companies entering these statistics with karakuri, a Japanese AI company that is closing the top three.
+Hotjar is used for website analytics, indicating a continuing interest in analytical information of websites while Intercom is used for customer services. We also see AI-first companies entering these statistics with karakuri, a Japanese AI company that is closing the top three.
 
 ### Subresource Integrity
 
@@ -588,7 +588,7 @@ The risk of including a script that is hosted on a server not under your own con
 
 ### Permissions Policy
 
-The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy) (formerly Feature Policy) is a policy that allows websites to allow or disallow the use of specific features in the browser, such as the camera, microphone, sensors like the accelerometer or geolocation data. Through the `Permissions-Policy` response header, developers can allow or disallow specific feature use by the main page and its embedded content. A specific policy for one embedded resource can be set through the `allow` attribute of the `<iframe>` element.
+The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions_Policy) (formerly Feature Policy) is a policy that enables websites to allow or disallow the use of specific features in the browser, such as the camera, microphone, sensors (like the accelerometer) or geolocation data. Through the `Permissions-Policy` response header, developers can allow or disallow specific feature use by the main page and its embedded content. A specific policy for one embedded resource can be set through the `allow` attribute of the `<iframe>` element.
 
 {{ figure_markup(
   content="+50%",
@@ -665,11 +665,11 @@ The [Permissions Policy](https://developer.mozilla.org/docs/Web/HTTP/Permissions
   <figcaption>{{ figure_link(caption="Most prevalent `Permission-Policy` headers", sheets_gid="180881517", sql_file="pp_header_prevalence.sql") }}</figcaption>
 </figure>
 
-When looking at the top 10 used `Permissions-Policy` values, we find that less developers now use the header to opt out of Google's <a hreflang="en" href="https://privacysandbox.com/intl/en_us/proposals/floc/">Federated Learning of Cohorts (FLoC)</a>, with only 11.5% of `Permissions-Policy` headers contain the `interest-cohort=()` value. We also see that a value to opt out of many features at once became a popular value with 10% of `Permissions-Policy` headers containing this value on mobile. Likely as this was replaced by [Topics API with a different permission policy](https://privacysandbox.google.com/private-advertising/topics/web/controls#opt_out_as_a_developer). This is likely to reduce further in the future since [Google is retiring these Privacy Sandbox APIs](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies).
+When looking at the top 10 used `Permissions-Policy` values, we find that less developers now use the header to opt out of Google's <a hreflang="en" href="https://privacysandbox.com/intl/en_us/proposals/floc/">Federated Learning of Cohorts (FLoC)</a>, with only 11.5% of `Permissions-Policy` headers containing the `interest-cohort=()` value. We also see that a value to opt out of many features at once became a popular value with 10% of `Permissions-Policy` headers containing this value on mobile. We suspect this is due to it being replaced by the [Topics API with a different permission policy](https://privacysandbox.google.com/private-advertising/topics/web/controls#opt_out_as_a_developer). This is also likely to reduce further in the future since [Google is retiring these Privacy Sandbox APIs](https://privacysandbox.google.com/blog/update-on-plans-for-privacy-sandbox-technologies).
 
-All other observed values in the top 10 are aimed at restricting the permissions of the web page and embedded content. The Permissions Policy is open by default, which means that in order to restrict the use of a feature, it has to explicitly be mentioned in the header. Like last year, 0.27% of `Permissions-Policy` headers on desktop set the `*` wildcard value, thereby explicitly granting all permissions to the page and embedded content that does not define a stricter policy in the `allow` attribute. On mobile, we do not find the wildcard value at all.
+All other observed values in the top 10 are aimed at restricting the permissions of the web page and embedded content. The Permissions Policy is open by default, which means that in order to restrict the use of a feature, it has to be explicitly mentioned in the header. Like last year, 0.27% of `Permissions-Policy` headers on desktop set the `*` wildcard value, thereby explicitly granting all permissions to the page and embedded content that does not define a stricter policy in the `allow` attribute. On mobile, we do not find the wildcard value at all.
 
-As mentioned before, the Permissions Policy can also be defined in the `allow` attribute on a html `<iframe>`. For example an iframe allowing its embedded content to have access to the camera and microphone would look like:
+As mentioned before, the Permissions Policy can also be defined in the `allow` attribute on an html `<iframe>`. For example an iframe allowing its embedded content to have access to the camera and microphone would look like:
 
 ```html
 <iframe src="https://example.com/" allow="camera 'self'; microphone 'self'">
@@ -742,7 +742,7 @@ Out of the total 33.3 million iframes on mobile, we observed that 29.2% include 
   <figcaption>{{ figure_link(caption="Most prevalent `allow` attribute directives", sheets_gid="1876706326", sql_file="iframe_allow_directives.sql") }}</figcaption>
 </figure>
 
-Interestingly, the three top `allow` attribute values of last year (`join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`) have extremely low adoption compared to last year. It is possible that the large player that was hypothesized to have added these values to their iframe elements has since reverted that change. The other top 10 values of last year have seen a major increase in inclusion into the `allow` attribute value overall, with absolute changes up to plus 50%.
+Interestingly, the three top `allow` attribute values of last year (`join-ad-interest-group`, `attribution-reporting` and `run-ad-auction`) have extremely low adoption compared to last year. It is possible that the large player that was hypothesized to have added these values to their iframe elements has since reverted that change. The other top 10 values of last year have seen a major increase in inclusion into the `allow` attribute value overall, with absolute changes up to +50%.
 
 ### Iframe sandbox
 
@@ -752,7 +752,7 @@ By employing the [`sandbox`](https://developer.mozilla.org/docs/Web/HTML/Referen
 <iframe src="https://example.com/" sandbox="allow-scripts"></iframe>
 ```
 
-We see the use of the sandbox attribute rise compared to the 2024 edition: The percentage of iframes with a sandbox attribute rose from 20.0% to 22.7%, showing that more and more developers want to protect their users against potential misuse by embedded content.
+We see the use of the sandbox attribute rise compared to the 2024 edition from 20.0% to 22.7%, showing that more and more developers want to protect their users against potential misuse by embedded content.
 
 {{ figure_markup(
   image="iframe-sandbox-directives.png",
@@ -774,7 +774,7 @@ In general we see a rise in most of the existing security features such as TLS, 
 
 <a hreflang="en" href="https://wicg.github.io/document-policy/">Document Policy</a> is a draft community group report last updated in 2022. It was originally created as a response to proposed additions to Permissions Policy that did not fit the Permissions Policy model or added too much complexity.
 
-Document Policy has several advantages over related mechanisms such as Permissions Policy, CSP and sandboxing: It is more fine-grained than Permissions Policy and has a different inheritance model: child resources can overwrite certain parent-chosen policies if they are compatible. It is more general than CSP: It has directives related to the permissions of a resource once it has been loaded instead of only determining from which origins resources can be loaded and it is easier to extend than sandboxing because features that are not mentioned in sandboxing are blocked by default, which makes it very difficult to add new ones.
+Document Policy has several advantages over related mechanisms such as Permissions Policy, CSP and sandboxing. It is more fine-grained than Permissions Policy and has a different inheritance model: child resources can overwrite certain parent-chosen policies if they are compatible. It is more general than CSP as it has directives related to the permissions of a resource once it has been loaded instead of only determining from which origins resources can be loaded. It is easier to extend than sandboxing because features that are not mentioned in sandboxing are blocked by default, which makes it very difficult to add new ones.
 
 <figure>
   <table>
@@ -816,13 +816,13 @@ Document Policy has several advantages over related mechanisms such as Permissio
   <figcaption>{{ figure_link(caption="Most common document policy header values", sheets_gid="1931592953", sql_file="documentpolicy_most_common_header.sql") }}</figcaption>
 </figure>
 
-We can see that of the Document Policy headers in use, more than two thirds of them are used to include call stacks in crash reports. Combined with the `js-profiling` directive these two features make up the vast majority of current use-cases. Currently in total we find policy values containing 19 different directives, in general there may be more defined but as of now we are not aware of the total number of directives that are defined.
+We can see that of the Document Policy headers in use, more than two thirds of them are used to include call stacks in crash reports. Combined with the `js-profiling` directive these two features make up the vast majority of current use-cases. Currently in total we find policy values containing 19 different directives. In general there may be more directives defined but as of now we are not aware of the total number them.
 
-While we currently only find just over 24,000 and 29,500 pages for desktop and mobile respectively which is 0.10% of the total number of pages visited for both. We expect to see a rise in adoption of Document Policy headers going forward, although future adoption may not happen quickly.
+We currently only find just over 24,000 and 29,500 pages for desktop and mobile respectively which is 0.10% of the total number of pages visited for both. We expect to see a rise in adoption of Document Policy headers going forward, although future adoption may not happen quickly.
 
 ## Attack preventions
 
-While there are many defenses for websites implemented by many browsers, it can be challenging to keep an overview of all the possibilities and best-practices. In addition, when protections are opt-in and therefore not enabled by default, it becomes even more of a challenge. Developers have to remain up to speed with modern attacks and the defenses that exist to protect users against these attacks. This section assesses which attack prevention measures are in use across the web.
+While there are many defenses for websites implemented by many browsers, it can be challenging to keep an overview of all the possibilities and best practices. In addition, when protections are opt-in and therefore not enabled by default, it becomes even more of a challenge. Developers have to remain up to speed with modern attacks and the defenses that exist to protect users against these attacks. This section assesses which attack prevention measures are in use across the web.
 
 ### Security header adoption
 
@@ -844,7 +844,7 @@ The strongest risers since the 2024 edition are `Strict-Transport-Security` (+4.
 
 #### `Origin-Agent-Cluster`
 
-The [`Origin-Agent-Cluster`](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. the browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
+The [`Origin-Agent-Cluster`](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster), when correctly set, communicates to the browser a request to share the resources used for the document (like the operating system process) with documents of the same origin. The browser may or may not honor the request and the client can verify using JavaScript whether the request was in fact honored.
 
 Usage remains low with only 0.47% of mobile sites, and 0.38% desktop sites using this, but let's dig into what they are using it for:
 
@@ -887,7 +887,7 @@ A boolean is <a hreflang="en" href="https://httpwg.org/specs/rfc8941.html#boolea
 
 #### Use of `document.domain`
 
-By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain), a developer was able to read the domain portion of the current document, as well as set a new domain (only superdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
+By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document/domain), a developer is able to read the domain portion of the current document, as well as set a new domain (only subdomains of the current domain are allowed), after which the browser will use the new domain as origin for the same-origin policy checks. However, the use of this property is now deprecated and browsers may stop supporting the property soon.
 
 <figure>
   <table>
@@ -929,13 +929,13 @@ By using [`document.domain`](https://developer.mozilla.org/docs/Web/API/Document
   <figcaption>{{ figure_link(caption="The use of `document.domain` based on specific blink features", sheets_gid="1240446071", sql_file="documentdomain_usage.sql") }}</figcaption>
 </figure>
 
-We see that less than 0.5% of websites on desktop and mobile are using the `document.domain` setter to change the origin of a page and even less sites do so with a non-default port. This is a positive trend but still represents a few tens of thousand website, which should update their code.
+We see that less than 0.5% of websites on desktop and mobile are using the `document.domain` setter to change the origin of a page and even less sites do so with a non-default port. This is a positive trend but still represents a few tens of thousands of websites that should update their code.
 
 ### Preventing clickjacking with CSP and X-Frame-Options
 
 As previously mentioned, a Content Security Policy (CSP) can be effective against <a hreflang="en" href="https://owasp.org/www-community/attacks/Clickjacking">Clickjacking</a> attacks through the use of the `frame-ancestors` directive. Some of the top CSP header values include a `frame-ancestors` directive with a `'none'` or `'self'` value, thereby blocking embedding of the page overall or restricting the embeddings to pages of the same origin.
 
-Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin (`SAMEORIGIN`).
+Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO header developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin (`SAMEORIGIN`).
 
 <figure>
   <table>
@@ -983,7 +983,7 @@ Examples of other values we observe are shown in the third to fifth row of the t
 
 ### Preventing attacks using Cross-Origin policies
 
-Because of the emergence of microarchitectural side-channel attacks like <a hreflang="en" href="https://spectreattack.com/">Spectre and Meltdown</a> and <a hreflang="en" href="https://xsleaks.dev/">Cross-Site Leaks (XS-Leaks)</a>, our security perspective relating to use and embeddings of cross-origin resources has changed. In response to these upcoming threats, new mechanisms to control the rendering of resources on other websites and thereby protect against these new threats were created.
+Because of the emergence of microarchitectural side-channel attacks like <a hreflang="en" href="https://spectreattack.com/">Spectre and Meltdown</a> and <a hreflang="en" href="https://xsleaks.dev/">Cross-Site Leaks (XS-Leaks)</a>, our security perspective relating to use and embeddings of cross-origin resources has changed. In response to these threats, new mechanisms were created to control the rendering of resources on other websites and thereby protect against these new threats.
 
 Multiple new security headers, known as the cross-origin policies, were created as a response to these challenges: Cross-Origin-Resource-Policy (CORP), Cross-Origin-Embedder-Policy (COEP) and Cross-Origin-Opener-Policy (COOP). These headers provide mechanisms that protect against side-channel attacks by allowing developers to control how their resources are embedded across different origins. We observe that the adoption of all of these headers keeps growing year after year, with both CORP and COOP reaching over 2% adoption this year.
 
@@ -1041,7 +1041,7 @@ For `credentialless`, the browser will allow cross-origin requests in `no-cors` 
 
 Related to COEP, the [Cross-Origin-Resource-Policy (CORP)](https://developer.mozilla.org/docs/Web/HTTP/Cross-Origin_Resource_Policy) does not enforce which content can be embedded in the current document, but rather from which documents the current content can be accessed.
 
-The only three possible values are `cross-origin`, `same-origin` and `same-site`. The `cross-origin` value allows any document to access the resource., while the `same-origin` and `same-site` restrict which documents can access the resource to the documents in the same origin or site respectively. Developers should be aware of the [difference between the origin (scheme, host, port) and site (registerable domain)](https://web.dev/articles/url-parts). If the header is present, requests with a mode of `no-cors` will be blocked by the browser.
+The only three possible values are `cross-origin`, `same-origin` and `same-site`. The `cross-origin` value allows any document to access the resource, while the `same-origin` and `same-site` values restrict which documents can access the resource to the documents in the same origin or site respectively. Developers should be aware of the [difference between the origin (scheme, host, port) and site (registerable domain)](https://web.dev/articles/url-parts). If the header is present, requests with a mode of `no-cors` will be blocked by the browser.
 
 <figure>
   <table>
@@ -1077,7 +1077,7 @@ In most cases, the header is used to allow access to any cross-origin resource. 
 
 #### Cross Origin Opener Policy
 
-The final cross-origin policy header, [Cross-Origin-Opener-Policy (COOP)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) allows a developer to control how other pages can reference their page when opening it through for instance the `window.open` API.
+The final cross-origin policy header, [Cross-Origin-Opener-Policy (COOP)](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) allows a developer to control how other pages can reference their page when opening it through browser APIs such as `window.open`.
 
 The default value of `unsafe-none` allows the COOP protection to be disabled, which is also what happens when the header is absent. If a developer uses `window.open` to open a page which uses `unsafe-none`, they can use the returned value to access certain properties of the opened page, which can lead to Cross-Site Leaks.
 
@@ -1130,7 +1130,7 @@ In order to access certain sensitive APIs like `SharedArrayBuffer` or `Performan
 
 Using the [`Clear-Site-Data`](https://developer.mozilla.org/docs/Web/HTTP/Headers/Clear-Site-Data) HTTP response header, developers are able to instruct the client to clear browsing data. The value of the header specifies which type or types of data should be cleared. This can be useful when a user logs out of the website, so the developer can be sure that any authentication cookies are most assuredly cleared.
 
-It is difficult to estimate the adoption of `Clear-Site-Data` correctly as its use is usually most valuable when logging out users. The crawler does not log in onto websites and therefore can also not log out to check how many sites use the header after logout. For now, we see 2,024 mobile hosts using the `Clear-Site-Data` header, which is only 0.01% of the total number of hosts crawled.
+It is difficult to estimate the adoption of `Clear-Site-Data` correctly as its use is usually most valuable when logging out users. The crawler we use does not log into websites and therefore can also not log out to check how many sites use the header after logout. For now, we see 2,024 mobile hosts using the `Clear-Site-Data` header, which is only 0.01% of the total number of hosts crawled.
 
 <figure>
   <table>
@@ -1203,7 +1203,7 @@ We see these numbers jump quite a lot year after year, which can likely be expla
 
 ### Preventing attacks using `<meta>`
 
-Besides as a response header, some of the security mechanisms of the web can be configured directly within the html document through the use of the `<meta>` tag. Two examples of this are the `Content-Security-Policy` and the `Referrer-Policy`. The use of a meta tag for these mechanisms has remained largely stable from [last year](../2024/security#preventing-attacks-using-meta), at around 0.60% and around 2.50% for the CSP and Referrer-Policy respectively. A very small decrease in CSP and very small increase in Referrer-Policy could be observed, just like last year.
+Besides being set via response headers, some of the security mechanisms of the web can be configured directly within the html document through the use of the `<meta>` tag. Two examples of this are the `Content-Security-Policy` and the `Referrer-Policy`. The use of a meta tag for these mechanisms has remained largely stable from [last year](../2024/security#preventing-attacks-using-meta), at around 0.60% and around 2.50% for the CSP and Referrer-Policy respectively. A very small decrease in CSP and very small increase in Referrer-Policy could be observed, just like last year.
 
 <figure>
   <table>
@@ -1235,7 +1235,7 @@ Besides as a response header, some of the security mechanisms of the web can be 
   <figcaption>{{ figure_link(caption="The percentage of hosts enabling different policies using a meta tag", sheets_gid="1717430289", sql_file="meta_policies_allowed_vs_disallowed.sql") }}</figcaption>
 </figure>
 
-Other security mechanisms can not be configured through the use of the `<meta>` tag, however every year we see developers still attempt this. This year we even see a rise in policies that are not allowed to be configured using a meta tag from 0.07% to 0.11% on mobile. These values are ignored by the browser, thus potentially leaving users vulnerable if the correct header is not configured. Keeping up with our running example, this year we found 5,564 meta tags that included the `X-Frame-Options` policy. This is almost 600 pages more than last year, which is a worrying evolution.
+Other security mechanisms cannot be configured through the use of the `<meta>` tag, however every year we see developers still attempt this. This year we even see a rise in policies that are not allowed to be configured using a meta tag from 0.07% to 0.11% on mobile. These values are ignored by the browser, thus potentially leaving users vulnerable if the correct header is not configured. Keeping up with our running example, this year we found 5,564 meta tags that included the `X-Frame-Options` policy. This is almost 600 pages more than last year, which is a worrying trend.
 
 ### Web Cryptography API
 
@@ -1311,7 +1311,7 @@ The <a hreflang="en" href="https://www.w3.org/TR/WebCryptoAPI/">Web Cryptography
   <figcaption>{{ figure_link(caption="The usages of features of the Web Cryptography API", sheets_gid="433834892", sql_file="web_cryptography_api.sql") }}</figcaption>
 </figure>
 
-The `CryptoGetRandomValues` remains the most widely used feature of this API, however it is still declining in use, [just like it was last year](../2024/security#web-cryptography-api). Its use on mobile dropped by more than 12% this year, landing just under 41%. The other features continue to rise, with the second most popular feature `SubtleCryptoDigest` growing by 1.2% to just under 3%.
+The `CryptoGetRandomValues` function remains the most widely used feature of this API, however it is still declining in use, [just like it was last year](../2024/security#web-cryptography-api). Its use on mobile dropped by more than 12% this year, landing just under 41%. The other features continue to rise, with the second most popular feature `SubtleCryptoDigest` growing by 1.2% to just under 3%.
 
 ### Bot protection services
 
@@ -1372,7 +1372,7 @@ As the name implies, the developer is responsible for making sure that only safe
   <figcaption>{{ figure_link(caption="The number of pages using HTML sanitization APIs", sheets_gid="1789171380", sql_file="html_sanitization_usage.sql") }}</figcaption>
 </figure>
 
-Since [last year](../2024/security#html-sanitization), we see a big rise in the use of these APIs. On mobile, the number of pages using `SetHTMLUnsafe` rose from 2 to 449 pages and the number using `ParseHTMLUnsafe` rose from 6 to 17,147 this year. The latter still only accounts for 0.06% of the crawled pages, but it is an interesting change and we can expect the adoption to keep rising in the following year, although it is not expected that these APIs will gain widespread adoption anytime soon.
+Since [last year](../2024/security#html-sanitization), we see a big rise in the use of these APIs. On mobile, the number of pages using `SetHTMLUnsafe` rose from 2 to 449 pages and the number using `ParseHTMLUnsafe` rose from 6 to 17,147 this year. The latter still only accounts for 0.06% of the crawled pages, but it is an interesting change and we can expect the adoption to keep rising in the following year. However, it is not expected that these APIs will gain widespread adoption anytime soon.
 
 ## Drivers of security mechanism adoption
 
@@ -1456,7 +1456,7 @@ We see that a number of blogging websites and website builders have some importa
 
 ### Website popularity
 
-Popular websites with a large user base often have a good reason to protect their users to the best of their abilities so they will not lose users and their trust. Protecting the often sensitive data they store while they likely are the target of more directed attacks requires significant investments in securing their website, but will likely also lead to a more generally security website as a trade-off.
+Popular websites with a large user base often have a good reason to protect their users to the best of their abilities so they will not lose users and their trust. Protecting the often sensitive data they store while they likely are the target of more directed attacks requires significant investments in securing their website, but will also lead to a more generally secure website as a trade-off.
 
 {{ figure_markup(
   image="security-headers-by-rank.png",
@@ -1484,7 +1484,7 @@ Depending on the industry, more importance may be attributed to keeping a websit
   )
 }}
 
-We see a big difference occurring in the average number of security headers since last year. Sites in the _Internet & Telecom_ and _Computers & Electronics_ categories use significantly more security headers. Especially on mobile clients the difference with following categories is clearly visible. While these two categories seem to be outliers in the good sense, the average number of security headers over other industries has remained largely the same, with here or there a very minor change of about 0.1 header per site on average.
+We see a big difference occurring in the average number of security headers since last year. Sites in the _Internet & Telecom_ and _Computers & Electronics_ categories use significantly more security headers. Especially on mobile clients the difference with these categories is clearly visible. While these two categories seem to be outliers in the good sense, the average number of security headers over other industries has remained largely the same, with a very minor change of about 0.1 header per site on average.
 
 The two leading industries in terms of security headers happen to be industries related to the field of internet and computer security. It is possible that due to the relevance of security in these industries, developers of these sites are more aware of the potential risk and therefore more willing to use certain security mechanisms.
 
