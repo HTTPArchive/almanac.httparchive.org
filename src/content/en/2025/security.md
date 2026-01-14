@@ -935,7 +935,7 @@ We see that less than 0.5% of websites on desktop and mobile are using the `docu
 
 As previously mentioned, a Content Security Policy (CSP) can be effective against <a hreflang="en" href="https://owasp.org/www-community/attacks/Clickjacking">Clickjacking</a> attacks through the use of the `frame-ancestors` directive. Some of the top CSP header values include a `frame-ancestors` directive with a `'none'` or `'self'` value, thereby blocking embedding of the page overall or restricting the embeddings to pages of the same origin.
 
-Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO header developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin (`SAMEORIGIN`).
+Another way of defending against clickjacking attacks is through the [`X-Frame-Options` (XFO)](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options) header. By setting the XFO header, developers can communicate that a document cannot be embedded in other documents ('DENY') or can only be embedded in documents of the same origin (`SAMEORIGIN`).
 
 <figure>
   <table>
