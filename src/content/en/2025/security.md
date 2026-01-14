@@ -233,7 +233,7 @@ Content inclusion is a core component of the web. Being able to include other pa
 
 The [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) allows websites to have fine-grained control over the content that will be loaded on its page. By setting the `Content-Security-Policy` response header or defining it in a `<meta>` html tag, websites can communicate the policy in use to the browser, which will enforce it. The policy has many available directives that allow a website to define from which sources content can be loaded or not.
 
-CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential cross-site script (XSS) attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can load as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
+CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential cross-site scripting (XSS) attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can load as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
 
 {{ figure_markup(
   content="+18%",
