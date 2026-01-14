@@ -1490,7 +1490,7 @@ The two leading industries in terms of security headers happen to be industries 
 
 ## Malpractices on the web
 
-Cryptocurrencies are more popular than they have ever been. Cryptomining has been a large business for a number of years and adversaries have been known to install cryptominers as a form of malware on victim websites. Over the past years, the use of cryptominers on the web has been steadily declining, just like it has been over the past year.
+Cryptocurrencies are more popular than they have ever been. Cryptomining has been a large business for a number of years and adversaries have been known to install cryptominers as a form of malware on victim websites. Over the past years, the use of cryptominers on the web has been steadily declining.
 
 {{ figure_markup(
   image="cryptominers-trend.png",
@@ -1502,7 +1502,7 @@ Cryptocurrencies are more popular than they have ever been. Cryptomining has bee
   )
 }}
 
-We see the number of pages with cryptominers decrease to only 37 pages on mobile, a 42% decline [since last year](../2024/security#fig-47). It is also a 83% decline since September 2022, only three years earlier.
+We see the number of pages with cryptominers decreased to only 37 pages on mobile, a 42% decline [since last year](../2024/security#fig-47). It is also a 83% decline since September 2022, only three years earlier.
 
 {{ figure_markup(
   image="cryptominers-market-share.png",
@@ -1522,7 +1522,7 @@ While there are many security mechanisms available on the web and in browsers, i
 
 ### Unsupported policies in `<meta>`
 
-When configuring security policies, it is important that developers understand how they have to define the policy. Some policies can be defined through both a header and the HTML `<meta>` tag. However, many policies can not be defined through `<meta>`. Developers sometimes make the mistake of trying to configure these policies through the `<meta>` tag anyway. Unfortunately browsers will ignore these policies, resulting in inactive security policies.
+When configuring security policies, it is important that developers understand how they have to define the policy. Some policies can be defined through both a header and the HTML `<meta>` tag. However, many policies cannot be defined through `<meta>`. Developers sometimes make the mistake of trying to configure these policies through the `<meta>` tag anyway. Unfortunately browsers will ignore these policies, resulting in inactive security policies.
 
 <figure>
   <table>
@@ -1568,7 +1568,7 @@ We find that around 0.11% of mobile sites attempt to set security headers that b
 
 ### Unsupported CSP directives in `<meta>`
 
-While CSP *can* be configured via `<meta>` tags and this behaviour has been observed on 0.59% of mobile pages, certain CSP directives are explicitly disallowed in meta implementations and will be ignored by browsers. These directives can only be set by using the `Content-Security-Policy` response header.
+While CSP *can* be configured via `<meta>` tags and this behaviour has been observed on 0.59% of mobile pages, certain CSP directives are explicitly disallowed in `<meta>` tag implementations and will be ignored by browsers. These directives can only be set by using the `Content-Security-Policy` response header.
 
 <figure>
   <table>
@@ -1595,7 +1595,7 @@ While CSP *can* be configured via `<meta>` tags and this behaviour has been obse
   <figcaption>{{ figure_link(caption="Percentage of CSP policies defined in `<meta>` with disallowed directives", sheets_gid="1969221363", sql_file="meta_csp_disallowed_directives.sql") }}</figcaption>
 </figure>
 
-We find that over 2% of mobile pages setting a CSP policy via a `<meta>` tag include the `frame-ancestors` directive and 0.003% include the `sandbox` directive. The latter boils down to only three pages out of the entire crawled dataset. Compared to last edition the misconfiguration of `frame-ancestors` shows up on 600 more pages, thereby rising by over 0.8%. This represents a slow but negative evolution for these types of misconfigurations.
+We find that over 2% of mobile pages setting a CSP policy via a `<meta>` tag include the `frame-ancestors` directive and 0.003% include the `sandbox` directive. The latter boils down to only three pages out of the entire crawled dataset. Compared to last edition, the misconfiguration of `frame-ancestors` shows up on 600 more pages, thereby rising by over 0.8%. This represents a slow but negative evolution for these types of misconfigurations.
 
 ### COOP/COEP/CORP confusion
 
@@ -1760,7 +1760,7 @@ The `Server-Timing` HTTP header is a response header defined in a <a hreflang="e
   )
 }}
 
-The percentage of hosts returning a `server-timing` header has increased by over 15% to being in use by over a fifth of hosts that have been visited by the crawler. This is a very steep increase since [last year](../2024/security#missing-suppression-of-server-timing-header).
+The percentage of hosts returning a `server-timing` header has increased by over 15% in use by over a fifth of hosts that have been visited by the crawler. This is a very steep increase since [last year](../2024/security#missing-suppression-of-server-timing-header).
 
 {{ figure_markup(
   image="server-timing-header-dur-property.png",
@@ -1773,7 +1773,7 @@ The percentage of hosts returning a `server-timing` header has increased by over
 
 Of the `server-timing` headers on the web, we find 42% of them have at least one `dur` property. This is a relative decrease compared to [last year](../2024/security#fig-53), but given the steep incline in header use over the year, the absolute number has risen. This also means that more headers do not include a `dur` property and use the header for other purposes, possibly through the use of the `desc` property that allows developers to set a description for certain metrics.
 
-Because the information included in the `server-timing` header can be sensitive, access to the values is restricted to the same origin and to origins listed in the `Timing-Allow-Origin`. As we have shown above, many websites configure the `Timing-Allow-Origin` with a wildcard character, allowing all origins to access this potentially sensitive information. Even without cross-origin access, timing attacks can still be executed directly against servers exposing sensitive timing information outside of the browser context.
+Because the information included in the `server-timing` header can be sensitive, access to the values is restricted to the same origin and to origins listed in the `Timing-Allow-Origin` header. As we have shown above, many websites configure the `Timing-Allow-Origin` with a wildcard character, allowing all origins to access this potentially sensitive information. Even without cross-origin access, timing attacks can still be executed directly against servers exposing sensitive timing information outside of the browser context.
 
 ## Well-known URIs
 
@@ -1829,7 +1829,7 @@ The <a hreflang="en" href="https://w3c.github.io/webappsec-change-password-url/r
   )
 }}
 
-We find similar results to [2022's](../2022/security#change-password) and [2024's](../2024/security#change-password) edition of the Web Almanac. However, the number of faulty ok status responses has grown slightly, from 84% in 2024 for both desktop and mobile pages to 83% and 84%, respectively. Web developers should continue to make their application use the correct status codes to respond to incoming requests in order to avoid that the status codes lose meaning.
+We find similar results to [2022's](../2022/security#change-password) and [2024's](../2024/security#change-password) edition of the Web Almanac. However, the number of faulty ok status responses has grown slightly, from 84% in 2024 for both desktop and mobile pages to 83% and 84%, respectively. Web developers should continue to make their application use the correct status codes to respond to incoming requests in order to avoid these status codes from losing meaning.
 
 ### Sensitive endpoints in `robots.txt`
 
@@ -1853,4 +1853,4 @@ This security chapter shows positive trends in the adoption of web security poli
 
 Despite these positive trends, developers must remain vigilant when leveraging these security mechanisms. Due to the growing complexity of the many available security mechanisms, we saw growth in the number of misconfigurations on the web. We saw that 0.1% of pages configure security policies in the `<meta>` HTML tag while this is not supported by browsers. Another problem is the confusion between related protections: 5% of values of the COEP header are invalid values that are only valid in the related CORP or COOP header. We also observe a form of developer fatigue where the least strict value of a protection is configured in order to make deployment more manageable or prevent potential problems, such as the wildcard value in the `Timing-Allow-Origin` header showing up in over 84% of these headers. Luckily, developers can easily mitigate these issues once they are aware of the problems.
 
-New attacks in the future will inevitably drive the design of even more protection mechanisms to protect users worldwide. Policy makers will have to focus on reducing complexity in these new mechanisms to avoid developer confusion, but while the adoption of new security features takes time, we see relatively new policies being picked up and getting more adoption over time, thereby creating a more secure web for everyone.
+New attacks in the future will inevitably drive the design of even more protection mechanisms to keep users safe worldwide. Policy makers will have to focus on reducing complexity in these new mechanisms to avoid developer confusion, but while the adoption of new security features takes time, we see relatively new policies being picked up and getting more adoption over time, thereby creating a more secure web for everyone.
