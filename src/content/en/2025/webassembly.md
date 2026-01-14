@@ -8,16 +8,16 @@ reviewers: [tunetheweb]
 analysts: [nimeshgit]
 editors: [cjihrig]
 translators: []
-nrllh_bio: TODO
-nimeshgit_bio: TODO
+nrllh_bio: Nurullah Demir is a cyber security researcher and PhD student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> and <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. His research focuses on web security & privacy, and web measurements.
+nimeshgit_bio: Nimesh is a digital transformation (automation) solutions in context with AI / ML Analytics , Ops and Business Processes.
 results: https://docs.google.com/spreadsheets/d/16z2MNwq8FFbuNYcJJZceML6rB5VAmBXNNHZy5FZuf8g/edit
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: WebAssembly is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format.
+featured_stat_1: 0.35%
+featured_stat_label_1: Desktop sites using WebAssembly.
+featured_stat_2: 228 MB
+featured_stat_label_2: Largest WebAssembly file detected.
+featured_stat_3: 2.05%
+featured_stat_label_3: Desktop sites in top 1,000 using WebAssembly
 ---
 
 ## Introduction
@@ -92,7 +92,7 @@ Interestingly, looking over previous Web Almanac years, WebAssembly requests hav
   description="Bar chart showing distribution of page ranking groups from 1000, 10,000, 100000, 1000000, 10000000 and all on client requests for desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1476075550&format=interactive",
   sql_file="ranking.sql",
-  sheets_gid="TODO"
+  sheets_gid="540023407"
   )
 }}
 
@@ -217,10 +217,6 @@ For example, [wasm-bindgen](https://crates.io/crates/wasm-bindgen) is a suite of
 
 Like wise, We have researched and found various language indicators inside WebAssembly’s different components with the tool.
 
-We have found the .Net / Mono eco system based languages (including Blazor) reserves the first position for the language used in WebAssembly for desktop clients with 44.26% and for mobile clients with 43.77%
-
-However 41.56% clients in desktop and 41.56% clients in mobile have language "Unknown" that means We could not find the author’s (source) language because of missing language indicators or WebAssembly is stripped with the obfuscation or other techniques; These techniques are used to reduce the size, enable privacy/security features or to optimize the performance of the WebAssembly by the modern compilers.
-
 {{ figure_markup(
   image="language-usage.png",
   caption="WebAssembly language usage.",
@@ -233,13 +229,15 @@ However 41.56% clients in desktop and 41.56% clients in mobile have language "Un
   )
 }}
 
+We have found the .Net / Mono eco system based languages (including Blazor) reserves the first position for the language used in WebAssembly for desktop clients with 40.5% and for mobile clients with 39.8%
+
+However 41.1% clients in desktop and 41.6% clients in mobile have language "Unknown" that means We could not find the author’s (source) language because of missing language indicators or WebAssembly is stripped with the obfuscation or other techniques; These techniques are used to reduce the size, enable privacy/security features or to optimize the performance of the WebAssembly by the modern compilers.
+
 ## WebAssembly features
 
 The initial release of WebAssembly was considered an MVP. In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the WebAssembly version 2.0, adding a number of new features. The version 3.0 shows the true vision and its potential for WebAssembly.
 
 SIMD stands for Single Instruction, Multiple Data. SIMD instructions are a special class of instructions that exploit data parallelism in applications by simultaneously performing the same operation on multiple data elements. Compute intensive applications like audio/video codecs, image processors, are all examples of applications that take advantage of SIMD instructions to accelerate performance. Most modern architectures support some variants of SIMD instructions.
-
-SIMD is a new feature and isn't yet available in all browsers with WebAssembly support. In the Year 2021, We had found SIMD extension usage in 20 Wasm modules on desktop and 21 Wasm modules on mobile clients, This feature usage is now increased with 2265 Wasm modules on desktop and 2470 on mobile clients.
 
 {{ figure_markup(
   image="extensions-usage.png",
@@ -251,10 +249,12 @@ SIMD is a new feature and isn't yet available in all browsers with WebAssembly s
   )
 }}
 
+SIMD is a new feature and isn't yet available in all browsers with WebAssembly support. In the Year 2021, We had found SIMD extension usage in 20 Wasm modules on desktop and 21 Wasm modules on mobile clients, This feature usage is now increased with 2265 Wasm modules on desktop and 2470 on mobile clients.
+
 With respect to the total extension usage in Year 2021, It is observed that total extension usage in 2025 drastically ~61 times more on desktop clients and ~80 times more on mobile based clients. To make the usage of very complex tasks, the WebAssembly, We have marked the Bulk Memory stats are increased  to 8936 times higher on desktop and 25,512 times higher on mobile clients with respect to Year 2021 stats.
 
 ## Conclusions
 
-There is a significant increase in the number of webpages using this technology for serverless, containerisation, machine learning components and plug-n-play types of applications. The future of WebAssembly could be as a niche web technology, but as an entirely mainstream runtime on a wide range of other platforms. WebAssembly runtime (multi-language, lightweight, secure) are making it a popular choice for a wider range of non-browser applications for agnostic platforms.
+There is a significant increase in the number of webpages using this technology for serverless, containerization, machine learning components and plug-n-play types of applications. The future of WebAssembly could be as a niche web technology, but as an entirely mainstream runtime on a wide range of other platforms. WebAssembly runtime (multi-language, lightweight, secure) are making it a popular choice for a wider range of non-browser applications for agnostic platforms.
 
 Despite being a niche technology, WebAssembly is already adding value to the web. There are a number of web applications that benefit greatly from this technology. However, web applications are often not visible to the ‘crawl’ which forms the basis of this study.
