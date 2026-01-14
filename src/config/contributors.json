@@ -311,6 +311,10 @@
       "2024": [
         "analysts",
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -882,6 +886,9 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "reviewers"
       ]
     },
     "website": "http://www.bramstein.com/"
@@ -1072,6 +1079,10 @@
       "2024": [
         "reviewers",
         "editors"
+      ],
+      "2025": [
+        "reviewers",
+        "editors"
       ]
     }
   },
@@ -1106,12 +1117,16 @@
   },
   "charlesberret": {
     "avatar_url": "3780812",
-    "github": "cberret",
+    "github": "charlesberret",
     "name": "Charles Berret",
     "teams": {
       "2024": [
         "authors",
         "editors"
+      ],
+      "2025": [
+        "authors",
+        "analysts"
       ]
     },
     "website": "https://charlesberret.net/"
@@ -1201,6 +1216,9 @@
       ],
       "2024": [
         "reviewers"
+      ],
+      "2025": [
+        "editors"
       ]
     },
     "twitter": "svgeesus",
@@ -2176,6 +2194,9 @@
       "2024": [
         "analysts",
         "reviewers"
+      ],
+      "2025": [
+        "analysts"
       ]
     }
   },
@@ -2495,6 +2516,10 @@
       ],
       "2024": [
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "authors"
       ]
     }
   },
@@ -2628,6 +2653,9 @@
         "reviewers"
       ],
       "2024": [
+        "reviewers"
+      ],
+      "2025": [
         "reviewers"
       ]
     },
@@ -3583,6 +3611,18 @@
     "name": "Nektarios Paisios",
     "teams": {
       "2019": [
+        "authors"
+      ]
+    }
+  },
+  "nick-mccord": {
+    "avatar_url": "102171522",
+    "github": "nick-mccord",
+    "linkedin": "nicholasmccord",
+    "name": "Nick McCord",
+    "teams": {
+      "2025": [
+        "analysts",
         "authors"
       ]
     }

@@ -15,8 +15,7 @@
           "part": "I",
           "chapter_number": "1",
           "title": "Fonts",
-          "slug": "fonts",
-          "todo": true
+          "slug": "fonts"
         },
         {
           "part": "I",
@@ -126,8 +125,7 @@
           "part": "IV",
           "chapter_number": "15",
           "title": "CDN",
-          "slug": "cdn",
-          "todo": true
+          "slug": "cdn"
         },
         {
           "part": "IV",
