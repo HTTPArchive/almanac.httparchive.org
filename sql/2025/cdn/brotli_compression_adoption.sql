@@ -39,7 +39,7 @@ WITH compression_analysis AS (
       SELECT LOWER(h.value)
       FROM UNNEST(response_headers) AS h
       WHERE LOWER(h.name) = 'content-encoding'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS content_encoding,
 
     -- Vary header check (indicates dynamic compression support)

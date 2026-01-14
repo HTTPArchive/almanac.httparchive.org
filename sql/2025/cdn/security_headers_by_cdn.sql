@@ -109,7 +109,7 @@ WITH security_headers AS (
       SELECT h.value
       FROM UNNEST(response_headers) AS h
       WHERE LOWER(h.name) = 'access-control-allow-origin'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS cors_origin_value
   FROM `httparchive.crawl.requests`
   WHERE date = '2025-07-01'

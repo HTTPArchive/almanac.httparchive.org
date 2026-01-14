@@ -24,7 +24,7 @@ WITH server_timing_analysis AS (
       SELECT header.value
       FROM UNNEST(response_headers) AS header
       WHERE LOWER(header.name) = 'server-timing'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS server_timing_value,
 
     -- Other performance headers

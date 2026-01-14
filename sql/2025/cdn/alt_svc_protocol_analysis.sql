@@ -29,7 +29,7 @@ WITH alt_svc_analysis AS (
       SELECT h.value
       FROM UNNEST(response_headers) AS h
       WHERE LOWER(h.name) = 'alt-svc'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS alt_svc_header,
 
     -- Check if Alt-Svc exists

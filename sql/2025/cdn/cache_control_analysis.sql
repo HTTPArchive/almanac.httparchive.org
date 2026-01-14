@@ -24,7 +24,7 @@ WITH cache_analysis AS (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'cache-control'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS cache_control,
 
     -- Extract other cache-related headers
@@ -32,25 +32,25 @@ WITH cache_analysis AS (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'expires'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS expires_header,
     (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'etag'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS etag,
     (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'last-modified'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS last_modified,
     (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'vary'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS vary_header,
 
     -- CDN-specific headers
@@ -58,19 +58,19 @@ WITH cache_analysis AS (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'x-cache'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS x_cache,
     (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'cf-cache-status'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS cf_cache_status,
     (
       SELECT value
       FROM UNNEST(response_headers)
       WHERE LOWER(name) = 'x-served-by'
-      LIMIT 1
+      LIMIT 1 -- noqa: AM09
     ) AS x_served_by
   FROM `httparchive.crawl.requests`
   WHERE date = '2025-07-01'
