@@ -288,6 +288,12 @@ The Media Capabilities API saw dramatic growth over the past year. Mobile adopti
 
 ## New features over the past year
 
+{# TODO: Add #}
+
 ### Built-in AI APIs
 
+{# TODO: Add #}
+
 ## Conclusion
+
+{# TODO: Add #}
