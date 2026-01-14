@@ -17,6 +17,7 @@
     "test": "node ./tools/test",
     "generate": "node ./tools/generate",
     "figure-images": "node ./tools/generate/generate_figure_images",
+    "chart-descriptions": "node ./tools/generate/generate_chart_descriptions",
     "watch": "node ./tools/generate/chapter_watcher",
     "ebooks": "node ./tools/generate/generate_ebook_pdfs",
     "deploy": "./tools/scripts/deploy.sh",
@@ -47,6 +48,7 @@
     "run-script-os": "1.1.6",
     "showdown": "2.1.0",
     "smartypants": "0.2.2",
+    "tesseract.js": "^7.0.0",
     "web-vitals": "5.1.0",
     "xml-js": "1.6.11"
   }
