@@ -370,18 +370,63 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 From the chart above, unsized images are much taller at higher percentiles. At the median, unsized images are about 100px tall on both desktop and mobile, but by the 90th percentile they grow to around 413px on desktop and 300px on mobile. Taller unsized images increase CLS because they cause larger vertical layout shifts when they load, especially if they appear in the viewport. Since web pages scroll vertically, missing image height has a much bigger impact on CLS than missing width.
 
 #### Fonts
-TODO
 
-#### Animation
-TODO
+Browsers often initially display text using a fallback (system) font while a custom web font is still downloading. This temporary rendering can cause a negative impact on the Cumulative Layout Shift (CLS) score. When the custom font finally loads, the browser replaces the fallback font, which can alter the text's size and spacing, leading to content shifting.
+
+{{ figure_markup(
+  caption="The percent of mobile pages that use web fonts.",
+  content="86.6%",
+  classes="big-number",
+  sheets_gid="1246939241",
+  sql_file="font_usage_mobile.sql"
+)}}
+
+A significant majority 86.6% of mobile pages utilize at least one web font. This widespread use of custom typography requires downloading and application, substantially [raising the potential](https://web.dev/articles/optimize-cls#web-fonts) for layout shifts.
+
+To effectively minimize layout shifts caused by fonts, it is crucial to load essential fonts as early as possible, ideally using resource hints. If a font loads before or very near the first render, the browser can display text using the correct font immediately. This prevents the swap from a default font, which is a common cause of layout shifts. Current data indicates that this opportunity is frequently missed.
+
+{{ figure_markup(
+  image="font-resource-hint-usage.png",
+  caption="Adoption of resource hints for font resources.",
+  description=”Bar chart showing the percentage of pages using font-related resource hints on desktop and mobile in 2025. `dns-prefetch` is the most commonly used hint, appearing on 24% of pages on both `desktop` and `mobile`, followed by `preconnect` at 22% on each device. `preload` is used less frequently at 15% on `desktop` and 16% on `mobile`, while `prefetch` remains rare at around 5% on both platforms.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=111695502&format=interactive",
+  sheets_gid="667157886",
+  sql_file="font_resource_hint_usage.sql"
+  )
+}}
+
+Font resource hint usage is very similar across desktop and mobile. About 24% of pages use dns-prefetch and 22% use preconnect, which mainly helps in reducing connection setup time. Preload is a good way to make fonts available early during rendering but is used on only 15-16% of pages. Even fewer pages, around 5%, use prefetch, which is generally less useful for fonts needed during the initial page load. This suggests there is substantial opportunity to improve font performance through more targeted use of resource hints.
+
+
+#### Animations
+
+[Non-composited](https://developer.chrome.com/docs/lighthouse/performance/non-composited-animations) animations contribute to layout shift because they modify layout-affecting properties, triggering reflows that move surrounding content after rendering has begun. Animations using composited properties like `transform` and `opacity` avoid this by updating visual appearance without changing layout, making them safer for visual stability.
+
+{{ figure_markup(
+  caption="The percent of mobile pages that have non-composited animations.",
+  content="40.19%",
+  classes="big-number",
+  sheets_gid="1135625211",
+  sql_file="cls_animations.sql"
+)}}
+
+Non-composited animations remain common, appearing on 40.19% of mobile pages and 43.59% of desktop pages. Their impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart below. 
+
+{{ figure_markup(
+  image="non-composite-animations-per-page.png",
+  caption="Adoption of resource hints for font resources.",
+  description=”Bar chart showing the number of non-composited animations per page by percentile for desktop and mobile in 2025. Both desktop and mobile report zero non-composited animations through the 50th percentile. At the 75th percentile, pages have 3 animations on desktop and 2 on mobile, increasing sharply at the 90th percentile to 13 on desktop and 11 on mobile.”,
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1922146788&format=interactive”,
+  sheets_gid="1135625211",
+  sql_file="cls_animations.sql”
+  )
+}}
 
 ### Visual Stability Conclusion
 
-The main takeaways are:
+Visual stability across the web has advanced significantly over the years, particularly on mobile devices. Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
-- Visual stability across the web has advanced significantly over the years, particularly on mobile devices.
-- Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices.
-- However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
+Despite gradual improvements, most pages continue to leave layout decisions to the browser, leading to unnecessary visual shifts. Adopting simple [best practices](https://web.dev/articles/optimize-cls) like explicit image sizing, preloading critical fonts, and using composited animations, pages can help improve visual stability.
 
 ## Early Hints
 
