@@ -23,7 +23,7 @@ SELECT
   COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
-  UNNEST (features) AS feat
+  UNNEST(features) AS feat
 JOIN
   totals
 USING (date, client)
