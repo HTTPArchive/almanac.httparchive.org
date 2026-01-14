@@ -57,7 +57,7 @@ FROM (
       technologies.technology != 'Cart Functionality' AND
       technologies.technology != 'Google Analytics Enhanced eCommerce' AND
       technologies.technology != '' AND
-      date = '2025-06-01' AND
+      date = '2025-07-01' AND
       is_root_page
   ) USING (client, url)
   GROUP BY

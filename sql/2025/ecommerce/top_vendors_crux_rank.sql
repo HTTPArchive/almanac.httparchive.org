@@ -20,7 +20,7 @@ FROM (
     UNNEST(technologies.categories) AS cats
   WHERE
     cats = 'Ecommerce' AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page AND
     technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
 )
@@ -34,7 +34,7 @@ JOIN (
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
 )
 USING (client, url)
@@ -48,7 +48,7 @@ JOIN (
     UNNEST([1e3, 1e4, 1e5, 1e6, 1e7]) AS rank_magnitude
   WHERE
     rank <= rank_magnitude AND
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
   GROUP BY
     client,

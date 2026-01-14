@@ -55,7 +55,7 @@ FROM (
       technologies.technology IS NOT NULL AND
       cats = 'Payment processors' AND
       technologies.technology != '' AND
-      date = '2025-06-01' AND
+      date = '2025-07-01' AND
       is_root_page
   ) USING (client, url)
   GROUP BY

@@ -19,7 +19,7 @@ JOIN (
   FROM
     `httparchive.all.pages`
   WHERE
-    date = '2025-06-01' AND
+    date = '2025-07-01' AND
     is_root_page
   GROUP BY
     client
@@ -27,7 +27,7 @@ JOIN (
 USING (client)
 WHERE
   cats = 'Ecommerce' AND
-  date = '2025-06-01' AND
+  date = '2025-07-01' AND
   is_root_page AND
   technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
 GROUP BY
