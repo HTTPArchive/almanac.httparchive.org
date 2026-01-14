@@ -3,12 +3,11 @@
 title: WebAssembly
 description: WebAssembly chapter of the 2025 Web Almanac covering usage, languages, and post-MVP features.
 hero_alt: Hero image of Web Almanac characters performing scientific experiments on various code symbols resulting in 1's and 0's coming out the other end.
-authors: [nrllh, nimeshgit]
-reviewers: [tunetheweb]
+authors: [nimeshgit]
+reviewers: [nrllh, tunetheweb]
 analysts: [nimeshgit]
-editors: [cjihrig]
+editors: [tunetheweb]
 translators: []
-nrllh_bio: Nurullah Demir is a cyber security researcher and PhD student at <a hreflang="en" href="https://www.internet-sicherheit.de/en/">Institute for Internet Security</a> and <a hreflang="en" href="https://intellisec.de">Intelligent System Security, KASTEL Security Research Labs</a>. His research focuses on web security & privacy, and web measurements.
 nimeshgit_bio: Nimesh is a digital transformation (automation) solutions in context with AI / ML Analytics , Ops and Business Processes.
 results: https://docs.google.com/spreadsheets/d/16z2MNwq8FFbuNYcJJZceML6rB5VAmBXNNHZy5FZuf8g/edit
 featured_quote: WebAssembly is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format.
@@ -17,7 +16,7 @@ featured_stat_label_1: Desktop sites using WebAssembly.
 featured_stat_2: 228 MB
 featured_stat_label_2: Largest WebAssembly file detected.
 featured_stat_3: 2.05%
-featured_stat_label_3: Desktop sites in top 1,000 using WebAssembly
+featured_stat_label_3: Desktop sites in top 1,000using WebAssembly
 ---
 
 ## Introduction

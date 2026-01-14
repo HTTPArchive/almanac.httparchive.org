@@ -3757,9 +3757,9 @@
         "reviewers"
       ],
       "2025": [
-        "authors",
         "committee",
-        "leads"
+        "leads",
+        "reviewers"
       ]
     },
     "twitter": "nrllah",
