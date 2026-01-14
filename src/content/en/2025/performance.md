@@ -107,11 +107,11 @@ A major factor influencing a user's perception of quality and reliability is the
 
 ### First Contentful Paint
 
-To understand the user's first impression of a webpage's speed, we look at [First Contentful Paint (FCP)](https://web.dev/articles/fcp?hl=en). This metric captures the exact time it takes for a page to begin displaying content, measured from the point the user first requested the page. Any page that has a FCP score under 1.8 seconds is considered  'Good', scores between 1.8 and 3.0 seconds indicate that the page 'Needs Improvement,' and a score over 3.0 seconds is considered 'Poor' performance.
+To understand the user's first impression of a webpage's speed, we look at [First Contentful Paint (FCP)](https://web.dev/articles/fcp?hl=en). This metric captures the exact time it takes for a page to begin displaying *any* content, measured from the point the user first requested the page. A page that has a FCP score under 1.8 seconds is considered  'Good', scores between 1.8 and 3.0 seconds indicate that the page 'Needs Improvement,' and a score over 3.0 seconds is considered 'Poor' performance.
 
 {{ figure_markup(
   image="fcp-performance-by-year-and-device-2025.png",
-  caption=" Percentage of websites having good, needs improvement, and poor FCP, segmented by year and device type.",
+  caption="Percentage of websites having good, needs improvement, and poor FCP, segmented by year and device type.",
   description="Stacked bar chart showing TTFB (Time to First Byte) performance for 2024 and 2025, for both desktop and mobile device types. Each bar chart has 3 categories: good (under 0.8 seconds), needs improvement (0.8–1.8 seconds), and poor (over 1.8 seconds). In 2024, 68% of desktop websites had good TTFB, 22% needed improvement, and 10% performed poorly. In 2025, 70% of desktop websites have good TTFB, 21% need improvement, and 9% perform poorly. For mobile websites in 2024, 51% of websites had good TTFB, 31% needed improvement, and 18% performed poorly. In 2025, 55% of mobile websites have good TTFB, 29% need improvement, and 16% perform poorly.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1596764241&format=interactive",
   sheets_gid="1060077014",
@@ -144,8 +144,110 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 The TTFB data provides partial insight into these FCP gains between 2024 and 2025\. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations contributed reasonably (\~half) to overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general. Given that there are no significant improvements in number of pages passing the Lighthouse [render-blocking resources audit](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources)  this year compared to 2024, it would seem that a key factor improving FCP across both device types could be the much [improved rendering engine](https://thinksproutinfotech.com/news/how-google-chrome-received-the-highest-ever-speedometer-score/) in Chrome since 2024, which reduces rendering times regardless of individual website optimizations.
 
-### More subsections upcoming
-TODO (Humaira)
+### Largest Contentful Paint
+
+To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%)—a gap that likely reflects the compounding effects of slower networks and less powerful hardware**.** Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
+
+{{ figure_markup(
+  image="lcp-performance-by-device-2025.png",
+  caption=" Percentage of websites having good, needs improvement, and poor FCP, segmented by device type.",
+  description="Stacked bar chart showing LCP (Largest Contentful Paint) performance for both desktop and mobile device types. Each bar chart has 3 categories: good (under 2.5 seconds), needs improvement (2.5–4.0 seconds), and poor (over 4 seconds).  For desktop websites, 74% achieve a good LCP, 18% need improvement, and 7% perform poorly. On phone devices, 62% of websites have a good LCP, 25% need improvement, and 13% perform poorly.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=546968144&format=interactive",
+  sheets_gid="1060077014",
+  sql_file="web_vitals_by_device.sql"
+  )
+}}
+
+Like FCP, LCP is also a sum of several sequential phases: the time taken to get the first byte of data from the server (TTFB), the delay before the browser begins fetching the LCP resource (Resource Load Delay), the time spent loading that resource (Resource Load Duration), and finally any delay before it renders (Element Render Delay). Understanding where time is lost across these phases is essential for improving LCP and thus overall [Core Web Vitals performance](https://web.dev/articles/defining-core-web-vitals-thresholds) of a web page.
+
+#### LCP Content Types
+
+To optimize LCP effectively, we first need to understand what types of content typically become the LCP element.
+
+{{ figure_markup(
+  image="top-lcp-content-types-2025.png",
+  caption="Top three LCP content types segmented by device",
+  description="Bar chart showing the top LCP content types for desktop and mobile in 2025. For desktop, 85.3% of pages have images as the LCP content type, while 76.0% of mobile pages have images as their LCP content. Text accounts for 14.4% of LCP content on desktop and 23.7% on mobile. Inline images are rare, making up 0.3% of LCP content on desktop and 0.4% on mobile.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1953839389&format=interactive",
+  sheets_gid="1342917583",
+  sql_file="lcp_resource_type.sql"
+  )
+}}
+
+The trend in LCP content types is similar to previous years (see also [2022](https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?gid=872701281#gid=872701281) and [2024](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=1760287339#gid=1760287339) data). Images continue to dominate LCP elements across both device types, with 85.3% of desktop pages and 76% of mobile pages having an image as their LCP element. Text-based LCP elements account for much of the remainder—14.4% on desktop versus 23.7% on mobile. This gap likely reflects responsive design practices where hero images are resized, replaced with smaller visuals, or removed entirely on narrower viewports, allowing headline text to become the largest visible element instead. Inline images (data URIs embedded directly in HTML) remain negligible at under 0.5% for both desktop and mobile pages, suggesting developers recognize that base64 encoding bloats document size and makes no use of caching.
+
+#### LCP Image Formats
+
+{{ figure_markup(
+  image="lcp-image-formats-2025.png",
+  caption="Percentage of pages that use a given image file format for their LCP images.",
+  description="Bar chart showing the distribution of LCP (Largest Contentful Paint) image formats for desktop and mobile. JPG is the most common format, used by 57% of desktop pages and a similar percentage of mobile pages. PNG is the second most common format, used by 26% of pages. WebP follows with 11%, while other formats such as MP4, SVG, GIF, and AVIF are used by less than 2% of pages. ICO, HEIC, and HEIF formats are barely used, with their percentages rounding to 0% for both desktop and mobile.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=319360439&format=interactive",
+  sheets_gid="1338677449",
+  sql_file="lcp_format.sql"
+  )
+}}
+
+Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance. 
+
+Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). There are some encouraging signs though– JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly.
+
+This slow adoption likely reflects several factors: the inertia of existing content management systems, concerns about browser compatibility (though both formats now have broad support), and the effort required to shift. Also to note is the 0% adoption of HEIC and HEIF formats, this is likely due to their association with Apple's ecosystem and limited browser support. 
+
+#### Cross Hosted LCP Images
+
+The origin of an LCP image affects how quickly the browser can begin downloading it, impacting the resource load delay phase. When an image is hosted on the same domain as the page, the browser can reuse the existing connection. Cross-origin images, however, require additional setup—DNS lookup, TCP handshake, and TLS negotiation—adding latency before the first byte even arrives.   
+
+{{ figure_markup(
+  image="cross-hosted-lcp-images-2025.png",
+  caption="Cross-hosted LCP images.",
+  description="Bar chart showing same host is used for the LCP image for 51% of desktop and 44% of mobile pages, cross host for 18% and 16% respectively, and other content is the LCP element for 32% of desktop and 40% of mobile pages.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=820268406&format=interactive",
+  sheets_gid="540816699",
+  sql_file="lcp_host.sql"
+  )
+}}
+
+Our data shows that  51% of desktop pages and 44% of mobile pages serve their LCP image from the same host as the document. Cross-hosted LCP images account for 16-18% of pages—a meaningful portion that may be paying a connection overhead cost unless mitigated with [preconnect hints](https://web.dev/learn/performance/resource-hints#preconnect). The "other content" category (32% desktop, 40% mobile) represents pages where the LCP element isn't an image at all, likely text blocks or background elements. The higher mobile percentage for "other content" may reflect responsive design patterns where hero images are deprioritized on smaller viewports, though we do not conclusively know using this data alone.
+
+#### LCP Resource Prioritization
+
+Since resource load delay phase often constitutes a large portion of LCP time, browsers provide tools to help accelerate critical resources. The fetchpriority="high" attribute tells the browser to prioritize a resource higher than it normally would—useful since images are typically not considered high priority even when they're the LCP element. Meanwhile, \<link rel="preload"\> instructs the browser to fetch a resource before it would naturally discover it in the HTML.
+
+{{ figure_markup(
+  image="adoption-of-lcp-prior-2025.png",
+  caption="Percentage of pages using different LCP prioritization techniques, segmented by device type.",
+  description="Bar chart showing adoption of LCP prioritization techniques on desktop and mobile. Preload usage is at 2.2% desktop and 2.1% mobile. fetchpriority="high" shows the highest adoption at 16.3% desktop and 17.3% mobile. fetchpriority="low" is rarely used at 0.3% for both device types.",
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1243485141&format=interactive",
+  sheets_gid="1463760382",
+  sql_file="lcp_async_fetchpriority.sql"
+  )
+}}
+
+Adoption of fetchpriority="high" has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024\. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them. 
+
+The 0.3% of pages using fetchpriority="low" on their LCP images is likely unintentional, since identifying which image will become the LCP element at development time can be tricky for developers (varies by viewport and content).
+
+#### LCP lazy loading
+
+Lazy loading is a technique that defers loading offscreen images until they're needed, helping reduce initial page weight and prioritize critical resources. It's a valuable optimization—except when applied to the LCP image. Since lazy loading waits until an image nears the viewport before fetching it, using it on the LCP element delays the very content users are waiting to see.
+
+{{ figure_markup(
+  caption="Percentage of desktop and mobile pages that lazy load the LCP image.",
+  content="16%",
+  classes="big-number",
+  sheets_gid="1877819046",
+  sql_file="lcp_lazy.sql"
+)
+}}
+
+Overall, about 16% of pages lazy load their LCP image on both desktop and mobile—a figure that has held steady since 2024\. However, the composition has shifted: native loading="lazy" usage has increased slightly (from 9.5% to 10.4% on mobile, 10.2% to 11.5% on desktop), while custom approaches like hiding sources behind data-src attributes have decreased (from 6.7% to 5.9% on mobile). This shift toward native lazy loading is generally positive for the web—it's more standardized and works better with browser optimizations—but it doesn't solve the underlying issue of lazy loading being applied too broadly.
+
+### Loading Speed Conclusion
+
+* FCP and LCP have both improved since 2024, with desktop consistently outperforming mobile. For FCP, roughly half of the gains appear tied to TTFB improvements, with the rest likely due to browser engine enhancements.   
+* Image optimization for LCP remains a mixed picture. While there's a gradual shift from JPG to WebP, adoption of modern formats is slow.   
+* About 16% of web pages still lazy load their LCP image, which directly harms load times.
 
 ## Interactivity
 
