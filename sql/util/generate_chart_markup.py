@@ -1,7 +1,7 @@
 import re
 import os
-from googleapiclient.discovery import build # pylint: disable=import-error
-import google.auth # pylint: disable=import-error
+from googleapiclient.discovery import build  # pylint: disable=import-error
+import google.auth  # pylint: disable=import-error
 
 # Configuration
 SPREADSHEET_ID = '1Svyw40Th7VbigX6lpR1lb1WXwTUVKZWrK7O2YELrml4'
