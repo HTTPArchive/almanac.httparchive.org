@@ -22,7 +22,7 @@ featured_stat_label_3: Increase in the adoption of the Permissions Policy
 
 ## Introduction
 
-While more and more parts of many people's lives have moved online, so does their private data, which makes web security ever more important. Many systems we use on a daily basis remain appealing to attackers trying to steal data or cause disruptions. This year has once more demonstrated the scale complexity of modern threats. The number of DDoS attacks have continued to increase in size and frequency, with the largest attack recorded <a hreflang="en" href="https://blog.cloudflare.com/radar-2025-year-in-review/#hyper-volumetric-ddos-attack-sizes-grew-significantly-throughout-the-year">reaching 31.4 Tbps in November</a>. Supply chain vulnerability grew to unprecedented sizes, with the <a hreflang="en" href="https://www.hackerone.com/blog/shai-hulud-2-npm-worm-supply-chain-attack">Shai-Hulud 2.0 attack</a> reportedly compromising over 1,000 npm packages and infecting over 27,000 GitHub repositories. And a critical vulnerability in React known as <a hreflang="en" href="https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/">React2Shell</a> had developers working hard to quickly update their applications.
+While more and more parts of many people's lives have moved online, so does their private data, which makes web security ever more important. Many systems we use on a daily basis remain appealing to attackers trying to steal data or cause disruptions. This year has once more demonstrated the scale and complexity of modern threats. The number of DDoS attacks have continued to increase in size and frequency, with the largest attack recorded <a hreflang="en" href="https://blog.cloudflare.com/radar-2025-year-in-review/#hyper-volumetric-ddos-attack-sizes-grew-significantly-throughout-the-year">reaching 31.4 Tbps in November</a>. Supply chain vulnerability grew to unprecedented sizes, with the <a hreflang="en" href="https://www.hackerone.com/blog/shai-hulud-2-npm-worm-supply-chain-attack">Shai-Hulud 2.0 attack</a> reportedly compromising over 1,000 npm packages and infecting over 27,000 GitHub repositories. And a critical vulnerability in React known as <a hreflang="en" href="https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/">React2Shell</a> had developers working hard to quickly update their applications.
 
 In this chapter, we analyze the mechanisms that aim to protect the web, and how in some cases they fail to protect the web due to a variety of reasons. We explore core elements of web security such as Transport Layer Security (TLS) and protections against third-party content inclusions. We discuss how the adoption of these security measures evolves, how they help prevent attacks and how misconfigurations can prevent their proper functioning. We further analyze some well-known URIs relating to security.
 
@@ -102,7 +102,7 @@ Contrary to our expectations, we see a relatively low number of requests that ar
 
 ### Certificate Authorities
 
-In order to use TLS, sites must request a certificate from a <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">Certificate (CA)Authority</a>. Because the browser trusts a number of CAs, site's certificate can be identified by the browser as a valid certificate. The certificate can then be used for secure communication between the browser and the site's server going forward.
+In order to use TLS, sites must request a certificate from a <a hreflang="en" href="https://www.ssl.com/faqs/what-is-a-certificate-authority/">Certificate Authority (CA)</a>. Because the browser trusts a number of CAs, a site's certificate can be identified by the browser as a valid certificate. The certificate can then be used for secure communication between the browser and the site's server going forward.
 
 <figure>
   <table>
@@ -179,7 +179,7 @@ Compared to last year, we can see that the then popular R3 intermediate certific
   sql_file="tls_ca_issuers_pages.sql",
 ) }}
 
-The total share of sites using a certificate of Let's Encrypt has gone down slightly to 52.6% from 56% in the last edition. One of the contributing factors as can be seen in the data is the larger share of certificates issued by the WE1 certificate from GTS, although the total share by GTS-issued certificates (WE1 and others) has not been calculated.
+The total share of sites using a certificate from Let's Encrypt has gone down slightly to 52.6% from 56% in the last edition. One of the contributing factors, as can be seen in the data, is the larger share of certificates issued by the WE1 certificate from GTS. However, the total share by GTS-issued certificates (WE1 and others) has not been calculated.
 
 ### HTTP Strict Transport Security
 
@@ -193,9 +193,9 @@ The total share of sites using a certificate of Let's Encrypt has gone down slig
   sql_file="hsts_attributes.sql",
 ) }}
 
-We see a continuing increase in the number of pages using a HSTS header, with a rise of 6 percentage points [compared to last edition](../2024/security#fig-8), up to 36% of all pages visited on mobile.
+We see a continuing increase in the number of pages using an HSTS header, with a rise of 6 percentage points [compared to last edition](../2024/security#fig-8), up to 36% of all pages visited on mobile.
 
-Servers can include a number of directives in the header to communicate additional preferences to the browser. The `max-age` directive that tells the browser for how long to continue only using HTTPS is required, the others are optional.
+Servers can include a number of directives in the header to communicate additional preferences to the browser. For example, the `max-age` directive tells the browser how long it is required to continue using only HTTPS. The other directives, `includeSubDomains` and `preload`, are optional.
 
 {{ figure_markup(
   image="hsts-directives.png",
@@ -207,7 +207,7 @@ Servers can include a number of directives in the header to communicate addition
   )
 }}
 
-The share of responses with a valid `max-age` has increased slightly to 96%. The `includeSubdomains` and `preload` directives saw an increase of about 4% each, possibly indicating that certain sites started setting both directives together. The [unofficial](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) `preload` directive requires the `includeSubdirectories` to be set and the `max-age` to have a value of at least 1 year. Using the preload, a site can make sure that a browser will always visit the domain and its subdomains, even when connecting for the first time (which is not necessarily the case when using HSTS without preload).
+The share of responses with a valid `max-age` has increased slightly to 96%. The `includeSubdomains` and `preload` directives saw an increase of about 4% each, possibly indicating that certain sites started setting both directives together. The [unofficial](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#preloading_strict_transport_security) `preload` directive requires the `includeSubdirectories` to be set and the `max-age` to have a value of at least 1 year. When using the `preload` directive, a site can make sure that a browser will always visit the domain and its subdomains over HTTPS, even when connecting for the first time (which is not necessarily the case when using HSTS without preload).
 
 {{ figure_markup(
   image="hsts-max-age.png",
@@ -223,17 +223,17 @@ The distribution of valid `max-age` values remains largely the same with the exc
 
 ## Cookies
 
-Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that (among much more) are reported on in the [Cookies chapter](./cookies). We specifically refer to the [Cookie attributes](./cookies#cookie-attributes), [Cookie prefixes](./cookies#cookie-prefixes) and [Persistence (expiration)](./cookies#persistence-expiration) sections.
+Cookies are a vital part of the web. They allow websites to save information for use over multiple stateless requests. In order to secure sites' cookies, there are many features built into browsers that are further reported on in the [Cookies chapter](./cookies). We specifically refer to the [Cookie attributes](./cookies#cookie-attributes), [Cookie prefixes](./cookies#cookie-prefixes) and [Persistence (expiration)](./cookies#persistence-expiration) sections in this chapter.
 
 ## Content inclusion
 
-Content inclusion is a core component of the web. Being able to include other pages, CSS or JavaScript from a [Content Distribution Network (CDN)](./cdn) or images from shared sources is one of the building blocks on which the web was built. It does however introduce certain risks: whenever sites include content from third parties, it places trust in those third-party resources. Of course, there is no guarantee that said resource is not malicious or compromised by a malicious actor which can lead to a number of serious attacks such as for instance supply chain attacks. To reduce this risk, it is important to use security policies to control content inclusion.
+Content inclusion is a core component of the web. Being able to include other pages, CSS or JavaScript from a [Content Distribution Network (CDN)](./cdn) or images from shared sources is one of the building blocks on which the web was built. It does however introduce certain risks such as sites including content from third parties which places significant trust in those third-party resources. Of course, there is no guarantee that said resource is not malicious or compromised by a malicious actor which can lead to a number of serious attacks such as supply chain attacks. To reduce this risk, it is important to use security policies to control content inclusion.
 
 ### Content Security Policy
 
-The [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) allows websites to have a fine-grained control over the content that will be loaded on its page. By setting the `Content-Security-Policy` response header or defining it in a `<meta>` html tag, websites can communicate the policy in use to the browser, which will enforce it. The policy has many defined directives that allow a website to define from which sources content can be loaded or not.
+The [Content Security Policy (CSP)](https://developer.mozilla.org/docs/Web/HTTP/CSP) allows websites to have fine-grained control over the content that will be loaded on its page. By setting the `Content-Security-Policy` response header or defining it in a `<meta>` html tag, websites can communicate the policy in use to the browser, which will enforce it. The policy has many available directives that allow a website to define from which sources content can be loaded or not.
 
-CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential XSS attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can be loaded as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
+CSP can be used to block specific resources from being loaded, which can help reduce the impact of potential cross-site script (XSS) attacks. In addition CSP can also serve other purposes, such as enforcing the use of encrypted communication channels by means of the `update-insecure-requests` directive or controlling on which pages the current page can load as a subresource using the `frame-ancestors` directive. This allows websites to defend against clickjacking attacks.
 
 {{ figure_markup(
   content="+18%",
@@ -257,7 +257,7 @@ The adoption of CSP continued increasing [from 18.5% last year](../2024/security
   )
 }}
 
-Once again, most websites use CSP for the `upgrade-insecure-requests` and `frame-ancestors` directives. The relative share of mobile sites using these directives has decreased slightly, which can be attributed to the higher number of CSP headers scanned, as the absolute number has risen by 400,000 and 800,000 CSP headers on desktop and mobile respectively.
+Once again, most websites use CSP for the `upgrade-insecure-requests` and `frame-ancestors` directives. The relative share of mobile sites using these directives has decreased slightly, which can be attributed to the higher number of CSP headers scanned. The absolute number has risen by 400,000 and 800,000 CSP headers on desktop and mobile respectively.
 
 The `block-all-mixed-content` directive which has been replaced by `upgrade-insecure-requests` has continued to slightly decrease like it has been over the last few years. This is good news because the directive is [deprecated](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content).
 
