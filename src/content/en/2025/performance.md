@@ -204,9 +204,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). There are some encouraging signs though, such as JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly.
+Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). 
 
-This slow adoption may reflect the cost of migrating existing image pipelines and content libraries, even as modern formats have broad support.
+There are some encouraging signs though, such as JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. 
+
+With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly. This slow adoption may reflect the cost of migrating existing image pipelines and content libraries, even as modern formats have broad support.
 
 #### Cross Hosted LCP Images
 
@@ -222,7 +224,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Our data shows that  51% of desktop pages and 44% of mobile pages serve their LCP image from the same host as the document. Cross-hosted LCP images account for 16-18% of pages—a meaningful portion that may be paying a connection overhead cost unless mitigated with [preconnect hints](https://web.dev/learn/performance/resource-hints#preconnect). The "other content" category (32% desktop, 40% mobile) represents pages where the LCP element isn't an image at all, likely text blocks or background elements. The higher mobile percentage for "other content" may reflect responsive design patterns where hero images are deprioritized on smaller viewports, though we do not conclusively know using this data alone.
+51% of desktop pages and 44% of mobile pages serve their LCP image from the same host as the document. Cross-hosted LCP images account for 16-18% of pages—a meaningful portion that may be paying a connection overhead cost unless mitigated with [preconnect hints](https://web.dev/learn/performance/resource-hints#preconnect). 
+
+The "other content" category (32% desktop, 40% mobile) represents pages where the LCP element isn't an image at all, likely text blocks or background elements. The higher mobile percentage for "other content" may reflect responsive design patterns where hero images are deprioritized on smaller viewports, though we do not conclusively know using this data alone.
 
 #### LCP Resource Prioritization
 
