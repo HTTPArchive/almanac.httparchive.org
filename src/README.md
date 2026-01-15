@@ -117,58 +117,70 @@ There is also a file watcher, which monitors the `content` directory and automat
 npm run watch
 ```
 
-## Generating chapter images
 
-We can automate the generation of chapter images from the command line to save this onerous task.
+## Figures preparation
 
-This requires the figure markup to exist in the chapter's markdown file, including the `image` and `chart_url` attributes:
+The following tools help automate figure positioning and metadata:
 
-```py
-{{ figure_markup(
-  image="pwa-timeseries-of-service-worker-installations.png",
-  ...
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
-  ...
-  )
-}}
-```
+1. **Running queries and exporting to sheets**: [bq_to_sheets.ipynb](../sql/util/bq_to_sheets.ipynb) runs queries and exports the results to Google Sheets.
+2. **Normalization**: [chart-adjustments.ipynb](../sql/util/chart-adjustments.ipynb) normalizes chart sizes in Google Sheets to ensure consistent dimensions for image generation.
+3. **Figures markup generation**: [generate_figure_markup.py](../sql/util/generate_figure_markup.py) scans Google Sheets for charts and generates the corresponding `figure_markup` shortcodes with mapped SQL files and sheet IDs.
+4. **Generating chapter images**: We can automate the generation of chapter images from the command line to save this onerous task.
 
-It can be run like below, by passing a chapter markdown (with or without the `.md` extension):
+    This requires the figure markup to exist in the chapter's markdown file, including the `image` and `chart_url` attributes:
 
-```bash
-npm run figure-images en/2021/pwa
-```
+    ```py
+    {{ figure_markup(
+    image="pwa-timeseries-of-service-worker-installations.png",
+    ...
+    chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRRpTSA4fsHwUap-ByQ08j95uo7Zm1kY6lTSvA-DZT54g2QZ0guV7db3QyQwQgMPzsKsJ43gbzqfJst/pubchart?oid=1883263914&format=interactive",
+    ...
+    )
+    }}
+    ```
 
-Which will then generate any missing figures based on the chapter markup, skipping images that already exist:
+    It can be run like below, by passing a chapter markdown (with or without the `.md` extension):
 
-```log
-> almanac.httparchive.org@0.0.1 figure-images
-> node ./tools/generate/generate_figure_images "en/2021/pwa"
+    ```bash
+    npm run figure-images en/2021/pwa
+    ```
 
-Generating for chapter: pwa for year 2021
-  Skipping: pwa-service-worker-controlled-pages-by-rank.png as image already exists
-  Skipping: pwa-most-used-service-worker-events.png as image already exists
-  Skipping: pwa-service-worker-and-manifest-usage.png as image already exists
-  Skipping: pwa-top-pwa-manifest-properties.png as image already exists
-  Skipping: pwa-top-pwa-manifest-icon-sizes.png as image already exists
-  Skipping: pwa-manifest-display-values.png as image already exists
-  Skipping: pwa-manifests-preferring-native-app.png as image already exists
-  Skipping: pwa-industry-categories.png as image already exists
-  Skipping: pwa-lighthouse-pwa-audits.png as image already exists
-  Skipping: pwa-lighthouse-pwa-scores.png as image already exists
-  Skipping: pwa-libraries-and-scripts.png as image already exists
-  Skipping: pwa-top-workbox-versions.png as image already exists
-  Skipping: pwa-top-workbox-packages.png as image already exists
-  Generating image pwa-workbox-runtime-caching-strategies.png...
-  Generating image pwa-notification-acceptance-rates.png...
-  Generating image pwa-install-events.png...
-```
+    Which will then generate any missing figures based on the chapter markup, skipping images that already exist:
 
-Authors can delete images and rerun if they want to, to regenerate images.
+    ```log
+    > almanac.httparchive.org@0.0.1 figure-images
+    > node ./tools/generate/generate_figure_images "en/2021/pwa"
 
-Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through <https://tinypng.com> instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
+    Generating for chapter: pwa for year 2021
+    Skipping: pwa-service-worker-controlled-pages-by-rank.png as image already exists
+    Skipping: pwa-most-used-service-worker-events.png as image already exists
+    Skipping: pwa-service-worker-and-manifest-usage.png as image already exists
+    Skipping: pwa-top-pwa-manifest-properties.png as image already exists
+    Skipping: pwa-top-pwa-manifest-icon-sizes.png as image already exists
+    Skipping: pwa-manifest-display-values.png as image already exists
+    Skipping: pwa-manifests-preferring-native-app.png as image already exists
+    Skipping: pwa-industry-categories.png as image already exists
+    Skipping: pwa-lighthouse-pwa-audits.png as image already exists
+    Skipping: pwa-lighthouse-pwa-scores.png as image already exists
+    Skipping: pwa-libraries-and-scripts.png as image already exists
+    Skipping: pwa-top-workbox-versions.png as image already exists
+    Skipping: pwa-top-workbox-packages.png as image already exists
+    Generating image pwa-workbox-runtime-caching-strategies.png...
+    Generating image pwa-notification-acceptance-rates.png...
+    Generating image pwa-install-events.png...
+    ```
 
-Running them through <https://tinypng.com> also has the added advantage of the compression being repeatable each time. So if you are not sure which images you have changed, you can delete them all, regenerate them all, run them through TinyPNG, and then a `git diff` will only show differences on the images that have changed. This will not be the case if you use the Calibre GitHub Action and it will look like all images have changed.
+    Authors can delete images and rerun if they want to, to regenerate images.
+
+    Images will automatically be compressed by our Calibre GitHub Action when uploaded to GitHub, but you can get a lot more compression (about 44% more!) by running them through <https://tinypng.com> instead (at which point the Calibre Action will usually not find any further compression gains). It's quite simple to drag them up, and download them, so would encourage analysts/authors to take this step.
+
+    Running them through <https://tinypng.com> also has the added advantage of the compression being repeatable each time. So if you are not sure which images you have changed, you can delete them all, regenerate them all, run them through TinyPNG, and then a `git diff` will only show differences on the images that have changed. This will not be the case if you use the Calibre GitHub Action and it will look like all images have changed.
+
+5. **Automated descriptions**: [generate_figure_descriptions.js](tools/generate/generate_figure_descriptions.js) uses OCR (via Tesseract.js) to automatically populate `description=""` fields in markdown chapters based on the generated images.
+
+    ```bash
+    node ./tools/generate/generate_figure_descriptions en/2025/privacy
+    ```
 
 ## Linting files
 

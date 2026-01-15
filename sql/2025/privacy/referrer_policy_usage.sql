@@ -54,5 +54,5 @@ FROM aggregated,
   ANY_VALUE(pct) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> RENAME pct_mobile AS Mobile, pct_desktop AS Desktop
 |> ORDER BY mobile + desktop DESC

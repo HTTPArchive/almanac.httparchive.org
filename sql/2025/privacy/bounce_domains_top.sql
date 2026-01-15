@@ -73,6 +73,6 @@ FROM bounce_sequences
   ANY_VALUE(websites_pct) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop, cnt_mobile AS mobile_count, cnt_desktop AS desktop_count
+|> RENAME pct_mobile AS Mobile, pct_desktop AS Desktop, cnt_mobile AS mobile_count, cnt_desktop AS desktop_count
 |> ORDER BY COALESCE(mobile_count, 0) + COALESCE(desktop_count, 0) DESC
 |> LIMIT 100
