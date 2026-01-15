@@ -74,12 +74,18 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Mobile Core Web Vitals varies more by rank than desktop. Top mobile websites show a clear distinction, however the scores drop significantly for less popular sites:
-- 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
-- The next 10,000 websites score 42%.
-- The subsequent 100,000 websites score 37%.
+On mobile, the most and least popular sites tend to perform better than those in the middle of the popularity distribution. The most popular sites show better Core Web Vitals results, while performance drops for mid-popularity sites before improving again among the least popular sites.
 
-In contrast, Desktop Core Web Vitals are more evenly distributed. This pattern may be related to differences in page complexity and technology choices across sites and devices, but this data only shows what is happening, not why.
+- 51% of the 1,000 most popular mobile sites have good Core Web Vitals (CWV).
+- CWV drops to 42% for the next 10,000 sites and 37% for the next 100,000.
+- However, it improves to 42% for the next 1,000,000 sites and 48% for the next 10,000,000.
+
+This pattern may reflect differences in page complexity and performance investment across the popularity tiers. 
+- Highly popular sites often treat performance as a priority and are more likely to invest in ongoing optimization, given its [close correlation](https://www.speedcurve.com/blog/site-speed-business-correlation/) to user engagement and business outcomes.
+- Mid-popularity sites may combine higher complexity such as additional features and third-party scripts with less sustained focus on performance, leading to drop in results. 
+- Less popular sites are often simpler, with fewer features and lighter pages, which can benefit from platform defaults and hence offer comparatively better performance.
+
+This U-shaped pattern is more evident on mobile, where slower devices and less stable network conditions tend to amplify the effects of page complexity and limited optimization. On desktop, more powerful hardware and more stable networks can reduce the visible impact of these differences.
 
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",
