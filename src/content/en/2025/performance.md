@@ -1,7 +1,7 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-description: Performance chapter of the 2025 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and Core Web Vitals, with deep dives into Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP).
+description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [25prathamesh, himanshujariyal, hfhashmi]
 reviewers: [aarontgrogg, tunetheweb]
@@ -13,13 +13,13 @@ himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft
 hfhashmi_bio: TODO
 aarontgrogg_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
-featured_quote: TODO
+featured_quote: Performance gains are real, but uneven as top sites lead on interactivity, while long-tail adoption of new features is increasingly driven by CMS defaults.
 featured_stat_1: 97%
-featured_stat_label_1: of the websites have good INP (under 200 milliseconds) on Desktop.
+featured_stat_label_1: Websites with good INP on desktop (≤200 ms)
 featured_stat_2: 86.6%
-featured_stat_label_2: of mobile pages utilize at least one web font, which is often associated with visual instability and low CLS scores.
+featured_stat_label_2: Mobile pages using at least one web font, likely causing layout shifts.
 featured_stat_3: 28%
-featured_stat_label_3: of desktop pages among the top 1,000 websites use unload handlers, down from 35% in 2024.
+featured_stat_label_3: Top 1,000 desktop pages using unload handlers, down from 35% in 2024.
 ---
 
 ## Introduction
@@ -28,7 +28,7 @@ Web performance refers to how quickly and smoothly web pages load and respond to
 
 Measuring web performance includes a broad set of metrics that describe how pages load, render, and respond to user input in real-world conditions. It is not always possible for the web to feel instantaneous due to device, network, and execution constraints. As a result, performance is not only about speed, but also about how an experience feels while work is in progress. Providing clear feedback while content loads and keeping layouts visually stable helps users understand page behavior and feel in control as they interact with a site.
 
-These considerations have influenced the development and adoption of user-centric performance metrics called Core Web Vitals. These include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, which capture key aspects of loading performance, interactivity, and visual stability. While Core Web Vitals were initially available primarily in Chromium-based browsers, support has expanded, with Safari and Firefox <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">now reporting</a> key Core Web Vitals, enabling more consistent cross-browser performance measurement. 
+These considerations have influenced the development and adoption of user-centric performance metrics called Core Web Vitals. These include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, which capture key aspects of loading performance, interactivity, and visual stability. Core Web Vitals measurement is becoming less Chrome only. Support for reporting INP and other Web Vitals in non-Chromium browsers <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">has improved</a>, which can help compare user experience more consistently across browsers.
 
 These metrics are complemented by traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, along with measures of page resource loading behavior. Together, these signals provide insight into where performance bottlenecks occur and how they influence overall page behavior. A comprehensive overview of modern web performance metrics and measurement techniques can be found at <a hreflang="en" href="https://web.dev/performance">web.dev</a>.
 
@@ -60,7 +60,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This significant rise in mobile performance is largely attributable to advancements in mobile hardware, faster internet connections, and more optimized browsers and applications.
+Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This rise may reflect improvements in devices, networks, and browsers, alongside site optimizations.
 
 Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%.
 
@@ -74,12 +74,12 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Core Web Vitals for top mobile websites show a clear distinction, however the scores drop significantly for less popular sites:
+Mobile Core Web Vitals varies more by rank than desktop. Top mobile websites show a clear distinction, however the scores drop significantly for less popular sites:
 - 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
 - The next 10,000 websites score 42%.
 - The subsequent 1 million websites score 37%.
 
-In contrast, Desktop Core Web Vitals are more evenly distributed. This likely reflects stronger performance investment among top sites, while less popular sites rely more on default setups especially on mobile, whereas desktop performance benefits from more powerful devices and more stable conditions.
+In contrast, Desktop Core Web Vitals are more evenly distributed. This pattern may be related to differences in page complexity and technology choices across sites and devices, but this data only shows what is happening, not why.
 
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",
@@ -91,7 +91,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile. This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads. Home pages are also updated more frequently and tend to include more dynamic and varied components, while secondary pages are often more templated and consistent, which may make them more stable and easier to optimize.
+Secondary pages show higher CWV pass rates than home pages, with a 14% lead on desktop and an 11% lead on mobile. This performance gap suggests that secondary pages often benefit from having cached information, which contributes to faster page loads. Home pages are also updated more frequently and tend to include more dynamic and varied components, while secondary pages are often more templated and consistent, which may make them more stable and easier to optimize.
 
 Modern websites increasingly use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">soft navigations</a> is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
 
@@ -108,7 +108,7 @@ To understand the user's first impression of a webpage's speed, we look at [Firs
 {{ figure_markup(
   image="fcp-performance-by-year-and-device-2025.png",
   caption="Percentage of websites having good, needs improvement, and poor FCP, segmented by year and device type.",
-  description="Stacked bar chart showing TTFB (Time to First Byte) performance for 2024 and 2025, for both desktop and mobile device types. Each bar chart has 3 categories: good (under 0.8 seconds), needs improvement (0.8–1.8 seconds), and poor (over 1.8 seconds). In 2024, 68% of desktop websites had good TTFB, 22% needed improvement, and 10% performed poorly. In 2025, 70% of desktop websites have good TTFB, 21% need improvement, and 9% perform poorly. For mobile websites in 2024, 51% of websites had good TTFB, 31% needed improvement, and 18% performed poorly. In 2025, 55% of mobile websites have good TTFB, 29% need improvement, and 16% perform poorly.",
+  description="Bar graph showing the distribution of First Contentful Paint (FCP) performance by year and device, categorized as good, needs improvement, and poor. On desktop, the share of pages with good FCP increased from 68% in 2024 to 70% in 2025, while poor FCP decreased from 10% to 9%. On mobile, good FCP improved from 51% in 2024 to 55% in 2025, with a corresponding decline in poor FCP from 18% to 16%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1596764241&format=interactive",
   sheets_gid="1060077014",
   sql_file="web_vitals_by_device.sql"
@@ -138,11 +138,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-The TTFB data provides partial insight into these FCP gains between 2024 and 2025\. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations contributed reasonably (\~half) to overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general. Given that there are no significant improvements in number of pages passing the Lighthouse [render-blocking resources audit](https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources)  this year compared to 2024, it would seem that a key factor improving FCP across both device types could be the much [improved rendering engine](https://thinksproutinfotech.com/news/how-google-chrome-received-the-highest-ever-speedometer-score/) in Chrome since 2024, which reduces rendering times regardless of individual website optimizations.
+The TTFB data provides partial insight into these FCP gains between 2024 and 2025. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations could have contributed to the overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general.
 
 ### Largest Contentful Paint
 
-To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%)—a gap that likely reflects the compounding effects of slower networks and less powerful hardware. Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
+To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%); a gap that is consistent with the combined effects of slower networks and less capable devices on mobile. Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
 
 {{ figure_markup(
   image="lcp-performance-by-device-2025.png",
@@ -170,7 +170,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-The trend in LCP content types is similar to previous years (see also [2022](https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?gid=872701281#gid=872701281) and [2024](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=1760287339#gid=1760287339) data). Images continue to dominate LCP elements across both device types, with 85.3% of desktop pages and 76% of mobile pages having an image as their LCP element. Text-based LCP elements account for much of the remainder—14.4% on desktop versus 23.7% on mobile. This gap likely reflects responsive design practices where hero images are resized, replaced with smaller visuals, or removed entirely on narrower viewports, allowing headline text to become the largest visible element instead. Inline images (data URIs embedded directly in HTML) remain negligible at under 0.5% for both desktop and mobile pages, suggesting developers recognize that base64 encoding bloats document size and makes no use of caching.
+The trend in LCP content types is similar to previous years (see also [2022](https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?gid=872701281#gid=872701281) and [2024](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=1760287339#gid=1760287339) data). Images continue to dominate LCP elements across both device types, with 85.3% of desktop pages and 76% of mobile pages having an image as their LCP element. Text-based LCP elements account for much of the remainder—14.4% on desktop versus 23.7% on mobile. This gap likely reflects responsive design practices where hero images are resized, replaced with smaller visuals, or removed entirely on narrower viewports, allowing headline text to become the largest visible element instead. 
+
+Inline images (data URIs embedded directly in HTML) remain rare at around 0.5% of pages, indicating limited and careful adoption and awareness of the trade-offs related to larger HTML payloads and caching efficiency.
 
 #### LCP Image Formats
 
@@ -188,11 +190,11 @@ Given this continued dominance of images as the LCP element, it becomes relevant
 
 Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). There are some encouraging signs though– JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly.
 
-This slow adoption likely reflects several factors: the inertia of existing content management systems, concerns about browser compatibility (though both formats now have broad support), and the effort required to shift. Also to note is the 0% adoption of HEIC and HEIF formats, this is likely due to their association with Apple's ecosystem and limited browser support. 
+This slow adoption may reflect the cost of migrating existing image pipelines and content libraries, even as modern formats have broad support.
 
 #### Cross Hosted LCP Images
 
-The origin of an LCP image affects how quickly the browser can begin downloading it, impacting the resource load delay phase. When an image is hosted on the same domain as the page, the browser can reuse the existing connection. Cross-origin images, however, require additional setup—DNS lookup, TCP handshake, and TLS negotiation—adding latency before the first byte even arrives.   
+The origin of an LCP image affects how quickly the browser can begin downloading it, impacting the resource load delay phase. When an image is hosted on the same domain as the page, the browser can reuse the existing connection. Cross-origin images may incur additional connection setup (DNS/TCP/TLS), especially when the origin isn’t already connected, increasing the time before the download can start.
 
 {{ figure_markup(
   image="cross-hosted-lcp-images-2025.png",
@@ -237,7 +239,7 @@ Lazy loading is a technique that defers loading offscreen images until they're n
 )
 }}
 
-Overall, about 16% of pages lazy load their LCP image on both desktop and mobile—a figure that has held steady since 2024\. However, the composition has shifted: native loading="lazy" usage has increased slightly (from 9.5% to 10.4% on mobile, 10.2% to 11.5% on desktop), while custom approaches like hiding sources behind data-src attributes have decreased (from 6.7% to 5.9% on mobile). This shift toward native lazy loading is generally positive for the web—it's more standardized and works better with browser optimizations—but it doesn't solve the underlying issue of lazy loading being applied too broadly.
+Overall, about 16% of pages lazy load their LCP image on both desktop and mobile—a figure that has held steady since 2024. However, the composition has shifted: native loading="lazy" usage has increased slightly (from 9.5% to 10.4% on mobile, 10.2% to 11.5% on desktop), while custom approaches like hiding sources behind data-src attributes have decreased (from 6.7% to 5.9% on mobile). Native `loading="lazy"` accounts for a larger share of LCP lazy-loading than custom approaches, indicating a shift toward standardized browser features.
 
 ### Loading Speed Conclusion
 
@@ -313,8 +315,11 @@ TBT is a lab metric and is often used as a proxy for field-based responsiveness 
 
 The median TBT on mobile increased to 1,916 milliseconds in 2025—up 58% from 1,209 milliseconds in 2024. Desktop TBT also rose from 67 milliseconds to 92 milliseconds. At the 90th percentile, mobile users now face over 7.5 seconds of blocking time before the page becomes fully interactive.
 
-This presents an apparent contradiction: while field-based INP scores improved, lab-based TBT worsened significantly. Several factors explain this divergence. Sites may have optimized critical interactions that impact INP while allowing background JavaScript to grow heavier. Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices. Modern code-splitting strategies defer non-critical JavaScript after initial interactions, reducing early blocking captured by INP while still contributing to total blocking time. Additionally, third-party scripts continue to proliferate, executing outside critical interaction paths.
-
+This presents an apparent contradiction: while field-based INP scores improved, lab-based TBT worsened significantly. Several factors could be behind this divergence.
+- Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices.
+- Some sites may be optimizing the interactions that dominate INP while still executing substantial background work that shows up in TBT.
+- The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium’s [INP metric changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md).
+  
 The widening gap between desktop (92ms median) and mobile (1,916ms median) reinforces the persistent performance inequality between device classes, suggesting that despite INP improvements, the fundamental challenge of main thread blocking has intensified.
 
 ### Interactivity conclusion
@@ -328,7 +333,7 @@ The main takeaways of the interactivity results are:
 
 ## Visual Stability
 
-Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users. In 2025, CLS adoption and stability continue to trend positively on both desktop and mobile devices. This section focuses on recent years particularly 2023 through 2025 highlighting progress, device differences, and shifts over the last year.
+Visual stability is primarily measured by Cumulative Layout Shift (CLS) and remains a key indicator of how predictable and smooth pages feel to users. In 2025, CLS metric continues to trend positively on both desktop and mobile devices. This section focuses on highlighting progress, device differences, and shifts over the recent years.
 
 ### Cumulative Layout Shift (CLS)
 
@@ -420,7 +425,7 @@ Another common reason for websites to fall in the bfcache ineligibility category
 
 23.4% of the sites now use `Cache-Control: no-store`, up from 21% [in 2024](../2024/performance#backforward-cache-bfcache). This increase may reflect the growing prevalence of authenticated and personalized experiences, stricter security or compliance requirements, and evolving browser behavior that has reduced the performance impact of `Cache-Control: no-store`, particularly with respect to BFCache eligibility.
 
-Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome has changed this behavior in 2025</a> and now allows such pages into BFCache when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
+Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome may allow BFCache</a> for some `no-store` pages when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
 
 ### CLS Best Practices 
 
@@ -523,7 +528,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 Visual stability across the web has advanced significantly over the years, particularly on mobile devices. Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
-Despite gradual improvements, most pages continue to leave layout decisions to the browser, leading to unnecessary visual shifts. Adopting simple [best practices](https://web.dev/articles/optimize-cls) like explicit image sizing, preloading critical fonts, and using composited animations, pages can help improve visual stability.
+Despite gradual improvements, unsized images remain common and font-loading patterns still create opportunities for layout shifts, suggesting many sites haven’t fully implemented known CLS mitigations. Adopting simple [best practices](https://web.dev/articles/optimize-cls) like explicit image sizing, preloading critical fonts, and using composited animations, pages can help improve visual stability.
 
 ## Early Hints
 
@@ -579,7 +584,7 @@ Also note that Early Hints are available via [Fastly since 2020](https://www.fas
 
 ### Overview
 
-[Speculation Rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently Chromium-only) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
+[Speculation Rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently implemented primarily in Chromium-based browsers) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
 
 While Speculation Rules do not help the current page’s performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
 
@@ -601,7 +606,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user’s exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
 
-Conversely, Speculation Rules now come baked into [WordPress](https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/), which powers a large share of the Internet, but perhaps not a large share of the top sites.
+Conversely, Speculation Rules now come baked into [WordPress](https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/), which powers a large share of the Internet, which may help explain higher adoption in the long tail.
 
 Also notable is the parity between mobile and desktop usage; seldom more than a 1% difference. Meaning, where Speculation Rules are implemented, they are likely done so similarly for all device types.
 
@@ -611,7 +616,7 @@ Our analysis of this year’s data paints a picture of a web that is becoming mo
 
 However, we also observe a "performance divide" in how different segments of the web adopt new standards. For example, we saw that the most popular sites lead the way in improving interactivity (INP), likely through manual optimization of complex JavaScript. In contrast, newer standards like Speculation Rules are seeing their highest adoption not at the top, but in the "long tail" of the web, driven by platform-level integrations in popular CMSs like WordPress. This suggests that the future of performance may rely less on individual manual effort and more on smart defaults baked into the tools that build the web.
 
-Despite these advancements, the "basics" of web performance still pose a challenge. While advanced metrics improve, fundamental issues persist: nearly 40% of mobile pages still use animations that can cause stuttering (non-composited), and the majority of pages still lack the correct sizing for images or the resource hints needed to load fonts smoothly. This suggests that while frameworks are helping us manage complex JavaScript, we often miss the simpler HTML and CSS best practices that ensure visual stability.
+Despite these advancements, the "basics" of web performance still pose a challenge. While advanced metrics improve, fundamental issues still persist: nearly 40% of mobile pages still use animations that risk visual instability, and the majority of pages still lack the correct sizing for images or the resource hints needed to load fonts smoothly. This suggests that while frameworks are helping us manage complex JavaScript, we often miss the simpler HTML and CSS best practices that ensure visual stability.
 
-Finally, the landscape of measurement itself is maturing. With Firefox/Safari adding support for INP, we are moving toward a world where "good performance" means the same thing across all browsers. As we look ahead, the goal for developers is to look past the top-level scores and bridge the gap between potential and practice, leveraging both the manual optimizations used by top sites and the automated tools of the modern web to deliver reliable experiences for every user.
+Finally, the landscape of measurement itself is maturing. As more browsers extend support for modern metrics like INP, cross-browser comparisons can become more consistent. As we look ahead, the goal for developers is to look past the top-level scores and bridge the gap between potential and practice, leveraging both the manual optimizations used by top sites and the automated tools of the modern web to deliver reliable experiences for every user.
 
