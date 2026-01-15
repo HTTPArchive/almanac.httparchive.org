@@ -12,13 +12,13 @@ RumaisaHabib_bio: Rumaisa Habib is a third year PhD candidate working with the E
 securient_bio: Vinod is a Staff Security Engineer at PIP Labs with over a decade of cybersecurity experience at companies including Amazon, Zapier, and HackerOne. He specializes in penetration testing and cloud security, writes about security on Medium, and actively researches emerging threats in both traditional and Web3 environments.
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Svyw40Th7VbigX6lpR1lb1WXwTUVKZWrK7O2YELrml4/edit
-featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_quote: This high concentration among a few key players effectively sets a baseline for web privacy, where the vast majority of user data flows through a small number of dominant platforms.
+featured_stat_1: 75%
+featured_stat_label_1: Websites with at least one tracker
+featured_stat_2: 0.9%
+featured_stat_label_2: Global Privacy Platform adoption
+featured_stat_3: 5.1%
+featured_stat_label_3: Adoption of Client Hints
 doi: 10.5281/zenodo.18258635
 ---
 
@@ -223,7 +223,7 @@ Last year's data showed a strong correlation between site popularity and Client 
 
 {{ figure_markup(
   image="top-client-hints.png",
-  caption="Top client hints",
+  caption="Top Client Hints",
   description="Bar chart of the most frequently requested Client Hints. Platform version (4.3%) and device model (4.2%) are the most common hints, followed by architecture, bitness, and full version information (each around 2.7%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRC5wrzy5NEsWNHn9w38RLsMURRScnP4jgjO1mDiVhsfFCY55tujlTUZhUaEWzmPtJza0QA7w8S4uK5/pubchart?oid=191725698&format=interactive",
   sheets_gid="873514757",
@@ -373,6 +373,6 @@ Online tracking has become the norm on today's Internet. Indeed, we see that 75%
 
 Google continues to dominate the tracking space, followed by Facebook. On the outset, online tracking is lucrative to large companies that can leverage it to serve more targeted ads. However, the consolidation of tracking information amongst a few centralized players is cause for concern to more privacy-conscious users.
 
-Efforts to avoid tracking are constantly being deployed and evaded. For example, we observed `medium.com` in bounce sequences, though likely for functional purposes rather than covert tracking. However, we also discuss safer browser policies, such as sharing user-agent client hints instead of the actual user agent string.
+Efforts to avoid tracking are constantly being deployed and evaded. For example, we observed `medium.com` in bounce sequences, though likely for functional purposes rather than covert tracking. However, we also discuss safer browser policies, such as sharing user-agent Client Hints instead of the actual user agent string.
 
 Laws and regulations governing online tracking are evolving, along with the mechanisms deployed to comply with them. We see incomplete implementations and poor adoption of the latest version of TCF (v2). However, it comes with a rise in the adoption of the Global Privacy Platform, which is a new addition by the IAB. Moreover, we see a shift in the Consent Management Platform landscape.
