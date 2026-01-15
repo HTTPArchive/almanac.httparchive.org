@@ -74,64 +74,36 @@ That headline number is the first reminder that ecommerce is not just "a vertica
 
 In general, the most popular sites are more likely to be professionally engineered, heavily optimized, and backed by larger budgets.
 
-The following table shows how the share of sites that are ecommerce increases as we include less‑popular sites.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Rank tier</th>
-        <th>Desktop share</th>
-        <th>Mobile share</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Top 1,000</td>
-        <td class="numeric">0.9%</td>
-        <td class="numeric">0.6%</td>
-      </tr>
-      <tr>
-        <td>Top 10,000</td>
-        <td class="numeric">3.5%</td>
-        <td class="numeric">3.1%</td>
-      </tr>
-      <tr>
-        <td>Top 100,000</td>
-        <td class="numeric">8.0%</td>
-        <td class="numeric">7.1%</td>
-      </tr>
-      <tr>
-        <td>Top 1,000,000</td>
-        <td class="numeric">17.4%</td>
-        <td class="numeric">15.7%</td>
-      </tr>
-      <tr>
-        <td>Top 10,000,000</td>
-        <td class="numeric">21.7%</td>
-        <td class="numeric">21.0%</td>
-      </tr>
-      <tr>
-        <td>All sites</td>
-        <td class="numeric">19.9%</td>
-        <td class="numeric">19.2%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>
-    {{ figure_link(
-      caption="Ecommerce adoption by rank",
-      sheets_gid="1784928999",
-      sql_file="counts.sql",
-    ) }}
-  </figcaption>
-</figure>
+{{ figure_markup(
+  image="adoption-by-rank.png",
+  caption="Ecommerce adoption by rank.",
+  description="Bar chart showing how the adoption of ecommerce platforms varies significantly depending on a website's global traffic rank. Adoption is lowest among the top 1,000 most-visited sites at just 1% but as the rank expands to include less-trafficked sites, adoption rates climb steadily, peaking at 22% for desktop and 21% for mobile within the top 10 million sites. Across all rank groups, desktop adoption consistently remains 1–2 percentage points higher than mobile.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlrzXpWshCjsSpSxJnhK5A732UtlRUtWfbtSt39JlV1rbI1YRoA1fRLWUr05vJBKNsS-i7ReTMudhN/pubchart?oid=1753144638&format=interactive",
+  sheets_gid="1784928999",
+  sql_file="counts.sql"
+  )
+}}
 
 The pattern is consistent:
 
+- Share of sites that are ecommerce increases as we include less‑popular sites.
 - At the very top of the web (top 1,000), ecommerce is present but rare.
 - This grows over each rank.
 - By the time you reach the top 10 million, roughly one in five sites is an online store.
+
+### Adoption trend
+
+{{ figure_markup(
+  image="adoption-by-year.png",
+  caption="Ecommerce adoption by year.",
+  description="Bar chart showing that overall ecommerce adoption over the years. Between 2024 and 2025, the percentage of desktop sites identified as ecommerce remained flat at 20%, while mobile adoption also held steady at 19%. This follows a period of gradual expansion from 2022, where both platforms started at 17% adoption.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlrzXpWshCjsSpSxJnhK5A732UtlRUtWfbtSt39JlV1rbI1YRoA1fRLWUr05vJBKNsS-i7ReTMudhN/pubchart?oid=1949187093&format=interactive",
+  sheets_gid="1784928999",
+  sql_file="counts.sql"
+  )
+}}
+
+Looking at the trend over time we see a gradual increase year on year.
 
 ## Platform market share
 
@@ -283,7 +255,7 @@ The following tables show the share of detected ecommerce sites within ecommerce
 
 ### Trends since 2024
 
-If you zoom out to the last few years, the story is less about disruption and more about slow consolidation:
+If you zoom out to the last few years, the story is less about disruption and more about slow consolidation
 
 - WooCommerce remains the largest ecosystem, staying roughly flat (about 36% → 36% of ecommerce sites from 2024 to 2025).
 - Shopify continues to gain share (about 20% → 21%).
@@ -479,22 +451,14 @@ We use Core Web Vitals (CWV) field metrics to summarize real‑user experience:
 A site is considered "good" on CWV when it passes all three thresholds.
 
 {{ figure_markup(
-  image="desktop-core-web-vitals-by-platform.png",
-  caption="Desktop Core Web Vitals pass rate by platform in 2025.",
+  image="top-ecommerce-passes-cwv-rates.png",
+  caption="Top ecommerce platform CWV pass rates.",
   description="Bar chart showing the share of desktop ecommerce origins with good Core Web Vitals across leading platforms in 2025.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1640167201&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlrzXpWshCjsSpSxJnhK5A732UtlRUtWfbtSt39JlV1rbI1YRoA1fRLWUr05vJBKNsS-i7ReTMudhN/pubchart?oid=1694550596&format=interactive",
   sheets_gid="755277706",
-  sql_file="core_web_vitals_by_platform.sql"
-  )
-}}
-
-{{ figure_markup(
-  image="mobile-core-web-vitals-by-platform.png",
-  caption="Mobile Core Web Vitals pass rate by platform in 2025.",
-  description="Bar chart showing the share of mobile ecommerce origins with good Core Web Vitals across leading platforms in 2025.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=433690173&format=interactive",
-  sheets_gid="755277706",
-  sql_file="core_web_vitals_by_platform.sql"
+  sql_file="core_web_vitals_by_platform.sql",
+  width="600",
+  height="525"
   )
 }}
 
@@ -713,16 +677,6 @@ A few patterns show up repeatedly:
 - INP is generally strong on desktop across most major platforms, suggesting that modern JS stacks and browser improvements are helping responsiveness.
 - LCP is the biggest differentiator-platforms that ship fast themes and tightly controlled app ecosystems tend to score better.
 - WooCommerce has scale, but not automatic speed: its CWV pass rates lag behind SaaS-heavy ecosystems, which is consistent with its infinite customization nature.
-
-### Year-over-year movement
-
-Looking at the largest platforms from 2024 → 2025, most ecosystems improved their "good" Core Web Vitals share, but the magnitude differs:
-
-- Wix eCommerce sees the biggest jump (≈ 16% on mobile and 19% on desktop).
-- Shopify also improves materially (≈ 8% mobile; 6% desktop).
-- WooCommerce improves more modestly (≈ 5% mobile; 4% desktop).
-
-This is the tradeoff you should expect: platforms that centralize more of the stack can deliver performance improvements to millions of stores at once. Platforms that decentralize responsibility (themes, plugins, hosting, agencies) tend to improve more slowly because the bottleneck is coordination.
 
 ## Lighthouse
 
@@ -958,159 +912,14 @@ Payments are where ecommerce becomes real. They also represent a major dependenc
 {{ figure_markup(
   image="payment-provider-distribution.png",
   caption="Payment provider distribution on ecommerce sites in 2025.",
-  description="Bar chart showing the distribution of payment providers detected on ecommerce sites in 2025, led by PayPal, Apple Pay, Shop Pay, Visa, and Mastercard.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1053919780&format=interactive",
+  description="Bar chart which identifies PayPal as the dominant payment provider, appearing on 2.2% of desktop sites and over 2.0% of mobile sites. Other major digital wallets like Apple Pay (1.5%) and Shop Pay (1.4%) follow closely, reflecting a broader 2025 trend where digital wallets are projected to drive 65% of ecommerce growth. Interestingly, traditional card networks like Visa and Mastercard show lower direct site integration at 1.2%, as consumers increasingly prefer to use these cards through more secure, \"one-click\" digital wallet interfaces. Specialist services like Venmo (0.3%) and Klarna Checkout (0.2%) maintain smaller but significant niches, particularly as Buy Now, Pay Later (BNPL) options continue to boost conversion rates for specific retail verticals.",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlrzXpWshCjsSpSxJnhK5A732UtlRUtWfbtSt39JlV1rbI1YRoA1fRLWUr05vJBKNsS-i7ReTMudhN/pubchart?oid=2038208870&format=interactive",
   sheets_gid="2028626432",
   sql_file="top_payment_providers.sql"
   )
 }}
 
-The following tables show the most commonly detected payment providers in 2025.
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Payment provider</th>
-        <th>Share of payment detections</th>
-        <th>Share of all sites</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>PayPal</td>
-        <td class="numeric">19.1%</td>
-        <td class="numeric">4.1%</td>
-      </tr>
-      <tr>
-        <td>Apple Pay</td>
-        <td class="numeric">13.1%</td>
-        <td class="numeric">2.8%</td>
-      </tr>
-      <tr>
-        <td>Shop Pay</td>
-        <td class="numeric">11.8%</td>
-        <td class="numeric">2.5%</td>
-      </tr>
-      <tr>
-        <td>Stripe</td>
-        <td class="numeric">9.8%</td>
-        <td class="numeric">2.1%</td>
-      </tr>
-      <tr>
-        <td>Visa</td>
-        <td class="numeric">9.6%</td>
-        <td class="numeric">2.1%</td>
-      </tr>
-      <tr>
-        <td>Mastercard</td>
-        <td class="numeric">9.6%</td>
-        <td class="numeric">2.1%</td>
-      </tr>
-      <tr>
-        <td>American Express</td>
-        <td class="numeric">8.7%</td>
-        <td class="numeric">1.9%</td>
-      </tr>
-      <tr>
-        <td>Google Pay</td>
-        <td class="numeric">8.0%</td>
-        <td class="numeric">1.7%</td>
-      </tr>
-      <tr>
-        <td>Venmo</td>
-        <td class="numeric">2.6%</td>
-        <td class="numeric">0.6%</td>
-      </tr>
-      <tr>
-        <td>Klarna Checkout</td>
-        <td class="numeric">1.6%</td>
-        <td class="numeric">0.4%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>
-    {{ figure_link(
-      caption="Top payment providers (desktop)).",
-      sheets_gid="2028626432",
-      sql_file="top_payment_providers.sql",
-    ) }}
-  </figcaption>
-</figure>
-
-<figure>
-  <table>
-    <thead>
-      <tr>
-        <th>Payment provider</th>
-        <th>Share of payment detections</th>
-        <th>Share of all sites</th>
-        <th>Detected sites</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>PayPal</td>
-        <td class="numeric">19.2%</td>
-        <td class="numeric">3.1%</td>
-      </tr>
-      <tr>
-        <td>Apple Pay</td>
-        <td class="numeric">12.9%</td>
-        <td class="numeric">2.1%</td>
-      </tr>
-      <tr>
-        <td>Shop Pay</td>
-        <td class="numeric">11.5%</td>
-        <td class="numeric">1.9%</td>
-      </tr>
-      <tr>
-        <td>Visa</td>
-        <td class="numeric">10.1%</td>
-        <td class="numeric">1.7%</td>
-      </tr>
-      <tr>
-        <td>Mastercard</td>
-        <td class="numeric">10.1%</td>
-        <td class="numeric">1.7%</td>
-      </tr>
-      <tr>
-        <td>Stripe</td>
-        <td class="numeric">9.3%</td>
-        <td class="numeric">1.5%</td>
-      </tr>
-      <tr>
-        <td>Google Pay</td>
-        <td class="numeric">9.0%</td>
-        <td class="numeric">1.5%</td>
-      </tr>
-      <tr>
-        <td>American Express</td>
-        <td class="numeric">9.0%</td>
-        <td class="numeric">1.5%</td>
-      </tr>
-      <tr>
-        <td>Venmo</td>
-        <td class="numeric">2.2%</td>
-        <td class="numeric">0.4%</td>
-      </tr>
-      <tr>
-        <td>Klarna Checkout</td>
-        <td class="numeric">1.6%</td>
-        <td class="numeric">0.3%</td>
-      </tr>
-    </tbody>
-  </table>
-  <figcaption>
-    {{ figure_link(
-      caption="Top payment providers (mobile)).",
-      sheets_gid="2028626432",
-      sql_file="top_payment_providers.sql",
-    ) }}
-  </figcaption>
-</figure>
-
-The top 10 payment technologies account for the bulk of payment detections on both devices-another reminder that payments consolidate quickly.
+The top 10 payment technologies account for the bulk of payment detections on both devices-another reminder that payments consolidate quickly. However it's worth noting that no single provider or two stands out as overall dominant.
 
 ### What changed since 2022?
 
