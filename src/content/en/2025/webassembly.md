@@ -17,6 +17,7 @@ featured_stat_2: 228 MB
 featured_stat_label_2: Largest WebAssembly file detected.
 featured_stat_3: 2.05%
 featured_stat_label_3: Desktop sites in top 1,000 using WebAssembly
+doi: 10.5281/zenodo.18258991
 ---
 
 ## Introduction

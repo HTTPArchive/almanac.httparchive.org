@@ -18,6 +18,7 @@ featured_stat_2: 84%
 featured_stat_label_2: Percentage of Timing-Allow-Origin headers set to the wildcard character
 featured_stat_3: +50%
 featured_stat_label_3: Increase in the adoption of the Permissions Policy
+doi: 10.5281/zenodo.18246555
 ---
 
 ## Introduction

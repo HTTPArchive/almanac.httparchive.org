@@ -51,4 +51,4 @@ GROUP BY all_accept_ch.client
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> RENAME pct_mobile AS Mobile, pct_desktop AS Desktop

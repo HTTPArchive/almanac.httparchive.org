@@ -18,6 +18,7 @@ featured_stat_2: 98.1%
 featured_stat_label_2: Pages make at least one request for a JavaScript file
 featured_stat_3: 2,164 KB
 featured_stat_label_3: The median weight of a mobile home page in 2025
+doi: 10.5281/zenodo.18246723
 ---
 
 ## Introduction

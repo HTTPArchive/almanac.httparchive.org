@@ -50,5 +50,5 @@ FROM tracker_counts
   ANY_VALUE(ccdf) AS ccdf
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME ccdf_mobile AS mobile, ccdf_desktop AS desktop
+|> RENAME ccdf_mobile AS Mobile, ccdf_desktop AS Desktop
 |> ORDER BY number_of_trackers
