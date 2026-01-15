@@ -569,7 +569,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 ### Support
 
-Unlike most web performance features, Early Hints relies not only on browsers, but also on servers for support. As of this publication, “Preconnect" was supported in all browsers, and “Preload" in all except Safari.
+Unlike most web performance features, Early Hints relies not only on browsers, but also on servers for support. As of this publication, "Preconnect" is supported in all browsers, and "Preload" in all except Safari.
 
 With regards to servers, Early Hints are fully supported for H2O and NGINX, and for Apache if you are using mod_http2, and for Node as of 18.11.
 
