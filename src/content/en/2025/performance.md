@@ -40,10 +40,13 @@ This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) 
 
 ## Core Web Vitals Summary
 
-Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include:
-* Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful.
-* Interaction to Next Paint (INP), which reflects how responsive the page is to user input. 
-* Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page's lifetime.
+Core Web Vitals are Google’s main metrics for understanding how a webpage feels to real users. A page is considered good when:
+
+- Largest Contentful Paint (LCP): the main content appears quickly, so the page feels useful within 2.5 seconds.
+- Interaction to Next Paint (INP): the page responds to clicks or taps almost immediately, within 200 milliseconds.
+- Cumulative Layout Shift (CLS): the layout stays mostly stable, with very little unexpected movement (score ≤ 0.1).
+
+When a page meets these thresholds for most users, it delivers a good overall page experience.
 
 The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
 
