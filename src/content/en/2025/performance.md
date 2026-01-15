@@ -8,9 +8,9 @@ reviewers: [aarontgrogg, tunetheweb]
 analysts: [tannerhodges]
 editors: []
 translators: []
-himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft on the Bing Performance team. With 10+ years of industry experience, he specializes in real-user performance measurement and analysis, and in optimizing large, production-critical systems.
+himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft on the Bing Performance team. He specializes in real-user performance measurement and analysis, and in optimizing large, production-critical systems.
 25prathamesh_bio: Prathamesh Rasam is a web performance architect with over a decade of experience working on large-scale web and mobile systems. He is a public speaker on web performance and builds real-time web and app performance monitoring platforms at scale.
-hfhashmi_bio: TODO
+hfhashmi_bio: Humaira is a PhD Student in Computer Science at UC Davis. Her research focuses on the intersection of network measurements, policy and privacy.
 aarontgrogg_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
 featured_quote: Performance gains are real, but uneven as top sites lead on interactivity, while long-tail adoption of new features is increasingly driven by CMS defaults.
