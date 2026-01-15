@@ -555,7 +555,7 @@ This is likely related to the complexities of setting up and configuring Early H
 
 The mobile/desktop parity is also quite noticeable; never more than a 1% difference, and typically closer to 0.5%. Meaning, where Early Hints are implemented, they are likely done so similarly for all device types.
 
-Though as low as the usage for 2025 is, it is also noticeable that there has been an increase in usage over the past three years.
+While usage remains low in 2025, there has been a noticeable increase over the past three years.
 
 {{ figure_markup(
   image="early-hints-usage-by-year.png",
