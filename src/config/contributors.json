@@ -57,17 +57,6 @@
     "twitter": "DesignrKnight",
     "website": "http://designrknight.com/"
   },
-  "abhishektiwari": {
-    "avatar_url": "363839",
-    "github": "abhishektiwari",
-    "name": "Abhishek Tiwari",
-    "teams": {
-      "2025": [
-        "committee",
-        "editors"
-      ]
-    }
-  },
   "kleinab": {
     "avatar_url": "1319324",
     "github": "kleinab",
@@ -3683,6 +3672,19 @@
       ]
     }
   },
+  "nimeshgit": {
+    "avatar_url": "38841604",
+    "github": "nimeshgit",
+    "linkedin": "ops-ml-architect",
+    "name": "Nimesh Vadgama - VN",
+    "teams": {
+      "2025": [
+        "analysts",
+        "authors"
+      ]
+    },
+    "website": "https://ops-ml-architect.blogspot.com/"
+  },
   "NishuGoel": {
     "avatar_url": "26349046",
     "github": "NishuGoel",
@@ -3772,9 +3774,10 @@
         "reviewers"
       ],
       "2025": [
-        "leads",
         "committee",
-        "authors"
+        "leads",
+        "authors",
+        "reviewers"
       ]
     },
     "twitter": "nrllah",

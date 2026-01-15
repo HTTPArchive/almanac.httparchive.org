@@ -22,8 +22,7 @@
           "chapter_number": "2",
           "title": "WebAssembly",
           "slug": "webassembly",
-          "hero_dir": "2021",
-          "todo": true
+          "hero_dir": "2021"
         },
         {
           "part": "I",
@@ -79,14 +78,6 @@
         {
           "part": "II",
           "chapter_number": "10",
-          "title": "Capabilities",
-          "slug": "capabilities",
-          "hero_dir": "2020",
-          "todo": true
-        },
-        {
-          "part": "II",
-          "chapter_number": "11",
           "title": "PWA",
           "slug": "pwa"
         }
@@ -98,13 +89,13 @@
       "chapters": [
         {
           "part": "III",
-          "chapter_number": "12",
+          "chapter_number": "11",
           "title": "CMS",
           "slug": "cms"
         },
         {
           "part": "III",
-          "chapter_number": "13",
+          "chapter_number": "12",
           "title": "Ecommerce",
           "slug": "ecommerce",
           "todo": true
@@ -117,19 +108,19 @@
       "chapters": [
         {
           "part": "IV",
-          "chapter_number": "14",
+          "chapter_number": "13",
           "title": "Page Weight",
           "slug": "page-weight"
         },
         {
           "part": "IV",
-          "chapter_number": "15",
+          "chapter_number": "14",
           "title": "CDN",
           "slug": "cdn"
         },
         {
           "part": "IV",
-          "chapter_number": "16",
+          "chapter_number": "15",
           "title": "Cookies",
           "slug": "cookies",
           "hero_dir": "2024"
