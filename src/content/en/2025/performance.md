@@ -32,7 +32,7 @@ These considerations have influenced the development and adoption of user-centri
 
 These metrics are complemented by more traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, as well as measures of page resource loading behaviour. Together, this broader set of signals helps describe where performance bottlenecks tend to occur and how they relate to overall page behavior. A more comprehensive overview of modern web performance metrics is available at <a hreflang="en" href="https://web.dev/performance">web.dev</a>.
 
-The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences. This year's analysis also includes emerging performance features such as **Early Hints** and **Speculation Rules**.
+The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences. This year's analysis also includes emerging performance features such as [Early Hints](https://developer.chrome.com/docs/web-platform/early-hints) and [Speculation Rules](https://developer.chrome.com/docs/web-platform/implementing-speculation-rules).
 
 ### Data Sources and Methodology
 
