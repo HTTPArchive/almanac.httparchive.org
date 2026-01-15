@@ -20,6 +20,7 @@ featured_stat_2: 86.6%
 featured_stat_label_2: Mobile pages using at least one web font, likely causing layout shifts.
 featured_stat_3: 28%
 featured_stat_label_3: Top 1,000 desktop pages using unload handlers, down from 35% in 2024.
+doi: 10.5281/zenodo.18258743
 ---
 
 ## Introduction
