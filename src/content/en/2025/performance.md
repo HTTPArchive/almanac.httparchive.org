@@ -138,6 +138,8 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   sql_file="web_vitals_by_device.sql"
   )}}
 
+Since 2024, the share of sites achieving a "Good" TTFB increased by 1% on desktop and by 2% on mobile. 
+
 {{ figure_markup(
   image="pages-passing-render-blocking-audit-2025.png",
   caption="Percentage of pages passing the render-blocking Lighthouse audit , segmented by device and year.",
@@ -148,7 +150,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-The TTFB data provides partial insight into these FCP gains between 2024 and 2025. Desktop sites achieving 'Good' TTFB increased by 1% since 2024, while mobile saw a 2% improvement. This suggests network and server-side optimizations could have contributed to the overall FCP improvements. The remaining FCP gains likely stem from client-side factors—such as elimination of render-blocking resources, improved Chrome browser engine, or better user hardware in general.
+Over the same period, the proportion of pages passing the render-blocking resources audit remained flat on desktop and increased by 1% on mobile. 
+
+Taken together, improvements in FCP between 2024 and 2025 align with these modest gains in server response times and small reductions in render-blocking work. This suggests that incremental improvements across both network delivery and client-side rendering are contributing to earlier first paint, with a more slightly more impact on mobile devices.
 
 ### Largest Contentful Paint
 
