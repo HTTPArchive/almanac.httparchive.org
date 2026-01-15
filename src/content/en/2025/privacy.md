@@ -3,25 +3,22 @@
 title: Privacy
 description: Privacy chapter of the 2025 Web Almanac covers the adoption and impact of online tracking, privacy preference signals, and browser initiatives for a privacy-friendlier web.
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
-analysts: [max-ostapenko]
-max-ostapenko_bio: Max Ostapenko is a Product Lead at [Masthead Data](https://mastheadata.com/) and a core maintainer of HTTP Archive, specializing in adtech and data monetization.
 authors: [RumaisaHabib, securient, nrllh]
+analysts: [max-ostapenko]
+reviewers: [JannisBush]
+editors: [max-ostapenko]
 nrllh_bio: Nurullah Demir is a visiting postdoctoral scholar at Stanford University and the founder of the cyber security platform SecuSeek. His work focuses on internet-scale security and privacy risks.
 RumaisaHabib_bio: Rumaisa Habib is a third year PhD candidate working with the Empirical Security Research Group at Stanford University. Rumaisa's primary research interest is to build a better understanding of the web beyond the Western context leveraging large scale Internet measurements.
 securient_bio: Vinod is a Staff Security Engineer at PIP Labs with over a decade of cybersecurity experience at companies including Amazon, Zapier, and HackerOne. He specializes in penetration testing and cloud security, writes about security on Medium, and actively researches emerging threats in both traditional and Web3 environments.
-reviewers: [JannisBush]
-JannisBush_bio: Jannis Rautenstrauch is a PhD candidate at [CISPA](https://cispa.de/en). In his research he performs internet measurements to evaluate the security and privacy landscape of the Web.
-editors: [max-ostapenko]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Svyw40Th7VbigX6lpR1lb1WXwTUVKZWrK7O2YELrml4/edit
-featured_quote: ...
-featured_stat_1: ...
-featured_stat_label_1: ...
-featured_stat_2: ...
-featured_stat_label_2: ...
-featured_stat_3: ...
-featured_stat_label_3: ...
-doi: ...
+featured_quote: TODO
+featured_stat_1: TODO
+featured_stat_label_1: TODO
+featured_stat_2: TODO
+featured_stat_label_2: TODO
+featured_stat_3: TODO
+featured_stat_label_3: TODO
 ---
 
 ## Introduction
