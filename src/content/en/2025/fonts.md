@@ -17,6 +17,7 @@ featured_stat_2: 40%
 featured_stat_label_2: websites using variable fonts
 featured_stat_3: 82%
 featured_stat_label_3: font requests served as WOFF2
+doi: 10.5281/zenodo.18246295
 ---
 
 ## Introduction
