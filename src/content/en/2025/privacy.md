@@ -44,7 +44,6 @@ In this chapter, we provide a technical overview of the state of web privacy. We
 
 Our analysis uses the <a hreflang="en" href="https://www.ghostery.com/whotracksme/">WhoTracks.Me</a> catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories `advertising`, `pornvertising`, `site_analytics` and  `social_media` as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth noting that the reported numbers represent unique domains, not the total number of HTTP requests.
 
-
 {{ figure_markup(
   caption="Websites with at least one tracker.",
   content="75%",
