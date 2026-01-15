@@ -94,15 +94,11 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile. This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads.
-TODO: Could also be that Home Pages get updated more frequently and introduce more varied components, whereas secondary pages might be more templatized, so perhaps more stable?
+Secondary pages show a significant advantage over home pages in achieving good CWV results, with a 14% lead on Desktop and an 11% lead on Mobile. This performance gap suggests that secondary pages often benefit from having partially cached information, which contributes to faster page loads. Home pages are also updated more frequently and tend to include more dynamic and varied components, while secondary pages are often more templated and consistent, which may make them more stable and easier to optimize.
 
-<a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">Soft navigation</a> support is expected to aid in a more comprehensive collection of CWV data for within the page navigation.
+Modern websites increasingly use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">soft navigations</a> is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
 
-While CWV data indicates better overall performance for secondary pages, let's dive deeper into the specific aspects of:
-- loading performance
-- interactivity and 
-- visual stability
+Let’s examine the different aspects of performance to better understand these trends, starting with **Loading Speed**, followed by **Interactivity** and **Visual Stability**, and concluding with **Early Hints** and **Speculation Rules**.
 
 ## Loading Speed
 
