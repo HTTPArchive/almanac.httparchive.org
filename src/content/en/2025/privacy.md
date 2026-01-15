@@ -328,7 +328,7 @@ The CMP landscape shifted notably this year. Automattic, which led in 2024 at 0.
   )
 }}
 
-Germany (0.042%) and France (0.030%) lead TCFv2 publisher adoption among EU member states, with the US appearing at 0.017%, notable given TCF isn’t required outside the EU. The largest share (0.26%) falls under “AA”, an undefined country code, pointing to gaps in publisher metadata or misconfigured CMP implementations. Overall adoption remains low even among European publishers, suggesting TCFv2 is concentrated among a small subset of sites despite GDPR requirements.
+Germany (0.042%) and France (0.030%) lead TCFv2 publisher adoption among EU member states, with the US appearing at 0.017%, notable given TCF isn’t required outside the EU. The largest share (0.26%) falls under ‘AA’, an undefined country code, pointing to gaps in publisher metadata or misconfigured CMP implementations. Overall adoption remains low even among European publishers, suggesting TCFv2 is concentrated among a small subset of sites despite GDPR requirements.
 
 {{ figure_markup(
   image="most-common-iab-usp-string-values.png",
