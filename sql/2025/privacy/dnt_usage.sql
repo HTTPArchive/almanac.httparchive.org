@@ -15,5 +15,5 @@ FROM `httparchive.blink_features.usage`
   ANY_VALUE(pct_urls) AS pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> RENAME pct_mobile AS Mobile, pct_desktop AS Desktop
 |> ORDER BY rank ASC
