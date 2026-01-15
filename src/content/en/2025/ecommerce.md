@@ -514,7 +514,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td>394,462</td>
+        <td class="numeric">394,462</td>
         <td class="numeric">45%</td>
         <td class="numeric">99%</td>
         <td class="numeric">68%</td>
@@ -522,7 +522,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Shopify</td>
-        <td>289,885</td>
+        <td class="numeric">289,885</td>
         <td class="numeric">92%</td>
         <td class="numeric">99%</td>
         <td class="numeric">82%</td>
@@ -530,7 +530,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td>80,900</td>
+        <td class="numeric">80,900</td>
         <td class="numeric">90%</td>
         <td class="numeric">100%</td>
         <td class="numeric">78%</td>
@@ -538,7 +538,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td>55,706</td>
+        <td class="numeric">55,706</td>
         <td class="numeric">77%</td>
         <td class="numeric">99%</td>
         <td class="numeric">91%</td>
@@ -546,7 +546,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td>45,256</td>
+        <td class="numeric">45,256</td>
         <td class="numeric">74%</td>
         <td class="numeric">99%</td>
         <td class="numeric">72%</td>
@@ -554,7 +554,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Magento</td>
-        <td>36,988</td>
+        <td class="numeric">36,988</td>
         <td class="numeric">59%</td>
         <td class="numeric">99%</td>
         <td class="numeric">55%</td>
@@ -562,7 +562,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td>31,150</td>
+        <td class="numeric">31,150</td>
         <td class="numeric">86%</td>
         <td class="numeric">99%</td>
         <td class="numeric">80%</td>
@@ -570,7 +570,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td>14,452</td>
+        <td class="numeric">14,452</td>
         <td class="numeric">87%</td>
         <td class="numeric">99%</td>
         <td class="numeric">80%</td>
@@ -578,7 +578,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Cafe24</td>
-        <td>13,661</td>
+        <td class="numeric">13,661</td>
         <td class="numeric">98%</td>
         <td class="numeric">100%</td>
         <td class="numeric">46%</td>
@@ -586,7 +586,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>BigCommerce</td>
-        <td>12,376</td>
+        <td class="numeric">12,376</td>
         <td class="numeric">91%</td>
         <td class="numeric">99%</td>
         <td class="numeric">60%</td>
@@ -618,7 +618,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td>995,782</td>
+        <td class="numeric">995,782</td>
         <td class="numeric">39%</td>
         <td class="numeric">88%</td>
         <td class="numeric">85%</td>
@@ -626,7 +626,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Shopify</td>
-        <td>567,932</td>
+        <td class="numeric">567,932</td>
         <td class="numeric">86%</td>
         <td class="numeric">90%</td>
         <td class="numeric">92%</td>
@@ -634,7 +634,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td>234,055</td>
+        <td class="numeric">234,055</td>
         <td class="numeric">76%</td>
         <td class="numeric">85%</td>
         <td class="numeric">95%</td>
@@ -642,7 +642,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td>209,650</td>
+        <td class="numeric">209,650</td>
         <td class="numeric">76%</td>
         <td class="numeric">96%</td>
         <td class="numeric">89%</td>
@@ -650,7 +650,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td>87,486</td>
+        <td class="numeric">87,486</td>
         <td class="numeric">65%</td>
         <td class="numeric">89%</td>
         <td class="numeric">81%</td>
@@ -658,7 +658,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td>76,080</td>
+        <td class="numeric">76,080</td>
         <td class="numeric">71%</td>
         <td class="numeric">71%</td>
         <td class="numeric">86%</td>
@@ -666,7 +666,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Magento</td>
-        <td>50,983</td>
+        <td class="numeric">50,983</td>
         <td class="numeric">52%</td>
         <td class="numeric">87%</td>
         <td class="numeric">64%</td>
@@ -674,7 +674,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td>32,914</td>
+        <td class="numeric">32,914</td>
         <td class="numeric">80%</td>
         <td class="numeric">93%</td>
         <td class="numeric">88%</td>
@@ -682,7 +682,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
       <tr>
         <td>Tiendanube</td>
-        <td>21,836</td>
+        <td class="numeric">21,836</td>
         <td class="numeric">60%</td>
         <td class="numeric">95%</td>
         <td class="numeric">84%</td>
@@ -690,7 +690,7 @@ A site is considered "good" on CWV when it passes all three thresholds.
       </tr>
         <tr>
         <td>Square Online</td>
-        <td>18,812</td>
+        <td class="numeric">18,812</td>
         <td>0%</td>
         <td class="numeric">39%</td>
         <td>0%</td>
@@ -717,9 +717,9 @@ A few patterns show up repeatedly:
 
 Looking at the largest platforms from 2024 → 2025, most ecosystems improved their "good" Core Web Vitals share, but the magnitude differs:
 
-- Wix eCommerce sees the biggest jump (≈ 16.2% on mobile and 18.8% on desktop).
-- Shopify also improves materially (≈ 7.9% mobile; 5.8% desktop).
-- WooCommerce improves more modestly (≈ 4.9% mobile; 4.1% desktop).
+- Wix eCommerce sees the biggest jump (≈ 16% on mobile and 19% on desktop).
+- Shopify also improves materially (≈ 8% mobile; 6% desktop).
+- WooCommerce improves more modestly (≈ 5% mobile; 4% desktop).
 
 This is the tradeoff you should expect: platforms that centralize more of the stack can deliver performance improvements to millions of stores at once. Platforms that decentralize responsibility (themes, plugins, hosting, agencies) tend to improve more slowly because the bottleneck is coordination.
 
@@ -751,81 +751,81 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">886,516</td>
-        <td class="numeric">56</td>
-        <td class="numeric">85</td>
+        <td class="numeric">863,433</td>
+        <td class="numeric">61</td>
+        <td class="numeric">87</td>
         <td class="numeric">92</td>
         <td class="numeric">78</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">486,573</td>
+        <td class="numeric">524,617</td>
         <td class="numeric">71</td>
-        <td class="numeric">88</td>
+        <td class="numeric">90</td>
         <td class="numeric">92</td>
-        <td class="numeric">78</td>
+        <td class="numeric">74</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">227,616</td>
-        <td class="numeric">60</td>
-        <td class="numeric">93</td>
+        <td class="numeric">223,365</td>
+        <td class="numeric">65</td>
+        <td class="numeric">94</td>
         <td class="numeric">92</td>
-        <td class="numeric">100</td>
+        <td class="numeric">96</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">175,056</td>
-        <td class="numeric">82</td>
-        <td class="numeric">95</td>
+        <td class="numeric">191,039</td>
+        <td class="numeric">88</td>
+        <td class="numeric">96</td>
         <td class="numeric">100</td>
         <td class="numeric">78</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">87,551</td>
-        <td class="numeric">53</td>
+        <td class="numeric">77,374</td>
+        <td class="numeric">59</td>
         <td class="numeric">78</td>
         <td class="numeric">92</td>
-        <td class="numeric">78</td>
+        <td class="numeric">81</td>
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td class="numeric">61,876</td>
-        <td class="numeric">51</td>
+        <td class="numeric">56,914</td>
+        <td class="numeric">58</td>
         <td class="numeric">75</td>
         <td class="numeric">92</td>
-        <td class="numeric">56</td>
+        <td class="numeric">59</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">58,287</td>
-        <td class="numeric">55</td>
-        <td class="numeric">76</td>
-        <td class="numeric">91</td>
+        <td class="numeric">50,058</td>
+        <td class="numeric">60</td>
+        <td class="numeric">78</td>
+        <td class="numeric">92</td>
         <td class="numeric">74</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">26,934</td>
-        <td class="numeric">56</td>
+        <td class="numeric">27,351</td>
+        <td class="numeric">63</td>
         <td class="numeric">79</td>
         <td class="numeric">91</td>
         <td class="numeric">78</td>
       </tr>
       <tr>
         <td>Cafe24</td>
-        <td class="numeric">22,221</td>
-        <td class="numeric">34</td>
-        <td class="numeric">71</td>
+        <td class="numeric">24,052</td>
+        <td class="numeric">39</td>
+        <td class="numeric">69</td>
         <td class="numeric">85</td>
         <td class="numeric">56</td>
       </tr>
       <tr>
         <td>BigCommerce</td>
-        <td class="numeric">20,120</td>
-        <td class="numeric">64</td>
-        <td class="numeric">79</td>
+        <td class="numeric">18,465</td>
+        <td class="numeric">72</td>
+        <td class="numeric">81</td>
         <td class="numeric">92</td>
         <td class="numeric">74</td>
       </tr>
@@ -833,7 +833,7 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Desktop (top platforms by test count).",
+      caption="Most popular ecommerce platforms Lighthouse scores (desktop).",
       sheets_gid="1765174321",
       sql_file="median_lighthouse_score_ecommsites.sql",
     ) }}
@@ -855,31 +855,31 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">1,116,462</td>
-        <td class="numeric">32</td>
-        <td class="numeric">85</td>
+        <td>1,084,792</td>
+        <td class="numeric">38</td>
+        <td class="numeric">87</td>
         <td class="numeric">92</td>
         <td class="numeric">79</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">573,370</td>
-        <td class="numeric">43</td>
-        <td class="numeric">88</td>
+        <td class="numeric">618,929</td>
+        <td class="numeric">55</td>
+        <td class="numeric">91</td>
         <td class="numeric">92</td>
-        <td class="numeric">79</td>
+        <td class="numeric">75</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">250,295</td>
-        <td class="numeric">52</td>
+        <td class="numeric">270,436</td>
+        <td class="numeric">64</td>
         <td class="numeric">95</td>
         <td class="numeric">100</td>
         <td class="numeric">79</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">243,490</td>
+        <td class="numeric">241,322</td>
         <td class="numeric">30</td>
         <td class="numeric">94</td>
         <td class="numeric">92</td>
@@ -887,57 +887,57 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">103,104</td>
-        <td class="numeric">30</td>
+        <td class="numeric">91,267</td>
+        <td class="numeric">36</td>
         <td class="numeric">79</td>
         <td class="numeric">92</td>
         <td class="numeric">79</td>
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td class="numeric">90,214</td>
-        <td class="numeric">33</td>
+        <td class="numeric">81,598</td>
+        <td class="numeric">35</td>
         <td class="numeric">75</td>
         <td class="numeric">92</td>
-        <td class="numeric">57</td>
+        <td class="numeric">61</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">61,633</td>
-        <td class="numeric">31</td>
-        <td class="numeric">77</td>
-        <td class="numeric">91</td>
+        <td class="numeric">52,885</td>
+        <td class="numeric">34</td>
+        <td class="numeric">79</td>
+        <td class="numeric">92</td>
         <td class="numeric">75</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">35,585</td>
-        <td class="numeric">35</td>
-        <td class="numeric">77</td>
+        <td class="numeric">35,238</td>
+        <td class="numeric">43</td>
+        <td class="numeric">78</td>
         <td class="numeric">91</td>
         <td class="numeric">79</td>
       </tr>
       <tr>
-        <td>Mercado Shops</td>
-        <td class="numeric">24,413</td>
-        <td class="numeric">36</td>
-        <td class="numeric">86</td>
-        <td class="numeric">92</td>
-        <td class="numeric">96</td>
-      </tr>
-      <tr>
         <td>Tiendanube</td>
-        <td class="numeric">23,106</td>
-        <td class="numeric">58</td>
-        <td class="numeric">93</td>
+        <td class="numeric">23,717</td>
+        <td class="numeric">50</td>
+        <td class="numeric">92</td>
         <td class="numeric">92</td>
         <td class="numeric">75</td>
       </tr>
-    </tbody>
+      <tr>
+        <td>Square Online</td>
+        <td class="numeric">21,700</td>
+        <td class="numeric">13</td>
+        <td class="numeric">85</td>
+        <td class="numeric">92</td>
+        <td class="numeric">57</td>
+      </tr>
+      </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Mobile (top platforms by test count).",
+      caption="Most popular ecommerce platforms Lighthouse scores (mobile).",
       sheets_gid="1765174321",
       sql_file="median_lighthouse_score_ecommsites.sql",
     ) }}
@@ -973,75 +973,64 @@ The following tables show the most commonly detected payment providers in 2025.
         <th>Payment provider</th>
         <th>Share of payment detections</th>
         <th>Share of all sites</th>
-        <th>Detected sites</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>PayPal</td>
-        <td class="numeric">18.6%</td>
-        <td class="numeric">3.9%</td>
-        <td class="numeric">485,370</td>
+        <td class="numeric">19.1%</td>
+        <td class="numeric">4.1%</td>
       </tr>
       <tr>
         <td>Apple Pay</td>
-        <td class="numeric">13.4%</td>
+        <td class="numeric">13.1%</td>
         <td class="numeric">2.8%</td>
-        <td class="numeric">350,570</td>
       </tr>
       <tr>
         <td>Shop Pay</td>
-        <td class="numeric">12.1%</td>
+        <td class="numeric">11.8%</td>
         <td class="numeric">2.5%</td>
-        <td class="numeric">316,918</td>
-      </tr>
-      <tr>
-        <td>Visa</td>
-        <td class="numeric">10.3%</td>
-        <td class="numeric">2.1%</td>
-        <td class="numeric">268,465</td>
-      </tr>
-      <tr>
-        <td>Mastercard</td>
-        <td class="numeric">10.3%</td>
-        <td class="numeric">2.1%</td>
-        <td class="numeric">268,295</td>
-      </tr>
-      <tr>
-        <td>American Express</td>
-        <td class="numeric">9.2%</td>
-        <td class="numeric">1.9%</td>
-        <td class="numeric">240,071</td>
       </tr>
       <tr>
         <td>Stripe</td>
-        <td class="numeric">8.6%</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">225,053</td>
+        <td class="numeric">9.8%</td>
+        <td class="numeric">2.1%</td>
+      </tr>
+      <tr>
+        <td>Visa</td>
+        <td class="numeric">9.6%</td>
+        <td class="numeric">2.1%</td>
+      </tr>
+      <tr>
+        <td>Mastercard</td>
+        <td class="numeric">9.6%</td>
+        <td class="numeric">2.1%</td>
+      </tr>
+      <tr>
+        <td>American Express</td>
+        <td class="numeric">8.7%</td>
+        <td class="numeric">1.9%</td>
       </tr>
       <tr>
         <td>Google Pay</td>
-        <td class="numeric">8.3%</td>
+        <td class="numeric">8.0%</td>
         <td class="numeric">1.7%</td>
-        <td class="numeric">218,246</td>
       </tr>
       <tr>
         <td>Venmo</td>
-        <td class="numeric">2.5%</td>
-        <td class="numeric">0.5%</td>
-        <td class="numeric">65,331</td>
+        <td class="numeric">2.6%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <td>Klarna Checkout</td>
-        <td class="numeric">1.2%</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">30,852</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">0.4%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Desktop (2025, top payment providers).",
+      caption="Top payment providers (desktop)).",
       sheets_gid="2028626432",
       sql_file="top_payment_providers.sql",
     ) }}
@@ -1061,69 +1050,59 @@ The following tables show the most commonly detected payment providers in 2025.
     <tbody>
       <tr>
         <td>PayPal</td>
-        <td class="numeric">21.0%</td>
-        <td class="numeric">3.5%</td>
-        <td class="numeric">548,276</td>
+        <td class="numeric">19.2%</td>
+        <td class="numeric">3.1%</td>
       </tr>
       <tr>
         <td>Apple Pay</td>
-        <td class="numeric">14.9%</td>
-        <td class="numeric">2.5%</td>
-        <td class="numeric">390,665</td>
+        <td class="numeric">12.9%</td>
+        <td class="numeric">2.1%</td>
       </tr>
       <tr>
         <td>Shop Pay</td>
-        <td class="numeric">13.3%</td>
-        <td class="numeric">2.2%</td>
-        <td class="numeric">348,267</td>
+        <td class="numeric">11.5%</td>
+        <td class="numeric">1.9%</td>
       </tr>
       <tr>
         <td>Visa</td>
-        <td class="numeric">11.8%</td>
-        <td class="numeric">2.0%</td>
-        <td class="numeric">309,054</td>
+        <td class="numeric">10.1%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>Mastercard</td>
-        <td class="numeric">11.8%</td>
-        <td class="numeric">2.0%</td>
-        <td class="numeric">308,874</td>
-      </tr>
-      <tr>
-        <td>American Express</td>
-        <td class="numeric">10.5%</td>
-        <td class="numeric">1.8%</td>
-        <td class="numeric">273,942</td>
-      </tr>
-      <tr>
-        <td>Google Pay</td>
-        <td class="numeric">9.6%</td>
-        <td class="numeric">1.6%</td>
-        <td class="numeric">250,089</td>
+        <td class="numeric">10.1%</td>
+        <td class="numeric">1.7%</td>
       </tr>
       <tr>
         <td>Stripe</td>
-        <td class="numeric">8.8%</td>
+        <td class="numeric">9.3%</td>
         <td class="numeric">1.5%</td>
-        <td class="numeric">230,914</td>
+      </tr>
+      <tr>
+        <td>Google Pay</td>
+        <td class="numeric">9.0%</td>
+        <td class="numeric">1.5%</td>
+      </tr>
+      <tr>
+        <td>American Express</td>
+        <td class="numeric">9.0%</td>
+        <td class="numeric">1.5%</td>
       </tr>
       <tr>
         <td>Venmo</td>
-        <td class="numeric">2.6%</td>
+        <td class="numeric">2.2%</td>
         <td class="numeric">0.4%</td>
-        <td class="numeric">68,549</td>
       </tr>
       <tr>
         <td>Klarna Checkout</td>
-        <td class="numeric">1.5%</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">38,175</td>
+        <td class="numeric">1.6%</td>
+        <td class="numeric">0.3%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Mobile (2025, top payment providers).",
+      caption="Top payment providers (mobile)).",
       sheets_gid="2028626432",
       sql_file="top_payment_providers.sql",
     ) }}
@@ -1145,16 +1124,15 @@ This does not mean PayPal is dying. It means the payment layer is becoming more 
 ### Payment providers by geography
 
 {{ figure_markup(
-  image="top-payment-provider-by-country.png",
-  caption="Top payment provider by country in 2025.",
-  description="Map showing the top payment provider by country in 2025. PayPal leads most mobile geographies, while Stripe leads more desktop geographies.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=970649597&format=interactive",
+  caption="Countries in which PayPal is the top payment provider.",
+  content="70 out of 83",
+  classes="big-number",
   sheets_gid="732986771",
-  sql_file="top_payment_provider_by_geo.sql"
+  sql_file="top_payment_by_geo.sql"
   )
 }}
 
-- On mobile, PayPal is the top payment provider in 70 of 83 geographies in our view.
+- On mobile, PayPal is the top payment provider in 70 of 83 geographies.
 - On desktop, leadership is more split: Stripe leads in 31 geographies while PayPal leads in 22.
 
 Notable examples:
