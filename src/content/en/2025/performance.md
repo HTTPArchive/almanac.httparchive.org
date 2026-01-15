@@ -437,13 +437,13 @@ To prevent this, images should always have intrinsic dimensions defined either v
 
 {{ figure_markup(
   caption="The percent of mobile pages that fail to set explicit dimensions on at least one image.",
-  content="62.28%",
+  content="62.38%",
   classes="big-number",
   sheets_gid="1870744021",
   sql_file="cls_unsized_images.sql"
 )}}
 
-In 2025, a significant share of pages still risk layout instability due to images without explicit dimensions. On mobile, 62.28% of pages fail to set dimensions on at least one image, an improvement from 66% in 2024, indicating gradual adoption of CLS friendly image practices.
+In 2025, a significant share of pages still risk layout instability due to images without explicit dimensions. On mobile, 62.38% of pages fail to set dimensions on at least one image, an improvement from 66% in 2024, indicating gradual adoption of CLS friendly image practices.
 
 Desktop pages show a similar but slightly worse pattern, with 65.45% affected in 2025, down from 69% in 2024. While the downward trend is encouraging, the majority of pages still leave the browser guessing image sizes at layout time, making images one of the most persistent and preventable contributors to CLS.
 
