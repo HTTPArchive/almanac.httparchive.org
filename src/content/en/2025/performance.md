@@ -3,13 +3,13 @@
 title: Performance
 description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
-authors: [25prathamesh, himanshujariyal, hfhashmi]
+authors: [himanshujariyal, 25prathamesh, hfhashmi]
 reviewers: [aarontgrogg, tunetheweb]
 analysts: [tannerhodges]
 editors: []
 translators: []
-himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft, working on the Bing Performance team. His work focuses on improving web performance at scale, with experience optimizing large-scale production systems across both enterprise platforms and consumer-facing products.
-25prathamesh_bio: Prathamesh Rasam is a web performance expert and consultant who has worked across a range of consumer and enterprise web platforms. He is passionate about improving user experience and has built a large-scale Real User Measurement system that processes over 100 million pageviews per month.
+himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft on the Bing Performance team. With 10+ years of industry experience, he specializes in real-user performance measurement and analysis, and in optimizing large, production-critical systems.
+25prathamesh_bio: Prathamesh Rasam is a web performance architect with over a decade of experience working on large-scale web and mobile systems. He is a public speaker on web performance and builds real-time web and app performance monitoring platforms at scale.
 hfhashmi_bio: TODO
 aarontgrogg_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
