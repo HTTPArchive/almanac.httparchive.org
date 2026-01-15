@@ -7,17 +7,23 @@
 {% block almanacMonthDigit %}07{% endblock %}
 
 {% block foreword %}
-{#
 <div>
   <p>
-    TODO
+    The web is today an integral part of our modern digital infrastructure. Web applications can now be found in almost any technological environment that touches our daily life, from mobile apps to endpoints used in satellite communications. In the context of the Web Almanac, we want to understand the trends and evolution of the web. We, as web enthusiasts, are happy to present the 6th edition of one of the major technical reports on the web—the 2025 Web Almanac.
   </p>
-
+  <p>
+    The Web Almanac is an open-source project, contributed to by experts (researchers, developers, consultants, and editors) from all over the globe. It has been another wonderful edition experiencing the exciting contributions of this community. It is the engagement of this community that has made this report possible.
+  </p>
+  <p>
+    This community-driven project analyzes 17.2 million websites and processes 244 TB of open-source data provided by the HTTP Archive. In this report, we analyze various aspects (such as accessibility, performance, and security), understand how the web evolves, and gain insights into structural, technical, and societal developments.
+  </p>
+  <p>
+    We hope our report helps the community understand the current state of the web better, and we encourage you to explore this extensive work.
+  </p>
   <p>
     <em>
-      —<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='nrllh') }}">Nurullah Demir</a>, 2025 Web Almanac General Chair<br>
+      —<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='nrllh') }}">Nurullah Demir</a>, 2025 Web Almanac Editor-in-Chief<br>
     </em>
   </p>
 </div>
-#}
 {% endblock %}
