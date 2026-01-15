@@ -122,10 +122,10 @@ npm run watch
 
 The following tools help automate figure positioning and metadata:
 
-1.  **Running queries and exporting to sheets**: [bq_to_sheets.ipynb](../sql/util/bq_to_sheets.ipynb) runs queries and exports the results to Google Sheets.
-2.  **Normalization**: [chart-adjustments.ipynb](../sql/util/chart-adjustments.ipynb) normalizes chart sizes in Google Sheets to ensure consistent dimensions for image generation.
-3.  **Figures markup generation**: [generate_figure_markup.py](../sql/util/generate_figure_markup.py) scans Google Sheets for charts and generates the corresponding `figure_markup` shortcodes with mapped SQL files and sheet IDs.
-4.  **Generating chapter images**: We can automate the generation of chapter images from the command line to save this onerous task.
+1. **Running queries and exporting to sheets**: [bq_to_sheets.ipynb](../sql/util/bq_to_sheets.ipynb) runs queries and exports the results to Google Sheets.
+2. **Normalization**: [chart-adjustments.ipynb](../sql/util/chart-adjustments.ipynb) normalizes chart sizes in Google Sheets to ensure consistent dimensions for image generation.
+3. **Figures markup generation**: [generate_figure_markup.py](../sql/util/generate_figure_markup.py) scans Google Sheets for charts and generates the corresponding `figure_markup` shortcodes with mapped SQL files and sheet IDs.
+4. **Generating chapter images**: We can automate the generation of chapter images from the command line to save this onerous task.
 
     This requires the figure markup to exist in the chapter's markdown file, including the `image` and `chart_url` attributes:
 
@@ -176,7 +176,7 @@ The following tools help automate figure positioning and metadata:
 
     Running them through <https://tinypng.com> also has the added advantage of the compression being repeatable each time. So if you are not sure which images you have changed, you can delete them all, regenerate them all, run them through TinyPNG, and then a `git diff` will only show differences on the images that have changed. This will not be the case if you use the Calibre GitHub Action and it will look like all images have changed.
 
-1.  **Automated descriptions**: [generate_figure_descriptions.js](tools/generate/generate_figure_descriptions.js) uses OCR (via Tesseract.js) to automatically populate `description=""` fields in markdown chapters based on the generated images.
+5. **Automated descriptions**: [generate_figure_descriptions.js](tools/generate/generate_figure_descriptions.js) uses OCR (via Tesseract.js) to automatically populate `description=""` fields in markdown chapters based on the generated images.
 
     ```bash
     node ./tools/generate/generate_figure_descriptions en/2025/privacy
