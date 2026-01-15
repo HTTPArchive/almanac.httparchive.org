@@ -115,14 +115,14 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2022-08-01'
+    date = '2022-06-01'
   GROUP BY
     client
 )
 USING (client)
 WHERE
   cats = 'Ecommerce' AND
-  date = '2022-08-01' AND
+  date = '2022-06-01' AND
   technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
 GROUP BY
   client,
