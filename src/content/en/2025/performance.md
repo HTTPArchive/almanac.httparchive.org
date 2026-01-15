@@ -34,7 +34,7 @@ These metrics are complemented by traditional indicators such as <a hreflang="en
 
 The Web Almanac performance chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences.
 
-The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences. This year, we also include analysis of Early Hints and Speculation Rules as part of the performance chapter.
+The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences. This year, we also include analysis of **Early Hints** and **Speculation Rules** as part of the performance chapter.
 
 ### Data Sources and Methodology
 
