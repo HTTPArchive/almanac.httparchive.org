@@ -208,7 +208,7 @@ In this section, we examine three such mechanisms: User-Agent Client Hints, whic
 
 {{ figure_markup(
   image="client-hints-usage.png",
-  caption="Client hints usage",
+  caption="Client Hints usage",
   description="Bar chart comparing User-Agent Client Hints usage on desktop and mobile. Adoption is higher on mobile (5.1%) than on desktop (3.3%).",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRC5wrzy5NEsWNHn9w38RLsMURRScnP4jgjO1mDiVhsfFCY55tujlTUZhUaEWzmPtJza0QA7w8S4uK5/pubchart?oid=1040809316&format=interactive",
   sheets_gid="1264661022",
