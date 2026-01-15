@@ -17,6 +17,7 @@ featured_stat_2: 54%
 featured_stat_label_2: Mobile sites using a CMS.
 featured_stat_3: 64%
 featured_stat_label_3: CMS market share that is WordPress
+doi: 10.5281/zenodo.18246656
 ---
 
 ## Introduction

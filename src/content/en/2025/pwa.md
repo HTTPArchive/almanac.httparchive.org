@@ -18,6 +18,7 @@ featured_stat_2: 78
 featured_stat_label_2: Percentage of notifications ignored on desktop clients.
 featured_stat_3: 2
 featured_stat_label_3: Number of new engines that now support web apps.
+doi: 10.5281/zenodo.18246631
 ---
 
 ## Introduction
