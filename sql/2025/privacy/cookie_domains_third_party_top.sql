@@ -15,8 +15,6 @@ GROUP BY client, cookie_domain
   ANY_VALUE(pct_domains) AS pct_domains
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME
-pct_domains_mobile AS mobile,
-pct_domains_desktop AS desktop
+|> RENAME pct_domains_mobile AS Mobile, pct_domains_desktop AS Desktop
 |> ORDER BY COALESCE(domain_count_mobile, 0) + COALESCE(domain_count_desktop, 0) DESC
 |> LIMIT 1000
