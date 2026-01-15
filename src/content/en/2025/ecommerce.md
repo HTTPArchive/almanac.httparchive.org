@@ -732,7 +732,7 @@ Lighthouse is the HTTP Archive's lab-based audit. Unlike Core Web Vitals (field 
 - **SEO**: The Lighthouse SEO score reflects technical SEO fundamentals (e.g., title/meta, basic crawlability signals). High medians are common because these checks are straightforward to pass.
 - **Best Practices**: Best Practices is a grab bag of security and reliability checks (HTTPS, safe JS patterns, modern APIs). It often reflects platform defaults and theme quality.
 
-Lighthouse is useful for comparisons across large sets of sites, but it won't perfectly match what real users experience.
+Lighthouse is useful for comparisons across large sets of sites because it standardizes the test profile, but it won't perfectly match what real users experience since field data reflects the real mix of devices, networks, geographies, and user behavior.
 
 ### Median Lighthouse scores by platform
 
