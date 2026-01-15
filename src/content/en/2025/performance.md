@@ -263,9 +263,10 @@ Overall, about 16% of pages lazy-load their LCP image on both desktop and mobile
 
 ### Loading Speed Conclusion
 
-* FCP and LCP have both improved since 2024, with desktop consistently outperforming mobile. For FCP, roughly half of the gains appear tied to TTFB improvements, with the rest likely due to browser engine enhancements.   
-* Image optimization for LCP remains a mixed picture. While there's a gradual shift from JPG to WebP, adoption of modern formats is slow.   
-* About 16% of web pages still lazy load their LCP image, which directly harms load times.
+In summary, the loading metrics highlight following key trends:
+* FCP and LCP have both improved since 2024, with desktop consistently outperforming mobile.
+* Adoption of newer image formats remains limited, despite a gradual shift from JPG to WebP.
+* About 16% of web pages still lazy load their LCP image, delaying the display of primary content.
 
 ## Interactivity
 
