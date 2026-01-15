@@ -156,7 +156,9 @@ Taken together, improvements in FCP between 2024 and 2025 align with these modes
 
 ### Largest Contentful Paint
 
-To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%); a gap that is consistent with the combined effects of slower networks and less capable devices on mobile. Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
+To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. 
+
+Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%); a gap that is consistent with the combined effects of slower networks and less capable devices on mobile. 
 
 {{ figure_markup(
   image="lcp-performance-by-device-2025.png",
@@ -168,7 +170,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Like FCP, LCP is also a sum of several sequential phases: the time taken to get the first byte of data from the server (TTFB), the delay before the browser begins fetching the LCP resource (Resource Load Delay), the time spent loading that resource (Resource Load Duration), and finally any delay before it renders (Element Render Delay). Understanding where time is lost across these phases is essential for improving LCP and thus overall [Core Web Vitals performance](https://web.dev/articles/defining-core-web-vitals-thresholds) of a web page.
+While FCP captures the first visual response, LCP reflects when the page's primary content becomes visible and typically involves a longer and more complex critical path. Like FCP, LCP can be understood as the sum of several sequential phases: the time to receive the first byte from the server (TTFB), the delay before the browser begins fetching the LCP resource (resource load delay), the time spent loading that resource (resource load duration), and any delay before the element is rendered (element render delay). Understanding where time is spent across these phases is key to improving LCP, and in turn, overall [Core Web Vitals performance](https://web.dev/articles/defining-core-web-vitals-thresholds).
 
 #### LCP Content Types
 
