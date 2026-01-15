@@ -123,6 +123,8 @@ Using third-party cookies is an efficient method for tracking and targeting web 
   )
 }}
 
+Our analysis shows that `doubleclick.net` is the most common third-party cookie domain, appearing on 20% of desktop sites, followed by `youtube.com` (9%) and `google.com` (8%). Overall, while Google entities dominate the top rankings, Microsoft's `bing.com` and `clarity.ms`, along with `linkedin.com`, represent the most significant alternative third-party cookie setters.
+
 {{ figure_markup(
   image="most-common-third-party-cookies.png",
   caption="Most common third-party cookies",
@@ -132,8 +134,6 @@ Using third-party cookies is an efficient method for tracking and targeting web 
   sql_file="cookies_third_party_top.sql"
   )
 }}
-
-Our analysis shows that `doubleclick.net` is the most common third-party cookie domain, appearing on 20% of desktop sites, followed by `youtube.com` (9%) and `google.com` (8%). Overall, while Google entities dominate the top rankings, Microsoft's `bing.com` and `clarity.ms`, along with `linkedin.com`, represent the most significant alternative third-party cookie setters.
 
 #### First-party cookies
 
