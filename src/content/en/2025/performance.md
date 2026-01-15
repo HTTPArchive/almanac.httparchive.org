@@ -605,4 +605,12 @@ Conversely, Speculation Rules now come baked into [WordPress](https://make.wordp
 Also notable is the parity between mobile and desktop usage; seldom more than a 1% difference. Meaning, where Speculation Rules are implemented, they are likely done so similarly for all device types.
 
 ## Conclusion
-TODO (Unassigned)
+
+Our analysis of this year’s data paints a picture of a web that is becoming more responsive, yet remains a bit hard to optimize. We see clear progress in how the web feels to use: mobile interactivity has improved significantly, with the performance gap between phones and desktop computers finally starting to narrow. This tells us that perhaps the industry's focus on new metrics like Interaction to Next Paint (INP) is working, and developers are trying to prioritize the interactions that matter most to users.
+
+However, we also observe a "performance divide" in how different segments of the web adopt new standards. For example, we saw that the most popular sites lead the way in improving interactivity (INP), likely through manual optimization of complex JavaScript. In contrast, newer standards like Speculation Rules are seeing their highest adoption not at the top, but in the "long tail" of the web, driven by platform-level integrations in popular CMSs like WordPress. This suggests that the future of performance may rely less on individual manual effort and more on smart defaults baked into the tools that build the web.
+
+Despite these advancements, the "basics" of web performance still pose a challenge. While advanced metrics improve, fundamental issues persist: nearly 40% of mobile pages still use animations that can cause stuttering (non-composited), and the majority of pages still lack the correct sizing for images or the resource hints needed to load fonts smoothly. This suggests that while frameworks are helping us manage complex JavaScript, we often miss the simpler HTML and CSS best practices that ensure visual stability.
+
+Finally, the landscape of measurement itself is maturing. With Firefox/Safari adding support for INP, we are moving toward a world where "good performance" means the same thing across all browsers. As we look ahead, the goal for developers is to look past the top-level scores and bridge the gap between potential and practice, leveraging both the manual optimizations used by top sites and the automated tools of the modern web to deliver reliable experiences for every user.
+
