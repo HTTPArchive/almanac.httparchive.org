@@ -42,11 +42,16 @@ What's new this year?
 
 ### Data Sources and Methodology
 
-This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a very large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology). TODO: Fix this link, currently 404.
+This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology).
 
 ## Core Web Vitals Summary
 
-Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful; Interaction to Next Paint (INP), which reflects how responsive the page is to user input; and Cumulative Layout Shift (CLS), which measures unexpected layout changes that occur during a page's lifetime. The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
+Core Web Vitals are Google's key performance metrics that measure how fast, responsive, and visually stable a webpage feels to real users. These include:
+* Largest Contentful Paint (LCP), which indicates when a page's main content becomes visible and the page first feels useful.
+* Interaction to Next Paint (INP), which reflects how responsive the page is to user input. 
+* Cumulative Layout Shift (CLS), which measures how often unexpected layout changes occur during a page's lifetime.
+
+The following sections examine how Core Web Vitals have evolved over time across mobile and desktop.
 
 {{ figure_markup(
   image="good-core-web-vitals-devices-years.png",
