@@ -5,7 +5,7 @@ description: Privacy chapter of the 2025 Web Almanac covers the adoption and imp
 hero_alt: Hero image of Web Almanac characters with cameras, phones, and microphones acting like paparazzi while another character pulls back a shower curtain to reveal a web page behind it.
 analysts: [max-ostapenko]
 max-ostapenko_bio: Max Ostapenko is a Product Lead at [Masthead Data](https://mastheadata.com/) and a core maintainer of HTTP Archive, specializing in adtech and data monetization.
-authors: [RumaisaHabib, nrllh, securient]
+authors: [RumaisaHabib, securient, nrllh]
 nrllh_bio: Nurullah Demir is a visiting postdoctoral scholar at Stanford University and the founder of the cyber security platform SecuSeek. His work focuses on internet-scale security and privacy risks.
 RumaisaHabib_bio: Rumaisa Habib is a third year PhD candidate working with the Empirical Security Research Group at Stanford University. Rumaisa's primary research interest is to build a better understanding of the web beyond the Western context leveraging large scale Internet measurements.
 securient_bio: Vinod is a Staff Security Engineer at PIP Labs with over a decade of cybersecurity experience at companies including Amazon, Zapier, and HackerOne. He specializes in penetration testing and cloud security, writes about security on Medium, and actively researches emerging threats in both traditional and Web3 environments.
