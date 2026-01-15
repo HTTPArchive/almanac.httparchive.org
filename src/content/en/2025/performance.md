@@ -11,7 +11,7 @@ translators: []
 himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft on the Bing Performance team. He specializes in real-user performance measurement and analysis, and in optimizing large, production-critical systems.
 25prathamesh_bio: Prathamesh Rasam is a web performance architect with over a decade of experience working on large-scale web and mobile systems. He is a public speaker on web performance and builds real-time web and app performance monitoring platforms at scale.
 hfhashmi_bio: Humaira is a PhD Student in Computer Science at UC Davis. Her research focuses on the intersection of network measurements, policy and privacy.
-aarontgrogg_bio: TODO
+aarontgrogg_bio: Aaron is a senior web developer, improving the user experience through improved web performance
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
 featured_quote: Performance gains are real, but uneven as top sites lead on interactivity, while long-tail adoption of new features is increasingly driven by CMS defaults.
 featured_stat_1: 97%
@@ -29,15 +29,15 @@ Web performance refers to how quickly and smoothly web pages load and also respo
 
 Measuring web performance includes a broad set of metrics that describe how pages load, render, and respond to user input in real-world conditions. It is not always possible for the web to feel instantaneous due to device, network, and execution constraints. As a result, performance is not only about speed, but also about how an experience feels while work is in progress. Providing clear feedback while content loads and keeping layouts visually stable when expected helps users understand page behavior and feel in control as they interact with a website.
 
-These considerations have influenced the development and adoption of user-centric performance metrics called Core Web Vitals. These include <a hreflang="en" href="https://web.dev/articles/lcp">Largest Contentful Paint (LCP)</a>, <a hreflang="en" href="https://web.dev/articles/inp">Interaction to Next Paint (INP)</a>, and <a hreflang="en" href="https://web.dev/articles/cls">Cumulative Layout Shift (CLS)</a>, which capture key aspects of loading performance, responsiveness, and visual stability. Over the last year, support for reporting Core Web Vitals, particularly INP, <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">has expanded</a> beyond Chrome to include other browsers, allowing user experience to be measured more consistently across browser engines.
+These considerations have influenced the development and adoption of user-centric performance metrics called Core Web Vitals. These include [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp), [Interaction to Next Paint (INP)](https://web.dev/articles/inp), and [Cumulative Layout Shift (CLS)](https://web.dev/articles/cls), which capture key aspects of loading performance, responsiveness, and visual stability. Over the last year, support for reporting Core Web Vitals, particularly INP, <a hreflang="en" href="https://www.debugbear.com/blog/firefox-safari-web-vitals">has expanded</a> beyond Chrome to include other browsers, allowing user experience to be measured more consistently across browser engines.
 
-These metrics are complemented by more traditional indicators such as <a hreflang="en" href="https://web.dev/articles/ttfb">Time to First Byte (TTFB)</a> and <a hreflang="en" href="https://web.dev/articles/fcp">First Contentful Paint (FCP)</a>, as well as measures of page resource loading behaviour. Together, this broader set of signals helps describe where performance bottlenecks tend to occur and how they relate to overall page behavior. A more comprehensive overview of modern web performance metrics is available at <a hreflang="en" href="https://web.dev/performance">web.dev</a>.
+These metrics are complemented by more traditional indicators such as [Time to First Byte (TTFB)](https://web.dev/articles/ttfb) and [First Contentful Paint (FCP)](https://web.dev/articles/fcp), as well as measures of page resource loading behaviour. Together, this broader set of signals helps describe where performance bottlenecks tend to occur and how they relate to overall page behavior. A more comprehensive overview of modern web performance metrics is available at [web.dev](https://web.dev/performance).
 
 The **Web Almanac performance** chapter examines these signals at scale across devices and network conditions to provide a data-driven view of the state of web performance. By analyzing real-world data, it highlights where the web is improving, where challenges remain, and which patterns are associated with better user experiences. This year's analysis also includes emerging performance features such as [Early Hints](https://developer.chrome.com/docs/web-platform/early-hints) and [Speculation Rules](https://developer.chrome.com/docs/web-platform/implementing-speculation-rules).
 
 ### Data Sources and Methodology
 
-This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology).
+This chapter draws on data from the <a hreflang="en" href="https://httparchive.org/faq">HTTP Archive</a> and the [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), combining lab-based measurements with real-user performance data. The HTTP Archive collects Chrome-based page load data via WebPageTest, providing detailed insight into how pages behave under controlled conditions, while CrUX reflects real-world user experiences collected from Chrome users. The primary analysis is based on measurements from July 2025 and spans millions of websites and a large volume of page loads across the web. Additional details on data collection and methodology are available in the [Web Almanac methodology documentation](../2025/methodology).
 
 ## Core Web Vitals Summary
 
@@ -82,7 +82,7 @@ On mobile, the most and least popular sites tend to perform better than those in
 - However, it improves to 42% for the next 1,000,000 sites and 48% for the next 10,000,000.
 
 This pattern may reflect differences in page complexity and performance investment across the popularity tiers.
-- Highly popular sites often treat performance as a priority and are more likely to invest in ongoing optimization, given its [close correlation](https://www.speedcurve.com/blog/site-speed-business-correlation/) to user engagement and business outcomes.
+- Highly popular sites often treat performance as a priority and are more likely to invest in ongoing optimization, given its <a hreflang="en" href="https://www.speedcurve.com/blog/site-speed-business-correlation/">close correlation</a> to user engagement and business outcomes.
 - Mid-popularity sites may combine higher complexity such as additional features and third-party scripts with less sustained focus on performance, leading to drop in results.
 - Less popular sites are often simpler, with fewer features and lighter pages, which can benefit from platform defaults and hence offer comparatively better performance.
 
@@ -102,7 +102,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 Secondary pages show higher CWV pass rates than home pages, with a 14% lead on desktop and an 11% lead on mobile. This performance gap suggests that secondary pages often benefit from having cached information, which contributes to faster page loads. Home pages are also updated more frequently and tend to include more dynamic and varied components, while secondary pages are often more templated and consistent, which may make them more stable and easier to optimize.
 
-Modern single page websites often use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">soft navigations</a> is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
+Modern single page websites often use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for [soft navigations](https://developer.chrome.com/blog/new-soft-navigations-origin-trial) is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
 
 To better interpret these patterns, the following sections break down performance across key indicators. The analysis begins with Loading Speed, followed by Interactivity and Visual Stability, and concludes with emerging features such as Early Hints and Speculation Rules.
 
@@ -114,7 +114,7 @@ The following sections focus on two key loading metrics: First Contentful Paint 
 
 ### First Contentful Paint
 
-To understand the user's first impression of a webpage's speed, we look at [First Contentful Paint (FCP)](https://web.dev/articles/fcp?hl=en). This metric captures the exact time it takes for a page to begin displaying *any* content, measured from the point the user first requested the page. A page that has a FCP score under 1.8 seconds is considered  'Good', scores between 1.8 and 3.0 seconds indicate that the page 'Needs Improvement,' and a score over 3.0 seconds is considered 'Poor' performance.
+To understand the user's first impression of a webpage's speed, we look at [First Contentful Paint (FCP)](https://web.dev/articles/fcp). This metric captures the exact time it takes for a page to begin displaying *any* content, measured from the point the user first requested the page. A page that has a FCP score under 1.8 seconds is considered  'Good', scores between 1.8 and 3.0 seconds indicate that the page 'Needs Improvement,' and a score over 3.0 seconds is considered 'Poor' performance.
 
 {{ figure_markup(
   image="fcp-performance-by-year-and-device-2025.png",
@@ -193,7 +193,7 @@ Inline images (data URIs embedded directly in HTML) remain rare at around 0.5% o
 
 #### LCP Image Formats
 
-Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance.
+Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](../2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance.
 
 {{ figure_markup(
   image="lcp-image-formats-2025.png",
@@ -243,7 +243,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Adoption of `fetchpriority="high"` has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them.
+Adoption of `fetchpriority="high"` has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](../2024/performance#lcp-prioritization) in 2024. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them.
 
 The 0.3% of pages using `fetchpriority="low"` on their LCP images is likely unintentional, since identifying which image will become the LCP element at development time can be tricky for developers (varies by viewport and content).
 
@@ -340,7 +340,7 @@ The median TBT on mobile increased to 1,916 milliseconds in 2025—up 58% from 1
 This presents an apparent contradiction: while field-based INP scores improved, lab-based TBT worsened significantly. Several factors could be behind this divergence.
 - Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices.
 - Some sites may be optimizing the interactions that dominate INP while still executing substantial background work that shows up in TBT.
-- The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium's [INP metric changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md).
+- The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium's <a hreflang="en" href="https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md">INP metric changelog</a>.
 
 The widening gap between desktop (92ms median) and mobile (1,916ms median) reinforces the persistent performance inequality between device classes, suggesting that despite INP improvements, the fundamental challenge of main thread blocking has intensified.
 
@@ -416,11 +416,11 @@ From 2023 to 2025, the share of sites with Good CLS increases steadily across bo
 [The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser's back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page's state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, BFCache can also help avoid layout shifts that might otherwise occur during re-navigation.
 
 However, all pages are <a hreflang="en" href="https://html.spec.whatwg.org/multipage/nav-history-apis.html#nrr-details-reason">not eligible</a> for BFCache. Eligibility depends on a set of page lifecycle requirements, and pages that violate these constraints fall back to full reloads.
-While BFCache behavior is ultimately handled by the browser, developers can <a hreflang="en" href="https://developer.chrome.com/docs/devtools/application/back-forward-cache">evaluate page eligibility</a> by using Chrome DevTools.
+While BFCache behavior is ultimately handled by the browser, developers can [evaluate page eligibility](https://developer.chrome.com/docs/devtools/application/back-forward-cache) by using Chrome DevTools.
 
 Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
 
-Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. [Compared to 2024](../2024/performance#backforward-cache-bfcache), unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the graph.
+Browsers [recommend avoiding unload](https://developer.chrome.com/docs/web-platform/deprecating-unload) in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. [Compared to 2024](../2024/performance#backforward-cache-bfcache), unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the graph.
 
 {{ figure_markup(
   image="unload-handler-usage.png",
@@ -447,7 +447,7 @@ Another common reason for websites to fall in the bfcache ineligibility category
 
 23.4% of the sites now use `Cache-Control: no-store`, up from 21% [in 2024](../2024/performance#backforward-cache-bfcache). This increase may reflect the growing prevalence of authenticated and personalized experiences, stricter security or compliance requirements, and evolving browser behavior that has reduced the performance impact of `Cache-Control: no-store`, particularly with respect to BFCache eligibility.
 
-Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome may allow BFCache</a> for some `no-store` pages when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
+Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, [Chrome may allow BFCache](https://developer.chrome.com/docs/web-platform/bfcache-ccns) for some `no-store` pages when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
 
 ### CLS Best Practices
 
@@ -556,13 +556,13 @@ Despite gradual improvements, unsized images remain common and font-loading patt
 
 ### Overview
 
-[Early Hints](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/103) provide an early signal to the browser about the resources it will need to load for the requested page.
+[Early Hints](https://developer.mozilla.org/docs/Web/HTTP/Reference/Status/103) provide an early signal to the browser about the resources it will need to load for the requested page.
 
 Early Hints are sent from the server to the browser while the requested page is still being prepared. In this way, browsers can start taking action to optimistically preconnect to other domains or preload an asset before the requested page has been returned to it.
 
 This allows Early Hints to have an absolute impact on the loading performance of the currently requested pages. Consider if, rather than having to wait for the HTML to return to the browser, and the parser to find the link (or even preload link) for the main CSS file and/or LCP asset, it could begin fetching those assets before the HTML was even returned to the browser. This could allow for an FCP that is nearly perfectly rendered, in a single paint.
 
-Since Early Hints can also contain crossorigin attribute and CSP header information, it is recommended that they only be used over HTTP/2 or higher for [for security reasons](https://www.rfc-editor.org/rfc/rfc8297#section-3).
+Since Early Hints can also contain crossorigin attribute and CSP header information, it is recommended that they only be used over HTTP/2 or higher for <a hreflang="en" href="https://www.rfc-editor.org/rfc/rfc8297#section-3">for security reasons</a>.
 
 ### Usage
 
@@ -600,13 +600,13 @@ Unlike most web performance features, Early Hints relies not only on browsers, b
 
 With regards to servers, Early Hints are fully supported for H2O and NGINX, and for Apache if you are using mod_http2, and for Node as of 18.11.
 
-Also note that Early Hints are available via [Fastly since 2020](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code), [Cloudflare since 2021](https://blog.cloudflare.com/early-hints/), and [Akamai since 2023](https://www.akamai.com/blog/performance/akamai-103-early-hints-prototype-the-results-are-in).
+Also note that Early Hints are available via [Fastly since 2020](https://www.fastly.com/blog/beyond-server-push-experimenting-with-the-103-early-hints-status-code), <a hreflang="en" href="https://blog.cloudflare.com/early-hints/">Cloudflare since 2021</a>, and <a hreflang="en" href="https://www.akamai.com/blog/performance/akamai-103-early-hints-prototype-the-results-are-in">Akamai since 2023</a>.
 
 ## Speculation Rules
 
 ### Overview
 
-[Speculation Rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently implemented primarily in Chromium-based browsers) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
+[Speculation Rules](https://developer.mozilla.org/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently implemented primarily in Chromium-based browsers) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
 
 While Speculation Rules do not help the current page's performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
 
@@ -628,7 +628,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user's exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
 
-Conversely, Speculation Rules now come baked into [WordPress](https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/), which powers a large share of the Internet, which may help explain higher adoption in the long tail.
+Conversely, Speculation Rules now come baked into <a hreflang="en" href="https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/">WordPress</a>, which powers a large share of the Internet, which may help explain higher adoption in the long tail.
 
 Also notable is the parity between mobile and desktop usage; seldom more than a 1% difference. Meaning, where Speculation Rules are implemented, they are likely done so similarly for all device types.
 
