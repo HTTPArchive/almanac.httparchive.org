@@ -140,7 +140,7 @@ Our analysis shows that `doubleclick.net` is the most common third-party cookie 
 The following figure shows the most common first-party cookies. While these cookies are set in a first-party context, their names provide evidence that they are primarily used for tracking purposes. The `_ga` cookie is set on 46% of webpages, and `_gid` appears on 18%, both used by Google Analytics, followed by `gcl_au` on 16% of webpages. While the exact purpose of these cookies was not tested, Google [publishes](https://business.safety.google/adscookies/) their intended functions.
 Another popular first-party cookie is `_fbp`, used by Meta on 14% of webpages. Meta <a hreflang="en" href="https://www.facebook.com/business/help/471978536642445?id=1205376682832142">provides</a> advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
 
-The usage of cookies on the web remains largely for tracking purposes. Among the functional exceptions, `PHPSESSID` stores a unique session ID for PHP applications on 12% of pages, while XSRF-TOKEN handles security against cross-site request forgery and is found on 6% of webpages.
+The usage of cookies on the web remains largely for tracking purposes. Among the functional exceptions, `PHPSESSID` stores a unique session ID for PHP applications on 12% of pages, while `XSRF-TOKEN` handles security against cross-site request forgery and is found on 6% of webpages.
 
 {{ figure_markup(
   image="most-common-first-party-cookie-names.png",
@@ -164,10 +164,6 @@ Browser fingerprinting is a method by which websites can identify a user based o
 
 <a hreflang="en" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714548">Prior work</a> has shown browser fingerprinting to be highly prevalent in online tracking. Its attractiveness can be attributed to the fact that it is difficult to block, and claims to be effective even if the user is using an Incognito browser. In this report, we identify the most common technologies used to do browser fingerprinting.
 
-Of note, the library <a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a> has remained the most popular tool to conduct browser fingerprinting, far surpassing the others. FingerprintJS is used on 0.59% of mobile accessed websites, compared to <a hreflang="en" href="https://github.com/jackspirou/clientjs">ClientJS</a> (the next most popular technology) which is present on 0.04%.
-
-The popularity of FingerprintJS can likely be attributed to its thriving open source community, which appears to be more active than that of ClientJS.
-
 {{ figure_markup(
   image="top-fingerprinting-technologies.png",
   caption="Top fingerprinting technologies",
@@ -177,6 +173,10 @@ The popularity of FingerprintJS can likely be attributed to its thriving open so
   sql_file="fingerprinting_top.sql"
   )
 }}
+
+Of note, the library <a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a> has remained the most popular tool to conduct browser fingerprinting, far surpassing the others. FingerprintJS is used on 0.59% of mobile accessed websites, compared to <a hreflang="en" href="https://github.com/jackspirou/clientjs">ClientJS</a> (the next most popular technology) which is present on 0.04%.
+
+The popularity of FingerprintJS can likely be attributed to its thriving open source community, which appears to be more active than that of ClientJS.
 
 ## Evading tracking protections
 
@@ -346,11 +346,11 @@ Germany (0.042%) and France (0.030%) lead TCFv2 publisher adoption among EU memb
 
 The most common USP string is 1YNY at 1.296%, indicating that notice was given, the user did not opt out, and the site is covered under the Limited Service Provider Agreement. The second most common value is 1--- at 1.073%, a placeholder string that provides no meaningful signal, suggesting many implementations are incomplete or default. We observed that sites showing `1YYN` have configured their CMP to default new visitors to an opted-out state, a stricter-than-required privacy posture. The low prevalence (0.078%) indicates most sites follow CCPA's standard opt-out model, where consent is assumed until explicitly revoked.
 
-### `DoNotTrack`
+### Do Not Track
 
 {{ figure_markup(
   image="donottrack-usage.png",
-  caption="`DoNotTrack` usage",
+  caption="Do Not Track usage",
   description="Bar chart showing Do Not Track (DNT) signal detection by site popularity. Detection peaks at 44% for the top 5,000 sites and gradually declines as site popularity decreases, reaching 17% for the top 50 million sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRC5wrzy5NEsWNHn9w38RLsMURRScnP4jgjO1mDiVhsfFCY55tujlTUZhUaEWzmPtJza0QA7w8S4uK5/pubchart?oid=356049506&format=interactive",
   sheets_gid="1362349490",
