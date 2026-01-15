@@ -9,3 +9,4 @@ templates/sitemap.xml
 static/html/
 static/js/web-vitals.js
 .coverage
+eng.traineddata

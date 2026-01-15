@@ -53,5 +53,5 @@ FROM aggregated,
   ANY_VALUE(number_of_websites) AS websites_count
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME pct_mobile AS mobile, pct_desktop AS desktop
+|> RENAME pct_mobile AS Mobile, pct_desktop AS Desktop
 |> ORDER BY websites_count_desktop + websites_count_mobile DESC

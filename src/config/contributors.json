@@ -3264,6 +3264,10 @@
         "analysts",
         "developers",
         "authors"
+      ],
+      "2025": [
+        "analysts",
+        "editors"
       ]
     },
     "website": "https://maxostapenko.com"
@@ -3807,6 +3811,7 @@
       "2025": [
         "committee",
         "leads",
+        "authors",
         "reviewers"
       ]
     },
@@ -5204,6 +5209,7 @@
     "name": "Vinod Tiwari",
     "teams": {
       "2025": [
+        "authors",
         "reviewers"
       ]
     },
@@ -5471,5 +5477,18 @@
       ]
     },
     "twitter": "_cybai"
+  },
+  "RumaisaHabib": {
+    "avatar_url": "66083065",
+    "github": "RumaisaHabib",
+    "name": "Rumaisa Habib",
+    "teams": {
+      "2025": [
+        "authors"
+      ]
+    },
+    "website": "https://rumaisahabib.com/",
+    "linkedin": "rumaisahabib"
   }
+
 }

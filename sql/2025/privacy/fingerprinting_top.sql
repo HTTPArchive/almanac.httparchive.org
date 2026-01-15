@@ -27,5 +27,5 @@ GROUP BY client, technology.technology
   ANY_VALUE(websites_pct) AS websites_pct
   FOR client IN ('desktop', 'mobile')
 )
-|> RENAME websites_pct_mobile AS mobile, websites_pct_desktop AS desktop
+|> RENAME websites_pct_mobile AS Mobile, websites_pct_desktop AS Desktop
 |> ORDER BY websites_count_mobile + websites_count_desktop DESC
