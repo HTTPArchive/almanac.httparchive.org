@@ -10,7 +10,7 @@ nrllh_bio: Nurullah Demir is a visiting postdoctoral scholar at Stanford Univers
 RumaisaHabib_bio: Rumaisa Habib is a third year PhD candidate working with the Empirical Security Research Group at Stanford University. Rumaisa's primary research interest is to build a better understanding of the web beyond the Western context leveraging large scale Internet measurements.
 securient_bio: Vinod is a Staff Security Engineer at PIP Labs with over a decade of cybersecurity experience at companies including Amazon, Zapier, and HackerOne. He specializes in penetration testing and cloud security, writes about security on Medium, and actively researches emerging threats in both traditional and Web3 environments.
 reviewers: [JannisBush]
-JannisBush_bio: TBD
+JannisBush_bio: Jannis Rautenstrauch is a PhD candidate at [CISPA](https://cispa.de/en). In his research he performs internet measurements to evaluate the security and privacy landscape of the Web.
 editors: [max-ostapenko]
 translators: []
 results: https://docs.google.com/spreadsheets/d/1Svyw40Th7VbigX6lpR1lb1WXwTUVKZWrK7O2YELrml4/edit
