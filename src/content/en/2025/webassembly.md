@@ -250,7 +250,7 @@ The initial release of WebAssembly was considered an Minimal Viable Product (MVP
 
 SIMD is a new feature and isn't yet available in all browsers with WebAssembly support. In the year 2021, We had found SIMD extension usage in 20 Wasm modules on desktop and 21 Wasm modules on mobile clients, This feature usage is now increased with 2265 Wasm modules on desktop and 2,470 on mobile clients.
 
-Other exciting features include <a hrefleng="en">Sign-extension-ops</a> and <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-float-to-int-conversions">Non-Trapping float to int</a>.
+Other exciting features include <a hrefleng="en" href="https://github.com/WebAssembly/sign-extension-ops/tree/master">Sign-extension-ops</a> and <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-float-to-int-conversions">Non-Trapping float to int</a>.
 
 With respect to the total extension usage in year 2021, It is observed that total extension usage in 2025 drastically ~61 times more on desktop clients and ~80 times more on mobile based clients. To make the usage of very complex tasks, the WebAssembly, We have marked the Bulk Memory stats are increased  to 8936 times higher on desktop and 25,512 times higher on mobile clients with respect to year 2021 stats.
 
