@@ -19,6 +19,7 @@ featured_stat_2: 98.6%
 featured_stat_label_2: CDN requests using TLS 1.3 for enhanced security
 featured_stat_3: 97.4%
 featured_stat_label_3: Automattic's Brotli compression adoption
+doi: 10.5281/zenodo.18259078
 ---
 
 ## Introduction

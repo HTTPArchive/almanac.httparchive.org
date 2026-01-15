@@ -18,6 +18,7 @@ featured_stat_2: 16
 featured_stat_label_2: The median number of third-party domains present on a page
 featured_stat_3: 18%
 featured_stat_label_3: Percentage of websites that use TCF Standard
+doi: 10.5281/zenodo.18246420
 ---
 
 ## Introduction

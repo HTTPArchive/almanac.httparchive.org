@@ -19,6 +19,7 @@ featured_stat_2: 92%
 featured_stat_label_2: HTTPS adoption reached ~92%. A stable but important step upward from ~89%.
 featured_stat_3: 50%
 featured_stat_label_3: of all pages contain structured data
+doi: 10.5281/zenodo.18246492
 ---
 
 ## Introduction

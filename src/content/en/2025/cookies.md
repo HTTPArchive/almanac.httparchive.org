@@ -17,6 +17,7 @@ featured_stat_2: 11%
 featured_stat_label_2: First-party desktop cookies having `SameSite=None`
 featured_stat_3: 10%
 featured_stat_label_3: Third-party cookies that are partitioned (CHIPS)
+doi: 10.5281/zenodo.18246755
 ---
 
 ## Introduction
