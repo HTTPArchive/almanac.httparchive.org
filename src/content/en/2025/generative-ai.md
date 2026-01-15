@@ -19,6 +19,7 @@ featured_stat_2: 340%
 featured_stat_label_2: Increase in WebLLM npm downloads
 featured_stat_3: 4.5%
 featured_stat_label_3: Websites defining `robots.txt` rules for OpenAI's GPTBot
+doi: 10.5281/zenodo.18246438
 ---
 
 ## Introduction

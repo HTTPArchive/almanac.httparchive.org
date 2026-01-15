@@ -18,6 +18,7 @@ featured_stat_2: 67%
 featured_stat_label_2: Sites removing default focus outlines.
 featured_stat_3: 2%
 featured_stat_label_3: Sites using accessibility overlays.
+doi: 10.5281/zenodo.18246524
 ---
 
 ## Introduction
