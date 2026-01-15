@@ -40,7 +40,7 @@ This chapter draws on data from the [HTTP Archive](https://httparchive.org/faq) 
 
 ## Core Web Vitals Summary
 
-Core Web Vitals are Google’s main metrics for understanding how a webpage feels to real users. A page is considered good when:
+Core Web Vitals are Google's main metrics for understanding how a webpage feels to real users. A page is considered good when:
 
 - Largest Contentful Paint (LCP): the main content appears quickly, so the page feels useful within 2.5 seconds.
 - Interaction to Next Paint (INP): the page responds to clicks or taps almost immediately, within 200 milliseconds.
@@ -192,6 +192,8 @@ Inline images (data URIs embedded directly in HTML) remain rare at around 0.5% o
 
 #### LCP Image Formats
 
+Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance. 
+
 {{ figure_markup(
   image="lcp-image-formats-2025.png",
   caption="Percentage of pages that use a given image file format for their LCP images.",
@@ -202,15 +204,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance. 
-
-Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). There are some encouraging signs though– JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly.
+Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). There are some encouraging signs though, such as JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly.
 
 This slow adoption may reflect the cost of migrating existing image pipelines and content libraries, even as modern formats have broad support.
 
 #### Cross Hosted LCP Images
 
-The origin of an LCP image affects how quickly the browser can begin downloading it, impacting the resource load delay phase. When an image is hosted on the same domain as the page, the browser can reuse the existing connection. Cross-origin images may incur additional connection setup (DNS/TCP/TLS), especially when the origin isn’t already connected, increasing the time before the download can start.
+The origin of an LCP image affects how quickly the browser can begin downloading it, impacting the resource load delay phase. When an image is hosted on the same domain as the page, the browser can reuse the existing connection. Cross-origin images may incur additional connection setup (DNS/TCP/TLS), especially when the origin isn't already connected, increasing the time before the download can start.
 
 {{ figure_markup(
   image="cross-hosted-lcp-images-2025.png",
@@ -226,7 +226,7 @@ Our data shows that  51% of desktop pages and 44% of mobile pages serve their LC
 
 #### LCP Resource Prioritization
 
-Since resource load delay phase often constitutes a large portion of LCP time, browsers provide tools to help accelerate critical resources. The fetchpriority="high" attribute tells the browser to prioritize a resource higher than it normally would—useful since images are typically not considered high priority even when they're the LCP element. Meanwhile, \<link rel="preload"\> instructs the browser to fetch a resource before it would naturally discover it in the HTML.
+Since resource load delay phase often constitutes a large portion of LCP time, browsers provide tools to help accelerate critical resources. The `fetchpriority="high"` attribute tells the browser to prioritize a resource higher than it normally would—useful since images are typically not considered high priority even when they're the LCP element. Meanwhile, `<link rel="preload">` instructs the browser to fetch a resource before it would naturally discover it in the HTML.
 
 {{ figure_markup(
   image="adoption-of-lcp-prior-2025.png",
@@ -238,13 +238,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Adoption of fetchpriority="high" has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024\. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them. 
+Adoption of `fetchpriority="high"` has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them. 
 
-The 0.3% of pages using fetchpriority="low" on their LCP images is likely unintentional, since identifying which image will become the LCP element at development time can be tricky for developers (varies by viewport and content).
+The 0.3% of pages using `fetchpriority="low"` on their LCP images is likely unintentional, since identifying which image will become the LCP element at development time can be tricky for developers (varies by viewport and content).
 
 #### LCP lazy loading
 
-Lazy loading is a technique that defers loading offscreen images until they're needed, helping reduce initial page weight and prioritize critical resources. It's a valuable optimization—except when applied to the LCP image. Since lazy loading waits until an image nears the viewport before fetching it, using it on the LCP element delays the very content users are waiting to see.
+Lazy loading for images means delaying the loading of images until they are needed for eg. loading below the fold images only when they are close to entering the user's viewport, instead of loading all images at page load. This helps prioritize critical above-the-fold content. Lazy loading is generally a useful optimization, but applying it to the LCP image can be harmful because it delays the main content users are waiting to see.
 
 {{ figure_markup(
   caption="Percentage of desktop and mobile pages that lazy load the LCP image.",
@@ -255,7 +255,7 @@ Lazy loading is a technique that defers loading offscreen images until they're n
 )
 }}
 
-Overall, about 16% of pages lazy load their LCP image on both desktop and mobile—a figure that has held steady since 2024. However, the composition has shifted: native loading="lazy" usage has increased slightly (from 9.5% to 10.4% on mobile, 10.2% to 11.5% on desktop), while custom approaches like hiding sources behind data-src attributes have decreased (from 6.7% to 5.9% on mobile). Native `loading="lazy"` accounts for a larger share of LCP lazy-loading than custom approaches, indicating a shift toward standardized browser features.
+Overall, about 16% of pages lazy-load their LCP image on both desktop and mobile, a figure that has held steady since 2024. However, the composition has shifted: native `loading="lazy"` usage has increased slightly (from 9.5% to 10.4% on mobile, 10.2% to 11.5% on desktop), while custom approaches like hiding sources behind `data-src` attributes have decreased (from 6.7% to 5.9% on mobile). Native `loading="lazy"` accounts for a larger share of LCP lazy-loading than custom approaches, indicating a shift toward standardized browser features.
 
 ### Loading Speed Conclusion
 
@@ -334,7 +334,7 @@ The median TBT on mobile increased to 1,916 milliseconds in 2025—up 58% from 1
 This presents an apparent contradiction: while field-based INP scores improved, lab-based TBT worsened significantly. Several factors could be behind this divergence.
 - Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices.
 - Some sites may be optimizing the interactions that dominate INP while still executing substantial background work that shows up in TBT.
-- The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium’s [INP metric changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md).
+- The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium's [INP metric changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md).
   
 The widening gap between desktop (92ms median) and mobile (1,916ms median) reinforces the persistent performance inequality between device classes, suggesting that despite INP improvements, the fundamental challenge of main thread blocking has intensified.
 
@@ -544,7 +544,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 Visual stability across the web has advanced significantly over the years, particularly on mobile devices. Most pages now deliver stable experiences with minimal unexpected movement, reflecting improved adoption of best practices. However, with around 20-30% of pages still not achieving Good CLS, especially on desktop, there remains room for continued refinement and optimization.
 
-Despite gradual improvements, unsized images remain common and font-loading patterns still create opportunities for layout shifts, suggesting many sites haven’t fully implemented known CLS mitigations. Adopting simple [best practices](https://web.dev/articles/optimize-cls) like explicit image sizing, preloading critical fonts, and using composited animations, pages can help improve visual stability.
+Despite gradual improvements, unsized images remain common and font-loading patterns still create opportunities for layout shifts, suggesting many sites haven't fully implemented known CLS mitigations. Adopting simple [best practices](https://web.dev/articles/optimize-cls) like explicit image sizing, preloading critical fonts, and using composited animations, pages can help improve visual stability.
 
 ## Early Hints
 
@@ -602,7 +602,7 @@ Also note that Early Hints are available via [Fastly since 2020](https://www.fas
 
 [Speculation Rules](https://developer.mozilla.org/en-US/docs/Web/API/Speculation_Rules_API) are an experimental browser API (currently implemented primarily in Chromium-based browsers) for optimistically prefetching or prerendering complete pages, with the hope that the user will navigate to one of the pages after viewing the current page. These actions happen in the background of the page the user is currently viewing.
 
-While Speculation Rules do not help the current page’s performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
+While Speculation Rules do not help the current page's performance, they can greatly improve the loading performance for those pages that have been optimistically prefetched or preprendered, often to the point of almost an instantaneous page load.
 
 The intent is for this API to replace <link rel="prefetch"> and <link rel="prerender"> with more advanced configuration options. Again, the Speculation Rules API is for full pages only; for individual assets, you would still need to use <link rel="prefetch">.
 
@@ -620,7 +620,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user’s exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
+This could be related to the complexities of configuring Speculation Rules: a site should be careful when prefetching or prerendering pages, since the user's exact intent can never be known, and anything that is fetched and not used is wasteful. So, for a larger site, such as an ecommerce site, and especially a large site with numerous categories and perhaps menu options to jump directly to, Speculation Rules could be difficult to configure properly. They could also be tricky to implement into a legacy or bespoke CMS.
 
 Conversely, Speculation Rules now come baked into [WordPress](https://make.wordpress.org/core/2025/03/06/speculative-loading-in-6-8/), which powers a large share of the Internet, which may help explain higher adoption in the long tail.
 
@@ -628,7 +628,7 @@ Also notable is the parity between mobile and desktop usage; seldom more than a 
 
 ## Conclusion
 
-Our analysis of this year’s data paints a picture of a web that is becoming more responsive, yet remains complex to optimize. We see clear progress in how the web feels to use: mobile interactivity has improved significantly, with the performance gap between phones and desktop computers finally starting to narrow. This tells us that perhaps the industry's focus on new metrics like Interaction to Next Paint (INP) is working, and developers are trying to prioritize the interactions that matter most to users.
+Our analysis of this year's data paints a picture of a web that is becoming more responsive, yet remains complex to optimize. We see clear progress in how the web feels to use: mobile interactivity has improved significantly, with the performance gap between phones and desktop computers finally starting to narrow. This tells us that perhaps the industry's focus on new metrics like Interaction to Next Paint (INP) is working, and developers are trying to prioritize the interactions that matter most to users.
 
 However, we also observe a "performance divide" in how different segments of the web adopt new standards. For example, we saw that the most popular sites lead the way in improving interactivity (INP), likely through manual optimization of complex JavaScript. In contrast, newer standards like Speculation Rules are seeing their highest adoption not at the top, but in the "long tail" of the web, driven by platform-level integrations in popular CMSs like WordPress. This suggests that the future of performance may rely less on individual manual effort and more on smart defaults baked into the tools that build the web.
 
