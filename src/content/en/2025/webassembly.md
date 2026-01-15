@@ -16,18 +16,18 @@ featured_stat_label_1: Desktop sites using WebAssembly.
 featured_stat_2: 228 MB
 featured_stat_label_2: Largest WebAssembly file detected.
 featured_stat_3: 2.05%
-featured_stat_label_3: Desktop sites in top 1,000using WebAssembly
+featured_stat_label_3: Desktop sites in top 1,000 using WebAssembly
 ---
 
 ## Introduction
 
 WebAssembly is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a major milestone with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>, marking significant growth in both browser-based and standalone environments.
 
-### The Mission
+### The mission
 
 To provide a secure-by-default foundation for running code across any infrastructure—from cloud and edge computing to blockchain and IoT devices. Supported by industry leaders like Google, Microsoft, Fastly, and Intel, Wasm is redefining software portability.
 
-### The Ecosystem at a Glance
+### The ecosystem at a glance
 
 WebAssembly is managed largely by the Bytecode Alliance and CNCF, the ecosystem consists of:
 
@@ -46,14 +46,14 @@ We follow [the same methodology from the 2021 Web Almanac](../2021/webassembly#m
 
 - **Data Acquisition & Retrieval** Our analysis relies on the almanac-wasm tool to fetch WASM binaries using parameters from the initial HTTP Archive crawl. However, retrieval depends on third-party server availability; 404/403 errors or resource updates since the initial crawl may occur. We assume the retrieved file is identical to the one present during the original recording.
 
-- **Source Language Identification** To identify source languages, we utilize the WebAssembly Binary Toolkit (`wasm2wat`) and Rust-based parsers to analyze imports, exports, and custom sections for compiler metadata and language fingerprints.
+- **Source Language Identification** To identify source languages, we utilize the <a hreflang="en" href="https://github.com/WebAssembly/wabt">WebAssembly Binary Toolkit (`wasm2wat`)</a> (see [the also MDN guide](https://developer.mozilla.org/docs/WebAssembly/Guides/Text_format_to_Wasm)) and Rust-based parsers to analyze imports, exports, and custom sections for compiler metadata and language fingerprints.
 
   - **Limitations**: This is not a definitive approach. "Stripped" binaries (using tools like *wasm-strip*) or obfuscated code remove the debug info and metadata required for identification.
   - **Example**: Compilers like TinyGo generate unique structures and WASI imports that often diverge from standard *go_exec.js* patterns, resulting in these binaries being classified as "Unknown".
 
-### Feature Detection Constraints
+### Feature detection constraints
 
-- **No Runtime Check:** WebAssembly lacks a built-in instruction for modules to detect host features from within the sandbox; detection is handled by the host environment (e.g., JavaScript or Wasmtime).
+- **No Runtime Check:** WebAssembly lacks a built-in instruction for modules to detect host features from within the sandbox; detection is handled by the host environment (for exmaple, JavaScript or Wasmtime).
 - **Compile-time Dependency:** Advanced features like SIMD or Threads are enabled via compiler flags. If the host environment does not support these specific features at instantiation, the binary will fail to load.
 
 ## WebAssembly usage
@@ -210,7 +210,7 @@ Each WebAssembly has import and or export components, Most WebAssembly toolchain
 
 If WASM has not used obfuscation and or other techniques that are stripped down while building deliverable then we can use the rust libraries and WebAssembly Binary Toolkit (WABT) to understand the source programming language.
 
-We enhanced the wasm-stats project and created tool almanac-wasm that helps to download wasm file from the 3rd party server with preferred request parameters for example user-agent, compression method etc, validates the downloaded wasm file and with rust library and WABT (wasm2wat), It  finds the author’s language and populates wasm statistics along with language.
+We enhanced the wasm-stats project and created tool <a hreflang="en" href="https://github.com/nimeshvk/almanac-wasm">`almanac-wasm`</a> that helps to download wasm file from the 3rd party server with preferred request parameters for example user-agent, compression method etc, validates the downloaded wasm file and with rust library and WABT (wasm2wat), It  finds the author’s language and populates wasm statistics along with language.
 
 For example, [wasm-bindgen](https://crates.io/crates/wasm-bindgen) is a suite of tools that helps to generate high level code Rust-compiled WebAssembly (Wasm) component and JavaScript with name as "wbindgen" so If We import the component from WebAssembly and find "wbindgen" then there is  clearly indication that component in WebAssembly was written in Rust language.
 
@@ -234,9 +234,9 @@ However 41.1% clients in desktop and 41.6% clients in mobile have language "Unkn
 
 ## WebAssembly features
 
-The initial release of WebAssembly was considered an MVP. In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the WebAssembly version 2.0, adding a number of new features. The version 3.0 shows the true vision and its potential for WebAssembly.
+The initial release of WebAssembly was considered an Minimal Viable Product (MVP). In common with other web standards, it is continually evolving under the governance of the World Wide Web Consortium (W3C). This year saw the announcement of the WebAssembly version 2.0, adding a number of new features. The version 3.0 shows the true vision and its potential for WebAssembly. You can explore the various additional features on <a hreflang="en" href="https://webassembly.org/features/">features page</a>.
 
-SIMD stands for Single Instruction, Multiple Data. SIMD instructions are a special class of instructions that exploit data parallelism in applications by simultaneously performing the same operation on multiple data elements. Compute intensive applications like audio/video codecs, image processors, are all examples of applications that take advantage of SIMD instructions to accelerate performance. Most modern architectures support some variants of SIMD instructions.
+<a hreflang="en" href="https://v8.dev/features/simd">Single Instruction, Multiple Data (SIMD)</a> instructions are a special class of instructions that exploit data parallelism in applications by simultaneously performing the same operation on multiple data elements. Compute intensive applications like audio/video codecs, image processors, are all examples of applications that take advantage of SIMD instructions to accelerate performance. Most modern architectures support some variants of SIMD instructions.
 
 {{ figure_markup(
   image="extensions-usage.png",
@@ -248,9 +248,11 @@ SIMD stands for Single Instruction, Multiple Data. SIMD instructions are a speci
   )
 }}
 
-SIMD is a new feature and isn't yet available in all browsers with WebAssembly support. In the Year 2021, We had found SIMD extension usage in 20 Wasm modules on desktop and 21 Wasm modules on mobile clients, This feature usage is now increased with 2265 Wasm modules on desktop and 2470 on mobile clients.
+SIMD is a new feature and isn't yet available in all browsers with WebAssembly support. In the year 2021, We had found SIMD extension usage in 20 Wasm modules on desktop and 21 Wasm modules on mobile clients, This feature usage is now increased with 2265 Wasm modules on desktop and 2,470 on mobile clients.
 
-With respect to the total extension usage in Year 2021, It is observed that total extension usage in 2025 drastically ~61 times more on desktop clients and ~80 times more on mobile based clients. To make the usage of very complex tasks, the WebAssembly, We have marked the Bulk Memory stats are increased  to 8936 times higher on desktop and 25,512 times higher on mobile clients with respect to Year 2021 stats.
+Other exciting features include <a hrefleng="en">Sign-extension-ops</a> and <a hreflang="en" href="https://github.com/WebAssembly/nontrapping-float-to-int-conversions">Non-Trapping float to int</a>.
+
+With respect to the total extension usage in year 2021, It is observed that total extension usage in 2025 drastically ~61 times more on desktop clients and ~80 times more on mobile based clients. To make the usage of very complex tasks, the WebAssembly, We have marked the Bulk Memory stats are increased  to 8936 times higher on desktop and 25,512 times higher on mobile clients with respect to year 2021 stats.
 
 ## Conclusions
 
