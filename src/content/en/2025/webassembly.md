@@ -8,7 +8,7 @@ reviewers: [nrllh, tunetheweb]
 analysts: [nimeshgit]
 editors: [tunetheweb]
 translators: []
-nimeshgit_bio: Nimesh is a digital transformation (automation) solutions in context with AI / ML Analytics , Ops and Business Processes.
+nimeshgit_bio: Nimesh provides digital transformation and automation solutions, with a focus on AI and ML analytics, operations, and business processes.
 results: https://docs.google.com/spreadsheets/d/16z2MNwq8FFbuNYcJJZceML6rB5VAmBXNNHZy5FZuf8g/edit
 featured_quote: WebAssembly is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format.
 featured_stat_1: 0.35%
