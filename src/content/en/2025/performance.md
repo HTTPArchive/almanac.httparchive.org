@@ -152,7 +152,7 @@ Since 2024, the share of sites achieving a "Good" TTFB increased by 1% on deskto
 
 Over the same period, the proportion of pages passing the render-blocking resources audit remained flat on desktop and increased by 1% on mobile. 
 
-Taken together, improvements in FCP between 2024 and 2025 align with these modest gains in server response times and small reductions in render-blocking work. This suggests that incremental improvements across both network delivery and client-side rendering are contributing to earlier first paint, with a more slightly more impact on mobile devices.
+Taken together, improvements in FCP between 2024 and 2025 align with these modest gains in server response times and small reductions in render-blocking work. This suggests that incremental improvements across both network delivery and client-side rendering are contributing to earlier first paint, with slightly more impact on mobile devices.
 
 ### Largest Contentful Paint
 
