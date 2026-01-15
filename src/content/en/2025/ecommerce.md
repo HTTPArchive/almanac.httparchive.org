@@ -741,7 +741,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
     <thead>
       <tr>
         <th>Platform</th>
-        <th>Sites tested</th>
+        <th>% all sites</th>
         <th>Performance (median)</th>
         <th>Accessibility (median)</th>
         <th>SEO (median)</th>
@@ -751,7 +751,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">863,433</td>
+        <td class="numeric">7.10%</td>
         <td class="numeric">61</td>
         <td class="numeric">87</td>
         <td class="numeric">92</td>
@@ -759,7 +759,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">524,617</td>
+        <td class="numeric">4.32%</td>
         <td class="numeric">71</td>
         <td class="numeric">90</td>
         <td class="numeric">92</td>
@@ -767,7 +767,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">223,365</td>
+        <td class="numeric">1.84%</td>
         <td class="numeric">65</td>
         <td class="numeric">94</td>
         <td class="numeric">92</td>
@@ -775,7 +775,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">191,039</td>
+        <td class="numeric">1.57%</td>
         <td class="numeric">88</td>
         <td class="numeric">96</td>
         <td class="numeric">100</td>
@@ -783,7 +783,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">77,374</td>
+        <td class="numeric">0.64%</td>
         <td class="numeric">59</td>
         <td class="numeric">78</td>
         <td class="numeric">92</td>
@@ -791,7 +791,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td class="numeric">56,914</td>
+        <td class="numeric">0.47%</td>
         <td class="numeric">58</td>
         <td class="numeric">75</td>
         <td class="numeric">92</td>
@@ -799,7 +799,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">50,058</td>
+        <td class="numeric">0.41%</td>
         <td class="numeric">60</td>
         <td class="numeric">78</td>
         <td class="numeric">92</td>
@@ -807,7 +807,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">27,351</td>
+        <td class="numeric">0.23%</td>
         <td class="numeric">63</td>
         <td class="numeric">79</td>
         <td class="numeric">91</td>
@@ -815,7 +815,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Cafe24</td>
-        <td class="numeric">24,052</td>
+        <td class="numeric">0.20%</td>
         <td class="numeric">39</td>
         <td class="numeric">69</td>
         <td class="numeric">85</td>
@@ -823,7 +823,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>BigCommerce</td>
-        <td class="numeric">18,465</td>
+        <td class="numeric">0.15%</td>
         <td class="numeric">72</td>
         <td class="numeric">81</td>
         <td class="numeric">92</td>
@@ -845,7 +845,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
     <thead>
       <tr>
         <th>Platform</th>
-        <th>Sites tested</th>
+        <th>% all sites</th>
         <th>Performance (median)</th>
         <th>Accessibility (median)</th>
         <th>SEO (median)</th>
@@ -855,7 +855,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td>1,084,792</td>
+        <td class="numeric">7.03%</td>
         <td class="numeric">38</td>
         <td class="numeric">87</td>
         <td class="numeric">92</td>
@@ -863,7 +863,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">618,929</td>
+        <td class="numeric">4.01%</td>
         <td class="numeric">55</td>
         <td class="numeric">91</td>
         <td class="numeric">92</td>
@@ -871,7 +871,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">270,436</td>
+        <td class="numeric">1.75%</td>
         <td class="numeric">64</td>
         <td class="numeric">95</td>
         <td class="numeric">100</td>
@@ -879,7 +879,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">241,322</td>
+        <td class="numeric">1.56%</td>
         <td class="numeric">30</td>
         <td class="numeric">94</td>
         <td class="numeric">92</td>
@@ -887,7 +887,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">91,267</td>
+        <td class="numeric">0.59%</td>
         <td class="numeric">36</td>
         <td class="numeric">79</td>
         <td class="numeric">92</td>
@@ -895,7 +895,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>1C-Bitrix</td>
-        <td class="numeric">81,598</td>
+        <td class="numeric">0.53%</td>
         <td class="numeric">35</td>
         <td class="numeric">75</td>
         <td class="numeric">92</td>
@@ -903,7 +903,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">52,885</td>
+        <td class="numeric">0.34%</td>
         <td class="numeric">34</td>
         <td class="numeric">79</td>
         <td class="numeric">92</td>
@@ -911,7 +911,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">35,238</td>
+        <td class="numeric">0.23%</td>
         <td class="numeric">43</td>
         <td class="numeric">78</td>
         <td class="numeric">91</td>
@@ -919,7 +919,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Tiendanube</td>
-        <td class="numeric">23,717</td>
+        <td class="numeric">0.15%</td>
         <td class="numeric">50</td>
         <td class="numeric">92</td>
         <td class="numeric">92</td>
@@ -927,7 +927,7 @@ Lighthouse is useful for comparisons across large sets of sites because it stand
       </tr>
       <tr>
         <td>Square Online</td>
-        <td class="numeric">21,700</td>
+        <td class="numeric">0.14%</td>
         <td class="numeric">13</td>
         <td class="numeric">85</td>
         <td class="numeric">92</td>
