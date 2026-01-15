@@ -19,6 +19,7 @@ featured_stat_2: TODO
 featured_stat_label_2: TODO
 featured_stat_3: TODO
 featured_stat_label_3: TODO
+doi: 10.5281/zenodo.18258635
 ---
 
 ## Introduction
