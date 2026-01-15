@@ -77,15 +77,12 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Performance metrics for top mobile websites show a clear distinction, however, CWV scores drop significantly for less popular sites:
+Core Web Vitals for top mobile websites show a clear distinction, however the scores drop significantly for less popular sites:
 - 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
 - The next 10,000 websites score 42%.
 - The subsequent 1 million websites score 37%.
 
-This data suggests that top-tier websites are prioritizing performance improvements, while mid-tier websites are still lagging.
-
-In contrast, Desktop performance metrics are more uniformly distributed. This disparity highlights a significant gap in the focus on mobile web app performance compared to desktop, which is likely due to an increasing concentration on native applications.
-TODO: Could this also have to do with some entities/developers still not focusing properly on mobile?
+In contrast, Desktop Core Web Vitals are more evenly distributed. This likely reflects stronger performance investment among top sites, while less popular sites rely more on default setups especially on mobile, whereas desktop performance benefits from more powerful devices and more stable conditions.
 
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",
