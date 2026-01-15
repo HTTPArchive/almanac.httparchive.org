@@ -67,7 +67,7 @@ Tracking mechanisms are categorized as stateful or stateless. Stateful methods, 
   )
 }}
 
-We observe that most trackers on webpages are related to Content Delivery Networks (CDNs) and advertising. At least one CDN-related tracker is present on 74% of webpages, followed by advertising-related trackers on 59%. Additionally, 55% of webpages include essential trackers (such as Google Tag Manager) and 52% contain analytics trackers (such as Google Analytics). This high concentration among a few key players effectively sets a baseline for web privacy, where the vast majority of user data flows through a small number of dominant platforms.
+Here, we consider all categories of WhoTracksMe. We observe that most webpages connect to domains categorized as Content Delivery Networks (CDNs) and advertising. At least one CDN-related domain is present on 74% of webpages, followed by advertising-related domains on 59%. Additionally, 55% of webpages include essential domains (such as Google Tag Manager) and 52% contain analytics domains (such as Google Analytics). This high concentration among a few key players effectively sets a baseline for web privacy, where the vast majority of user data flows through a small number of dominant platforms.
 
 {{ figure_markup(
   image="most-common-whotracksme-trackers.png",
