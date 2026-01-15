@@ -25,7 +25,7 @@ featured_stat_label_3: TODO
 
 The web is the primary interface for digital services, making it a significant source of data as billions of users interact with these systems daily. Consequently, website tracking – the practice of collecting data about visitors – has become a fundamental component of the modern web ecosystem. The motivations for this data collection vary widely, ranging from improving application performance and functionality to enabling targeted advertising and marketing analytics.
 
-However, the scale of this data collection raises significant privacy concerns, making it a widely discussed topic in [technical](https://www.w3.org/TR/tracking-compliance/) and [political spheres](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), and a major area of [ongoing research](https://pulse-of-cybersecurity.com/topics?sortBy=total-papers&sortOrder=desc&page=1&pageSize=21&search=web&topic=Web+Tracking+and+Browser+Fingerprinting&conferences=%5B%5D). While developers utilize various technologies to track users, such as HTTP cookies and browser fingerprinting, there is a corresponding rise in privacy measures. These include browser-based restrictions, regulatory compliance tools, and privacy-enhancing extensions.
+However, the scale of this data collection raises significant privacy concerns, making it a widely discussed topic in <a hreflang="en" href="https://www.w3.org/TR/tracking-compliance/">technical</a> and <a hreflang="en" href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng">political spheres</a>, and a major area of <a hreflang="en" href="https://pulse-of-cybersecurity.com/topics?sortBy=total-papers&sortOrder=desc&page=1&pageSize=21&search=web&topic=Web+Tracking+and+Browser+Fingerprinting&conferences=%5B%5D">ongoing research</a>. While developers utilize various technologies to track users, such as HTTP cookies and browser fingerprinting, there is a corresponding rise in privacy measures. These include browser-based restrictions, regulatory compliance tools, and privacy-enhancing extensions.
 
 In this chapter, we provide a technical overview of the state of web privacy. We analyze the adoption of common tracking mechanisms and examine the prevalence of measures designed to prevent tracking, offering a data-driven look at the current landscape of user data collection.
 
@@ -44,7 +44,7 @@ In this chapter, we provide a technical overview of the state of web privacy. We
   )
 }}
 
-Our analysis uses the [WhoTracks.Me](https://www.ghostery.com/whotracksme/) catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories ‘advertising’, ‘pornvertising’, ‘site_analytics’ and  ‘social_media’ as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth noting that the reported numbers represent unique domains, not the total number of HTTP requests.
+Our analysis uses the <a hreflang="en" href="https://www.ghostery.com/whotracksme/">WhoTracks.Me</a> catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories ‘advertising’, ‘pornvertising’, ‘site_analytics’ and  ‘social_media’ as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth noting that the reported numbers represent unique domains, not the total number of HTTP requests.
 
 We see at least one third-party tracker in 75% of all webpages (75%: desktop, 74%: mobile), 55% of desktop webpages contain 2 and 39% contain 3 trackers. Up to 6 trackers setup happens more often in desktop pages, while 7 and more trackers are seen more often in mobile pages.
 
@@ -104,7 +104,7 @@ Tracking can happen in different contexts – from understanding user behavior o
 
 #### Third-Party Cookies
 
-Using third-party cookies is an efficient method for tracking and targeting web users. Third parties utilize cookies for user tracking. Despite consistent criticism, this remains a common technique on the web. Although some vendors, like Google, have announced plans to [phase out third-party cookies](https://support.google.com/google-ads/answer/14762010?hl=en) (and later [reconsidered](https://privacysandbox.google.com/blog/privacy-sandbox-update)), they remain a significant technique for tracking and the majority of the third-party cookies used for tracking purposes.
+Using third-party cookies is an efficient method for tracking and targeting web users. Third parties utilize cookies for user tracking. Despite consistent criticism, this remains a common technique on the web. Although some vendors, like Google, have announced plans to [phase out third-party cookies](https://support.google.com/google-ads/answer/14762010) (and later [reconsidered](https://privacysandbox.google.com/blog/privacy-sandbox-update)), they remain a significant technique for tracking and the majority of the third-party cookies used for tracking purposes.
 
 {{ figure_markup(
   image="most-common-third-party-cookie-domains.png",
@@ -131,7 +131,7 @@ Our analysis shows that doubleclick.net is the most common third-party cookie do
 #### First-Party Cookies
 
 The following figure shows the most common first-party cookies. While these cookies are set in a first-party context, their names provide evidence that they are primarily used for tracking purposes. The \`\_ga\` cookie is set on 46% of webpages, and \`\_gid\` appears on 18%, both used by Google Analytics, followed by \`gcl\_au\` on 16% of webpages. While the exact purpose of these cookies was not tested, Google [publishes](https://business.safety.google/adscookies/) their intended functions.
-Another popular first-party cookie is \`\_fbp\`, used by Meta on 14% of webpages. Meta [provides](https://www.facebook.com/business/help/471978536642445?id=1205376682832142) advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
+Another popular first-party cookie is \`\_fbp\`, used by Meta on 14% of webpages. Meta <a hreflang="en" href="https://www.facebook.com/business/help/471978536642445?id=1205376682832142">provides</a> advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
 
 The usage of cookies on the web remains largely for tracking purposes. Among the functional exceptions, PHPSESSID stores a unique session ID for PHP applications on 12% of pages, while XSRF-TOKEN handles security against cross-site request forgery and is found on 6% of webpages.
 
@@ -145,7 +145,7 @@ The usage of cookies on the web remains largely for tracking purposes. Among the
   )
 }}
 
-The [Cookies](https://almanac.httparchive.org/en/2025/cookies) chapter further describes the details and usage trends of cookies extensively.
+The [Cookies](./cookies) chapter further describes the details and usage trends of cookies extensively.
 
 ### Stateless Tracking
 
@@ -153,11 +153,11 @@ Stateless tracking is the process by which user identifiers are generated on the
 
 #### Browser Fingerprinting
 
-Browser fingerprinting is a method by which websites can identify a user based on their specific browser information. This information can [include](https://dl.acm.org/doi/abs/10.1145/3543507.3583333) system fonts, language settings, hardware configurations, and other such seemingly innocuous datapoints that individually reveal little information, but can be put together to paint a [unique picture](https://amiunique.org/) of a specific user. They are commonly leaked through HTTP headers and JavaScript API calls.
+Browser fingerprinting is a method by which websites can identify a user based on their specific browser information. This information can <a hreflang="en" href="https://dl.acm.org/doi/abs/10.1145/3543507.3583333">include</a> system fonts, language settings, hardware configurations, and other such seemingly innocuous datapoints that individually reveal little information, but can be put together to paint a <a hreflang="en" href="https://amiunique.org/">unique picture</a> of a specific user. They are commonly leaked through HTTP headers and JavaScript API calls.
 
-[Prior work](https://dl.acm.org/doi/abs/10.1145/3696410.3714548) has shown browser fingerprinting to be highly prevalent in online tracking. Its attractiveness can be attributed to the fact that it is difficult to block, and claims to be effective even if the user is using an Incognito browser. In this report, we identify the most common technologies used to do browser fingerprinting.
+<a hreflang="en" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714548">Prior work</a> has shown browser fingerprinting to be highly prevalent in online tracking. Its attractiveness can be attributed to the fact that it is difficult to block, and claims to be effective even if the user is using an Incognito browser. In this report, we identify the most common technologies used to do browser fingerprinting.
 
-Of note, the library [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) has remained the most popular tool to conduct browser fingerprinting, far surpassing the others. FingerprintJS is used on 0.59% of mobile accessed websites, compared to [ClientJS](https://github.com/jackspirou/clientjs) (the next most popular technology) which is present on 0.04%.
+Of note, the library <a hreflang="en" href="https://github.com/fingerprintjs/fingerprintjs">FingerprintJS</a> has remained the most popular tool to conduct browser fingerprinting, far surpassing the others. FingerprintJS is used on 0.59% of mobile accessed websites, compared to <a hreflang="en" href="https://github.com/jackspirou/clientjs">ClientJS</a> (the next most popular technology) which is present on 0.04%.
 
 The popularity of FingerprintJS can likely be attributed to its thriving open source community, which appears to be more active than that of ClientJS.
 
@@ -283,7 +283,7 @@ Privacy regulations continue to shape how websites interact with users. In this 
 
 ### Consent Dialogs
 
-Privacy regulations like [GDPR](https://gdpr-info.eu/) and [CCPA](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5) require websites to obtain user consent before collecting and processing personal data. This has made cookie consent dialogs often managed by Consent Management Platforms (CMPs) a near-universal feature of the modern web. To standardize how consent is captured and communicated across the advertising ecosystem, the Interactive Advertising Bureau developed frameworks like the Transparency and Consent Framework (TCF), US Privacy String (USP), and the newer Global Privacy Platform (GPP).
+Privacy regulations like <a hreflang="en" href="https://gdpr-info.eu/">GDPR</a> and <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">CCPA</a> require websites to obtain user consent before collecting and processing personal data. This has made cookie consent dialogs often managed by Consent Management Platforms (CMPs) a near-universal feature of the modern web. To standardize how consent is captured and communicated across the advertising ecosystem, the Interactive Advertising Bureau developed frameworks like the Transparency and Consent Framework (TCF), US Privacy String (USP), and the newer Global Privacy Platform (GPP).
 
 While these frameworks aim to give users control, adoption and implementation quality vary widely. Some sites fully comply with TCFv2, while others have incomplete implementations or rely on older standards. It’s also worth noting that our crawler is US-based and under TCF, consent banners aren’t required for non-EU visitors, so actual TCF usage is likely higher than what we measure here.
 
@@ -351,13 +351,13 @@ The most common USP string is 1YNY at 1.296%, indicating that notice was given, 
   )
 }}
 
-Despite being largely abandoned as a standard, with minimum to no [legal backing](https://www.loeb.com/en/insights/publications/2013/10/california-enacts-law-requiring-do-not-track-dis__) and most advertisers ignoring it, Do Not Track signals persist across the web. Interestingly, adoption correlates strongly with site popularity. Among the top 10,000 sites, DNT detection peaks at around 43%, while the long tail of sites are more likely to maintain legacy privacy signals, even if their practical impact remains questionable.
+Despite being largely abandoned as a standard, with minimum to no <a hreflang="en" href="https://www.loeb.com/en/insights/publications/2013/10/california-enacts-law-requiring-do-not-track-dis__">legal backing</a> and most advertisers ignoring it, Do Not Track signals persist across the web. Interestingly, adoption correlates strongly with site popularity. Among the top 10,000 sites, DNT detection peaks at around 43%, while the long tail of sites are more likely to maintain legacy privacy signals, even if their practical impact remains questionable.
 
 Mobile adoption consistently edges out desktop across all ranking tiers, though the gap is narrow. The steepest drop-off occurs between the top 100,000 sites (35%) and the 500,000 tier (27%), indicating that mid-tier and smaller sites are far less likely to check for DNT. Whether these sites actually honor the signal, rather than simply detecting it, remains an open question, as DNT compliance has never been enforceable.
 
 ### Global Privacy Control
 
-Global Privacy Control (GPC) is a browser signal that communicates a user's preference to opt out of having their data sold or shared. Unlike Do Not Track, GPC has legal backing under CCPA/CPRA; websites must treat it as a valid opt-out request. Firefox, Brave, and Safari already support GPC, and Chrome is set to [implement it in 2026](https://chromestatus.com/feature/5137324344213504) following California legislation requiring browsers to offer this setting by 2027\. However, like DNT, GPC relies on websites to honor the signal voluntarily at a technical level; the browser sends the header (Sec-GPC: 1), but cannot enforce compliance. The difference is that ignoring GPC carries legal risk, which may prove more effective than DNT's purely voluntary approach.
+Global Privacy Control (GPC) is a browser signal that communicates a user's preference to opt out of having their data sold or shared. Unlike Do Not Track, GPC has legal backing under CCPA/CPRA; websites must treat it as a valid opt-out request. Firefox, Brave, and Safari already support GPC, and Chrome is set to <a hreflang="en" href="https://chromestatus.com/feature/5137324344213504">implement it in 2026</a> following California legislation requiring browsers to offer this setting by 2027\. However, like DNT, GPC relies on websites to honor the signal voluntarily at a technical level; the browser sends the header (Sec-GPC: 1), but cannot enforce compliance. The difference is that ignoring GPC carries legal risk, which may prove more effective than DNT's purely voluntary approach.
 
 ## Conclusion
 
