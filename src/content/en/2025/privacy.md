@@ -47,7 +47,7 @@ In this chapter, we provide a technical overview of the state of web privacy. We
   )
 }}
 
-Our analysis uses the [WhoTracks.Me](https://www.ghostery.com/whotracksme/) catalog of popular third-party trackers to identify the trackers present on the webpages. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth nothing that the reported numbers represent unique domains, not the total number of HTTP requests.
+Our analysis uses the [WhoTracks.Me](https://www.ghostery.com/whotracksme/) catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories 'advertising', 'pornvertising', 'site_analytics' and  'social_media' as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth nothing that the reported numbers represent unique domains, not the total number of HTTP requests.
 
 We see at least one third-party tracker in 75% of all webpages (75%: desktop, 74%: mobile), 55% of desktop webpages contain 2 and 39% contain 3 trackers. Up to 6 trackers setup happens more often in desktop pages, while 7 and more trackers are seen more often in mobile pages.
 
