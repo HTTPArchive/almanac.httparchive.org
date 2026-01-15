@@ -11,9 +11,9 @@ translators: []
 results: https://docs.google.com/spreadsheets/d/1tbbH4q4wzj4bpTj8ctRJ_8-NyS5KPBBcNInkemfxcR8
 AmandeepSingh_bio: Amandeep Singh has been developing for the web since 2009 and writes about front end development, UI/UX, Shopify, BigCommerce, WordPress, and programming at <a hreflang="en" href="https://byaman.com/">byaman.com</a>. He is a writer, mentor, and speaker.
 featured_quote: While ecommerce platforms are diverse and well distributed among different providers, a few key players dominate technologies like payment systems.
-featured_stat_1: 19.1%
+featured_stat_1: 19%
 featured_stat_label_1: Mobile sites that are ecommerce
-featured_stat_2: 44.2%
+featured_stat_2: 44%
 featured_stat_label_2: Mobile ecommerce sites built with WooCommerce
 featured_stat_3: 3.5%
 featured_stat_label_3: Mobile sites offering PayPal as a payment method
