@@ -77,7 +77,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 Mobile Core Web Vitals varies more by rank than desktop. Top mobile websites show a clear distinction, however the scores drop significantly for less popular sites:
 - 51% of the 1,000 most popular mobile websites have good Core Web Vitals (CWV), surpassing the overall mobile CWV of 48%.
 - The next 10,000 websites score 42%.
-- The subsequent 1 million websites score 37%.
+- The subsequent 100,000 websites score 37%.
 
 In contrast, Desktop Core Web Vitals are more evenly distributed. This pattern may be related to differences in page complexity and technology choices across sites and devices, but this data only shows what is happening, not why.
 
@@ -568,7 +568,7 @@ While usage remains low in 2025, there has been a noticeable increase over the p
   description="The chart shows the percentage of pages using Early Hints by year on desktop and mobile in 2023, 2024 and 2025. Usage is quite low in all groups for all years, but there is a consistent increase across the years, from just over 1% to roughly 4%.",
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=888096185&format=interactive",
   sheets_gid="1512001974",
-  sql_file="TODO"
+  sql_file="early_hints_usage_trends.sql"
   )
 }}
 
