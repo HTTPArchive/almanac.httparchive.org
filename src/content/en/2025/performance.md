@@ -1,25 +1,25 @@
 ---
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Performance
-description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
+description: Performance chapter of the 2025 Web Almanac covering First Contentful Paint (FCP), Time to First Byte (TTFB), and Core Web Vitals, with deep dives into Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP).
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
 authors: [25prathamesh, himanshujariyal, hfhashmi]
 reviewers: [aarontgrogg, tunetheweb]
 analysts: [tannerhodges]
 editors: []
 translators: []
-himanshujariyal_bio: TODO
-25prathamesh_bio: TODO
+himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft, working on the Bing Performance team. His work focuses on improving web performance at scale, with experience optimizing large-scale production systems across both enterprise platforms and consumer-facing products.
+25prathamesh_bio: Prathamesh Rasam is a web performance expert and consultant who has worked across a range of consumer and enterprise web platforms. He is passionate about improving user experience and has built a large-scale Real User Measurement system that processes over 100 million pageviews per month.
 hfhashmi_bio: TODO
 aarontgrogg_bio: TODO
 results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4pkk9U1qOLgBM0/edit
 featured_quote: TODO
-featured_stat_1: TODO
-featured_stat_label_1: TODO
-featured_stat_2: TODO
-featured_stat_label_2: TODO
-featured_stat_3: TODO
-featured_stat_label_3: TODO
+featured_stat_1: 97%
+featured_stat_label_1: of the websites have good INP (under 200 milliseconds) on Desktop.
+featured_stat_2: 86.6%
+featured_stat_label_2: of mobile pages utilize at least one web font, which is often associated with visual instability and low CLS scores.
+featured_stat_3: 28%
+featured_stat_label_3: of desktop pages among the top 1,000 websites use unload handlers, down from 35% in 2024.
 ---
 
 ## Introduction
@@ -142,7 +142,7 @@ The TTFB data provides partial insight into these FCP gains between 2024 and 202
 
 ### Largest Contentful Paint
 
-To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%)—a gap that likely reflects the compounding effects of slower networks and less powerful hardware**.** Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
+To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%)—a gap that likely reflects the compounding effects of slower networks and less powerful hardware. Unlike FCP, which captures the first visual response, LCP reflects when the *primary* content has arrived—the moment users perceive the page as substantially complete.
 
 {{ figure_markup(
   image="lcp-performance-by-device-2025.png",
@@ -213,7 +213,7 @@ Since resource load delay phase often constitutes a large portion of LCP time, b
 {{ figure_markup(
   image="adoption-of-lcp-prior-2025.png",
   caption="Percentage of pages using different LCP prioritization techniques, segmented by device type.",
-  description="Bar chart showing adoption of LCP prioritization techniques on desktop and mobile. Preload usage is at 2.2% desktop and 2.1% mobile. fetchpriority="high" shows the highest adoption at 16.3% desktop and 17.3% mobile. fetchpriority="low" is rarely used at 0.3% for both device types.",
+  description='Bar chart showing adoption of LCP prioritization techniques on desktop and mobile. Preload usage is at 2.2% desktop and 2.1% mobile. fetchpriority="high" shows the highest adoption at 16.3% desktop and 17.3% mobile. fetchpriority="low" is rarely used at 0.3% for both device types.',
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1243485141&format=interactive",
   sheets_gid="1463760382",
   sql_file="lcp_async_fetchpriority.sql"
@@ -393,7 +393,7 @@ While BFCache behavior is ultimately handled by the browser, developers can <a h
 
 Pages may be excluded from BFCache due to known lifecycle behaviors, including the use of unload or beforeunload event handlers, non-restorable side effects such as active connections or unmanaged timers, and certain third-party scripts that interfere with safe page restoration. Hence, the unload event is deprecated and discouraged due to its negative impact on performance and its incompatibility with the back/forward cache (BFCache).
 
-Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. Compared to 2024, unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the graph.
+Browsers <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/deprecating-unload">recommend avoiding unload</a> in favor of alternatives such as visibilitychange or pagehide, a shift that is reflected in recent usage patterns. [Compared to 2024](../2024/performance#backforward-cache-bfcache), unload handler usage declined across all ranks and both devices in 2025. This reduction suggests that more pages are now eligible for BFCache behavior. Despite this progress, unload handlers remain more common on higher-ranked sites and on desktop, continuing to limit BFCache eligibility for a significant portion of the web, as seen below in the graph.
 
 {{ figure_markup(
   image="unload-handler-usage.png",
@@ -485,7 +485,7 @@ To effectively minimize layout shifts caused by fonts, it is crucial to load ess
 {{ figure_markup(
   image="font-resource-hint-usage.png",
   caption="Adoption of resource hints for font resources.",
-  description=”Bar chart showing the percentage of pages using font-related resource hints on desktop and mobile in 2025. `dns-prefetch` is the most commonly used hint, appearing on 24% of pages on both `desktop` and `mobile`, followed by `preconnect` at 22% on each device. `preload` is used less frequently at 15% on `desktop` and 16% on `mobile`, while `prefetch` remains rare at around 5% on both platforms.”,
+  description='Bar chart showing the percentage of pages using font-related resource hints on desktop and mobile in 2025. `dns-prefetch` is the most commonly used hint, appearing on 24% of pages on both `desktop` and `mobile`, followed by `preconnect` at 22% on each device. `preload` is used less frequently at 15% on `desktop` and 16% on `mobile`, while `prefetch` remains rare at around 5% on both platforms.',
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=111695502&format=interactive",
   sheets_gid="667157886",
   sql_file="font_resource_hint_usage.sql"
@@ -512,10 +512,10 @@ Non-composited animations remain common, appearing on 40.19% of mobile pages and
 {{ figure_markup(
   image="non-composite-animations-per-page.png",
   caption="Adoption of resource hints for font resources.",
-  description=”Bar chart showing the number of non-composited animations per page by percentile for desktop and mobile in 2025. Both desktop and mobile report zero non-composited animations through the 50th percentile. At the 75th percentile, pages have 3 animations on desktop and 2 on mobile, increasing sharply at the 90th percentile to 13 on desktop and 11 on mobile.”,
-chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1922146788&format=interactive”,
+  description='Bar chart showing the number of non-composited animations per page by percentile for desktop and mobile in 2025. Both desktop and mobile report zero non-composited animations through the 50th percentile. At the 75th percentile, pages have 3 animations on desktop and 2 on mobile, increasing sharply at the 90th percentile to 13 on desktop and 11 on mobile.',
+chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=1922146788&format=interactive",
   sheets_gid="1135625211",
-  sql_file="cls_animations.sql”
+  sql_file="cls_animations.sql"
   )
 }}
 
@@ -592,7 +592,7 @@ In the chart below, which shows the percentage of home pages that contain Specul
 {{ figure_markup(
   image="speculation-rules-usage.png",
   caption="Speculation Rules usage by website rank and device (2025)",
-  description=”The chart shows the percentage of home pages that contain Speculation Rules by website rank on desktop and mobile in 2025. Among the top 1,000 websites, Speculation Rules appear on 3% of desktop pages and 5% of mobile pages, with usage increasing slowly as rank decreases. For all websites, Speculation Rules are present on 24% of desktop pages and 35% of mobile pages, with desktop and mobile usage nearly equal at every rank.”,
+  description='The chart shows the percentage of home pages that contain Speculation Rules by website rank on desktop and mobile in 2025. Among the top 1,000 websites, Speculation Rules appear on 3% of desktop pages and 5% of mobile pages, with usage increasing slowly as rank decreases. For all websites, Speculation Rules are present on 24% of desktop pages and 35% of mobile pages, with desktop and mobile usage nearly equal at every rank.',
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=826167809&format=interactive",
   sheets_gid="1244034811",
   sql_file="speculation_rules_rank.sql"
