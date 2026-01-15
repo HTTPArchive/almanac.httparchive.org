@@ -60,9 +60,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This rise may reflect improvements in devices, networks, and browsers, alongside site optimizations.
+Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This rise may reflect improvements in devices, networks, and browsers, alongside site optimizations. Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%. 
 
-Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%.
+To better understand these trends, the following section examines how Core Web Vitals vary by page popularity, where more popular pages appear at lower rank values.
 
 {{ figure_markup(
   image="good-core-web-vitals-by-rank.png",
@@ -87,6 +87,8 @@ This pattern may reflect differences in page complexity and performance investme
 
 This U-shaped pattern is more evident on mobile, where slower devices and less stable network conditions tend to amplify the effects of page complexity and limited optimization. On desktop, more powerful hardware and more stable networks can reduce the visible impact of these differences.
 
+Performance can also vary significantly between primary and secondary page navigations. Primary navigations typically occur when a user lands on a site for the home page, requiring more resources to be fetched and executed, while secondary navigations happen as users move between pages within the same site and can benefit from previously loaded and cached resources. In the next section, we examine how Core Web Vitals differ between home and secondary page navigations.
+
 {{ figure_markup(
   image="good-core-web-vitals-home-secondary-page.png",
   caption="The percent of websites having good CWV, segmented by page type.",
@@ -99,13 +101,15 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
 
 Secondary pages show higher CWV pass rates than home pages, with a 14% lead on desktop and an 11% lead on mobile. This performance gap suggests that secondary pages often benefit from having cached information, which contributes to faster page loads. Home pages are also updated more frequently and tend to include more dynamic and varied components, while secondary pages are often more templated and consistent, which may make them more stable and easier to optimize.
 
-Modern websites increasingly use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">soft navigations</a> is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
+Modern single page websites often use JavaScript based navigations, where content changes without a full page reload. While these navigations feel like moving between pages to users, they are not always fully captured by current Web Vitals measurements. Support for <a hreflang="en" href="https://developer.chrome.com/blog/new-soft-navigations-origin-trial">soft navigations</a> is expected to improve how Core Web Vitals are captured for these in-page transitions, providing a more accurate view of real user experience beyond the initial page load.
 
-Let’s examine the different aspects of performance to better understand these trends, starting with **Loading Speed**, followed by **Interactivity** and **Visual Stability**, and concluding with **Early Hints** and **Speculation Rules**.
+To better interpret these patterns, the following sections break down performance across key indicators. The analysis begins with Loading Speed, followed by Interactivity and Visual Stability, and concludes with emerging features such as Early Hints and Speculation Rules.
 
 ## Loading Speed
 
-A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*.
+A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*. 
+
+The following sections focus on two key loading metrics: First Contentful Paint (FCP) and Largest Contentful Paint (LCP).
 
 ### First Contentful Paint
 
@@ -121,9 +125,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Based on real user data from [Chrome UX Report (CrUX)](https://developer.chrome.com/docs/crux), FCP performance has improved across both desktop and mobile devices since 2024\. Specifically, the proportion of desktop sites achieving a 'Good' FCP rose by 2%, while mobile sites saw a 4% increase.
-
-While the increase is not drastic, we can still attempt to understand what's driving these FCP improvements. We can view the metric as consisting of two distinct parts. The first is the **initial network and server response**, captured by [Time to First Byte (TTFB)](https://web.dev/articles/ttfb). This includes connection setup (such as the TCP/QUIC handshake), redirects, and server processing time, and is primarily influenced by network infrastructure and protocol efficiency. The second part is **client-side rendering**, which begins after the first byte is received. This is the time it takes for browsers to parse and render the first part of the webpage's content, and is influenced by browser engine, render-blocking resources, and user hardware quality.
+FCP performance improved across both desktop and mobile since 2024. The share of desktop sites achieving a "Good" FCP increased by 2%, while mobile sites saw a larger gain of 4%. FCP can be broadly understood as consisting of two main parts, each influenced by different aspects of the loading process.
+- The **first** is the **network and server overhead**, captured by [Time to First Byte (TTFB)](https://web.dev/articles/ttfb). This includes connection setup, redirects, and server processing time, and is largely influenced by network infrastructure and protocol efficiency. When a Service Worker serves a response from cache, the network round trip can be avoided, improving TTFB on repeat visits. However, Service Worker startup can also add latency, which [Navigation Preload](https://web.dev/blog/navigation-preload) helps mitigate by starting the network request in parallel during initialization.
+- The **second part** is **client-side rendering**, which begins after the first byte is received. This reflects the time required for the browser to parse resources and render the first visible content on the page, and is influenced by factors such as browser behavior, render-blocking resources, and user hardware capabilities.
 
 {{ figure_markup(
   image="ttfb-performance-by-year-and-device-2025.png",
