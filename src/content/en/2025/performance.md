@@ -488,7 +488,7 @@ A significant majority 86.6% of mobile pages utilize at least one web font. This
 To effectively minimize layout shifts caused by fonts, it is crucial to load essential fonts as early as possible, ideally using resource hints. If a font loads before or very near the first render, the browser can display text using the correct font immediately. This prevents the swap from a default font, which is a common cause of layout shifts. Current data indicates that this opportunity is frequently missed.
 
 {{ figure_markup(
-  image="font-resource-hint-usage.png",
+  image="fonts-resource-hint-usage.png",
   caption="Adoption of resource hints for font resources.",
   description='Bar chart showing the percentage of pages using font-related resource hints on desktop and mobile in 2025. `dns-prefetch` is the most commonly used hint, appearing on 24% of pages on both `desktop` and `mobile`, followed by `preconnect` at 22% on each device. `preload` is used less frequently at 15% on `desktop` and 16% on `mobile`, while `prefetch` remains rare at around 5% on both platforms.',
 chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtpVgQwXfG7jOrGQymbbJo20qaMXn1Pd1cyV_tU9PROEuwFbhFBeI3GHCNhvN/pubchart?oid=111695502&format=interactive",
