@@ -22,7 +22,7 @@
     "name": "Aaron T. Grogg",
     "teams": {
       "2025": [
-        "reviewers"
+        "authors"
       ]
     },
     "website": "https://aarontgrogg.com/"
@@ -4804,6 +4804,21 @@
     },
     "twitter": "itsmesudheendra"
   },
+  "stoyan": {
+    "avatar_url": "51308",
+    "bluesky": "stoyan.me",
+    "github": "stoyan",
+    "linkedin": "stoyanstefanov",
+    "mastodon": "https://indieweb.social/@stoyan",
+    "name": "Stoyan Stefanov",
+    "teams": {
+      "2025": [
+        "reviewers"
+      ]
+    },
+    "twitter": "stoyanstefanov",
+    "website": "https://www.phpied.com"
+  },
   "susie-lu": {
     "name": "Susie Lu",
     "teams": {
@@ -4870,7 +4885,8 @@
     "name": "Tanner Hodges",
     "teams": {
       "2025": [
-        "analysts"
+        "analysts",
+        "reviewers"
       ]
     },
     "website": "https://tannerhodges.com/"

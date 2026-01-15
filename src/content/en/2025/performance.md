@@ -3,10 +3,10 @@
 title: Performance
 description: Performance chapter of the 2025 Web Almanac covering Core Web Vitals, with deep dives into the Largest Contentful Paint, Cumulative Layout Shift, and Interaction to Next Paint metrics and their diagnostics.
 hero_alt: Hero image of Web Almanac characters adding images to a web page, while another Web Almanac character times them with a stopwatch.
-authors: [himanshujariyal, 25prathamesh, hfhashmi]
-reviewers: [aarontgrogg, tunetheweb]
+authors: [himanshujariyal, 25prathamesh, hfhashmi, aarontgrogg]
+reviewers: [tunetheweb, stoyan, tannerhodges]
 analysts: [tannerhodges]
-editors: []
+editors: [tunetheweb]
 translators: []
 himanshujariyal_bio: Himanshu Jariyal is a Senior Software Engineer at Microsoft on the Bing Performance team. He specializes in real-user performance measurement and analysis, and in optimizing large, production-critical systems.
 25prathamesh_bio: Prathamesh Rasam is a web performance architect with over a decade of experience working on large-scale web and mobile systems. He is a public speaker on web performance and builds real-time web and app performance monitoring platforms at scale.
@@ -61,7 +61,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This rise may reflect improvements in devices, networks, and browsers, alongside site optimizations. Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%. 
+Mobile Core Web Vitals have shown consistent year-over-year improvement, increasing from 36% in 2023 to 44% in 2024, and reaching 48% in 2025. This rise may reflect improvements in devices, networks, and browsers, alongside site optimizations. Desktop performance also saw a positive trend, moving from 48% in 2023 to 55% in 2024. However, the improvement for 2025 was marginal, increasing only to 56%.
 
 To better understand these trends, the following section examines how Core Web Vitals vary by page popularity, where more popular pages appear at lower rank values.
 
@@ -81,9 +81,9 @@ On mobile, the most and least popular sites tend to perform better than those in
 - CWV drops to 42% for the next 10,000 sites and 37% for the next 100,000.
 - However, it improves to 42% for the next 1,000,000 sites and 48% for the next 10,000,000.
 
-This pattern may reflect differences in page complexity and performance investment across the popularity tiers. 
+This pattern may reflect differences in page complexity and performance investment across the popularity tiers.
 - Highly popular sites often treat performance as a priority and are more likely to invest in ongoing optimization, given its [close correlation](https://www.speedcurve.com/blog/site-speed-business-correlation/) to user engagement and business outcomes.
-- Mid-popularity sites may combine higher complexity such as additional features and third-party scripts with less sustained focus on performance, leading to drop in results. 
+- Mid-popularity sites may combine higher complexity such as additional features and third-party scripts with less sustained focus on performance, leading to drop in results.
 - Less popular sites are often simpler, with fewer features and lighter pages, which can benefit from platform defaults and hence offer comparatively better performance.
 
 This U-shaped pattern is more evident on mobile, where slower devices and less stable network conditions tend to amplify the effects of page complexity and limited optimization. On desktop, more powerful hardware and more stable networks can reduce the visible impact of these differences.
@@ -108,7 +108,7 @@ To better interpret these patterns, the following sections break down performanc
 
 ## Loading Speed
 
-A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*. 
+A major factor influencing a user's perception of quality and reliability is the initial loading speed of a website. However, 'speed' is inherently relative and difficult to define with a single value in the context of websites. Because performance varies based on a user's device capabilities and network conditions, we cannot rely on a single 'load time' to capture the user experience. Thus, we look at multiple [user-centric metrics](https://web.dev/articles/user-centric-performance-metrics) that measure not just how fast a site loads, but how fast it *feels*.
 
 The following sections focus on two key loading metrics: First Contentful Paint (FCP) and Largest Contentful Paint (LCP).
 
@@ -139,7 +139,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   sql_file="web_vitals_by_device.sql"
   )}}
 
-Since 2024, the share of sites achieving a "Good" TTFB increased by 1% on desktop and by 2% on mobile. 
+Since 2024, the share of sites achieving a "Good" TTFB increased by 1% on desktop and by 2% on mobile.
 
 {{ figure_markup(
   image="pages-passing-render-blocking-audit-2025.png",
@@ -151,15 +151,15 @@ Since 2024, the share of sites achieving a "Good" TTFB increased by 1% on deskto
   )
 }}
 
-Over the same period, the proportion of pages passing the render-blocking resources audit remained flat on desktop and increased by 1% on mobile. 
+Over the same period, the proportion of pages passing the render-blocking resources audit remained flat on desktop and increased by 1% on mobile.
 
 Taken together, improvements in FCP between 2024 and 2025 align with these modest gains in server response times and small reductions in render-blocking work. This suggests that incremental improvements across both network delivery and client-side rendering are contributing to earlier first paint, with slightly more impact on mobile devices.
 
 ### Largest Contentful Paint
 
-To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance. 
+To understand when a page feels meaningfully loaded, we look at [Largest Contentful Paint (LCP)](https://web.dev/articles/lcp). This metric measures the time from when the user first requests the page to when the largest visible element—typically a hero image, headline, or prominent text block—finishes rendering on screen. Any page with an LCP score under 2.5 seconds is considered 'Good', scores between 2.5 and 4.0 seconds indicate that the page 'Needs Improvement,' and a score over 4.0 seconds is considered 'Poor' performance.
 
-Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%); a gap that is consistent with the combined effects of slower networks and less capable devices on mobile. 
+Currently, 74% of desktop pages achieve a 'Good' LCP score compared to 62% on mobile, with mobile also showing nearly double the rate of 'Poor' experiences (13% versus 7%); a gap that is consistent with the combined effects of slower networks and less capable devices on mobile.
 
 {{ figure_markup(
   image="lcp-performance-by-device-2025.png",
@@ -187,13 +187,13 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-The trend in LCP content types is similar to previous years (see also [2022](https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?gid=872701281#gid=872701281) and [2024](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=1760287339#gid=1760287339) data). Images continue to dominate LCP elements across both device types, with 85.3% of desktop pages and 76% of mobile pages having an image as their LCP element. Text-based LCP elements account for much of the remainder—14.4% on desktop versus 23.7% on mobile. This gap likely reflects responsive design practices where hero images are resized, replaced with smaller visuals, or removed entirely on narrower viewports, allowing headline text to become the largest visible element instead. 
+The trend in LCP content types is similar to previous years (see also [2022](https://docs.google.com/spreadsheets/d/1TPA_4xRTBB2fQZaBPZHVFvD0ikrR-4sNkfJfUEpjibs/edit?gid=872701281#gid=872701281) and [2024](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=1760287339#gid=1760287339) data). Images continue to dominate LCP elements across both device types, with 85.3% of desktop pages and 76% of mobile pages having an image as their LCP element. Text-based LCP elements account for much of the remainder—14.4% on desktop versus 23.7% on mobile. This gap likely reflects responsive design practices where hero images are resized, replaced with smaller visuals, or removed entirely on narrower viewports, allowing headline text to become the largest visible element instead.
 
 Inline images (data URIs embedded directly in HTML) remain rare at around 0.5% of pages, indicating limited and careful adoption and awareness of the trade-offs related to larger HTML payloads and caching efficiency.
 
 #### LCP Image Formats
 
-Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance. 
+Given this continued dominance of images as the LCP element, it becomes relevant to look at the image formats in use, as it directly affects the resource load duration phase of LCP. While the [2024 chapter](https://almanac.httparchive.org/en/2024/performance#lcp-sub-parts) showed this phase has less optimization potential than others, image format efficiency still contributes to overall performance.
 
 {{ figure_markup(
   image="lcp-image-formats-2025.png",
@@ -205,9 +205,9 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%). 
+Modern formats like WebP and AVIF offer better compression than legacy formats, meaning smaller file sizes and faster transfers. However, we see that legacy JPG and PNG are still highly used (JPG accounting for 57% of LCP images and PNG at 26%).
 
-There are some encouraging signs though, such as JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%. 
+There are some encouraging signs though, such as JPG usage has [decreased by 4%](https://docs.google.com/spreadsheets/d/15038wEIoqY53Y_kR8U6QWM-PBO31ZySQGi147ABTNBc/edit?gid=240287365#gid=240287365) since 2024 while WebP has increased by 4%.
 
 With PNG and other formats being the same as their 2024 percentages (aside from AVIF reaching 0.7%), it looks like web pages are moving from JPG to WebP, albeit slowly. This slow adoption may reflect the cost of migrating existing image pipelines and content libraries, even as modern formats have broad support.
 
@@ -225,7 +225,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-51% of desktop pages and 44% of mobile pages serve their LCP image from the same host as the document. Cross-hosted LCP images account for 16-18% of pages—a meaningful portion that may be paying a connection overhead cost unless mitigated with [preconnect hints](https://web.dev/learn/performance/resource-hints#preconnect). 
+51% of desktop pages and 44% of mobile pages serve their LCP image from the same host as the document. Cross-hosted LCP images account for 16-18% of pages—a meaningful portion that may be paying a connection overhead cost unless mitigated with [preconnect hints](https://web.dev/learn/performance/resource-hints#preconnect).
 
 The "other content" category (32% desktop, 40% mobile) represents pages where the LCP element isn't an image at all, likely text blocks or background elements. The higher mobile percentage for "other content" may reflect responsive design patterns where hero images are deprioritized on smaller viewports, though we do not conclusively know using this data alone.
 
@@ -243,7 +243,7 @@ chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSdGtVc2AYakM2cNaGLtp
   )
 }}
 
-Adoption of `fetchpriority="high"` has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them. 
+Adoption of `fetchpriority="high"` has continued its growth, now appearing on 17% of mobile pages with LCP images—up from [15%](https://almanac.httparchive.org/en/2024/performance#lcp-prioritization) in 2024. Preload usage remains low at 2.1-2.2%. Both techniques are relatively simple to implement, so there's opportunity for more sites to use them.
 
 The 0.3% of pages using `fetchpriority="low"` on their LCP images is likely unintentional, since identifying which image will become the LCP element at development time can be tricky for developers (varies by viewport and content).
 
@@ -341,7 +341,7 @@ This presents an apparent contradiction: while field-based INP scores improved, 
 - Real-world devices have become more powerful, masking increased code complexity that lab tests reveal using consistent emulated devices.
 - Some sites may be optimizing the interactions that dominate INP while still executing substantial background work that shows up in TBT.
 - The INP metric continues to evolve, with upcoming improvements focused on stabilizing measurements and better capturing real-world interaction behavior, as documented in Chromium's [INP metric changelog](https://chromium.googlesource.com/chromium/src/+/main/docs/speed/metrics_changelog/inp.md).
-  
+
 The widening gap between desktop (92ms median) and mobile (1,916ms median) reinforces the persistent performance inequality between device classes, suggesting that despite INP improvements, the fundamental challenge of main thread blocking has intensified.
 
 ### Interactivity conclusion
@@ -449,7 +449,7 @@ Another common reason for websites to fall in the bfcache ineligibility category
 
 Note that while historically all browsers have treated `Cache-Control: no-store` as a reason to avoid BFCache, <a hreflang="en" href="https://developer.chrome.com/docs/web-platform/bfcache-ccns">Chrome may allow BFCache</a> for some `no-store` pages when safe. Other browsers including Firefox and Safari generally still treat `Cache-Control: no-store` as a BFCache blocker.
 
-### CLS Best Practices 
+### CLS Best Practices
 
 #### Fixed Image Sizes
 
@@ -534,7 +534,7 @@ Font resource hint usage is very similar across desktop and mobile. About 24% of
   sql_file="cls_animations.sql"
 )}}
 
-Non-composited animations remain common, appearing on 40.19% of mobile pages and 43.59% of desktop pages. Their impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart below. 
+Non-composited animations remain common, appearing on 40.19% of mobile pages and 43.59% of desktop pages. Their impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart below.
 
 {{ figure_markup(
   image="non-composite-animations-per-page.png",
