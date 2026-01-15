@@ -52,7 +52,7 @@ We see at least one third-party tracker in 75% of all webpages (75%: desktop, 74
 
 Tracking mechanisms are categorized as stateful or stateless. Stateful methods, such as cookies and local storage, store identifying information on the user device. In contrast, stateless methods, like fingerprinting, infer this information at runtime from unique characteristics.
 
-#### Third-Party Tracking services
+#### Third-party tracking services
 
 {{ figure_markup(
   image="most-common-whotracksme-categories.png",
@@ -102,7 +102,7 @@ Furthermore, when categorizing these services by function, Analytics dominates t
 
 Tracking can happen in different contexts – from understanding user behavior on webpages to building complex advertising profiles. We find that Google Analytics (53%) and Facebook Pixel (16%) are the most popular technologies used to track web users. Beyond these market leaders, adoption drops significantly, with Google's Site Kit (6.41%) and AdSense (6.18%) representing the next tier of usage. Other players like Microsoft also maintain a consistent but smaller footprint, with their Advertising and Clarity tools each present on approximately 4% of websites.
 
-#### Third-Party Cookies
+#### Third-party cookies
 
 Using third-party cookies is an efficient method for tracking and targeting web users. Third parties utilize cookies for user tracking. Despite consistent criticism, this remains a common technique on the web. Although some vendors, like Google, have announced plans to [phase out third-party cookies](https://support.google.com/google-ads/answer/14762010) (and later [reconsidered](https://privacysandbox.google.com/blog/privacy-sandbox-update)), they remain a significant technique for tracking and the majority of the third-party cookies used for tracking purposes.
 
@@ -128,7 +128,7 @@ Using third-party cookies is an efficient method for tracking and targeting web 
 
 Our analysis shows that `doubleclick.net` is the most common third-party cookie domain, appearing on 20% of desktop sites, followed by `youtube.com` (9%) and `google.com` (8%). Overall, while Google entities dominate the top rankings, Microsoft's `bing.com` and `clarity.ms`, along with `linkedin.com`, represent the most significant alternative third-party cookie setters.
 
-#### First-Party Cookies
+#### First-party cookies
 
 The following figure shows the most common first-party cookies. While these cookies are set in a first-party context, their names provide evidence that they are primarily used for tracking purposes. The `_ga` cookie is set on 46% of webpages, and `_gid` appears on 18%, both used by Google Analytics, followed by `gcl_au` on 16% of webpages. While the exact purpose of these cookies was not tested, Google [publishes](https://business.safety.google/adscookies/) their intended functions.
 Another popular first-party cookie is `_fbp`, used by Meta on 14% of webpages. Meta <a hreflang="en" href="https://www.facebook.com/business/help/471978536642445?id=1205376682832142">provides</a> advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
@@ -147,11 +147,11 @@ The usage of cookies on the web remains largely for tracking purposes. Among the
 
 The [Cookies](./cookies) chapter further describes the details and usage trends of cookies extensively.
 
-### Stateless Tracking
+### Stateless tracking
 
 Stateless tracking is the process by which user identifiers are generated on the fly, rather than stored in the browser as state. These identifiers are generally created by using information that can be actively or passively gathered from the target user's device or browser. While it is tricky to correlate the sessions of a user who uses multiple devices, it is effective in that some signals are inherent to the device or website functionality and cannot be easily 'blocked'.
 
-#### Browser Fingerprinting
+#### Browser fingerprinting
 
 Browser fingerprinting is a method by which websites can identify a user based on their specific browser information. This information can <a hreflang="en" href="https://dl.acm.org/doi/abs/10.1145/3543507.3583333">include</a> system fonts, language settings, hardware configurations, and other such seemingly innocuous datapoints that individually reveal little information, but can be put together to paint a <a hreflang="en" href="https://amiunique.org/">unique picture</a> of a specific user. They are commonly leaked through HTTP headers and JavaScript API calls.
 
@@ -171,7 +171,7 @@ The popularity of FingerprintJS can likely be attributed to its thriving open so
   )
 }}
 
-## Evading Tracking Protections
+## Evading tracking protections
 
 As browsers and privacy tools have become more effective at blocking third-party trackers, the tracking industry has adapted. Techniques like CNAME cloaking and bounce tracking allow trackers to disguise themselves as first-party resources or use intermediate redirects to circumvent traditional blocking methods. These approaches exploit the trust browsers place in first-party requests, making them harder to detect and block. In this section, we focus on bounce tracking, which can be observed through redirect chains in our crawl data.
 
@@ -259,7 +259,7 @@ On the positive side, truly restrictive options like same-origin (1.26%) and no-
 
 Some sites still specify unsafe-url (0.50%), which exposes the full URL to any destination, though this behavior is Chrome-specific and other browsers have deprecated it. We also see always (0.54%), an invalid value that browsers ignore and fall back to the default strict-origin-when-cross-origin. The presence of these values suggests some sites have misconfigured or outdated referrer policies rather than intentionally choosing privacy-unfriendly settings.
 
-### Privacy-related Origins Trials
+### Privacy-related origins trials
 
 {{ figure_markup(
   image="most-common-privacy-related-origin-trials.png",
@@ -271,17 +271,17 @@ Some sites still specify unsafe-url (0.50%), which exposes the full URL to any d
   )
 }}
 
-Origin Trials let browsers test experimental features on real websites before committing to a full rollout. Sites can opt in to access new capabilities early, or opt into deprecation trials to temporarily delay changes that would break existing functionality. These trials help browser vendors gather data on how features perform in production while giving developers time to adapt, and as we'll see, most privacy-related adoption falls into the deprecation category.
+Origin trials let browsers test experimental features on real websites before committing to a full rollout. Sites can opt in to access new capabilities early, or opt into deprecation trials to temporarily delay changes that would break existing functionality. These trials help browser vendors gather data on how features perform in production while giving developers time to adapt, and as we'll see, most privacy-related adoption falls into the deprecation category.
 
-The most widely adopted trial remains DisableThirdPartyStoragePartitioning, which increased from 10.21% in 2024 to 12.33% in 2025 (now in its third iteration). This trial allows sites to temporarily opt out of storage partitioning, a privacy feature that isolates cookies and storage per site, giving developers more time to migrate legacy implementations. Similarly, FledgeBiddingAndAuctionServer, part of Google's Privacy Sandbox initiative for interest-based advertising without cross-site tracking, grew modestly from 6.62% to 6.93%.
+The most widely adopted trial remains `DisableThirdPartyStoragePartitioning`, which increased from 10.21% in 2024 to 12.33% in 2025 (now in its third iteration). This trial allows sites to temporarily opt out of storage partitioning, a privacy feature that isolates cookies and storage per site, giving developers more time to migrate legacy implementations. Similarly, `FledgeBiddingAndAuctionServer`, part of Google's Privacy Sandbox initiative for interest-based advertising without cross-site tracking, grew modestly from 6.62% to 6.93%.
 
-The biggest shift is AttributionReportingCrossAppWeb, which dropped sharply from 2.10% to just 0.04%. This suggests either the trial ended or sites moved away from testing cross-app attribution. New entries include FetchLaterAPI (0.73%), deferred requests, and federated identity. Meanwhile, InterestCohortAPI, the controversial FLoC predecessor, lingers at 0.20%, largely unchanged and likely residual.
+The biggest shift is `AttributionReportingCrossAppWeb`, which dropped sharply from 2.10% to just 0.04%. This suggests either the trial ended or sites moved away from testing cross-app attribution. New entries include `FetchLaterAPI` (0.73%), deferred requests, and federated identity. Meanwhile, `InterestCohortAPI`, the controversial FLoC predecessor, lingers at 0.20%, largely unchanged and likely residual.
 
-## Law and Policy
+## Law and policy
 
 Privacy regulations continue to shape how websites interact with users. In this section, we examine how sites are responding through consent dialogues, and whether privacy signals like Do Not Track and Global Privacy Control are gaining meaningful adoption.
 
-### Consent Dialogs
+### Consent dialogs
 
 Privacy regulations like <a hreflang="en" href="https://gdpr-info.eu/">GDPR</a> and <a hreflang="en" href="https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?division=3.&part=4.&lawCode=CIV&title=1.81.5">CCPA</a> require websites to obtain user consent before collecting and processing personal data. This has made cookie consent dialogs often managed by Consent Management Platforms (CMPs) a near-universal feature of the modern web. To standardize how consent is captured and communicated across the advertising ecosystem, the Interactive Advertising Bureau developed frameworks like the Transparency and Consent Framework (TCF), US Privacy String (USP), and the newer Global Privacy Platform (GPP).
 
@@ -339,11 +339,11 @@ Germany (0.042%) and France (0.030%) lead TCFv2 publisher adoption among EU memb
 
 The most common USP string is 1YNY at 1.296%, indicating that notice was given, the user did not opt out, and the site is covered under the Limited Service Provider Agreement. The second most common value is 1--- at 1.073%, a placeholder string that provides no meaningful signal, suggesting many implementations are incomplete or default. We observed that sites showing `1YYN` have configured their CMP to default new visitors to an opted-out state, a stricter-than-required privacy posture. The low prevalence (0.078%) indicates most sites follow CCPA's standard opt-out model, where consent is assumed until explicitly revoked.
 
-### DoNotTrack
+### `DoNotTrack`
 
 {{ figure_markup(
   image="donottrack-usage.png",
-  caption="DoNotTrack usage",
+  caption="`DoNotTrack` usage",
   description="Bar chart showing Do Not Track (DNT) signal detection by site popularity. Detection peaks at 44% for the top 5,000 sites and gradually declines as site popularity decreases, reaching 17% for the top 50 million sites.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRC5wrzy5NEsWNHn9w38RLsMURRScnP4jgjO1mDiVhsfFCY55tujlTUZhUaEWzmPtJza0QA7w8S4uK5/pubchart?oid=356049506&format=interactive",
   sheets_gid="1362349490",
