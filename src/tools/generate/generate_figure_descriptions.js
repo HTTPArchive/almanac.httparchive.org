@@ -3,14 +3,18 @@ const Tesseract = require('tesseract.js');
 const { find_markdown_files } = require('./shared');
 
 const generate_descriptions = async (chapter_match) => {
+    // Escape special regex characters in a user-supplied string so it is treated literally.
+    const escapeRegExp = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
     let re;
     if (chapter_match) {
         chapter_match = chapter_match.replace(/\.md$/, '');
         chapter_match = chapter_match.replace(/^content[/\\]*/, '');
-        chapter_match = (process.platform != 'win32')
-            ? 'content/' + '(' + chapter_match.replace(/\//g, ')/(') + ').md'
-            : 'content\\\\' + '(' + chapter_match.replace(/\//g, ')\\\\(') + ').md';
-        re = new RegExp(chapter_match);
+        const escapedChapter = escapeRegExp(chapter_match);
+        const pattern = (process.platform != 'win32')
+            ? 'content/' + '(' + escapedChapter.replace(/\//g, ')/(') + ').md'
+            : 'content\\\\' + '(' + escapedChapter.replace(/\//g, ')\\\\(') + ').md';
+        re = new RegExp(pattern);
     } else {
         console.log('Please provide an argument of the form: en/2020/performance');
         process.exit(1);
@@ -65,11 +69,12 @@ const generate_descriptions = async (chapter_match) => {
                         const result = await Tesseract.recognize(image_path, 'eng');
                         const text = result.data.text;
 
-                        // Basic cleanup: remove newlines, collapse spaces, escape quotes
+                        // Basic cleanup: remove newlines, collapse spaces, escape backslashes and quotes
                         const description = text
                             .replace(/\n/g, ' ')
                             .replace(/\s+/g, ' ')
                             .trim()
+                            .replace(/\\/g, '\\\\')
                             .replace(/"/g, '\\"');
 
                         if (description) {
