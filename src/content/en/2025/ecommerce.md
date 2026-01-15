@@ -17,6 +17,7 @@ featured_stat_2: 44.2%
 featured_stat_label_2: Mobile ecommerce sites built with WooCommerce
 featured_stat_3: 3.5%
 featured_stat_label_3: Mobile sites offering PayPal as a payment method
+doi: 10.5281/zenodo.18258559
 ---
 
 ## Introduction
