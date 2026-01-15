@@ -17,35 +17,25 @@ FROM (
   SELECT DISTINCT
     client,
     page,
+    root_page,
+    rank_grouping,
     technologies.technology AS ecommerce
   FROM
     `httparchive.crawl.pages`,
     UNNEST(technologies) AS technologies,
-    UNNEST(technologies.categories) AS cats
+    UNNEST(technologies.categories) AS cats,
+    UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
   WHERE
     cats = 'Ecommerce' AND
+    rank <= rank_grouping AND
     date = '2025-07-01' AND
     technologies.technology NOT IN ('Cart Functionality', 'Google Analytics Enhanced eCommerce')
 )
 JOIN (
   SELECT
     client,
-    page,
-    root_page,
-    rank_grouping
-  FROM
-    `httparchive.crawl.pages`,
-    UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping
-  WHERE
-    rank <= rank_grouping AND
-    date = '2025-07-01'
-)
-USING (client, page)
-JOIN (
-  SELECT
-    client,
     rank_grouping,
-    COUNT(0) AS total
+    COUNT(DISTINCT root_page) AS total
   FROM
     `httparchive.crawl.pages`,
     UNNEST([1000, 10000, 100000, 1000000, 10000000, 100000000]) AS rank_grouping

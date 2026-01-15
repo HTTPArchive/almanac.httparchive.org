@@ -42,19 +42,14 @@ For this analysis, we considered a site to be ecommerce if we detected either:
 - Use of a known ecommerce platform, or
 - Use of a technology that strongly implies an online store (for example, enhanced ecommerce analytics).
 
-## Limitations
+### Limitations in recognizing ecommerce sites
 
 Our methodology has limitations that affect accuracy.
 
-### Limitations in recognizing ecommerce sites
-
 - We can only recognize ecommerce sites when Wappalyzer detects an ecommerce platform or a strong ecommerce signal.
-- Detecting a payment processor alone (e.g., PayPal) is not sufficient to classify a site as ecommerce, because many non‑store sites also take payments.
-- If the store is hosted in a subdirectory (and we only analyze the homepage), it may be missed.
+- Detecting a payment processor alone (for example, PayPal) is not sufficient to classify a site as ecommerce, because many non‑store sites also take payments.
+- If the store is hosted in a subdirectory, it may be missed. We crawl the home page and one other page (the largest internal link) per site and per client (desktop and mobile).
 - Headless implementations reduce platform detectability because the traditional fingerprints in HTML/JS often disappear.
-
-### Accuracy of metrics and commentary
-
 - Apparent trends can be influenced by improvements or regressions in detection, not just industry shifts.
 - Crawl geography matters: results may differ when sites redirect based on location.
 - The underlying site set is drawn from Chrome's field data ecosystem, which biases toward sites visited by Chrome users.
@@ -63,14 +58,14 @@ Our methodology has limitations that affect accuracy.
 
 {{ figure_markup(
   caption="Percent of mobile pages that are ecommerce sites.",
-  content="19.1%",
+  content="19.2%",
   classes="big-number",
-  sheets_gid="1752605080",
-  sql_file="top_ecommerce.sql"
+  sheets_gid="1784928999",
+  sql_file="counts.sql"
   )
 }}
 
-In the 2025 dataset, we detected 19.8% of all analyzed desktop sites and 19.1% of all analyzed mobile sites.
+In the 2025 dataset, we detected 19.9% of all analyzed desktop sites and 19.2% of all analyzed mobile sites where ecommerce sites.
 
 That headline number is the first reminder that ecommerce is not just "a vertical"-it's a major slice of what real users experience on the open web.
 
@@ -85,43 +80,48 @@ The following table shows how the share of sites that are ecommerce increases as
     <thead>
       <tr>
         <th>Rank tier</th>
-        <th>Desktop ecommerce share</th>
-        <th>Mobile ecommerce share</th>
+        <th>Desktop share</th>
+        <th>Mobile share</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>Top 1,000</td>
-        <td class="numeric">1.7%</td>
-        <td class="numeric">1.4%</td>
+        <td class="numeric">0.9%</td>
+        <td class="numeric">0.6%</td>
       </tr>
       <tr>
         <td>Top 10,000</td>
-        <td class="numeric">3.7%</td>
-        <td class="numeric">3.2%</td>
+        <td class="numeric">3.5%</td>
+        <td class="numeric">3.1%</td>
       </tr>
       <tr>
         <td>Top 100,000</td>
-        <td class="numeric">7.8%</td>
-        <td class="numeric">6.9%</td>
+        <td class="numeric">8.0%</td>
+        <td class="numeric">7.1%</td>
       </tr>
       <tr>
         <td>Top 1,000,000</td>
-        <td class="numeric">17.0%</td>
-        <td class="numeric">15.5%</td>
+        <td class="numeric">17.4%</td>
+        <td class="numeric">15.7%</td>
       </tr>
       <tr>
         <td>Top 10,000,000</td>
-        <td class="numeric">21.3%</td>
-        <td class="numeric">20.7%</td>
+        <td class="numeric">21.7%</td>
+        <td class="numeric">21.0%</td>
+      </tr>
+      <tr>
+        <td>All sites</td>
+        <td class="numeric">19.9%</td>
+        <td class="numeric">19.2%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Ecommerce adoption by rank (desktop vs mobile).",
-      sheets_gid="301153684",
-      sql_file="top_vendors_crux_rank.sql",
+      caption="Ecommerce adoption by rank",
+      sheets_gid="1784928999",
+      sql_file="counts.sql",
     ) }}
   </figcaption>
 </figure>
@@ -129,6 +129,7 @@ The following table shows how the share of sites that are ecommerce increases as
 The pattern is consistent:
 
 - At the very top of the web (top 1,000), ecommerce is present but rare.
+- This grows over each rank.
 - By the time you reach the top 10 million, roughly one in five sites is an online store.
 
 ## Platform market share
@@ -142,20 +143,20 @@ The following tables show the share of detected ecommerce sites within ecommerce
     <thead>
       <tr>
         <th>Platform</th>
-        <th>Share of ecommerce sites</th>
-        <th>Share of all sites</th>
+        <th>% ecommerce sites</th>
+        <th>% all sites</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">35.9%</td>
+        <td class="numeric">35.4%</td>
         <td class="numeric">7.1%</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">21.2%</td>
-        <td class="numeric">4.2%</td>
+        <td class="numeric">21.5%</td>
+        <td class="numeric">4.3%</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
@@ -173,13 +174,13 @@ The following tables show the share of detected ecommerce sites within ecommerce
         <td class="numeric">0.6%</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
-        <td class="numeric">2.4%</td>
+        <td>1C-Bitrix</td>
+        <td class="numeric">2.2%</td>
         <td class="numeric">0.5%</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">2.0%</td>
+        <td class="numeric">2.1%</td>
         <td class="numeric">0.4%</td>
       </tr>
       <tr>
@@ -194,14 +195,14 @@ The following tables show the share of detected ecommerce sites within ecommerce
       </tr>
       <tr>
         <td>BigCommerce</td>
-        <td class="numeric">0.7%</td>
-        <td class="numeric">0.1%</td>
+        <td class="numeric">0.8%</td>
+        <td class="numeric">0.2%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Desktop (top platforms, 2025).",
+      caption="Most popular ecommerce platforms on desktop.",
       sheets_gid="1752605080",
       sql_file="top_ecommerce.sql",
     ) }}
@@ -213,77 +214,66 @@ The following tables show the share of detected ecommerce sites within ecommerce
     <thead>
       <tr>
         <th>Platform</th>
-        <th>Share of ecommerce sites</th>
-        <th>Share of all sites</th>
-        <th>Detected sites</th>
+        <th>% ecommerce sites</th>
+        <th>% all sites</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">44.2%</td>
-        <td class="numeric">7.1%</td>
-        <td class="numeric">1,099,863</td>
+        <td class="numeric">44.4%</td>
+        <td class="numeric">7.0%</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">24.6%</td>
-        <td class="numeric">3.9%</td>
-        <td class="numeric">612,387</td>
+        <td class="numeric">25.3%</td>
+        <td class="numeric">4.0%</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">10.6%</td>
-        <td class="numeric">1.7%</td>
-        <td class="numeric">262,643</td>
+        <td class="numeric">11.1%</td>
+        <td class="numeric">1.8%</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">9.6%</td>
-        <td class="numeric">1.5%</td>
-        <td class="numeric">239,580</td>
+        <td class="numeric">9.9%</td>
+        <td class="numeric">1.6%</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
         <td class="numeric">3.7%</td>
         <td class="numeric">0.6%</td>
-        <td class="numeric">92,484</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
+        <td>1C-Bitrix</td>
         <td class="numeric">3.3%</td>
         <td class="numeric">0.5%</td>
-        <td class="numeric">82,394</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">2.1%</td>
+        <td class="numeric">2.2%</td>
         <td class="numeric">0.3%</td>
-        <td class="numeric">53,179</td>
       </tr>
       <tr>
         <td>OpenCart</td>
         <td class="numeric">1.4%</td>
         <td class="numeric">0.2%</td>
-        <td class="numeric">35,493</td>
       </tr>
       <tr>
         <td>Tiendanube</td>
-        <td class="numeric">0.9%</td>
+        <td class="numeric">1.0%</td>
         <td class="numeric">0.2%</td>
-        <td class="numeric">23,333</td>
       </tr>
       <tr>
         <td>Square Online</td>
-        <td class="numeric">0.8%</td>
+        <td class="numeric">0.9%</td>
         <td class="numeric">0.1%</td>
-        <td class="numeric">20,942</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Mobile (top platforms, 2025).",
+      caption="Most popular ecommerce platforms on mobile.",
       sheets_gid="1752605080",
       sql_file="top_ecommerce.sql",
     ) }}
@@ -315,54 +305,60 @@ Different tiers have different top platforms.
         <th>Top 100,000</th>
         <th>Top 1,000,000</th>
         <th>Top 10,000,000</th>
+        <th>All</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="numeric">1</td>
-        <td>Magento</td>
-        <td>Salesforce Commerce Cloud</td>
+        <td>Amazon Webstore</td>
+        <td>Amazon Webstore</td>
         <td>Shopify</td>
         <td>Shopify</td>
+        <td>WooCommerce</td>
         <td>WooCommerce</td>
       </tr>
       <tr>
         <td class="numeric">2</td>
-        <td>Amazon Webstore</td>
-        <td>Fourthwall</td>
+        <td>Magento</td>
+        <td>Salesforce Commerce Cloud</td>
         <td>Magento</td>
         <td>WooCommerce</td>
+        <td>Shopify</td>
         <td>Shopify</td>
       </tr>
       <tr>
         <td class="numeric">3</td>
-        <td>Fourthwall</td>
-        <td>Amazon Webstore</td>
+        <td>Pattern by Etsy</td>
+        <td>SAP Commerce Cloud</td>
         <td>Salesforce Commerce Cloud</td>
         <td>Magento</td>
+        <td>Squarespace Commerce</td>
         <td>Squarespace Commerce</td>
       </tr>
       <tr>
         <td class="numeric">4</td>
-        <td>HCL Commerce</td>
+        <td></td>
         <td>Magento</td>
-        <td>WooCommerce</td>
+        <td>Amazon Webstore</td>
         <td>PrestaShop</td>
         <td>PrestaShop</td>
+        <td>Wix eCommerce</td>
       </tr>
       <tr>
         <td class="numeric">5</td>
-        <td>Pattern by Etsy</td>
-        <td>SAP Commerce Cloud</td>
-        <td>Amazon Webstore</td>
-        <td class="numeric">1C-Bitrix</td>
-        <td>Magento</td>
+        <td></td>
+        <td>Shopify/td>
+        <td>WooCommerce/td>
+        <td>1C-Bitrix/td>
+        <td>Wix eCommerce/td>
+        <td>PrestaShop</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Desktop (top platforms by rank tier).",
+      caption="Top platforms by rank tier (desktop).",
       sheets_gid="301153684",
       sql_file="top_vendors_crux_rank.sql",
     ) }}
@@ -379,54 +375,60 @@ Different tiers have different top platforms.
         <th>Top 100,000</th>
         <th>Top 1,000,000</th>
         <th>Top 10,000,000</th>
+        <th>All</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="numeric">1</td>
         <td>Magento</td>
-        <td>Salesforce Commerce Cloud</td>
+        <td>Amazon Webstore</td>
         <td>Shopify</td>
         <td>Shopify</td>
+        <td>WooCommerce</td>
         <td>WooCommerce</td>
       </tr>
       <tr>
         <td class="numeric">2</td>
-        <td>Fourthwall</td>
-        <td>Fourthwall</td>
+        <td>Amazon Webstore</td>
+        <td>Salesforce Commerce Cloud</td>
         <td>Magento</td>
         <td>WooCommerce</td>
+        <td>Shopify</td>
         <td>Shopify</td>
       </tr>
       <tr>
         <td class="numeric">3</td>
-        <td>HCL Commerce</td>
-        <td>Amazon Webstore</td>
-        <td>Salesforce Commerce Cloud</td>
+        <td>Pattern by Etsy</td>
+        <td>SAP Commerce Cloud</td>
+        <td>Salesforce Commerce Clous</td>
         <td>Magento</td>
         <td>Squarespace Commerce</td>
+        <td>Wix eCommerce</td>
       </tr>
       <tr>
         <td class="numeric">4</td>
-        <td>Amazon Webstore</td>
+        <td></td>
         <td>Magento</td>
-        <td>WooCommerce</td>
+        <td>Amazon Webstore</td>
         <td>PrestaShop</td>
         <td>PrestaShop</td>
+        <td>Squarespace Commerce</td>
       </tr>
       <tr>
         <td class="numeric">5</td>
-        <td>Pattern by Etsy</td>
-        <td>SAP Commerce Cloud</td>
-        <td>Amazon Webstore</td>
-        <td class="numeric">1C-Bitrix</td>
-        <td>Wix eCommerce</td>
+        <td></td>
+        <td>Shopify/td>
+        <td>WooCommerce/td>
+        <td>1C-Bitrix/td>
+        <td>Wix eCommerce/td>
+        <td>PrestaShop</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Mobile (top platforms by rank tier).",
+      caption="Top platforms by rank tier (mobile).",
       sheets_gid="301153684",
       sql_file="top_vendors_crux_rank.sql",
     ) }}
@@ -444,14 +446,16 @@ Platform dominance changes by region because of language, local payment rails, a
   image="top-ecommerce-platform-by-country.png",
   caption="Top ecommerce platform by country in 2025.",
   description="Map showing the most popular ecommerce platform by country in 2025. WooCommerce leads in most regions, with Shopify and 1C-Bitrix leading in several markets, and regional leaders including Tiendanube, Shoptet, Cafe24, and Salla.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSLJnACGZxfgmNdBbsBBCiMfyBd3l0dp4FWbyHkjZcwXVqMDWHzcEYmqsrr9XTQDye4NA4qSMFX9xZG/pubchart?oid=1194862163&format=interactive",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlrzXpWshCjsSpSxJnhK5A732UtlRUtWfbtSt39JlV1rbI1YRoA1fRLWUr05vJBKNsS-i7ReTMudhN/pubchart?oid=571594362&format=interactive",
   sheets_gid="2084734046",
   sql_file="top_shopsystem_by_geo.sql"
   )
 }}
 
-- On desktop, WooCommerce is the most common platform in 43 of 63 geographies in our country‑level view (excluding the ALL aggregate).
-- On mobile, WooCommerce leads even more often: 74 of 95 (excluding the ALL aggregate).
+The three leading platforms take the top spot in most countries: WooCommerce (violet), Shopify (green), and 1C-Bitrix (red).
+
+- On desktop, WooCommerce is the most common platform in 42 of 59 geographies in our country‑level view (excluding the ALL aggregate).
+- On mobile, WooCommerce leads even more often: 71 of 89 (excluding the ALL aggregate).
 
 There are also meaningful regional exceptions:
 
@@ -510,89 +514,89 @@ A site is considered "good" on CWV when it passes all three thresholds.
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">401,579</td>
-        <td class="numeric">45.5%</td>
-        <td class="numeric">99.3%</td>
-        <td class="numeric">67.7%</td>
-        <td class="numeric">33.5%</td>
+        <td>394,462</td>
+        <td class="numeric">45%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">68%</td>
+        <td class="numeric">33%</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">286,618</td>
-        <td class="numeric">92.5%</td>
-        <td class="numeric">99.3%</td>
-        <td class="numeric">82.2%</td>
-        <td class="numeric">75.9%</td>
+        <td>289,885</td>
+        <td class="numeric">92%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">82%</td>
+        <td class="numeric">76%</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">82,393</td>
-        <td class="numeric">90.3%</td>
-        <td class="numeric">99.7%</td>
-        <td class="numeric">77.6%</td>
-        <td class="numeric">69.3%</td>
+        <td>80,900</td>
+        <td class="numeric">90%</td>
+        <td class="numeric">100%</td>
+        <td class="numeric">78%</td>
+        <td class="numeric">69%</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">56,104</td>
-        <td class="numeric">76.0%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">90.4%</td>
-        <td class="numeric">68.8%</td>
+        <td>55,706</td>
+        <td class="numeric">77%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">91%</td>
+        <td class="numeric">70%</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">46,479</td>
-        <td class="numeric">74.5%</td>
-        <td class="numeric">98.6%</td>
-        <td class="numeric">71.1%</td>
-        <td class="numeric">53.7%</td>
+        <td>45,256</td>
+        <td class="numeric">74%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">72%</td>
+        <td class="numeric">54%</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">37,153</td>
-        <td class="numeric">60.0%</td>
-        <td class="numeric">99.0%</td>
-        <td class="numeric">55.3%</td>
-        <td class="numeric">36.6%</td>
+        <td>36,988</td>
+        <td class="numeric">59%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">55%</td>
+        <td class="numeric">36%</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
-        <td class="numeric">31,699</td>
-        <td class="numeric">85.9%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">79.9%</td>
-        <td class="numeric">68.2%</td>
+        <td>1C-Bitrix</td>
+        <td>31,150</td>
+        <td class="numeric">86%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">80%</td>
+        <td class="numeric">68%</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">14,476</td>
-        <td class="numeric">86.6%</td>
-        <td class="numeric">99.1%</td>
-        <td class="numeric">80.0%</td>
-        <td class="numeric">70.3%</td>
+        <td>14,452</td>
+        <td class="numeric">87%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">80%</td>
+        <td class="numeric">70%</td>
       </tr>
       <tr>
         <td>Cafe24</td>
-        <td class="numeric">13,557</td>
-        <td class="numeric">98.3%</td>
-        <td class="numeric">97.6%</td>
-        <td class="numeric">47.4%</td>
-        <td class="numeric">45.8%</td>
+        <td>13,661</td>
+        <td class="numeric">98%</td>
+        <td class="numeric">100%</td>
+        <td class="numeric">46%</td>
+        <td class="numeric">45%</td>
       </tr>
       <tr>
         <td>BigCommerce</td>
-        <td class="numeric">12,133</td>
-        <td class="numeric">91.5%</td>
-        <td class="numeric">99.4%</td>
-        <td class="numeric">59.5%</td>
-        <td class="numeric">55.2%</td>
+        <td>12,376</td>
+        <td class="numeric">91%</td>
+        <td class="numeric">99%</td>
+        <td class="numeric">60%</td>
+        <td class="numeric">55%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Desktop (2025, top platforms by origin count).",
+      caption="Top eCommerce platforms Core Web Vitals good rates (desktop).",
       sheets_gid="755277706",
       sql_file="core_web_vitals_by_platform.sql",
     ) }}
@@ -614,89 +618,89 @@ A site is considered "good" on CWV when it passes all three thresholds.
     <tbody>
       <tr>
         <td>WooCommerce</td>
-        <td class="numeric">991,835</td>
-        <td class="numeric">39.2%</td>
-        <td class="numeric">87.2%</td>
-        <td class="numeric">83.1%</td>
-        <td class="numeric">33.9%</td>
+        <td>995,782</td>
+        <td class="numeric">39%</td>
+        <td class="numeric">88%</td>
+        <td class="numeric">85%</td>
+        <td class="numeric">35%</td>
       </tr>
       <tr>
         <td>Shopify</td>
-        <td class="numeric">554,518</td>
-        <td class="numeric">85.8%</td>
-        <td class="numeric">89.3%</td>
-        <td class="numeric">91.1%</td>
-        <td class="numeric">74.4%</td>
+        <td>567,932</td>
+        <td class="numeric">86%</td>
+        <td class="numeric">90%</td>
+        <td class="numeric">92%</td>
+        <td class="numeric">76%</td>
       </tr>
       <tr>
         <td>Wix eCommerce</td>
-        <td class="numeric">225,691</td>
-        <td class="numeric">73.4%</td>
-        <td class="numeric">84.7%</td>
-        <td class="numeric">94.1%</td>
-        <td class="numeric">63.8%</td>
+        <td>234,055</td>
+        <td class="numeric">76%</td>
+        <td class="numeric">85%</td>
+        <td class="numeric">95%</td>
+        <td class="numeric">66%</td>
       </tr>
       <tr>
         <td>Squarespace Commerce</td>
-        <td class="numeric">205,743</td>
-        <td class="numeric">75.2%</td>
-        <td class="numeric">95.9%</td>
-        <td class="numeric">88.2%</td>
-        <td class="numeric">68.0%</td>
+        <td>209,650</td>
+        <td class="numeric">76%</td>
+        <td class="numeric">96%</td>
+        <td class="numeric">89%</td>
+        <td class="numeric">69%</td>
       </tr>
       <tr>
         <td>PrestaShop</td>
-        <td class="numeric">87,404</td>
-        <td class="numeric">64.6%</td>
-        <td class="numeric">88.6%</td>
-        <td class="numeric">73.1%</td>
-        <td class="numeric">44.2%</td>
+        <td>87,486</td>
+        <td class="numeric">65%</td>
+        <td class="numeric">89%</td>
+        <td class="numeric">81%</td>
+        <td class="numeric">50%</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
-        <td class="numeric">75,601</td>
-        <td class="numeric">69.8%</td>
-        <td class="numeric">69.9%</td>
-        <td class="numeric">81.7%</td>
-        <td class="numeric">45.7%</td>
+        <td>1C-Bitrix</td>
+        <td>76,080</td>
+        <td class="numeric">71%</td>
+        <td class="numeric">71%</td>
+        <td class="numeric">86%</td>
+        <td class="numeric">50%</td>
       </tr>
       <tr>
         <td>Magento</td>
-        <td class="numeric">50,654</td>
-        <td class="numeric">51.4%</td>
-        <td class="numeric">86.3%</td>
-        <td class="numeric">53.7%</td>
-        <td class="numeric">28.9%</td>
+        <td>50,983</td>
+        <td class="numeric">52%</td>
+        <td class="numeric">87%</td>
+        <td class="numeric">64%</td>
+        <td class="numeric">35%</td>
       </tr>
       <tr>
         <td>OpenCart</td>
-        <td class="numeric">32,544</td>
-        <td class="numeric">79.4%</td>
-        <td class="numeric">92.2%</td>
-        <td class="numeric">86.6%</td>
-        <td class="numeric">66.2%</td>
+        <td>32,914</td>
+        <td class="numeric">80%</td>
+        <td class="numeric">93%</td>
+        <td class="numeric">88%</td>
+        <td class="numeric">68%</td>
       </tr>
       <tr>
         <td>Tiendanube</td>
-        <td class="numeric">21,235</td>
-        <td class="numeric">48.2%</td>
-        <td class="numeric">94.6%</td>
-        <td class="numeric">81.9%</td>
-        <td class="numeric">39.7%</td>
+        <td>21,836</td>
+        <td class="numeric">60%</td>
+        <td class="numeric">95%</td>
+        <td class="numeric">84%</td>
+        <td class="numeric">51%</td>
       </tr>
-      <tr>
+        <tr>
         <td>Square Online</td>
-        <td class="numeric">17,910</td>
-        <td class="numeric">0.1%</td>
-        <td class="numeric">38.6%</td>
-        <td class="numeric">0.2%</td>
-        <td class="numeric">0.0%</td>
+        <td>18,812</td>
+        <td>0%</td>
+        <td class="numeric">39%</td>
+        <td>0%</td>
+        <td>0%</td>
       </tr>
     </tbody>
   </table>
   <figcaption>
     {{ figure_link(
-      caption="Mobile (2025, top platforms by origin count).",
+      caption="Top eCommerce platforms Core Web Vitals good rates (mobile).",
       sheets_gid="755277706",
       sql_file="core_web_vitals_by_platform.sql",
     ) }}
@@ -786,7 +790,7 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
         <td class="numeric">78</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
+        <td>1C-Bitrix</td>
         <td class="numeric">61,876</td>
         <td class="numeric">51</td>
         <td class="numeric">75</td>
@@ -890,7 +894,7 @@ Lighthouse is useful for comparisons across large sets of sites, but it won't pe
         <td class="numeric">79</td>
       </tr>
       <tr>
-        <td class="numeric">1C-Bitrix</td>
+        <td>1C-Bitrix</td>
         <td class="numeric">90,214</td>
         <td class="numeric">33</td>
         <td class="numeric">75</td>

@@ -5,9 +5,9 @@ SELECT
   client,
   2025 AS year,
   technologies.technology AS payment,
-  COUNT(DISTINCT page) AS freq,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -19,16 +19,14 @@ JOIN (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2025-07-01' AND
-    is_root_page
+    date = '2025-07-01'
   GROUP BY
     client
 )
 USING (client)
 WHERE
   cats = 'Payment processors' AND
-  date = '2025-07-01' AND
-  is_root_page
+  date = '2025-07-01'
 GROUP BY
   client,
   total,
@@ -48,20 +46,18 @@ FROM
 JOIN (
   SELECT
     client,
-    COUNT(0) AS total
+    COUNT(DISTINCT root_page) AS total
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2024-06-01' AND
-    is_root_page
+    date = '2024-06-01'
   GROUP BY
     client
 )
 USING (client)
 WHERE
   cats = 'Payment processors' AND
-  date = '2024-06-01' AND
-  is_root_page
+  date = '2024-06-01'
 GROUP BY
   client,
   total,
@@ -71,9 +67,9 @@ SELECT
   client,
   2023 AS year,
   technologies.technology AS payment,
-  COUNT(DISTINCT page) AS freq,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -81,20 +77,18 @@ FROM
 JOIN (
   SELECT
     client,
-    COUNT(0) AS total
+    COUNT(DISTINCT root_page) AS total
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2023-06-01' AND
-    is_root_page
+    date = '2023-06-01'
   GROUP BY
     client
 )
 USING (client)
 WHERE
   cats = 'Payment processors' AND
-  date = '2023-06-01' AND
-  is_root_page
+  date = '2023-06-01'
 GROUP BY
   client,
   total,
@@ -104,9 +98,9 @@ SELECT
   client,
   2022 AS year,
   technologies.technology AS payment,
-  COUNT(DISTINCT page) AS freq,
+  COUNT(DISTINCT root_page) AS freq,
   total,
-  COUNT(DISTINCT page) / total AS pct
+  COUNT(DISTINCT root_page) / total AS pct
 FROM
   `httparchive.crawl.pages`,
   UNNEST(technologies) AS technologies,
@@ -114,12 +108,11 @@ FROM
 JOIN (
   SELECT
     client,
-    COUNT(0) AS total
+    COUNT(DISTINCT root_page) AS total
   FROM
     `httparchive.crawl.pages`
   WHERE
-    date = '2022-06-01' AND
-    is_root_page
+    date = '2022-06-01'
   GROUP BY
     client
 )

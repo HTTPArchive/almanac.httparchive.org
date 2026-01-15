@@ -47,9 +47,9 @@ SELECT
 FROM
   `chrome-ux-report.materialized.device_summary`
 JOIN (
-  SELECT
+  SELECT DISTINCT
     client,
-    page,
+    root_page,
     tech.technology AS ecomm
   FROM
     `httparchive.crawl.pages`,
@@ -64,7 +64,7 @@ JOIN (
     )
 )
 ON
-  CONCAT(origin, '/') = page AND
+  CONCAT(origin, '/') = root_page AND
   IF(device = 'desktop', 'desktop', 'mobile') = client
 WHERE
   date = '2025-07-01'
