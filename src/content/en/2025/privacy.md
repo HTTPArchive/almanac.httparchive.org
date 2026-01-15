@@ -28,7 +28,7 @@ doi: ...
 
 The web is the primary interface for digital services, making it a significant source of data as billions of users interact with these systems daily. Consequently, website tracking – the practice of collecting data about visitors – has become a fundamental component of the modern web ecosystem. The motivations for this data collection vary widely, ranging from improving application performance and functionality to enabling targeted advertising and marketing analytics.
 
-However, the scale of this data collection raises significant privacy concerns, making it a topic widely discussed in [technical](https://www.w3.org/TR/tracking-compliance/) and [political spheres](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), and a major area of [ongoing research](https://pulse-of-cybersecurity.com/topics?sortBy=total-papers&sortOrder=desc&page=1&pageSize=21&search=web&topic=Web+Tracking+and+Browser+Fingerprinting&conferences=%5B%5D). While developers utilize various technologies to track users, such as HTTP cookies and browser fingerprinting, there is a corresponding rise in privacy measures. These include browser-based restrictions, regulatory compliance tools, and privacy-enhancing extensions.
+However, the scale of this data collection raises significant privacy concerns, making it a widely discussed topic in [technical](https://www.w3.org/TR/tracking-compliance/) and [political spheres](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), and a major area of [ongoing research](https://pulse-of-cybersecurity.com/topics?sortBy=total-papers&sortOrder=desc&page=1&pageSize=21&search=web&topic=Web+Tracking+and+Browser+Fingerprinting&conferences=%5B%5D). While developers utilize various technologies to track users, such as HTTP cookies and browser fingerprinting, there is a corresponding rise in privacy measures. These include browser-based restrictions, regulatory compliance tools, and privacy-enhancing extensions.
 
 In this chapter, we provide a technical overview of the state of web privacy. We analyze the adoption of common tracking mechanisms and examine the prevalence of measures designed to prevent tracking, offering a data-driven look at the current landscape of user data collection.
 
@@ -47,7 +47,7 @@ In this chapter, we provide a technical overview of the state of web privacy. We
   )
 }}
 
-Our analysis uses the [WhoTracks.Me](https://www.ghostery.com/whotracksme/) catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories 'advertising', 'pornvertising', 'site_analytics' and  'social_media' as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth nothing that the reported numbers represent unique domains, not the total number of HTTP requests.
+Our analysis uses the [WhoTracks.Me](https://www.ghostery.com/whotracksme/) catalog of popular third-party trackers to identify the trackers present on the webpages. To be conservative in our analysis, we only count the WhoTracksMe categories 'advertising', 'pornvertising', 'site_analytics' and  'social_media' as trackers. This method allows us to determine the distinct third-party trackers at the domain level for each webpage. It is worth noting that the reported numbers represent unique domains, not the total number of HTTP requests.
 
 We see at least one third-party tracker in 75% of all webpages (75%: desktop, 74%: mobile), 55% of desktop webpages contain 2 and 39% contain 3 trackers. Up to 6 trackers setup happens more often in desktop pages, while 7 and more trackers are seen more often in mobile pages.
 
@@ -134,7 +134,7 @@ Our analysis shows that doubleclick.net is the most common third-party cookie do
 #### First-Party Cookies
 
 The following figure shows the most common first-party cookies. While these cookies are set in a first-party context, their names provide evidence that they are primarily used for tracking purposes. The \`\_ga\` cookie is set on 46% of webpages, and \`\_gid\` appears on 18%, both used by Google Analytics, followed by \`gcl\_au\` on 16% of webpages. While the exact purpose of these cookies was not tested, Google [publishes](https://business.safety.google/adscookies/) their intended functions.
-Another popular first-party cookie is \`\_fbp\` used by Meta on 14% of webpages. Meta [provides](https://www.facebook.com/business/help/471978536642445?id=1205376682832142) advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
+Another popular first-party cookie is \`\_fbp\`, used by Meta on 14% of webpages. Meta [provides](https://www.facebook.com/business/help/471978536642445?id=1205376682832142) advertisers the option to use first-party cookies with the Meta Pixel. Similar to the results observed for third-party context, Google and Meta remain the dominant entities for tracking in the first-party cookie context.
 
 The usage of cookies on the web remains largely for tracking purposes. Among the functional exceptions, PHPSESSID stores a unique session ID for PHP applications on 12% of pages, while XSRF-TOKEN handles security against cross-site request forgery and is found on 6% of webpages.
 
@@ -152,13 +152,13 @@ The [Cookies](https://almanac.httparchive.org/en/2025/cookies) chapter further d
 
 ### Stateless Tracking
 
-Stateless tracking is the process by which user identifiers are generated on the fly, rather than stored in the browser as state. These identifiers are generally created by using information that can be actively or passively gathered from the target user’s device or browser. While tricky to correlate sessions of a user who uses multiple devices, it is effective in that some signals are inherent to the device or website functionality and cannot be easily ‘blocked’.
+Stateless tracking is the process by which user identifiers are generated on the fly, rather than stored in the browser as state. These identifiers are generally created by using information that can be actively or passively gathered from the target user’s device or browser. While it is tricky to correlate the sessions of a user who uses multiple devices, it is effective in that some signals are inherent to the device or website functionality and cannot be easily ‘blocked’.
 
 #### Browser Fingerprinting
 
-Browser fingerprinting is a method by which websites can identify a user based on their specific browser information. This information can [include](https://dl.acm.org/doi/abs/10.1145/3543507.3583333) system fonts, language settings hardware configurations, and other such seemingly innocuous datapoints that individually reveal little information, but can be put together to paint a [unique picture](https://amiunique.org/) of a specific user. They are commonly leaked through HTTP headers and JavaScript API calls.
+Browser fingerprinting is a method by which websites can identify a user based on their specific browser information. This information can [include](https://dl.acm.org/doi/abs/10.1145/3543507.3583333) system fonts, language settings, hardware configurations, and other such seemingly innocuous datapoints that individually reveal little information, but can be put together to paint a [unique picture](https://amiunique.org/) of a specific user. They are commonly leaked through HTTP headers and JavaScript API calls.
 
-[Prior work](https://dl.acm.org/doi/abs/10.1145/3696410.3714548) has shown browser fingerprinting to be highly prevalent in online tracking. Their attractiveness can be attributed to the fact that they are difficult to block, and claim to be effective even if the user is using an Incognito browser. In this report, we identify the most common technologies used to do browser fingerprinting.
+[Prior work](https://dl.acm.org/doi/abs/10.1145/3696410.3714548) has shown browser fingerprinting to be highly prevalent in online tracking. Its attractiveness can be attributed to the fact that it is difficult to block, and claims to be effective even if the user is using an Incognito browser. In this report, we identify the most common technologies used to do browser fingerprinting.
 
 Of note, the library [FingerprintJS](https://github.com/fingerprintjs/fingerprintjs) has remained the most popular tool to conduct browser fingerprinting, far surpassing the others. FingerprintJS is used on 0.59% of mobile accessed websites, compared to [ClientJS](https://github.com/jackspirou/clientjs) (the next most popular technology) which is present on 0.04%.
 
@@ -214,7 +214,7 @@ In this section, we examine three such mechanisms: User-Agent Client Hints, whic
 
 User-Agent Client Hints offer a privacy-conscious alternative to the traditional User-Agent string, allowing browsers to share device and browser information only when explicitly requested by servers. Instead of exposing a detailed fingerprint by default, sites must opt in to specific hints, reducing passive data leakage. In 2025, adoption sits at 3.3% for desktop and 5.1% for mobile, with mobile’s higher rate likely reflecting greater need for responsive design signals.
 
-Last year’s data showed a strong correlation between site popularity and Client Hints usage, top 1,000 sites reached 15.85%, dropping sharply to around 1.6% at the 100,000 tier. While this year’s methodology doesn’t break down by rank, the overall figures suggest adoption remains concentrated among larger sites, with the long tail yet to embrace the standard.
+Last year’s data showed a strong correlation between site popularity and Client Hints usage; the top 1,000 sites reached 15.85%, while adoption dropped sharply to around 1.6% at the 100,000 tier. While this year’s methodology doesn’t break down by rank, the overall figures suggest adoption remains concentrated among larger sites, with the long tail yet to embrace the standard.
 
 {{ figure_markup(
   image="top-client-hints.png",
@@ -226,7 +226,7 @@ Last year’s data showed a strong correlation between site popularity and Clien
   )
 }}
 
-The most requested Client Hint is sec-ch-ua-platform-version at 4.28%, used to detect OS version for compatibility decisions. Close behind is sec-ch-ua-model at 4.25%, though with a notable skew, mobile usage far exceeds desktop, which makes sense given that device model is primarily relevant for mobile experiences and debugging. The remaining hints, covering architecture, bitness, full version lists, and form factors, cluster tightly between 2.60% and 2.67%, suggesting that sites requesting Client Hints tend to request several together rather than cherry-picking individual signals.
+The most requested Client Hint is sec-ch-ua-platform-version at 4.28%, used to detect OS version for compatibility decisions. Close behind is sec-ch-ua-model at 4.25%, though with a notable skew: mobile usage far exceeds desktop, which makes sense given that device model is primarily relevant for mobile experiences and debugging. The remaining hints, covering architecture, bitness, full version lists, and form factors, cluster tightly between 2.60% and 2.67%, suggesting that sites requesting Client Hints tend to request several together rather than cherry-picking individual signals.
 
 ### Referrer Policy
 
@@ -244,7 +244,7 @@ When you click a link from one website to another, your browser can reveal where
 
 Overall adoption of Referrer Policy rose from 32% in 2024 to 37.66% in 2025, a healthy increase. The most common implementation method remains link-level controls (like rel=”noreferrer” on individual links) at 24.70%, while document-wide policies set via headers sit at 10.16%. This suggests many sites apply referrer restrictions selectively rather than as a blanket rule.
 
-Meta tag implementations remain the least common at 2.47%, largely unchanged from 2024’s 2%. This is expected, headers are generally preferred for security policies since they’re harder to tamper with and apply before the page loads.
+Meta tag implementations remain the least common at 2.47%, largely unchanged from 2024’s 2%. This is expected; headers are generally preferred for security policies since they’re harder to tamper with and apply before the page loads.
 
 {{ figure_markup(
   image="most-common-referrer-policies.png",
@@ -278,7 +278,7 @@ Origin Trials let browsers test experimental features on real websites before co
 
 The most widely adopted trial remains DisableThirdPartyStoragePartitioning, which increased from 10.21% in 2024 to 12.33% in 2025 (now in its third iteration). This trial allows sites to temporarily opt out of storage partitioning, a privacy feature that isolates cookies and storage per site, giving developers more time to migrate legacy implementations. Similarly, FledgeBiddingAndAuctionServer, part of Google’s Privacy Sandbox initiative for interest-based advertising without cross-site tracking, grew modestly from 6.62% to 6.93%.
 
-The biggest shift is AttributionReportingCrossAppWeb, which dropped sharply from 2.10% to just 0.04%. This suggests either the trial ended or sites moved away from testing cross-app attribution. New entries like FetchLaterAPI (0.73%) and deferred requests and federated identity. Meanwhile, InterestCohortAPI, the controversial FLoC predecessor, lingers at 0.20%, largely unchanged and likely residual.
+The biggest shift is AttributionReportingCrossAppWeb, which dropped sharply from 2.10% to just 0.04%. This suggests either the trial ended or sites moved away from testing cross-app attribution. New entries include FetchLaterAPI (0.73%), deferred requests, and federated identity. Meanwhile, InterestCohortAPI, the controversial FLoC predecessor, lingers at 0.20%, largely unchanged and likely residual.
 
 ## Law and Policy
 
@@ -304,7 +304,7 @@ Overall IAB framework adoption remains steady at just above 5.5% for both mobile
 
 The deprecated TCFv1 has nearly disappeared, sitting at just 0.2% with only 0.1% compliant, indicating the industry has potentially migrated to v2. A notable addition this year is GPP, the IAB’s newer unified framework, which appears on 0.9% of sites. Encouragingly, gpp\_data\_available matches at 0.9%, meaning sites that have adopted GPP are actually using it to transmit user preferences rather than just loading the code.
 
-Comparing year over year, overall framework adoption held flat while TCF usage dipped slightly from 4.2% to 4.0%. This modest decline may reflect early migration toward GPP, though it’s too soon to call it a trend. The compliance gap persists, TCFv2 compliant remained unchanged at 1.7%, highlighting that adoption alone doesn’t guarantee proper implementation.
+Comparing year over year, overall framework adoption held flat while TCF usage dipped slightly from 4.2% to 4.0%. This modest decline may reflect early migration toward GPP, though it’s too soon to call it a trend. The compliance gap persists, and TCFv2 compliance remained unchanged at 1.7%, highlighting that adoption alone doesn’t guarantee proper implementation.
 
 {{ figure_markup(
   image="most-common-cmps-with-iab-tcf-v2.png",
@@ -328,7 +328,7 @@ The CMP landscape shifted notably this year. Automattic, which led in 2024 at 0.
   )
 }}
 
-Germany (0.042%) and France (0.030%) lead TFCv2 publisher adoption among EU member states, with the US appearing at 0.017%, notable given TCF isn’t required outside the EU. The largest share (0.26%) falls under “AA”, an undefined country code, pointing to gaps in publisher metadata or misconfigured CMP implementations. Overall adoption remains low even among European publishers, suggesting TFCv2 is concentrated among a small subset of sites despite GDPR requirements.
+Germany (0.042%) and France (0.030%) lead TCFv2 publisher adoption among EU member states, with the US appearing at 0.017%, notable given TCF isn’t required outside the EU. The largest share (0.26%) falls under “AA”, an undefined country code, pointing to gaps in publisher metadata or misconfigured CMP implementations. Overall adoption remains low even among European publishers, suggesting TCFv2 is concentrated among a small subset of sites despite GDPR requirements.
 
 {{ figure_markup(
   image="most-common-iab-usp-string-values.png",
@@ -358,7 +358,7 @@ Despite being largely abandoned as a standard, with minimum to no [legal backing
 
 Mobile adoption consistently edges out desktop across all ranking tiers, though the gap is narrow. The steepest drop-off occurs between the top 100,000 sites (35%) and the 500,000 tier (27%), indicating that mid-tier and smaller sites are far less likely to check for DNT. Whether these sites actually honor the signal, rather than simply detecting it, remains an open question, as DNT compliance has never been enforceable.
 
-Global Privacy Control
+### Global Privacy Control
 
 Global Privacy Control (GPC) is a browser signal that communicates a user's preference to opt out of having their data sold or shared. Unlike Do Not Track, GPC has legal backing under CCPA/CPRA; websites must treat it as a valid opt-out request. Firefox, Brave, and Safari already support GPC, and Chrome is set to [implement it in 2026](https://chromestatus.com/feature/5137324344213504) following California legislation requiring browsers to offer this setting by 2027\. However, like DNT, GPC relies on websites to honor the signal voluntarily at a technical level; the browser sends the header (Sec-GPC: 1), but cannot enforce compliance. The difference is that ignoring GPC carries legal risk, which may prove more effective than DNT's purely voluntary approach.
 
@@ -368,6 +368,6 @@ Online tracking has become the norm on today’s Internet. Indeed, we see that 7
 
 Google continues to dominate the tracking space, followed by Facebook. On the outset, online tracking is lucrative to large companies that can leverage it to serve more targeted ads. However, the consolidation of tracking information amongst a few centralized players is cause for concern to more privacy-conscious users.
 
-Efforts to avoid tracking are constantly being deployed and evaded. For example, [medium.com](http://medium.com) continues to track users by acting as a domain that is ‘bounced’ through. However, we also discuss safer browser policies, such as sharing user-agent client hints instead of the actual user agent string.
+Efforts to avoid tracking are constantly being deployed and evaded. For example, we observed [medium.com](http://medium.com) in bounce sequences, though likely for functional purposes rather than covert tracking. However, we also discuss safer browser policies, such as sharing user-agent client hints instead of the actual user agent string.
 
-Laws and regulations governing online tracking are evolving, along with the mechanisms deployed to comply with them. We see incomplete implementations and poor adoption of the latest version of TCF (v2). However, it comes with a rise in the adoption of the Global Privacy Protocol, which is a new addition by the IAB. Moreover, we see a dramatic reduction in Consent Management Platforms.
+Laws and regulations governing online tracking are evolving, along with the mechanisms deployed to comply with them. We see incomplete implementations and poor adoption of the latest version of TCF (v2). However, it comes with a rise in the adoption of the Global Privacy Platform, which is a new addition by the IAB. Moreover, we see a shift in the Consent Management Platform landscape.
