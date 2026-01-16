@@ -555,7 +555,7 @@ Non-composited animations remain common, appearing on 40% of mobile pages and 44
   )
 }}
 
-Non-composited animations impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart above.
+Non-composited animations impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile.
 
 ### Visual stability conclusion
 
