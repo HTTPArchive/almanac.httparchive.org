@@ -656,10 +656,10 @@ A site is considered "good" on CWV when it passes all three thresholds.
         <tr>
         <td>Square Online</td>
         <td class="numeric">18,812</td>
-        <td>0%</td>
+        <td class="numeric">0%</td>
         <td class="numeric">39%</td>
-        <td>0%</td>
-        <td>0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
       </tr>
     </tbody>
   </table>
