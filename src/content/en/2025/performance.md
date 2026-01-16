@@ -424,7 +424,7 @@ From 2023 to 2025, the share of sites with "good" CLS increases steadily across 
 
 There are a number of best practices sites can follow to reduce the likelihood of CLS.
 
-### Back/forward cache (bfcache)
+#### Back/forward cache (bfcache)
 
 [The back/forward cache (bfcache)](https://web.dev/articles/bfcache) allows browsers to instantly restore a page from memory when users navigate using the browser's back or forward buttons. Rather than reloading the page and re-executing JavaScript, the browser preserves the page's state, resulting in near-instant navigations and improved user experience. Because pages are restored in their previous state, bfcache can also help avoid layout shifts that might otherwise occur during re-navigation.
 
@@ -555,7 +555,7 @@ Non-composited animations remain common, appearing on 40% of mobile pages and 44
   )
 }}
 
-Non-composited animations impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart below.
+Non-composited animations impact emerges primarily at higher percentiles, with usage increasing at the 75th percentile and rising sharply at the 90th percentile to 13 animations on desktop and 11 on mobile, as shown in the chart above.
 
 ### Visual stability conclusion
 
