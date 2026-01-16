@@ -219,6 +219,23 @@
     "hash": "785697a15807b35ba9621dc2b86b14dd",
     "size": 20
   },
+  "/static/pdfs/web_almanac_2025_en.pdf": {
+    "date_published": "2026-01-15T00:00:00.000Z",
+    "date_modified": "2026-01-15T00:00:00.000Z",
+    "hash": "bdf48afb389f6b7bad8ae6857aa57dfe",
+    "size": 12
+  },
+  "/static/pdfs/web_almanac_2025_en_cover_A5.pdf": {
+    "date_published": "2026-01-15T00:00:00.000Z",
+    "date_modified": "2026-01-15T00:00:00.000Z",
+    "hash": "cb5b6bdbd78acf8e4304b83762ce8d06"
+  },
+  "/static/pdfs/web_almanac_2025_en_print_A5.pdf": {
+    "date_published": "2026-01-15T00:00:00.000Z",
+    "date_modified": "2026-01-15T00:00:00.000Z",
+    "hash": "8e40e2d4d840d8f15c3db7571c4d24ab",
+    "size": 11
+  },
   "en/2019/chapters/accessibility.html": {
     "date_published": "2019-11-11T00:00:00.000Z",
     "date_modified": "2025-01-02T00:00:00.000Z",
