@@ -321,10 +321,10 @@ Different tiers have different top platforms.
       <tr>
         <td class="numeric">5</td>
         <td></td>
-        <td>Shopify</td>>
-        <td>WooCommerce</td>>
-        <td>1C-Bitrix</td>>
-        <td>Wix eCommerce</td>>
+        <td>Shopify</td>
+        <td>WooCommerce</td>
+        <td>1C-Bitrix</td>
+        <td>Wix eCommerce</td>
         <td>PrestaShop</td>
       </tr>
     </tbody>
@@ -391,10 +391,10 @@ Different tiers have different top platforms.
       <tr>
         <td class="numeric">5</td>
         <td></td>
-        <td>Shopify</td>>
-        <td>WooCommerce</td>>
-        <td>1C-Bitrix</td>>
-        <td>Wix eCommerce</td>>
+        <td>Shopify</td>
+        <td>WooCommerce</td>
+        <td>1C-Bitrix</td>
+        <td>Wix eCommerce</td>
         <td>PrestaShop</td>
       </tr>
     </tbody>
@@ -656,10 +656,10 @@ A site is considered "good" on CWV when it passes all three thresholds.
         <tr>
         <td>Square Online</td>
         <td class="numeric">18,812</td>
-        <td>0%</td>
+        <td class="numeric">0%</td>
         <td class="numeric">39%</td>
-        <td>0%</td>
-        <td>0%</td>
+        <td class="numeric">0%</td>
+        <td class="numeric">0%</td>
       </tr>
     </tbody>
   </table>
