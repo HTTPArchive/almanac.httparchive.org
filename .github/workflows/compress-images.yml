@@ -53,13 +53,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           compressOnly: ${{ github.event_name != 'pull_request' }}
           jpegProgressive: true
+          minPctChange: '10.0'
       - name: Create Pull Request
         # If it's not a pull request then commit any changes as a new PR
         if: |
           github.event_name != 'pull_request' &&
           steps.calibre.outputs.markdown != ''
         id: cpr
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           title: Auto Compress Images
           branch-suffix: timestamp

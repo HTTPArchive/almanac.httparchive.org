@@ -11,7 +11,7 @@ FROM
   UNNEST(REGEXP_EXTRACT_ALL(body, '(?i)(<video.*?</video>)')) AS video,
   UNNEST(REGEXP_EXTRACT_ALL(video, r'(?i)type\s*=\s*["\'](video/[^\'";?]*)')) AS video_type
 WHERE
-  date = '2021-08-01' AND
+  date = '2021-08-01' AND -- noqa: CV09
   firstHtml
 GROUP BY
   client,

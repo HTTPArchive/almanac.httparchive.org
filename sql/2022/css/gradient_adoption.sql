@@ -158,7 +158,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getGradientAdoption(css)) AS property
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     property IS NOT NULL
 )
 JOIN (

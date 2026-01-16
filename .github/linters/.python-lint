@@ -31,10 +31,6 @@ persistent=yes
 # Specify a configuration file.
 #rcfile=
 
-# When enabled, pylint would attempt to guess common misconfiguration and emit
-# user-friendly hints instead of false-positive error messages
-suggestion-mode=yes
-
 # Allow loading of arbitrary C extensions. Extensions are imported into the
 # active Python interpreter and may run arbitrary code.
 unsafe-load-any-extension=no
@@ -470,5 +466,6 @@ valid-metaclass-classmethod-first-arg=mcs
 [EXCEPTIONS]
 
 # Exceptions that will emit a warning when being caught. Defaults to
-# "Exception"
-overgeneral-exceptions=Exception
+# ["builtins.BaseException", "builtins.Exception"]
+overgeneral-exceptions = builtins.BaseException,
+                         builtins.Exception

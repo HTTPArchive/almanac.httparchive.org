@@ -30,7 +30,7 @@ FROM
   UNNEST(getKeyframes(css)) AS num_keyframes,
   UNNEST([10, 25, 50, 75, 90, 100]) AS percentile
 WHERE
-  date = '2022-07-01'
+  date = '2022-07-01' -- noqa: CV09
 GROUP BY
   percentile,
   client

@@ -30,7 +30,7 @@ WITH resource_hints AS (
   LEFT JOIN
     UNNEST(getResourceHints(custom_metrics.other.almanac['link-nodes'].nodes)) AS hint
   WHERE
-    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND
+    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND -- noqa: CV09
     is_root_page
 ),
 
@@ -43,7 +43,7 @@ font_requests AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND
+    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND -- noqa: CV09
     type = 'font' AND
     is_root_page
 ),
@@ -56,7 +56,7 @@ totals AS (
   FROM
     `httparchive.crawl.pages`
   WHERE
-    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND
+    (date = '2025-07-01' OR date = '2024-07-01' OR date = '2023-07-01') AND -- noqa: CV09
     is_root_page
   GROUP BY
     client,

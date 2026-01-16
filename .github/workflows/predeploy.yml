@@ -67,7 +67,7 @@ jobs:
         npm run ebooks
     - name: Upload PDF artifact
       if: ${{ github.event.inputs.ebooks == 'true' }}
-      uses: actions/upload-artifact@v5
+      uses: actions/upload-artifact@v6
       with:
         name: pdfs
         path: ./src/static/pdfs/*.pdf
@@ -79,7 +79,7 @@ jobs:
         npm run timestamps
     - name: Create Pull Request
       id: cpr
-      uses: peter-evans/create-pull-request@v7
+      uses: peter-evans/create-pull-request@v8
       with:
         title: Pre-deploy Updates
         branch-suffix: timestamp

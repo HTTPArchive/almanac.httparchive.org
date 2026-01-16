@@ -159,7 +159,7 @@ FROM (
     `httparchive.almanac.parsed_css`,
     UNNEST(getGradientFunctions(css)) AS function
   WHERE
-    date = '2022-07-01' AND
+    date = '2022-07-01' AND -- noqa: CV09
     function IS NOT NULL
 )
 JOIN (

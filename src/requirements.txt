@@ -5,8 +5,3 @@ pytest==9.0.2
 pytest-watch==4.2.0
 pytest-cov==7.0.0
 sqlfluff==3.5.0
-
-# sql/util/* dependencies
-pandas==2.3.3
-google-cloud-bigquery==3.38.0
-requests==2.32.5

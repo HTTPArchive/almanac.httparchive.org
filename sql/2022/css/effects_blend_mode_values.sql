@@ -29,7 +29,7 @@ WITH blend_modes AS (
     `httparchive.almanac.parsed_css`,
     UNNEST(getBlendModes(css)) AS blend_mode
   WHERE
-    date = '2022-07-01'
+    date = '2022-07-01' -- noqa: CV09
 ),
 
 totals AS (
