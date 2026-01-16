@@ -942,7 +942,7 @@ The map of TLD ranking is very similar to 2024, but obviously doesn't include th
 
 {{ figure_markup(
   image="map-accessible-countries-by-tld.png",
-  caption="Map of ccessible countries by Top Level Domain (TLD).",
+  caption="Map of accessible countries by Top Level Domain (TLD).",
   description="Displayed visually in a world map, the most accessible countries are Norway with 87%, Finland with 86%, followed by Canada, USA, UK, Sweden, Ireland, Australia, New Zealand, Austria, Belgium, Switzerland, Denmark, and South Africa. China is the least accessible by Top Level Domain, with close to 67%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1554186781&format=interactive",
   sheets_gid="1037208406",
