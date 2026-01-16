@@ -321,10 +321,10 @@ Different tiers have different top platforms.
       <tr>
         <td class="numeric">5</td>
         <td></td>
-        <td>Shopify</td>>
-        <td>WooCommerce</td>>
-        <td>1C-Bitrix</td>>
-        <td>Wix eCommerce</td>>
+        <td>Shopify</td>
+        <td>WooCommerce</td>
+        <td>1C-Bitrix</td>
+        <td>Wix eCommerce</td>
         <td>PrestaShop</td>
       </tr>
     </tbody>
@@ -391,10 +391,10 @@ Different tiers have different top platforms.
       <tr>
         <td class="numeric">5</td>
         <td></td>
-        <td>Shopify</td>>
-        <td>WooCommerce</td>>
-        <td>1C-Bitrix</td>>
-        <td>Wix eCommerce</td>>
+        <td>Shopify</td>
+        <td>WooCommerce</td>
+        <td>1C-Bitrix</td>
+        <td>Wix eCommerce</td>
         <td>PrestaShop</td>
       </tr>
     </tbody>
