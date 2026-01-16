@@ -16,8 +16,8 @@ results: https://docs.google.com/spreadsheets/d/1KJQznDT9tL2IYCbYIcWas2k9OG1rK4p
 featured_quote: Performance gains are real, but uneven as top sites lead on interactivity, while long-tail adoption of new features is increasingly driven by CMS defaults.
 featured_stat_1: 97%
 featured_stat_label_1: Websites with good INP on desktop (≤200 ms)
-featured_stat_2: 86.6%
-featured_stat_label_2: Mobile pages using at least one web font, likely causing layout shifts.
+featured_stat_2: 87%
+featured_stat_label_2: Mobile pages using at least one web font.
 featured_stat_3: 28%
 featured_stat_label_3: Top 1,000 desktop pages using unload handlers, down from 35% in 2024.
 doi: 10.5281/zenodo.18258743
