@@ -24,15 +24,11 @@ doi: 10.5281/zenodo.18246295
 
 When the HTTP Archive first began gathering data on web typography in 2011, the use of custom web fonts was in the low single digits. Only about 3-5% of websites at the time delivered self-hosted fonts via `@font-face` or used services like Typekit, Fonts.com, or Google Web Fonts. Every other site in 2011 was limited to the small handful of "web-safe" system fonts (Arial, Courier, Times, etc.) that were available on every user's device.
 
-Web fonts quickly rose to become the norm when designers realized that custom typography could distinguish their visual identity from other, more generic sites. By 2015, web fonts were used by over half of websites. They reached around 75% adoption by 2020.
+Web fonts quickly rose to become the norm when designers realized that custom typography could distinguish their visual identity from other, more generic sites. By 2015, web fonts were used by over half of websites. They reached around 75% adoption by 2020. Today, the question is less about whether a website uses web fonts, but rather which specific typefaces it displays and whether they use font features to display their full expressive potential.
 
-Today, the question is less about whether a website uses web fonts, but rather which specific typefaces it displays and whether they use font features to display their full expressive potential.
+At the same time, font delivery methods have been shifting. An increasing number of sites are choosing to self-host their font files rather than relying exclusively on third-party CDNs, and many use a mix of both approaches. Last year's data showed a clear rise in exclusive self-hosting alongside a decline in sites that combined self-hosting with external services, and we investigate whether this trend continues in 2025.
 
-At the same time, font delivery methods on the web have been shifting. An increasing number of sites are choosing to self-host their font files (serving fonts from their own servers) rather than relying exclusively on third-party CDNs. Many other sites use a mix of both approaches. Last year's data showed a clear rise in exclusive self-hosting alongside a decline in sites that combined self-hosting with external services, and we investigate if this trend continues in 2025.
-
-We also look at font providers (is Google Fonts dominance continuing) as well as how fonts are being loaded onto sites, as well as which fonts are used in, how non-Latin languages are supported, as well as some newer, more advanced topics.
-
-In short, web fonts are nearly universal on the web, but more sites are taking font delivery into their own hands instead of depending on an external provider. We explore these patterns and describe the current state of web typography in detail below.
+This chapter explores several dimensions of web typography today: which providers command the largest share, how fonts are loaded and optimized for speed, which typefaces lead in actual CSS implementations, how non-Latin scripts are handled, and what variable fonts and color fonts mean for the future of web typography.
 
 ## Webfont usage
 
