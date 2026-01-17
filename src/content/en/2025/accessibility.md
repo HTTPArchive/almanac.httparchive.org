@@ -858,7 +858,7 @@ Experts like Joe Dolson have explored whether <a hreflang="en" href="https://wpb
 
 Hidde de Vries <a hreflang="en" href="https://hidde.blog/ai-for-accessible-components/">contrasts how humans and language models approach accessible component code</a>. Humans base HTML, CSS, and ARIA decisions on specifications, user needs, assistive technology behavior, and platform quirks, all guided by intentions for the interface. LLMs instead predict likely code from training data, which is problematic because most existing code has accessibility issues, and the models lack intent or understanding of specific users.
 
-Adrian Roselli acknowledges that recent advances in computer vision and LLMs have brought some benefits and can potentially help readers distill complex articles into understandable summaries. However, he argues <a hreflang="en" href="https://adrianroselli.com/2023/06/no-ai-will-not-fix-accessibility.html">these tools still lack context and authorship</a>. They can't know why content was created, what a joke or meme depends on, or how an interface is meant to work. Their descriptions and code suggestions can easily miss the point or mislead users.
+Adrian Roselli acknowledges that recent advances in computer vision and LLMs can potentially help readers distill complex articles into understandable summaries. However, he argues <a hreflang="en" href="https://adrianroselli.com/2023/06/no-ai-will-not-fix-accessibility.html">these tools still lack context and authorship</a>. They can't know why content was created, what a joke or meme depends on, or how an interface is meant to work. Their descriptions and code suggestions can easily miss the point or mislead users.
 
 AI raises significant ethical concerns that go beyond accessibility.
 
