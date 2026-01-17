@@ -12,11 +12,11 @@ charlesberret_bio: Charles Berret is a journalist, developer, and media scholar 
 results: https://docs.google.com/spreadsheets/d/1otdu4p_CCI70B4FVzw6k02frStsPMrQoFu7jUim_0Bg/edit
 featured_quote: The promise of variable fonts (fine-tuning typography with continuous variation) is supported by high levels of technical integration, but still in an early phase of creative exploration for most designers—many are using variable fonts as convenient multi-weight files, not yet as fully dynamic resources for typographic expression.
 featured_stat_1: 72%
-featured_stat_label_1: websites self-hosting fonts in some capacity
+featured_stat_label_1: Websites self-hosting fonts in some capacity
 featured_stat_2: 40%
-featured_stat_label_2: websites using variable fonts
+featured_stat_label_2: Websites using variable fonts
 featured_stat_3: 65%
-featured_stat_label_3: font requests served as WOFF2
+featured_stat_label_3: Font requests served as WOFF2
 doi: 10.5281/zenodo.18246295
 ---
 
