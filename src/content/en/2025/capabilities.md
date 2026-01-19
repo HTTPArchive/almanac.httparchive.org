@@ -32,7 +32,7 @@ In the age of AI, browsers cannot afford to be left behind—they must propose s
 
 This chapter, as in previous years, used the HTTP Archive's public dataset of millions of pages. These pages were archived as both desktop and mobile, since some sites serve different content based on what device is requesting the page.
 
-### How does the HTTP Archive detect capabilities.
+### How does the HTTP Archive detect capabilities?
 
 The HTTP Archive crawler parses the source code for all of these pages to determine which APIs were (potentially) used on the pages using regular expressions, such as `/navigator\.share\s*\(/g`.
 
