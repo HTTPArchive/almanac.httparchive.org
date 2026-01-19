@@ -18,6 +18,7 @@ featured_stat_2: 78
 featured_stat_label_2: Percentage of notifications ignored on desktop clients.
 featured_stat_3: 2
 featured_stat_label_3: Number of new engines that now support web apps.
+doi: 10.5281/zenodo.18246631
 ---
 
 ## Introduction
@@ -363,8 +364,6 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
   </table>
   <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="fugu.sql") }}</figcaption>
 </figure>
-
-There is a complete separate chapter dedicated to [capabilities](./capabilities.md) to dive deeper in the adoption that these sort of APIs have had in 2025.
 
 ## Notifications and PWAs
 

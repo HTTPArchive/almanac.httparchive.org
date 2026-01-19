@@ -18,6 +18,7 @@ featured_stat_2: 16
 featured_stat_label_2: The median number of third-party domains present on a page
 featured_stat_3: 18%
 featured_stat_label_3: Percentage of websites that use TCF Standard
+doi: 10.5281/zenodo.18246420
 ---
 
 ## Introduction
@@ -164,7 +165,7 @@ The top 10 third-party domains are dominated by Google-owned services, including
 
 ## Consent propagation among third parties
 
-In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB's three consent standards: the <a hrefland="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework (TCF)</a>, the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Framework</a>, and the <a hrefland="en" href="https://iabtechlab.com/gpp/">Global Privacy Protocol (GPP)</a>.
+In this section, we examine how different third parties transmit user consent across the web. <a hreflang="en" href="https://petsymposium.org/popets/2024/popets-2024-0120.pdf">Previous research</a> has shown that third parties often rely on industry-standard frameworks to communicate consent information. In our analysis, we focus primarily on the IAB's three consent standards: the <a hreflang="en" href="https://iabeurope.eu/transparency-consent-framework/">Transparency and Consent Framework (TCF)</a>, the <a hreflang="en" href="https://iabtechlab.com/standards/ccpa/">CCPA Framework</a>, and the <a hreflang="en" href="https://iabtechlab.com/gpp/">Global Privacy Protocol (GPP)</a>.
 
 These frameworks define how consent information is encoded and shared between websites and third parties. We begin by identifying which consent standards are most prevalent among the third parties observed in our dataset. To determine which framework a third party uses, we rely on the presence of specific parameters in the request URLs. Details of the different standards are below:
 

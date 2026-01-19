@@ -1,0 +1,163 @@
+#standardSQL
+# Top payment processors, compared to 2021
+# top_payment_providers.sql
+SELECT
+  client,
+  2025 AS year,
+  technologies.technology AS payment,
+  COUNT(DISTINCT root_page) AS freq,
+  total,
+  COUNT(DISTINCT root_page) / total AS pct
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
+JOIN (
+  SELECT
+    client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2025-07-01'
+  GROUP BY
+    client
+)
+USING (client)
+WHERE
+  cats = 'Payment processors' AND
+  date = '2025-07-01'
+GROUP BY
+  client,
+  total,
+  payment
+UNION ALL
+SELECT
+  client,
+  2024 AS year,
+  technologies.technology AS payment,
+  COUNT(DISTINCT page) AS freq,
+  total,
+  COUNT(DISTINCT page) / total AS pct
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
+JOIN (
+  SELECT
+    client,
+    COUNT(DISTINCT root_page) AS total
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2024-06-01'
+  GROUP BY
+    client
+)
+USING (client)
+WHERE
+  cats = 'Payment processors' AND
+  date = '2024-06-01'
+GROUP BY
+  client,
+  total,
+  payment
+UNION ALL
+SELECT
+  client,
+  2023 AS year,
+  technologies.technology AS payment,
+  COUNT(DISTINCT root_page) AS freq,
+  total,
+  COUNT(DISTINCT root_page) / total AS pct
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
+JOIN (
+  SELECT
+    client,
+    COUNT(DISTINCT root_page) AS total
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2023-06-01'
+  GROUP BY
+    client
+)
+USING (client)
+WHERE
+  cats = 'Payment processors' AND
+  date = '2023-06-01'
+GROUP BY
+  client,
+  total,
+  payment
+UNION ALL
+SELECT
+  client,
+  2022 AS year,
+  technologies.technology AS payment,
+  COUNT(DISTINCT root_page) AS freq,
+  total,
+  COUNT(DISTINCT root_page) / total AS pct
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
+JOIN (
+  SELECT
+    client,
+    COUNT(DISTINCT root_page) AS total
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2022-06-01'
+  GROUP BY
+    client
+)
+USING (client)
+WHERE
+  cats = 'Payment processors' AND
+  date = '2022-06-01' AND
+  is_root_page
+GROUP BY
+  client,
+  total,
+  payment
+UNION ALL
+SELECT
+  client,
+  2021 AS year,
+  technologies.technology AS payment,
+  COUNT(DISTINCT page) AS freq,
+  total,
+  COUNT(DISTINCT page) / total AS pct
+FROM
+  `httparchive.crawl.pages`,
+  UNNEST(technologies) AS technologies,
+  UNNEST(technologies.categories) AS cats
+JOIN (
+  SELECT
+    client,
+    COUNT(0) AS total
+  FROM
+    `httparchive.crawl.pages`
+  WHERE
+    date = '2021-07-01' AND
+    is_root_page
+  GROUP BY
+    client
+)
+USING (client)
+WHERE
+  cats = 'Payment processors' AND
+  date = '2021-07-01' AND
+  is_root_page
+GROUP BY
+  client,
+  total,
+  payment
+ORDER BY
+  year DESC,
+  pct DESC
