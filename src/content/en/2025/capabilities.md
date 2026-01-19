@@ -17,7 +17,7 @@ featured_stat_label_1: Sites using the Compression Streams API.
 featured_stat_2: ~5%
 featured_stat_label_2: Sites using the Media Capabilities API.
 featured_stat_3: <1%
-featured_stat_label_3: Sites use browser-native AI APIs such as LanguageDetector, Translator, Prompt, or Summarizer.
+featured_stat_label_3: Sites using browser-native AI APIs.
 ---
 
 ## Introduction
