@@ -18,6 +18,7 @@ featured_stat_2: ~5%
 featured_stat_label_2: Sites using the Media Capabilities API.
 featured_stat_3: <1%
 featured_stat_label_3: Sites using browser-native AI APIs.
+doi: 10.5281/zenodo.18246600
 ---
 
 ## Introduction
