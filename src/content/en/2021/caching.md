@@ -119,40 +119,43 @@ When using the `Cache-Control` header, you specify one or more _directives_—pr
 
 Below is a table showing the most common `Cache-Control` directives:
 
-<table>
-  <tr>
-    <th>Directive</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">max-age</code></td>
-    <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example, <code>max-age=86400</code>.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">public</code></td>
-    <td>Indicates that any cache can store the response, including the browser and the CDN. This is assumed by default.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">no-cache</code></td>
-    <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">must-revalidate</code></td>
-    <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">no-store</code></td>
-    <td>Indicates that the response must not be cached.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">private</code></td>
-    <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">immutable</code></td>
-    <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>Directive</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">max-age</code></td>
+      <td>Indicates the number of seconds that a resource can be cached for relative to the current time. For example, <code>max-age=86400</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">public</code></td>
+      <td>Indicates that any cache can store the response, including the browser and the CDN. This is assumed by default.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">no-cache</code></td>
+      <td>A cached resource must be revalidated before its use, via a conditional request, even if it is not marked as stale.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">must-revalidate</code></td>
+      <td>A stale cached entry must be revalidated before its use, via a conditional request.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">no-store</code></td>
+      <td>Indicates that the response must not be cached.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">private</code></td>
+      <td>The response is intended for a specific user and should not be stored by shared caches such as CDNs.</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">immutable</code></td>
+      <td>Indicates that the cached entry will never change during its TTL, and that revalidation is not necessary.</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code> directives.") }}</figcaption>
+</figure>
 
 {{ figure_markup(
   image="cache-control-directives.png",

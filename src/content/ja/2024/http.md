@@ -201,7 +201,7 @@ Web Almanacデータセットで実際のHTTP/3のサポートを正しく把握
 しかし、SVCBに関する完全な議論はここでは時間がかかりすぎるため、新しいHTTPSレコードを介してHTTP/3のサポートをアナウンスする方法にのみ焦点を当てます。<a hreflang="en" href="https://www.domaintools.com/resources/blog/the-use-cases-and-benefits-of-svcb-and-https-dns-record-types/">他の</a><a hreflang="en" href="https://blog.cloudflare.com/speeding-up-https-and-http-3-negotiation-with-dns/">ブログ投稿</a>や<a hreflang="en" href="https://www.isc.org/docs/2022-webinar-dns-scvb.pdf">ドキュメント</a>、<a hreflang="en" href="https://www.netmeister.org/blog/https-rrs.html">詳細</a>がより広いアプリケーションについて書かれているものがたくさんあるためです。実際のHTTPSレコードの例を見てみましょう。
 
 {{ figure_markup(
-  image="dns-httpshttps-example.jpg",
+  image="dns-https-example.jpg",
   caption="DNS HTTPSリソースレコードの例。",
   description="`dig`コマンドラインツールからのスクリーンショット。DNS HTTPSレコードが`alpn` `h3`と`h2`をリストし、`blog.cloudflare.com`のipv4hintとipv6hintの両方を提供していることを示しています。",
   width=1415,

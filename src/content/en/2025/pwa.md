@@ -161,7 +161,8 @@ Let's examine how individual members rate in the totality of manifest files scan
     <thead>
       <tr>
         <th>Manifest field</th>
-        <th class="numeric">Sites</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
