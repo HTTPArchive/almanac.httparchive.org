@@ -3,13 +3,12 @@
 title: Capabilities
 description: Capabilities chapter of the 2025 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, built-in AI and more.
 hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
-authors: [Dawntraoz, MichaelSolati]
+authors: [Dawntraoz]
 reviewers: [webmaxru, tomayac]
-analysts: [guaca, christianliebel,tomayac]
+analysts: [guaca, tomayac]
 editors: [tunetheweb]
 translators: []
 Dawntraoz_bio: Alba Silvente is a Senior Frontend Engineer at Funda. She loves writing about front end development, Jamstack, and web performance on <a hrefleng="en" href="https://www.dawntraoz.com/">her blog</a>, speaking at conferences, hosting tech podcasts, and working hard in the open-source community. She is also a Google Developer Expert in Web Technologies, an Microsoft MVP and an ambassador at Women Tech Makers.
-MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web.
 results: https://docs.google.com/spreadsheets/d/1tBTCtkEw0QEOyebuHIettqGEKw1gtO2EB1jkwpRKb18
 featured_quote: Capabilities on the web continue to mature, with established APIs seeing steady adoption while a new class of browser-native AI features begins to emerge.
 featured_stat_1: ~13%
@@ -105,7 +104,7 @@ const text = await navigator.clipboard.readText();
 console.log(text); // "Hello from Web Almanac!"
 ```
 
-The Async Clibpoard API is supported in Chromium-based browsers and Safari. Firefox has partial support.
+The Async Clibpoard API is supported in Chromium-based browsers, Safari and Firefox. Only Chromium-based browsers have support for richer clipboard data, like web custom formats.
 
 {{ figure_markup(
   image="clipboard.png",
@@ -223,9 +222,9 @@ The Media Session API experienced a small decline. Mobile adoption dropped from 
 
 ### Add to Home Screen
 
-This capability allows users to install a Progressive Web App (PWA) on their device's home screen.
+This capability allows users to [install a Progressive Web App (PWA) as an app-like experience on their device](https://developer.chrome.com/blog/how_chrome_helps_users_install_the_apps_they_value).
 
-This is triggered when the browser fires the `beforeinstallprompt` event, typically after the PWA meets installability criteria (manifest, HTTPS, service worker).
+When a site meets installability criteria, Chrome and other browsers may show an install badge (for example, an icon in the address bar or an “Install” menu option) that lets users add the app to their home screen or install it as a standalone app, while it also supports manual installation flows for sites that don’t meet those criteria. Chrome further experiments with ML-driven install prompts on Android to help users discover installable experiences.
 
 {{ figure_markup(
   image="add-to-home-screen.png",
@@ -237,7 +236,7 @@ This is triggered when the browser fires the `beforeinstallprompt` event, typica
   )
 }}
 
-Adoption of Add to Home Screen capabilities remained flat, with mobile usage decreasing slightly from 4.8% in 2024 to 4.6% in 2025, and desktop from 5.1% to 4.9%. These small declines likely reflect normal variation rather than a real downward trend. Growth is constrained by platform fragmentation: Android and Chromium-based browsers expose install prompts, while iOS lacks `beforeinstallprompt` and relies on a manual Safari-driven install flow. This limits widespread uptake despite PWA adoption.
+Adoption of Add to Home Screen capabilities remained flat, with mobile usage decreasing slightly from 4.8% in 2024 to 4.6% in 2025, and desktop from 5.1% to 4.9%. These small declines likely reflect normal variation rather than a real downward trend. Growth is constrained by platform fragmentation: Android and Chromium-based browsers expose install prompts, while iOS relies on a manual Safari-driven install flow. This limits widespread uptake despite PWA adoption.
 
 ### Media Capabilities API
 
@@ -283,7 +282,6 @@ One of the most notable changes in the Capabilities chapter for 2025 is the firs
 ### Built-in AI APIs
 
 As of 2025, only a subset of these APIs is available outside of experimental contexts: _LanguageDetector_, _Translator_, _Summarizer_, and _Prompt_ (limited to extensions). Other built-in AI capabilities—such as the regular _Prompt_ API, _Writer_, _Rewriter_, and _Proofreader_—remain experimental, requiring additional setup and operating under temporary or limited token-based constraints. This distinction is important when interpreting usage data, as experimental features are less likely to appear in production websites.
-
 
 <figure>
   <table>
