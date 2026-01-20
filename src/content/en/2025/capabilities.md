@@ -8,7 +8,7 @@ reviewers: [webmaxru]
 analysts: [guaca, christianliebel,tomayac]
 editors: [tunetheweb]
 translators: []
-Dawntraoz_bio: Alba Silvente is a Senior Frontend Engineer at Funda. She loves writing about FE development, Jamstack, and Web Performance on her blog, speaking at conferences, hosting tech podcasts, and working hard in the open-source community. She is also a GoogleDevExpert in Web Technologies, an Microsoft MVP and an ambassador at WTM.
+Dawntraoz_bio: Alba Silvente is a Senior Frontend Engineer at Funda. She loves writing about front end development, Jamstack, and web performance on <a hrefleng="en" href="https://www.dawntraoz.com/">her blog</a>, speaking at conferences, hosting tech podcasts, and working hard in the open-source community. She is also a Google Developer Expert in Web Technologies, an Microsoft MVP and an ambassador at Women Tech Makers.
 MichaelSolati_bio: Michael is a Developer Advocate at Amplication, focusing on helping developers build APIs and drink IPAs. Additionally, he is a Web GDE and has found his love in creating compelling experiences on the web and the voodoo ways of the web.
 results: https://docs.google.com/spreadsheets/d/1tBTCtkEw0QEOyebuHIettqGEKw1gtO2EB1jkwpRKb18
 featured_quote: Capabilities on the web continue to mature, with established APIs seeing steady adoption while a new class of browser-native AI features begins to emerge.
