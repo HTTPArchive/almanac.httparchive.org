@@ -4,7 +4,7 @@ title: Capabilities
 description: Capabilities chapter of the 2025 Web Almanac covering brand-new, powerful web platform APIs that give web apps access to hardware interfaces, enhance web-based productivity apps, built-in AI and more.
 hero_alt: Hero image of Web Almanac characters with superhero capes plugging various capabilities into a web page.
 authors: [Dawntraoz, MichaelSolati]
-reviewers: [webmaxru]
+reviewers: [webmaxru, tomayac]
 analysts: [guaca, christianliebel,tomayac]
 editors: [tunetheweb]
 translators: []
@@ -25,9 +25,9 @@ doi: 10.5281/zenodo.18246600
 
 Today's web browsers offer a richer web experience than ever before. They are not limited to the basic capabilities of the browser itself; they also make use of lower-level features and the operating system on which they run.
 
-These capabilities are made available via web platform APIs, including well-established ones such as [Clipboard](https://developer.mozilla.org/docs/Web/API/Clipboard_API), [File System](https://developer.mozilla.org/docs/Web/API/File_System_API) and [Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API), as well as new ones in the experimental phase that will transform the creation of web pages.
+These capabilities are made available via web platform APIs, including well-established ones such as [Clipboard](https://developer.mozilla.org/docs/Web/API/Clipboard_API), [File System](https://developer.mozilla.org/docs/Web/API/File_System_API) and [Service Worker](https://developer.mozilla.org/docs/Web/API/Service_Worker_API), as well as new ones in the experimental phase that have the potential to transform the creation of web apps.
 
-In the age of AI, browsers cannot afford to be left behind—they must propose sustainable, accessible solutions for all, in order to democratize the use of AI. Consequently, we will see the initial use of these new Chrome-specific APIs in the Capabilities chapter this year.
+In the age of AI, browsers cannot afford to be left behind—they must propose sustainable, accessible AI APIs for all, in order to democratize the use of AI. Consequently, we will discuss the initial use of these new Chrome- and Edge-specific APIs in the Capabilities chapter this year.
 
 ## Methodology
 
@@ -37,15 +37,15 @@ This chapter, as in previous years, used the HTTP Archive's public dataset of mi
 
 The HTTP Archive crawler parses the source code for all of these pages to determine which APIs were (potentially) used on the pages using regular expressions, such as `/navigator\.share\s*\(/g`.
 
-The way it works can cause some problems when it comes to detecting things: it may underreport some APIs used as it can't detect code that may exist due to minification, for example, when navigator was minified to `n;` or it may overreport occurrences of APIs because it doesn't run code to see if an API is actually used.
+The way it works can cause some problems when it comes to detecting things: it may underreport some APIs used as it can't detect code that may exist due to minification, for example, when navigator was minified to `n`; or it may overreport occurrences of APIs because it doesn't run code to see if an API is actually used.
 
 Even with these limitations, as in other editions of this chapter, we should still be able to have a fairly good overview of what capabilities are used on the web nowadays.
 
-Eighty-six total regular expressions for supported capabilities exist; view <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/main/dist/fugu-apis.js">this source file</a> to see all the expressions used.
+Eighty-six total regular expressions for supported capabilities exist; view this <a hreflang="en" href="https://github.com/HTTPArchive/custom-metrics/blob/main/dist/fugu-apis.js">source file</a> based on the <a href="https://github.com/tomayac/fugu-api-data">Fugu API data</a> project to see all the expressions used.
 
 ### Project Fugu
 
-Before we dive into the data, I would like to express my gratitude to Project Fugu, a cross-company initiative aimed at achieving feature parity between web and mobile/desktop applications.
+Before we dive into the data, we would like to express our gratitude to Project Fugu, a cross-company initiative aimed at achieving feature parity between web and mobile/desktop applications.
 
 Thanks to this initiative, we can benefit from many features that belong to applications only by exposing platform-specific capabilities to the web.
 
@@ -57,9 +57,9 @@ The following section highlights the seven most widely used web platform capabil
 
 ### Compression Streams API
 
-The [Compression Streams API](https://developer.mozilla.org/docs/Web/API/Compression_Streams_API) allows web apps to compress and decompress data using widely supported formats like GZIP and Deflate, directly in the browser. This enables more efficient transfer and storage of large data without relying on server-side processing.
+The [Compression Streams API](https://developer.mozilla.org/docs/Web/API/Compression_Streams_API) allows web apps to compress and decompress data using widely supported formats like GZIP and Deflate (and as of recent also Brotli), directly in the browser. This enables more efficient transfer and storage of large data without relying on server-side processing.
 
-Data is processed via `CompressionStream` and `DecompressionStream` objects, which integrate with the web's streaming APIs (`ReadableStream`, `WritableStream`).
+Data is processed via `CompressionStream` and `DecompressionStream` objects, which integrate with the web's [streaming APIs](https://web.dev/streams) (`ReadableStream`, `WritableStream`).
 
 ```js
 const text = "Hello Web Almanac 2025!";
@@ -71,7 +71,7 @@ const result = await new Response(decompressed).text();
 console.log(result); // "Hello Web Almanac 2025!"
 ```
 
-Since May 2023, this feature works across the latest devices and browser versions. Available in Chromium-based browsers, Safari and Firefox, but might not work in older devices or browsers.
+Since May 2023, this feature works across the latest devices and browser versions. It's available in Chromium-based browsers, Safari and Firefox, but might not work on older devices or other browsers.
 
 {{ figure_markup(
   image="compression-streams.png",
@@ -83,7 +83,7 @@ Since May 2023, this feature works across the latest devices and browser version
   )
 }}
 
-Adoption of the Compression Streams API_ grew sharply between 2024 and 2025, becoming the most widely used API in 2025 and overtaking Clipboard, which had been in the lead for three years.
+Adoption of the Compression Streams API grew sharply between 2024 and 2025, becoming the most widely used API in 2025 and overtaking Clipboard, which had been in the lead for three years.
 
 On mobile, usage jumped from 2.3% to 12.3%, and on desktop from 2.7% to 14.0%. This steep rise aligns with the API becoming [widely supported across all major engines](https://web.dev/blog/compressionstreams) in the last two years, removing a technical blocker and letting developers drop JavaScript polyfills and rely on native gzip/deflate compression.
 
@@ -105,7 +105,7 @@ const text = await navigator.clipboard.readText();
 console.log(text); // "Hello from Web Almanac!"
 ```
 
-Supported in Chromium-based browsers and Safari. Firefox has partial support.
+The Async Clibpoard API is supported in Chromium-based browsers and Safari. Firefox has partial support.
 
 {{ figure_markup(
   image="clipboard.png",
@@ -146,7 +146,7 @@ if (navigator.canShare && navigator.canShare(data)) {
 }
 ```
 
-Supported in modern Chrome, Edge, and Safari. Firefox does not implement it.
+The Web Share API is supported in modern Chrome, Edge, and Safari. Firefox does not implement it (although it exists behind a flag).
 
 {{ figure_markup(
   image="web-share.png",
@@ -160,7 +160,7 @@ Supported in modern Chrome, Edge, and Safari. Firefox does not implement it.
 
 There have been minor adjustments to the usage of one of the most widely adopted APIs, which currently occupies third place in the ranking of most used APIs.
 
-Adoption of the Web Share API remained largely stable, with mobile rising slightly from 6.0% in 2024 to 6.6% in 2025, and desktop from 6.2% to 6.7%. Flat adoption, but with a slight uptick. This API has now reached a state of maturity and stability across major browsers; these incremental gains are indicative of natural fluctuations rather than significant growth.
+Adoption of the Web Share API remained largely stable, with mobile rising slightly from 6.0% in 2024 to 6.6% in 2025, and desktop from 6.2% to 6.7%. Adoption was mostly flat, but with a slight uptick. This API has now reached a state of maturity and stability across major browsers; these incremental gains are indicative of natural fluctuations rather than significant growth.
 
 ### Device Memory API
 
@@ -185,7 +185,7 @@ Available in Chromium-based browsers; not supported in Safari or Firefox.
   )
 }}
 
-The Device Memory API saw a noticeable uptick, moving from 5.0% to 6.3% on mobile and 4.9% to 6.2% on desktop. This increase reflects broader recognition of the API's usefulness for adaptive performance strategies, where developers can serve lighter assets to low-memory devices.
+The Device Memory API saw a noticeable uptick, moving from 5.0% to 6.3% on mobile and 4.9% to 6.2% on desktop. This increase reflects broader recognition of the API's usefulness for adaptive performance strategies, where developers can serve lighter assets to low-memory devices. Another possible explanation could be that developers try to determine if AI inference can reasonably run on a device based on the available memory before downloading an AI model.
 
 More developers are leveraging `navigator.deviceMemory` to deliver lighter experiences on low-memory devices. While adoption is still limited by its Chromium-only availability and its intentionally coarse-grained values, the growth shows that sites concerned with performance are starting to make practical use of it.
 
@@ -282,7 +282,7 @@ One of the most notable changes in the Capabilities chapter for 2025 is the firs
 
 ### Built-in AI APIs
 
-As of 2025, only a subset of these APIs is available outside of experimental contexts: _LanguageDetector_, _Translator_, _Summarizer_, and _Prompt_. Other built-in AI capabilities—such as _Writer_, _Rewriter_, and _Proofreader_—remain experimental, requiring additional setup and operating under temporary or limited token-based constraints. This distinction is important when interpreting usage data, as experimental features are less likely to appear in production websites.
+As of 2025, only a subset of these APIs is available outside of experimental contexts: _LanguageDetector_, _Translator_, _Summarizer_, and _Prompt_ (limited to extensions). Other built-in AI capabilities—such as the regular _Prompt_ API, _Writer_, _Rewriter_, and _Proofreader_—remain experimental, requiring additional setup and operating under temporary or limited token-based constraints. This distinction is important when interpreting usage data, as experimental features are less likely to appear in production websites.
 
 
 <figure>
@@ -320,9 +320,9 @@ As of 2025, only a subset of these APIs is available outside of experimental con
   <figcaption>{{ figure_link(caption="Built-in AI API usage", sheets_gid="843125108", sql_file="fugu.sql") }}</figcaption>
 </figure>
 
-Despite their availability, usage across the web remains very limited. As shown in the table below, each of these APIs appears on well under 1% of pages in both desktop and mobile datasets. LanguageDetector and Translator are the most commonly observed, each used by roughly 0.28% of desktop pages and 0.26% of mobile pages, while Prompt and Summarizer show even smaller footprints.
+Despite their availability, usage across the web remains very limited. As shown in the table below, each of these APIs appears on well under 1% of pages in both desktop and mobile datasets, however, actual support is currently limited to most desktop platforms (Windows, macOS, Linux, and ChromeOS on Chromebook Plus devices). Language Detector and Translator are the most commonly observed, each used by roughly 0.28% of desktop pages and 0.26% of mobile pages, while Prompt and Summarizer show even smaller footprints.
 
-The low adoption rates are expected. These APIs are new, often still evolving, and currently supported by a limited set of browsers, Chromium-only. Their inclusion in the 2025 dataset is nonetheless significant: it marks the first measurable presence of browser-native AI primitives in the HTTP Archive, establishing a baseline for tracking how built-in AI capabilities evolve on the web in future years.
+The low adoption rates are expected. These APIs are new, often still evolving, and currently supported by a limited set of browsers, Chrome and Edge. Their inclusion in the 2025 dataset is nonetheless significant: it marks the first measurable presence of browser-native AI primitives in the HTTP Archive, establishing a baseline for tracking how built-in AI capabilities evolve on the web in future years.
 
 ## Conclusion
 
