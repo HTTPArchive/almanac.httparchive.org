@@ -277,6 +277,9 @@ def get_ebook_methodology(lang, year):
     )
     # Remove lazy-loading attributes
     methodology_maincontent = re.sub(' loading="lazy"', "", methodology_maincontent)
+    # Remove lazy-loading attributes
+    methodology_maincontent = re.sub('<div class="table-wrap">', "<div>", methodology_maincontent)
+    methodology_maincontent = re.sub('<div class="table-wrap-container">', "<div>", methodology_maincontent)
     return methodology_maincontent
 
 

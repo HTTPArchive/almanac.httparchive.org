@@ -69,8 +69,19 @@
   margin: 0;
 }
 
+table {
+  border-radius: 16px;
+  border-radius: 1rem;
+  box-shadow: 0 0 16px 0 rgb(78, 85, 100, 0.2);
+  box-shadow: 0 0 1rem 0 rgb(78, 85, 100, 0.2);
+}
+
 .table-wrap {
   padding: 0;
+}
+
+table caption {
+  caption-side: bottom;
 }
 
 .large-table td {
@@ -360,9 +371,9 @@ section.chapter {
   /** We have some big tables that can't be force to break
     * So we cheat and make them small enough to fit on a page
     */
-  figure table td,
-  figure table td li,
-  figure table td p {
+  div table td,
+  div table td li,
+  div table td p {
     font-size: 12px;
     font-size: 0.85rem;
   }
@@ -412,6 +423,8 @@ section.chapter {
   figure a,
   figure div,
   figure img,
+  div.table,
+  p.table-caption,
   figcaption {
     max-width: 100%;
     text-align: center;
@@ -426,7 +439,8 @@ section.chapter {
     text-decoration: none;
   }
 
-  figcaption {
+  figcaption,
+  p.table-caption {
     width: 1000px;
   }
 
