@@ -224,7 +224,7 @@ The Media Session API experienced a small decline. Mobile adoption dropped from 
 
 This capability allows users to [install a Progressive Web App (PWA) as an app-like experience on their device](https://developer.chrome.com/blog/how_chrome_helps_users_install_the_apps_they_value).
 
-When a site meets installability criteria, Chrome and other browsers may show an install badge (for example, an icon in the address bar or an “Install” menu option) that lets users add the app to their home screen or install it as a standalone app, while it also supports manual installation flows for sites that don’t meet those criteria. Chrome further experiments with ML-driven install prompts on Android to help users discover installable experiences.
+When a site meets installability criteria, Chrome and other browsers may show an install badge (for example, an icon in the address bar or an "Install" menu option) that lets users add the app to their home screen or install it as a standalone app, while it also supports manual installation flows for sites that don't meet those criteria. Chrome further experiments with ML-driven install prompts on Android to help users discover installable experiences.
 
 {{ figure_markup(
   image="add-to-home-screen.png",
