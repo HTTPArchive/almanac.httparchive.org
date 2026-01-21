@@ -1425,7 +1425,7 @@ For CMS's that can be easily self-hosted such as Plone or Wagtail, it is more di
 Large websites often have a high number of visitors and registered users, of which they might store highly sensitive data. This means they likely attract more attackers and are thus more prone to targeted attacks. Additionally, when an attack succeeds, these websites could be fined or sued, costing them money and/or reputational damage. Therefore, it can be expected that popular websites invest more in their security to secure their users.
 
 {{ figure_markup(
-  image="security-headeers-by-rank.png",
+  image="security-headers-by-rank.png",
   caption="Security header adoption by website rank according to the April 2024 CrUX.",
   description="Bar chart showing in top 1,000 sites, 64% have XFO, 60% have HSTS and 56% have X-Content-Type-Options headers. In top 10,000, 54% have XFO, 46% have HSTS and 54% have X-Content-Type-Options headers. In top 100,000, 51% have XFO, 42% have HSTS and 50% have X-Content-Type-Options headers. In top 1,000,000, 45% have XFO, 36% have HSTS and 47% have X-Content-Type-Options headers. Among all sites, 29% have XFO, 31% have HSTS and 43% have X-Content-Type-Options.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxTTMlFFSMT3mZgw2awA0wl3F68gzU1OLuyMaZXscSFq-Pa5ev_qTXx8ZaGEOl_ox_aHsraAGMXZ9Y/pubchart?oid=256464807&format=interactive",

@@ -161,7 +161,8 @@ Let's examine how individual members rate in the totality of manifest files scan
     <thead>
       <tr>
         <th>Manifest field</th>
-        <th class="numeric">Sites</th>
+        <th>Desktop</th>
+        <th>Mobile</th>
       </tr>
     </thead>
     <tbody>
@@ -364,6 +365,8 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
   </table>
   <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="fugu.sql") }}</figcaption>
 </figure>
+
+There is a separate chapter dedicated to [Capabilities](./capabilities.md) to dive deeper in the adoption that these sort of APIs have had in 2025.
 
 ## Notifications and PWAs
 

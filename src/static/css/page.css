@@ -505,7 +505,8 @@ figure .anchor-link {
   background-color: #e5e5e5;
 }
 
-figure {
+figure,
+div.table {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -551,7 +552,8 @@ figure .code-block {
   margin: 0.625rem auto;
 }
 
-figcaption {
+figcaption,
+p.table-caption {
   margin: 8px auto 0;
   margin: 0.5rem auto 0;
   text-align: center;

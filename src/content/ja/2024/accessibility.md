@@ -371,7 +371,7 @@ WCAGは、<a hreflang="en" href="https://www.w3.org/WAI/WCAG21/Understanding/mul
         <th scope="colgroup" colspan=2>すべてのサイト</th>
       </tr>
       <tr>
-        <th></th>
+        <td></td>
         <th scope="col">デスクトップ</th>
         <th scope="col">モバイル</th>
         <th scope="col">デスクトップ</th>

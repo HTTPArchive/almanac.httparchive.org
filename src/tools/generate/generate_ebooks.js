@@ -14,6 +14,9 @@ const update_links = (chapter, chapter_config) => {
   body = body.replace(/figure_link\(/g,'figure_link(ebook=true,');
   // Remove figure_drodowns as not needed
   body = body.replace(/{{\s*figure_dropdown.*?}}/gsm,'');
+  // For PDFs tables cannot be in figures
+  body = body.replace(/<figure (id="[^"]*?")><div class="table-wrap"><div class="table-wrap-container"><table([^>]*?)>/gs,'<table $1$2>');
+  body = body.replace(/<\/table>[\n ]*<\/div>[\n ]*<\/div>[\n ]*<figcaption>(.*?)<\/figcaption>([\n ]*)<\/figure>/gs,'</table><p class="table-caption">$1</p>');
   // Replace current chapter header ids to full id (e.g. <h2 id="introduction"> -> <h2 id="javascript-introduction">)
   body = body.replace(/<h([0-6]) id="/g,'<h$1 id="' + chapter.metadata.chapter + '-');
   // Replace other chapter references with hash to anchor link (e.g. ./javascript#fig-1 -> #javascript-fig-1)

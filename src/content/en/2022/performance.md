@@ -676,7 +676,7 @@ There are other, more direct ways site owners can improve their CLS. Setting `he
 
 Effectively all websites have "good" FID for desktop users, and this trend has held firm over the years. Mobile FID performance is also exceptionally fast, with 92% of websites having "good" FID, a slight improvement over last year.
 
-While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting with a new responsiveness metric</a> that could end up replacing FID, which is especially important because sites tend to perform much worse on [this new metric](./#interaction-to-next-paint-inp) than FID.
+While it's great that so many websites have good FID experiences, developers need to be careful not to become too complacent. Google has been <a hreflang="en" href="https://web.dev/better-responsiveness-metric/">experimenting with a new responsiveness metric</a> that could end up replacing FID, which is especially important because sites tend to perform much worse on [this new metric](#interaction-to-next-paint-inp) than FID.
 
 ### FID metadata and best practices
 

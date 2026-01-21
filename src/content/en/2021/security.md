@@ -303,7 +303,7 @@ We see that 58.5% of all first-party cookies with a `SameSite` attribute have th
 
 Cookie prefixes `__Host-` and `__Secure-` help mitigate attacks to override the session cookie information for a <a hreflang="en" href="https://owasp.org/www-community/attacks/Session_fixation">session fixation attack</a>. `__Host-` helps in domain locking a cookie by requiring the cookie to also have `Secure` attribute, `Path` attribute set to `/`, not have `Domain` attribute and to be sent from a secure origin. `__Secure-` on the other hand requires the cookie to only have `Secure` attribute and to be sent from a secure origin.
 
-​<figure>
+<figure>
   <table>
     <thead>
       <tr>

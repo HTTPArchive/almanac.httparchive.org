@@ -27,7 +27,7 @@ doi: 10.5281/zenodo.14065377
 
 ## Introduction
 
-In the current chapter, we will rely as much as possible on [the 2022 Sustainability chapter](./../2022/sustainability). If you haven't yet, you should read it right now. Yes, recycling/reusing is a major part of sustainability.
+In the current chapter, we will rely as much as possible on [the 2022 Sustainability chapter](../2022/sustainability). If you haven't yet, you should read it right now. Yes, recycling/reusing is a major part of sustainability.
 
 Since the 2022 Almanac, the field of digital sustainability has advanced considerably. That said, it is very much in its infancy, as this is a complex problem. We cannot know, with absolute certainty, what the full effects of our digital lives are on our physical planet. What we can be confident in is that the full impacts are bigger than generally accounted for. Water, land, rare minerals, and electricity are all consumed by our "clean" digital interfaces, and toxic waste is often produced.
 
@@ -630,7 +630,7 @@ Automatically preloading videos is a concern for web sustainability. This practi
   sql_file="video_preload_values.sql"
 ) }}
 
-Comparing the usage of the preload attribute between [2022](./../2022/sustainability) and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 58% to 55% on desktop and from 60% to 56% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
+Comparing the usage of the preload attribute between [2022](../2022/sustainability) and 2024, we observe some changes. The percentage of websites not using preload has slightly decreased, from 58% to 55% on desktop and from 60% to 56% on mobile. This shift suggests a small increase in the use of preload attributes, which could have implications for sustainability.
 
 It's important to remember that the preload attribute only has three valid values: none, auto, and metadata (default). Using the preload attribute with no value or an incorrect value may be interpreted as 'metadata', which can still involve loading up to 3% of the video to retrieve metadata. From a sustainability standpoint, 'none' remains the most environmentally friendly option.
 
@@ -653,7 +653,7 @@ It's important to note that the autoplay attribute can override preload settings
   sql_file="video_autoplay_values.sql"
 ) }}
 
-Comparing the usage of autoplay between [2022](./../2022/sustainability) and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53% to 45% on desktop and from 53% to 45% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
+Comparing the usage of autoplay between [2022](../2022/sustainability) and 2024, we see some notable changes. The percentage of websites explicitly not using autoplay has decreased, from 53% to 45% on desktop and from 53% to 45% on mobile. This could be a concern for sustainability efforts. Also, we notice a slight increase for websites using an empty value for this attribute, which also triggers autoplay (and is bad for sustainability).
 
 It's crucial to remember that autoplay is a Boolean attribute, meaning its presence, even with an empty value, triggers autoplay behavior. The combined percentage of explicit autoplay usage (including `autoplay`, `TRUE` and other values) has remained relatively stable, around 8% for both desktop and mobile.
 
@@ -888,7 +888,7 @@ For further information, refer to:
   sql_file="stylesheet_count.sql"
 ) }}
 
-When we compare this year's data to [2022 data](./../2022/sustainability) we can see the following:
+When we compare this year's data to [2022 data](../2022/sustainability) we can see the following:
 1. Increase in inline stylesheet usage:
     - Desktop: from 25% in 2022 to 31% in 2024.
     - Mobile: from 25% in 2022 to 32% in 2024.
