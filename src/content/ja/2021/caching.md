@@ -119,40 +119,43 @@ CDNとブラウザの両方において、HTTPヘッダーは開発者がリソ�
 
 以下は、もっとも一般的な `Cache-Control` ディレクティブを示した表です。
 
-<table>
-  <tr>
-    <th>ディレクティブ</th>
-    <th>説明</th>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">max-age</code></td>
-    <td>現在時刻を基準として、リソースのキャッシュが可能な秒数を示す。たとえば、<code>max-age=86400</code>などです。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">public</code></td>
-    <td>ブラウザや CDN を含む、任意のキャッシュが応答を保存できることを示します。これはデフォルトで想定されています。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">no-cache</code></td>
-    <td>キャッシュされたリソースは、たとえそれが古いとマークされていなくても、使用前に条件付きリクエストによって再検証されなければならない。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">must-revalidate</code></td>
-    <td>キャッシュされた古いエントリは、使用前に条件付きリクエストによって再検証されなければならない。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">no-store</code></td>
-    <td>レスポンスがキャッシュされてはならないことを示す。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">private</code></td>
-    <td>このレスポンスは特定のユーザーを対象としたものであり、CDNなどの共有キャッシュに保存されるべきものではありません。</td>
-  </tr>
-  <tr>
-    <td><code class="no-wrap">immutable</code></td>
-    <td>キャッシュされたエントリがその TTL の間、決して変更されず、再バリデーションが必要ないことを示す。</td>
-  </tr>
-</table>
+<figure>
+  <table>
+    <tr>
+      <th>ディレクティブ</th>
+      <th>説明</th>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">max-age</code></td>
+      <td>現在時刻を基準として、リソースのキャッシュが可能な秒数を示す。たとえば、<code>max-age=86400</code>などです。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">public</code></td>
+      <td>ブラウザや CDN を含む、任意のキャッシュが応答を保存できることを示します。これはデフォルトで想定されています。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">no-cache</code></td>
+      <td>キャッシュされたリソースは、たとえそれが古いとマークされていなくても、使用前に条件付きリクエストによって再検証されなければならない。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">must-revalidate</code></td>
+      <td>キャッシュされた古いエントリは、使用前に条件付きリクエストによって再検証されなければならない。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">no-store</code></td>
+      <td>レスポンスがキャッシュされてはならないことを示す。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">private</code></td>
+      <td>このレスポンスは特定のユーザーを対象としたものであり、CDNなどの共有キャッシュに保存されるべきものではありません。</td>
+    </tr>
+    <tr>
+      <td><code class="no-wrap">immutable</code></td>
+      <td>キャッシュされたエントリがその TTL の間、決して変更されず、再バリデーションが必要ないことを示す。</td>
+    </tr>
+  </table>
+  <figcaption>{{ figure_link(caption="<code>Cache-Control</code>ディレクティブ。") }}</figcaption>
+</figure>
 
 {{ figure_markup(
   image="cache-control-directives.png",
