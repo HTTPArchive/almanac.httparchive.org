@@ -365,6 +365,8 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
   <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="fugu.sql") }}</figcaption>
 </figure>
 
+There is a separate chapter dedicated to [Capabilities](./capabilities.md) to dive deeper in the adoption that these sort of APIs have had in 2025.
+
 ## Notifications and PWAs
 
 Notifications make sense for apps as they allow the user to re-engage with the application. This is a controversial capability as there is considerable bad UX and dark patterns to try to get users to accept them. The data shows that in both desktop and mobile, the most common action a user takes is to ignore these requests.
