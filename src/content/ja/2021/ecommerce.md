@@ -181,7 +181,7 @@ Salesforce Commerce CloudとSAP Commerceは、同程度の数のeコマースサ
 
 年度をまたいで発見されたECサイトの総数を比較することは困難です。前述したように、ECサイトかどうかを検出する能力が大幅に向上したためです。Google Analytics Enhancedeコマースインテグレーションのような二次的なシグナルの使用によるところもあります。
 
-そこで、代わりに[昨年のレポート](./../2020/ecommerce#COVID-19のEコマースへの影響)では、少数のプラットフォームに焦点を当て、その利用状況がどのように変化したかを確認しました。2020年前半の初期の兆候として、ShopifyとWooCommerceの利用が測定可能で顕著に増加していることが分かりました。Magentoなどの他のプラットフォームが同じような伸びを見せなかったのに対し、2020年1月から2020年7月にかけて20％台の伸びを見せました。これらのプラットフォームは参入コストの低さや使いやすさで知られていますがMagentoは、そうではありません。
+そこで、代わりに[昨年のレポート](../2020/ecommerce#COVID-19のEコマースへの影響)では、少数のプラットフォームに焦点を当て、その利用状況がどのように変化したかを確認しました。2020年前半の初期の兆候として、ShopifyとWooCommerceの利用が測定可能で顕著に増加していることが分かりました。Magentoなどの他のプラットフォームが同じような伸びを見せなかったのに対し、2020年1月から2020年7月にかけて20％台の伸びを見せました。これらのプラットフォームは参入コストの低さや使いやすさで知られていますがMagentoは、そうではありません。
 
 2021年に向けて、世界中の人々や企業は適応を続けています。2020年の米国における電子商取引は、<a hreflang="en" href="https://www.digitalcommerce360.com/article/coronavirus-impact-online-retail/">商務省の報告書</a>によると、32.4%の収益成長率を示しました。英国では、<a hreflang="en" href="https://internetretailing.net/industry/industry/ecommerce-grew-by-46-in-2020---its-strongest-growth-for-more-than-a-decade--but-overall-retail-sales-fell-by-a-record-19-ons-22603">Office of National Statistics報告</a> が46%の伸びを示しています。
 
