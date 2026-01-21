@@ -303,7 +303,7 @@ Cookieを適切に保護しないと、攻撃者はセッションを乗っ取�
 
 クッキープレフィックス `__Host-` と `__Secure-` は、<a hreflang="en" href="https://owasp.org/www-community/attacks/Session_fixation">セッションフィクスチャ攻撃</a> のためにセッションクッキーの情報を上書きする攻撃を軽減するのに役立ちます。`__Host-` はクッキーをドメインロックするのに役立ちます。クッキーは `Secure` 属性と `Path` 属性を `/` に設定し、 `Domain` 属性を持たず、安全な場所から送信される必要があります。一方、`__Secure-`はクッキーが `Secure` 属性のみを持ち、安全な場所から送信されることを要求します。
 
-​<figure>
+<figure>
   <table>
     <thead>
       <tr>
