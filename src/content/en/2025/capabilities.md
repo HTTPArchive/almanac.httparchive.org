@@ -322,6 +322,8 @@ Despite their availability, usage across the web remains very limited. As shown 
 
 The low adoption rates are expected. These APIs are new, often still evolving, and currently supported by a limited set of browsers, Chrome and Edge. Their inclusion in the 2025 dataset is nonetheless significant: it marks the first measurable presence of browser-native AI primitives in the HTTP Archive, establishing a baseline for tracking how built-in AI capabilities evolve on the web in future years.
 
+See also the [Generative AI](./generative-ai) chapter for more discussion on these APIs and AI on the web.
+
 ## Conclusion
 
 The 2025 Capabilities analysis shows a web platform that continues to mature in both breadth and depth. Established APIs such as Compression Streams and Async Clipboard grew significantly or steadily, reflecting broader cross-engine support and developers replacing legacy patterns. Features like Web Share, Media Session, and Add to Home Screen remained stable, with only minor year-over-year fluctuations. At the same time, specialist APIs such as Media Capabilities saw notable uptake among media-heavy sites, suggesting deeper adoption in vertical use cases.
