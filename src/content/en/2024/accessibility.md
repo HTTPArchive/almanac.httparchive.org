@@ -371,7 +371,7 @@ Tables present data and relationships using two dimensions. For accessibility, t
         <th scope="colgroup" colspan=2>All Sites</th>
       </tr>
       <tr>
-        <th></th>
+        <td></td>
         <th scope="col">desktop</th>
         <th scope="col">mobile</th>
         <th scope="col">desktop</th>

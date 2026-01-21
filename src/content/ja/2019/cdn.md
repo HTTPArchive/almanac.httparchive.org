@@ -332,7 +332,7 @@ CDNプロバイダーには、汎用CDNと目的別CDNの2つのカテゴリが�
       </tr>
     </tbody>
   </table>
-  <figcaption>表5のデータを示すツリーマップグラフ。</figcaption>
+  <figcaption>{{ figure_link(caption="表5のデータを示すツリーマップグラフ。") }}</figcaption>
 </figure>
 
 上位CDNプロバイダーの構成は、サードパーティのリソースに対して劇的に変化します。サードパーティのリソースをホストするCDNが頻繁に監視されるだけでなく、Facebook、Twitter、Googleなどの目的に合ったCDNプロバイダーも増加しています。
