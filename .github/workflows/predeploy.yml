@@ -14,7 +14,7 @@ name: Predeploy script
 
 env:
   # Update periodically from https://www.princexml.com/latest/
-  PRINCE_PACKAGE: 'prince_16.1-1_ubuntu24.04_arm64.deb'
+  PRINCE_PACKAGE: 'prince_16.1-1_ubuntu24.04_amd64.deb'
 
 on:
   workflow_dispatch:
