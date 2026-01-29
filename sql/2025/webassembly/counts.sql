@@ -14,7 +14,7 @@ WITH wasmRequests AS (
   WHERE
     date IN ('2021-07-01', '2022-06-01', '2023-06-01', '2024-06-01', '2025-07-01') AND
     (
-      (date IN ('2024-06-01', '2025-07-01') AND type = 'wasm')
+      (date IN ('2024-06-01', '2025-07-01') AND type = 'wasm') -- wasm type was added in Jan 2024
       OR
       (date IN ('2021-07-01', '2022-06-01', '2023-06-01') AND (JSON_VALUE(summary.mimeType) = 'application/wasm' OR JSON_VALUE(summary.ext) = 'wasm'))
     )
