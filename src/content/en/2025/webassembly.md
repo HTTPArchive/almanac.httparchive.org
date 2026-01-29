@@ -33,10 +33,10 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 
 **Data Collection:** This chapter relies on this dataset provided by HTTP Archive Juli 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we identified 233,857 Wasm modules on desktop and 255,060 on mobile.
 
-**Analysis:** In addition to the HTTP Archive dataset, we use the <a hreflang="en" href="#/">almanac-wasm</a> tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
+**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="#/">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
 
-**Limitations:** Our tool `àlmanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
+**Limitations:** Our tool `almanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
 
 
 ## WebAssembly usage
@@ -50,7 +50,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
   )
 }}
 
-Our analysis shows while WebAssembly's adoption in 2021 0.04% was, we find that in 2025, it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset.
+Our analysis shows while WebAssembly's [adoption in 2021 was 0.04%](../2021/webassembly#how-many-modules), in 2025 it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset.
 
 ### Year-on-year trend
 
@@ -70,7 +70,7 @@ We find that WebAssembly adoption has grown from 0.04% in 2021, although rates h
 
 {{ figure_markup(
   image="webassembly-by-rank.png",
-  caption="Adoption of WebAssembly by site rank",
+  caption="WebAssembly usage site rank",
   description="Bar chart showing distribution of page ranking groups from 1000, 10,000, 100000, 1000000, 10000000 and all on client requests for desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1476075550&format=interactive",
   sql_file="ranking.sql",
@@ -80,7 +80,9 @@ We find that WebAssembly adoption has grown from 0.04% in 2021, although rates h
 
 We see a strong correlation between site popularity and WebAssembly adoption. Usage is most concentrated among the top 1,000 websites, reaching 2% on desktop and 1.27% on mobile. These top-tier sites frequently host complex applications—such as design tools or heavy media editors—that require the high performance Wasm provides.
 
-Adoption rates decrease as site rank declines, following a consistent distribution pattern. For sites outside the top 10 million, adoption is approximately 0.33% for desktop and 0.28% for mobile. While desktop usage remains higher in the top ranking groups, the gap narrows significantly in the long tail, suggesting that for the majority of the web, WebAssembly is deployed as a cross-platform resource rather than being restricted to specific environments.
+Adoption rates decrease as site rank declines, following a consistent distribution pattern. For sites outside the top 10 million, adoption is approximately 0.33% for desktop and 0.28% for mobile.
+
+While desktop usage remains higher in the top ranking groups, the gap narrows significantly in the long tail, suggesting that for the majority of the web, WebAssembly is deployed as a cross-platform resource rather than being restricted to specific environments.
 
 
 ## WebAssembly requests
@@ -101,7 +103,6 @@ Overall, we recorded 303,496 WebAssembly requests on desktop and 308,971 on mobi
 Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile. To estimate the number of unique binaries, we grouped modules by identical filename and response size. Using this method, we found 87,596 unique Wasm modules on desktop and 84,851 on mobile. These findings indicate that approximately 72% of WebAssembly requests serve duplicate modules, highlighting substantial reuse of libraries across the web.
 
 
-
 ### MIME type
 
 {{ figure_markup(
@@ -116,7 +117,7 @@ Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile.
   )
 }}
 
-The standard `application/wasm` MIME type was identified in 293,470 desktop and 301,127 mobile requests. Instances of missing or incorrect MIME types (such as `text/html` or `text/plain`) were low, affecting 3.2% of desktop and 2.4% of mobile requests. These represent a significant decline compared to 2021, indicating improved awareness and adherence to proper server configuration.
+The `application/wasm` MIME type was identified in 293,470 desktop and 301,127 mobile requests. Instances of missing or incorrect MIME types (such as `text/html` or `text/plain`) were low, affecting 3.2% of desktop and 2.4% of mobile requests. These represent a significant decline compared to 2021, indicating improved awareness and adherence to proper server configuration.
 
 
 ### Module size
@@ -133,11 +134,9 @@ The standard `application/wasm` MIME type was identified in 293,470 desktop and 
 }}
 
 
-
 WebAssembly module sizes vary drastically based on their specific use cases. We observed that the bottom 50% of modules are quite small, ranging between 2 KB and 14 KB. These are typically "micro-utilities" like Base64 encoders or checksum calculators, often written in AssemblyScript or Rust to handle performance-critical tasks where JavaScript lacks precision.
 
 Conversely, at the 90th percentile, sizes increase significantly to 381 KB on desktop and 316 KB on mobile. These larger binaries usually represent full desktop-grade applications ported to the web—such as Adobe Photoshop or Google Earth—compiled from heavier languages like C++ or C# to handle complex 3D rendering and logic.
-
 
 {{ figure_markup(
   image="uncompressed-response-sizes.png",
@@ -150,7 +149,6 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
 }}
 
 When examining uncompressed sizes, we observe that while the median module remains lightweight at approximately 30 KB on both platforms, the largest binaries at the 90th percentile are significantly heavier on desktop (897 KB) than on mobile (756 KB).
-
 
 
 {{ figure_markup(
@@ -227,6 +225,6 @@ We find that Bulk Memory is the most widely adopted feature, appearing in 187,67
 
 ## Conclusions
 
-We observe a significant increase in WebAssembly adoption over the last five years, rising from 0.04% in 2021 to 0.35% in 2025, though growth has stabilized in the last two years. Usage is most prevalent on high-ranking websites and decreases significantly among less popular pages. We find that WebAssembly is currently deployed for two distinct purposes: handling specific utility functions (such as encryption or checksums) and powering full standalone applications. Furthermore, our findings highlight the widespread adoption of Microsoft’s frameworks, indicating their significant role in driving the current WebAssembly ecosystem.
+WebAssembly adoption has significantly increased over the last four years, rising from 0.04% in 2021 to 0.35% in 2025, though growth has stabilized in the last two years. Usage is most prevalent on high-ranking websites and decreases significantly among less popular pages. We find that WebAssembly is currently deployed for two distinct purposes: handling specific utility functions (such as encryption or checksums) and powering full standalone applications. Furthermore, our findings highlight the widespread adoption of Microsoft’s frameworks, indicating their significant role in driving the current WebAssembly ecosystem.
 
 Considering the significant developments in Wasm specifications and increased interest from the community, we believe the adoption of WebAssembly will further increase in the future.
