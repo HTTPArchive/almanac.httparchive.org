@@ -36,7 +36,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 **Analysis:** In addition to the HTTP Archive dataset, we use the <a hreflang="en" href="#/">almanac-wasm</a> tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
 
-**Limitations:** Our tool `àlmanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics. 
+**Limitations:** Our tool `àlmanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
 
 
 ## WebAssembly usage
@@ -50,7 +50,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
   )
 }}
 
-Our analysis shows while WebAssembly's adoption in 2021 0.04% was, we find that in 2025, it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset. 
+Our analysis shows while WebAssembly's adoption in 2021 0.04% was, we find that in 2025, it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset.
 
 ### Year-on-year trend
 
@@ -94,7 +94,7 @@ Adoption rates decrease as site rank declines, following a consistent distributi
   sheets_gid="540023407"
   )
 }}
- 
+
 
 Overall, we recorded 303,496 WebAssembly requests on desktop and 308,971 on mobile. Although more desktop sites utilize WebAssembly, the total volume of requests is slightly higher on mobile.
 
@@ -116,7 +116,7 @@ Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile.
   )
 }}
 
-The standard `application/wasm` MIME type was identified in 293,470 desktop and 301,127 mobile requests. Instances of missing or incorrect MIME types (such as `text/html` or `text/plain`) were low, affecting 3.2% of desktop and 2.4% of mobile requests. These represent a significant decline compared to 2021, indicating improved awareness and adherence to proper server configuration. 
+The standard `application/wasm` MIME type was identified in 293,470 desktop and 301,127 mobile requests. Instances of missing or incorrect MIME types (such as `text/html` or `text/plain`) were low, affecting 3.2% of desktop and 2.4% of mobile requests. These represent a significant decline compared to 2021, indicating improved awareness and adherence to proper server configuration.
 
 
 ### Module size
@@ -186,7 +186,7 @@ We find that System (43%), Microsoft (23%), RXEngine (6%), and Dotnet (6%) are t
 ## WebAssembly languages
 
 
-WebAssembly can be developed using various languages, including C++, C#, and Ruby. With the introduction of Wasm 3.0, the range of supported languages has extended to include examples such as Java, Scala, Kotlin, and Dart. In this section, we provide an overview of the languages used to develop WebAssembly modules. 
+WebAssembly can be developed using various languages, including C++, C#, and Ruby. With the introduction of Wasm 3.0, the range of supported languages has extended to include examples such as Java, Scala, Kotlin, and Dart. In this section, we provide an overview of the languages used to develop WebAssembly modules.
 
 
 {{ figure_markup(

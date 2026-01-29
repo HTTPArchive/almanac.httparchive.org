@@ -7,12 +7,12 @@ WITH wasmRequests AS (
     page,
     root_page,
     url,
-    REGEXP_EXTRACT(url, r'([^/]+)$') AS filename, 
+    REGEXP_EXTRACT(url, r'([^/]+)$') AS filename,
     SAFE_CAST(JSON_VALUE(summary, '$.respBodySize') AS INT64) AS respBodySize
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2021-07-01', '2022-06-01','2023-06-01', '2024-06-01', '2025-07-01') AND
+    date IN ('2021-07-01', '2022-06-01', '2023-06-01', '2024-06-01', '2025-07-01') AND
     (
       (date IN ('2024-06-01', '2025-07-01') AND type = 'wasm')
       OR
@@ -29,7 +29,7 @@ totals AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2021-07-01', '2022-06-01', '2023-06-01','2024-06-01', '2025-07-01')
+    date IN ('2021-07-01', '2022-06-01', '2023-06-01', '2024-06-01', '2025-07-01')
   GROUP BY
     date,
     client
@@ -38,7 +38,7 @@ totals AS (
 SELECT
   date,
   client,
-  COUNT(0) AS total_wasm_requests, 
+  COUNT(0) AS total_wasm_requests,
   COUNT(DISTINCT filename) AS unique_filenames,
   -- NEW: Distinct based on full URL
   COUNT(DISTINCT url) AS unique_urls,
