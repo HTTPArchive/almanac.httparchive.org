@@ -22,7 +22,7 @@ doi: 10.5281/zenodo.18258991
 
 ## Introduction
 
-WebAssembly has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a> — such as Garbage Collection, 64-bit address space, and Multiple Memories — allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
+WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a> — such as Garbage Collection, 64-bit address space, and Multiple Memories — allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
 
 
 ## Methodology
