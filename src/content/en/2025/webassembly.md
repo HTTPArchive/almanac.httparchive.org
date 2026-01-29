@@ -29,7 +29,7 @@ WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-
 
 We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#methodology), where WebAssembly was introduced for the first time.
 
-**Data Collection:** This chapter relies on this dataset provided by HTTP Archive Juli 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we identified 233,857 Wasm modules on desktop and 255,060 on mobile.
+**Data Collection:** This chapter relies on this dataset provided by HTTP Archive Juli 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
 
 **Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="#/">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
