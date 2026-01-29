@@ -22,40 +22,21 @@ doi: 10.5281/zenodo.18258991
 
 ## Introduction
 
-WebAssembly is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a major milestone with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>, marking significant growth in both browser-based and standalone environments.
+WebAssembly (Wasm) is no longer just a "web" technology; it has evolved into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a major milestone with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>, marking significant growth in both browser-based and standalone environments.
 
-### The mission
+WebAssembly has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a> — such as Garbage Collection, 64-bit address space, and Multiple Memories — allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
 
-To provide a secure-by-default foundation for running code across any infrastructure—from cloud and edge computing to blockchain and IoT devices. Supported by industry leaders like Google, Microsoft, Fastly, and Intel, Wasm is redefining software portability.
-
-### The ecosystem at a glance
-
-WebAssembly is managed largely by the Bytecode Alliance and CNCF, the ecosystem consists of:
-
-- **Runtimes**: High-performance engines like _Wasmtime_ (server-side) and _WasmEdge_ (cloud-native/edge), alongside native integration in all major browsers.
-- **WASI (WebAssembly System Interface)**: A standardized API (akin to POSIX) that allows modules to securely interact with filesystems and networks.
-- **Component Model**: An emerging standard enabling different languages to interoperate within a single modular application.
-- **Toolchains**: Mature compilers like _Emscripten_ and cargo-component that bridge high-level source code to Wasm bytecode.
-
-In essence, Wasm is moving beyond the browser to provide a secure, high-performance, and portable universal runtime for modern computing.
 
 ## Methodology
 
-We follow [the same methodology from the 2021 Web Almanac](../2021/webassembly#methodology), which is the first edition that included WebAssembly. WebAssembly is compiled into bytecode and distributed as binary format. The findings here infer the source language used in the modules. The accuracy of that analysis is covered in more detail in the respective sections.
+We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#methodology), where WebAssembly was introduced for the first time.
 
-### Limitations
+**Data Collection:** This chapter relies on this dataset provided by HTTP Archive Juli 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we identified 233,857 Wasm modules on desktop and 255,060 on mobile.
 
-- **Data Acquisition & Retrieval** Our analysis relies on the almanac-wasm tool to fetch WASM binaries using parameters from the initial HTTP Archive crawl. However, retrieval depends on third-party server availability; 404/403 errors or resource updates since the initial crawl may occur. We assume the retrieved file is identical to the one present during the original recording.
+**Analysis:** In addition to the HTTP Archive dataset, we use the <a hreflang="en" href="#">almanac-wasm</a> tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
-- **Source Language Identification** To identify source languages, we utilize the <a hreflang="en" href="https://github.com/WebAssembly/wabt">WebAssembly Binary Toolkit (`wasm2wat`)</a> (see [the also MDN guide](https://developer.mozilla.org/docs/WebAssembly/Guides/Text_format_to_Wasm)) and Rust-based parsers to analyze imports, exports, and custom sections for compiler metadata and language fingerprints.
+**Limitations:** Our tool `àlmanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics. 
 
-  - **Limitations**: This is not a definitive approach. "Stripped" binaries (using tools like *wasm-strip*) or obfuscated code remove the debug info and metadata required for identification.
-  - **Example**: Compilers like TinyGo generate unique structures and WASI imports that often diverge from standard *go_exec.js* patterns, resulting in these binaries being classified as "Unknown".
-
-### Feature detection constraints
-
-- **No Runtime Check:** WebAssembly lacks a built-in instruction for modules to detect host features from within the sandbox; detection is handled by the host environment (for exmaple, JavaScript or Wasmtime).
-- **Compile-time Dependency:** Advanced features like SIMD or Threads are enabled via compiler flags. If the host environment does not support these specific features at instantiation, the binary will fail to load.
 
 ## WebAssembly usage
 
@@ -68,7 +49,7 @@ We follow [the same methodology from the 2021 Web Almanac](../2021/webassembly#m
   )
 }}
 
-We see that 0.35% of desktop sites and 0.28% of mobile sites are using WebAssembly. This is approximately 43,000 sites in our dataset for both, but with a larger dataset for mobile the relative percentage is lower.
+Our analysis shows while WebAssembly's adoption in 2021 0.04% was, we find that in 2025, it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset. 
 
 ### Year-on-year trend
 
@@ -82,13 +63,13 @@ We see that 0.35% of desktop sites and 0.28% of mobile sites are using WebAssemb
   )
 }}
 
-Interestingly, looking over previous Web Almanac years, WebAssembly requests have increased drastically from ~0.05% in 2021 to 0.28%/0.35% this year. There was also a slight dip from 2024.
+We find that WebAssembly adoption has grown from 0.04% in 2021, although rates have remained consistent over the last two years. In 2025, we found WebAssembly modules on 0.35% of desktop sites and 0.28% of mobile sites, representing approximately 43,000 sites. Furthermore, mobile adoption was lower than desktop adoption in all observed years, averaging a 30% difference.
 
 ### WebAssembly by rank
 
 {{ figure_markup(
   image="webassembly-by-rank.png",
-  caption="Page Ranking (Group) for Web Assembly 2025",
+  caption="Adoption of WebAssembly by site rank",
   description="Bar chart showing distribution of page ranking groups from 1000, 10,000, 100000, 1000000, 10000000 and all on client requests for desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1476075550&format=interactive",
   sql_file="ranking.sql",
@@ -96,38 +77,36 @@ Interestingly, looking over previous Web Almanac years, WebAssembly requests hav
   )
 }}
 
-We see a clear "Power Law" in WebAssembly adoption: more popular sites are more likely it is to use Wasm.
+We see a strong correlation between site popularity and WebAssembly adoption. Usage is most concentrated among the top 1,000 websites, reaching 2% on desktop and 1.27% on mobile. These top-tier sites frequently host complex applications—such as design tools or heavy media editors—that require the high performance Wasm provides.
 
-Key Insights from the Page Ranking Data:
+Adoption rates decrease as site rank declines, following a consistent distribution pattern. For sites outside the top 10 million, adoption is approximately 0.33% for desktop and 0.28% for mobile. While desktop usage remains higher in the top ranking groups, the gap narrows significantly in the long tail, suggesting that for the majority of the web, WebAssembly is deployed as a cross-platform resource rather than being restricted to specific environments.
 
-- **Top-Tier Dominance**: Wasm is most prevalent among the top 1,000 sites mobile. These are typically "heavy" applications like Figma, Adobe, or Google Meet that require high performance for complex tasks.
-
-- **The "Long Tail" Effect**: While the percentage of adoption drops significantly as you move down there ranks, there is still usage across all ranks.
-
-- **Platform Parity**: There is a very close correlation between desktop and mobile usage across all ranking groups. This confirms that Wasm is being used as a cross-platform solution rather than being restricted to desktop-only environments.
-
-High-ranking sites are more likely to be complex web apps that need Wasm for performance, while lower-ranking sites (like simple blogs or small business pages) have not yet found a massive need for it—though they often use it "silently" via third-party libraries.
 
 ## WebAssembly requests
 
 {{ figure_markup(
   image="number-of-wasm-requests.png",
-  caption="Number of WASM requests",
-  description="Bar chart showing total WASM, unique WASM files and unique response by modules with both clients.",
+  caption="Number of Wasm requests",
+  description="Bar chart showing total Wasm, unique Wasm files and unique response by modules with both clients.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=74534440&format=interactive",
   sql_file="counts.sql",
   sheets_gid="540023407"
   )
 }}
+ 
 
-There are over 300,000 wasm requests in our dataset, which come down to 32,197 unique wasm file requests on desktop and 29,997 on mobile. The large number of requests shows many sites are requesting multiple (hundreds in come cases!) WASM files.
+Overall, we recorded 303,496 WebAssembly requests on desktop and 308,971 on mobile. Although more desktop sites utilize WebAssembly, the total volume of requests is slightly higher on mobile.
+
+Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile. To estimate the number of unique binaries, we grouped modules by identical filename and response size. Using this method, we found 87,596 unique Wasm modules on desktop and 84,851 on mobile. These findings indicate that approximately 72% of WebAssembly requests serve duplicate modules, highlighting substantial reuse of libraries across the web.
+
+
 
 ### MIME type
 
 {{ figure_markup(
   image="top-mime-types.png",
   caption="Top MIME types",
-  description="Bar chart showing MimeTypes and Percentage of WASM request with both clients.",
+  description="Bar chart showing MimeTypes and Percentage of Wasm request with both clients.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1325615855&format=interactive",
   sql_file="mime_types.sql",
   sheets_gid="1706394885",
@@ -138,7 +117,8 @@ There are over 300,000 wasm requests in our dataset, which come down to 32,197 u
 
 We observed that the MIME type `application/wasm` is used in 293,470 requests on desktop clients and 301,127 requests on mobile clients.
 
-Some requests lacked a `Content-Type` header, and some had incorrect MIME types, such as `text/html` or `text/plain`. These account for 3.2% and 2.4% of requests, respectively. Compared to 2022, these percentages have dropped significantly, indicating increased awareness in setting the correct MIME type for WASM applications.
+Some requests lacked a `Content-Type` header, and some had incorrect MIME types, such as `text/html` or `text/plain`. These account for 3.2% and 2.4% of requests, respectively. Compared to 2021, these percentages have dropped significantly, indicating increased awareness in setting the correct MIME type for Wasm applications.
+
 
 ### Module size
 
@@ -181,7 +161,7 @@ These WebAssembly modules differ considerably in size, with the smallest being j
 
 ## WebAssembly libraries
 
-Our crawl identified a modest number of modules, it is possible to analyze and learn about the most popular libraries in requests for wasm.
+Our crawl identified a modest number of modules, it is possible to analyze and learn about the most popular libraries in requests for Wasm.
 
 {{ figure_markup(
   image="popular-webAssembly-libraries.png",
@@ -197,11 +177,11 @@ Our crawl identified a modest number of modules, it is possible to analyze and l
 
 Let's look a bit more into the top three libraries:
 
-- **Library : System (43.1%)** is used for fundamental "glue" code and It often includes "system-level" bindings (like those from WASI or Emscripten) that allow a Wasm module to communicate with the host environment (the browser) to handle tasks like memory management or basic I/O. system utilities.
+- **System (43.1%)** is used for fundamental "glue" code and It often includes "system-level" bindings (like those from WASI or Emscripten) that allow a Wasm module to communicate with the host environment (the browser) to handle tasks like memory management or basic I/O. system utilities.
 
-- **Library : Microsoft (23.2%)** represents the massive footprint of the Microsoft ecosystem on the web, primarily driven by Blazor WebAssembly. Blazor allows developers to build interactive web UIs using C# and .NET instead of JavaScript. The high percentage reflects many enterprise and business applications that have been ported to the web using Microsoft's specialized Wasm runtime for the .NET framework.
+- **Microsoft (23.2%)** represents the massive footprint of the Microsoft ecosystem on the web, primarily driven by Blazor WebAssembly. Blazor allows developers to build interactive web UIs using C# and .NET instead of JavaScript. The high percentage reflects many enterprise and business applications that have been ported to the web using Microsoft's specialized Wasm runtime for the .NET framework.
 
-- **Library : RXEngine (6.2%)** is a more specialized entry, often associated with high-performance execution engines used for specific industries like gaming or advanced data processing. While more niche than the top two, its 6.2% share indicates it is a popular choice for developers who need a pre-built, optimized engine to handle computationally intensive tasks (such as real-time analytics or complex UI interactions) without building the entire infrastructure from scratch.
+- **RXEngine (6.2%)** is a more specialized entry, often associated with high-performance execution engines used for specific industries like gaming or advanced data processing. While more niche than the top two, its 6.2% share indicates it is a popular choice for developers who need a pre-built, optimized engine to handle computationally intensive tasks (such as real-time analytics or complex UI interactions) without building the entire infrastructure from scratch.
 
 ## WebAssembly languages
 
@@ -209,9 +189,9 @@ WebAssembly can use various languages and using toolchains It can be compiled in
 
 Each WebAssembly has import and or export components, Most WebAssembly toolchains create a small amount of JavaScript code, for the purposes of 'binding', making it easier to integrate components into JavaScript applications. These bindings often have recognisable function names which are present in the components exports or imports, giving a reliable mechanism for identifying the language that was used to author the component.
 
-If WASM has not used obfuscation and or other techniques that are stripped down while building deliverable then we can use the rust libraries and WebAssembly Binary Toolkit (WABT) to understand the source programming language.
+If Wasm has not used obfuscation and or other techniques that are stripped down while building deliverable then we can use the rust libraries and WebAssembly Binary Toolkit (WABT) to understand the source programming language.
 
-We enhanced the wasm-stats project and created tool <a hreflang="en" href="https://github.com/nimeshvk/almanac-wasm">`almanac-wasm`</a> that helps to download wasm file from the 3rd party server with preferred request parameters for example user-agent, compression method etc, validates the downloaded wasm file and with rust library and WABT (wasm2wat), It  finds the author's language and populates wasm statistics along with language.
+We enhanced the wasm-stats project and created tool <a hreflang="en" href="https://github.com/nimeshvk/almanac-wasm">`almanac-wasm`</a> that helps to download wasm file from the 3rd party server with preferred request parameters for example user-agent, compression method etc, validates the downloaded Wasm file and with rust library and WABT (Wasm2wat), It  finds the author's language and populates wasm statistics along with language.
 
 For example, [wasm-bindgen](https://crates.io/crates/wasm-bindgen) is a suite of tools that helps to generate high level code Rust-compiled WebAssembly (Wasm) component and JavaScript with name as "wbindgen" so If We import the component from WebAssembly and find "wbindgen" then there is  clearly indication that component in WebAssembly was written in Rust language.
 
