@@ -8,7 +8,7 @@ WITH wasmRequests AS (
     root_page,
     url,
     REGEXP_EXTRACT(url, r'([^/]+)$') AS filename,
-    SAFE_CAST(JSON_VALUE(summary, '$.respBodySize') AS INT64) AS respBodySize
+    SAFE_CAST(JSON_VALUE(summary.respBodySize) AS INT64) AS respBodySize
   FROM
     `httparchive.crawl.requests`
   WHERE
@@ -16,7 +16,7 @@ WITH wasmRequests AS (
     (
       (date IN ('2024-06-01', '2025-07-01') AND type = 'wasm')
       OR
-      (date IN ('2021-07-01', '2022-06-01', '2023-06-01') AND (JSON_VALUE(summary, '$.mimeType') = 'application/wasm' OR JSON_VALUE(summary, '$.ext') = 'wasm'))
+      (date IN ('2021-07-01', '2022-06-01', '2023-06-01') AND (JSON_VALUE(summary.mimeType) = 'application/wasm' OR JSON_VALUE(summary, '$.ext') = 'wasm'))
     )
 ),
 
