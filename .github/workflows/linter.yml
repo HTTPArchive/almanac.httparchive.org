@@ -34,6 +34,7 @@ jobs:
         uses: super-linter/super-linter/slim@v8
         env:
           DEFAULT_BRANCH: main
+          ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_BASH: true
           VALIDATE_CSS: true
