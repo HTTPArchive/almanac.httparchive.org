@@ -42,6 +42,7 @@ jobs:
     - name: Lint Generated HTML
       uses: super-linter/super-linter/slim@v8
       env:
+        ENABLE_GITHUB_PULL_REQUEST_SUMMARY_COMMENT: false
         FILTER_REGEX_INCLUDE: src/static/html/.*
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LOG_LEVEL: DEBUG
