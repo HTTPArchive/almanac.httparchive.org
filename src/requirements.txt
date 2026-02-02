@@ -1,6 +1,6 @@
 flask==3.1.2
 flask-talisman==1.1.0
-gunicorn==24.1.1
+gunicorn==25.0.1
 pytest==9.0.2
 pytest-watch==4.2.0
 pytest-cov==7.0.0
