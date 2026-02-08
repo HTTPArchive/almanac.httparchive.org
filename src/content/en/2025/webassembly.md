@@ -22,14 +22,14 @@ doi: 10.5281/zenodo.18258991
 
 ## Introduction
 
-WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a> — such as Garbage Collection, 64-bit address space, and Multiple Memories — allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
+WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a>—such as Garbage Collection, 64-bit address space, and Multiple Memories—allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
 
 
 ## Methodology
 
 We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#methodology), where WebAssembly was introduced for the first time.
 
-**Data Collection:** This chapter relies on this dataset provided by HTTP Archive Juli 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
+**Data Collection:** This chapter relies on this dataset provided by HTTP Archive July 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
 
 **Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="#/">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
@@ -147,7 +147,6 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
 }}
 
 When examining uncompressed sizes, we observe that while the median module remains lightweight at approximately 30 KB on both platforms, the largest binaries at the 90th percentile are significantly heavier on desktop (897 KB) than on mobile (756 KB).
-
 
 {{ figure_markup(
   caption="Largest WebAssembly file detected.",
