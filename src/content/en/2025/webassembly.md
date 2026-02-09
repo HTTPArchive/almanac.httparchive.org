@@ -31,7 +31,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 
 **Data Collection:** This chapter relies on this dataset provided by HTTP Archive July 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
 
-**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="#/">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
+**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
 
 **Limitations:** Our tool `almanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
