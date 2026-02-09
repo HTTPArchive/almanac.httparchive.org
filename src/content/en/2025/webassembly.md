@@ -39,16 +39,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 
 ## WebAssembly usage
 
-{{ figure_markup(
-  caption="Desktop sites using WebAssembly.",
-  content="0.35%",
-  classes="big-number",
-  sheets_gid="540023407",
-  sql_file="counts.sql"
-  )
-}}
-
-Our analysis shows while WebAssembly's [adoption in 2021 was 0.04%](../2021/webassembly#how-many-modules), in 2025 it has grown to 0.35% on desktop and 0.28% on mobile, representing approximately 43,000 sites for each platform within our dataset.
+In this section, we present our results on the usage of WebAssembly on the web.
 
 ### Year-on-year trend
 
