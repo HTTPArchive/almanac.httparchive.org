@@ -167,7 +167,7 @@ Next, we analyze the import names within WebAssembly binaries to understand the 
 }}
 
 
-We find that System (43%), Microsoft (23%), RXEngine (6%), and Dotnet (6%) are the most popular libraries or frameworks used in WebAssembly modules, indicating Microsoft's dominance within this ecosystem, driven specifically by the Dotnet and Blazor frameworks.
+We find that System (43%), Microsoft (23%), RXEngine (6%), and Dotnet (6%) are the most popular libraries or frameworks used in WebAssembly modules.
 
 ## WebAssembly languages
 
