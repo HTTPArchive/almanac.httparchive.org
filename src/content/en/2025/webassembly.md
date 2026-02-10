@@ -24,7 +24,6 @@ doi: 10.5281/zenodo.18258991
 
 WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-performance, universal bytecode format. Officially <a hreflang="en" href="https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/">a W3C standard since 2019</a>, the ecosystem reached a technical turning point with the release of <a hreflang="en" href="https://webassembly.github.io/spec/core/">Wasm Version 3.0 in December 2025</a>. This version standardizes several <a hreflang="en" href="https://webassembly.github.io/spec/core/">advanced features</a>—such as Garbage Collection, 64-bit address space, and Multiple Memories—allowing high-level languages like Java, Kotlin, and Dart to run natively and efficiently in both browser and standalone environments.
 
-
 ## Methodology
 
 We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#methodology), where WebAssembly was introduced for the first time.
@@ -33,19 +32,16 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 
 **Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">almanac-wasm-stats</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
-
-- **Limitations:** Our tool `almanac-wasm-stats` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
+**Limitations:** Our tool `almanac-wasm-stats` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
 We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and implemented below features in almanac-wasm-stats that helps in language usage analysis.
 
-  1. It can take inputs in **url and respective user-agent strings** that improves download task.
-  2. Accept huge number of input in the format of **BigQuery's JSONL result**.
-  3. **Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
-  4. **Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
-  5. **Enhances language identifiers** for old rust implimentation
-  ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers
-  and improves language stats.
-  6. Produce **full Wasm language usage stats** along with validation and download failures.
-  7. Tool's **plug-n-play architecture** that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
+  1. It can take inputs in url and respective user-agent strings that improves download task.
+  2. Accept huge number of input in the format of BigQuery's JSONL result.
+  3. Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
+  4. Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
+  5. Enhances language identifiers for old rust implimentation ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers and improves language stats.
+  6. Produce full Wasm language usage stats along with validation and download failures.
+  7. Tool's *lug-n-play architecture that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
 
 ## WebAssembly usage
 
@@ -73,7 +69,7 @@ We find that WebAssembly adoption has grown from 0.04% in 2021, although rates h
   description="Bar chart showing distribution of page ranking groups from 1000, 10,000, 100000, 1000000, 10000000 and all on client requests for desktop and mobile",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1476075550&format=interactive",
   sql_file="ranking.sql",
-  sheets_gid="540023407"
+  sheets_gid="1733811663"
   )
 }}
 
@@ -82,7 +78,6 @@ We see a strong correlation between site popularity and WebAssembly adoption. Us
 Adoption rates decrease as site rank declines, following a consistent distribution pattern. For sites outside the top 10 million, adoption is approximately 0.33% for desktop and 0.28% for mobile.
 
 While desktop usage remains higher in the top ranking groups, the gap narrows significantly in the long tail, suggesting that for the majority of the web, WebAssembly is deployed as a cross-platform resource rather than being restricted to specific environments.
-
 
 ## WebAssembly requests
 
@@ -96,11 +91,9 @@ While desktop usage remains higher in the top ranking groups, the gap narrows si
   )
 }}
 
-
 Overall, we recorded 303,496 WebAssembly requests on desktop and 308,971 on mobile. Although more desktop sites utilize WebAssembly, the total volume of requests is slightly higher on mobile.
 
 Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile. To estimate the number of unique binaries, we grouped modules by identical filename and response size. Using this method, we found 87,596 unique Wasm modules on desktop and 84,851 on mobile. These findings indicate that by name approximately 72% of WebAssembly requests serve duplicate modules, highlighting substantial reuse of libraries across the web.
-
 
 ### MIME type
 
@@ -118,7 +111,6 @@ Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile.
 
 The `application/wasm` MIME type was identified in 293,470 desktop and 301,127 mobile requests. Instances of missing or incorrect MIME types (such as `text/html` or `text/plain`) were low, affecting 3.2% of desktop and 2.4% of mobile requests. These represent a significant decline compared to 2021, indicating improved awareness and adherence to proper server configuration.
 
-
 ### Module size
 
 WebAssembly module sizes vary drastically based on their specific use cases. We observed that the bottom 50% of modules are quite small, ranging between 2 KB and 14 KB. These are typically "micro-utilities" like Base64 encoders or checksum calculators, often written in AssemblyScript or Rust to handle performance-critical tasks where JavaScript lacks precision.
@@ -135,7 +127,7 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
   )
 }}
 
-The above chart shows the size of response body size, It is often called as "raw response size" that measures only the raw, often decoded -- the data payload that client received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like [Brotli](https://github.com/google/brotli) and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
+The above chart shows the size of response body size, It is often called as "raw response size" that measures only the raw, often decoded—the data payload that client received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like [Brotli](https://github.com/google/brotli) and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
 
 {{ figure_markup(
   image="compression-methods-desktop-client.png",
@@ -161,7 +153,7 @@ Interestingly, If we see [performance benchmarks](https://facebook.github.io/zst
 
 {{ figure_markup(
   caption="Largest WebAssembly file (desktop) detected.",
-  content="233.6 MB",
+  content="234 MB",
   classes="big-number",
   sheets_gid="241152503",
   sql_file="module_sizes.sql"
@@ -170,14 +162,14 @@ Interestingly, If we see [performance benchmarks](https://facebook.github.io/zst
 
 {{ figure_markup(
   caption="Largest WebAssembly file (mobile) detected.",
-  content="170.4 MB",
+  content="170 MB",
   classes="big-number",
   sheets_gid="241152503",
   sql_file="module_sizes.sql"
   )
 }}
 
-Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 233.6 MB on desktop and 170.4 MB on mobile, indicating the deployment of large-scale client-side applications.
+Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 234 MB on desktop and 170 MB on mobile, indicating the deployment of large-scale client-side applications.
 
 Interestingly If we think about JS deliverables are in MB size often but Wasm deliverables are in quit smaller size this is because JS is the human readable, high level source code, while bytecode is a low level, intermediate representation of the code that is machine agnostic.
 
