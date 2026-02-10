@@ -153,7 +153,7 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
   )
 }}
 
-The above charts shows size of response body size, It is often called as "raw response size" that measures only the raw, often decoded, data payload received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
+The above chart shows the size of response body size, It is often called as "raw response size" that measures only the raw, often decoded -- the data payload that client received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like [Brotli](https://github.com/google/brotli) and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
 
 {{ figure_markup(
   image="compression-methods-desktop-client.png",
