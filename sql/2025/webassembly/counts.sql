@@ -7,15 +7,16 @@ WITH wasmRequests AS (
     page,
     root_page,
     url,
-    REGEXP_EXTRACT(url, r'([^/]+)$') AS filename -- lowercase & extract filename between last `/` and `.` or `?`
+    REGEXP_EXTRACT(url, r'([^/]+)$') AS filename, -- lowercase & extract filename between last `/` and `.` or `?`
+    SAFE_CAST(JSON_VALUE(summary.respBodySize) AS INT64) AS respBodySize
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2021-07-01', '2022-06-01', '2024-06-01', '2025-07-01') AND
+    date IN ('2021-07-01', '2022-06-01', '2023-06-01', '2024-06-01', '2025-07-01') AND
     (
       (date IN ('2024-06-01', '2025-07-01') AND type = 'wasm') -- wasm type was added in Jan 2024
       OR
-      (date IN ('2021-07-01', '2022-06-01') AND (JSON_VALUE(summary.mimeType) = 'application/wasm' OR JSON_VALUE(summary.ext) = 'wasm'))
+      (date IN ('2021-07-01', '2022-06-01', '2023-06-01') AND (JSON_VALUE(summary.mimeType) = 'application/wasm' OR JSON_VALUE(summary.ext) = 'wasm'))
     )
 ),
 
@@ -28,7 +29,7 @@ totals AS (
   FROM
     `httparchive.crawl.requests`
   WHERE
-    date IN ('2021-07-01', '2022-06-01', '2024-06-01', '2025-07-01')
+    date IN ('2021-07-01', '2022-06-01', '2023-06-01', '2024-06-01', '2025-07-01')
   GROUP BY
     date,
     client
@@ -37,8 +38,12 @@ totals AS (
 SELECT
   date,
   client,
-  COUNT(0) AS total_wasm,
-  COUNT(DISTINCT filename) AS unique_wasm,
+  COUNT(0) AS total_wasm_requests,
+  COUNT(DISTINCT filename) AS unique_filenames,
+  -- NEW: Distinct based on full URL
+  COUNT(DISTINCT url) AS unique_urls,
+  -- NEW: Distinct based on Name + Size
+  COUNT(DISTINCT CONCAT(filename, '-', CAST(respBodySize AS STRING))) AS unique_wasm_by_size,
   COUNT(DISTINCT root_page) AS sites,
   total_sites,
   COUNT(DISTINCT root_page) / total_sites AS pct_sites,

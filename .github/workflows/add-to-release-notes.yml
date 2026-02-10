@@ -16,6 +16,6 @@ jobs:
     if: github.repository == 'HTTPArchive/almanac.httparchive.org'
     steps:
     - name: Update release notes
-      uses: release-drafter/release-drafter@v6.1.1
+      uses: release-drafter/release-drafter@v6.2.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

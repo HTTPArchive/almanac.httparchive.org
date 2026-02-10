@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: WebAssembly
 description: Capítulo sobre WebAssembly do Web Almanac de 2022, abordando o uso, linguagens e recursos pós-MVP.
-hero_alt: Hero image of Web Almanac characters performing scientific experiments on various code symbols resulting in 1's and 0's coming out the other end.
+hero_alt: Hero image of Web Almanac characters performing scientific experiments on various code symbols resulting in 1s and 0s coming out the other end.
 authors: [ColinEberhardt]
 reviewers: [binji, RReverser]
 analysts: [JamieWhitMac]
