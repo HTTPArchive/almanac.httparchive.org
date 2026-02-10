@@ -29,13 +29,23 @@ WebAssembly (Wasm) has evolved from a web-centric optimization tool into a high-
 
 We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#methodology), where WebAssembly was introduced for the first time.
 
-**Data Collection:** This chapter relies on this dataset provided by HTTP Archive July 2025 crawl data which is hosted on Google BigQuery. to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
+**Data Collection:** This chapter relies on this dataset provided by HTTP Archive July 2025 crawl data which is hosted on Google BigQuery to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
 
-**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">almanac-wasm</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
+**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">almanac-wasm-stats</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
 
-**Limitations:** Our tool `almanac-wasm` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
+- **Limitations:** Our tool `almanac-wasm-stats` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
+We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and implemented below features in almanac-wasm-stats that helps in language usage analysis.
 
+  1. It can take inputs in **url and respective user-agent strings** that improves download task.
+  2. Accept huge number of input in the format of **BigQuery's JSONL result**.
+  3. **Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
+  4. **Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
+  5. **Enhances language identifiers** for old rust implimentation 
+  ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers 
+  and improves language stats.
+  6. Produce **full Wasm language usage stats** along with validation and download failures.
+  7. Tool's **plug-n-play architecture** that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
 
 ## WebAssembly usage
 
@@ -89,7 +99,7 @@ While desktop usage remains higher in the top ranking groups, the gap narrows si
 
 Overall, we recorded 303,496 WebAssembly requests on desktop and 308,971 on mobile. Although more desktop sites utilize WebAssembly, the total volume of requests is slightly higher on mobile.
 
-Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile. To estimate the number of unique binaries, we grouped modules by identical filename and response size. Using this method, we found 87,596 unique Wasm modules on desktop and 84,851 on mobile. These findings indicate that approximately 72% of WebAssembly requests serve duplicate modules, highlighting substantial reuse of libraries across the web.
+Furthermore, we identified 157,967 unique URLs on desktop and 165,870 on mobile. To estimate the number of unique binaries, we grouped modules by identical filename and response size. Using this method, we found 87,596 unique Wasm modules on desktop and 84,851 on mobile. These findings indicate that by name approximately 72% of WebAssembly requests serve duplicate modules, highlighting substantial reuse of libraries across the web.
 
 
 ### MIME type
@@ -111,6 +121,9 @@ The `application/wasm` MIME type was identified in 293,470 desktop and 301,127 m
 
 ### Module size
 
+WebAssembly module sizes vary drastically based on their specific use cases. We observed that the bottom 50% of modules are quite small, ranging between 2 KB and 14 KB. These are typically "micro-utilities" like Base64 encoders or checksum calculators, often written in AssemblyScript or Rust to handle performance-critical tasks where JavaScript lacks precision.
+
+Conversely, at the 90th percentile, sizes increase significantly to 381 KB on desktop and 316 KB on mobile. These larger binaries usually represent full desktop-grade applications ported to the web—such as Adobe Photoshop or Google Earth—compiled from heavier languages like C++ or C# to handle complex 3D rendering and logic.
 
 {{ figure_markup(
   image="raw-response-sizes.png",
@@ -122,33 +135,53 @@ The `application/wasm` MIME type was identified in 293,470 desktop and 301,127 m
   )
 }}
 
-
-WebAssembly module sizes vary drastically based on their specific use cases. We observed that the bottom 50% of modules are quite small, ranging between 2 KB and 14 KB. These are typically "micro-utilities" like Base64 encoders or checksum calculators, often written in AssemblyScript or Rust to handle performance-critical tasks where JavaScript lacks precision.
-
-Conversely, at the 90th percentile, sizes increase significantly to 381 KB on desktop and 316 KB on mobile. These larger binaries usually represent full desktop-grade applications ported to the web—such as Adobe Photoshop or Google Earth—compiled from heavier languages like C++ or C# to handle complex 3D rendering and logic.
+The above chart shows the size of response body size, It is often called as "raw response size" that measures only the raw, often decoded -- the data payload that client received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like [Brotli](https://github.com/google/brotli) and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
 
 {{ figure_markup(
-  image="uncompressed-response-sizes.png",
-  caption="Uncompressed response sizes.",
-  description="Bar chart showing the uncompressed response sizes for WebAssembly (Wasm) modules, showing a significant divergence between platforms at higher percentiles. While modules at the 10th, 25th, and 50th percentiles remain small and nearly identical across devices—ranging from 5 KB to 31 KB—the gap widens considerably for the largest files. At the 90th percentile, desktop modules reach 897 KB compared to 756 KB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1570587851&format=interactive",
-  sql_file="module_sizes.sql",
+  image="compression-methods-desktop-client.png",
+  caption="Compression methods used for desktop clients",
+  description="Pie chart shows compression methods br, gzip and zstd along with couple of records for aws_chunked, It shows Wasm are widely transfer with 'br' compressed method covers 78.1%, gzip compression method 17.9% and zstd compression method covers 3.9% for desktop clients",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1275607668&format=interactive",
+  sql_file="compression_methods.sql",
   sheets_gid="241152503"
   )
 }}
 
-When examining uncompressed sizes, we observe that while the median module remains lightweight at approximately 30 KB on both platforms, the largest binaries at the 90th percentile are significantly heavier on desktop (897 KB) than on mobile (756 KB).
+{{ figure_markup(
+  image="compression-methods-desktop-client.png",
+  caption="Compression methods used for mobile clients",
+  description="Pie chart shows compression methods br, gzip and zstd along with couple of records for aws_chunked, It shows Wasm are widely transfer with 'br' compressed method covers 80.1%, gzip compression method 17.9% and zstd compression method covers 3.9% for mobile clients",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1994486126&format=interactive",
+  sql_file="compression_methods.sql",
+  sheets_gid="241152503"
+  )
+}}
+
+Interestingly, If we see [performance benchmarks](https://facebook.github.io/zstd/#benchmarks)" activities by various communities from past couple of years, the compression methods 'br' and 'zstd' usage awareness are increasing and it shows continuous evolution and adoption by the developers and by the cdn providers.
 
 {{ figure_markup(
-  caption="Largest WebAssembly file detected.",
-  content="228 MB",
+  caption="Largest WebAssembly file (desktop) detected.",
+  content="233.6 MB",
   classes="big-number",
   sheets_gid="241152503",
   sql_file="module_sizes.sql"
   )
 }}
 
-Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 228 MB on desktop and 166 MB on mobile, indicating the deployment of large-scale client-side applications.
+{{ figure_markup(
+  caption="Largest WebAssembly file (mobile) detected.",
+  content="170.4 MB",
+  classes="big-number",
+  sheets_gid="241152503",
+  sql_file="module_sizes.sql"
+  )
+}}
+
+Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 233.6 MB on desktop and 170.4 MB on mobile, indicating the deployment of large-scale client-side applications.
+
+Interestingly If we think about JS deliverables are in MB size often but Wasm deliverables are in quit smaller size this is because JS is the human readable, high level source code, while bytecode is a low level, intermediate representation of the code that is machine agnostic.
+
+we know the modern JS engines, such as Google's V8, convert JS source code into bytecode internally as part of the execution process; this shows the bytecode's efficiency compare to JS' in small size.
 
 ## WebAssembly libraries
 
@@ -166,19 +199,18 @@ Next, we analyze the import names within WebAssembly binaries to understand the 
   )
 }}
 
+We find that System (43%), <a hreflang="en" href=" https://learn.microsoft.com/en-us/aspnet/core/blazor/webassembly-build-tools-and-aot?view=aspnetcore-10.0">Microsoft</a> (23%), RXEngine (6%), and <a hreflang="en" href="https://devblogs.microsoft.com/dotnet/extending-web-assembly-to-the-cloud/">Dotnet</a> (6%) are the most popular libraries or frameworks used in WebAssembly modules, indicating Microsoft's dominance within this ecosystem, driven specifically by the Dotnet and <a hreflang="en" href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-10.0#blazor-webassembly">Blazor</a> frameworks.
 
-We find that System (43%), Microsoft (23%), RXEngine (6%), and Dotnet (6%) are the most popular libraries or frameworks used in WebAssembly modules.
+Microsoft has various WebAssembly libraries and framework for functionality of System utilities, Identity, Networking, Storage, Json and many more for reusable libraries. By combining those libraries and framework(s), Microsoft eco system for WebAssembly covers 78.8% and 79.3% respectively for desktop and mobile client. 
 
 ## WebAssembly languages
 
-
 WebAssembly can be developed using various languages, including C++, C#, and Ruby. With the introduction of Wasm 3.0, the range of supported languages has extended to include examples such as Java, Scala, Kotlin, and Dart. In this section, we provide an overview of the languages used to develop WebAssembly modules.
-
 
 {{ figure_markup(
   image="language-usage.png",
   caption="WebAssembly language usage.",
-  description="Unknow (41.1% on desktop and 41.6% on mobile),.Net Mono based language (39.8% and 40.5%), LikelyEmscripten (6.9% and 6.1%), Scala (3.91% and 3.9%), Blazor (4.5% and 3.3%), Rust (1.5% and 2.4%), Rust (1.48% and 2.41%), AssemblyScript (1.27% and 1.3%), Emscripten (0.87% and 0.78%), Go/TinyGo (0.09 and 0.08%) and TeaVM based language (0.04% and 0.1%)",
+  description="Unknow (40.5% on desktop and 45.5% on mobile),.Net Mono based language (36.8% and 35.2%), LikelyEmscripten (8.8% and 6.7%), Scala (3.6% and 3.4%), Blazor (4.9% and 3.5%), Rust (1.5% and 2.2%), AssemblyScript (2.4% and 2.3%), Emscripten (1.3% and 1.1%), Go/TinyGo (~0.1 and ~0.1%) and TeaVM based language (~0.1% and ~0.1%)",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1492105065&format=interactive",
   sql_file="language_usage.sql",
   sheets_gid="101432539",
@@ -187,17 +219,15 @@ WebAssembly can be developed using various languages, including C++, C#, and Rub
   )
 }}
 
-Our tool successfully identified the source languages for 51% of WebAssembly modules. The remaining 41% could not be identified, primarily due to minification or the stripping of metadata.
+Our tool successfully identified the source languages for 64.3% of WebAssembly modules on desktop and 72.8% on mobile. The remaining (35.7% and 27.2%) could not be identified, primarily due to minification(the stripping of metadata), webassembly validation or download failures.
 
-Among the identified languages, .NET/Mono is the most common, holding a 41% share. Although minified export/import names often obscure the source language, the Emscripten (C++) toolchain uses a distinctive naming convention. This allows us to attribute these modules with confidence, finding that Emscripten accounts for 8% of usage, followed by Scala at 4%.
+Among the identified languages, .NET/Mono + Blazor is the most common, holding a 41.7% share on desktop and 38.7% share on mobile. Although minified export/import names often obscure the source language, the Emscripten (C++) toolchain uses a distinctive naming convention. This allows us to attribute these modules with confidence, finding that Emscripten accounts for 10.1% of usage on desktop and 7.8% of usage on mobile, followed by Scala at 3.6%(on desktop) and 3.4%(on mobile) usage.
 
 Together with our findings on library usage, these results underscore the significant dominance of the Microsoft ecosystem within the WebAssembly landscape.
-
 
 ## WebAssembly features
 
 In this section, we analyze the usage of post-MVP (Minimum Viable Product) WebAssembly features. While we acknowledge that the features discussed here are limited and do not cover all the features WebAssembly <a hreflang="en" href="https://webassembly.org/features/">supports</a>, we believe highlighting the adoption of these features remains important. We encourage readers to contribute to the analysis tool used in this chapter to help track further features in the future.
-
 
 {{ figure_markup(
   image="extensions-usage.png",
