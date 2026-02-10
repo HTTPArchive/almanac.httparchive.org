@@ -30,7 +30,7 @@ We follow the same methodology from [the 2021 Web Almanac](../2021/webassembly#m
 
 **Data Collection:** This chapter relies on this dataset provided by HTTP Archive July 2025 crawl data which is hosted on Google BigQuery to identify WebAssembly modules by matching the `Content-Type` (`application/wasm`) and the `.wasm` file extension. Using this method, we found at least one WebAssembly module on 43,000 sites, representing 0.35% of all sites analyzed.
 
-**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">almanac-wasm-stats</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
+**Analysis:** In addition to the HTTP Archive dataset, we use <a hreflang="en" href="https://github.com/nimeshgit/almanac-wasm-stats">`almanac-wasm-stats`</a> a tool to download and validate the WebAssembly modules identified from the HTTP Archive for local analysis. This tool extracts metadata from these downloaded files, allowing us to identify programming languages, libraries, and specific features used within the Wasm modules.
 
 **Limitations:** Our tool `almanac-wasm-stats` focuses on static analysis of Wasm modules and does not execute them. Therefore, we cannot capture dynamic behaviors or runtime features that may be present during actual execution in a browser or standalone environment. Additionally, some Wasm modules may be obfuscated or minified, which can limit our ability to accurately identify their characteristics.
 We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and implemented below features in almanac-wasm-stats that helps in language usage analysis.
@@ -39,7 +39,7 @@ We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and i
   2. Accept huge number of input in the format of BigQuery's JSONL result.
   3. Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
   4. Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
-  5. Enhances language identifiers for old rust implimentation ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers and improves language stats.
+  5. Enhances language identifiers for old rust implementation ([`wasm-stats`](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers and improves language stats.
   6. Produce full Wasm language usage stats along with validation and download failures.
   7. Tool's *lug-n-play architecture that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
 
