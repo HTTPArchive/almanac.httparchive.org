@@ -145,7 +145,7 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
 
 {{ figure_markup(
   image="raw-response-sizes.png",
-  caption="Raw response sizes.",
+  caption="Response sizes.",
   description="Bar chart showing the distribution of WebAssembly (Wasm) raw response sizes across desktop and mobile platforms, measured in kilobytes across various percentiles. At the lower and median percentiles, the file sizes are identical and extremely small, starting at just 2 KB at the 10th percentile and reaching 14 KB at the 50th percentile for both platforms. However, a significant divergence occurs at the 90th percentile, where desktop response sizes reach 381 KB compared to 316 KB on mobile.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=658325543&format=interactive",
   sql_file="module_sizes.sql",
@@ -153,28 +153,49 @@ Conversely, at the 90th percentile, sizes increase significantly to 381 KB on de
   )
 }}
 
+The above charts shows size of response body size, It is often called as "raw response size" that measures only the raw, often decoded, data payload received. It represents the size of the resource itself. However as per the research and common practices for Wasm deliverables, Wasm modules are compressed and optimized with various tools like <a hreflang="en" href="https://github.com/google/brotli">Brotli</a> and also transfered over network to the client with compression methods like gzip, br, zstd along with Content-Encoding headers.
+
 {{ figure_markup(
-  image="uncompressed-response-sizes.png",
-  caption="Uncompressed response sizes.",
-  description="Bar chart showing the uncompressed response sizes for WebAssembly (Wasm) modules, showing a significant divergence between platforms at higher percentiles. While modules at the 10th, 25th, and 50th percentiles remain small and nearly identical across devices—ranging from 5 KB to 31 KB—the gap widens considerably for the largest files. At the 90th percentile, desktop modules reach 897 KB compared to 756 KB on mobile.",
-  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1570587851&format=interactive",
-  sql_file="module_sizes.sql",
+  image="compression-methods-desktop-client.png",
+  caption="Compression methods used for desktop clients",
+  description="Pie chart shows compression methods br, gzip and zstd along with couple of records for aws_chunked, It shows Wasm are widely transfer with 'br' compressed method covers 78.1%, gzip compression method 17.9% and zstd compression method covers 3.9% for desktop clients",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1275607668&format=interactive",
+  sql_file="compression_methods.sql",
   sheets_gid="241152503"
   )
 }}
 
-When examining uncompressed sizes, we observe that while the median module remains lightweight at approximately 30 KB on both platforms, the largest binaries at the 90th percentile are significantly heavier on desktop (897 KB) than on mobile (756 KB).
+{{ figure_markup(
+  image="compression-methods-desktop-client.png",
+  caption="Compression methods used for mobile clients",
+  description="Pie chart shows compression methods br, gzip and zstd along with couple of records for aws_chunked, It shows Wasm are widely transfer with 'br' compressed method covers 80.1%, gzip compression method 17.9% and zstd compression method covers 3.9% for mobile clients",
+  chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1994486126&format=interactive",
+  sql_file="compression_methods.sql",
+  sheets_gid="241152503"
+  )
+}}
+
+Interestingly, If we see [performance benchmarks](https://facebook.github.io/zstd/#benchmarks)" activities by various communities from past couple of years, the compression methods 'br' and 'zstd' usage awareness are increasing and it shows continuous evolution and adoption by developers and cdn providers.
 
 {{ figure_markup(
-  caption="Largest WebAssembly file detected.",
-  content="228 MB",
+  caption="Largest WebAssembly file (desktop).",
+  content="233.6 MB",
   classes="big-number",
   sheets_gid="241152503",
   sql_file="module_sizes.sql"
   )
 }}
 
-Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 228 MB on desktop and 166 MB on mobile, indicating the deployment of large-scale client-side applications.
+{{ figure_markup(
+  caption="Largest WebAssembly file (mobile).",
+  content="170.4 MB",
+  classes="big-number",
+  sheets_gid="241152503",
+  sql_file="module_sizes.sql"
+  )
+}}
+
+Beyond these standard distributions, the dataset contains significant outliers. The largest single WebAssembly module identified measured 233.6 MB on desktop and 170.4 MB on mobile, indicating the deployment of large-scale client-side applications.
 
 Interestingly If we think about JS deliverables are in MB size often but Wasm deliverables are in quit smaller size this is because JS is the human readable, high level source code, while bytecode is a low level, intermediate representation of the code that is machine agnostic.
 
