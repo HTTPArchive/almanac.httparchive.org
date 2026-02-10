@@ -41,8 +41,8 @@ We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and i
   2. Accept huge number of input in the format of **BigQuery's JSONL result**.
   3. **Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
   4. **Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
-  5. **Enhances language identifiers** for old rust implimentation 
-  ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers 
+  5. **Enhances language identifiers** for old rust implimentation
+  ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers
   and improves language stats.
   6. Produce **full Wasm language usage stats** along with validation and download failures.
   7. Tool's **plug-n-play architecture** that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
@@ -148,7 +148,7 @@ The above chart shows the size of response body size, It is often called as "raw
 }}
 
 {{ figure_markup(
-  image="compression-methods-desktop-client.png",
+  image="compression-methods-mobile-client.png",
   caption="Compression methods used for mobile clients",
   description="Pie chart shows compression methods br, gzip and zstd along with couple of records for aws_chunked, It shows Wasm are widely transfer with 'br' compressed method covers 80.1%, gzip compression method 17.9% and zstd compression method covers 3.9% for mobile clients",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXX1UpspK3gNeMVyApXrSYk42_Wmeh9RVpGarOFbs9EVbuU8wDyQh72Mu9PckmNat2wRqfP4kVAOki/pubchart?oid=1994486126&format=interactive",
@@ -201,7 +201,7 @@ Next, we analyze the import names within WebAssembly binaries to understand the 
 
 We find that System (43%), <a hreflang="en" href=" https://learn.microsoft.com/en-us/aspnet/core/blazor/webassembly-build-tools-and-aot?view=aspnetcore-10.0">Microsoft</a> (23%), RXEngine (6%), and <a hreflang="en" href="https://devblogs.microsoft.com/dotnet/extending-web-assembly-to-the-cloud/">Dotnet</a> (6%) are the most popular libraries or frameworks used in WebAssembly modules, indicating Microsoft's dominance within this ecosystem, driven specifically by the Dotnet and <a hreflang="en" href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-10.0#blazor-webassembly">Blazor</a> frameworks.
 
-Microsoft has various WebAssembly libraries and framework for functionality of System utilities, Identity, Networking, Storage, Json and many more for reusable libraries. By combining those libraries and framework(s), Microsoft eco system for WebAssembly covers 78.8% and 79.3% respectively for desktop and mobile client. 
+Microsoft has various WebAssembly libraries and framework for functionality of System utilities, Identity, Networking, Storage, Json and many more for reusable libraries. By combining those libraries and framework(s), Microsoft eco system for WebAssembly covers 78.8% and 79.3% respectively for desktop and mobile client.
 
 ## WebAssembly languages
 
