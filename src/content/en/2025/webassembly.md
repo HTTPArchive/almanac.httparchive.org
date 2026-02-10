@@ -37,8 +37,8 @@ We have enhanced ([wasm-stats](https://github.com/HTTPArchive/wasm-stats)) and i
 
   1. It can take inputs in url and respective user-agent strings that improves download task.
   2. Accept huge number of input in the format of BigQuery's JSONL result.
-  3. Validate Wasm** and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
-  4. Run and Trace tasks activities concurrently** i.e. wasm file downloading, validating and populating stats.
+  3. Validate Wasm and provide insights with Binary Toolkit that helps to improve stats (ref. wasm2wat)
+  4. Run and Trace tasks activities concurrently i.e. wasm file downloading, validating and populating stats.
   5. Enhances language identifiers for old rust implementation ([`wasm-stats`](https://github.com/HTTPArchive/wasm-stats)) and added new languages : Scala, Dotnet/Mono, Go & TinyGo, TeaVM based languages, Kotlin; This reduces the language usage : "Unknown" numbers and improves language stats.
   6. Produce full Wasm language usage stats along with validation and download failures.
   7. Tool's *lug-n-play architecture that helps to introduce new stats with WebAssembly Toolkit / SDK  in JSON existing stats format for future enhancements.
