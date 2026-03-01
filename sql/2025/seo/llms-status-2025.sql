@@ -1,4 +1,3 @@
-
 -- valid = TRUE means "present" or "exists"
 WITH labeled AS (
   SELECT
