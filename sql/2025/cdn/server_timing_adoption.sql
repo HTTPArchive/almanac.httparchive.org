@@ -1,4 +1,3 @@
-#standardSQL
 # 32_server_timing_adoption.sql
 # Deep dive into Server-Timing header usage across CDNs
 # Server-Timing provides transparency into server-side performance metrics

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: ?
 # Question: How prevalent are headers leaking server information? (count by number of hosts)
 SELECT

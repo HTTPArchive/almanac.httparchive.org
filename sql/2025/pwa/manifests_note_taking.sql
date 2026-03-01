@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with note taking for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasNoteTaking(manifest JSON)

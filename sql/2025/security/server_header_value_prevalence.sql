@@ -1,4 +1,3 @@
-#standardSQL
 # Section: ?
 # Question: Which are the most common Server and X-Powered-By headers? (count by number of hosts)
 # Note: Different dates taken together; Is it correct to take the host of the page instead of the URL? Maybe only take is_main_document?

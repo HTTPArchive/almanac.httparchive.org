@@ -1,4 +1,3 @@
-#standardSQL
 # Image format popularity BY CMS
 # image_format_popularity.sql
 

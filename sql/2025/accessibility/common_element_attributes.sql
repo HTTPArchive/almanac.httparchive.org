@@ -1,4 +1,3 @@
-#standardSQL
 # Web Almanac — % of sites using each HTML attribute (2025-07-01; no JS UDF)
 # Google Sheet: common_element_attributes
 #

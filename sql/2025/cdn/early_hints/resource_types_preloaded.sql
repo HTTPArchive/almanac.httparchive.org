@@ -1,4 +1,3 @@
-#standardSQL
 -- Analyze which resource types are being preloaded via Early Hints
 -- Shows what types of resources (scripts, styles, fonts, etc.) are prioritized
 DECLARE d DATE DEFAULT '2025-07-01';

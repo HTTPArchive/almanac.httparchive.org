@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Security misconfigurations - CSP directives that are ignored in <meta>
 # Question: How many pages use invalid CSP directives in <meta>?
 # Note: uses the old payload._almanac metric location instead of custom_metrics.almanac (also the meta-nodes metric is in the generic almanac.js custom metric)

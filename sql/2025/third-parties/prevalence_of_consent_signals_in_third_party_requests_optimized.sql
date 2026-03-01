@@ -1,4 +1,3 @@
-#standardSQL
 # Prevalence of specific consent signals (USP, TCF, GPP) in third-party requests
 
 WITH pages AS (

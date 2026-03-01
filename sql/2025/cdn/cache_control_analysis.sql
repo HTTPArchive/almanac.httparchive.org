@@ -1,4 +1,3 @@
-#standardSQL
 # Cache-Control and CDN caching behavior analysis
 # Analyzes cache directives and actual caching behavior
 

@@ -1,4 +1,3 @@
-#standardSQL
 # Meta tag usage by property
 
 

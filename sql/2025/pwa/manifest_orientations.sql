@@ -1,4 +1,3 @@
-#standardSQL
 # Top manifest orientations
 
 CREATE TEMP FUNCTION getOrientation(manifest JSON) RETURNS STRING LANGUAGE js AS '''

@@ -1,4 +1,3 @@
-#standardSQL
 # Early Hints (HTTP 103) usage by site rank
 # Measures the percentage of sites using early hints at different popularity ranks
 

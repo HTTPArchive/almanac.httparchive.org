@@ -1,4 +1,3 @@
-#standardSQL
 WITH base AS (
   SELECT
     date,

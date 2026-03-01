@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - ?
 # Question: How many landing pages that load over HTTPS have at least one reference over HTTP? (Distributed across ranking)
 # Note: Each rank bucket does not include lower buckets;

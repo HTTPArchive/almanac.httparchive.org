@@ -1,4 +1,3 @@
-#standardSQL
 # usage_ofcontent_cdns.sql: % of Pages using a library CDN Host
 
 SELECT

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanism adoption - Location of a website
 # Question: How is security feature adoption and location of a website related (i.e. which is the most common country visiting that website)?
 # Note: Security feature adoption grouped by sites frequently visited from different countries

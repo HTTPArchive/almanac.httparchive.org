@@ -1,4 +1,3 @@
-#standardSQL
 
 CREATE TEMPORARY FUNCTION getPropertyUnits(css JSON)
 RETURNS ARRAY<STRUCT<property STRING, unit STRING, freq INT64>>

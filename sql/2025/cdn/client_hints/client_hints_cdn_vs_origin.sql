@@ -1,4 +1,3 @@
-#standardSQL
 -- Compare Client Hints adoption between CDN and origin requests
 DECLARE d DATE DEFAULT '2025-07-01';
 

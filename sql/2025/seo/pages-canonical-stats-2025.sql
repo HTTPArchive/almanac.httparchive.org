@@ -1,4 +1,3 @@
-#standardSQL
 # page canonical metrics by device
 
 # Note: Contains redundant stats to seo-stats.sql in order to start better segmenting metrics away from monolithic queries.

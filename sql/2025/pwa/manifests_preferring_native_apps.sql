@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests preferring native apps for service worker pages and all pages
 
 CREATE TEMP FUNCTION prefersNative(manifest JSON)

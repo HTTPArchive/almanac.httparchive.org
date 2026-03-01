@@ -1,4 +1,3 @@
-#standardSQL
 # h3_adoption_by_cdn_provider_FINAL_v2.sql: HTTP/3 adoption rates by CDN provider
 # Simplified version without unnecessary isSecure field to avoid casting issues
 

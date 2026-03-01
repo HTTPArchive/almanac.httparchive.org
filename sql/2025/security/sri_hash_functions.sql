@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Subresource Integrity
 # Question: Wich are the most common SRI hash functions used?
 WITH totals AS (

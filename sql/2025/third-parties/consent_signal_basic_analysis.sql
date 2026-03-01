@@ -1,4 +1,3 @@
-#standardSQL
 # Basic consent signal analysis (simplified version to ensure data returns)
 
 WITH pages AS (

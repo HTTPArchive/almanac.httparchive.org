@@ -1,4 +1,3 @@
-#standardSQL
 # Robots txt status codes
 
 # returns all the data we need from _robots_txt

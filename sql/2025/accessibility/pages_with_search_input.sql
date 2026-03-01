@@ -1,4 +1,3 @@
-#standardSQL
 # Pages with search input
 CREATE TEMPORARY FUNCTION hasSearchInput(input_elements JSON)
 RETURNS BOOLEAN LANGUAGE js AS '''

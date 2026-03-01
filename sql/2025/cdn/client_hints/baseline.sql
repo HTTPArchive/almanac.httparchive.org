@@ -1,4 +1,3 @@
-#standardSQL
 -- Baseline Client Hints adoption metrics for context
 -- Measures both server-side (Accept-CH) and client-side (Sec-CH-*) adoption
 DECLARE d DATE DEFAULT '2025-07-01';

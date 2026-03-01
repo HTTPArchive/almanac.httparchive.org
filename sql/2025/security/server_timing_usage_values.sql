@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Security misconfigurations and oversights - (Missing) suppression of 'Server-Timing' header
 # Question: Which are the most common server-timing headers and how often are they used in total?
 # Note: Probably better to split some of the things up to make the interpretation of the results easier

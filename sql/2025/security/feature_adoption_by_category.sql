@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanism adoption - Website Category
 # Question: How is security feature adoption and category of a website related?
 # Note: Not all headers have their individual percentages

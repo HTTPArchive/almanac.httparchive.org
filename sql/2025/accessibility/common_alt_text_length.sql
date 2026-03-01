@@ -1,4 +1,3 @@
-#standardSQL
 -- Most common lengths of <img alt=""> text (2025-07-01)
 -- Google Sheets: common_alt_text_length
 --

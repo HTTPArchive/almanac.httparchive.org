@@ -1,4 +1,3 @@
-#standardSQL
 # Robots.txt size
 SELECT
   client,

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Subresource Integriy
 # Question: How many scripts on a page have the integrity attribute? (percentage)
 CREATE TEMP FUNCTION getNumScriptElements(sris ARRAY<JSON>) AS (

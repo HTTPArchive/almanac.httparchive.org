@@ -1,4 +1,3 @@
-#standardSQL
 -- Lighthouse SEO Stats
 
 CREATE TEMPORARY FUNCTION getAudits(audits JSON)

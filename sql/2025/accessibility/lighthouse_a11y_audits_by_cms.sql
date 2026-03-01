@@ -1,4 +1,3 @@
-#standardSQL
 # Define the function outside the WITH clause
 CREATE TEMPORARY FUNCTION getAudits(report JSON, category STRING)
 RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, score INT64>> LANGUAGE js AS '''

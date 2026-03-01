@@ -1,4 +1,3 @@
-#standardSQL
 # Distribution of websites by number of third party
 
 -- updated for crawl.requests

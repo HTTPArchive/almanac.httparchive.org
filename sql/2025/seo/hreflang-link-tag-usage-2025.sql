@@ -1,4 +1,3 @@
-#standardSQL
 # hreflang link tag usage
 
 # Returns all the data we need from _wpt_bodies

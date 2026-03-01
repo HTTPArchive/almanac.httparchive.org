@@ -1,4 +1,3 @@
-#standardSQL
 # Top WordPress page builder combinations
 # wordpress_page_builders.sql
 

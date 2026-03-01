@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with window controls overlay display override for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasWindowControlsOverlay(manifest JSON)

@@ -1,4 +1,3 @@
-#standardSQL
 -- Analyze common preload patterns in Early Hints
 -- Shows how many resources are typically preloaded and common combinations
 DECLARE d DATE DEFAULT '2025-07-01';

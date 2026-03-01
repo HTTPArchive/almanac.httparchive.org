@@ -1,4 +1,3 @@
-#standardSQL
 # Number of third-party requests by rank
 
 WITH requests AS (

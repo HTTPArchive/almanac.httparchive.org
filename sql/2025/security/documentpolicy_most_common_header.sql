@@ -1,4 +1,3 @@
-#standardSQL
 # Question: Which are the most common document policy values on home pages?
 # Note: Only considers document policies of the home page and not of embedded resources
 # Note: There is no registry of possible directives, see https://github.com/WICG/document-policy/blob/main/integration.md

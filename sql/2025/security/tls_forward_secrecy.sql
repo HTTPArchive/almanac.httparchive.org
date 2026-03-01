@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Cipher Suites
 # Question: How many used cipher suites support forward secrecy for all requests?
 # Note: Large query (40+TB)

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Preventing attacks using CSP
 # Question: Discrepancy between declared and effective CSP, using BlinkFeatures
 SELECT

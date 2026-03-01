@@ -1,4 +1,3 @@
-#standardSQL
 # Purpose
 #   Measure adoption of specific Accessibility-related technologies (apps/overlays)
 #   across domain rank buckets in the 2025-07-01 HTTP Archive crawl.

@@ -1,4 +1,3 @@
-#standardSQL
 # Alt-Svc Protocol Analysis - Deep dive into Alternative Service headers
 # Analyzes what protocols are advertised vs actually used
 

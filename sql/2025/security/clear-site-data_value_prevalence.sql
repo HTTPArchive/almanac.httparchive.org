@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Preventing attacks using Clear-Site-Data
 # Question: Which Clear-Site-Data header values are most prevalent?
 # Notes: Many used values are still invalid (without quotes). We only count each host-value pair once.

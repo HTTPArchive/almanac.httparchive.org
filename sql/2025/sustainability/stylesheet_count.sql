@@ -1,4 +1,3 @@
-#standardSQL
 # Breakdown of inline vs external scripts
 WITH stylesheet_data AS (
   SELECT

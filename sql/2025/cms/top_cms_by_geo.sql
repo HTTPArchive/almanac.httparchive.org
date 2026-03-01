@@ -1,4 +1,3 @@
-#standardSQL
 # CMS popularity per geo
 # top_cms_by_geo.sql
 WITH geo_summary AS (

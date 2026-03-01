@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Iframe Sandbox
 # Question: Which are the most common directives for the sandbox attribute on iframes?
 CREATE TEMP FUNCTION getNumWithSandboxAttribute(payload ARRAY<STRING>) AS ((

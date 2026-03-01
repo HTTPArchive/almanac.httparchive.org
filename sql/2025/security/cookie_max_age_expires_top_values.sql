@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Cookies - Cookie Age
 # Question: Which are the most common Max-Age and Expires cookie attribute values?
 # Note: Expensive query could be combined with the other cookie queries to only go over the cookie headers once.

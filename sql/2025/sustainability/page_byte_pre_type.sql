@@ -1,4 +1,3 @@
-#standardSQL
 
 -- Energy consumption factors from SWDM v4 (in TWh/ZB)
 # 290 TWh / 5.29 ZB

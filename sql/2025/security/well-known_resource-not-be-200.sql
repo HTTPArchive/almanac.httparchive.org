@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Well-known URIs - Detecting Status Code Reliability
 # Question: What is the prevalence of servers that return a 200 status code where they should not?
 # Prevalence of /.well-known/resource-that-should-not-exist-whose-status-code-should-not-be-200 counts status codes

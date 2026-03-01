@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Security Header Adoptions?
 # Question: Which are the most common OAC values?
 # Note: Considers headers of all main document responses

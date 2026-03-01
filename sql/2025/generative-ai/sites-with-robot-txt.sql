@@ -1,4 +1,3 @@
-#standardSQL
 -- % of sites whose robots.txt returns 200 and includes any directive, therefor the percentage is smaller (75% instead of 95% reported elswhere)
 WITH roots AS (
   SELECT

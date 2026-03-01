@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_compression_types_cdn_vs_origin.sql : What compression formats are being used (gzip, brotli, etc) for compressed resources served by CDNs
 
 SELECT

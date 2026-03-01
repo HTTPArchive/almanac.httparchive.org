@@ -1,4 +1,3 @@
-#standardSQL
 # Security headers adoption by CDN vs Origin
 # Analyzes adoption of key security headers across CDN providers
 

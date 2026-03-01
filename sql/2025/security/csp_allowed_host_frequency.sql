@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Preventing attacks using CSP
 # Question: Which are the most common "allowed host" values in CSPs on home pages?
 WITH totals AS (

@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_http_versions_cdn_vs_origin.sql 17_19: Percentage of HTTPS responses by protocol
 SELECT
   a.client,

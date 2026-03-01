@@ -1,4 +1,3 @@
-#standardSQL
 # Total page weight distribution BY CMS
 # page_weight_distribution.sql
 SELECT

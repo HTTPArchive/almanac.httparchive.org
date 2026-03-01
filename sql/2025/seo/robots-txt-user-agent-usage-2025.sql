@@ -1,4 +1,3 @@
-#standardSQL
 # Robots txt user agent usage
 
 

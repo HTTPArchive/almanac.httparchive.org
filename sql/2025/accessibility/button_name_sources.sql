@@ -1,4 +1,3 @@
-#standardSQL
 -- Button Accessible Name Sources (2025-07-01)
 -- Google Sheet: button_name_sources
 --

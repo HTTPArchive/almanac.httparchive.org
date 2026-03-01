@@ -1,4 +1,3 @@
-#standardSQL
 # SEO stats by percentile
 
 # returns all the data we need from _wpt_bodies

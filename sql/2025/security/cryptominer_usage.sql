@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Malpractices on the web
 # Question: How many sites used cryptominers over time?
 # Note: The usage is very low, so maybe we want to drop this query. Also unclear which starting date we want

@@ -1,4 +1,3 @@
-#standardSQL
 # Robots meta/header user agent directive usage
 
 CREATE TEMPORARY FUNCTION parseRobotsMeta(robotsMeta JSON)

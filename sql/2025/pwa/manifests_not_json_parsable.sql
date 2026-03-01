@@ -1,4 +1,3 @@
-#standardSQL
 # Manifests that are not JSON parsable for service worker pages and all pages
 
 CREATE TEMP FUNCTION canParseManifest(manifest JSON)

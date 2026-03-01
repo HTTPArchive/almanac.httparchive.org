@@ -1,4 +1,3 @@
-#standardSQL
 # Optimized: Consent signal survival rate through inclusion chains (memory-efficient)
 
 CREATE TEMP FUNCTION extractConsentSignals(url STRING)

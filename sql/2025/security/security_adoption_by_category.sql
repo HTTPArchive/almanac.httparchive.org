@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanism adoption - Website category
 # Question: How prevalent are the various security headers on first-party resources? (per category)
 # Note: Instead of the parent_category, we could ues full_category or subcategory (https://har.fyi/reference/functions/get_host_categories/)
