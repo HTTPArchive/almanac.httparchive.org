@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Protocol Versions
 # Question: What is the distribution of TLS versions on all TLS-enabled requests?
 # Note: Query is large (40TB)

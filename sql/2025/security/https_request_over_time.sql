@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - ?
 # Question: How many requests are made via HTTPS over time?
 # Note: Currently all requests on the landing page; could be restricted to top-level requests only (is_main_document)

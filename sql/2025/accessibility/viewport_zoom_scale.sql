@@ -1,4 +1,3 @@
-#standardSQL
 # Disabled zooming and scaling via the viewport tag
 
 -- custom_metrics.other.meta_viewport is blank so use the almanac one instead

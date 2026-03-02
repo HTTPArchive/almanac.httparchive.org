@@ -1,4 +1,3 @@
-#standardSQL
 # Sites using the role attribute
 
 SELECT

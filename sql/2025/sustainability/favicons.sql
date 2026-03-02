@@ -1,4 +1,3 @@
-#standardSQL
 # Temporary function to extract favicon image extensions from the JSON payload
 CREATE TEMPORARY FUNCTION GETFAVICONIMAGE(almanac JSON)
 RETURNS STRING LANGUAGE js AS '''

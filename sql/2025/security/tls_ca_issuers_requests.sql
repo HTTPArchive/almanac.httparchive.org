@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Certificate Authority
 # Question: What is the distribution of CA issuers for all (top-level) requests?
 # Note: original query was without is_main_document but due to the port to the tables it suddently took 50+TB instead of 20GB?!

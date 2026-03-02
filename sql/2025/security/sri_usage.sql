@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Subresource Integrity
 # Question: How many pages use SRI (per tagname) and what is the tagname usage for all SRI elements?
 SELECT

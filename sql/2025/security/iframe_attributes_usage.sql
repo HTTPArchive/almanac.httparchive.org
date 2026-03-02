@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Iframe Sandbox/Permissions Policy
 # Question: How often are the allow and sandbox attributes used on iframes? Both per page (used in at least one iframe on a page) and over all iframe elements
 WITH total_iframe_count AS (

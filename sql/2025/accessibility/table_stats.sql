@@ -1,4 +1,3 @@
-#standardSQL
 # Table stats. Total all, captioned and presentational
 
 SELECT

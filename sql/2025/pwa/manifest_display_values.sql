@@ -1,4 +1,3 @@
-#standardSQL
 # Top most used display values in manifest files
 
 CREATE TEMP FUNCTION getDisplay(manifest JSON) RETURNS STRING LANGUAGE js AS '''

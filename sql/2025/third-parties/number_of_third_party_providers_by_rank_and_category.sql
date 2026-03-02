@@ -1,4 +1,3 @@
-#standardSQL
 # Number of third-party providers per websites by rank and category
 
 WITH requests AS (

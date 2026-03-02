@@ -1,5 +1,3 @@
-#standardSQL
-
 # Median resource weights by static site generator with detailed CO2e breakdown
 # Source: https://sustainablewebdesign.org/calculating-digital-emissions/
 # Declare variables to calculate the carbon emissions per gigabyte (kWh/GB)

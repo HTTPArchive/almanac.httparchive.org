@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Preventing attacks using Cross-Origin policies
 # Question: Which are the most common COOP values?
 # Note: Considers headers of main document responses only

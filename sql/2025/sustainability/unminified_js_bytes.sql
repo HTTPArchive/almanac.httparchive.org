@@ -1,4 +1,3 @@
-#standardSQL
 # Distribution of unminified JS request bytes per page
 
 SELECT

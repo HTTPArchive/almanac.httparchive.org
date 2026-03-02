@@ -1,4 +1,3 @@
-#standardSQL
 # Group Lighthouse scores by top-level domain (TLD)
 
 WITH tld_score_data AS (

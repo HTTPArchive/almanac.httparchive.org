@@ -1,4 +1,3 @@
-#standardSQL
 # Sites using sr-only or visually-hidden classes
 
 SELECT

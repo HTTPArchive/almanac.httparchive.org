@@ -1,4 +1,3 @@
-#standardSQL
 # 17_cdn_security_features_adoption.sql: CDN Security Features Adoption
 #
 # Rationale: Security is a crucial aspect of content delivery. This query analyzes

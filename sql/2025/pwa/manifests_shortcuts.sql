@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with shortcuts for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasShortcuts(manifest JSON)

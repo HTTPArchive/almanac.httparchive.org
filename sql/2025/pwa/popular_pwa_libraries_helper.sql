@@ -1,4 +1,3 @@
-#standardSQL
 # Use this to find popular library imports for popular_pwa_libraries.sql (2025)
 # Only crawl/custom_metrics updates; logic identical to 2022
 

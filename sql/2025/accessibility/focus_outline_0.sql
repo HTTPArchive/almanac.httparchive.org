@@ -1,4 +1,3 @@
-#standardSQL
 # Web Almanac — Adoption of :focus pseudoclass and outline: 0 style (2025-07-01)
 # Google Sheet: focus_outline_0
 #

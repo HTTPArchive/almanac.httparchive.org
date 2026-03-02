@@ -1,4 +1,3 @@
-#standardSQL
 # Page title stats (usage, descriptive, changed on render)
 SELECT
   client,

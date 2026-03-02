@@ -1,5 +1,3 @@
-#standardSQL
-
 SELECT
   client,
   COUNTIF(SAFE_CAST(JSON_VALUE(custom_metrics.other.llms_txt_validation.valid) AS BOOL)) AS valid_llms,

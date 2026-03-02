@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanims - Technology stack
 # Question: Distribution of the different version of the top 20 technologies used on the web.
 SELECT

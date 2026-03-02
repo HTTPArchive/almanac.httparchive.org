@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Well-know URIs - robots.txt (?)
 # Question: What is the prevalence of /robots.txt and what is the prevalence of potentially sensitive endpoints in disallow directives ('login', 'log-in', 'signin', 'sign-in', 'admin', 'auth', 'sso', 'account')
 CREATE TEMPORARY FUNCTION getAllDisallowedEndpoints(data JSON)

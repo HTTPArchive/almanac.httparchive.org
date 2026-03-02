@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshots(manifest JSON)

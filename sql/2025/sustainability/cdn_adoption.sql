@@ -1,4 +1,3 @@
-#standardSQL
 # The distribution of CDN adoption on websites by client.
 
 SELECT

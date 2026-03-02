@@ -1,4 +1,3 @@
-#standardSQL
 # Iframe loading property usage
 # Note: This query only reports if an attribute was ever used on a page. It is not a per iframe report.
 

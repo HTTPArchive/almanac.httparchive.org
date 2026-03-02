@@ -1,4 +1,3 @@
-#standardSQL
 -- Accessibility Technology (A11y) Usage by Domain Rank (2025-07-01)
 -- Google Sheet: a11y_overall_tech_usage_by_domain_rank
 --

@@ -1,4 +1,3 @@
-#standardSQL
 # SW objects (name only) — 2025
 
 CREATE TEMPORARY FUNCTION getSWObjects(swObjectsInfo STRING)

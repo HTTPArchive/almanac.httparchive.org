@@ -1,4 +1,3 @@
-#standardSQL
 # CMS adoption per rank
 SELECT
   client,

@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with language for service worker pages and all pages
 
 DECLARE run_date DATE DEFAULT '2025-07-01';

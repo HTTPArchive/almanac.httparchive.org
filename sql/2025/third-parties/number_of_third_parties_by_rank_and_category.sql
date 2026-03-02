@@ -1,4 +1,3 @@
-#standardSQL
 # Number of third-parties per websites by rank and category
 
 WITH requests AS (

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Cookies - Cookie Attributes
 # Question: What is the prevalence of cookie attributes (HttpOnly, Secure, SameSite, __Secure-, __Host- prefixes, ...) for cookies set on first-party and third-party requests?
 # Note: NET.REG_DOMAIN does not use the private section of publicsuffix.org (e.g., all *.github.io sites are counted as the same party)

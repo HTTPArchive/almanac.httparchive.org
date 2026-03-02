@@ -1,4 +1,3 @@
-#standardSQL
 # Average Lighthouse scores (performance, accessibility, best-practices, SEO) for top CMS platforms within `httparchive.crawl.pages`
 
 WITH score_data AS (

@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_tls_time_cdn_vs_origin.sql : Distribution of TLS negotiation for CDN vs Origin (ie, no CDN)
 SELECT
   client,

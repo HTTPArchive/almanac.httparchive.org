@@ -1,4 +1,3 @@
-#standardSQL
 # Top manifest icon sizes
 CREATE TEMPORARY FUNCTION getIconSizes(manifest JSON)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''

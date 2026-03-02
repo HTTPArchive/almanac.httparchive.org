@@ -1,4 +1,3 @@
-#standardSQL
 # Test query to validate invalid head sites are being detected
 # This should return non-zero values if the fix is working
 

@@ -1,4 +1,3 @@
-#standardSQL
 # The distribution of cache header adoption on websites by client.
 
 SELECT

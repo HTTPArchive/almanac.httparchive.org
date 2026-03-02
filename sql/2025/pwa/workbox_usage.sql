@@ -1,4 +1,3 @@
-#standardSQL
 # Workbox usage (2025)
 
 SELECT

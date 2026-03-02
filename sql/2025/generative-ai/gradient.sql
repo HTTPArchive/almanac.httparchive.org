@@ -1,4 +1,3 @@
-#standardSQL
 WITH raw_data AS (
   SELECT
     date,

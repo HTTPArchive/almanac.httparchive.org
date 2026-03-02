@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transpont Security - Protocol versions
 # Question: How many websites (home pages only) use HTTP vs HTTPS?
 SELECT

@@ -1,8 +1,6 @@
-#standardSQL
 -- Adoption of CSS gradients in custom_metrics.css_variables
 -- Grouped by: year, client, rank bucket
 
-#standardSQL
 -- Adoption of CSS gradients in custom_metrics.css_variables
 -- Grouped by: year, client, rank bucket
 

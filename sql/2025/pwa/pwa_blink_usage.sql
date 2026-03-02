@@ -1,4 +1,3 @@
-#standardSQL
 # PWA features tracked in blink_features.usage (2025)
 # Only dataset/date update; logic identical to 2022
 

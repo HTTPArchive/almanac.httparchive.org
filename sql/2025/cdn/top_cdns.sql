@@ -1,4 +1,3 @@
-#standardSQL
 # top_cdns.sql: Top CDNs used
 SELECT
   year,

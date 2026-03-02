@@ -1,4 +1,3 @@
-#standardSQL
 # Lighthouse category scores per CMS YoY
 # lighthouse_category_scores_per_cms_yoy.sql
 SELECT

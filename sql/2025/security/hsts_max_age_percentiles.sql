@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - HTTP Strict Transport Security
 # Question: What is the distribution of max-age values for HSTS?
 SELECT

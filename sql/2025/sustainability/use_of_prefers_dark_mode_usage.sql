@@ -1,4 +1,3 @@
-#standardSQL
 # The distribution of websites by client that use the prefers-color-scheme:dark
 # media query.
 

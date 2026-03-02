@@ -1,4 +1,3 @@
-#standardSQL
 -- Analyze Early Hints usage by specific CDN provider
 DECLARE d DATE DEFAULT '2025-07-01';
 
