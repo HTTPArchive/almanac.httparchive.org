@@ -35,7 +35,7 @@
     "timestamps": "node ./tools/generate/generate_timestamps"
   },
   "devDependencies": {
-    "ejs": "4.0.1",
+    "ejs": "5.0.1",
     "fs-extra": "11.3.4",
     "jsdom": "28.1.0",
     "node-fetch": "3.3.2",
