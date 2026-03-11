@@ -6,12 +6,6 @@
 # Update the trigger at:
 # https://console.cloud.google.com/cloud-build/triggers;region=us-central1/edit/2bd8fcc6-6319-455d-88f2-38d564fe2db8?project=httparchive
 #
-# Steps:
-#   1. build-and-test  — install deps, generate chapters, run pytest + URL tests
-#   2. generate-ebooks — update timestamps, install Prince, generate PDF ebooks
-#   3. deploy          — gcloud app deploy (App Engine version = $SHORT_SHA)
-#   4. upload-ebooks   — gsutil cp PDFs to GCS bucket
-#
 # $SHORT_SHA is set automatically by Cloud Build on a branch-push trigger.
 
 substitutions:
@@ -23,8 +17,8 @@ steps:
   # ─────────────────────────────────────────────────────────────────────────
   # Step 1: Install dependencies, generate all chapters, run full test suite.
   # Uses python:3.12 (Debian Bookworm) and installs Node 20 at runtime.
-  # node_modules persist in /workspace
-  # and are reused by later steps; Python packages are re-installed per step.
+  # node_modules persist in /workspace and are reused by later steps;
+  # Python packages are re-installed per step.
   # ─────────────────────────────────────────────────────────────────────────
   - name: 'python:3.12'
     id: 'build-and-test'
