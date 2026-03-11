@@ -1,5 +1,148 @@
+######################################
+## Cloud Build Deployment Pipeline  ##
+######################################
+#
+# Triggered on every push to main (i.e. when a PR is merged).
+# Update the trigger at:
+# https://console.cloud.google.com/cloud-build/triggers;region=us-central1/edit/2bd8fcc6-6319-455d-88f2-38d564fe2db8?project=httparchive
+#
+# Steps:
+#   1. build-and-test  — install deps, generate chapters, run pytest + URL tests
+#   2. generate-ebooks — update timestamps, install Prince, generate PDF ebooks
+#   3. deploy          — gcloud app deploy (App Engine version = $SHORT_SHA)
+#   4. upload-ebooks   — gsutil cp PDFs to GCS bucket
+#
+# $SHORT_SHA is set automatically by Cloud Build on a branch-push trigger.
+
+substitutions:
+  # Update when a new Prince version is released: https://www.princexml.com/latest/
+  # python:3.12 is based on Debian Bookworm (12), so use the debian12 package.
+  _PRINCE_PACKAGE: 'prince_16.1-1_debian12_amd64.deb'
+
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
-timeout: '1600s'
+  # ─────────────────────────────────────────────────────────────────────────
+  # Step 1: Install dependencies, generate all chapters, run full test suite.
+  # Uses python:3.12 (Debian Bookworm) and installs Node 20 at runtime.
+  # node_modules persist in /workspace
+  # and are reused by later steps; Python packages are re-installed per step.
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: 'python:3.12'
+    id: 'build-and-test'
+    entrypoint: 'bash'
+    dir: 'src'
+    args:
+      - '-c'
+      - |
+        set -e
+        # Install Node.js 20 (nodesource setup script also runs apt-get update)
+        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+        apt-get install -y nodejs
+
+        # Install Python dependencies
+        pip install --quiet -r requirements.txt
+
+        # Install Node dependencies (uses package-lock.json for reproducibility)
+        npm ci
+
+        # Start the web server in the background (required for URL tests)
+        python main.py background &
+        sleep 3
+
+        # Generate all chapters
+        npm run generate
+
+        # Run Python unit tests
+        npm run pytest
+
+        # Run full URL test suite against the running server
+        npm run test
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # Step 2: Update timestamps then generate PDF ebooks.
+  # Prince fetches pages from a running localhost server, so the Python server
+  # is re-started here. Chapters written to /workspace/src in step 1 are
+  # served directly; npm install is skipped (node_modules already present).
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: 'python:3.12'
+    id: 'generate-ebooks'
+    entrypoint: 'bash'
+    dir: 'src'
+    args:
+      - '-c'
+      - |
+        set -e
+        apt-get update -qq
+
+        # Install Node.js 20
+        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+        apt-get install -y nodejs
+
+        # Update static-asset cache-busting hashes before deploying
+        npm run timestamps
+
+        # Install CJK fonts for multilingual ebooks
+        apt-get install -y fonts-ipafont-gothic fonts-arphic-uming fonts-unfonts-core wget
+
+        # Install pdftk (ebook post-processing)
+        apt-get install -y pdftk
+
+        # Download and install Prince PDF generator
+        wget -q "https://www.princexml.com/download/${_PRINCE_PACKAGE}" -P /tmp
+        apt-get install -y "/tmp/${_PRINCE_PACKAGE}"
+
+        # Install Python dependencies (needed to run the web server)
+        pip install --quiet -r requirements.txt
+
+        # Re-start the web server so Prince can fetch pages from localhost
+        python main.py background &
+        sleep 3
+
+        # Generate PDF ebooks
+        mkdir -p static/pdfs
+        npm run ebooks
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # Step 3: Deploy to Google App Engine.
+  # app.yaml is read from /workspace/src (dir: src).
+  # App Engine version labels must start with a letter, so SHORT_SHA is
+  # prefixed: e.g. a1b2c3d → deploy-a1b2c3d.
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy'
+    entrypoint: 'bash'
+    dir: 'src'
+    args:
+      - '-c'
+      - |
+        set -e
+        VERSION="deploy-${SHORT_SHA}"
+        echo "Deploying version: ${VERSION}"
+        gcloud app deploy \
+          --project webalmanac \
+          --version="${VERSION}" \
+          --stop-previous-version \
+          --quiet
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # Step 4: Upload generated ebooks to GCS.
+  # Uses nullglob so missing PDFs produce a warning rather than an error.
+  # ─────────────────────────────────────────────────────────────────────────
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'upload-ebooks'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        set -e
+        shopt -s nullglob
+        pdfs=(/workspace/src/static/pdfs/web_almanac_*.pdf)
+        if [[ ${#pdfs[@]} -gt 0 ]]; then
+          gsutil -m cp "${pdfs[@]}" gs://httparchive/almanac/ebooks/
+          echo "Uploaded ${#pdfs[@]} PDF(s) to GCS"
+        else
+          echo "Warning: no ebooks found to upload"
+        fi
+
+# Total timeout covers: ~10 min build/test + ~30 min ebook generation +
+# ~10 min deploy + ~5 min GCS upload.
+timeout: '3600s'
