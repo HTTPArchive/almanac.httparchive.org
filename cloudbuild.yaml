@@ -28,8 +28,8 @@ steps:
       - '-c'
       - |
         set -e
-        # Install Node.js 20 (nodesource setup script also runs apt-get update)
-        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+        # Install Node.js 24 (nodesource setup script also runs apt-get update)
+        curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
         apt-get install -y nodejs
 
         # Install Python dependencies
