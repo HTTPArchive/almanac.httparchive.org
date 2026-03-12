@@ -16,7 +16,7 @@ substitutions:
 steps:
   # ─────────────────────────────────────────────────────────────────────────
   # Step 1: Install dependencies, generate all chapters, run full test suite.
-  # Uses python:3.12 (Debian Bookworm) and installs Node 20 at runtime.
+  # Uses python:3.12 (Debian Bookworm) and installs Node 24 at runtime.
   # node_modules persist in /workspace and are reused by later steps;
   # Python packages are re-installed per step.
   # ─────────────────────────────────────────────────────────────────────────
