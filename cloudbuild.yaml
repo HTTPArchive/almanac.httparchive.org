@@ -6,7 +6,7 @@
 # Update the trigger at:
 # https://console.cloud.google.com/cloud-build/triggers;region=us-central1/edit/2bd8fcc6-6319-455d-88f2-38d564fe2db8?project=httparchive
 #
-# $SHORT_SHA is set automatically by Cloud Build on a branch-push trigger.
+# The deploy version is a UTC timestamp generated at deploy time (e.g. 20211111t105151).
 
 substitutions:
   # Update when a new Prince version is released: https://www.princexml.com/latest/
@@ -98,8 +98,7 @@ steps:
   # ─────────────────────────────────────────────────────────────────────────
   # Step 3: Deploy to Google App Engine.
   # app.yaml is read from /workspace/src (dir: src).
-  # App Engine version labels must start with a letter, so SHORT_SHA is
-  # prefixed: e.g. a1b2c3d → deploy-a1b2c3d.
+  # App Engine version is a timestamp, e.g. 20211111t105151.
   # ─────────────────────────────────────────────────────────────────────────
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     id: 'deploy'
@@ -109,8 +108,7 @@ steps:
       - '-c'
       - |
         set -e
-        VERSION="deploy-${SHORT_SHA}"
-        echo "Deploying version: ${VERSION}"
+        VERSION=$(date -u +'%Y%m%dt%H%M%S')
         gcloud app deploy \
           --project webalmanac \
           --version="${VERSION}" \
