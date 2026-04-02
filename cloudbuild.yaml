@@ -78,14 +78,11 @@ steps:
         apt-get install -y fonts-ipafont-gothic fonts-arphic-uming fonts-unfonts-core wget
 
         # Install pdftk (ebook post-processing)
-        apt-get install -y pdftk
+        apt-get install -y pdftk gdebi-core
 
-        # Prince 16.x requires libavif-dev
-        apt-get install -y libavif-dev
-
-        # Download and install Prince PDF generator
+        # Download and install Prince PDF generator (gdebi auto-resolves dependencies)
         wget -q "https://www.princexml.com/download/${_PRINCE_PACKAGE}" -P /tmp
-        apt-get install -y "/tmp/${_PRINCE_PACKAGE}"
+        gdebi --non-interactive "/tmp/${_PRINCE_PACKAGE}"
 
         # Install Python dependencies (needed to run the web server)
         pip install --quiet -r requirements.txt
