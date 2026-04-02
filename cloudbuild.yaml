@@ -111,7 +111,7 @@ steps:
         VERSION=$(date -u +'%Y%m%dt%H%M%S')
         gcloud app deploy \
           --project webalmanac \
-          --version="${VERSION}" \
+          --version="$$VERSION" \
           --stop-previous-version \
           --quiet
 
