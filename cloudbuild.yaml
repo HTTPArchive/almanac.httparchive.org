@@ -80,10 +80,8 @@ steps:
         # Install pdftk (ebook post-processing)
         apt-get install -y pdftk
 
-        # Prince 16.x requires libavif15, which is only in bookworm-backports
-        echo "deb http://deb.debian.org/debian bookworm-backports main" > /etc/apt/sources.list.d/backports.list
-        apt-get update -qq
-        apt-get install -y -t bookworm-backports libavif15
+        # Prince 16.x requires libavif-dev
+        apt-get install -y libavif-dev
 
         # Download and install Prince PDF generator
         wget -q "https://www.princexml.com/download/${_PRINCE_PACKAGE}" -P /tmp
