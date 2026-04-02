@@ -140,3 +140,6 @@ steps:
 # Total timeout covers: ~10 min build/test + ~30 min ebook generation +
 # ~10 min deploy + ~5 min GCS upload.
 timeout: '3600s'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
