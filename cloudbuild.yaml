@@ -11,12 +11,12 @@
 substitutions:
   # Update when a new Prince version is released: https://www.princexml.com/latest/
   # python:3.12 is based on Debian Trixie (13), so use the debian13 package.
-  _PRINCE_PACKAGE: 'prince_16.2-1_debian13_amd64.deb'
+  _PRINCE_PACKAGE: 'prince_16.1-1_debian13_amd64.deb'
 
 steps:
   # ─────────────────────────────────────────────────────────────────────────
   # Step 1: Install dependencies, generate all chapters, run full test suite.
-  # Uses python:3.12 (Debian Trixie) and installs Node 24 at runtime.
+  # Uses python:3.12 (Debian Trixie) and installs Node 20 at runtime.
   # node_modules persist in /workspace and are reused by later steps;
   # Python packages are re-installed per step.
   # ─────────────────────────────────────────────────────────────────────────
@@ -28,8 +28,8 @@ steps:
       - '-c'
       - |
         set -e
-        # Install Node.js 24 (nodesource setup script also runs apt-get update)
-        curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
+        # Install Node.js 20 (nodesource setup script also runs apt-get update)
+        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
         apt-get install -y nodejs
 
         # Install Python dependencies
@@ -67,9 +67,12 @@ steps:
         set -e
         apt-get update -qq
 
-        # Install Node.js 20
+        # Install Node.js 20 (matches step 1 so node_modules are reused correctly)
         curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
         apt-get install -y nodejs
+
+        # Re-generate chapters (idempotent; guards against workspace persistence issues)
+        npm run generate
 
         # Update static-asset cache-busting hashes before deploying
         npm run timestamps
