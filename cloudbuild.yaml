@@ -27,16 +27,18 @@ steps:
       - |
         set -e
         apt-get update -qq
-        apt-get install -y python3 python3-pip python-is-python3 curl
+        apt-get install -y python3 python3-venv curl
 
         # Install Node.js 20
         curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
         apt-get install -y nodejs
 
+        # Create a venv so pip install/upgrade works cleanly on Ubuntu 24.04.
+        python3 -m venv /workspace/venv
+        source /workspace/venv/bin/activate
+
         # Generate chapters, run tests (installs Python/Node deps, starts server)
-        # PIP_BREAK_SYSTEM_PACKAGES=1 is required on Ubuntu 24.04 (PEP 668) since
-        # we're intentionally installing into the system Python in a throwaway container.
-        PIP_BREAK_SYSTEM_PACKAGES=1 ./tools/scripts/run_and_test_website.sh
+        ./tools/scripts/run_and_test_website.sh
 
         # Enable Ubuntu universe repository (required for fonts and pdftk)
         apt-get install -y software-properties-common
