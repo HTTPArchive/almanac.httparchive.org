@@ -34,7 +34,9 @@ steps:
         apt-get install -y nodejs
 
         # Generate chapters, run tests (installs Python/Node deps, starts server)
-        ./tools/scripts/run_and_test_website.sh
+        # PIP_BREAK_SYSTEM_PACKAGES=1 is required on Ubuntu 24.04 (PEP 668) since
+        # we're intentionally installing into the system Python in a throwaway container.
+        PIP_BREAK_SYSTEM_PACKAGES=1 ./tools/scripts/run_and_test_website.sh
 
         # Enable Ubuntu universe repository (required for fonts and pdftk)
         apt-get install -y software-properties-common
