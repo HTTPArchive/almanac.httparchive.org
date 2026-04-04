@@ -4,7 +4,7 @@
 #
 # Triggered on every push to main (i.e. when a PR is merged).
 # Update the trigger at:
-# https://console.cloud.google.com/cloud-build/triggers;region=us-central1/edit/2bd8fcc6-6319-455d-88f2-38d564fe2db8?project=httparchive
+# https://console.cloud.google.com/cloud-build/triggers;region=us-east4/edit/bb4583bc-6305-49aa-9f97-e04156d7691b?project=webalmanac
 #
 # The deploy version is a UTC timestamp generated at deploy time (e.g. 20211111t105151).
 
