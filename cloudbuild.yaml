@@ -34,7 +34,7 @@ steps:
         apt-get install -y nodejs
 
         # Generate chapters, run tests (installs Python/Node deps, starts server)
-        ../tools/scripts/run_and_test_website.sh
+        ./tools/scripts/run_and_test_website.sh
 
         # Enable Ubuntu universe repository (required for fonts and pdftk)
         apt-get install -y software-properties-common
