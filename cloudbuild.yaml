@@ -10,55 +10,16 @@
 
 substitutions:
   # Update when a new Prince version is released: https://www.princexml.com/latest/
-  # python:3.12 is based on Debian Trixie (13), so use the debian13 package.
-  _PRINCE_PACKAGE: 'prince_16.1-1_debian13_amd64.deb'
+  # ubuntu:24.04 is Ubuntu Noble (24.04 LTS); use the ubuntu24.04 package.
+  _PRINCE_PACKAGE: 'prince_16.2-1_ubuntu24.04_amd64.deb'
 
 steps:
   # ─────────────────────────────────────────────────────────────────────────
-  # Step 1: Install dependencies, generate all chapters, run full test suite.
-  # Uses python:3.12 (Debian Trixie) and installs Node 20 at runtime.
-  # node_modules persist in /workspace and are reused by later steps;
-  # Python packages are re-installed per step.
+  # Step 1: Install dependencies, generate chapters, run tests, build ebooks.
+  # Prince fetches pages from a running localhost server.
   # ─────────────────────────────────────────────────────────────────────────
-  - name: 'python:3.12'
-    id: 'build-and-test'
-    entrypoint: 'bash'
-    dir: 'src'
-    args:
-      - '-c'
-      - |
-        set -e
-        # Install Node.js 20 (nodesource setup script also runs apt-get update)
-        curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-        apt-get install -y nodejs
-
-        # Install Python dependencies
-        pip install --quiet -r requirements.txt
-
-        # Install Node dependencies (uses package-lock.json for reproducibility)
-        npm ci
-
-        # Start the web server in the background (required for URL tests)
-        python main.py background &
-        sleep 3
-
-        # Generate all chapters
-        npm run generate
-
-        # Run Python unit tests
-        npm run pytest
-
-        # Run full URL test suite against the running server
-        npm run test
-
-  # ─────────────────────────────────────────────────────────────────────────
-  # Step 2: Update timestamps then generate PDF ebooks.
-  # Prince fetches pages from a running localhost server, so the Python server
-  # is re-started here. Chapters written to /workspace/src in step 1 are
-  # served directly; npm install is skipped (node_modules already present).
-  # ─────────────────────────────────────────────────────────────────────────
-  - name: 'python:3.12'
-    id: 'generate-ebooks'
+  - name: 'ubuntu:24.04'
+    id: 'build-test-and-ebooks'
     entrypoint: 'bash'
     dir: 'src'
     args:
@@ -66,16 +27,19 @@ steps:
       - |
         set -e
         apt-get update -qq
+        apt-get install -y python3 python3-pip python-is-python3 curl
 
-        # Install Node.js 20 (matches step 1 so node_modules are reused correctly)
+        # Install Node.js 20
         curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
         apt-get install -y nodejs
 
-        # Re-generate chapters (idempotent; guards against workspace persistence issues)
-        npm run generate
+        # Generate chapters, run tests (installs Python/Node deps, starts server)
+        ../tools/scripts/run_and_test_website.sh
 
-        # Update static-asset cache-busting hashes before deploying
-        npm run timestamps
+        # Enable Ubuntu universe repository (required for fonts and pdftk)
+        apt-get install -y software-properties-common
+        add-apt-repository -y universe
+        apt-get update -qq
 
         # Install CJK fonts for multilingual ebooks
         apt-get install -y fonts-ipafont-gothic fonts-arphic-uming fonts-unfonts-core wget
@@ -87,19 +51,15 @@ steps:
         wget -q "https://www.princexml.com/download/${_PRINCE_PACKAGE}" -P /tmp
         gdebi --non-interactive "/tmp/${_PRINCE_PACKAGE}"
 
-        # Install Python dependencies (needed to run the web server)
-        pip install --quiet -r requirements.txt
-
-        # Re-start the web server so Prince can fetch pages from localhost
-        python main.py background &
-        sleep 3
-
         # Generate PDF ebooks
         mkdir -p static/pdfs
         npm run ebooks
 
+        # Update static-asset cache-busting hashes (run after all files are generated)
+        npm run timestamps
+
   # ─────────────────────────────────────────────────────────────────────────
-  # Step 3: Deploy to Google App Engine.
+  # Step 2: Deploy to Google App Engine.
   # app.yaml is read from /workspace/src (dir: src).
   # App Engine version is a timestamp, e.g. 20211111t105151.
   # ─────────────────────────────────────────────────────────────────────────
