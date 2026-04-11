@@ -70,7 +70,8 @@ jobs:
         if: |
           (
             steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-            steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
+            steps.metadata.outputs.update-type == ''
           ) && (
             contains(steps.metadata.outputs.dependency-names, 'prettier') ||
             contains(steps.metadata.outputs.dependency-names, 'super-linter')
