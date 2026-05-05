@@ -1,4 +1,3 @@
-#standardSQL
 # % of pages with a valid html lang attribute
 
 SELECT

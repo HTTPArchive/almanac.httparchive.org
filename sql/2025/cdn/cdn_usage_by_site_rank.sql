@@ -1,4 +1,3 @@
-#standardSQL
 # cdn_usage_by_site_rank.sql : Distribution of HTML pages served by CDN vs Origin by rank
 
 WITH requests AS (

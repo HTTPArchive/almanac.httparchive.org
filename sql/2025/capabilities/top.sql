@@ -1,4 +1,3 @@
-#standardSQL
 SELECT
   client,
   page,

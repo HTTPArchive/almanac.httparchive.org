@@ -1,4 +1,3 @@
-#standardSQL
 # Meta tag usage by name
 
 # returns all the data we need from _almanac

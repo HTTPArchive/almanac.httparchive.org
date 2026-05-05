@@ -1,4 +1,3 @@
-#standardSQL
 -- Anchors with role="button" (2025-07-01)
 -- Google Sheet: anchors_with_role_button
 --

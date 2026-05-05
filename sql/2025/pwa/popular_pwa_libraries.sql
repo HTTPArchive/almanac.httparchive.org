@@ -1,4 +1,3 @@
-#standardSQL
 # Popular PWA script (2025) — only crawl/custom_metrics updates, logic identical to 2022
 
 CREATE TEMPORARY FUNCTION getSWLibraries(importScriptsInfo STRING)

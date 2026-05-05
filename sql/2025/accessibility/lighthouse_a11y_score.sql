@@ -1,4 +1,3 @@
-#standardSQL
 # Percentiles of Lighthouse accessibility scores using exact sorting
 
 WITH score_data AS (

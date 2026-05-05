@@ -1,4 +1,3 @@
-#standardSQL
 # 33_http3_performance_impact.sql
 # Comprehensive analysis of HTTP/3 performance impact vs HTTP/2
 # Measures real-world performance differences between protocols

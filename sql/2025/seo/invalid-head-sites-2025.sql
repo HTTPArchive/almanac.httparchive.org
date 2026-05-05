@@ -1,7 +1,5 @@
-#standardSQL
 # Counted metrics of invalid head elements in HTML
 
-#standardSQL
 # Counted metrics of invalid head elements in HTML
 
 WITH totals AS (

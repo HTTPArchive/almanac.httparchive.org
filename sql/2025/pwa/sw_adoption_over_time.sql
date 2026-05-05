@@ -1,4 +1,3 @@
-#standardSQL
 # SW controlled pages over time (2025) — dataset same, direct from blink_features.usage
 
 SELECT DISTINCT

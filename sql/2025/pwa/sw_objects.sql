@@ -1,4 +1,3 @@
-#standardSQL
 # SW objects (2025) — only crawl/custom_metrics updates
 
 CREATE TEMPORARY FUNCTION getSWObjects(swObjectsInfo STRING)

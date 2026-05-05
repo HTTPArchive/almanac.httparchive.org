@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_tls_versions_cdn_vs_origin: Percentage of HTTPS responses by TLS Version with and without CDN
 SELECT
   a.client,

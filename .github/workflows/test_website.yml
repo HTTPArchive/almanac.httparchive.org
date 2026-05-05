@@ -54,7 +54,7 @@ jobs:
         COMMIT_SHA: ${{ github.sha }}
       run: ./src/tools/scripts/set_lighthouse_urls.sh
     - name: Audit URLs using Lighthouse
-      uses: treosh/lighthouse-ci-action@12.6.1
+      uses: treosh/lighthouse-ci-action@12.6.2
       id: LHCIAction
       with:
         # For dev, turn off all timing perf audits (too unreliable) and a few others that don't work on dev
@@ -81,7 +81,7 @@ jobs:
     steps:
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
@@ -89,13 +89,14 @@ jobs:
         if: |
           (
             steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-            steps.metadata.outputs.update-type == 'version-update:semver-minor'
+            steps.metadata.outputs.update-type == 'version-update:semver-minor' ||
+            steps.metadata.outputs.update-type == ''
           ) && !(
             contains(steps.metadata.outputs.dependency-names, 'prettier') ||
             contains(steps.metadata.outputs.dependency-names, 'sqlfluff') ||
             contains(steps.metadata.outputs.dependency-names, 'super-linter')
           )
-        run: gh pr merge --squash --auto "$PR_URL"
+        run: gh pr merge --admin --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.AUTO_MERGE_PAT }}

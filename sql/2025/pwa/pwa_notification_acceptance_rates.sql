@@ -1,4 +1,3 @@
-#standardSQL
 # Web Push Notification CRUX stats (10/25/50/75/90/100) for PWA origins — 2025
 # Only crawl dataset update; logic identical to 2022
 

@@ -31,7 +31,7 @@ The concept of a PWA has evolved a lot in these 10 years, and different browsers
 
 The last couple of years have seen new features coming to web apps that enable more customization, advanced control of the application's behavior and better performance. But above all, there has been progress in supporting web apps (to an extent or another) on multiple engines!
 
-Chromium based browsers prompt for an application installation once a minimum set of requirements is identified. This used to be the case on apps that had a manifest file, a service worker and were served over a secure connection. For a while this was the "trifecta" for PWA installability. This has changed and nowadays only the manifest is required (the HTTPS connection is still there, do not worry);  service workers are no longer required for browsers like Edge and Chrome to display the installation prompt.
+Chromium based browsers prompt for an application installation once a minimum set of requirements is identified. This used to be the case on apps that had a manifest file, a service worker and were served over a secure connection. For a while this was the "trifecta" for PWA installability. This has changed and nowadays only the manifest is required (the HTTPS connection is still there, do not worry); service workers are no longer required for browsers like Edge and Chrome to display the installation prompt.
 
 On the other hand, Safari does not prompt for web app installation. It does however allow any web page to be installed as an application by <a hreflang="en" href="https://support.apple.com/en-us/104996">adding it to the dock</a> on macOS 14.
 
@@ -366,7 +366,7 @@ These are the top 10 used advanced capabilities in PWAs for 2025.
   <figcaption>{{ figure_link(caption="Top 10 used advanced capabilities in PWAs.", sheets_gid="220067822", sql_file="fugu.sql") }}</figcaption>
 </figure>
 
-There is a separate chapter dedicated to [Capabilities](./capabilities.md) to dive deeper in the adoption that these sort of APIs have had in 2025.
+There is a separate chapter dedicated to [Capabilities](./capabilities) to dive deeper in the adoption that these sort of APIs have had in 2025.
 
 ## Notifications and PWAs
 
@@ -382,7 +382,7 @@ Notifications make sense for apps as they allow the user to re-engage with the a
   )
 }}
 
-Desktop notification acceptance is overwhelmingly ignored:  78% of them are disregarded, with a slightly lower but still meaningful 48% on mobile. This is not a surprise considering overall the notification fatigue users deal with on a regular basis.
+Desktop notification acceptance is overwhelmingly ignored: 78% of them are disregarded, with a slightly lower but still meaningful 48% on mobile. This is not a surprise considering overall the notification fatigue users deal with on a regular basis.
 
 ## Conclusion
 

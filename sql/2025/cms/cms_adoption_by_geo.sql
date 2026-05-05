@@ -1,4 +1,3 @@
-#standardSQL
 # All CMS popularity per geo
 # cms_adoption_by_geo.sql
 

@@ -1,4 +1,3 @@
-#standardSQL
 # SEO stats
 
 # Note: Canonical metrics moved to pages-canonical-stats.sql.  Should be removed from here in 2022.

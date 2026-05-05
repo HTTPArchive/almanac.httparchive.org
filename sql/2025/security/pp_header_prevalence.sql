@@ -1,4 +1,3 @@
-#standardSQL
 # Section: ? (Permissions)
 # Question: Which are the most common PP values?
 # Note: Considers headers of main document responses

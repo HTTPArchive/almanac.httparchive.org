@@ -1,4 +1,3 @@
-#standardSQL
 # Anchor rel attribute usage
 # This query reports if a rel attribute value was ever used on a page, and calculates various statistics.
 

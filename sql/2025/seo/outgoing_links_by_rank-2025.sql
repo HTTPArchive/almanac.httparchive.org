@@ -1,4 +1,3 @@
-#standardSQL
 # Internal and external link metrics by quantile and rank
 WITH page_metrics AS (
   SELECT

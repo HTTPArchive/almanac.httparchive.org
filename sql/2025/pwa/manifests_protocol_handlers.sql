@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with protocol handlers for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasProtocolHandlers(manifest JSON)

@@ -1,4 +1,3 @@
-#standardSQL
 # Workbox methods (2025)
 
 CREATE TEMPORARY FUNCTION getWorkboxMethods(workboxInfo STRING)

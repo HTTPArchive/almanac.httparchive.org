@@ -1,4 +1,3 @@
-#standardSQL
 # Distribution of unused CSS request bytes per page
 
 SELECT

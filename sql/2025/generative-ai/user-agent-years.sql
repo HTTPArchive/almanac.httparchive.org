@@ -1,4 +1,3 @@
-#standardSQL
 -- Percent of sites mentioning each user-agent in robots.txt, over fixed Almanac snapshots
 
 CREATE TEMP FUNCTION getByAgent(byua_json JSON, agent STRING)

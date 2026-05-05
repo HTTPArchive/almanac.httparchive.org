@@ -1,4 +1,3 @@
-#standardSQL
 # top_cdns_by_rank.sql: Top CDNs used on the root HTML pages by CrUX rank
 
 WITH requests AS (

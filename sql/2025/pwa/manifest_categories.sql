@@ -1,4 +1,3 @@
-#standardSQL
 # Top manifest categories
 CREATE TEMPORARY FUNCTION getCategories(manifest JSON)
 RETURNS ARRAY<STRING> LANGUAGE js AS '''

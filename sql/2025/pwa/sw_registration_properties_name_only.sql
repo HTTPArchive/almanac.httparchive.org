@@ -1,4 +1,3 @@
-#standardSQL
 # SW registration properties (name only) — 2025
 
 CREATE TEMPORARY FUNCTION getSWRegistrationProperties(info STRING)

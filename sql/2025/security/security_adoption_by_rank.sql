@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanism adoption - Website popularity
 # Question: How prevalent are the various security headers on first-party resources? (per rank grouping 1K, 5K, 10K, 100K, 500K, 1M, ...)
 # Note: Buckets do not include prior ranks

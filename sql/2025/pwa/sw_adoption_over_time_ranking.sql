@@ -1,4 +1,3 @@
-#standardSQL
 # SW controlled pages by rank (2025)
 
 SELECT

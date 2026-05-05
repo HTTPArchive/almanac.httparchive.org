@@ -1,4 +1,3 @@
-#standardSQL
 -- Alt Texts Ending in File Extensions (2025-07-01)
 -- Google Sheet: alt_ending_in_image_extension
 -- Measures how often <img> alt attributes end in file extensions (e.g., .jpg, .png).

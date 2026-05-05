@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Permissions Policy
 # Question: Which are the most prominent directives for the allow attributes on iframes?
 CREATE TEMP FUNCTION getNumWithAllowAttribute(payload ARRAY<STRING>) AS ((

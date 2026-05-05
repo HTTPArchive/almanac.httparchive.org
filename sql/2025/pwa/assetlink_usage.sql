@@ -1,4 +1,3 @@
-#standardSQL
 # assetlink usage
 
 SELECT

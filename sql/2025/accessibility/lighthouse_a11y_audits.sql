@@ -1,4 +1,3 @@
-#standardSQL
 # Get summary of all Lighthouse scores for a category
 CREATE TEMPORARY FUNCTION getAudits(report JSON, category STRING)
 RETURNS ARRAY<STRUCT<id STRING, weight INT64, audit_group STRING, title STRING, description STRING, score INT64>> LANGUAGE js AS '''

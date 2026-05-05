@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Preventing attacks using CSP
 # Question: Which are the most common CSP directives on home pages?
 SELECT

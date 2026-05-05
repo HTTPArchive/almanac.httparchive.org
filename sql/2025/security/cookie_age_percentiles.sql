@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Cookies - Cookie Age
 # Question: How long are cookies valid? (Max-Age, Expires, Real Age)
 # Note: Only incorporates values that are larger than 0; cookies set over all all requests on the root_page

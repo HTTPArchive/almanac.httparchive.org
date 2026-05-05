@@ -1,4 +1,3 @@
-#standardSQL
 # .ai domains per exclusive rank bucket, 2022 vs 2025
 
 WITH base AS (

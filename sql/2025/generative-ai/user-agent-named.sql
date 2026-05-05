@@ -1,4 +1,3 @@
-#standardSQL
 # Percent of sites with a given user-agent mentioned in robots.txt, by rank bucket
 # Returns percentages among (a) all sites and (b) only sites with robots.txt status=200.
 

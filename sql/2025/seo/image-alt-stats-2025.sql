@@ -1,4 +1,3 @@
-#standardSQL
 # Image alt stats
 
 # Returns all the data we need from _markup

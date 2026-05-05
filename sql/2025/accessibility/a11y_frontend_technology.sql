@@ -1,4 +1,3 @@
-#standardSQL
 -- Web Almanac — Lighthouse category scores by framework (2025-07-01)
 -- Google Sheet: a11y_frontend_technology
 --

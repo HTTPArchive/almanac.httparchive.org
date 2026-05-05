@@ -1,4 +1,3 @@
-#standardSQL
 # Question: What Audit issues are present in the pages? https://chromedevtools.github.io/devtools-protocol/tot/Audits/#type-InspectorIssueCode
 SELECT
   client,

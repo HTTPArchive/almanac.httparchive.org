@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Preventing attacks using Cross-Origin policies
 # Question: Which are the most common CORP values?
 # Note: Considers headers of all responses including all subresources (header is used for script and img resources)

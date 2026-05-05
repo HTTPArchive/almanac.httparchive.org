@@ -1,4 +1,3 @@
-#standardSQL
 # % of pages having skip links
 
 SELECT

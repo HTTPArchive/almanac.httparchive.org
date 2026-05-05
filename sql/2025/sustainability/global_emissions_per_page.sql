@@ -1,4 +1,3 @@
-#standardSQL
 # The distribution of page weight by resource type and client, with updated
 # SWDM v4 methodology including both operational and embodied emissions
 

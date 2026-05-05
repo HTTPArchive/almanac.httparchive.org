@@ -1,4 +1,3 @@
-#standardSQL
 # Workbox versions (2025)
 
 CREATE TEMPORARY FUNCTION getWorkboxVersions(workboxInfo STRING)

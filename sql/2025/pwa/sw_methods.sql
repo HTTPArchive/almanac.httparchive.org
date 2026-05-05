@@ -1,4 +1,3 @@
-#standardSQL
 # SW methods (2025) — only crawl/custom_metrics updates
 
 CREATE TEMPORARY FUNCTION getSWMethods(swMethodsInfo STRING)

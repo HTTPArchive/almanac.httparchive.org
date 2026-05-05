@@ -1,4 +1,3 @@
-#standardSQL
 -- % of sites whose CSS variables include a gradient( ... ) per year, client, rank
 -- Goal it use is as an indicator for vibe coded website like "delve into" is used for papers
 SELECT

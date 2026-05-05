@@ -3,15 +3,15 @@ updates:
   - package-ecosystem: "npm"
     directory: "/src/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
     ignore:
       - dependency-name: "prettier"
         update-types: ["version-update:semver-patch"]
   - package-ecosystem: "pip"
     directory: "/src/"
     schedule:
-      interval: "daily"
+      interval: "monthly"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "monthly"

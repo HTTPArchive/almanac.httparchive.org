@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Preventing attacks using CSP
 # Question: CSP on home pages: number of unique headers, header length and number of allowed HTTP(S) hosts in all directives
 # Note: for CSP we checked whether the header value is NULL (empty?) (99.65% of CSP headers are not NULL on desktop), we did not do this for other headers?

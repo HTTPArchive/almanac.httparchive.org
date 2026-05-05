@@ -1,4 +1,3 @@
-#standardSQL
 -- Analyze which Client Hints are sent by default vs. those requiring Accept-CH
 -- Compares hint usage on pages WITH and WITHOUT Accept-CH header
 DECLARE d DATE DEFAULT '2025-07-01';

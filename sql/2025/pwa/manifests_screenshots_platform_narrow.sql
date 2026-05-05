@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with narrow platform screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshotsPlatformNarrow(manifest JSON)

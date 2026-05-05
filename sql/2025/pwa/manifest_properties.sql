@@ -1,4 +1,3 @@
-#standardSQL
 # Top manifest properties
 
 CREATE TEMP FUNCTION getManifestProps(manifest JSON)

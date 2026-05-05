@@ -1,4 +1,3 @@
-#standardSQL
 # 20_brotli_compression_adoption.sql: Brotli and modern compression adoption by CDN
 # Analyzes compression algorithm usage patterns and efficiency across CDN providers
 #

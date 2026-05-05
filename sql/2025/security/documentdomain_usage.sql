@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Security Headers? (document.domain feature)
 # Question: How often is document.domain still used even though deprecated?
 # Note: Possible to port to httparchive.all.pages, however would require to recreate num_urls, total_urls, and pct_urls

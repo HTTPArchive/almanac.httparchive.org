@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Unclear?
 # Question: What is the prevalence of robots meta tag values and the X-robots-tag header?
 WITH meta_tags AS (

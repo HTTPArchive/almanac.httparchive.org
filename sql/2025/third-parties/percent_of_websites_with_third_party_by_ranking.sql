@@ -1,4 +1,3 @@
-#standardSQL
 # Percent of websites with third parties by ranking
 
 WITH requests AS (

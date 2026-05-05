@@ -1,4 +1,3 @@
-#standardSQL
 # Positive tabindex value occurrences
 
 CREATE TEMPORARY FUNCTION getTotalPositiveTabIndexes(nodes_09_27 JSON)

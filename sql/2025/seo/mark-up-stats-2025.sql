@@ -1,4 +1,3 @@
-#standardSQL
 # Markup stats
 
 

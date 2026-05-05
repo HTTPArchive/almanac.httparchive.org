@@ -1,4 +1,3 @@
-#standardSQL
 # Consent signal survival rate through HTTP redirects (memory-efficient)
 
 CREATE TEMP FUNCTION extractConsentSignals(url STRING)

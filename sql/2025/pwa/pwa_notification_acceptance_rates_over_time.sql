@@ -1,4 +1,3 @@
-#standardSQL
 # Total Notification Acceptance Rates across all origins — 2025
 # Unweighted by origin popularity; logic identical to 2022
 

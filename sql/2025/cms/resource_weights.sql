@@ -1,4 +1,3 @@
-#standardSQL
 # Median resource weights by CMS
 #resource_weights.sql
 

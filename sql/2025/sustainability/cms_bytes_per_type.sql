@@ -1,4 +1,3 @@
-#standardSQL
 # Median resource weights by CMS
 
 # Declare variables to calculate the carbon emissions of one byte

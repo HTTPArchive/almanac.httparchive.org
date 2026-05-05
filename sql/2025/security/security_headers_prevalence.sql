@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Security header adoptions
 # Question: How prevalent are security headers in a first-party context? (count by number of hosts)
 # Note: Instead we could only look at top-level responses (is_main_document)?

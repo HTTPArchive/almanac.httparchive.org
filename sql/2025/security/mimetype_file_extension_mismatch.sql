@@ -1,4 +1,3 @@
-#standardSQL
 # Section: unclear
 # Question: How often does the mimetype of a request and the file extension mismatch across all requests?
 # Note: Non-SVG images are ignored

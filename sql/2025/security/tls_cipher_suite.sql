@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Cipher suites
 # Question: What is the distribution of all ciphers for all requests?
 # Note: Query is large (43TB)

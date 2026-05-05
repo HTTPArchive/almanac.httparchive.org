@@ -1,4 +1,3 @@
-#standardSQL
 # Unused CSS and JS
 
 SELECT

@@ -1,4 +1,3 @@
-#standardSQL
 # All CMS popularity per geo
 CREATE TEMP FUNCTION GET_GEO(country_code STRING, geo STRING) RETURNS STRING LANGUAGE js AS '''
 var countries = {

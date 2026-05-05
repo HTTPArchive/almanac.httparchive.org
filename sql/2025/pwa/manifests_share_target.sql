@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with web share target for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasShareTarget(manifest JSON)

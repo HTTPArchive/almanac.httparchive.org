@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Iframe Sandbox/Permissions Policy
 # Question: Wich are the most commont hostnames of iframes that have an allow or sandbox attribute?
 CREATE TEMP FUNCTION hasPolicy(attr STRING, policy_type STRING)

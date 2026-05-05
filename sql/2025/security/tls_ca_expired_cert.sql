@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Certificate Authority
 # Question: How many certificates are expired?
 # Note: currently includes HTTP (i.e., pages with no issuer)

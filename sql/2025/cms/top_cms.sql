@@ -1,4 +1,3 @@
-#standardSQL
 # Top CMS platforms, compared to 2020
 # top_cms.sql
 SELECT

@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Well-known URIs - securityt.txt
 # Question: What is the prevalence of (signed) /.well-known/security.txt endpoints and prevalence of included attributes (canonical, encryption, expires, policy)?
 # Note: Query is huge (60TB) and computationally expensive (slow)

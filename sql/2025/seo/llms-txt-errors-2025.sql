@@ -1,5 +1,3 @@
-#standardSQL
-
 -- valid = TRUE means "present" or "exists"
 -- "errors" are likely validation errors, but may/may not still work
 WITH found AS (

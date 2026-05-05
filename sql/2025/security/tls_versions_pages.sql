@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Protocol Versions
 # Question: Which TLS versions are most common on all TLS-enabled web pages?
 SELECT

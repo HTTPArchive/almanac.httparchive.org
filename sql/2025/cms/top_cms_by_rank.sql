@@ -1,4 +1,3 @@
-#standardSQL
 # CMS adoption per rank
 # top_cms_by_rank.sql
 

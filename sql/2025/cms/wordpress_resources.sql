@@ -1,4 +1,3 @@
-#standardSQL
 # Distribution OF WordPress resource types BY path
 # wordpress_resources.sql
 # Updated to use the new crawl dataset

@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_http_versions: Percentage of HTTPS responses by protocol
 SELECT
   a.client,

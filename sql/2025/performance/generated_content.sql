@@ -1,4 +1,3 @@
-#standardSQL
 CREATE TEMPORARY FUNCTION getGeneratedContent(generatedContent JSON)
 RETURNS STRUCT<percent FLOAT64, sizeInKB FLOAT64> LANGUAGE js AS '''
 try {

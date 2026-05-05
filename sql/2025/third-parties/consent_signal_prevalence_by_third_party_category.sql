@@ -1,4 +1,3 @@
-#standardSQL
 # Consent signal prevalence broken down by third-party category
 
 WITH pages AS (

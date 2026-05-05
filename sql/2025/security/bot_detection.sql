@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Bot protection services
 # Question: Which bot protection services are used most often on mobile and desktop sites?
 # Notes: The Wappalyzer 'Security' category mostly contains bot protection services such as reCAPTCHA and Cloudflare Bot Management

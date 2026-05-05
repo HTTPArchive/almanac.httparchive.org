@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with iarc rating for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasIARC(manifest JSON)

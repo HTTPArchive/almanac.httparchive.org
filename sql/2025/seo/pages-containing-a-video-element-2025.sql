@@ -1,4 +1,3 @@
-#standardSQL
 # Pages containing a video element
 
 

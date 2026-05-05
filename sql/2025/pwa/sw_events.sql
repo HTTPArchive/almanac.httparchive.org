@@ -1,4 +1,3 @@
-#standardSQL
 # SW events (2025) — only crawl/custom_metrics updates
 
 CREATE TEMPORARY FUNCTION getSWEvents(pwa STRING)

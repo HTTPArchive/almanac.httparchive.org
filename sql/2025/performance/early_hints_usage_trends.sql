@@ -1,4 +1,3 @@
-#standardSQL
 # Early Hints (HTTP 103) adoption trend over time
 # Shows usage by client (mobile, desktop) across years
 

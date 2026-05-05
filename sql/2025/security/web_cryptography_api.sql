@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack preventions - Web Cryptography API
 # Question: Which Web Cryptography APIs are used the most?
 # Note: Possible to port to httparchive.all.pages, however would require to recreate num_urls, total_urls, and pct_urls

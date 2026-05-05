@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with description for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasDescription(manifest JSON)

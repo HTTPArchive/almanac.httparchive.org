@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Security Header Adoptions?
 # Question: Which are the most common XFO values?
 # Note: Considers headers of main document responses

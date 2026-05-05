@@ -1,4 +1,3 @@
-#standardSQL
 -- Color Contrast Audit Results (2025-07-01)
 -- Google Sheet: color_contrast
 --

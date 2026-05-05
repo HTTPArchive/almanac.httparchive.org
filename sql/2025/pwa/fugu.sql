@@ -1,4 +1,3 @@
-#standardSQL
 CREATE TEMP FUNCTION getFuguAPIsFromOther(other_json STRING)
 RETURNS ARRAY<STRING>
 LANGUAGE js AS '''

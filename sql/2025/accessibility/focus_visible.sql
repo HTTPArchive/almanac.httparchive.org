@@ -1,4 +1,3 @@
-#standardSQL
 # Pages using :focus-visible in CSS (2025 crawl)
 # Google Sheet: focus_visible
 #

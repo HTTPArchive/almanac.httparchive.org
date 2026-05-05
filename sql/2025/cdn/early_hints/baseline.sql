@@ -1,4 +1,3 @@
-#standardSQL
 -- Baseline Early Hints (HTTP 103) adoption metrics
 -- Measures overall adoption of Early Hints responses
 DECLARE d DATE DEFAULT '2025-07-01';

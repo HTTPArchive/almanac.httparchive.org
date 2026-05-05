@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Well-known URIs - change-password
 # Question What is the prevalence of correctly configured /.well-known/change-password endpoints?
 # Notes: Safe Cast is required `.data.status` is not always an INT for some reason

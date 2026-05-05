@@ -1,4 +1,3 @@
-#standardSQL
 # Structured data schema types
 
 # returns all the data we need from _wpt_bodies

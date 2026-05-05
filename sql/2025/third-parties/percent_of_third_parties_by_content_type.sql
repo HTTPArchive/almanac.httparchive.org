@@ -1,4 +1,3 @@
-#standardSQL
 # Percent of third party requests by content type.
 
 WITH requests AS (

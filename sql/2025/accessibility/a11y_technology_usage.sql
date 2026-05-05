@@ -1,4 +1,3 @@
-#standardSQL
 -- Accessibility Technology (A11y) Usage by Client (2025-07-01)
 -- Google Sheets: a11y_technology_usage
 --

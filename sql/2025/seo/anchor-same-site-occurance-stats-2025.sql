@@ -1,4 +1,3 @@
-#standardSQL
 # Anchor same site occurrence stats
 # This query aims to highlight sites with few same-site links, like SPAs.
 

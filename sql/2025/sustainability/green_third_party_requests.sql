@@ -1,4 +1,3 @@
-#standardSQL
 # Median third-parties & green third-party requests per websites by rank
 
 WITH third_party_date AS (

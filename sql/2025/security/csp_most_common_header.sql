@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Preventing attacks using CSP
 # Question: Which are the most common CSP values on home pages?
 # Note: Only considers CSPs of the home page and not of embedded resources

@@ -1,4 +1,3 @@
-#standardSQL
 # percent of sites using images with srcset w/wo sizes, or picture element
 
 WITH page_data AS (

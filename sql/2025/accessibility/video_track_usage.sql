@@ -1,4 +1,3 @@
-#standardSQL
 # Video elements track usage
 
 SELECT

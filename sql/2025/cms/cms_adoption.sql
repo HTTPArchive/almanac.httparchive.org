@@ -1,4 +1,3 @@
-#standardSQL
 # CMS adoption OVER time
 # cms_adoption.sql
 

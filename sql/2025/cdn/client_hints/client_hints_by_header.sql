@@ -1,4 +1,3 @@
-#standardSQL
 DECLARE d DATE DEFAULT '2025-07-01';
 
 WITH

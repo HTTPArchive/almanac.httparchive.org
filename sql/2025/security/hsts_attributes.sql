@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - HTTP Strict Transport Security
 # Question: How many websites use HSTS includeSubDomains and preload?
 SELECT

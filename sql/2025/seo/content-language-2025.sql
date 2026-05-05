@@ -1,4 +1,3 @@
-#standardSQL
 # Content Language
 
 CREATE TEMPORARY FUNCTION getContentLanguagesAlmanac(almanac JSON)

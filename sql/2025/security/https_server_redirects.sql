@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Transport Security - Unused?
 # Question: How many HTTP requests exist on pages and how many of them server-side redirect to HTTPS
 # Note: Does not distinguish between whether the main Page URL is HTTP or HTTPS

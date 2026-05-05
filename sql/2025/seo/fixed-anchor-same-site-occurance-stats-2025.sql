@@ -1,4 +1,3 @@
-#standardSQL
 -- Anchor same site occurrence stats
 
 CREATE TEMPORARY FUNCTION getLinkDesciptions(anchors JSON)

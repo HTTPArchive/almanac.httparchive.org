@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Cookies - Cookie Age
 # Question: How many cookies (total, hosts, pages) have negative Max-Age, Expires and real age (Max-Age has precedence over Expires) attributes?
 # Note: Query is expensive and slow (14TB). Query is inefficient (We create a result array of length 1 for each cookie-attribute for each cookie and then unnest it again; We could instead not use arrays and skip the unnesting).

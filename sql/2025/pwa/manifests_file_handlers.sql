@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with file handlers for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasFileHandlers(manifest JSON)

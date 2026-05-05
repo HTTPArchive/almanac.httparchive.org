@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Attack Preventions - Security Header Adoptions?
 # Question: Which are the most common TAO values?
 # Note: Considers headers of all responses including all subresources (header is used for script and img resources)

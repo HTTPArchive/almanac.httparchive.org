@@ -1,4 +1,3 @@
-#standardSQL
 # Invalid Head Elements
 
 WITH invalid_elements AS (

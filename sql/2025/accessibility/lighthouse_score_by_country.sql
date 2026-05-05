@@ -1,4 +1,3 @@
-#standardSQL
 # Average Lighthouse scores per geo (by country and device)
 
 WITH geo_summary AS (

@@ -1,4 +1,3 @@
-#standardSQL
 # % manifests with wide platform screenshots for service worker pages and all pages
 
 CREATE TEMP FUNCTION hasScreenshotsPlatformWide(manifest JSON)

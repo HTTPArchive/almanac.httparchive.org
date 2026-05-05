@@ -1,4 +1,3 @@
-#standardSQL
 # Breakdown of inline vs external scripts
 WITH script_data AS (
   SELECT

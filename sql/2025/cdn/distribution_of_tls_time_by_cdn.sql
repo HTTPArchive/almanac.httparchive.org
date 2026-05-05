@@ -1,4 +1,3 @@
-#standardSQL
 # distribution_of_tls_time_by_cdn.sql : Distribution of TLS negotiation time by CDN
 SELECT
   client,

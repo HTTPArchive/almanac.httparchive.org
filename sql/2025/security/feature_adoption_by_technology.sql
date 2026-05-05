@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Driveres of security mechanism - Technology stack
 # Question: How are security features and used technology correlated?
 # Note: Adoption of features based on the technology that is used

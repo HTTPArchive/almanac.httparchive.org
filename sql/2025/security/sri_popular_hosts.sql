@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Content Inclusion - Subresource Integrity
 # Question: Which are the most popular hosts for which SRI is used on script tags?
 WITH totals AS (

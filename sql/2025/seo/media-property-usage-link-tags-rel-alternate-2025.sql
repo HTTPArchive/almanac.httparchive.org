@@ -1,4 +1,3 @@
-#standardSQL
 # Media property usage of link tags with rel=alternate
 
 # returns all the data we need from _almanac

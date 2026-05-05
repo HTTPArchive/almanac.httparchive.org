@@ -1,4 +1,3 @@
-#standardSQL
 # Web Almanac — % of sites using each ARIA role (2025 schema; no JS UDF)
 # Google Sheet: common_aria_role
 #

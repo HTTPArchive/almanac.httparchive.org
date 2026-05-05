@@ -1,5 +1,3 @@
-#standardSQL
-
 CREATE TEMPORARY FUNCTION getMediaQueryFeatures(css JSON)
 RETURNS ARRAY<STRING>
 LANGUAGE js

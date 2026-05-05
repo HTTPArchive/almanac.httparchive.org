@@ -1,4 +1,3 @@
-#standardSQL
 # Top 100 third parties by number of websites
 
 WITH requests AS (

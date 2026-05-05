@@ -1,4 +1,3 @@
-#standardSQL
 # Section: Drivers of security mechanism adoption - Other Headers?
 # Question: Which features (mostly security headers) influence the adoption of other features?
 # Note: Query seems unnatural after the port; Add other (new) features?

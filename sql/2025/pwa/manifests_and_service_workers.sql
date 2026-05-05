@@ -1,4 +1,3 @@
-#standardSQL
 # Counting Manifests and Service Workers
 SELECT
   client,
