@@ -47,7 +47,7 @@
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": "Article",
+    "@type": "{% block schema_type %}Article{% endblock %}",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "{{ self.page_url() }}"
