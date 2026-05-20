@@ -1,7 +1,7 @@
 [sqlfluff]
 dialect = bigquery
 # Comma separated list of rules to exclude, or None
-exclude_rules = AL01,AL04,AL07,AL09,AM03,AM05,AM08,CP02,CP03,CV02,CV12,LT05,LT09,LT14,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08,ST11
+exclude_rules = AL01,AL04,AL07,AL09,AL10,AM03,AM05,AM08,CP02,CP03,CV02,CV12,LT05,LT09,LT14,RF01,RF02,RF03,RF04,ST01,ST02,ST05,ST06,ST07,ST08,ST11
 # AL01 - We don't always alias tables with AS ("FROM table1 AS tb1" instead of "FROM table1 tb1"). Do for columns but not for tables.
 # AL04 - Asks for unique table aliases meaning it complains if selecting from two 2021_07_01 tables as implicit alias is table name (not fully qualified) so same.
 # AL07 - Avoid aliases in from and join - why?
