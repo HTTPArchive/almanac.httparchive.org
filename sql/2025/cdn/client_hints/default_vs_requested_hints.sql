@@ -84,26 +84,26 @@ pages_with_accept_ch_count AS (
 hint_dict AS (
   SELECT *
   FROM UNNEST([
-    STRUCT('sec-ch-ua' AS hint_name, 'User-Agent' AS category, 'Low' AS entropy, TRUE AS is_default_hint),
-    ('sec-ch-ua-mobile', 'User-Agent', 'Low', TRUE),
-    ('sec-ch-ua-platform', 'User-Agent', 'Low', TRUE),
-    ('sec-ch-ua-platform-version', 'User-Agent', 'High', FALSE),
-    ('sec-ch-ua-model', 'Device', 'High', FALSE),
-    ('sec-ch-ua-full-version-list', 'User-Agent', 'High', FALSE),
-    ('sec-ch-ua-arch', 'Device', 'High', FALSE),
-    ('sec-ch-ua-bitness', 'Device', 'High', FALSE),
-    ('sec-ch-ua-wow64', 'Device', 'High', FALSE),
-    ('sec-ch-ua-full-version', 'User-Agent', 'High', FALSE),
-    ('sec-ch-prefers-color-scheme', 'User Preference', 'Low', FALSE),
-    ('sec-ch-viewport-width', 'Viewport', 'High', FALSE),
-    ('sec-ch-dpr', 'Device', 'High', FALSE),
-    ('sec-ch-device-memory', 'Device', 'High', FALSE),
-    ('sec-ch-ua-form-factors', 'Device', 'High', FALSE),
-    ('sec-ch-viewport-height', 'Viewport', 'High', FALSE),
-    ('sec-ch-prefers-reduced-motion', 'User Preference', 'Low', FALSE),
-    ('sec-ch-prefers-reduced-transparency', 'User Preference', 'Low', FALSE),
-    ('sec-ch-width', 'Viewport', 'High', FALSE)
-  ])
+      STRUCT('sec-ch-ua' AS hint_name, 'User-Agent' AS category, 'Low' AS entropy, TRUE AS is_default_hint),
+      ('sec-ch-ua-mobile', 'User-Agent', 'Low', TRUE),
+      ('sec-ch-ua-platform', 'User-Agent', 'Low', TRUE),
+      ('sec-ch-ua-platform-version', 'User-Agent', 'High', FALSE),
+      ('sec-ch-ua-model', 'Device', 'High', FALSE),
+      ('sec-ch-ua-full-version-list', 'User-Agent', 'High', FALSE),
+      ('sec-ch-ua-arch', 'Device', 'High', FALSE),
+      ('sec-ch-ua-bitness', 'Device', 'High', FALSE),
+      ('sec-ch-ua-wow64', 'Device', 'High', FALSE),
+      ('sec-ch-ua-full-version', 'User-Agent', 'High', FALSE),
+      ('sec-ch-prefers-color-scheme', 'User Preference', 'Low', FALSE),
+      ('sec-ch-viewport-width', 'Viewport', 'High', FALSE),
+      ('sec-ch-dpr', 'Device', 'High', FALSE),
+      ('sec-ch-device-memory', 'Device', 'High', FALSE),
+      ('sec-ch-ua-form-factors', 'Device', 'High', FALSE),
+      ('sec-ch-viewport-height', 'Viewport', 'High', FALSE),
+      ('sec-ch-prefers-reduced-motion', 'User Preference', 'Low', FALSE),
+      ('sec-ch-prefers-reduced-transparency', 'User Preference', 'Low', FALSE),
+      ('sec-ch-width', 'Viewport', 'High', FALSE)
+    ])
 )
 
 SELECT
