@@ -263,7 +263,7 @@ For our study of directive rules, we relied on the rendered HTML.
 
 Their inclusion means that robots should index the page and follow the links from it. Their mobile usage at 60.5% and 59.3% for `follow` and `index`, respectively, implies these two tags are likely to be found together and are generally complementary.
 
-A possible cause for this high number of a technically unnecessary combination of `meta` robots rules is Yoast SEO, <a hreflang="en" href="https://developer.yoast.com/features/seo-tags/meta-robots/functional-specification/#:~:text=Unless%20otherwise%20defined%20by%20the%20user%20\(or%20via%20page/template/filtering%20logic\)%2C%20%7B%7Bvalues%7D%7D%20outputs%20index%2C%20follow.">which applies `index,follow` by default</a>. Yoast has an approximate 16% adoption (desktop and mobile) when looking at home page use of SEO tools/plugins and, of <a hreflang="en" href="https://www.wappalyzer.com/technologies/seo/">all identified SEO tools</a>, it is used nearly 70% of the time.
+A possible cause for this high number of a technically unnecessary combination of `meta` robots rules is Yoast SEO, <a hreflang="en" href="https://developer.yoast.com/features/seo-tags/meta-robots/functional-specification/#:~:text=Unless%20otherwise%20defined%20by%20the%20user%20(or%20via%20page/template/filtering%20logic)%2C%20%7B%7Bvalues%7D%7D%20outputs%20index%2C%20follow.">which applies `index,follow` by default</a>. Yoast has an approximate 16% adoption (desktop and mobile) when looking at home page use of SEO tools/plugins and, of <a hreflang="en" href="https://www.wappalyzer.com/technologies/seo/">all identified SEO tools</a>, it is used nearly 70% of the time.
 
 `nofollow` and `noindex`, the next two most-used `meta` robots rules, are used at a considerably lower frequency, showing up on 2.8% of desktop pages and 2.4% of mobile pages.
 
@@ -343,6 +343,7 @@ The definition of "invalid" `<head>` elements includes anything included in the 
 - `<template>`
 
 The invalid elements which are most prevalent in 2025 are the same as they were in 2024's data: `<img>`, `<div>`, and `<a>` tags.
+
 {{ figure_markup(
   image="invalid-head-elements.png",
   caption="Invalid `head` elements",
@@ -521,7 +522,7 @@ In 2025, performance across Core Web Vitals has largely stabilized after several
 
 Across both platforms, CLS remains the strongest metric, with around 75% of pages passing. However, LCP continues to lag near 55–60% on mobile, showing that loading speed remains the most persistent Core Web Vitals challenge for websites today. As [research shows](https://www.speedcurve.com/blog/psychology-site-speed/), this affects user satisfaction, and can also impact online conversions, particularly in an AI-driven landscape.
 
-The visible dip from March 2024 particularly on mobile reflects the transition toward Google's <a hreflang="en" href="https://searchengineland.com/google-replace-fid-inp-core-web-vitals-414546#:~:text=Interaction%20to%20Next%20Paint%20\(INP,nearly%20all\)%20interactions%20were%20below.&text=On%20the%20left%2C%20long%20tasks,rankings%2C%E2%80%9D%20according%20to%20Splitt.">March 2024 replacement of First Input Delay (FID) with Interaction to Next Paint (INP)</a>. INP began surfacing in performance tools ahead of the rollout, introducing stricter thresholds that exposed responsiveness issues FID often overlooked. This gradual shift raised the bar for what's considered a "good" user experience and explains the shift when the change took effect.
+The visible dip from March 2024 particularly on mobile reflects the transition toward Google's <a hreflang="en" href="https://searchengineland.com/google-replace-fid-inp-core-web-vitals-414546#:~:text=On%20the%20left%2C%20long%20tasks,rankings%2C%E2%80%9D%20according%20to%20Splitt.">March 2024 replacement of First Input Delay (FID) with Interaction to Next Paint (INP)</a>. INP began surfacing in performance tools ahead of the rollout, introducing stricter thresholds that exposed responsiveness issues FID often overlooked. This gradual shift raised the bar for what's considered a "good" user experience and explains the shift when the change took effect.
 
 ### Image `loading` property usage
 
