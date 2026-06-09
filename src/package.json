@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "ejs": "6.0.1",
-    "fs-extra": "11.3.4",
+    "fs-extra": "11.3.5",
     "jsdom": "29.1.1",
     "node-fetch": "3.3.2",
     "node-watch": "0.7.4",
