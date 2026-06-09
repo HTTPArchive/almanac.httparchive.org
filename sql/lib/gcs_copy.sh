@@ -3,4 +3,4 @@
 # Files are available at gs://httparchive/lib/*.js
 # And via HTTPS at https://cdn.httparchive.org/lib/*.js (with caching)
 
-gsutil cp sql/lib/*.js gs://httparchive/lib
+gcloud storage cp sql/lib/*.js gs://httparchive/lib
