@@ -177,7 +177,7 @@ if [[ "${ARTIFACT_ID}" != "null" ]]; then
   for pdf in ${pdfs}
   do
     echo "Uploading $pdf"
-    gsutil cp "static/pdfs/${pdf}" "gs://httparchive/almanac/ebooks/${pdf}"
+    gcloud storage cp "static/pdfs/${pdf}" "gs://httparchive/almanac/ebooks/${pdf}"
   done
 fi
 
