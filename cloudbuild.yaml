@@ -96,7 +96,7 @@ steps:
         shopt -s nullglob
         pdfs=(/workspace/src/static/pdfs/web_almanac_*.pdf)
         if [[ ${#pdfs[@]} -gt 0 ]]; then
-          gcloud storage -m cp "${pdfs[@]}" gs://httparchive/almanac/ebooks/
+          gcloud storage cp "${pdfs[@]}" gs://httparchive/almanac/ebooks/
           echo "Uploaded ${#pdfs[@]} PDF(s) to GCS"
         else
           echo "Warning: no ebooks found to upload"
