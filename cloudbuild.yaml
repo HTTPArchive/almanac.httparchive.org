@@ -27,7 +27,7 @@ steps:
       - |
         set -e
         apt-get update -qq
-        apt-get install -y python3 python3-venv curl tar
+        apt-get install -y python3 python3-venv curl tar unzip
 
         # Install Node.js 24
         curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
