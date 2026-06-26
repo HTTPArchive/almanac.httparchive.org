@@ -130,7 +130,7 @@ Dans cette section, nous présentons la prévalence des cookies, leur type et le
 
 ### Prévalence des cookies de première et tierce partie
 
-Les cookies de première partie sont définis par le même domaine que le site web que l'utilisateur visite, tandis que les cookies tiers sont définis par un domaine différent [voir Définitions](#definitions). Dans cette analyse, nous examinons le pourcentage de cookies déposés sur les sites web qui sont de première et de tierce partie selon les types de clients (ordinateur ou mobile) et les rangs CrUX.
+Les cookies de première partie sont définis par le même domaine que le site web que l'utilisateur visite, tandis que les cookies tiers sont définis par un domaine différent [voir Définitions](#définitions). Dans cette analyse, nous examinons le pourcentage de cookies déposés sur les sites web qui sont de première et de tierce partie selon les types de clients (ordinateur ou mobile) et les rangs CrUX.
 
 {{ figure_markup(
   image="first-and-third-party-prevalence.png",
