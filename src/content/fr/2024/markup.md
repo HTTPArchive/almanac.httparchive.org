@@ -218,7 +218,11 @@ Selon notre analyse, 86 % des pages mobiles contiennent encore au moins un comme
 
 En plus des commentaires réguliers, il existe un type spécifique appelé **commentaires conditionnels**. Ils étaient autrefois largement utilisés pour cibler des versions spécifiques d'Internet Explorer (IE), permettant aux développeurs de fournir des styles ou des scripts personnalisés que seuls les anciens navigateurs IE allaient traiter.
 
-``
+```html
+<!--[if IE]>
+<link rel="stylesheet" href="ie-only-styles.css">
+<![endif]-->
+```
 
 Avec les navigateurs modernes et le retrait d'Internet Explorer, les commentaires conditionnels sont devenus obsolètes. Malgré cela, **26 %** des pages mobiles contiennent encore des commentaires conditionnels, probablement en raison d'un code hérité qui n'a jamais été nettoyé, ou parce que certains sites continuent de prendre en charge d'anciennes versions d'Internet Explorer pour des raisons de compatibilité.
 
