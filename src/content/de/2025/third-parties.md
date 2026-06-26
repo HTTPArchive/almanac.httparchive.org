@@ -7,7 +7,7 @@ authors: [jazlan01, abubakaraziz]
 reviewers: [tunetheweb]
 analysts: [jazlan01]
 editors: [tunetheweb]
-translators: []
+translators: [mika943]
 jazlan01_bio: Muhammad Jazlan ist Doktorand im zweiten Jahr der Informatik an der University of California, Davis. Sein Forschungsschwerpunkt liegt auf der Messung, Erkennung und Eindämmung von Tracking im Web.
 abubakaraziz_bio: Muhammad Abu Bakar Aziz ist Doktorand der Informatik an der Northeastern University in Boston. Sein Forschungsschwerpunkt liegt auf Web-Datenschutz. Insbesondere untersucht er empirisch, wie Drittanbieter und Online-Werbetreibende Datenschutzgesetze wie CCPA und DSGVO einhalten.
 results: https://docs.google.com/spreadsheets/d/1FPssodcLgX8iFWFXDrthWVkBCUTl5_IJon2cyaZVudU/edit
