@@ -7,7 +7,7 @@ authors: [yohhaan,samdutton,ydimova]
 reviewers: [samdutton,rowan-m]
 analysts: [yohhaan]
 editors: [tunetheweb]
-translators: []
+translators: [mika943]
 results: https://docs.google.com/spreadsheets/d/1wDGnUkO0rgcU5_V6hmUrhm1pq60VU2XbeMHgYJEEaSM/
 yohhaan_bio: Yohan Beugin est doctorant au département des sciences informatiques de l'université du Wisconsin-Madison, où il est membre du Security and Privacy Research Group sous la direction du professeur Patrick McDaniel. Il s'intéresse à la construction de systèmes plus sécurisés, respectueux de la vie privée et fiables. Ses recherches actuelles se concentrent sur le ciblage et la confidentialité dans la publicité en ligne.
 samdutton_bio: Sam Dutton est Developer Advocate au sein de l'équipe Privacy Sandbox chez Google, dont la mission est d'aider les sites à abandonner les cookies tiers. Sam a grandi en Australie-Méridionale, a étudié à l'université de Sydney et vit à Londres depuis 1986. Il a travaillé auparavant comme ingénieur logiciel chez BBC R&D et ITN, comme typographe pour Decca Records et comme chercheur pour Picador Books.
