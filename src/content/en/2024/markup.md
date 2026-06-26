@@ -200,7 +200,6 @@ In terms of non-English languages, `ja` (Japanese) and `es` (Spanish) stand out 
 
 The most common regional variant, `en-us`, appears on 16.7% of desktop and 15% of mobile pages.
 
-
 Despite the issues with incorrect lang attribute values, the attribute still plays a vital role in improving accessibility. For users with screen readers, setting the `lang` attribute correctly remains an essential practice in modern web development.
 
 ### Comments
@@ -219,9 +218,11 @@ According to our analysis, 86% of mobile pages still contain at least one commen
 
 In addition to regular comments, there's a specific type known as **conditional comments**. These were once used extensively to target specific versions of Internet Explorer (IE), allowing developers to provide custom styles or scripts that only older IE browsers would process.
 
-`<!--[if IE]>`
-`<link rel="stylesheet" href="ie-only-styles.css">`
-`<![endif]-->`
+```html
+<!--[if IE]>
+<link rel="stylesheet" href="ie-only-styles.css">
+<![endif]-->
+```
 
 With modern browsers and the retirement of Internet Explorer, conditional comments have become obsolete. Despite this, **26%** of mobile pages still contain conditional comments, likely due to legacy code that was never cleaned up, or because some sites continue to support older versions of Internet Explorer for compatibility reasons.
 
@@ -254,7 +255,6 @@ However, there are some differences when checking the distribution of elements p
   sql_file="element_count_distribution.sql"
   )
 }}
-
 
 ### Top elements
 
@@ -637,7 +637,6 @@ Apart from buttons, certain `input` elements are also rendered and used as butto
 }}
 
 Data shows that 25.2% of mobile pages in our data set have at least one `<input type="submit">` element, 2.8% have at least one `<input type="button">` element, and 1.1% have at least one `<input type="image">` element.
-
 
 ### Link targets
 
