@@ -2,20 +2,20 @@
 
 {% block description %}Der Web Almanac ist ein jährlicher Bericht über den Zustand des Webs, der das Fachwissen der Web-Community mit den Daten und Trends des HTTP Archive kombiniert.{% endblock %}
 
-{% block twitter_image_alt %}{{ year }} Web Almanach{% endblock %}
+{% block twitter_image_alt %}{{ year }} Web Almanac{% endblock %}
 
 {% block skip_navigation %}Navigation überspringen{% endblock %}
 
-{% block organization %}Web Almanach von HTTP Archive{% endblock %}
+{% block organization %}Web Almanac von HTTP Archive{% endblock %}
 {% block web_almanac_logo %}
-  <span class="wa">Web Almanach</span>
+  <span class="wa">Web Almanac</span>
   <span class="line-group">
     <span class="pre">Von</span>
     <span class="ha">HTTP Archive</span>
   </span>
 {% endblock %}
 
-{% block intro_title %}Web Almanach{% endblock %}
+{% block intro_title %}Web Almanac{% endblock %}
 {% block intro_sub_title %}Der jährliche Bericht des HTTP Archive<br> über den <b>Zustand des Webs</b>{% endblock %}
 
 {% block announcement_text -%}
@@ -27,18 +27,18 @@
 {%- elif self.call_for_contributors_link() | trim | length > 0 -%}
 <p>
   📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Mitwirkende gesucht</b></a>:
-Helfen Sie mit, den {{ now().year }} Web Almanach zu gestalten — werden Sie Teil des Teams für die diesjährige Ausgabe!
+Helfen Sie mit, den {{ now().year }} Web Almanac zu gestalten — werden Sie Teil des Teams für die diesjährige Ausgabe!
 </p>
 {%- endif -%}
 {% endblock %}
 
 {% block mission %}
 <p>
-Unsere Mission ist es, die rohen Statistiken und Trends des HTTP Archive mit der Expertise der Web-Community zu vereinen. Der Web Almanach ist ein umfassender Bericht über den Zustand des Webs, gestützt auf echte Daten und vertrauenswürdige Web-Experten. Die Ausgabe {{ year }} besteht aus {{ supported_chapters | length }} Kapiteln, die Aspekte von Seiteninhalt, Nutzererfahrung, Publishing und Distribution abdecken.
+Unsere Mission ist es, die rohen Statistiken und Trends des HTTP Archive mit der Expertise der Web-Community zu vereinen. Der Web Almanac ist ein umfassender Bericht über den Zustand des Webs, gestützt auf echte Daten und vertrauenswürdige Web-Experten. Die Ausgabe {{ year }} besteht aus {{ supported_chapters | length }} Kapiteln, die Aspekte von Seiteninhalt, Nutzererfahrung, Publishing und Distribution abdecken.
 </p>
 {% endblock %}
 
-{% block read_last_years_almanac %}Den Web Almanach aus dem Jahr {{ previous_year }} lesen{% endblock %}
+{% block read_last_years_almanac %}Den Web Almanac aus dem Jahr {{ previous_year }} lesen{% endblock %}
 
 {% block http_archive_link %}HTTP Archive Startseite{% endblock %}
 
@@ -142,7 +142,7 @@ Unsere Mission ist es, die rohen Statistiken und Trends des HTTP Archive mit der
 {% block rss_feed %}RSS-Feed{% endblock %}
 
 {% block featured_chapter %}Hervorgehobenes Kapitel{% endblock %}
-{% block featured_chapter_last_year %}Hervorgehobenes Kapitel<br>aus dem Web Almanach {{ previous_year }}{% endblock %}
+{% block featured_chapter_last_year %}Hervorgehobenes Kapitel<br>aus dem Web Almanac {{ previous_year }}{% endblock %}
 
 {# Check if read_chapter already defined in child template as macros can't be overridden #}
 {% if not read_chapter %}
@@ -153,7 +153,7 @@ Unsere Mission ist es, die rohen Statistiken und Trends des HTTP Archive mit der
 {% endif %}
 
 {% block contributors_description %}
-Der Web Almanach wurde durch die harte Arbeit der Web-Community ermöglicht. {{ self.contributors() }} Menschen haben unzählige Stunden in die Planung, Forschung, das Schreiben und die Produktion der Ausgabe {{ year }} des Web Almanach investiert.
+Der Web Almanac wurde durch die harte Arbeit der Web-Community ermöglicht. {{ self.contributors() }} Menschen haben unzählige Stunden in die Planung, Forschung, das Schreiben und die Produktion der Ausgabe {{ year }} des Web Almanac investiert.
 {% endblock %}
 {% block contributors_link %}Alle Mitwirkenden anzeigen{% endblock %}
 
@@ -161,7 +161,7 @@ Der Web Almanach wurde durch die harte Arbeit der Web-Community ermöglicht. {{ 
 {% block methodology_stat_2_title %}Verarbeitete Daten{% endblock %}
 {% block methodology_link %}Mehr über unsere Methodik erfahren{% endblock %}
 {% block methodology_description %}
-Sofern nicht anders angegeben, stammen die Metriken in allen {{ supported_chapters | length }} Kapiteln des {{ year }} Web Almanach aus dem HTTP Archive-Datensatz. Das HTTP Archive ist ein von der Community betriebenes Projekt, das seit 2010 verfolgt, wie das Web aufgebaut ist. Unter Verwendung von WebPageTest und Lighthouse im Hintergrund werden monatlich Metadaten über {{ self.total_websites() }} Websites getestet und in einer öffentlichen BigQuery-Datenbank zur Analyse bereitgestellt. Der Datensatz {{ self.dataset() }} diente als Grundlage für die Metriken des {{ year }} Web Almanac. Weitere Informationen finden Sie auf der Methodik-Seite.
+Sofern nicht anders angegeben, stammen die Metriken in allen {{ supported_chapters | length }} Kapiteln des {{ year }} Web Almanac aus dem HTTP Archive-Datensatz. Das HTTP Archive ist ein von der Community betriebenes Projekt, das seit 2010 verfolgt, wie das Web aufgebaut ist. Unter Verwendung von WebPageTest und Lighthouse im Hintergrund werden monatlich Metadaten über {{ self.total_websites() }} Websites getestet und in einer öffentlichen BigQuery-Datenbank zur Analyse bereitgestellt. Der Datensatz {{ self.dataset() }} diente als Grundlage für die Metriken des {{ year }} Web Almanac. Weitere Informationen finden Sie auf der Methodik-Seite.
 {% endblock %}
 
 {% block introduction %}Einführung{% endblock %}
@@ -175,7 +175,7 @@ Sofern nicht anders angegeben, stammen die Metriken in allen {{ supported_chapte
 
 {% block ebook_title %}E-Book{% endblock %}
 {% block ebook_download_short %}E-Book PDF ({{ ebook_size_in_mb }} MB){% endblock %}
-{% block ebook_download %}Den gesamten Web Almanach {{ year }} im PDF-Format herunterladen ({{ ebook_size_in_mb }} MB){% endblock %}
+{% block ebook_download %}Den gesamten Web Almanac {{ year }} im PDF-Format herunterladen ({{ ebook_size_in_mb }} MB){% endblock %}
 {% block ebook_download_note %}(generiert mit <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
 
 {%
