@@ -4,10 +4,10 @@
 
 {%
   set localizedStatusCode = {
-    400: "Bad Request",
-    404: "Page Not Found",
-    500: "Internal Server Error",
-    502: "Temporary Server Error"
+    400: "Ungültige Anfrage",
+    404: "Seite nicht gefunden",
+    500: "Interner Serverfehler",
+    502: "Temporärer Serverfehler"
   }
 %}
 {% macro expandedTitle(errorTitle) %}Fehler: {{ errorTitle }}{% endmacro %}
@@ -16,9 +16,12 @@
     "Unsupported year requested": "Das angeforderte Jahr wird nicht unterstützt",
     "Unsupported chapter requested": "Das angeforderte Kapitel wird nicht unterstützt",
     "Unsupported language requested": "Die angeforderte Sprache wird nicht unterstützt",
-    "Not Found": "Die angeforderte URL wurde auf dem Server nicht gefunden. Wenn Sie die URL manuell eingegeben haben, überprüfen Sie bitte Ihre Schreibweise und versuchen Sie es erneut."
+    "Not Found": "Die angeforderte URL wurde auf dem Server nicht gefunden. Falls Sie die URL manuell eingegeben haben, überprüfen Sie bitte Ihre Rechtschreibung und versuchen Sie es erneut."
   }
 %}
 {% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
 {{ errorCode }} {{ errorDescription }}: {{ errorMessage }}
 {% endmacro %}
+
+
+
