@@ -1,12 +1,12 @@
 {% extends "base/base_chapter.html" %}
 
-{% block title %}{{ metadata.get('title') }} | {{ year }} | Der Web Almanach von HTTP Archive{% endblock %}
-{% block citation_title %}Der {{ year }} Web Almanach: {{ metadata.get('title') }}{% endblock %}
-{% block citation_journal_title %}Der {{ year }} Web Almanach{% endblock %}
+{% block title %}{{ metadata.get('title') }} | {{ year }} | Der Web Almanac von HTTP Archive{% endblock %}
+{% block citation_title %}Der {{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
+{% block citation_journal_title %}Der {{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ metadata.get('description',metadata.get('title') + ' Kapitel des ' + year + ' Web Almanach über die Nutzung von ' + metadata.get('title') + ' im Web.') }}{% endblock %}
+{% block description %}{{ metadata.get('description',metadata.get('title') + ' Kapitel des ' + year + ' Web Almanac über die Nutzung von ' + metadata.get('title') + ' im Web.') }}{% endblock %}
 
-{% block twitter_image_alt %}Kapitelbild für das Kapitel {{ metadata.get('title') }} des {{ year }} Web Almanach{% endblock %}
+{% block twitter_image_alt %}Kapitelbild für das Kapitel {{ metadata.get('title') }} des {{ year }} Web Almanac{% endblock %}
 
 {% block prev_next_title %}Navigation zum vorherigen und nächsten Kapitel{% endblock %}
 
@@ -24,6 +24,3 @@
 
 {% block previous %}Vorheriges Kapitel (Taste 'p' oder ','){% endblock %}
 {% block next %}Nächstes Kapitel (Taste 'n' oder '.'){% endblock %}
-
-
-
