@@ -14,6 +14,7 @@ csp = {
     "connect-src": [
         "'self'",
         "*.google-analytics.com",
+        "syndicatedsearch.goog",
         "www.googletagmanager.com",
         "*.adtrafficquality.google",
     ],
@@ -26,6 +27,7 @@ csp = {
         "*.google.com",
         "*.gstatic.com",
         "ssl.gstatic.com",
+        "*.adtrafficquality.google",
         "data:",
     ],
     "frame-src": [
@@ -33,6 +35,7 @@ csp = {
         "cse.google.com",
         "syndicatedsearch.goog",
         "www.googletagmanager.com",
+        "*.adtrafficquality.google",
     ],
     "object-src": ["'none'"],
     "base-uri": ["'none'"],
