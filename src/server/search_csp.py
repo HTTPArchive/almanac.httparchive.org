@@ -15,8 +15,7 @@ csp = {
         "'self'",
         "*.google-analytics.com",
         "www.googletagmanager.com",
-        "ep1.adtrafficquality.google",
-        "ep2.adtrafficquality.google",
+        "*.adtrafficquality.google",
     ],
     "img-src": [
         "'self'",
