@@ -27,7 +27,7 @@ steps:
       - |
         set -e
         apt-get update -qq
-        apt-get install -y python3 python3-venv curl
+        apt-get install -y python3 python3-venv curl unzip
 
         # Install Node.js 24
         curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
@@ -96,7 +96,7 @@ steps:
         shopt -s nullglob
         pdfs=(/workspace/src/static/pdfs/web_almanac_*.pdf)
         if [[ ${#pdfs[@]} -gt 0 ]]; then
-          gcloud storage -m cp "${pdfs[@]}" gs://httparchive/almanac/ebooks/
+          gcloud storage cp "${pdfs[@]}" gs://httparchive/almanac/ebooks/
           echo "Uploaded ${#pdfs[@]} PDF(s) to GCS"
         else
           echo "Warning: no ebooks found to upload"
