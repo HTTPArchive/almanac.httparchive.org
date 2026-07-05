@@ -33,6 +33,7 @@ csp = {
         "cse.google.com",
         "syndicatedsearch.goog",
         "www.googletagmanager.com",
+        "*.adtrafficquality.google",
     ],
     "object-src": ["'none'"],
     "base-uri": ["'none'"],
