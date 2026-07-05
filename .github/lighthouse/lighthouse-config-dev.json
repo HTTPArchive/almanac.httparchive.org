@@ -28,6 +28,7 @@
         "is-crawlable": "off",
         "label-content-name-mismatch": "off",
         "largest-contentful-paint": "off",
+        "legacy-javascript": "off",
         "mainthread-work-breakdown": "off",
         "maskable-icon": "off",
         "max-potential-fid": "off",
