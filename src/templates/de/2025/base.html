@@ -1,0 +1,29 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}16.2M{% endblock %}
+{% block methodology_stat_2 %}244 TB{% endblock %}
+{% block total_websites %}über 16 Millionen{% endblock %}
+{% block dataset %}Juli 2025{% endblock %}
+{% block almanacMonthDigit %}07{% endblock %}
+
+{% block foreword %}
+<div>
+  <p>
+    Das Web ist heute ein integraler Bestandteil unserer modernen digitalen Infrastruktur. Webanwendungen finden sich mittlerweile in nahezu jeder technologischen Umgebung, die unseren Alltag berührt – von mobilen Apps bis hin zu Endpunkten in der Satellitenkommunikation. Im Rahmen des Web Almanac möchten wir die Trends und die Entwicklung des Webs verstehen. Als Web-Enthusiasten freuen wir uns, die 6. Ausgabe eines der bedeutendsten technischen Berichte über das Web zu präsentieren – den Web Almanac 2025.
+  </p>
+  <p>
+    Der Web Almanac ist ein Open-Source-Projekt, zu dem Experten (Forscher, Entwickler, Berater und Redakteure) aus aller Welt beitragen. Es war erneut eine wunderbare Ausgabe, geprägt von den spannenden Beiträgen dieser Community. Erst das Engagement dieser Community hat diesen Bericht möglich gemacht.
+  </p>
+  <p>
+    Dieses gemeinschaftsgetragene Projekt analysiert 17,2 Millionen Websites und verarbeitet 244 TB an offenen Daten, die vom HTTP Archive bereitgestellt werden. In diesem Bericht untersuchen wir verschiedene Aspekte (wie Barrierefreiheit, Performance und Sicherheit), betrachten die Entwicklung des Webs und gewinnen Einblicke in strukturelle, technische und gesellschaftliche Entwicklungen.
+  </p>
+  <p>
+    Wir hoffen, dass unser Bericht der Community hilft, den aktuellen Stand des Webs besser zu verstehen, und ermutigen Sie, dieses umfangreiche Werk zu erkunden.
+  </p>
+  <p>
+    <em>
+      —<a href="{{ url_for('contributors', year=year, lang=lang, _anchor='nrllh') }}">Nurullah Demir</a>, Chefredakteur des Web Almanac 2025<br>
+    </em>
+  </p>
+</div>
+{% endblock %}
