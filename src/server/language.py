@@ -43,6 +43,7 @@ LANGUAGE_MAPPING = {
 # Mostly we use region-agnostic languages, but can add region where
 # there are significant differences (e.g. Chinese)
 class Language(object):
+    DE = _Language("Deutsch", "de")
     EN = _Language("English", "en")
     ES = _Language("Español", "es")
     FR = _Language("Français", "fr")
