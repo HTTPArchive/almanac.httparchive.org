@@ -8,7 +8,7 @@ reviewers: [webmaxru, tomayac]
 analysts: [guaca, tomayac]
 editors: [tunetheweb]
 translators: [mika943]
-Dawntraoz_bio: Alba Silvente ist Senior Frontend Engineer bei Funda. Sie schreibt gerne über Frontend-Entwicklung, Jamstack und Web-Performance auf <a hrefleng="en" href="https://www.dawntraoz.com/">ihrem Blog</a>, hält Konferenzvorträge, moderiert Tech-Podcasts und engagiert sich intensiv in der Open-Source-Community. Sie ist außerdem Google Developer Expert für Web-Technologien, Microsoft MVP und Ambassador bei Women Tech Makers.
+Dawntraoz_bio: Alba Silvente ist Senior Frontend Engineer bei Funda. Sie schreibt gerne über Frontend-Entwicklung, Jamstack und Web-Performance auf <a hreflang="en" href="https://www.dawntraoz.com/">ihrem Blog</a>, hält Konferenzvorträge, moderiert Tech-Podcasts und engagiert sich intensiv in der Open-Source-Community. Sie ist außerdem Google Developer Expert für Web-Technologien, Microsoft MVP und Ambassador bei Women Tech Makers.
 results: https://docs.google.com/spreadsheets/d/1tBTCtkEw0QEOyebuHIettqGEKw1gtO2EB1jkwpRKb18
 featured_quote: Capabilities im Web entwickeln sich weiterhin, wobei etablierte APIs eine stetige Verbreitung verzeichnen, während gleichzeitig eine neue Klasse browser-nativer KI-Funktionen entsteht.
 featured_stat_1: ~13%
