@@ -8,7 +8,7 @@ reviewers: [webmaxru, tomayac]
 analysts: [guaca, tomayac]
 editors: [tunetheweb]
 translators: [ksakae1216]
-Dawntraoz_bio: Alba Silventeは、Fundaのシニアフロントエンドエンジニアです。<a hrefleng="en" href="https://www.dawntraoz.com/">自身のブログ</a>でフロントエンド開発、Jamstack、ウェブパフォーマンスについて執筆し、カンファレンスでの登壇、テックポッドキャストの主催、オープンソースコミュニティへの積極的な貢献を行っています。Google Developer Expert（ウェブ技術）、Microsoft MVP、Women Tech Makersアンバサダーでもあります。
+Dawntraoz_bio: Alba Silventeは、Fundaのシニアフロントエンドエンジニアです。<a hreflang="en" href="https://www.dawntraoz.com/">自身のブログ</a>でフロントエンド開発、Jamstack、ウェブパフォーマンスについて執筆し、カンファレンスでの登壇、テックポッドキャストの主催、オープンソースコミュニティへの積極的な貢献を行っています。Google Developer Expert（ウェブ技術）、Microsoft MVP、Women Tech Makersアンバサダーでもあります。
 results: https://docs.google.com/spreadsheets/d/1tBTCtkEw0QEOyebuHIettqGEKw1gtO2EB1jkwpRKb18
 featured_quote: ウェブ上のケイパビリティは成熟を続けており、既存のAPIが着実に採用される一方で、ブラウザネイティブなAI機能という新しいクラスが台頭し始めています。
 featured_stat_1: ~13%
