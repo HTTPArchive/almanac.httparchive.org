@@ -18,6 +18,8 @@
         function gtag() {
             dataLayer.push(arguments);
         }
+        gtag('set', 'allow_google_signals', false);
+        gtag('set', 'allow_ad_personalization_signals', false);
         gtag('js', new Date());
         gtag('config', 'UA-22381566-3', {
           'link_attribution': true
