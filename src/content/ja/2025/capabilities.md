@@ -330,4 +330,4 @@ Media Capabilities APIは過去1年間で劇的な成長を遂げました。モ
 
 最も注目すべきは、2025年がLanguageDetector、Translator、Prompt、Summarizerを含むブラウザネイティブのAIおよび言語APIの最初の測定可能な足跡を記録したことです。それぞれがページの1%をはるかに下回る割合でしか登場していなくても、その存在は将来の採用のベースラインを確立し、より高レベルの機能を公開する準備がますます整いつつあるウェブプラットフォームを示唆しています。
 
-Looking ahead, growth will likely be shaped by continued standardization and real-world utility: as browser support solidifies and developer tooling evolves, new APIs may move from experimental curiosity to practical building blocks for richer, smarter web applications.
+今後を見据えると、ブラウザサポートが固まり開発者向けツールが進化するにつれて、継続的な標準化と実際の有用性によって成長が形作られていくでしょう。新しいAPIは実験的な珍しさから、より豊かでスマートなウェブアプリケーションのための実用的な構成要素へと移行していく可能性があります。
