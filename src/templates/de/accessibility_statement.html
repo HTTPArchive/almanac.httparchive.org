@@ -1,0 +1,124 @@
+{% extends "base/accessibility_statement.html" %}
+
+{% block title %}Erklärung zur Barrierefreiheit | The Web Almanac by HTTP Archive{% endblock %}
+
+{% block description %}Beschreibt die Ziele des Web Almanac im Hinblick auf Barrierefreiheit{% endblock %}
+
+{% block twitter_image_alt %}Erklärung zur Barrierefreiheit des Web Almanac{% endblock %}
+
+{% block index %}
+      <ul>
+        <li><a href="#overview">Überblick</a></li>
+        <li><a href="#measures">Maßnahmen zur Unterstützung der Barrierefreiheit</a></li>
+        <li><a href="#conformance-status">Konformitätsstatus</a></li>
+        <li><a href="#external-content">Externe Inhalte</a></li>
+        <li><a href="#compatibility">Kompatibilität mit Browsern und assistiven Technologien</a></li>
+        <li><a href="#technical-specifications">Technische Spezifikationen</a></li>
+        <li><a href="#assessment-approach">Bewertungsansatz</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+{% endblock %}
+
+{% block main_content %}
+      <h1 class="title title-lg">Erklärung zur Barrierefreiheit</h1>
+      <section>
+        <h2 id="overview"><a href="#overview" class="anchor-link">Überblick</a></h2>
+
+        <p>
+          Der Web Almanac verpflichtet sich, die digitale Barrierefreiheit für alle Menschen sicherzustellen. Wir verbessern kontinuierlich das Nutzungserlebnis für alle und wenden die einschlägigen Standards zur Barrierefreiheit an.
+        </p>
+        <p>
+          Diese Erklärung wurde zuletzt am <time datetime="2021-12-01">1. Dezember 2021</time> überprüft.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="measures"><a href="#measures" class="anchor-link">Maßnahmen zur Unterstützung der Barrierefreiheit</a></h2>
+
+        <p>
+          Der Web Almanac ergreift die folgenden Maßnahmen, um die Barrierefreiheit dieser Website sicherzustellen:
+        </p>
+        <ul>
+          <li>Barrierefreiheit als Bestandteil der Entwicklung dieser Website berücksichtigen.</li>
+          <li>Die Barrierefreiheit mit allen verfügbaren Werkzeugen überprüfen.</li>
+          <li>Transparent mit Problemen der Barrierefreiheit umgehen <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues?utf8=%E2%9C%93&q=label%3AAccessibility+">auf unseren GitHub-Seiten</a>.</li>
+          <li>Gemeldete Probleme der Barrierefreiheit zeitnah beheben.</li>
+          <li>Diese Erklärung zur Barrierefreiheit veröffentlichen und aktuell halten.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="conformance-status"><a href="#conformance-status" class="anchor-link">Konformitätsstatus</a></h2>
+
+        <p>
+          Die <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines (WCAG)</a> definieren Anforderungen für Designer und Entwickler, um die Barrierefreiheit für Menschen mit Behinderungen zu verbessern. Sie definieren drei Konformitätsstufen: Stufe A, Stufe AA und Stufe AAA. Der Web Almanac ist teilweise konform mit <a hreflang="en" href="https://www.w3.org/TR/WCAG21/">WCAG 2.1</a> Stufe AAA. Teilweise konform bedeutet, dass einige Teile der Inhalte den Standard der Barrierefreiheit nicht vollständig erfüllen.
+        </p>
+
+        <p>
+          Wir betrachten uns als teilweise konform, weil wir kein vollständiges, extern verifiziertes Audit der Website durchgeführt haben und die Website auch nicht von Nutzern von Screenreadern überprüft wurde, sodass wir uns unseres aktuellen Status nicht sicher sein können. Wir haben alle Seiten der Website mit einer Reihe von Werkzeugen geprüft, darunter das <a hreflang="en" href="https://wave.webaim.org/">WAVE Accessibility Tool</a>, der <a hreflang="en" href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Accessibility Inspector</a> und das <a hreflang="en" href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chrome-Plugin</a>.
+        </p>
+
+        <p>
+          Der Zweck des Web Almanac besteht darin, detaillierte Informationen über den Zustand des Webs bereitzustellen. Auch wenn wir bestrebt sind, alle Inhalte so zu gestalten, dass sie selbst von Laien leicht verständlich sind, kann die Natur des Materials bedeuten, dass ein gewisses Maß an Fachwissen und technischem Verständnis erforderlich ist, um einige Kapitel und einige Metriken zu verstehen, was möglicherweise nicht den <a hreflang="en" href="https://www.w3.org/WAI/WCAG21/quickref/#reading-level">Richtlinien zum Leseniveau der WCAG 2.1 Stufe AAA</a> entspricht.
+        </p>
+
+        <p>
+          Wir verwenden außerdem für einige interaktive Visualisierungen Google Sheets, die ebenfalls möglicherweise nicht den WCAG-Standards zur Barrierefreiheit entsprechen. Diese werden über <code>iframes</code> geladen, und wir stellen für alle unsere Abbildungen Bilder bereit und zeigen interaktive Visualisierungen nur an, wenn die Client-Software dies unterstützt. Wenn Sie einen Webbrowser verwenden und die interaktiven Visualisierungen nicht ansehen möchten, können die Bilder erzwungen werden, indem Sie an eines der Kapitel einen <code>?print</code>-Query-Parameter anhängen; <a href="./2020/accessibility?print">sehen Sie sich das Kapitel Barrierefreiheit im Druckmodus an</a> als ein solches Beispiel. Wir können diese Funktion bei Bedarf einfacher aktivierbar machen, aber alle Visualisierungen verfügen über detaillierte Textbeschreibungen, sodass wir dies nicht für notwendig halten. Bitte <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">lassen Sie es uns wissen</a>, falls wir uns hierin irren.
+        </p>
+
+        <p>
+          Wir sind uns bewusst, dass einige der Farbwahlen für unsere Visualisierungen die WCAG-Anforderungen an den Farbkontrast nicht erfüllen. Wir bemühen uns bewusst, kontrastreichere Farben und Beschriftungen zu verwenden, um die Auswirkungen davon zu verringern. Wir hoffen, dass die detaillierten Beschreibungen sowie der Zugang zu den zugrunde liegenden Daten selbst bei diesem Problem helfen können. Wir sind bestrebt, die Barrierefreiheit der Farbschemata unserer Visualisierungen in künftigen Jahren zu verbessern.
+        </p>
+
+        <p>
+          In einigen Kapiteln binden wir auch andere Inhalte auf der Website ein, die nicht von uns erstellt wurden, darunter YouTube-Videos, PDF-Links oder Links zu anderen Artikeln, die nicht die strengen Kriterien der WCAG 2.1 Stufe AAA erfüllen. Siehe den Hinweis zu externen Inhalten weiter unten.
+        </p>
+
+        <p>
+          Die <a href="/static/pdfs/web_almanac_{{ year }}_{{ lang }}.pdf">PDF-Version des Web Almanac</a> folgt den Best Practices für die Barrierefreiheit von PDFs und erfüllt den Standard <a href="https://en.wikipedia.org/wiki/PDF/UA">PDF/UA-1</a>.
+        </p>
+
+        <h2 id="external-content"><a href="#external-content" class="anchor-link">Externe Inhalte</a></h2>
+
+        <p>
+          Viele Kapitel verlinken auf andere Inhalte (Videos, PDFs, Artikel), die sich nicht unter unserer Kontrolle befinden und die möglicherweise nicht die hohen Konformitätsstufen erfüllen, die wir erreicht haben. Wo möglich, stellen wir Links zu Artikeln in derselben Sprache wie die angezeigte Seite bereit, aber das ist nicht immer möglich.
+        </p>
+
+        <h2 id="compatibility"><a href="#compatibility" class="anchor-link">Kompatibilität mit Browsern und assistiven Technologien</a></h2>
+
+        <p>
+          Der Web Almanac ist so gestaltet, dass er mit möglichst vielen Browsern und assistiven Technologien kompatibel ist. Die Website wurde auf progressive Weise erstellt und ist auch dann voll funktionsfähig, wenn nicht alle modernen Browserfunktionen unterstützt werden, die wir verwenden. Sie werden jedoch möglicherweise eine Verschlechterung der Darstellung und das Fehlen einiger Funktionen (interaktive Visualisierungen, Kommentarzähler usw.) bemerken, wenn Sie keinen modernen Browser wie eine aktuelle Version von Chrome, Safari, Firefox oder Edge verwenden.
+        </p>
+
+        <p>
+          Zum jetzigen Zeitpunkt haben wir keine Tests mit Hardware oder Software für assistive Technologien abgeschlossen, haben aber, wie oben erwähnt, Werkzeuge eingesetzt, um etwaige Probleme auf diesen Geräten zu beheben.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="technical-specifications"><a href="#technical-specifications" class="anchor-link">Technische Spezifikationen</a></h2>
+
+        <p>
+          Die Website basiert auf gut strukturiertem, semantischem HTML (einschließlich <a hreflang="en" href="https://www.w3.org/WAI/standards-guidelines/aria/">WAI-ARIA</a>, wo angebracht), ergänzt durch CSS für die Gestaltung und begrenztes JavaScript für einige interaktive Komponenten. Die Website macht von modernen Entwicklungspraktiken wie CSS Grid, Fetch und WOFF2-Schriftarten Gebrauch, die in älteren Browsern wie IE 11 nicht unterstützt werden. Die Website ist in diesen Browsern weiterhin voll funktionsfähig, aber möglicherweise nicht so ansprechend gestaltet. Es sollten keine zusätzlichen Plugins oder Bibliotheken erforderlich sein, um die Website anzuzeigen.
+        </p>
+        <p>
+          Das PDF des Web Almanac folgt denselben Standards zur Barrierefreiheit wie die Website und ist zusätzlich strukturell ausgezeichnet, um die Barrierefreiheit zu unterstützen.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="assessment-approach"><a href="#assessment-approach" class="anchor-link">Bewertungsansatz</a></h2>
+
+        <p>
+          Selbstbewertung: Die Inhalte wurden vom Web-Almanac-Team anhand der eigenen Fachkenntnisse und einer Reihe von Werkzeugen bewertet, darunter das <a hreflang="en" href="https://wave.webaim.org/">WAVE Accessibility Tool</a>, der <a hreflang="en" href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/">Firefox Accessibility Inspector</a> und das <a hreflang="en" href="https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd" rel="nofollow">AXE Chrome-Plugin</a>. Das PDF des Web Almanac wurde mit einem Accessibility-Scan in Acrobat Reader Pro DC getestet.
+        </p>
+      </section>
+
+      <section>
+        <h2 id="feedback"><a href="#feedback" class="anchor-link">Feedback</a></h2>
+
+        <p>
+          Wir freuen uns über Feedback zur Barrierefreiheit dieser Website. Am besten erreichen Sie uns, indem Sie <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/issues">ein Issue auf GitHub eröffnen</a> oder uns eine E-Mail an <a href="mailto:team@httparchive.org">team@httparchive.org</a> senden. Wir freuen uns auch über Pull Requests von allen, die direkt beitragen möchten. Der Web Almanac ist ein gemeinschaftsbasiertes Projekt, das von Freiwilligen betreut wird, sodass wir keinen zeitlichen Rahmen für die Beantwortung von Feedback garantieren können, aber wir werden so bald wie möglich antworten.
+        </p>
+      </section>
+{% endblock %}
