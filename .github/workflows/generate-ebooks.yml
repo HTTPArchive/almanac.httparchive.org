@@ -5,8 +5,6 @@
 # A script that must be run in GitHub Actions to generate the ebooks.
 # Useful for those that don't have prince installed locally.
 #
-# This should be run before every release
-#
 name: Generate ebooks
 
 env:
@@ -18,7 +16,7 @@ on:
 
 jobs:
   build:
-    name: Update Timestamps and Generate Ebooks
+    name: Generate Ebooks
     runs-on: ubuntu-latest
     steps:
     - name: Checkout branch
