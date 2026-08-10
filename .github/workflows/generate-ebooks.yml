@@ -7,7 +7,7 @@
 #
 # This should be run before every release
 #
-name: Predeploy script
+name: Generate ebooks
 
 env:
   # Update periodically from https://www.princexml.com/latest/
