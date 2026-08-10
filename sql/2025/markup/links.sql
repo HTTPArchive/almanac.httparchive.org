@@ -1,23 +1,15 @@
-WITH bodies AS (
+WITH links AS (
   SELECT
     client,
-    JSON_EXTRACT(custom_metrics, '$.wpt_bodies') AS wpt_bodies
+    INT64(custom_metrics.wpt_bodies.anchors.rendered.target_blank.total) AS target_blank_total,
+    INT64(custom_metrics.wpt_bodies.anchors.rendered.target_blank.noopener_noreferrer) AS target_blank_noopener_noreferrer_total,
+    INT64(custom_metrics.wpt_bodies.anchors.rendered.target_blank.noopener) AS target_blank_noopener_total,
+    INT64(custom_metrics.wpt_bodies.anchors.rendered.target_blank.noreferrer) AS target_blank_noreferrer_total,
+    INT64(custom_metrics.wpt_bodies.anchors.rendered.target_blank.neither) AS target_blank_neither_total
   FROM
-    `httparchive.all.pages`
+    `httparchive.crawl.pages`
   WHERE
-    date = '2024-06-01'
-),
-
-links AS (
-  SELECT
-    client,
-    SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.total') AS INT64) AS target_blank_total,
-    SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.noopener_noreferrer') AS INT64) AS target_blank_noopener_noreferrer_total,
-    SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.noopener') AS INT64) AS target_blank_noopener_total,
-    SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.noreferrer') AS INT64) AS target_blank_noreferrer_total,
-    SAFE_CAST(JSON_EXTRACT(wpt_bodies, '$.anchors.rendered.target_blank.neither') AS INT64) AS target_blank_neither_total
-  FROM
-    bodies
+    date = '2025-07-01'
 )
 
 SELECT
