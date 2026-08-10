@@ -393,9 +393,9 @@ def test_en_ebook_size_at_least_10_mb():
     assert get_ebook_size_in_mb("en", "2019") >= 8
 
 
-# @pytest.mark.parametrize("config", all_ebooks)
-# def test_all_configured_ebooks_at_least_10_mb(config):
-#     assert get_ebook_size_in_mb(config[0], config[1]) >= 8
+@pytest.mark.parametrize("config", all_ebooks)
+def test_all_configured_ebooks_at_least_10_mb(config):
+    assert get_ebook_size_in_mb(config[0], config[1]) >= 8
 
 
 def test_ebook_size_non_existant_language_is_zero():
