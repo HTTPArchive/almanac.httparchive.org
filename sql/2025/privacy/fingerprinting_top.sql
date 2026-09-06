@@ -22,7 +22,7 @@ GROUP BY client, technology.technology
 |> JOIN base_totals USING (client)
 |> EXTEND websites_count / websites_total AS websites_pct
 |> DROP websites_total
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(websites_count) AS websites_count,
   ANY_VALUE(websites_pct) AS websites_pct
   FOR client IN ('desktop', 'mobile')

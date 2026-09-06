@@ -19,16 +19,16 @@ whotracksme AS (
 
 FROM `httparchive.crawl.requests`
 |> JOIN whotracksme
-  ON NET.HOST(url) = domain OR
-    ENDS_WITH(NET.HOST(url), '.' || domain)
+ON NET.HOST(url) = domain OR
+  ENDS_WITH(NET.HOST(url), '.' || domain)
 |> WHERE
-  date = '2025-07-01'
-  AND url NOT IN ('https://android.clients.google.com/checkin', 'https://android.clients.google.com/c2dm/register3')
+  date = '2025-07-01' AND
+  url NOT IN ('https://android.clients.google.com/checkin', 'https://android.clients.google.com/c2dm/register3')
 |> AGGREGATE COUNT(DISTINCT root_page) AS number_of_websites GROUP BY client, tracker
 |> JOIN base_totals USING (client)
 |> EXTEND number_of_websites / total_websites AS pct_websites
 |> DROP total_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(number_of_websites) AS websites_count,
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')

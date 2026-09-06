@@ -5,7 +5,7 @@ WITH base_totals AS (
     COUNT(DISTINCT root_page) AS total_websites
   FROM `httparchive.crawl.pages`
   WHERE date = '2025-07-01'
-    --AND rank = 1000
+  --AND rank = 1000
   GROUP BY client
 ),
 
@@ -28,9 +28,9 @@ accept_ch_meta AS (
     root_page
   FROM `httparchive.crawl.pages`,
     UNNEST(JSON_QUERY_ARRAY(custom_metrics.other.almanac.`meta-nodes`.nodes)) AS meta_node
-  WHERE date = '2025-07-01'
+  WHERE date = '2025-07-01' AND
     --AND rank = 1000
-    AND LOWER(SAFE.STRING(meta_node.`http-equiv`)) = 'accept-ch'
+    LOWER(SAFE.STRING(meta_node.`http-equiv`)) = 'accept-ch'
 ),
 
 -- Combine both sources
@@ -46,7 +46,7 @@ FROM all_accept_ch
   COUNT(DISTINCT all_accept_ch.root_page) AS number_of_websites,
   COUNT(DISTINCT all_accept_ch.root_page) / ANY_VALUE(base_totals.total_websites) AS pct_websites
 GROUP BY all_accept_ch.client
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(number_of_websites) AS websites_count,
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')

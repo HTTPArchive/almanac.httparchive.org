@@ -19,7 +19,7 @@ FROM `httparchive.crawl.pages`
 |> JOIN base_totals USING (client)
 |> EXTEND websites_count / total_websites AS pct_websites
 |> DROP total_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(websites_count) AS websites_count,
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')

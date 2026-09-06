@@ -3,12 +3,12 @@ FROM `httparchive.crawl.pages`
 |> EXTEND COUNT(DISTINCT NET.HOST(root_page)) OVER (PARTITION BY client) AS total_domains
 |> JOIN UNNEST(JSON_QUERY_ARRAY(custom_metrics.cookies)) AS cookie
 |> EXTEND
-NET.HOST(root_page) AS firstparty_domain,
-NET.HOST(SAFE.STRING(cookie.domain)) AS cookie_domain
+  NET.HOST(root_page) AS firstparty_domain,
+  NET.HOST(SAFE.STRING(cookie.domain)) AS cookie_domain
 |> WHERE NOT ENDS_WITH('.' || firstparty_domain, '.' || cookie_domain)
 |> AGGREGATE
-COUNT(DISTINCT firstparty_domain) AS domain_count,
-COUNT(DISTINCT firstparty_domain) / ANY_VALUE(total_domains) AS pct_domains
+  COUNT(DISTINCT firstparty_domain) AS domain_count,
+  COUNT(DISTINCT firstparty_domain) / ANY_VALUE(total_domains) AS pct_domains
 GROUP BY client, cookie_domain
 |> PIVOT (
   ANY_VALUE(domain_count) AS domain_count,

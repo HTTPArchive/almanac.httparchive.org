@@ -6,11 +6,11 @@
 FROM `httparchive.crawl.pages`
 |> WHERE date = '2025-07-01' --AND rank = 1000
 |> EXTEND
-SAFE.INT64(custom_metrics.privacy.iab_tcf_v2.data.cmpId) AS cmpId,
-COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_websites
+  SAFE.INT64(custom_metrics.privacy.iab_tcf_v2.data.cmpId) AS cmpId,
+  COUNT(DISTINCT root_page) OVER (PARTITION BY client) AS total_websites
 |> AGGREGATE
-COUNT(DISTINCT root_page) AS number_of_websites,
-COUNT(DISTINCT root_page) / ANY_VALUE(total_websites) AS pct_websites
+  COUNT(DISTINCT root_page) AS number_of_websites,
+  COUNT(DISTINCT root_page) / ANY_VALUE(total_websites) AS pct_websites
 GROUP BY client, cmpId
 |> PIVOT (
   ANY_VALUE(number_of_websites) AS websites_count,
