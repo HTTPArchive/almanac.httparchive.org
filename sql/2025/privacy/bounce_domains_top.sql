@@ -68,7 +68,7 @@ FROM bounce_sequences
 |> JOIN websites_total USING (client)
 |> EXTEND websites_count / total_websites AS websites_pct
 |> DROP total_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(websites_count) AS cnt,
   ANY_VALUE(websites_pct) AS pct
   FOR client IN ('desktop', 'mobile')

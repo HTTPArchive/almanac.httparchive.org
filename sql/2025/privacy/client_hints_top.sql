@@ -2,7 +2,7 @@
 WITH totals AS (
   FROM `httparchive.crawl.pages`
   |> WHERE date = '2025-07-01' AND is_root_page --AND rank = 1000
-  |> AGGREGATE COUNT(*) AS total_websites GROUP BY client
+  |> AGGREGATE COUNT(0) AS total_websites GROUP BY client
 ),
 
 /* Get Accept-CH Headers */
@@ -32,10 +32,10 @@ FROM headers
 |> JOIN totals USING (client)
 |> EXTEND TRIM(COALESCE(header_value, tag_value)) AS value
 |> AGGREGATE
-COUNT(DISTINCT root_page) AS number_of_websites,
-COUNT(DISTINCT root_page) / ANY_VALUE(total_websites) AS pct_websites
+  COUNT(DISTINCT root_page) AS number_of_websites,
+  COUNT(DISTINCT root_page) / ANY_VALUE(total_websites) AS pct_websites
 GROUP BY client, value
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(number_of_websites) AS websites_count,
   ANY_VALUE(pct_websites) AS pct
   FOR client IN ('desktop', 'mobile')

@@ -50,7 +50,7 @@ FROM aggregated,
     STRUCT('any_referrer_policy', pct_any_referrer_policy)
   ]) AS metric_data
 |> SELECT client, metric_data.metric, metric_data.pct
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(pct) AS pct
   FOR client IN ('desktop', 'mobile')
 )

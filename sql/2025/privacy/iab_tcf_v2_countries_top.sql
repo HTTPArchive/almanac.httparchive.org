@@ -30,7 +30,7 @@ FROM base_data
 |> JOIN base_totals USING (client)
 |> EXTEND number_of_websites / total_websites AS pct_of_websites
 |> DROP total_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(number_of_websites) AS websites_count,
   ANY_VALUE(pct_of_websites) AS pct
   FOR client IN ('desktop', 'mobile')

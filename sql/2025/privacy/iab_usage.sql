@@ -48,7 +48,7 @@ FROM aggregated,
     STRUCT('gpp_data_available', websites_with_gpp_data / total_websites, websites_with_gpp_data)
   ]) AS metric
 |> SELECT client, metric.metric, metric.pct_websites, metric.number_of_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(pct_websites) AS pct,
   ANY_VALUE(number_of_websites) AS websites_count
   FOR client IN ('desktop', 'mobile')

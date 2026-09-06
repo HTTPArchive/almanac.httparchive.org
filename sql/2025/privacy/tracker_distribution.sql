@@ -16,8 +16,8 @@ whotracksme AS (
     NET.HOST(domain) AS domain,
     tracker
   FROM `httparchive.almanac.whotracksme`
-  WHERE date = '2025-07-01'
-    AND category IN ('advertising', 'pornvertising', 'site_analytics', 'social_media')
+  WHERE date = '2025-07-01' AND
+    category IN ('advertising', 'pornvertising', 'site_analytics', 'social_media')
 ),
 
 tracker_counts AS (
@@ -31,9 +31,9 @@ tracker_counts AS (
     NET.HOST(url) = domain OR
     ENDS_WITH(NET.HOST(url), CONCAT('.', domain))
   WHERE
-    date = '2025-07-01'
+    date = '2025-07-01' AND
     --AND rank = 1000
-    AND url NOT IN ('https://android.clients.google.com/checkin', 'https://android.clients.google.com/c2dm/register3')
+    url NOT IN ('https://android.clients.google.com/checkin', 'https://android.clients.google.com/c2dm/register3')
   GROUP BY
     client,
     root_page
@@ -45,7 +45,7 @@ FROM tracker_counts
 |> JOIN base_totals USING (client)
 |> EXTEND ccdf_websites / total_websites AS ccdf
 |> DROP total_websites, number_of_websites
-|> PIVOT(
+|> PIVOT (
   ANY_VALUE(ccdf_websites) AS websites_count,
   ANY_VALUE(ccdf) AS ccdf
   FOR client IN ('desktop', 'mobile')
