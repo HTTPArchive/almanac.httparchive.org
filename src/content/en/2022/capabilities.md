@@ -201,32 +201,32 @@ navigator.mediaSession.metadata = new MediaMetadata({
   album: "Pablo Honey",
   artwork: [
     {
-      src: "https://via.placeholder.com/96",
+      src: "https://www.example.com/artwork-96.png",
       sizes: "96x96",
       type: "image/png",
     },
     {
-      src: "https://via.placeholder.com/128",
+      src: "https://www.example.com/artwork-128.png",
       sizes: "128x128",
       type: "image/png",
     },
     {
-      src: "https://via.placeholder.com/192",
+      src: "https://www.example.com/artwork-192.png",
       sizes: "192x192",
       type: "image/png",
     },
     {
-      src: "https://via.placeholder.com/256",
+      src: "https://www.example.com/artwork-256.png",
       sizes: "256x256",
       type: "image/png",
     },
     {
-      src: "https://via.placeholder.com/384",
+      src: "https://www.example.com/artwork-384.png",
       sizes: "384x384",
       type: "image/png",
     },
     {
-      src: "https://via.placeholder.com/512",
+      src: "https://www.example.com/artwork-512.png",
       sizes: "512x512",
       type: "image/png",
     },
