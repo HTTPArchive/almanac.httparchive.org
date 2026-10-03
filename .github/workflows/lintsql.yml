@@ -58,7 +58,9 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Enable auto-merge for Dependabot PRs
-        if: steps.metadata.outputs.update-type != 'version-update:semver-major' && contains(steps.metadata.outputs.dependency-names, 'sqlfluff')
+        if: |
+          steps.metadata.outputs.update-type != 'version-update:semver-major' &&
+          contains(steps.metadata.outputs.dependency-names, 'sqlfluff')
         run: gh pr merge --admin --squash "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
