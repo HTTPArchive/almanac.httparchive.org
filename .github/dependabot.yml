@@ -4,14 +4,38 @@ updates:
     directory: "/src/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
     ignore:
       - dependency-name: "prettier"
         update-types: ["version-update:semver-patch"]
+
   - package-ecosystem: "pip"
     directory: "/src/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    groups:
+      pip-dependencies:
+        patterns:
+          - "*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
