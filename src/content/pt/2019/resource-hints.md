@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Dicas de recursos
 description: Capítulo de dicas de recursos do Web Almanac 2019 que cobre o uso de dns-prefetch, preconnect, preload, prefetch, priority hints, e native lazy loading.
-hero_alt: Hero image of Web Almanac characters lining up to HTML, JavaScript, and image resources in a line on the way to a web page.
+hero_alt: Imagem de destaque de personagens do Web Almanac enfileirando recursos HTML, JavaScript e de imagem a caminho de uma página web.
 authors: [khempenius]
 reviewers: [andydavies, tunetheweb, yoavweiss]
 analysts: [rviscomi]

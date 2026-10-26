@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Comércio eletrônico
 description: Capítulo de comércio eletrônico do Web Almanac 2019 que abrange plataformas de comércio eletrônico, cargas úteis, imagens, de terceiros, desempenho, SEO e PWAs.
-hero_alt: Hero image of a Web Almanac character at a super market checkout loading items from a shopping basket onto the conveyor belt while another character payes with a credit card.
+hero_alt: Imagem de destaque de um personagem do Web Almanac no caixa de um supermercado, colocando itens de uma cesta de compras na esteira, enquanto outro personagem paga com cartão de crédito.
 authors: [samdutton, alankent]
 reviewers: [voltek62]
 analysts: [rviscomi]

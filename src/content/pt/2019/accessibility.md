@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Acessibilidade
 description: Capítulo de acessibilidade do Web Almanac de 2019 cobrindo facilidade de leitura, mídia, facilidade de navegação e compatibilidade com tecnologias assistivas.
-hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
+hero_alt: Imagem de destaque de um robô com um ícone azul de acessibilidade em forma de pessoa na parte da frente, escaneando uma página web, enquanto personagens do Web Almanac verificam alguns rótulos.
 authors: [nektarios-paisios, foxdavidj, kleinab]
 reviewers: [ljme]
 analysts: [dougsillars, rviscomi, foxdavidj]
