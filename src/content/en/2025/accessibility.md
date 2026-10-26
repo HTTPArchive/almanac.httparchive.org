@@ -43,12 +43,12 @@ But remember Goodhart's Law. When a metric becomes a target, it stops being a re
 
 Our report focuses exclusively on HTML and doesn't include PDF or other office documents.
 
-Compared to 2024, the median Lighthouse Accessibility score improved by 1%, reaching over 85% in 2025. Since the first Web Almanac in 2019, we've seen steady and incremental progress. <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse assigns different weights</a> to axe-core issues, so <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">organizations may prioritize fixes differently</a>.
+Compared to 2024, the median Lighthouse Accessibility score improved by 1%, reaching over 85% in 2025. Since the first Web Almanac in 2019, we've seen steady and incremental progress. <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse assigns different weights</a> to axe-core issues, so <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">organizations may prioritize fixes differently</a>.
 
 {{ figure_markup(
   image="lighthouse-audit-improvements-yoy.png",
   caption="Lighthouse audit improvements year-over-year.",
-  description="A bar chart showing the average increase in the media Google Lighthouse accessibility score over time for six years. Values increase slowly year by year, as follows: in 2019 83%, in 2020 80%, in 2021 82%, in 2022 83%, in 2024 84%, and in 2025 85%.",
+  description="A bar chart showing the average increase in the median Google Lighthouse accessibility score over time for six years. Values increase slowly year by year, as follows: in 2019 83%, in 2020 80%, in 2021 82%, in 2022 83%, in 2024 84%, and in 2025 85%.",
   chart_url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQFD-7C6Jv6q1JyviDsKosRlVwaok7g7nRCQ9NGMw5MaAAohL7EcDejVwgp13Z_T2S_57Zi0YaVb7st/pubchart?oid=1116937150&format=interactive",
   sheets_gid="1543303999",
   sql_file="lighthouse_a11y_score.sql"

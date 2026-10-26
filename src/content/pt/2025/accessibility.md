@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: Acessibilidade
 description: Capítulo de Acessibilidade do Web Almanac de 2025 abordando facilidade de leitura, navegação, formulários, mídia, ARIA e aplicativos de acessibilidade.
-hero_alt: Hero image of a robot with a blue, human accessibility icon on its front scanning a web page, while Web Almanac characters check some labels.
+hero_alt: Imagem de destaque de um robô com um ícone azul de acessibilidade em forma de pessoa na parte da frente, escaneando uma página web, enquanto personagens do Web Almanac verificam alguns rótulos.
 authors: [tricinel, mgifford]
 reviewers: [hidde, atierney, scottdavis99]
 analysts: [mgifford, tunetheweb]
@@ -43,7 +43,7 @@ Mas lembre-se da Lei de Goodhart. Quando uma métrica se torna uma meta, ela dei
 
 Nosso relatório se concentra exclusivamente em HTML e não inclui PDFs nem outros documentos de escritório.
 
-Em comparação com 2024, a pontuação mediana de Acessibilidade do Lighthouse melhorou 1%, ultrapassando 85% em 2025. Desde o primeiro Web Almanac, em 2019, temos visto um progresso constante e gradual. O <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse atribui pesos diferentes</a> aos problemas do axe-core, então <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">as organizações podem priorizar as correções de formas diferentes</a>.
+Em comparação com 2024, a pontuação mediana de Acessibilidade do Lighthouse melhorou 1%, ultrapassando 85% em 2025. Desde o primeiro Web Almanac, em 2019, temos visto um progresso constante e gradual. O <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse atribui pesos diferentes</a> aos problemas do axe-core, então <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">as organizações podem priorizar as correções de formas diferentes</a>.
 
 {{ figure_markup(
   image="lighthouse-audit-improvements-yoy.png",
@@ -205,10 +205,10 @@ Usuários de dispositivos de navegação alternativos com habilidades motoras li
 
 As boas práticas de teste de foco incluem:
 
-- <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps">Nenhuma armadilha de foco em que usuários de teclado fiquem presos</a>
-- <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls">Todos os controles interativos podem receber foco pelo teclado</a>
-- <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order">A ordem de tabulação é lógica e intuitiva</a>
-- <a hreflang="en" href="https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus">O foco é direcionado adequadamente para conteúdo novo ou carregado dinamicamente</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focus-traps">Nenhuma armadilha de foco em que usuários de teclado fiquem presos</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/focusable-controls">Todos os controles interativos podem receber foco pelo teclado</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/logical-tab-order">A ordem de tabulação é lógica e intuitiva</a>
+- <a href="https://developer.chrome.com/docs/lighthouse/accessibility/managed-focus">O foco é direcionado adequadamente para conteúdo novo ou carregado dinamicamente</a>
 
 <a hreflang="en" href="https://www.a11y-collective.com/blog/focus-indicator/">O relatório do The A11y Collective sobre como entender os indicadores de foco</a> oferece insights práticos para implementar e testar estilos de contorno de foco visíveis.
 
