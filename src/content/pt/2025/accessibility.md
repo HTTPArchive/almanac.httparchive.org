@@ -43,7 +43,7 @@ Mas lembre-se da Lei de Goodhart. Quando uma métrica se torna uma meta, ela dei
 
 Nosso relatório se concentra exclusivamente em HTML e não inclui PDFs nem outros documentos de escritório.
 
-Em comparação com 2024, a pontuação mediana de Acessibilidade do Lighthouse melhorou 1%, ultrapassando 85% em 2025. Desde o primeiro Web Almanac, em 2019, temos visto um progresso constante e gradual. O <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse atribui pesos diferentes</a> aos problemas do axe-core, então <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">as organizações podem priorizar as correções de formas diferentes</a>.
+Em comparação com 2024, a pontuação mediana de Acessibilidade do Lighthouse melhorou 1%, ultrapassando 85% em 2025. Desde o primeiro Web Almanac, em 2019, temos visto um progresso constante e gradual. O [Google Lighthouse atribui pesos diferentes](https://developer.chrome.com/docs/lighthouse/accessibility/scoring) aos problemas do axe-core, então <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">as organizações podem priorizar as correções de formas diferentes</a>.
 
 {{ figure_markup(
   image="lighthouse-audit-improvements-yoy.png",

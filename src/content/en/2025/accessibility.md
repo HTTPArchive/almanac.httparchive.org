@@ -43,7 +43,7 @@ But remember Goodhart's Law. When a metric becomes a target, it stops being a re
 
 Our report focuses exclusively on HTML and doesn't include PDF or other office documents.
 
-Compared to 2024, the median Lighthouse Accessibility score improved by 1%, reaching over 85% in 2025. Since the first Web Almanac in 2019, we've seen steady and incremental progress. <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring">Google Lighthouse assigns different weights</a> to axe-core issues, so <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">organizations may prioritize fixes differently</a>.
+Compared to 2024, the median Lighthouse Accessibility score improved by 1%, reaching over 85% in 2025. Since the first Web Almanac in 2019, we've seen steady and incremental progress. [Google Lighthouse assigns different weights](https://developer.chrome.com/docs/lighthouse/accessibility/scoring) to axe-core issues, so <a hreflang="en" href="https://accessibility.civicactions.com/posts/prioritizing-accessibility-bugs-for-maximum-impact">organizations may prioritize fixes differently</a>.
 
 {{ figure_markup(
   image="lighthouse-audit-improvements-yoy.png",
