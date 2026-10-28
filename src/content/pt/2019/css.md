@@ -2,7 +2,7 @@
 #See https://github.com/HTTPArchive/almanac.httparchive.org/wiki/Authors'-Guide#metadata-to-add-at-the-top-of-your-chapters
 title: CSS
 description: Capítulo CSS do Web Almanac de 2019 que abrange cor, unidades, seletores, layout, tipografia e fontes, espaçamento, decoração, animação e consultas de mídia.
-hero_alt: Hero image of Web Almanac characters measuring and painting a web page.
+hero_alt: Imagem de destaque de personagens do Web Almanac medindo e pintando uma página web.
 authors: [una, argyleink]
 reviewers: [meyerweb, huijing]
 analysts: [rviscomi]
