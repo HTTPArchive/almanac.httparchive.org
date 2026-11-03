@@ -4,7 +4,7 @@
 {% block citation_title %}{{ year }} Web Almanac: {{ metadata.get('title') }}{% endblock %}
 {% block citation_journal_title %}{{ year }} Web Almanac{% endblock %}
 
-{% block description %}{{ metadata.get('description', + year + ' Web Almanac&#8217;ın' + metadata.get('title') + ' bölümü '  + ' web üzerinde ' + metadata.get('description',metadata.get('title'))&#8217;ın + kullanımını araştırır.') }}{% endblock %}
+{% block description %}{{ metadata.get('description', year + ' Web Almanac’ın ' + metadata.get('title') + ' bölümü, web üzerinde ' + metadata.get('title') + ' kullanımını araştırıyor.') }}{% endblock %}
 
 {% block twitter_image_alt %} {{ year }} Web Almanac&#8217;ın {{ metadata.get('title') }} bölümü için bölüm görseli {% endblock %}
 
@@ -22,5 +22,5 @@
 {% block figure_data %}Verileri görüntüleyin{% endblock %}
 {% block figure_image %}Görseli görün{% endblock %}
 
-{% block previous %}Önceki Bölüm('p' veya ','`e basın){% endblock %}
-{% block next %}Sonraki Bölüm('n' veya ','`e basın){% endblock %}
+{% block previous %}Önceki Bölüm ('p' veya ',' tuşuna basın){% endblock %}
+{% block next %}Sonraki Bölüm ('n' veya '.' tuşuna basın){% endblock %}
