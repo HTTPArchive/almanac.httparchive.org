@@ -1,0 +1,29 @@
+{% extends "%s/base.html" % lang %}
+
+{% block methodology_stat_1 %}16,2&nbsp;mln{% endblock %}
+{% block methodology_stat_2 %}244&nbsp;TB{% endblock %}
+{% block total_websites %}ponad 16 milionów{% endblock %}
+{% block dataset %}lipca 2025&nbsp;r.{% endblock %}
+{% block almanacMonthDigit %}07{% endblock %}
+
+{% block foreword %}
+<div>
+  <p>
+    Sieć jest dziś nieodłączną częścią współczesnej infrastruktury cyfrowej. Aplikacje internetowe działają niemal w każdym środowisku technologicznym, z którym stykamy się na co dzień, od aplikacji mobilnych po urządzenia końcowe w łączności satelitarnej. W Web Almanac chcemy zrozumieć trendy i kierunki rozwoju sieci. Jako entuzjaści sieci z radością przedstawiamy szóste wydanie jednego z najważniejszych raportów technicznych o sieci: Web Almanac 2025.
+  </p>
+  <p>
+    Web Almanac to projekt open source, który współtworzą eksperci z całego świata: badacze, programiści, konsultanci i redaktorzy. To kolejne wspaniałe wydanie, przy którym mogliśmy obserwować inspirujący wkład tej społeczności. Raport powstał dzięki jej zaangażowaniu.
+  </p>
+  <p>
+    Ten społecznościowy projekt analizuje 17,2&nbsp;mln witryn i przetwarza 244&nbsp;TB otwartych danych udostępnianych przez HTTP Archive. W raporcie badamy różne obszary, m.in. dostępność, wydajność i bezpieczeństwo, sprawdzamy, jak zmienia się sieć, i wyciągamy wnioski o zmianach strukturalnych, technicznych i społecznych.
+  </p>
+  <p>
+    Mamy nadzieję, że raport pomoże społeczności lepiej zrozumieć obecny stan sieci. Zachęcamy do lektury całego opracowania.
+  </p>
+  <p>
+    <em>
+      <a href="{{ url_for('contributors', year=year, lang=lang, _anchor='nrllh') }}">Nurullah Demir</a>, redaktor naczelny Web Almanac 2025<br>
+    </em>
+  </p>
+</div>
+{% endblock %}

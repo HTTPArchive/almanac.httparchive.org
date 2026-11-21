@@ -1,0 +1,11 @@
+{% extends "base/contributors.html" %}
+
+{% block title %}Współtwórcy wydania {{ year }} | Web Almanac, raport HTTP Archive{% endblock %}
+
+{% block description %}{{ config.contributors.items() | length }} współtwórców Web Almanac {{ year }}: analitycy, autorzy, projektanci, programiści, redaktorzy, liderzy, recenzenci i tłumacze.{% endblock %}
+
+{% block filter_by_team %}Filtruj według zespołu: <span id="filtered-contributors">{{ self.contributors() }}</span><span id="contributors-total-text" class="hidden"> z <span id="contributors-total">{{ config.contributors.items() | length }}</span></span> współtwórców.{% endblock %}
+{% block filter_by %}Pokaż zespół:{% endblock %}
+
+{% block join_the_team_title%}Dołącz do zespołu Web Almanac{% endblock %}
+{% block join_the_team_text%}Dołącz do nas!{% endblock %}

@@ -51,6 +51,7 @@ class Language(object):
     IT = _Language("Italiano", "it")
     JA = _Language("日本語", "ja")
     NL = _Language("Nederlands", "nl")
+    PL = _Language("Polski", "pl")
     PT = _Language("Português", "pt")
     RU = _Language("Русский", "ru")
     TR = _Language("Türkçe", "tr")

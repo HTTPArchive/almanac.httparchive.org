@@ -1,0 +1,253 @@
+{% extends "base/base.html" %}
+
+{% block description %}Web Almanac to coroczny raport o stanie sieci, który łączy wiedzę społeczności webowej z danymi i trendami HTTP Archive.{% endblock %}
+
+{% block twitter_image_alt %}Web Almanac {{ year }}{% endblock %}
+
+{% block skip_navigation %}Przejdź do treści{% endblock %}
+
+{% block organization %}Web Almanac, raport HTTP Archive{% endblock %}
+{% block web_almanac_logo %}
+  <span class="wa">Web Almanac</span>
+  <span class="line-group">
+    <span class="pre">raport</span>
+    <span class="ha">HTTP Archive</span>
+  </span>
+{% endblock %}
+
+{% block intro_title %}Web Almanac{% endblock %}
+{% block intro_sub_title %}Coroczny raport HTTP&nbsp;Archive<br> o <b>stanie sieci</b>{% endblock %}
+
+{% block announcement_text -%}
+{%- if year < DEFAULT_YEAR -%}
+<p>
+  Przeglądasz wcześniejsze wydanie Web Almanac.
+  Zobacz <a href="/{{ lang }}/{{ DEFAULT_YEAR }}/{% if chapter_lang_exists(lang, DEFAULT_YEAR, slug) or page_lang_exists(lang, DEFAULT_YEAR, slug) %}{{ slug }}{% endif %}">wydanie {{ DEFAULT_YEAR }}!</a>
+</p>
+{%- elif self.call_for_contributors_link() | trim | length > 0 -%}
+<p>
+  📣 <a hreflang="en" href="{{ self.call_for_contributors_link() }}"><b>Nabór współtwórców</b></a>:
+Pomóż przygotować Web Almanac {{ now().year }} i dołącz do zespołu, który tworzy tegoroczne wydanie!
+</p>
+{%- endif -%}
+{% endblock %}
+
+{% block mission %}
+<p>
+Chcemy łączyć surowe statystyki i trendy HTTP Archive z wiedzą społeczności webowej. Web Almanac to obszerny raport o stanie sieci, oparty na rzeczywistych danych i wiedzy zaufanych ekspertów. Wydanie {{ year }} składa się z {{ supported_chapters | length }} rozdziałów, które obejmują treść stron, doświadczenie użytkownika, publikowanie i dystrybucję treści.
+</p>
+{% endblock %}
+
+{% block read_last_years_almanac %}Przeczytaj Web Almanac {{ previous_year }}{% endblock %}
+
+{% block http_archive_link %}Strona główna HTTP Archive{% endblock %}
+
+{% block page_navigation %}Nawigacja po stronie{% endblock %}
+
+{% block help_translate %}Pomóż w tłumaczeniu{% endblock %}
+{% block translation_not_available %}tylko po angielsku{% endblock %}
+{% block in_english %} (po angielsku){% endblock %}
+{% block language_switcher %}Wybór języka{% endblock %}
+{% block year_switcher %}Wybór roku{% endblock %}
+{% block table_of_contents_switcher %}Wybór strony ze spisu treści{% endblock %}
+
+{% block home %}Strona główna{% endblock %}
+{% block table_of_contents_title %}Spis treści{% endblock %}
+{% block contributors_title %}Współtwórcy{% endblock %}
+{% block methodology_title %}Metodologia{% endblock %}
+{% block search_title %}Wyszukiwanie{% endblock %}
+
+{% block part %}Część{% endblock %}
+{% block chapter %}Rozdział{% endblock %}
+
+{% block start_exploring %}Przeglądaj raport{% endblock %}
+
+{% block menu_title %}Menu strony{% endblock %}
+{% block open_the_menu %}Otwórz menu{% endblock %}
+{% block close_the_menu %}Zamknij menu{% endblock %}
+
+{% block index_nav_title %}Spis treści rozdziału{% endblock %}
+{% block index_title %}Spis treści{% endblock %}
+{% block open_the_index %}Otwórz spis treści{% endblock %}
+{% block close_the_index %}Zamknij spis treści{% endblock %}
+
+{% block and %} i {% endblock %}
+{% block comma %}, {% endblock %}
+{% block oxford_comma %}{% endblock %}
+
+{% block open %}Otwórz{% endblock %}
+{% block close %}Zamknij{% endblock %}
+
+{% macro figure_text(metadata, chapter_config, id) %}Rysunek {{ figure_id(metadata, chapter_config, id) }}.{% endmacro %}
+{% macro show_description(metadata, chapter_config, id) %}Pokaż opis rysunku {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+{% macro hide_description(metadata, chapter_config, id) %}Ukryj opis rysunku {{ figure_id(metadata, chapter_config, id) }}{% endmacro %}
+
+{% block written_by_before %}Tekst:{% endblock %}
+{% block reviewed_by_before %}Recenzja:{% endblock %}
+{% block translated_by_before %}Tłumaczenie:{% endblock %}
+{% block analysis_by_before %}Analiza:{% endblock %}
+{% block edited_by_before %}Redakcja:{% endblock %}
+{% block reviewed_and_analyzed_by_before %}Recenzja i analiza:{% endblock %}
+{% block analysis_and_editing_by_before %}Analiza i redakcja:{% endblock %}
+{% block written_by_after %}{% endblock %}
+{% block reviewed_by_after %}{% endblock %}
+{% block translated_by_after %}{% endblock %}
+{% block analysis_by_after %}{% endblock %}
+{% block edited_by_after %}{% endblock %}
+{% block reviewed_and_analyzed_by_after %}{% endblock %}
+{% block analysis_and_editing_by_after %}{% endblock %}
+
+{% block date_published %}Data publikacji: {% endblock %}
+{% block date_updated %}Ostatnia aktualizacja: {% endblock %}
+
+{% block unedited %}[Bez redakcji]{% endblock %}
+
+{% block author %}Autor{% endblock %}
+{% block authors %}Autorzy{% endblock %}
+
+{% block reaction %}reakcja{% endblock %}
+{% block reactions %}reakcji{% endblock %}
+{% block reactionsTitle %}Reakcje{% endblock %}
+{% block reactionsAlt %}reakcje{% endblock %}
+{% block source %}Zobacz źródło{% endblock %}
+{% block share %}Udostępnij{% endblock %}
+
+{% block like %}polubienie{% endblock %}
+{% block repost %}udostępnienie{% endblock %}
+{% block reply %}odpowiedź{% endblock %}
+{% block mention %}wzmianka{% endblock %}
+{% block likes %}polubień{% endblock %}
+{% block reposts %}udostępnień{% endblock %}
+{% block replies %}odpowiedzi{% endblock %}
+{% block mentions %}wzmianek{% endblock %}
+{% block likesAlt %}polubienia{% endblock %}
+{% block repostsAlt %}udostępnienia{% endblock %}
+{% block repliesAlt %}odpowiedzi{% endblock %}
+{% block mentionsAlt %}wzmianki{% endblock %}
+
+{% macro onTwitter(twitterHandle) %}@{{twitterHandle}} na Twitterze/X{% endmacro %}
+{% macro onMastodon(mastodonHandle) %}{{mastodonHandle}} na Mastodonie{% endmacro %}
+{% macro onBluesky(blueskyHandle) %}{{blueskyHandle}} na Bluesky{% endmacro %}
+{% macro onGitHub(gitHubHandle) %}{{gitHubHandle}} na GitHubie{% endmacro %}
+{% macro onLinkedIn(authorName) %}{{authorName}} na LinkedInie{% endmacro %}
+{% macro website(authorName) %}Strona internetowa: {{authorName}}{% endmacro %}
+
+{% block citation %}Cytowanie{% endblock %}
+
+{% macro edition(year) %}Wydanie {{ year }}{% endmacro %}
+
+{% block footer_title %}Nawigacja w stopce{% endblock %}
+{% block copyright %}© Web Almanac. Licencja <a hreflang="en" href="https://github.com/HTTPArchive/almanac.httparchive.org/blob/main/LICENSE">Apache 2.0</a>.{% endblock %}
+{% block accessibility_statement %}Deklaracja dostępności{% endblock %}
+{% block rss_feed %}Kanał RSS{% endblock %}
+
+{% block featured_chapter %}Polecany rozdział{% endblock %}
+{% block featured_chapter_last_year %}Polecany rozdział<br>z Web Almanac {{ previous_year }}{% endblock %}
+
+{# Check if read_chapter already defined in child template as macros can't be overridden #}
+{% if not read_chapter %}
+{% macro read_chapter(chapter) %}Przeczytaj rozdział <span class="featured-chapter-name">{{ chapter }}</span>{% endmacro %}
+{% endif %}
+{% if not read_last_years_chapter %}
+{% macro read_last_years_chapter(chapter) %}Przeczytaj rozdział <span class="featured-chapter-name">{{ chapter }}</span> z wydania {{ previous_year }}{% endmacro %}
+{% endif %}
+
+{% block contributors_description %}
+Web Almanac powstaje dzięki ciężkiej pracy społeczności webowej. {{ self.contributors() }} wolontariuszy poświęciło niezliczone godziny na planowanie, badania, pisanie i produkcję Web Almanac {{ year }}.
+{% endblock %}
+{% block contributors_link %}Zobacz współtwórców{% endblock %}
+
+{% block methodology_stat_1_title %}Zbadane witryny{% endblock %}
+{% block methodology_stat_2_title %}Przetworzone dane{% endblock %}
+{% block methodology_link %}Poznaj metodologię{% endblock %}
+{% block methodology_description %}
+Jeśli nie zaznaczono inaczej, wskaźniki we wszystkich {{ supported_chapters | length }} rozdziałach Web Almanac {{ year }} pochodzą ze zbioru danych HTTP Archive. HTTP Archive to projekt prowadzony przez społeczność, który od 2010&nbsp;r. śledzi, jak budowana jest sieć. Co miesiąc HTTP Archive bada za pomocą WebPageTest i Lighthouse metadane {{ self.total_websites() }} witryn i udostępnia je do analizy w publicznej bazie BigQuery. Zbiór danych z {{ self.dataset() }} jest podstawą wskaźników Web Almanac {{ year }}. Więcej informacji znajdziesz na stronie Metodologia.
+{% endblock %}
+
+{% block introduction %}Wprowadzenie{% endblock %}
+
+{% block foreword_title %}Przedmowa{% endblock %}
+
+{% block coming_soon %}Wkrótce!{% endblock %}
+
+{% block appendix %}Dodatek{% endblock %}
+{% block appendices %}Dodatki{% endblock %}
+
+{% block ebook_title %}E-book{% endblock %}
+{% block ebook_download_short %}E-book PDF ({{ ebook_size_in_mb }}&nbsp;MB){% endblock %}
+{% block ebook_download %}Pobierz cały Web Almanac {{ year }} w formacie PDF ({{ ebook_size_in_mb }}&nbsp;MB){% endblock %}
+{% block ebook_download_note %}(wygenerowano za pomocą <a href="https://www.princexml.com/">www.princexml.com</a>){% endblock %}
+
+{%
+  set localizedPartTitles = {
+    "I. Page Content": "I. Treść strony",
+    "II. User Experience": "II. Doświadczenie użytkownika",
+    "III. Content Publishing": "III. Publikowanie treści",
+    "IV. Content Distribution": "IV. Dystrybucja treści"
+  }
+%}
+
+{%
+  set localizedChapterTitles = {
+    "javascript": "JavaScript",
+    "css": "CSS",
+    "cookies": "Pliki cookie",
+    "markup": "Znaczniki",
+    "media": "Multimedia",
+    "third-parties": "Zasoby zewnętrzne",
+    "fonts": "Fonty",
+    "performance": "Wydajność",
+    "security": "Bezpieczeństwo",
+    "accessibility": "Dostępność",
+    "seo": "SEO",
+    "pwa": "PWA",
+    "mobile-web": "Strony mobilne",
+    "ecommerce": "E-commerce",
+    "cms": "CMS",
+    "compression": "Kompresja",
+    "caching": "Pamięć podręczna",
+    "cdn": "CDN",
+    "page-weight": "Waga strony",
+    "resource-hints": "Wskazówki dotyczące zasobów",
+    "http": "HTTP",
+    "privacy": "Prywatność",
+    "capabilities": "Możliwości",
+    "jamstack": "Jamstack",
+    "webassembly": "WebAssembly",
+    "structured-data": "Dane strukturalne",
+    "sustainability": "Zrównoważony rozwój",
+    "interoperability": "Interoperacyjność",
+    "generative-ai": "Generatywna AI"
+  }
+%}
+{% if (year == "2019" or year == "2020") %}
+{% set _dummy = localizedChapterTitles.__setitem__("http", "HTTP/2") %}
+{% endif %}
+
+{% set localizedTeamNames = {
+  "analysts": "Analitycy",
+  "authors": "Autorzy",
+  "brainstormers": "Pomysłodawcy",
+  "designers": "Projektanci",
+  "developers": "Programiści",
+  "editors": "Redaktorzy",
+  "leads": "Liderzy projektu",
+  "committee": "Komitet organizacyjny",
+  "reviewers": "Recenzenci",
+  "translators": "Tłumacze",
+  }
+%}
+
+{% set localizedTeamRole = {
+  "analysts": "Analityk",
+  "authors": "Autor",
+  "brainstormers": "Pomysłodawca",
+  "designers": "Projektant",
+  "developers": "Programista",
+  "editors": "Redaktor",
+  "leads": "Lider projektu",
+  "committee": "Komitet organizacyjny",
+  "reviewers": "Recenzent",
+  "translators": "Tłumacz",
+  }
+%}
