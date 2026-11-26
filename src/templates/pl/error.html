@@ -1,0 +1,24 @@
+{% extends "base/error.html" %}
+
+{% block unknown_error %}Nieznany błąd{% endblock %}
+
+{%
+  set localizedStatusCode = {
+    400: "Nieprawidłowe żądanie",
+    404: "Nie znaleziono strony",
+    500: "Wewnętrzny błąd serwera",
+    502: "Tymczasowy błąd serwera"
+  }
+%}
+{% macro expandedTitle(errorTitle) %}Błąd: {{ errorTitle }}{% endmacro %}
+{%
+  set localizedErrorMessage = {
+    "Unsupported year requested": "Ten rok nie jest dostępny",
+    "Unsupported chapter requested": "Ten rozdział nie jest dostępny",
+    "Unsupported language requested": "Ten język nie jest dostępny",
+    "Not Found": "Na serwerze nie ma strony pod tym adresem. Jeśli adres został wpisany ręcznie, sprawdź pisownię i spróbuj ponownie."
+  }
+%}
+{% macro expandedErrorMessage(errorCode, errorDescription, errorMessage) %}
+{{ errorCode }} <i lang="en">{{ errorDescription }}</i>: {{ errorMessage }}
+{% endmacro %}
